@@ -1,0 +1,3763 @@
+{
+  "name": "Viz Studio",
+  "organization": "vizstudio.io",
+  "description": "118 community visualizations for Looker Studio — KPIs, time series, marketing, distribution, network & more.",
+  "logoUrl": "gs://vizstudio-cid9483029/logo.webp",
+  "packageUrl": "https://github.com/vizstudio-io",
+  "organizationUrl": "https://vizstudio.io",
+  "supportUrl": "https://github.com/vizstudio-io/issues",
+  "devMode": true,
+  "components": [
+    {
+      "id": "abtest-viz",
+      "name": "A/B Test Results",
+      "description": "CI bars for A/B variants with significance annotation.",
+      "iconUrl": "gs://vizstudio-cid9483029/abtest-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/abtest-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/abtest-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/abtest-viz/style.css"
+      },
+      "shortDescription": "See which variant won — confidence intervals and significance, side by side.",
+      "longDescription": "Plots A/B variant means with 95% confidence interval bars and an inline significance annotation, so the verdict isn't buried in a stats table. Built for experimentation reviews where stakeholders need 'did B beat A?' answered in one glance. Cross-filter into individual test cells to inspect cohort-level lift.",
+      "category": "Marketing & Funnels",
+      "useCases": [
+        "Compare conversion rate between Control and Variant B",
+        "Display lift with significance after a 14-day test",
+        "Review multiple test cells in a quarterly experimentation digest",
+        "Justify a feature rollout with statistical evidence"
+      ],
+      "examples": [
+        "Checkout button color test: 4.2% vs 5.1% conversion, p<0.05",
+        "Onboarding flow A/B/C with lift bands"
+      ],
+      "tags": [
+        "ab-test",
+        "experiment",
+        "confidence-interval",
+        "statistics",
+        "conversion"
+      ]
+    },
+    {
+      "id": "alluvial-viz",
+      "name": "Alluvial Diagram",
+      "description": "Flow diagram showing how categorical groupings change across multiple stages. Curved ribbons connect nodes at parallel vertical axes, with configurable color modes (source, target, gradient, single), node sizing, tooltips, and cross-filtering.",
+      "iconUrl": "gs://vizstudio-cid9483029/alluvial-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/alluvial-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/alluvial-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/alluvial-viz/style.css"
+      },
+      "shortDescription": "Watch categorical groups morph across stages — every reshuffle, traced.",
+      "longDescription": "Curved ribbons connect node columns at parallel axes, showing how members move between categories over time or stages. Color modes (source, target, gradient, single) let you emphasize origin, destination, or pure flow. Perfect when 'who switched to what' is the story.",
+      "category": "Network & Flow",
+      "useCases": [
+        "Customer plan migrations across 4 quarters",
+        "Voter party shifts between elections",
+        "Student major changes from freshman to senior year",
+        "Product category evolution across a redesign"
+      ],
+      "examples": [
+        "Customers moving Free to Pro to Enterprise across 2023-2025",
+        "Survey respondents reclassified across demographic buckets"
+      ],
+      "tags": [
+        "flow",
+        "categorical",
+        "alluvial",
+        "transition",
+        "ribbon"
+      ]
+    },
+    {
+      "id": "annotgantt-viz",
+      "name": "Annotated Gantt Timeline",
+      "description": "Horizontal Gantt bars with milestone annotation icons pinned to specific dates along each task bar. Includes progress overlay and today line.",
+      "iconUrl": "gs://vizstudio-cid9483029/annotgantt-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/annotgantt-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/annotgantt-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/annotgantt-viz/style.css"
+      },
+      "shortDescription": "Project timelines with milestone pins, progress overlays, and a today line.",
+      "longDescription": "Horizontal Gantt bars annotated with milestone icons fixed to specific dates, plus a progress overlay that shades completion percent and a vertical 'today' marker. Built for status reviews where the question is 'are we on track and what's coming up?'",
+      "category": "Project & Ops",
+      "useCases": [
+        "Quarterly roadmap with launch milestones marked",
+        "Construction phase tracking with inspection checkpoints",
+        "Product release timeline with QA and beta gates",
+        "Marketing campaign calendar with key send dates"
+      ],
+      "examples": [
+        "Q2 roadmap: 8 epics, 23 milestones, today line at week 6",
+        "12-month rebrand plan with vendor delivery markers"
+      ],
+      "tags": [
+        "gantt",
+        "timeline",
+        "milestone",
+        "project",
+        "schedule"
+      ]
+    },
+    {
+      "id": "annotwaterfall-viz",
+      "name": "Annotated Waterfall Chart",
+      "description": "Waterfall chart with annotation icons explaining incremental gains/losses (P&L, conversion funnels) — supports multiple annotations per step, customizable icons, placement options, and cross-filtering.",
+      "iconUrl": "gs://vizstudio-cid9483029/annotwaterfall-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/annotwaterfall-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/annotwaterfall-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/annotwaterfall-viz/style.css"
+      },
+      "shortDescription": "Walk a number from start to finish — and explain every step that mattered.",
+      "longDescription": "A waterfall chart with annotation icons attached to individual steps, so each gain or loss carries the context for why it happened. Multiple annotations per step, configurable icons and placement, and cross-filtering for drill-through. Perfect for P&L narratives and funnel breakdowns.",
+      "category": "Finance",
+      "useCases": [
+        "Quarterly EBITDA bridge with deal-level callouts",
+        "Conversion funnel showing drop-off causes",
+        "Year-over-year revenue walk with one-time events flagged",
+        "Headcount changes by hire, departure, and reorg"
+      ],
+      "examples": [
+        "FY24 revenue bridge: +$12M new logos, -$3M churn, +$5M expansion",
+        "Cart-to-purchase funnel with shipping-cost annotation"
+      ],
+      "tags": [
+        "waterfall",
+        "bridge",
+        "annotation",
+        "finance",
+        "p&l"
+      ]
+    },
+    {
+      "id": "arcdiagram-viz",
+      "name": "Arc Diagram",
+      "description": "Node-link arc diagram with semi-circular arcs connecting source/target nodes. Supports arc color modes (source, target, single, gradient), node scaling by degree, sort options, hover highlighting, tooltips, and cross-filtering.",
+      "iconUrl": "gs://vizstudio-cid9483029/arcdiagram-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/arcdiagram-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/arcdiagram-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/arcdiagram-viz/style.css"
+      },
+      "shortDescription": "Pairwise relationships rendered as elegant arcs over a single axis.",
+      "longDescription": "Nodes lined up along a baseline; semi-circular arcs connect related pairs with weight encoded as thickness. Arc color modes (source, target, gradient, single), node sizing by degree, hover highlighting, and tooltips. Best when the network is wide but not too dense.",
+      "category": "Network & Flow",
+      "useCases": [
+        "Co-author relationships in a research database",
+        "Character interactions in a novel or screenplay",
+        "Concurrent meeting attendees across a calendar",
+        "Cross-team collaboration counts"
+      ],
+      "examples": [
+        "GitHub repo: 40 contributors, 200+ co-edit pairs",
+        "Movie cast: 25 characters, scene co-occurrence arcs"
+      ],
+      "tags": [
+        "network",
+        "arc",
+        "relationship",
+        "node-link",
+        "graph"
+      ]
+    },
+    {
+      "id": "audioverlap-viz",
+      "name": "Audience Overlap",
+      "description": "Proportional circles showing audience segment sizes and overlaps.",
+      "iconUrl": "gs://vizstudio-cid9483029/audioverlap-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/audioverlap-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/audioverlap-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/audioverlap-viz/style.css"
+      },
+      "shortDescription": "Audience segments drawn as proportional circles — overlaps included.",
+      "longDescription": "Sized circles position to reveal shared membership between audience segments. Useful for ad planning, lookalike modeling, and any time 'how much of A is also in B?' is the question. Handles 2-5 segments with clean overlap geometry. Critical when planning suppression lists or measuring incremental reach.",
+      "category": "Marketing & Funnels",
+      "useCases": [
+        "Email subscriber overlap with paid retargeting list",
+        "Streaming service subscribers across 3 platforms",
+        "Survey respondents fitting multiple personas",
+        "Cross-channel ad reach analysis"
+      ],
+      "examples": [
+        "TikTok + Instagram + YouTube viewer overlap",
+        "Newsletter, podcast, and webinar audience intersect"
+      ],
+      "tags": [
+        "overlap",
+        "audience",
+        "venn",
+        "segments",
+        "marketing"
+      ]
+    },
+    {
+      "id": "barbell-viz",
+      "name": "Barbell Chart",
+      "description": "Range bar showing min–max per category with connecting rod.",
+      "iconUrl": "gs://vizstudio-cid9483029/barbell-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/barbell-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/barbell-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/barbell-viz/style.css"
+      },
+      "shortDescription": "Min, max, and the rod between them — ranges across categories at a glance.",
+      "longDescription": "Each row shows a category's range from min to max value as a connecting rod with end caps. Reads cleaner than error bars when you want to compare spread, not just center. Ideal for salary bands, performance ranges, and forecast intervals. Adds context that a bar chart of averages would silently throw away.",
+      "category": "Comparison",
+      "useCases": [
+        "Salary range by job title across 30 roles",
+        "Forecast min/max for the next 8 quarters",
+        "Test score ranges by school district",
+        "Stock 52-week high-low across a portfolio"
+      ],
+      "examples": [
+        "Engineering salary bands: L3 to L7",
+        "Annual rainfall range by city, 30-year lookback"
+      ],
+      "tags": [
+        "range",
+        "barbell",
+        "min-max",
+        "spread",
+        "comparison"
+      ]
+    },
+    {
+      "id": "barrace-viz",
+      "name": "Animated Bar Race",
+      "description": "Smooth animated bar chart race with interpolated transitions, watermark time labels, and customizable colors.",
+      "iconUrl": "gs://vizstudio-cid9483029/barrace-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/barrace-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/barrace-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/barrace-viz/style.css"
+      },
+      "shortDescription": "Animated rankings that climb, fall, and overtake — storytelling in motion.",
+      "longDescription": "Smoothly interpolated bar chart race with a watermark time label and customizable color palette. Categories rerank frame by frame as values change over time. Built for share-worthy moments — viral on social, magnetic in keynote decks. Configurable speed, pauses, and end-state highlighting included.",
+      "category": "Time Series",
+      "useCases": [
+        "Top 10 cities by population over a century",
+        "Market cap leaderboard quarter by quarter",
+        "Top streamed songs ranked weekly",
+        "App store rankings across a launch year"
+      ],
+      "examples": [
+        "Global GDP race 1970-2025",
+        "Top 15 NBA scorers by season"
+      ],
+      "tags": [
+        "animation",
+        "ranking",
+        "race",
+        "time-series",
+        "leaderboard"
+      ]
+    },
+    {
+      "id": "beeswarm-viz",
+      "name": "Beeswarm / Swarm Plot",
+      "description": "Individual points placed along one axis with force-based collision so they never overlap. Reveals true record-level distribution that violin and box plots hide. Optional grouping by dimension and sizing by a second metric.",
+      "iconUrl": "gs://vizstudio-cid9483029/beeswarm-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/beeswarm-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/beeswarm-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/beeswarm-viz/style.css"
+      },
+      "shortDescription": "Every record gets a dot — the distribution stops hiding behind summaries.",
+      "longDescription": "Force-based collision packs individual data points along one axis without overlap, exposing distribution shape that violin and box plots smooth away. Optional grouping by dimension and dot sizing by metric. Use when individuals matter, not just the median.",
+      "category": "Distribution",
+      "useCases": [
+        "Salary distribution across 500 employees by department",
+        "Response time per request across servers",
+        "Student grades within each class section",
+        "Marathon finish times by age group"
+      ],
+      "examples": [
+        "Engineering salaries dotted by level, sized by tenure",
+        "Order value per transaction across 5 stores"
+      ],
+      "tags": [
+        "distribution",
+        "swarm",
+        "scatter",
+        "individual",
+        "raw-data"
+      ]
+    },
+    {
+      "id": "bigcalendar-viz",
+      "name": "Big Calendar",
+      "description": "Big Calendar — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/bigcalendar-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/bigcalendar-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/bigcalendar-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/bigcalendar-viz/style.css"
+      },
+      "shortDescription": "A full-month calendar grid you can pour any metric into.",
+      "longDescription": "Familiar month-view calendar layout with day cells colored or annotated by your metric. Built for context-rich dashboards where stakeholders read by date, not by row number. Easier to scan than a table when the question is 'what happened on the 14th?'",
+      "category": "Time Series",
+      "useCases": [
+        "Daily revenue across the fiscal month",
+        "Support ticket volume by day",
+        "Marketing send schedule with engagement counts",
+        "Inventory replenishment timeline"
+      ],
+      "examples": [
+        "Daily order count, March 2026",
+        "Content publishing calendar with view counts"
+      ],
+      "tags": [
+        "calendar",
+        "daily",
+        "schedule",
+        "month-view",
+        "events"
+      ]
+    },
+    {
+      "id": "bipartite-viz",
+      "name": "Bipartite Graph",
+      "description": "Bipartite Graph — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/bipartite-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/bipartite-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/bipartite-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/bipartite-viz/style.css"
+      },
+      "shortDescription": "Two sets, many connections — the cleanest way to map who-uses-what.",
+      "longDescription": "Two parallel columns of nodes connected by weighted lines, designed for relationships that fit a clear A-to-B structure. Bipartite layout sidesteps hairball graphs and answers 'which customers bought which products?' or 'which authors wrote in which journals?' at a glance.",
+      "category": "Network & Flow",
+      "useCases": [
+        "Customers to products purchased",
+        "Job applicants to roles applied for",
+        "Authors to publications",
+        "Vendors to projects served"
+      ],
+      "examples": [
+        "50 customers connected to 12 SKUs",
+        "Researchers to papers across a department"
+      ],
+      "tags": [
+        "bipartite",
+        "network",
+        "two-mode",
+        "graph",
+        "mapping"
+      ]
+    },
+    {
+      "id": "breakeven-viz",
+      "name": "Break-Even Chart",
+      "description": "Break-Even Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/breakeven-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/breakeven-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/breakeven-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/breakeven-viz/style.css"
+      },
+      "shortDescription": "Where revenue meets cost — the moment your business starts making money.",
+      "longDescription": "Plots fixed cost, variable cost, and revenue lines against units sold, with the break-even point marked where revenue crosses total cost. The classic finance pedagogy chart, polished for executive presentations and pricing reviews. Toggle assumptions and watch the crossover slide in real time.",
+      "category": "Finance",
+      "useCases": [
+        "Pricing review for a new SaaS plan",
+        "Capacity planning for a manufacturing line",
+        "Investor pitch with break-even at 18 months",
+        "Budget approval for a launch with fixed vs variable cost split"
+      ],
+      "examples": [
+        "Break-even at 4,200 units, $39 ASP",
+        "12-month break-even on a $500k product launch"
+      ],
+      "tags": [
+        "finance",
+        "break-even",
+        "cost",
+        "revenue",
+        "pricing"
+      ]
+    },
+    {
+      "id": "bubble-viz",
+      "name": "Bubble Chart",
+      "description": "Bubble Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/bubble-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/bubble-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/bubble-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/bubble-viz/style.css"
+      },
+      "shortDescription": "Three dimensions, one chart — x, y, and a size that tells the third story.",
+      "longDescription": "Classic bubble chart where each circle's position encodes two metrics and its area encodes a third. Optional category color for a fourth dimension. The most efficient way to expose patterns in mid-density datasets where simple scatter falls short. Cross-filtering and tooltip detail keep the dataset queryable.",
+      "category": "Distribution",
+      "useCases": [
+        "GDP vs life expectancy with population as size",
+        "Lead score vs deal size with company headcount as size",
+        "Click-through vs conversion with spend as size",
+        "Latency vs error rate with request volume as size"
+      ],
+      "examples": [
+        "Country comparison: GDP × life expectancy × population",
+        "Marketing channels: spend × CTR × revenue"
+      ],
+      "tags": [
+        "bubble",
+        "scatter",
+        "three-variable",
+        "size-encoding",
+        "comparison"
+      ]
+    },
+    {
+      "id": "bubblegrid",
+      "name": "Bubble Grid",
+      "description": "Bubble Grid — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/bubblegrid/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/bubblegrid/script.js",
+        "config": "gs://vizstudio-cid9483029/bubblegrid/config.json",
+        "css": "gs://vizstudio-cid9483029/bubblegrid/style.css"
+      },
+      "shortDescription": "A heatmap that breathes — circles sized by metric, gridded for clarity.",
+      "longDescription": "Two categorical axes form a grid; each cell holds a circle sized (and optionally colored) by the metric. Reads like a heatmap but communicates magnitude through area, not just hue — which the human eye decodes faster. Sorts each axis by row/column total to surface hot spots.",
+      "category": "Comparison",
+      "useCases": [
+        "Sales by rep × region",
+        "Bug counts by component × release",
+        "Engagement by channel × cohort",
+        "Test pass rate by suite × environment"
+      ],
+      "examples": [
+        "Revenue grid: 12 products × 6 regions",
+        "Survey scores: 8 features × 5 user segments"
+      ],
+      "tags": [
+        "bubble",
+        "grid",
+        "matrix",
+        "heatmap",
+        "comparison"
+      ]
+    },
+    {
+      "id": "bubblemap-viz",
+      "name": "Bubble Map",
+      "description": "Packed bubble visualization where circle size encodes a metric value. Supports packed, force-directed, and grid layouts with single/gradient/series color modes, inside/outside labels, tooltips, and cross-filtering.",
+      "iconUrl": "gs://vizstudio-cid9483029/bubblemap-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/bubblemap-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/bubblemap-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/bubblemap-viz/style.css"
+      },
+      "shortDescription": "Bubbles packed, forced, or gridded — a flexible layout for sized data.",
+      "longDescription": "Renders a metric as sized circles in packed, force-directed, or grid layouts. Single, gradient, or series color modes; inside or outside labels; tooltips and cross-filtering. The Swiss Army knife of 'show me magnitude across many entities'. Drop in tooltips and cross-filter for instant drill-down.",
+      "category": "Comparison",
+      "useCases": [
+        "Revenue by city as packed bubbles",
+        "Repository sizes across a monorepo",
+        "Followers per influencer in a campaign",
+        "Library sizes in a tech stack"
+      ],
+      "examples": [
+        "Top 100 customers sized by ARR",
+        "GitHub orgs sized by total contributors"
+      ],
+      "tags": [
+        "bubble",
+        "packed",
+        "force-layout",
+        "magnitude",
+        "comparison"
+      ]
+    },
+    {
+      "id": "bulletchart-viz",
+      "name": "Bullet Chart",
+      "description": "Bullet Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/bulletchart-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/bulletchart-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/bulletchart-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/bulletchart-viz/style.css"
+      },
+      "shortDescription": "Target, actual, and qualitative bands — KPIs without the gauge clutter.",
+      "longDescription": "Stephen Few's bullet chart: a horizontal bar against shaded performance bands with a target marker. Replaces space-hogging gauges with a compact, comparison-friendly layout. The standard for KPI dashboards with goal context. Stack vertically for a multi-KPI scoreboard that reads in seconds.",
+      "category": "KPI",
+      "useCases": [
+        "Quarterly revenue vs target with bad/ok/good bands",
+        "Sales rep attainment dashboard",
+        "SLA performance against threshold",
+        "Marketing pipeline vs goal"
+      ],
+      "examples": [
+        "Q1 revenue: $4.2M actual, $4.5M target, on green",
+        "Support response time: 8min actual, 10min SLA"
+      ],
+      "tags": [
+        "kpi",
+        "target",
+        "bullet",
+        "performance",
+        "goal"
+      ]
+    },
+    {
+      "id": "bump-viz",
+      "name": "Bump Chart",
+      "description": "Bump Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/bump-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/bump-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/bump-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/bump-viz/style.css"
+      },
+      "shortDescription": "Rank changes as smooth ribbons — who climbed, who slipped, who held steady.",
+      "longDescription": "A specialty line chart where the y-axis is rank rather than value, so position shifts pop at every time step. Smooth bezier ribbons keep transitions readable even with 15+ entities. Born for leaderboards and competitive narratives. Highlight any series on hover to follow a single contender across time.",
+      "category": "Time Series",
+      "useCases": [
+        "Top 20 songs ranked weekly",
+        "Premier League standings across a season",
+        "Top open-source projects ranked by stars",
+        "Best-selling product rankings monthly"
+      ],
+      "examples": [
+        "NFL team rankings, week-by-week",
+        "Top 15 podcast charts over 12 months"
+      ],
+      "tags": [
+        "ranking",
+        "bump",
+        "leaderboard",
+        "time-series",
+        "competition"
+      ]
+    },
+    {
+      "id": "calendarHeatmap",
+      "name": "Calendar Event Heatmap",
+      "description": "Calendar Event Heatmap — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/calendarHeatmap/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/calendarHeatmap/script.js",
+        "config": "gs://vizstudio-cid9483029/calendarHeatmap/config.json",
+        "css": "gs://vizstudio-cid9483029/calendarHeatmap/style.css"
+      },
+      "shortDescription": "GitHub-style calendar heatmap — daily intensity at a year's glance.",
+      "longDescription": "A year's worth of daily metric values rendered as a calendar grid colored by intensity. Reveals weekly patterns, seasonality, and outliers in seconds — the visual nobody questions. Best when daily granularity matters and density is high. Click any day to drill into the records behind the cell.",
+      "category": "Time Series",
+      "useCases": [
+        "Daily commit activity per developer",
+        "Daily order volume across a fiscal year",
+        "Daily login counts for a B2B app",
+        "Daily rainfall or temperature highs"
+      ],
+      "examples": [
+        "365 days of contributions, intensity by commit count",
+        "Daily revenue heatmap, Jan-Dec 2025"
+      ],
+      "tags": [
+        "calendar",
+        "heatmap",
+        "daily",
+        "yearly",
+        "github-style"
+      ]
+    },
+    {
+      "id": "campaignradar-viz",
+      "name": "Campaign Radar",
+      "description": "Radar/spider chart for campaign performance metrics.",
+      "iconUrl": "gs://vizstudio-cid9483029/campaignradar-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/campaignradar-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/campaignradar-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/campaignradar-viz/style.css"
+      },
+      "shortDescription": "Radar profiling across campaign metrics — strengths and gaps in one shape.",
+      "longDescription": "A radar/spider chart tuned for campaign reporting: reach, CTR, conversion, ROAS, frequency, and friends. Compare multiple campaigns as overlaid polygons, or profile one against benchmarks. Reads as a fingerprint of campaign health. Toggle between absolute and normalized scales for fair cross-campaign reads.",
+      "category": "Marketing & Funnels",
+      "useCases": [
+        "Compare 3 campaigns across 6 KPIs",
+        "Benchmark a campaign vs category averages",
+        "Quarterly review of always-on programs",
+        "Channel mix performance profile"
+      ],
+      "examples": [
+        "Black Friday vs Cyber Monday across 6 metrics",
+        "Brand vs performance campaign profiles"
+      ],
+      "tags": [
+        "radar",
+        "campaign",
+        "marketing",
+        "kpi",
+        "profile"
+      ]
+    },
+    {
+      "id": "chord-viz",
+      "name": "Chord Diagram",
+      "description": "Circular relationship diagram with arcs and ribbons connecting groups by shared values.",
+      "iconUrl": "gs://vizstudio-cid9483029/chord-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/chord-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/chord-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/chord-viz/style.css"
+      },
+      "shortDescription": "Every relationship traced as a ribbon — who connects to whom, in one circle.",
+      "longDescription": "Groups arrange around a circle as labeled arcs; ribbons inside the circle connect them with width proportional to flow or shared value. Reveals dense many-to-many relationships that would be hopeless as a network graph or a bilateral matrix. Built for migration flows, trade ties, co-occurrence patterns, and any 'who connects to whom, and how strongly?' question.",
+      "category": "Network & Flow",
+      "useCases": [
+        "Migration flows between countries or regions",
+        "Trade volume between industry sectors",
+        "Co-purchase relationships across product categories",
+        "Cross-team collaboration frequency in a quarterly review"
+      ],
+      "examples": [
+        "International student exchange flows across 12 countries",
+        "Cross-department referrals in a 50-person org"
+      ],
+      "tags": [
+        "chord",
+        "circular",
+        "relationship",
+        "ribbon",
+        "matrix"
+      ]
+    },
+    {
+      "id": "choropleth-viz",
+      "name": "Choropleth Map",
+      "description": "Tile-grid choropleth for US states or world countries. Accepts state abbreviations/names or ISO-2/ISO-3 country codes, supports sequential/diverging/binned color scales, square/rounded/hex/circle tiles, legend positioning, and cross-filtering. 1 region dimension, 1 metric, optional tooltip metric.",
+      "iconUrl": "gs://vizstudio-cid9483029/choropleth-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/choropleth-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/choropleth-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/choropleth-viz/style.css"
+      },
+      "shortDescription": "Tile-grid maps for US states or world countries — geography without distortion.",
+      "longDescription": "A tile-grid choropleth that gives every region equal visual weight, so Rhode Island doesn't disappear next to Texas. Accepts state names/abbreviations or ISO-2/ISO-3 codes; supports sequential, diverging, and binned color scales with square, rounded, hex, or circle tiles.",
+      "category": "Geo",
+      "useCases": [
+        "US state revenue distribution",
+        "Country-level adoption rate for a global product",
+        "Election results by state in tile form",
+        "Vaccine coverage across countries"
+      ],
+      "examples": [
+        "Sales by US state, sequential blue scale",
+        "World COVID case rate, diverging palette"
+      ],
+      "tags": [
+        "geo",
+        "choropleth",
+        "tile-grid",
+        "map",
+        "regional"
+      ]
+    },
+    {
+      "id": "comparison-viz",
+      "name": "Comparison Chart",
+      "description": "Side-by-side entity comparison across multiple metrics with inline data bars, rank numbers, and max-value highlighting. Supports horizontal-bars, table-bars, and card layouts with sorting, tooltips, and cross-filtering.",
+      "iconUrl": "gs://vizstudio-cid9483029/comparison-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/comparison-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/comparison-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/comparison-viz/style.css"
+      },
+      "shortDescription": "Compare entities across many metrics — bars, ranks, and highlighted leaders.",
+      "longDescription": "Side-by-side rows of entities with inline data bars, rank numbers, and the max value highlighted per metric. Pick horizontal-bars, table-bars, or card layouts; sort, tooltip, and cross-filter. The right answer when 'show me how these stack up across 8 metrics' is the brief.",
+      "category": "Comparison",
+      "useCases": [
+        "Compare 5 vendors across 8 evaluation criteria",
+        "Region scorecard across revenue, NPS, churn, growth",
+        "Product variants across feature checklist",
+        "Sales reps across attainment, deals, ACV, win rate"
+      ],
+      "examples": [
+        "Vendor scorecard: 4 vendors × 6 criteria",
+        "Regional KPI grid: 6 regions × 8 metrics"
+      ],
+      "tags": [
+        "comparison",
+        "scorecard",
+        "multi-metric",
+        "ranking",
+        "table"
+      ]
+    },
+    {
+      "id": "connmap-viz",
+      "name": "Connection Map",
+      "description": "Entity rows with bezier arcs showing pairwise connection strength.",
+      "iconUrl": "gs://vizstudio-cid9483029/connmap-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/connmap-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/connmap-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/connmap-viz/style.css"
+      },
+      "shortDescription": "Entity rows linked by bezier arcs — connection strength, made visible.",
+      "longDescription": "Rows for entities, bezier arcs spanning between them with thickness proportional to relationship strength. Less crowded than a force graph when you have a clear list and just want to surface notable pairs. Sort rows by total connection weight to bring hubs to the top.",
+      "category": "Network & Flow",
+      "useCases": [
+        "Account-to-account referral strength",
+        "Co-occurrence of skills across a workforce",
+        "Country trade pair volumes",
+        "Cross-team Slack mention counts"
+      ],
+      "examples": [
+        "Referral arcs across top 30 customers",
+        "Engineering teams linked by shared on-call shifts"
+      ],
+      "tags": [
+        "connection",
+        "arc",
+        "network",
+        "pairs",
+        "relationship"
+      ]
+    },
+    {
+      "id": "convheatmap-viz",
+      "name": "Conversion Heatmap",
+      "description": "Day-of-week × hour-of-day heatmap for conversion rates or counts.",
+      "iconUrl": "gs://vizstudio-cid9483029/convheatmap-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/convheatmap-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/convheatmap-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/convheatmap-viz/style.css"
+      },
+      "shortDescription": "Day × hour conversion heatmap — find the moment your funnel works.",
+      "longDescription": "A 7×24 grid colored by conversion rate or count, exposing when your audience converts versus when they vanish. Indispensable for ad scheduling, send-time optimization, and staffing decisions tied to traffic curves. Cells are clickable for drill-down into the underlying timestamps.",
+      "category": "Marketing & Funnels",
+      "useCases": [
+        "Find peak conversion windows for paid ads",
+        "Schedule email sends to align with engagement peaks",
+        "Plan support staffing against ticket arrival heatmap",
+        "Identify dead hours in checkout completion"
+      ],
+      "examples": [
+        "Conversion rate by day-of-week × hour",
+        "Support tickets opened per hour, weekday breakdown"
+      ],
+      "tags": [
+        "heatmap",
+        "conversion",
+        "time-of-day",
+        "marketing",
+        "schedule"
+      ]
+    },
+    {
+      "id": "curvedcol-animated-viz",
+      "name": "Curved Columns (Animated + Zoom)",
+      "description": "Curved Columns (Animated + Zoom) — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/curvedcol-animated-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/curvedcol-animated-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/curvedcol-animated-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/curvedcol-animated-viz/style.css"
+      },
+      "shortDescription": "Animated curved columns with zoom — column charts with a softer geometry.",
+      "longDescription": "Columns rendered with curved tops and entrance animations, plus zoom-and-pan for dense category lists. Brings polish to standard categorical comparisons when a flat bar chart feels too utilitarian. Designed for marketing dashboards and TV displays where motion earns attention.",
+      "category": "Comparison",
+      "useCases": [
+        "Quarterly revenue across 30 product lines with zoom",
+        "Daily active users over 90 days, animated reveal",
+        "Top categories on a marketing dashboard",
+        "Weekly KPI summary on a TV display"
+      ],
+      "examples": [
+        "52 weeks of unique visitors with zoom",
+        "Top 100 SKUs by sales, animated load"
+      ],
+      "tags": [
+        "column",
+        "curved",
+        "animated",
+        "zoom",
+        "comparison"
+      ]
+    },
+    {
+      "id": "curvedcol-static-viz",
+      "name": "Curved Columns (Static)",
+      "description": "Curved Columns (Static) — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/curvedcol-static-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/curvedcol-static-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/curvedcol-static-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/curvedcol-static-viz/style.css"
+      },
+      "shortDescription": "Curved-top columns — categorical comparison with a softer silhouette.",
+      "longDescription": "A standard column chart with curved column tops for visual warmth without sacrificing readability. Drop in wherever a default bar chart feels too sharp — annual reports, brand-led dashboards, executive summaries. Pair with light gridlines and minimal axes for a clean, brand-forward read.",
+      "category": "Comparison",
+      "useCases": [
+        "Annual revenue by region",
+        "Headcount by department",
+        "Brand sentiment scores by channel",
+        "Test scores by school"
+      ],
+      "examples": [
+        "Revenue by 6 regions, FY25",
+        "Department NPS scores, Q4 survey"
+      ],
+      "tags": [
+        "column",
+        "curved",
+        "static",
+        "comparison",
+        "branded"
+      ]
+    },
+    {
+      "id": "cycleplot-viz",
+      "name": "Cycle Plot",
+      "description": "Cycle Plot — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/cycleplot-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/cycleplot-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/cycleplot-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/cycleplot-viz/style.css"
+      },
+      "shortDescription": "Repeating patterns broken out by cycle — seasonality you can finally see.",
+      "longDescription": "Splits a time series into one mini-line per cycle position (month, weekday, hour), each panel showing how that slot evolves over time. Reveals seasonality and trend simultaneously — a technique long loved by statisticians, finally easy to deploy. The rare chart that lets stakeholders see seasonality without explanation.",
+      "category": "Time Series",
+      "useCases": [
+        "Monthly retail trend separated by month-of-year",
+        "Weekday vs weekend traffic across years",
+        "Hourly server load broken out by hour-of-day",
+        "Quarterly earnings split by fiscal quarter"
+      ],
+      "examples": [
+        "Retail sales by month, 2018-2025",
+        "Weekly active users by weekday across 3 years"
+      ],
+      "tags": [
+        "seasonality",
+        "cycle",
+        "time-series",
+        "trend",
+        "decomposition"
+      ]
+    },
+    {
+      "id": "datatable-viz",
+      "name": "Data Table",
+      "description": "Data Table — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/datatable-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/datatable-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/datatable-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/datatable-viz/style.css"
+      },
+      "shortDescription": "A data table that earns its place — sortable, dense, dashboard-ready.",
+      "longDescription": "A polished tabular view tuned for executive dashboards: sorting, conditional formatting, inline bars, and selective column emphasis. When the audience needs the actual numbers, give them a table that respects the rest of the design. Cross-filter from any row into the rest of the dashboard.",
+      "category": "Specialty",
+      "useCases": [
+        "Top 50 accounts by ARR with growth column",
+        "Inventory list with reorder threshold flags",
+        "Pipeline by stage with weighted value",
+        "Support ticket queue with priority and SLA"
+      ],
+      "examples": [
+        "Customer table: 100 rows × ARR, growth, NPS, churn risk",
+        "Pipeline table by stage and rep"
+      ],
+      "tags": [
+        "table",
+        "tabular",
+        "sortable",
+        "data",
+        "dashboard"
+      ]
+    },
+    {
+      "id": "densityheat-viz",
+      "name": "2D Density Heatmap",
+      "description": "2D Density Heatmap — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/densityheat-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/densityheat-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/densityheat-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/densityheat-viz/style.css"
+      },
+      "shortDescription": "Where points pile up — a 2D density heatmap for thick scatter data.",
+      "longDescription": "A continuous 2D KDE heatmap that turns scatter haze into legible density gradients. Use when 50,000 points overlap into a black blob in a regular scatter — this surface restores the structure underneath. Configurable bandwidth and palette let you tune the surface to your story.",
+      "category": "Distribution",
+      "useCases": [
+        "Click density on a product page",
+        "Geographic event density without map tiles",
+        "Sensor readings across two dimensions",
+        "User behavior clusters in feature space"
+      ],
+      "examples": [
+        "Click density on a 1280×800 page",
+        "Latency vs payload size across 1M requests"
+      ],
+      "tags": [
+        "density",
+        "heatmap",
+        "kde",
+        "distribution",
+        "2d"
+      ]
+    },
+    {
+      "id": "depwheel-viz",
+      "name": "Dependency Wheel",
+      "description": "Dependency Wheel — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/depwheel-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/depwheel-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/depwheel-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/depwheel-viz/style.css"
+      },
+      "shortDescription": "Dependencies arranged on a circle — every link a chord between modules.",
+      "longDescription": "Items placed around a circle with chord ribbons connecting dependent pairs. Reveals coupling structure, hub modules, and unexpected entanglements in a way list views never could. Born for dependency maps and reciprocal flows. Hover any node to highlight its inbound and outbound chords.",
+      "category": "Network & Flow",
+      "useCases": [
+        "Module-level coupling in a software repo",
+        "Country-pair trade flows",
+        "Inter-team dependencies in a quarterly plan",
+        "Microservice call graph"
+      ],
+      "examples": [
+        "20 npm packages with co-import edges",
+        "10 services and their call dependencies"
+      ],
+      "tags": [
+        "dependency",
+        "wheel",
+        "chord",
+        "graph",
+        "coupling"
+      ]
+    },
+    {
+      "id": "donut3d-viz",
+      "name": "3D Donut Chart",
+      "description": "3D Donut Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/donut3d-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/donut3d-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/donut3d-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/donut3d-viz/style.css"
+      },
+      "shortDescription": "A 3D donut for high-impact share visuals — depth, polish, and proportion.",
+      "longDescription": "A donut chart with a 3D perspective tilt, designed for keynote slides and brand-forward dashboards where flat geometry feels under-styled. Use sparingly and on small slice counts — under 7 — for maximum readability. Brand-tunable palettes and label positioning keep it on-spec.",
+      "category": "Part-to-Whole",
+      "useCases": [
+        "Revenue share across 5 product lines for a board deck",
+        "Channel mix on a brand homepage",
+        "Membership tier breakdown in an annual report",
+        "Audience composition on a pitch slide"
+      ],
+      "examples": [
+        "Revenue mix: 5 product lines, FY25",
+        "Energy source mix on a sustainability report"
+      ],
+      "tags": [
+        "donut",
+        "3d",
+        "share",
+        "part-to-whole",
+        "presentation"
+      ]
+    },
+    {
+      "id": "dotstrip-viz",
+      "name": "Dot Strip (Grouped)",
+      "description": "Dot Strip (Grouped) — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/dotstrip-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/dotstrip-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/dotstrip-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/dotstrip-viz/style.css"
+      },
+      "shortDescription": "Grouped dot strips that show every value — distribution across categories.",
+      "longDescription": "Each category gets a horizontal strip of dots, one per record. Compares distributions across groups without the bin choice that haunts histograms. Cleaner than box plots when you want to keep individuals visible. Optional jitter and median markers per group for analytical reads.",
+      "category": "Distribution",
+      "useCases": [
+        "Salary distribution within each level",
+        "Test scores per class",
+        "Response times per server",
+        "Order values per region"
+      ],
+      "examples": [
+        "Salary dots across 6 job levels",
+        "Page load times across 8 regions"
+      ],
+      "tags": [
+        "dot-plot",
+        "strip",
+        "distribution",
+        "grouped",
+        "comparison"
+      ]
+    },
+    {
+      "id": "dualaxis-viz",
+      "name": "Chart Title",
+      "description": "Chart Title — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/dualaxis-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/dualaxis-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/dualaxis-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/dualaxis-viz/style.css"
+      },
+      "shortDescription": "Two metrics, two axes, one chart — context without compromise.",
+      "longDescription": "A dual-axis combo chart pairing a column metric with a line metric on a secondary scale. Use when two related-but-different-magnitude metrics belong together — revenue and margin, sessions and conversion rate, volume and price. Color and legend logic prevent the classic 'which axis is which?' confusion.",
+      "category": "Time Series",
+      "useCases": [
+        "Revenue (bars) and gross margin % (line) by quarter",
+        "Sessions and conversion rate by month",
+        "Trade volume and average price by day",
+        "Tickets opened and SLA % by week"
+      ],
+      "examples": [
+        "Quarterly revenue + margin %",
+        "Monthly orders + AOV"
+      ],
+      "tags": [
+        "dual-axis",
+        "combo",
+        "two-metric",
+        "time-series",
+        "secondary-axis"
+      ]
+    },
+    {
+      "id": "dualdonut-viz",
+      "name": "Dual Donut",
+      "description": "Dual Donut — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/dualdonut-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/dualdonut-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/dualdonut-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/dualdonut-viz/style.css"
+      },
+      "shortDescription": "Two donuts, one canvas — compare share-of-mix at a glance.",
+      "longDescription": "Twin donut charts side by side, each tied to a different period or segment. Quickly answers 'how did our mix shift?' without forcing the viewer to flip between two slides. Ideal for before/after, plan-vs-actual, and segment comparisons. Synced legends and tooltips keep the comparison airtight.",
+      "category": "Part-to-Whole",
+      "useCases": [
+        "Revenue mix this year vs last year",
+        "Channel split: planned vs actual",
+        "Customer segments: North America vs EMEA",
+        "Spend mix: Q1 vs Q4"
+      ],
+      "examples": [
+        "Revenue mix: 2024 vs 2025",
+        "Marketing spend: budget vs spent"
+      ],
+      "tags": [
+        "donut",
+        "dual",
+        "compare",
+        "share",
+        "before-after"
+      ]
+    },
+    {
+      "id": "dumbbell-viz",
+      "name": "Dumbbell Chart",
+      "description": "Dumbbell Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/dumbbell-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/dumbbell-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/dumbbell-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/dumbbell-viz/style.css"
+      },
+      "shortDescription": "Two dots, one line — change between two points, ranked top to bottom.",
+      "longDescription": "Each row shows a category with two endpoint dots (e.g., before and after) connected by a rod, optionally colored by direction of change. The standard chart for showing magnitude and direction of change across many categories — beats grouped bars every time.",
+      "category": "Comparison",
+      "useCases": [
+        "Pre/post intervention scores per cohort",
+        "2024 vs 2025 revenue by product",
+        "Forecast vs actual by region",
+        "Wage gap by job title (men vs women)"
+      ],
+      "examples": [
+        "NPS shift across 12 segments",
+        "Year-over-year salary by role"
+      ],
+      "tags": [
+        "dumbbell",
+        "change",
+        "before-after",
+        "comparison",
+        "delta"
+      ]
+    },
+    {
+      "id": "earningsdot-viz",
+      "name": "Earnings (EPS) Dot Chart",
+      "description": "Earnings (EPS) Dot Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/earningsdot-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/earningsdot-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/earningsdot-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/earningsdot-viz/style.css"
+      },
+      "shortDescription": "EPS prints versus consensus — beats, misses, and surprise magnitude.",
+      "longDescription": "Quarterly earnings shown as dots against analyst consensus, with surprise size encoded by deviation. Built for finance dashboards where the question 'beat, met, or missed?' must be answered for every print without scrolling. Optional surprise-percentage labels and beat/miss color coding included.",
+      "category": "Finance",
+      "useCases": [
+        "8-quarter EPS vs consensus track record",
+        "Earnings surprise dashboard for a watchlist",
+        "Analyst dispersion vs reported EPS",
+        "Sector earnings beat rate over time"
+      ],
+      "examples": [
+        "Last 8 quarters: EPS vs consensus, color-coded surprise",
+        "Tech sector beat rate by quarter"
+      ],
+      "tags": [
+        "earnings",
+        "eps",
+        "finance",
+        "consensus",
+        "surprise"
+      ]
+    },
+    {
+      "id": "emailfunnel-viz",
+      "name": "Email Funnel",
+      "description": "Email Funnel — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/emailfunnel-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/emailfunnel-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/emailfunnel-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/emailfunnel-viz/style.css"
+      },
+      "shortDescription": "Send → open → click → convert — the email lifecycle laid bare.",
+      "longDescription": "A purpose-built funnel for email marketing showing send, delivered, opened, clicked, and converted, with stage-to-stage rates and drop-off counts. Replace the spreadsheet your team copies into a deck every Friday. Stage labels, conversion rates, and absolute counts shown together.",
+      "category": "Marketing & Funnels",
+      "useCases": [
+        "Campaign performance review",
+        "Compare open rates across last 6 sends",
+        "Track conversion rate per segment",
+        "Diagnose where deliverability or engagement breaks"
+      ],
+      "examples": [
+        "Newsletter funnel: 50k sent → 18k opened → 1,200 clicked → 95 converted",
+        "Drip campaign across 5 emails"
+      ],
+      "tags": [
+        "email",
+        "funnel",
+        "marketing",
+        "conversion",
+        "engagement"
+      ]
+    },
+    {
+      "id": "engageheatmap-viz",
+      "name": "Engagement Heatmap",
+      "description": "Engagement Heatmap — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/engageheatmap-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/engageheatmap-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/engageheatmap-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/engageheatmap-viz/style.css"
+      },
+      "shortDescription": "Engagement intensity mapped across two dimensions — peaks and dead zones, found.",
+      "longDescription": "A general-purpose heatmap calibrated for engagement metrics: time on page by section, click density by feature, watch percent by chapter. Spectral or sequential color scales surface where users lean in and where they bounce. Hot-zone callouts and percentile coloring keep the eye on what matters.",
+      "category": "Marketing & Funnels",
+      "useCases": [
+        "Watch percent per video chapter by audience cohort",
+        "Click rate per page section by traffic source",
+        "Feature usage by user segment",
+        "Dwell time by article and referrer"
+      ],
+      "examples": [
+        "Engagement rate: 12 features × 8 user segments",
+        "Click rate: 6 page zones × 4 acquisition channels"
+      ],
+      "tags": [
+        "heatmap",
+        "engagement",
+        "intensity",
+        "behavior",
+        "marketing"
+      ]
+    },
+    {
+      "id": "eventtimeline-viz",
+      "name": "Event Timeline",
+      "description": "Event Timeline — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/eventtimeline-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/eventtimeline-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/eventtimeline-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/eventtimeline-viz/style.css"
+      },
+      "shortDescription": "Events plotted on a horizontal time axis — every milestone in its place.",
+      "longDescription": "A horizontal timeline with events as points or bands along a date axis, optionally grouped into swim lanes. Reads like a project history book: incidents, releases, hires, deals, anything time-stamped that deserves a visual record. Zoom into any window or filter by lane for incident-style analysis.",
+      "category": "Project & Ops",
+      "useCases": [
+        "Incident history with severity bands",
+        "Product release timeline by team",
+        "Press mentions across a launch year",
+        "Deal closes plotted across the quarter"
+      ],
+      "examples": [
+        "12 months of incidents grouped by service",
+        "Year of major product releases per team"
+      ],
+      "tags": [
+        "timeline",
+        "events",
+        "history",
+        "milestones",
+        "swim-lane"
+      ]
+    },
+    {
+      "id": "flowmap-viz",
+      "name": "Flow Map",
+      "description": "Flow Map — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/flowmap-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/flowmap-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/flowmap-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/flowmap-viz/style.css"
+      },
+      "shortDescription": "Origin-to-destination flows on a real map — geography meets movement.",
+      "longDescription": "Curved flow lines on a base map showing volume of movement between geographic origins and destinations. Line width encodes flow magnitude. The right tool when both place and direction matter — migration, shipping lanes, traffic, money movement. Animated arrows and a basemap toggle give the map both motion and context.",
+      "category": "Geo",
+      "useCases": [
+        "Cross-border shipment volumes",
+        "City-to-city customer migration",
+        "Internet traffic flows between data centers",
+        "Cargo routes for a logistics carrier"
+      ],
+      "examples": [
+        "US state-to-state migration, top 100 flows",
+        "Container ship routes across the Atlantic"
+      ],
+      "tags": [
+        "geo",
+        "flow",
+        "map",
+        "origin-destination",
+        "routes"
+      ]
+    },
+    {
+      "id": "flowpie-viz",
+      "name": "Flow Pie",
+      "description": "Flow Pie — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/flowpie-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/flowpie-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/flowpie-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/flowpie-viz/style.css"
+      },
+      "shortDescription": "Pie slices that fan out into flow — share and downstream destination together.",
+      "longDescription": "A pie chart whose slices extend outward into ribbon flows toward downstream categories. Combines part-to-whole composition with subsequent flow in one figure — perfect when you need 'mix' and 'where it goes' on the same slide. Hover any slice to spotlight only its downstream flows.",
+      "category": "Part-to-Whole",
+      "useCases": [
+        "Traffic source mix flowing into landing pages",
+        "Budget split flowing into project categories",
+        "Lead source mix flowing into sales stages",
+        "Energy generation mix flowing into end uses"
+      ],
+      "examples": [
+        "Traffic mix → top 10 landing pages",
+        "Budget split → 6 project categories"
+      ],
+      "tags": [
+        "pie",
+        "flow",
+        "share",
+        "ribbon",
+        "composition"
+      ]
+    },
+    {
+      "id": "forcenet-viz",
+      "name": "Force-Directed Network",
+      "description": "Force-Directed Network — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/forcenet-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/forcenet-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/forcenet-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/forcenet-viz/style.css"
+      },
+      "shortDescription": "Force-directed networks that settle into structure — clusters become obvious.",
+      "longDescription": "Nodes repel and edges pull, simulating physics until clusters emerge naturally. Tooltips, drag, hover highlighting, and color-by-group. The classic for exploring relationship structure without imposing a layout. Tunable charge, link distance, and cluster coloring for analytical or aesthetic reads.",
+      "category": "Network & Flow",
+      "useCases": [
+        "Co-mention graph from a media corpus",
+        "Org collaboration network",
+        "Knowledge graph of related concepts",
+        "Customer-account relationship graph"
+      ],
+      "examples": [
+        "200-node Slack DM graph clustered by team",
+        "Citation network across 500 papers"
+      ],
+      "tags": [
+        "force-directed",
+        "network",
+        "graph",
+        "cluster",
+        "node-link"
+      ]
+    },
+    {
+      "id": "forest-viz",
+      "name": "Forest Plot",
+      "description": "Forest Plot — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/forest-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/forest-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/forest-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/forest-viz/style.css"
+      },
+      "shortDescription": "Effect sizes with confidence intervals — meta-analysis at a glance.",
+      "longDescription": "Each row shows an effect size point with horizontal CI whiskers, optionally with a vertical null line and a summary diamond. The standard format for systematic reviews, regression coefficient plots, and any 'compare estimates with uncertainty' task. Compact enough for an exec slide, rigorous enough for a peer-reviewed paper.",
+      "category": "Specialty",
+      "useCases": [
+        "Meta-analysis of clinical trials",
+        "Coefficient plot from a regression model",
+        "Subgroup analysis effect sizes",
+        "Comparing odds ratios across studies"
+      ],
+      "examples": [
+        "12-study meta-analysis with summary diamond",
+        "Regression coefficients for 8 features with 95% CIs"
+      ],
+      "tags": [
+        "forest-plot",
+        "meta-analysis",
+        "confidence-interval",
+        "statistics",
+        "effects"
+      ]
+    },
+    {
+      "id": "globe-viz",
+      "name": "Interactive 3D Globe",
+      "description": "SVG-based interactive 3D orthographic globe with real country polygons (Natural Earth 110m), drag-to-rotate, auto-spin animation, zoom, choropleth color scale, atmosphere glow, graticule grid, tooltips, country labels, cross-filtering, and full style customization. 1 country dimension (ISO-3/ISO-2/name/numeric), 1 metric.",
+      "iconUrl": "gs://vizstudio-cid9483029/globe-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/globe-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/globe-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/globe-viz/style.css"
+      },
+      "shortDescription": "A spinnable 3D globe with real country borders and a choropleth scale.",
+      "longDescription": "An SVG-based orthographic globe rendered with Natural Earth 110m country polygons. Drag to rotate, scroll to zoom, auto-spin animation, atmosphere glow, graticule grid, and country tooltips with a sequential color scale. The hero visual for global dashboards.",
+      "category": "Geo",
+      "useCases": [
+        "Global revenue by country on a hero dashboard",
+        "Worldwide signup density on a marketing page",
+        "International product adoption",
+        "Global incident map for a SaaS"
+      ],
+      "examples": [
+        "Country-level MRR with green sequential scale",
+        "Worldwide DAU per country"
+      ],
+      "tags": [
+        "globe",
+        "3d",
+        "geo",
+        "rotate",
+        "choropleth"
+      ]
+    },
+    {
+      "id": "groupedbar-viz",
+      "name": "Grouped Bar Chart",
+      "description": "Grouped Bar Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/groupedbar-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/groupedbar-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/groupedbar-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/groupedbar-viz/style.css"
+      },
+      "shortDescription": "Compare categories within categories — the grouped bar workhorse.",
+      "longDescription": "Bars grouped by a primary category, with multiple sub-bars per group for comparison series. The standard for 'compare A vs B across these 10 things' when the within-group story matters as much as the across-group story. Sort within group, sort across group, or pin a benchmark series for context.",
+      "category": "Comparison",
+      "useCases": [
+        "Revenue by region, split by product line",
+        "Test scores by school, split by grade",
+        "Survey responses by question, split by demographic",
+        "Hires by team, split by quarter"
+      ],
+      "examples": [
+        "Revenue by region × 4 product lines",
+        "Survey: 8 questions × 3 segments"
+      ],
+      "tags": [
+        "grouped-bar",
+        "comparison",
+        "categorical",
+        "multi-series",
+        "bars"
+      ]
+    },
+    {
+      "id": "groupedwf-viz",
+      "name": "Grouped Waterfall",
+      "description": "Grouped Waterfall — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/groupedwf-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/groupedwf-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/groupedwf-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/groupedwf-viz/style.css"
+      },
+      "shortDescription": "Multiple waterfall walks side by side — bridges across business segments.",
+      "longDescription": "A grouped waterfall that runs parallel start-to-finish bridges for multiple segments, regions, or scenarios. Useful when you need 'show me the FY24 walk for each business unit' without sequential slides. A finance favorite for board decks where one walk wouldn't capture the story.",
+      "category": "Finance",
+      "useCases": [
+        "P&L bridge per business segment",
+        "Variance walks across 4 regions",
+        "Budget vs actual walks per department",
+        "Scenario A vs B vs C cost walks"
+      ],
+      "examples": [
+        "FY25 EBITDA walk per business unit",
+        "Plan vs actual variance walk for 5 regions"
+      ],
+      "tags": [
+        "waterfall",
+        "grouped",
+        "bridge",
+        "finance",
+        "segments"
+      ]
+    },
+    {
+      "id": "hexbin-viz",
+      "name": "Hexbin Scatter",
+      "description": "Hexbin Scatter — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/hexbin-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/hexbin-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/hexbin-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/hexbin-viz/style.css"
+      },
+      "shortDescription": "Hexagon bins where scatter goes to die — density without overlap.",
+      "longDescription": "Aggregates dense scatter points into hexagonal bins colored by count, replacing thousands of overlapping dots with a clean tessellation. Hexagons tile space more efficiently than squares — it's why we use them. Configurable hex radius, color scale, and minimum-count threshold included.",
+      "category": "Distribution",
+      "useCases": [
+        "Click density across a UI",
+        "Trade size vs price scatter (50k+ points)",
+        "Sensor reading distribution",
+        "Latency vs throughput scatter for backend"
+      ],
+      "examples": [
+        "Hexbin of 100k clicks on a 1080p screenshot",
+        "Trade volume vs price across 200k orders"
+      ],
+      "tags": [
+        "hexbin",
+        "scatter",
+        "density",
+        "binning",
+        "distribution"
+      ]
+    },
+    {
+      "id": "hexbindensity-viz",
+      "name": "Hexbin Density Plot",
+      "description": "Hexbin Density Plot — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/hexbindensity-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/hexbindensity-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/hexbindensity-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/hexbindensity-viz/style.css"
+      },
+      "shortDescription": "Hexbin tuned for density visualization — gradient fills, contour-quality.",
+      "longDescription": "A hexbin variant emphasizing a smooth color gradient across cell counts, producing contour-like density surfaces from raw point data. When you need a dense scatter to read like a topographic map, this is the chart. Tweak bandwidth and palette to match the analytical intent.",
+      "category": "Distribution",
+      "useCases": [
+        "Heatmap-quality density of GPS pings",
+        "Customer cluster density in a feature space",
+        "Sensor saturation patterns",
+        "Trade clustering across price-volume space"
+      ],
+      "examples": [
+        "Geographic density of 1M check-ins",
+        "Feature-space cluster map for 50k users"
+      ],
+      "tags": [
+        "hexbin",
+        "density",
+        "gradient",
+        "distribution",
+        "heatmap"
+      ]
+    },
+    {
+      "id": "horizonchart-viz",
+      "name": "Horizon Chart",
+      "description": "Horizon Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/horizonchart-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/horizonchart-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/horizonchart-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/horizonchart-viz/style.css"
+      },
+      "shortDescription": "Tiny multi-band time series that pack 50 series into the space of 5.",
+      "longDescription": "A horizon chart layers a time series in color bands, folding negative values onto positive and stacking ranges by intensity. Compresses many series into a small canvas — the only way to compare 30+ time series simultaneously. A power-user chart — train your audience once, then deploy everywhere.",
+      "category": "Time Series",
+      "useCases": [
+        "Server CPU across 50 machines",
+        "Stock returns across a 100-name portfolio",
+        "Conversion rate across 30 marketing channels",
+        "Latency across 60 microservices"
+      ],
+      "examples": [
+        "50 servers' CPU utilization, 24h",
+        "Daily returns of 100 stocks across a year"
+      ],
+      "tags": [
+        "horizon",
+        "time-series",
+        "compressed",
+        "multi-series",
+        "dense"
+      ]
+    },
+    {
+      "id": "horizstacked-viz",
+      "name": "Horizontal Stacked Bar",
+      "description": "Horizontal Stacked Bar — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/horizstacked-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/horizstacked-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/horizstacked-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/horizstacked-viz/style.css"
+      },
+      "shortDescription": "Horizontal stacked bars — composition across categories with breathing room.",
+      "longDescription": "Horizontal bars where each bar's segments stack to show composition. Reads better than vertical stacks when category labels are long. Ideal for survey responses, channel mix, and any composition-by-category story. Sort by total or by a single segment to put the right entity at the top.",
+      "category": "Part-to-Whole",
+      "useCases": [
+        "Survey response composition per question",
+        "Channel mix per region",
+        "Budget breakdown per department",
+        "Status counts per project"
+      ],
+      "examples": [
+        "NPS breakdown (promoter/passive/detractor) by 8 segments",
+        "Project status mix across 12 teams"
+      ],
+      "tags": [
+        "stacked-bar",
+        "horizontal",
+        "composition",
+        "categorical",
+        "mix"
+      ]
+    },
+    {
+      "id": "interactiveGlobe-viz",
+      "name": "Interactive Globe (3D Choropleth)",
+      "description": "Interactive 3D orthographic globe with country-level metric choropleth, drag-to-rotate, auto-spin, zoom, tooltip, and sequential colour scale. 1 country dimension, 1 metric.",
+      "iconUrl": "gs://vizstudio-cid9483029/interactiveGlobe-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/interactiveGlobe-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/interactiveGlobe-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/interactiveGlobe-viz/style.css"
+      },
+      "shortDescription": "An interactive 3D globe with country choropleth — drag, spin, hover, drill.",
+      "longDescription": "Orthographic 3D globe with country-level metric coloring, drag-to-rotate, auto-spin, scroll zoom, tooltip, and a sequential color scale. Takes 1 country dimension and 1 metric — drop it on a dashboard and watch stakeholders linger. Lazy-loads geometry for fast first paint on global pages.",
+      "category": "Geo",
+      "useCases": [
+        "Hero visual on a global SaaS dashboard",
+        "Worldwide ARPU map for a board deck",
+        "Global content reach map",
+        "International adoption tracker"
+      ],
+      "examples": [
+        "Country MRR with sequential blue scale",
+        "Worldwide downloads in the last 30 days"
+      ],
+      "tags": [
+        "globe",
+        "3d",
+        "interactive",
+        "choropleth",
+        "geo"
+      ]
+    },
+    {
+      "id": "journeysankey-viz",
+      "name": "Customer Journey Sankey",
+      "description": "Customer Journey Sankey — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/journeysankey-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/journeysankey-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/journeysankey-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/journeysankey-viz/style.css"
+      },
+      "shortDescription": "The customer journey as a Sankey — every path, every drop-off, every conversion.",
+      "longDescription": "A Sankey wired for the customer journey: nodes for stages, ribbons for transitions, width proportional to user count. Reveals primary flows, dead ends, and unexpected paths in product or marketing funnels. Hover a ribbon to isolate the sub-flow it belongs to.",
+      "category": "Marketing & Funnels",
+      "useCases": [
+        "Multi-step product onboarding",
+        "Marketing attribution path analysis",
+        "Cart-to-purchase journey with branch detection",
+        "Support ticket resolution paths"
+      ],
+      "examples": [
+        "Onboarding: signup → activate → invite → retain",
+        "Attribution path: ad → site → cart → purchase"
+      ],
+      "tags": [
+        "sankey",
+        "journey",
+        "funnel",
+        "flow",
+        "attribution"
+      ]
+    },
+    {
+      "id": "kpisparkline-viz",
+      "name": "KPI Sparkline Cards",
+      "description": "KPI Sparkline Cards — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/kpisparkline-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/kpisparkline-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/kpisparkline-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/kpisparkline-viz/style.css"
+      },
+      "shortDescription": "KPI cards with inline sparklines — the number, the trend, nothing else.",
+      "longDescription": "A row of compact cards: each one shows a metric, its current value, period delta, and an inline sparkline for trend. The right answer when stakeholders ask 'just show me the numbers and where they're heading.' Color-coded delta arrows make 'up' and 'down' impossible to misread.",
+      "category": "KPI",
+      "useCases": [
+        "Top-of-dashboard KPI strip on an exec view",
+        "Weekly metric review across 6 KPIs",
+        "Mobile-first KPI summary",
+        "Investor update header"
+      ],
+      "examples": [
+        "6-card strip: Revenue, MRR, Churn, NPS, CAC, LTV",
+        "4 KPIs with 30-day sparklines"
+      ],
+      "tags": [
+        "kpi",
+        "sparkline",
+        "card",
+        "metric",
+        "summary"
+      ]
+    },
+    {
+      "id": "lagplot-viz",
+      "name": "Lag Plot",
+      "description": "Lag Plot — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/lagplot-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/lagplot-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/lagplot-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/lagplot-viz/style.css"
+      },
+      "shortDescription": "Plot a series against itself one step back — autocorrelation, made obvious.",
+      "longDescription": "Each point pairs a value with its previous value (or value at lag k), exposing autocorrelation, randomness, and seasonality. A lab tool for data scientists checking whether a series has memory before they model it. Toggle the lag value to scan for the period your series remembers.",
+      "category": "Specialty",
+      "useCases": [
+        "Check autocorrelation in daily stock returns",
+        "Validate randomness assumption before modeling",
+        "Detect seasonal lag in sales data",
+        "Diagnose model residuals"
+      ],
+      "examples": [
+        "Daily returns vs lag-1 returns over 5 years",
+        "Hourly demand vs lag-24 demand"
+      ],
+      "tags": [
+        "lag-plot",
+        "autocorrelation",
+        "statistics",
+        "diagnostic",
+        "time-series"
+      ]
+    },
+    {
+      "id": "lollipopchart",
+      "name": "Lollipop Chart",
+      "description": "Lollipop Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/lollipopchart/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/lollipopchart/script.js",
+        "config": "gs://vizstudio-cid9483029/lollipopchart/config.json",
+        "css": "gs://vizstudio-cid9483029/lollipopchart/style.css"
+      },
+      "shortDescription": "Bar charts on a diet — a stick and a dot say the same thing with less ink.",
+      "longDescription": "Replaces heavy bars with a thin line and a colored dot at the value. Cleaner than a bar chart for ranking 30+ categories, and the dot draws the eye to the precise value. Tufte-approved minimalism that pairs beautifully with sparse layouts and editorial reports.",
+      "category": "Comparison",
+      "useCases": [
+        "Ranking top 30 cities by metric",
+        "Department headcount comparison",
+        "Survey rating per question",
+        "Top contributors by commits"
+      ],
+      "examples": [
+        "Top 25 customers by ARR",
+        "Stack Overflow tags by question count"
+      ],
+      "tags": [
+        "lollipop",
+        "ranking",
+        "comparison",
+        "minimal",
+        "categorical"
+      ]
+    },
+    {
+      "id": "ltvcohort-viz",
+      "name": "LTV Cohort Curves",
+      "description": "LTV Cohort Curves — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/ltvcohort-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/ltvcohort-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/ltvcohort-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/ltvcohort-viz/style.css"
+      },
+      "shortDescription": "Cumulative LTV curves per cohort — payback periods made obvious.",
+      "longDescription": "Plots cumulative customer LTV against months-since-acquisition, one line per cohort. Reveals whether newer cohorts are paying back faster or slower, and exposes payback period crossover points. Standard issue for SaaS finance teams. Overlay a benchmark or peer cohort to ground the story in context.",
+      "category": "Finance",
+      "useCases": [
+        "Cohort payback comparison after pricing change",
+        "LTV trajectory across 12 monthly cohorts",
+        "Investor LTV/CAC justification",
+        "Diagnose retention quality across cohorts"
+      ],
+      "examples": [
+        "Cumulative LTV by signup month, 24-month window",
+        "Q1 vs Q2 vs Q3 cohort payback curves"
+      ],
+      "tags": [
+        "ltv",
+        "cohort",
+        "saas",
+        "finance",
+        "retention"
+      ]
+    },
+    {
+      "id": "matrixchart-viz",
+      "name": "Adjacency Matrix",
+      "description": "Adjacency Matrix — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/matrixchart-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/matrixchart-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/matrixchart-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/matrixchart-viz/style.css"
+      },
+      "shortDescription": "A network adjacency matrix — every node-pair edge in a clean grid.",
+      "longDescription": "Each row and column is a node; each cell colors by edge presence or weight. Great for dense networks where node-link spaghetti fails, and the diagonal/block structure tells you something about clusters. Reorder rows and columns by clustering algorithm to surface community structure.",
+      "category": "Network & Flow",
+      "useCases": [
+        "Communication frequency across teams",
+        "Co-occurrence of features in usage logs",
+        "Concept-to-concept similarity matrix",
+        "Country trade adjacency"
+      ],
+      "examples": [
+        "20 teams × 20 teams Slack mention matrix",
+        "Top 50 stocks correlation matrix"
+      ],
+      "tags": [
+        "matrix",
+        "adjacency",
+        "network",
+        "grid",
+        "graph"
+      ]
+    },
+    {
+      "id": "mirrorbar-viz",
+      "name": "Mirror Bar Chart",
+      "description": "Mirror Bar Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/mirrorbar-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/mirrorbar-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/mirrorbar-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/mirrorbar-viz/style.css"
+      },
+      "shortDescription": "Two opposing bar series — population pyramids, gain/loss, head-to-head.",
+      "longDescription": "Bars stretching left and right from a center axis, perfect for population pyramids, balance comparisons, and gain-vs-loss views. Lets two series share a single category axis without compromising readability. Optional center labels and dual-axis scaling for asymmetric distributions.",
+      "category": "Comparison",
+      "useCases": [
+        "Population pyramid by age group",
+        "Wins vs losses by team",
+        "Inflows vs outflows by category",
+        "Survey agree vs disagree by question"
+      ],
+      "examples": [
+        "Age × gender population pyramid",
+        "Customer wins vs churn by quarter"
+      ],
+      "tags": [
+        "mirror",
+        "pyramid",
+        "bidirectional",
+        "comparison",
+        "back-to-back"
+      ]
+    },
+    {
+      "id": "montecarlo-viz",
+      "name": "Monte Carlo Bands",
+      "description": "Monte Carlo Bands — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/montecarlo-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/montecarlo-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/montecarlo-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/montecarlo-viz/style.css"
+      },
+      "shortDescription": "Forecast uncertainty as shaded probability bands — the future, with error bars.",
+      "longDescription": "Renders Monte Carlo simulation outputs as bands of probability density (P10, P50, P90), with optional individual sample paths. Built for forecasting where 'how confident are we?' matters as much as the median estimate. Run thousands of simulations in your warehouse, render the bands here.",
+      "category": "Specialty",
+      "useCases": [
+        "Revenue forecast with uncertainty bands",
+        "Project completion date probability cone",
+        "Portfolio return distribution",
+        "Demand planning under variability"
+      ],
+      "examples": [
+        "12-month revenue forecast: P10/P50/P90 bands",
+        "Project end date probability cone"
+      ],
+      "tags": [
+        "monte-carlo",
+        "uncertainty",
+        "forecast",
+        "simulation",
+        "probability"
+      ]
+    },
+    {
+      "id": "mosaicplus-viz",
+      "name": "Mosaic+ Chart",
+      "description": "Mosaic+ Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/mosaicplus-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/mosaicplus-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/mosaicplus-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/mosaicplus-viz/style.css"
+      },
+      "shortDescription": "Mosaic plot with extras — categorical relationships sized by frequency.",
+      "longDescription": "Tiles sized by joint frequency across two or three categorical variables, with optional residual coloring to highlight surprising over- or under-representation. The chart of choice for contingency table storytelling. Residual coloring (red for over-, blue for under-represented) is the magic ingredient.",
+      "category": "Distribution",
+      "useCases": [
+        "Customer segment × plan tier breakdown",
+        "Survey: gender × age × response",
+        "Region × product × order status",
+        "Browser × OS × conversion outcome"
+      ],
+      "examples": [
+        "Customer segment × plan tier × churn flag",
+        "Survey: 4 demographics × 5 responses"
+      ],
+      "tags": [
+        "mosaic",
+        "categorical",
+        "frequency",
+        "contingency",
+        "marimekko"
+      ]
+    },
+    {
+      "id": "multifunnel-viz",
+      "name": "Multi-Step Funnel",
+      "description": "Multi-Step Funnel — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/multifunnel-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/multifunnel-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/multifunnel-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/multifunnel-viz/style.css"
+      },
+      "shortDescription": "Compare funnels side by side — segment-level conversion, in one chart.",
+      "longDescription": "Stack multiple conversion funnels next to each other so you can compare drop-off rates between segments at every stage. Beats one-funnel-per-slide when the question is 'where does Segment A leak harder than Segment B?' Synchronized stage labels make the like-for-like reads bulletproof.",
+      "category": "Marketing & Funnels",
+      "useCases": [
+        "Mobile vs desktop checkout funnel",
+        "Funnel comparison across 4 acquisition channels",
+        "B2B vs B2C onboarding conversion",
+        "Free vs paid trial conversion comparison"
+      ],
+      "examples": [
+        "Mobile vs desktop checkout, 5 stages",
+        "Channel funnel: paid social, search, organic, email"
+      ],
+      "tags": [
+        "funnel",
+        "multi",
+        "conversion",
+        "comparison",
+        "marketing"
+      ]
+    },
+    {
+      "id": "multiring-viz",
+      "name": "Multi-ring Donut",
+      "description": "Multi-ring Donut — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/multiring-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/multiring-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/multiring-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/multiring-viz/style.css"
+      },
+      "shortDescription": "Concentric donuts that nest categories — hierarchy meets composition.",
+      "longDescription": "Multiple concentric donut rings, each one representing a level of hierarchy or a different segmentation. Reads like a sunburst pulled apart. Cleanest way to display 2-3 hierarchical breakdowns of the same total. Hover any ring segment to highlight only its slice across the other rings.",
+      "category": "Part-to-Whole",
+      "useCases": [
+        "Revenue by region (outer) by product (middle) by tier (inner)",
+        "Customer count by plan and segment",
+        "Time spent across categories at multiple granularities",
+        "Population by continent and region"
+      ],
+      "examples": [
+        "Revenue: 4 regions × 3 products × 2 tiers",
+        "Customers: 3 plans × 4 segments"
+      ],
+      "tags": [
+        "donut",
+        "ring",
+        "concentric",
+        "hierarchy",
+        "composition"
+      ]
+    },
+    {
+      "id": "multitouch-viz",
+      "name": "Multi-Touch Attribution",
+      "description": "Multi-Touch Attribution — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/multitouch-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/multitouch-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/multitouch-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/multitouch-viz/style.css"
+      },
+      "shortDescription": "Multi-touch attribution — give every channel its proper credit.",
+      "longDescription": "Shows credited conversions per channel across touch positions (first, mid, last) using attribution models — linear, time-decay, position-based. Replaces last-click-only views and gives marketing leadership the full picture. A line item every CMO will want to defend and every CFO will want to scrutinize.",
+      "category": "Marketing & Funnels",
+      "useCases": [
+        "Compare last-click vs linear attribution",
+        "Channel credit shift after a model change",
+        "Campaign credit across an awareness-to-conversion path",
+        "Justify upper-funnel spend with proper attribution"
+      ],
+      "examples": [
+        "6 channels × 3 attribution models",
+        "Pre/post-attribution credit shift"
+      ],
+      "tags": [
+        "attribution",
+        "multi-touch",
+        "marketing",
+        "channels",
+        "credit"
+      ]
+    },
+    {
+      "id": "nightingale-viz",
+      "name": "Nightingale Rose",
+      "description": "Nightingale Rose — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/nightingale-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/nightingale-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/nightingale-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/nightingale-viz/style.css"
+      },
+      "shortDescription": "Florence Nightingale's polar bars — distinctive, dramatic, century-old.",
+      "longDescription": "Wedges fanning around a center, with radius proportional to value. Originally a war statistic, now a striking choice for cyclical data, brand-forward charts, and any time you want a chart that doesn't look like everyone else's. Configurable inner radius, label placement, and palette keep it editorially clean.",
+      "category": "Part-to-Whole",
+      "useCases": [
+        "Monthly revenue across 12 months as a circular year",
+        "Cause-of-incident breakdown for a brand-forward report",
+        "Survey response distribution with editorial polish",
+        "Annual report hero chart"
+      ],
+      "examples": [
+        "12-month revenue rose chart",
+        "Cause-of-death historical recreation"
+      ],
+      "tags": [
+        "polar",
+        "rose",
+        "nightingale",
+        "circular",
+        "editorial"
+      ]
+    },
+    {
+      "id": "npsgauge-viz",
+      "name": "NPS Gauge",
+      "description": "NPS Gauge — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/npsgauge-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/npsgauge-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/npsgauge-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/npsgauge-viz/style.css"
+      },
+      "shortDescription": "NPS as a single gauge — promoters, passives, detractors at a glance.",
+      "longDescription": "A semicircular gauge calibrated to the -100 to +100 NPS range with promoter/passive/detractor zones color-coded. Built for the executive question 'what's our NPS right now?' without making them parse a 0-100 scale. Configurable zone thresholds and a clean center-value typography.",
+      "category": "KPI",
+      "useCases": [
+        "Top-of-dashboard NPS for executives",
+        "Quarterly NPS trend with current snapshot",
+        "Customer success scorecard",
+        "Product feedback loop status"
+      ],
+      "examples": [
+        "Current NPS: 42, in 'good' zone",
+        "Quarterly NPS gauge with delta from last quarter"
+      ],
+      "tags": [
+        "nps",
+        "gauge",
+        "kpi",
+        "customer-feedback",
+        "score"
+      ]
+    },
+    {
+      "id": "oppositediagram",
+      "name": "Opposite Diagram",
+      "description": "Opposite Diagram — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/oppositediagram/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/oppositediagram/script.js",
+        "config": "gs://vizstudio-cid9483029/oppositediagram/config.json",
+        "css": "gs://vizstudio-cid9483029/oppositediagram/style.css"
+      },
+      "shortDescription": "Two-sided diverging diagram — pros vs cons, gains vs losses.",
+      "longDescription": "A two-direction diagram with categories radiating left vs right from a central axis. Built for value-versus-cost narratives, opposing forces, balance sheets, and trade-off visualizations where one chart needs to argue both sides simultaneously. Pairs naturally with decision documents and strategy reviews.",
+      "category": "Comparison",
+      "useCases": [
+        "Pros vs cons of strategic options",
+        "Gains vs losses per business segment",
+        "Strengths vs weaknesses across competitors",
+        "Survey: agree vs disagree with neutral spine"
+      ],
+      "examples": [
+        "Strategic option A: gains and risks side by side",
+        "Survey: 8 statements rated agree/disagree"
+      ],
+      "tags": [
+        "diverging",
+        "opposite",
+        "balance",
+        "comparison",
+        "two-sided"
+      ]
+    },
+    {
+      "id": "orderedbar-viz",
+      "name": "Ordered Bar Chart",
+      "description": "Ordered Bar Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/orderedbar-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/orderedbar-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/orderedbar-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/orderedbar-viz/style.css"
+      },
+      "shortDescription": "A bar chart sorted by value — the rank of every category, decided.",
+      "longDescription": "Pre-sorted bars that put the leader at the top and the laggard at the bottom (or vice versa). Sorting is the simplest visual upgrade you can make to any bar chart, and this one bakes it in. Pair with cross-filtering to drill into the leaders and the long tail.",
+      "category": "Comparison",
+      "useCases": [
+        "Top customers by ARR, sorted descending",
+        "Bug count by component",
+        "Salaries by role, sorted ascending",
+        "Test pass rate by suite, descending"
+      ],
+      "examples": [
+        "Top 25 SKUs by units sold",
+        "Survey: 12 questions ordered by score"
+      ],
+      "tags": [
+        "bar",
+        "ranking",
+        "sorted",
+        "comparison",
+        "ordered"
+      ]
+    },
+    {
+      "id": "orgchart-viz",
+      "name": "Org Chart",
+      "description": "Org Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/orgchart-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/orgchart-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/orgchart-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/orgchart-viz/style.css"
+      },
+      "shortDescription": "An org tree that lays itself out — hierarchies without manual nudging.",
+      "longDescription": "Auto-laid hierarchical tree with collapsible branches, photos or initials per node, and reporting-line connectors. The fastest way to visualize an org from a flat manager-employee table — drop the data in, and the layout sorts itself out. Click to expand or collapse any branch on demand.",
+      "category": "Project & Ops",
+      "useCases": [
+        "Company-wide org chart from HR data",
+        "Team structure for an onboarding deck",
+        "Reporting line audit before reorg",
+        "Project workstream hierarchy"
+      ],
+      "examples": [
+        "120-person engineering org with 4 levels",
+        "Workstream hierarchy across 6 squads"
+      ],
+      "tags": [
+        "org-chart",
+        "hierarchy",
+        "tree",
+        "reporting",
+        "structure"
+      ]
+    },
+    {
+      "id": "parallelcoords-viz",
+      "name": "Parallel Coordinates Plot",
+      "description": "Parallel Coordinates Plot — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/parallelcoords-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/parallelcoords-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/parallelcoords-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/parallelcoords-viz/style.css"
+      },
+      "shortDescription": "Many metrics, many records, parallel axes — patterns the eye can't miss.",
+      "longDescription": "Each record draws a polyline across parallel vertical axes (one per metric), making correlations, clusters, and outliers visually obvious. Brushing along an axis filters cross-axis instantly. The power user's multivariate explorer. Reorder axes by drag to test which arrangement makes the cluster pop.",
+      "category": "Distribution",
+      "useCases": [
+        "Compare 50 cars across 7 specs",
+        "Filter customers by combinations of metric ranges",
+        "Spot outlier servers across 8 health metrics",
+        "Analyze student performance across subjects"
+      ],
+      "examples": [
+        "Cars: MPG, HP, weight, 0-60, price across 50 models",
+        "Customers: 6 metrics × 1000 accounts"
+      ],
+      "tags": [
+        "parallel-coordinates",
+        "multivariate",
+        "filter",
+        "exploration",
+        "high-dimensional"
+      ]
+    },
+    {
+      "id": "parallelsets-viz",
+      "name": "Parallel Sets",
+      "description": "Parallel Sets — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/parallelsets-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/parallelsets-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/parallelsets-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/parallelsets-viz/style.css"
+      },
+      "shortDescription": "Categorical parallel coords — flow ribbons across multiple dimensions.",
+      "longDescription": "Parallel axes for categorical variables, with ribbons connecting category combinations sized by joint frequency. Reveals dominant combinations and rare ones across 3-5 dimensions of categorical data — the chart for 'who falls into which buckets together'.",
+      "category": "Network & Flow",
+      "useCases": [
+        "Survey: gender × age × education × response",
+        "Customer: region × plan × tenure × churn",
+        "Titanic-style class × gender × age × survival",
+        "Funnel paths across 4 dimensions"
+      ],
+      "examples": [
+        "Survey: 4 demographic axes × response",
+        "Titanic dataset across class, gender, age, survival"
+      ],
+      "tags": [
+        "parallel-sets",
+        "categorical",
+        "flow",
+        "ribbon",
+        "multivariate"
+      ]
+    },
+    {
+      "id": "pareto-viz",
+      "name": "Pareto Chart",
+      "description": "Pareto Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/pareto-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/pareto-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/pareto-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/pareto-viz/style.css"
+      },
+      "shortDescription": "The 80/20 made visible — bars and a cumulative line, working together.",
+      "longDescription": "Sorted bars descending with a cumulative percentage line. The classic for finding the vital few categories that drive the bulk of any metric — defects, revenue, complaints, anything where Pareto's law applies. The 80% line lands automatically and shifts as the data updates.",
+      "category": "Distribution",
+      "useCases": [
+        "Top defect causes driving 80% of failures",
+        "Top customers driving 80% of revenue",
+        "Top features driving 80% of usage",
+        "Top SKUs driving 80% of inventory cost"
+      ],
+      "examples": [
+        "Customer support tickets by category, sorted with cumulative %",
+        "Defect causes in a manufacturing line"
+      ],
+      "tags": [
+        "pareto",
+        "80-20",
+        "cumulative",
+        "ranking",
+        "quality"
+      ]
+    },
+    {
+      "id": "piebarcode-viz",
+      "name": "Pie + Barcode Chart",
+      "description": "Pie + Barcode Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/piebarcode-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/piebarcode-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/piebarcode-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/piebarcode-viz/style.css"
+      },
+      "shortDescription": "A pie meets a barcode — share plus a stripe-density signal.",
+      "longDescription": "Pairs a standard pie with a barcode-style strip below, where each stripe encodes another dimension (e.g., volatility, count, recency). Gives you composition AND a secondary signal in the same compact widget. Click any pie slice to spotlight its corresponding stripe.",
+      "category": "Specialty",
+      "useCases": [
+        "Portfolio mix with volatility barcode",
+        "Channel mix with conversion stripe",
+        "Inventory mix with stockout flag",
+        "Audience mix with engagement strip"
+      ],
+      "examples": [
+        "Portfolio: 8 holdings as pie + volatility barcode",
+        "Channel mix + conversion rate stripes"
+      ],
+      "tags": [
+        "pie",
+        "barcode",
+        "composition",
+        "signal",
+        "specialty"
+      ]
+    },
+    {
+      "id": "portfoliobarcode-viz",
+      "name": "Portfolio Barcode",
+      "description": "Portfolio Barcode — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/portfoliobarcode-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/portfoliobarcode-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/portfoliobarcode-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/portfoliobarcode-viz/style.css"
+      },
+      "shortDescription": "A barcode strip for portfolios — every holding a stripe, every signal at once.",
+      "longDescription": "Each portfolio holding becomes a thin colored stripe, with hue or width encoding return, weight, or volatility. Ridiculously dense — fits 50+ holdings in a thumbnail. Built for trading desks and concentration-risk views. Hover any stripe to lift the holding's name, weight, and signal value.",
+      "category": "Finance",
+      "useCases": [
+        "50-name equity portfolio at a glance",
+        "Daily holdings dashboard",
+        "Concentration risk monitor",
+        "Portfolio-wide volatility view"
+      ],
+      "examples": [
+        "Equity portfolio of 60 holdings, stripe by daily return",
+        "Bond ladder by duration"
+      ],
+      "tags": [
+        "portfolio",
+        "barcode",
+        "finance",
+        "compact",
+        "holdings"
+      ]
+    },
+    {
+      "id": "portfoliopiebarcode-viz",
+      "name": "Portfolio Pie Barcode",
+      "description": "Portfolio Pie Barcode — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/portfoliopiebarcode-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/portfoliopiebarcode-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/portfoliopiebarcode-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/portfoliopiebarcode-viz/style.css"
+      },
+      "shortDescription": "Pie composition plus barcode signals — the full portfolio fingerprint.",
+      "longDescription": "Combines a portfolio pie chart (allocation by holding or sector) with a barcode strip below for a secondary signal — daily return, volatility, or weighted contribution. One widget, two answers, perfect for monitor-wall trading dashboards. Hover any pie slice to spotlight its barcode signal alongside.",
+      "category": "Finance",
+      "useCases": [
+        "Allocation pie + daily return barcode",
+        "Sector mix + volatility strip",
+        "Top 20 holdings with daily P&L stripe",
+        "Asset class mix + correlation barcode"
+      ],
+      "examples": [
+        "Equity portfolio: pie of 12 sectors + daily return strip",
+        "Top 20 holdings: weight pie + volatility strip"
+      ],
+      "tags": [
+        "portfolio",
+        "pie",
+        "barcode",
+        "finance",
+        "composite"
+      ]
+    },
+    {
+      "id": "portfoliotable-viz",
+      "name": "Portfolio Table + KPI Expand",
+      "description": "Portfolio Table + KPI Expand — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/portfoliotable-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/portfoliotable-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/portfoliotable-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/portfoliotable-viz/style.css"
+      },
+      "shortDescription": "Portfolio table with KPI expand — drill from row to detail without leaving.",
+      "longDescription": "A dense holdings table with click-to-expand rows that reveal KPIs and mini-charts per holding. The right answer when the dashboard needs to be both summary and detail without two separate pages — a single, layered view that scales. Cross-filter from any row to drive the rest of the dashboard.",
+      "category": "Finance",
+      "useCases": [
+        "Equity book with per-holding KPIs",
+        "Account list with click-through detail",
+        "Vendor spend table with drill-down",
+        "Customer book with expandable summary"
+      ],
+      "examples": [
+        "50-holding portfolio with expandable charts",
+        "Top 100 customers with per-row KPIs"
+      ],
+      "tags": [
+        "portfolio",
+        "table",
+        "expand",
+        "drill-down",
+        "finance"
+      ]
+    },
+    {
+      "id": "progressbar-viz",
+      "name": "Progress Bar Chart",
+      "description": "Progress Bar Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/progressbar-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/progressbar-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/progressbar-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/progressbar-viz/style.css"
+      },
+      "shortDescription": "Progress bars that earn their pixel — goals, percentages, and what's left.",
+      "longDescription": "Horizontal progress bars with target markers, value labels, and remaining-percent annotations. Stack them for multi-goal tracking, or use one for a single hero KPI. Simple, instantly understood, and impossible to misread under presentation pressure. Stage labels and conditional coloring respond to thresholds you set.",
+      "category": "KPI",
+      "useCases": [
+        "Quarterly goal attainment for 8 sales reps",
+        "Project completion percentages by phase",
+        "Fundraising progress per region",
+        "Subscriber milestone tracker"
+      ],
+      "examples": [
+        "8 reps' Q4 quota progress",
+        "5 OKR completions for the quarter"
+      ],
+      "tags": [
+        "progress",
+        "bar",
+        "goal",
+        "kpi",
+        "completion"
+      ]
+    },
+    {
+      "id": "progresscircles-viz",
+      "name": "Progress Circles",
+      "description": "Progress Circles — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/progresscircles-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/progresscircles-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/progresscircles-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/progresscircles-viz/style.css"
+      },
+      "shortDescription": "Circular progress indicators — KPI cards that feel kinetic.",
+      "longDescription": "A row of circular progress rings, each with a value and percent-of-goal label. Friendlier than bars for landing pages and exec summaries where the dashboard doubles as a marketing artifact and brand expression matters. Each ring animates on entrance and recalculates live as data changes.",
+      "category": "KPI",
+      "useCases": [
+        "Marketing site stats with animated rings",
+        "Top-of-dashboard KPI summary",
+        "OKR completion roll-up",
+        "Product launch readiness check"
+      ],
+      "examples": [
+        "4 KPI rings: signups, conversion, NPS, retention",
+        "5 OKR rings for the company"
+      ],
+      "tags": [
+        "progress",
+        "circle",
+        "ring",
+        "kpi",
+        "summary"
+      ]
+    },
+    {
+      "id": "progressring-viz",
+      "name": "Progress Ring",
+      "description": "Progress Ring — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/progressring-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/progressring-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/progressring-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/progressring-viz/style.css"
+      },
+      "shortDescription": "A single progress ring — one number, one goal, total focus.",
+      "longDescription": "A single circular progress indicator built for one hero KPI. Center value, ring fill proportional to goal, optional sub-label. The right pick when the slide should answer one question and only one question. Drop in below your hero number for a wall-display KPI that doesn't need explanation.",
+      "category": "KPI",
+      "useCases": [
+        "Hero KPI on the homepage",
+        "Single OKR ring on the wall display",
+        "Fundraising goal tracker",
+        "Subscriber milestone hero"
+      ],
+      "examples": [
+        "Annual revenue goal: 78% complete",
+        "Subscriber goal: 12,400 of 15,000"
+      ],
+      "tags": [
+        "progress",
+        "ring",
+        "single",
+        "kpi",
+        "hero"
+      ]
+    },
+    {
+      "id": "pyramidarea-viz",
+      "name": "General",
+      "description": "General — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/pyramidarea-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/pyramidarea-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/pyramidarea-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/pyramidarea-viz/style.css"
+      },
+      "shortDescription": "An area-pyramid chart — funnels and hierarchies in a tapered silhouette.",
+      "longDescription": "A pyramid-shaped area chart where width at each level encodes magnitude. Use it for marketing funnels with strong drop-off, hierarchical levels, or any narrative where the 'narrowing' visual reinforces the data story. Stage labels and conversion percentages baked in.",
+      "category": "Marketing & Funnels",
+      "useCases": [
+        "Awareness → consideration → purchase funnel",
+        "Hierarchical headcount pyramid",
+        "Maslow-style needs visualization",
+        "Customer lifecycle pyramid"
+      ],
+      "examples": [
+        "5-stage marketing funnel pyramid",
+        "4-level customer maturity pyramid"
+      ],
+      "tags": [
+        "pyramid",
+        "funnel",
+        "hierarchy",
+        "area",
+        "narrowing"
+      ]
+    },
+    {
+      "id": "qq-viz",
+      "name": "Q-Q Plot",
+      "description": "Q-Q Plot — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/qq-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/qq-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/qq-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/qq-viz/style.css"
+      },
+      "shortDescription": "Quantile-quantile plot — does your data follow the distribution you assume?",
+      "longDescription": "Plots theoretical quantiles vs sample quantiles to test distributional assumptions. Points hug the diagonal if the assumption holds. The first chart any data scientist reaches for when 'is this normal?' matters. Configurable theoretical distribution (normal, log-normal, exponential, custom).",
+      "category": "Specialty",
+      "useCases": [
+        "Test normality of regression residuals",
+        "Check log-normal fit for revenue distribution",
+        "Compare two empirical distributions",
+        "Validate model assumptions before publishing"
+      ],
+      "examples": [
+        "Residuals vs normal distribution Q-Q",
+        "Sample vs log-normal Q-Q"
+      ],
+      "tags": [
+        "qq-plot",
+        "quantile",
+        "statistics",
+        "diagnostic",
+        "distribution"
+      ]
+    },
+    {
+      "id": "quadrant-viz",
+      "name": "Quadrant Scatter",
+      "description": "Quadrant Scatter — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/quadrant-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/quadrant-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/quadrant-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/quadrant-viz/style.css"
+      },
+      "shortDescription": "Four quadrants, two metrics, every entity placed — strategy at a glance.",
+      "longDescription": "A scatter divided into four quadrants by reference lines on each axis (means, medians, or thresholds). Each quadrant gets a label — 'Stars', 'Question Marks', 'Cash Cows', 'Dogs'. The strategic 2x2 framework, in chart form. Configurable axis thresholds and quadrant labels keep the framework yours.",
+      "category": "Specialty",
+      "useCases": [
+        "Customer scoring: value vs effort",
+        "Product portfolio matrix (BCG-style)",
+        "Lead scoring: fit vs intent",
+        "Market analysis: growth vs share"
+      ],
+      "examples": [
+        "Top 50 accounts: ARR vs growth",
+        "Product portfolio: market growth vs market share"
+      ],
+      "tags": [
+        "quadrant",
+        "2x2",
+        "matrix",
+        "scatter",
+        "strategy"
+      ]
+    },
+    {
+      "id": "radartable-viz",
+      "name": "Radar Chart with Data Table",
+      "description": "Radar Chart with Data Table — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/radartable-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/radartable-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/radartable-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/radartable-viz/style.css"
+      },
+      "shortDescription": "Radar chart paired with a data table — visual and exact, side by side.",
+      "longDescription": "Combines a radar/spider chart with a synced data table beside it, so the audience gets the shape AND the precise numbers. Resolves the classic objection 'but I can't read the values off a radar chart.' Highlight a row in the table to spotlight its polygon on the radar.",
+      "category": "Comparison",
+      "useCases": [
+        "Vendor evaluation across 6 criteria with table",
+        "Athlete performance profile with stats",
+        "Product feature comparison with checklist values",
+        "Skills assessment with score table"
+      ],
+      "examples": [
+        "3 vendors × 6 criteria with adjacent table",
+        "Player stats: 5 metrics with table"
+      ],
+      "tags": [
+        "radar",
+        "table",
+        "comparison",
+        "profile",
+        "scorecard"
+      ]
+    },
+    {
+      "id": "radialbar-animated-viz",
+      "name": "Animated Radial Bar Chart",
+      "description": "Animated Radial Bar Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/radialbar-animated-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/radialbar-animated-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/radialbar-animated-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/radialbar-animated-viz/style.css"
+      },
+      "shortDescription": "Animated radial bars — circular ranking with motion-design polish.",
+      "longDescription": "Bar lengths arranged radially with smooth growth animation on load. Striking on dashboards and marketing pages where a static bar chart wouldn't earn its space. Best for under 20 categories — keep it punchy, keep it animated. Configurable easing curves and palette to keep the load sequence on-brand.",
+      "category": "Comparison",
+      "useCases": [
+        "Top 12 product categories on a marketing page",
+        "Quarterly KPI fan on a kiosk display",
+        "Hero ranking chart in an annual report",
+        "Tournament leaderboard with motion"
+      ],
+      "examples": [
+        "Top 10 SKUs by sales, animated",
+        "12 monthly KPIs as radial bars"
+      ],
+      "tags": [
+        "radial-bar",
+        "animated",
+        "circular",
+        "ranking",
+        "marketing"
+      ]
+    },
+    {
+      "id": "radialtree-viz",
+      "name": "Radial Tree",
+      "description": "Radial Tree — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/radialtree-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/radialtree-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/radialtree-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/radialtree-viz/style.css"
+      },
+      "shortDescription": "A tree that radiates — hierarchies arranged as a circular dendrogram.",
+      "longDescription": "Hierarchical tree laid out from center outward, with branches fanning around 360 degrees. Fits more nodes on screen than a vertical tree and makes the depth structure immediately obvious — built for org charts and taxonomies that won't fit on a slide.",
+      "category": "Network & Flow",
+      "useCases": [
+        "Org chart with 200+ employees",
+        "Taxonomy of product categories",
+        "File system structure",
+        "Phylogenetic-style hierarchy"
+      ],
+      "examples": [
+        "200-node org radial tree",
+        "Product taxonomy across 4 levels"
+      ],
+      "tags": [
+        "tree",
+        "radial",
+        "hierarchy",
+        "dendrogram",
+        "circular"
+      ]
+    },
+    {
+      "id": "resgant-viz",
+      "name": "Resource Gantt",
+      "description": "Resource Gantt — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/resgant-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/resgant-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/resgant-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/resgant-viz/style.css"
+      },
+      "shortDescription": "Resource Gantt — see who's doing what, when, and where they're double-booked.",
+      "longDescription": "A Gantt with rows for resources (people, machines, rooms) instead of tasks, exposing utilization, conflicts, and idle gaps. Required equipment for capacity planning, studio scheduling, and shop-floor management. Color-code blocks by project, status, or utilization band to spot conflicts fast.",
+      "category": "Project & Ops",
+      "useCases": [
+        "Engineer allocation across projects",
+        "Studio room booking schedule",
+        "Manufacturing line utilization",
+        "Consultant utilization across clients"
+      ],
+      "examples": [
+        "8 engineers × 6 projects across a quarter",
+        "Studio rooms × bookings for a month"
+      ],
+      "tags": [
+        "gantt",
+        "resource",
+        "scheduling",
+        "utilization",
+        "project"
+      ]
+    },
+    {
+      "id": "retentioncurve-viz",
+      "name": "Retention Curve",
+      "description": "Retention Curve — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/retentioncurve-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/retentioncurve-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/retentioncurve-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/retentioncurve-viz/style.css"
+      },
+      "shortDescription": "Retention curves per cohort — payback, plateau, and the smiley if you're lucky.",
+      "longDescription": "Plots retention percentage against periods-since-acquisition for each cohort. Reveals whether retention is flattening (good), continuing to drop (bad), or — in the rarest cases — curving back up into a smile. The fundamental SaaS chart. Cohort tooltips show absolute counts alongside the percentage line.",
+      "category": "Marketing & Funnels",
+      "useCases": [
+        "Monthly cohort retention curves",
+        "Compare retention across pricing experiments",
+        "Diagnose retention quality in newer cohorts",
+        "Investor diligence retention disclosure"
+      ],
+      "examples": [
+        "12 monthly cohorts × 18-month retention",
+        "Free vs paid trial cohort retention"
+      ],
+      "tags": [
+        "retention",
+        "cohort",
+        "saas",
+        "lifecycle",
+        "curve"
+      ]
+    },
+    {
+      "id": "revenuebreakdown-viz",
+      "name": "Revenue Breakdown (Bar + Line Combo)",
+      "description": "Grouped bar chart with up to 4 bar metrics and an optional line overlay (e.g. Net Margin %). Dark theme with green color scheme, legend, tooltips, cross-filtering, and a Quarterly/Annual view toggle.",
+      "iconUrl": "gs://vizstudio-cid9483029/revenuebreakdown-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/revenuebreakdown-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/revenuebreakdown-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/revenuebreakdown-viz/style.css"
+      },
+      "shortDescription": "Revenue bars + a margin line — composition and profitability in one view.",
+      "longDescription": "Grouped bar chart with up to 4 revenue metrics and an optional line overlay (often Net Margin %). Dark theme, green accents, legend, tooltips, cross-filtering, and a Quarterly/Annual toggle. Built for finance review meetings. Toggle between absolute dollars and indexed view for cleaner trend reads.",
+      "category": "Finance",
+      "useCases": [
+        "Quarterly revenue mix with margin overlay",
+        "Annual revenue by segment with profitability line",
+        "Board deck revenue breakdown",
+        "Year-over-year revenue review"
+      ],
+      "examples": [
+        "Q1-Q4 revenue: 4 segments + margin line",
+        "Annual revenue: subscription, services, hardware, other + margin"
+      ],
+      "tags": [
+        "revenue",
+        "breakdown",
+        "combo",
+        "finance",
+        "margin"
+      ]
+    },
+    {
+      "id": "ridgeplot-viz",
+      "name": "Ridge / Joy Plot",
+      "description": "Ridge / Joy Plot — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/ridgeplot-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/ridgeplot-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/ridgeplot-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/ridgeplot-viz/style.css"
+      },
+      "shortDescription": "Stacked density curves that ripple — ridge plots for distribution comparison.",
+      "longDescription": "Density curves stacked vertically, one per category, slightly overlapping for an unmistakable ridge silhouette. Reads like a topo map of distributions. Born for comparing many distributions on a single canvas. Configurable bandwidth, overlap, and color palette per layer.",
+      "category": "Distribution",
+      "useCases": [
+        "Salary distribution per job level",
+        "Daily traffic distribution per weekday",
+        "Test scores per class",
+        "Response time distribution per server"
+      ],
+      "examples": [
+        "Engineering salaries across 6 levels",
+        "Page load time across 8 regions"
+      ],
+      "tags": [
+        "ridge-plot",
+        "joy-plot",
+        "density",
+        "distribution",
+        "comparison"
+      ]
+    },
+    {
+      "id": "roiscatter-viz",
+      "name": "ROI Scatter",
+      "description": "ROI Scatter — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/roiscatter-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/roiscatter-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/roiscatter-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/roiscatter-viz/style.css"
+      },
+      "shortDescription": "ROI scatter — where every campaign sits on the spend-vs-return plane.",
+      "longDescription": "Spend on one axis, return on the other, bubbles sized by reach or volume. Ideal for marketing budget reviews where the question 'which campaigns earned their money?' must be answered visually — and where the underperformers need to be impossible to miss.",
+      "category": "Marketing & Funnels",
+      "useCases": [
+        "Campaign ROI review for budget reallocation",
+        "Channel ROI scatter for the quarterly mix decision",
+        "Ad creative ROI across a portfolio",
+        "Vendor ROI plot for procurement"
+      ],
+      "examples": [
+        "30 campaigns: spend × revenue × reach",
+        "10 channels by spend and return"
+      ],
+      "tags": [
+        "roi",
+        "scatter",
+        "marketing",
+        "spend",
+        "return"
+      ]
+    },
+    {
+      "id": "rollingavg-viz",
+      "name": "Rolling Average",
+      "description": "Rolling Average — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/rollingavg-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/rollingavg-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/rollingavg-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/rollingavg-viz/style.css"
+      },
+      "shortDescription": "Smooth the noise — rolling averages over a raw time series.",
+      "longDescription": "Raw values plus configurable rolling window averages (7-day, 30-day, etc.) overlaid on the same axis. Cuts through daily noise to reveal the underlying trend. The standard finishing move for any volatile time series. Toggle window sizes live so the audience sees the smoothing tradeoff.",
+      "category": "Time Series",
+      "useCases": [
+        "Daily revenue with 7-day and 30-day rolling averages",
+        "Daily active users with smoothed trend",
+        "Stock price with moving averages",
+        "Sensor reading noise reduction"
+      ],
+      "examples": [
+        "Daily revenue + 7-day & 30-day MA",
+        "DAU with 14-day rolling average"
+      ],
+      "tags": [
+        "rolling",
+        "moving-average",
+        "time-series",
+        "smoothing",
+        "trend"
+      ]
+    },
+    {
+      "id": "scattertrend-viz",
+      "name": "Scatter Plot with Trendline",
+      "description": "Scatter Plot with Trendline — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/scattertrend-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/scattertrend-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/scattertrend-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/scattertrend-viz/style.css"
+      },
+      "shortDescription": "Scatter plus trendline — correlation, with the line drawn for you.",
+      "longDescription": "Two-metric scatter with an overlaid trendline (linear, polynomial, or LOESS) and optional R² annotation. The right answer when 'is there a relationship?' is the question and 'how strong is it?' is the follow-up. Optional confidence band around the trendline and outlier highlighting.",
+      "category": "Distribution",
+      "useCases": [
+        "Marketing spend vs revenue scatter",
+        "Lead score vs deal size correlation",
+        "Hours studied vs test score",
+        "Latency vs throughput scatter"
+      ],
+      "examples": [
+        "Spend vs revenue across 50 campaigns + trendline",
+        "Lead score vs ACV across 1000 deals"
+      ],
+      "tags": [
+        "scatter",
+        "trendline",
+        "correlation",
+        "regression",
+        "two-metric"
+      ]
+    },
+    {
+      "id": "semicirclegauge-viz",
+      "name": "Semicircle Gauge",
+      "description": "Semicircle Gauge — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/semicirclegauge-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/semicirclegauge-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/semicirclegauge-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/semicirclegauge-viz/style.css"
+      },
+      "shortDescription": "A clean semicircular gauge — one metric, one threshold, zero clutter.",
+      "longDescription": "A 180-degree gauge with configurable color zones (red/amber/green or custom), a needle or fill indicator, and a center value. Ideal for SLA dashboards, capacity meters, and any single-number-with-context KPI. Configurable threshold lines, needle styles, and label typography.",
+      "category": "KPI",
+      "useCases": [
+        "SLA compliance gauge",
+        "Capacity utilization meter",
+        "NPS in red/amber/green zones",
+        "Energy efficiency rating"
+      ],
+      "examples": [
+        "SLA: 98.5% in green zone",
+        "CPU utilization at 72%"
+      ],
+      "tags": [
+        "gauge",
+        "semicircle",
+        "kpi",
+        "threshold",
+        "single-metric"
+      ]
+    },
+    {
+      "id": "semicirclepie-viz",
+      "name": "Semi-Circle Pie Chart",
+      "description": "Semi-Circle Pie Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/semicirclepie-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/semicirclepie-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/semicirclepie-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/semicirclepie-viz/style.css"
+      },
+      "shortDescription": "Half a pie, twice the focus — composition in a wide, dashboard-friendly form.",
+      "longDescription": "A 180-degree pie chart that fits where a circular pie would be too round. Reads cleanly in horizontal slots — KPI cards, mobile dashboards, narrow report columns. Good for 3-7 slices, and a quiet design upgrade from yet another donut. Configurable inner radius and label placement keep typography clean.",
+      "category": "Part-to-Whole",
+      "useCases": [
+        "Channel mix in a sidebar widget",
+        "Status breakdown in a wide dashboard slot",
+        "Survey mix in a print-friendly layout",
+        "Mobile-first share visualization"
+      ],
+      "examples": [
+        "Status breakdown: 5 categories in a sidebar",
+        "Survey response mix in a horizontal card"
+      ],
+      "tags": [
+        "semicircle",
+        "pie",
+        "share",
+        "horizontal",
+        "mobile"
+      ]
+    },
+    {
+      "id": "simplecol-viz",
+      "name": "Simple Column Chart",
+      "description": "Simple Column Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/simplecol-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/simplecol-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/simplecol-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/simplecol-viz/style.css"
+      },
+      "shortDescription": "The dependable column chart — categorical comparison without ceremony.",
+      "longDescription": "Vertical bars, sortable, with optional value labels and tooltips. The chart that ships when you need a clean column chart and don't want to build it yourself. Every dashboard has at least one of these — make it a good one. Optional value labels, target lines, and conditional bar coloring.",
+      "category": "Comparison",
+      "useCases": [
+        "Monthly revenue across the year",
+        "Department headcount comparison",
+        "Top categories by count",
+        "Unit sales by SKU"
+      ],
+      "examples": [
+        "Monthly revenue Jan-Dec",
+        "Top 15 SKUs by units sold"
+      ],
+      "tags": [
+        "column",
+        "bar",
+        "comparison",
+        "categorical",
+        "vertical"
+      ]
+    },
+    {
+      "id": "slicedice-viz",
+      "name": "Slice & Dice Treemap",
+      "description": "Treemap layout that alternates horizontal and vertical splits at each level, producing an ordered grid of nested rectangles.",
+      "iconUrl": "gs://vizstudio-cid9483029/slicedice-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/slicedice-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/slicedice-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/slicedice-viz/style.css"
+      },
+      "shortDescription": "A treemap that respects order — every slice keeps its place, every dice keeps its rank.",
+      "longDescription": "Unlike squarified treemaps that maximize aspect ratio, slice-and-dice alternates split direction at each hierarchy level — producing a grid that preserves data order across rows and columns. Ideal when sequence matters: time-ordered cohorts, alphabetized categories, or rank-based portfolios. Reads almost like a heatmap with hierarchical structure baked in. Click any tile to filter the rest of your dashboard.",
+      "category": "Part-to-Whole",
+      "useCases": [
+        "Quarterly revenue broken down by product → region → channel",
+        "Portfolio allocation across asset classes and time horizons",
+        "Help-center traffic by article category and month",
+        "Workforce headcount across departments and seniority levels"
+      ],
+      "examples": [
+        "Q4 revenue: 4 product families × 6 regions, ranked by SKU count",
+        "ETF allocation: 5 asset classes × 3 risk tiers, time-ordered"
+      ],
+      "tags": [
+        "treemap",
+        "hierarchy",
+        "slice-dice",
+        "part-to-whole",
+        "ordered"
+      ]
+    },
+    {
+      "id": "smallmultiples-viz",
+      "name": "Small Multiples / Trellis Grid",
+      "description": "Small Multiples / Trellis Grid — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/smallmultiples-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/smallmultiples-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/smallmultiples-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/smallmultiples-viz/style.css"
+      },
+      "shortDescription": "Trellis grid of mini-charts — one per category, all on the same scale.",
+      "longDescription": "Small multiples lay out a mini-chart per category in a grid, all sharing axes, so visual comparison is direct. Tufte's favorite technique: the eye does pattern-finding the brain shouldn't have to compute. Configurable axes-shared mode for direct-comparison reads.",
+      "category": "Time Series",
+      "useCases": [
+        "Revenue trend per region in a 4×3 grid",
+        "Per-product time series across 12 SKUs",
+        "Per-cohort retention curves in a trellis",
+        "Per-server CPU across a fleet"
+      ],
+      "examples": [
+        "Daily orders trended for each of 12 cities",
+        "Per-feature usage across 16 features"
+      ],
+      "tags": [
+        "small-multiples",
+        "trellis",
+        "grid",
+        "comparison",
+        "time-series"
+      ]
+    },
+    {
+      "id": "solidgauge-viz",
+      "name": "Solid Gauge",
+      "description": "Solid Gauge — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/solidgauge-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/solidgauge-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/solidgauge-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/solidgauge-viz/style.css"
+      },
+      "shortDescription": "A filled gauge that reads like a thermometer — bold, confident, single-metric.",
+      "longDescription": "A solid-fill gauge with a center value and a fill arc proportional to the metric vs target. Bolder than a needle gauge, friendlier than a number alone. Good fit for hero KPIs and wallboards where the chart needs to register from across the room. Threshold lines and conditional fill colors respond to the metric value.",
+      "category": "KPI",
+      "useCases": [
+        "Goal attainment gauge for sales",
+        "Project completion gauge for the team",
+        "Subscriber milestone tracker",
+        "OKR progress on a TV display"
+      ],
+      "examples": [
+        "Sales attainment: 87% of $4M target",
+        "Quarterly OKR: 64% complete"
+      ],
+      "tags": [
+        "gauge",
+        "solid",
+        "fill",
+        "kpi",
+        "goal"
+      ]
+    },
+    {
+      "id": "stackedarea-viz",
+      "name": "Stacked Area Chart",
+      "description": "Stacked Area Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/stackedarea-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/stackedarea-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/stackedarea-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/stackedarea-viz/style.css"
+      },
+      "shortDescription": "Composition that flows — stacked areas for share over time.",
+      "longDescription": "Time on the x-axis, metric on the y, stacked layers per category showing both total and composition. Use when both 'how much' and 'made of what' need to coexist on one chart over time — and the trend in the total matters as much as the mix. Optional 100% normalization mode flips the focus from totals to share.",
+      "category": "Time Series",
+      "useCases": [
+        "Revenue by product line over months",
+        "Active users by plan tier over weeks",
+        "Traffic by source over a quarter",
+        "Spend by category over a year"
+      ],
+      "examples": [
+        "Monthly revenue: 4 products stacked across 24 months",
+        "Daily traffic by source over 90 days"
+      ],
+      "tags": [
+        "stacked-area",
+        "composition",
+        "time-series",
+        "share",
+        "trend"
+      ]
+    },
+    {
+      "id": "stackedbar-viz",
+      "name": "Stacked Bar Chart",
+      "description": "Stacked Bar Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/stackedbar-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/stackedbar-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/stackedbar-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/stackedbar-viz/style.css"
+      },
+      "shortDescription": "Stacked bars — composition across categories, in their most familiar form.",
+      "longDescription": "Vertical or horizontal bars with internal segments stacked by category. The default for showing composition across multiple groups. Optional 100% mode normalizes for share-only comparison when totals would otherwise drown out the proportional story. Cross-filter from any segment to drive the rest of the dashboard.",
+      "category": "Part-to-Whole",
+      "useCases": [
+        "Status breakdown by team",
+        "Revenue mix by region",
+        "Ticket type distribution per quarter",
+        "Survey response composition by question"
+      ],
+      "examples": [
+        "Project status across 8 teams",
+        "Quarterly revenue mix: 5 segments"
+      ],
+      "tags": [
+        "stacked-bar",
+        "composition",
+        "categorical",
+        "share",
+        "comparison"
+      ]
+    },
+    {
+      "id": "stackedneg-animated-viz",
+      "name": "Stacked Bar Chart with Negative Values (Animated + Zoom)",
+      "description": "Stacked Bar Chart with Negative Values (Animated + Zoom) — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/stackedneg-animated-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/stackedneg-animated-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/stackedneg-animated-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/stackedneg-animated-viz/style.css"
+      },
+      "shortDescription": "Stacked bars that handle negatives — animated and zoomable.",
+      "longDescription": "Stacked bars with proper rendering of negative values (e.g., losses below zero, gains above), plus entrance animation and zoom-and-pan. Handles the awkward 'we have both gains and losses to stack' case that breaks most charts. The chart that finally makes mixed-sign stacks comprehensible.",
+      "category": "Comparison",
+      "useCases": [
+        "Quarterly P&L with gains and losses stacked",
+        "Net flows with positive and negative segments",
+        "Variance bars with offsets above and below baseline",
+        "Inventory adjustments with positive and negative entries"
+      ],
+      "examples": [
+        "Quarterly P&L: 4 categories with negatives",
+        "Cash flow stacks: inflows + outflows"
+      ],
+      "tags": [
+        "stacked",
+        "negative",
+        "animated",
+        "zoom",
+        "p&l"
+      ]
+    },
+    {
+      "id": "stackedneg-viz",
+      "name": "Stacked Bar Chart with Negative Values (Static)",
+      "description": "Stacked Bar Chart with Negative Values (Static) — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/stackedneg-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/stackedneg-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/stackedneg-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/stackedneg-viz/style.css"
+      },
+      "shortDescription": "Stacked bars that respect zero — negatives below the line, positives above.",
+      "longDescription": "A stacked bar chart that handles mixed-sign data correctly: positive segments stack upward, negative segments stack downward, baseline at zero. The right tool for P&L breakdowns and net-flow displays. Solves a common edge case that breaks naive stacked-bar implementations. Especially valuable for finance teams who live with mixed-sign data daily.",
+      "category": "Comparison",
+      "useCases": [
+        "Monthly P&L with revenue stacks above and cost stacks below zero",
+        "Net inventory changes per period",
+        "Variance with positive and negative components",
+        "Profit/loss stacks across regions"
+      ],
+      "examples": [
+        "Monthly P&L: revenue + cost stacked around zero",
+        "Net flows: inflows + outflows by week"
+      ],
+      "tags": [
+        "stacked",
+        "negative",
+        "p&l",
+        "mixed-sign",
+        "static"
+      ]
+    },
+    {
+      "id": "stemleaf-viz",
+      "name": "Stem-and-Leaf Plot",
+      "description": "Stem-and-Leaf Plot — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/stemleaf-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/stemleaf-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/stemleaf-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/stemleaf-viz/style.css"
+      },
+      "shortDescription": "Stem-and-leaf — every digit kept, distribution shape preserved.",
+      "longDescription": "A back-to-classroom Tukey plot where stems hold magnitude and leaves spell out individual values. Looks dated until you realize it's the only chart that shows distribution shape AND the actual data points without rounding. The print version of a histogram that retains every individual data point.",
+      "category": "Distribution",
+      "useCases": [
+        "Test score distributions in education reports",
+        "Small-sample distribution display",
+        "Reading-friendly distributions for non-technical audiences",
+        "Print-friendly statistics communication"
+      ],
+      "examples": [
+        "50 test scores stemmed by tens digit",
+        "30 measurements stemmed by units"
+      ],
+      "tags": [
+        "stem-leaf",
+        "distribution",
+        "tukey",
+        "exact",
+        "compact"
+      ]
+    },
+    {
+      "id": "storyflow-viz",
+      "name": "Story Flow / Narrative",
+      "description": "Story Flow / Narrative — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/storyflow-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/storyflow-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/storyflow-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/storyflow-viz/style.css"
+      },
+      "shortDescription": "Narrative flow — characters, threads, and meetings traced over time.",
+      "longDescription": "Lines for entities (characters, accounts, contributors) that bend together when they interact and apart when they don't. A storytelling chart for narratives, project handoffs, and any 'who met whom when' analysis. Configurable line smoothing and event markers for narrative pacing.",
+      "category": "Network & Flow",
+      "useCases": [
+        "Character interactions in a screenplay",
+        "Project handoffs between contributors",
+        "Account collaborations across deals",
+        "Meeting attendance over time"
+      ],
+      "examples": [
+        "Movie storyline: 8 characters over 2 hours",
+        "GitHub repo: 12 contributors over 6 months"
+      ],
+      "tags": [
+        "story-flow",
+        "narrative",
+        "interaction",
+        "timeline",
+        "characters"
+      ]
+    },
+    {
+      "id": "streamgraph-viz",
+      "name": "Streamgraph",
+      "description": "Streamgraph — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/streamgraph-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/streamgraph-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/streamgraph-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/streamgraph-viz/style.css"
+      },
+      "shortDescription": "Stacked area's wilder cousin — flowing layers around a free baseline.",
+      "longDescription": "Like stacked area, but with a moving baseline that distributes layers symmetrically (or aesthetically). Reduces the 'one layer dominates everything' problem and reads beautifully for many-category trends. Configurable baseline mode (zero, wiggle, silhouette, expand) shapes the read.",
+      "category": "Time Series",
+      "useCases": [
+        "Music genre popularity over decades",
+        "Search interest topics over years",
+        "Movie genre revenue over a century",
+        "App category share over time"
+      ],
+      "examples": [
+        "Music genres' chart share, 1960-2025",
+        "Top 20 search topics over 5 years"
+      ],
+      "tags": [
+        "streamgraph",
+        "time-series",
+        "composition",
+        "flowing",
+        "trend"
+      ]
+    },
+    {
+      "id": "streamwave-viz",
+      "name": "Stream Wave Chart",
+      "description": "Stream Wave Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/streamwave-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/streamwave-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/streamwave-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/streamwave-viz/style.css"
+      },
+      "shortDescription": "Streamgraph with sine-wave styling — composition that breathes.",
+      "longDescription": "A streamgraph with smoothed wave aesthetics — extra-soft transitions, layered transparency, and editorial polish. Same data shape as a standard streamgraph, but tuned for design-conscious dashboards and reports. A choice when the data deserves a chart that feels as designed as the story.",
+      "category": "Time Series",
+      "useCases": [
+        "Editorial annual report headline chart",
+        "Brand-forward marketing site visualization",
+        "Trend story on a news site",
+        "Long-form content data feature"
+      ],
+      "examples": [
+        "10 product categories' share, 5-year trend, editorial style",
+        "Top 15 topics over a decade"
+      ],
+      "tags": [
+        "streamgraph",
+        "wave",
+        "editorial",
+        "time-series",
+        "design"
+      ]
+    },
+    {
+      "id": "sunburstChart",
+      "name": "Sunburst Chart",
+      "description": "Sunburst Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/sunburstChart/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/sunburstChart/script.js",
+        "config": "gs://vizstudio-cid9483029/sunburstChart/config.json",
+        "css": "gs://vizstudio-cid9483029/sunburstChart/style.css"
+      },
+      "shortDescription": "Concentric rings of hierarchy — composition at every level, all at once.",
+      "longDescription": "Hierarchical part-to-whole shown as concentric rings: center is total, outer rings are deeper levels. Click to zoom into a slice. Reads complex hierarchies in seconds — drill structure built in, and the layout scales gracefully to four or five levels.",
+      "category": "Part-to-Whole",
+      "useCases": [
+        "File system size by folder hierarchy",
+        "Revenue by region → country → city",
+        "Org breakdown by division → department → team",
+        "Spend by category → vendor → invoice"
+      ],
+      "examples": [
+        "Disk usage: drives → folders → files",
+        "Revenue: 4 regions × 3 products × 5 plans"
+      ],
+      "tags": [
+        "sunburst",
+        "hierarchy",
+        "ring",
+        "drill-down",
+        "composition"
+      ]
+    },
+    {
+      "id": "timeseries-viz",
+      "name": "Time Series with Annotations",
+      "description": "Time Series with Annotations — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/timeseries-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/timeseries-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/timeseries-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/timeseries-viz/style.css"
+      },
+      "shortDescription": "A time series that knows context — value lines plus event annotations.",
+      "longDescription": "Standard time series with annotation markers for events (launches, incidents, campaigns), plus tooltip details and configurable axes. The right baseline for any line chart that needs 'why did the number jump on April 14?' answered. Annotation markers are clickable, with deep-link support to the source event.",
+      "category": "Time Series",
+      "useCases": [
+        "Daily revenue with launch annotations",
+        "MRR trend with pricing change markers",
+        "Stock price with earnings event flags",
+        "Site uptime with incident annotations"
+      ],
+      "examples": [
+        "Daily revenue + 6 launch annotations",
+        "MRR over 24 months + 3 pricing changes"
+      ],
+      "tags": [
+        "time-series",
+        "annotation",
+        "events",
+        "trend",
+        "line"
+      ]
+    },
+    {
+      "id": "tornado-viz",
+      "name": "Tornado Chart",
+      "description": "Sensitivity-analysis bar chart with variables sorted by impact magnitude, bars extending from a center baseline.",
+      "iconUrl": "gs://vizstudio-cid9483029/tornado-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/tornado-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/tornado-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/tornado-viz/style.css"
+      },
+      "shortDescription": "Which variable moves the needle most? Sensitivity analysis in a single funnel-shaped view.",
+      "longDescription": "Variables stack vertically, each plotted as a bar reaching left and right of a baseline to show the swing under low and high scenarios. Sorted by magnitude, the result is a tornado shape — biggest impact on top, smallest at the bottom. Indispensable for risk reviews, financial sensitivity testing, and any 'where do we need to be most careful?' decision. Doubles as a deviation chart for budget vs. actual.",
+      "category": "Comparison",
+      "useCases": [
+        "Financial model sensitivity to revenue, cost, and FX assumptions",
+        "Project risk register ranked by potential time impact",
+        "Budget variance review across 15 cost centers",
+        "Pricing study showing margin swing under best/worst case"
+      ],
+      "examples": [
+        "DCF model: what moves enterprise value most — discount rate, churn, or growth?",
+        "12 product lines ranked by Q4 forecast variance"
+      ],
+      "tags": [
+        "tornado",
+        "sensitivity",
+        "variance",
+        "risk",
+        "deviation"
+      ]
+    },
+    {
+      "id": "trafficlight-viz",
+      "name": "Traffic Light / RAG",
+      "description": "Traffic Light / RAG — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/trafficlight-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/trafficlight-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/trafficlight-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/trafficlight-viz/style.css"
+      },
+      "shortDescription": "Red, amber, green — instant status calls for the executive eye.",
+      "longDescription": "A grid of RAG status indicators for projects, KPIs, or risks, with optional commentary per item. The fastest way to communicate 'what's on fire and what's fine' in steering committee reviews where time is short and decisions are binary. Optional commentary per cell keeps the meeting moving without re-asking.",
+      "category": "Project & Ops",
+      "useCases": [
+        "Project portfolio status review",
+        "Risk register dashboard",
+        "OKR health check across the company",
+        "Vendor performance scorecard"
+      ],
+      "examples": [
+        "20 projects RAG-rated for steerco",
+        "12 OKRs with R/A/G status"
+      ],
+      "tags": [
+        "traffic-light",
+        "rag",
+        "status",
+        "project",
+        "risk"
+      ]
+    },
+    {
+      "id": "trafficsrc-viz",
+      "name": "Traffic Sources Chord",
+      "description": "Traffic Sources Chord — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/trafficsrc-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/trafficsrc-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/trafficsrc-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/trafficsrc-viz/style.css"
+      },
+      "shortDescription": "Traffic sources as a chord diagram — channels and their crossover paths.",
+      "longDescription": "A chord diagram showing channel-to-channel traffic flows, where users move between sources before converting. Reveals the path complexity that linear funnels hide, exposing every cross-channel handoff that shaped the final attribution. Hover any chord to isolate the source-target pair from the rest of the flow.",
+      "category": "Marketing & Funnels",
+      "useCases": [
+        "Pre-conversion channel sequence analysis",
+        "Multi-touch path visualization",
+        "Cross-platform user journey",
+        "Source-to-source referral chord"
+      ],
+      "examples": [
+        "Search → Social → Direct conversion chords",
+        "8 channels with cross-channel flows"
+      ],
+      "tags": [
+        "chord",
+        "traffic",
+        "channels",
+        "marketing",
+        "flow"
+      ]
+    },
+    {
+      "id": "treemapzoom-viz",
+      "name": "Zoomable Treemap",
+      "description": "Zoomable Treemap — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/treemapzoom-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/treemapzoom-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/treemapzoom-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/treemapzoom-viz/style.css"
+      },
+      "shortDescription": "A treemap that drills — click any tile to dive into its hierarchy.",
+      "longDescription": "Hierarchical part-to-whole as nested rectangles sized by metric, with click-to-zoom drill-down. Best for budget breakdowns, file system displays, and any 'what's inside this big block?' analysis where the audience expects to explore. Breadcrumb navigation lets viewers reach any depth without losing context.",
+      "category": "Part-to-Whole",
+      "useCases": [
+        "Budget breakdown with click-through to line items",
+        "File system size with folder drill-down",
+        "Spend by vendor with invoice drill",
+        "Revenue by region with country drill"
+      ],
+      "examples": [
+        "Disk usage zoomable across folders",
+        "$50M budget across 6 → 30 → 200 line items"
+      ],
+      "tags": [
+        "treemap",
+        "zoom",
+        "hierarchy",
+        "drill-down",
+        "rectangles"
+      ]
+    },
+    {
+      "id": "vardonut-viz",
+      "name": "Variable-Radius Nested Donut",
+      "description": "Variable-Radius Nested Donut — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/vardonut-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/vardonut-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/vardonut-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/vardonut-viz/style.css"
+      },
+      "shortDescription": "Concentric donuts where each ring scales — magnitude meets composition.",
+      "longDescription": "Nested donut rings where ring radius is variable per ring (encoding total magnitude) while slice arcs encode composition. Two dimensions of information in a single radial widget — magnitude AND mix, without sending the audience to two charts. Synced legend and tooltips tie the magnitude and mix together cleanly.",
+      "category": "Part-to-Whole",
+      "useCases": [
+        "Quarterly revenue (radius) by product mix (arc)",
+        "Yearly headcount (radius) by department (arc)",
+        "Period-over-period comparison with sized rings",
+        "Multi-period composition with magnitude context"
+      ],
+      "examples": [
+        "4 quarterly donuts: outer = larger quarter",
+        "Department mix per year, radius = total headcount"
+      ],
+      "tags": [
+        "donut",
+        "variable-radius",
+        "nested",
+        "composition",
+        "magnitude"
+      ]
+    },
+    {
+      "id": "variancebar-viz",
+      "name": "Variance Bar",
+      "description": "Variance Bar — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/variancebar-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/variancebar-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/variancebar-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/variancebar-viz/style.css"
+      },
+      "shortDescription": "Variance bars that show actual vs plan — over and under, color-coded.",
+      "longDescription": "Bars per category showing variance from a baseline (plan, prior period, target) with color encoding direction. Replaces the awkward 'two bars side by side' pattern with a clean delta visualization that highlights gaps and surpluses immediately. Optional reference line and percentage labels for executive-ready reads.",
+      "category": "Finance",
+      "useCases": [
+        "Plan vs actual variance per business unit",
+        "Year-over-year variance per segment",
+        "Budget vs spend variance per category",
+        "Forecast vs actual variance per quarter"
+      ],
+      "examples": [
+        "FY25 plan vs actual: 8 segments",
+        "Quarterly budget variance: 12 categories"
+      ],
+      "tags": [
+        "variance",
+        "delta",
+        "plan-vs-actual",
+        "finance",
+        "bars"
+      ]
+    },
+    {
+      "id": "varradiuspie-viz",
+      "name": "Variable Radius Pie Chart",
+      "description": "Variable Radius Pie Chart — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/varradiuspie-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/varradiuspie-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/varradiuspie-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/varradiuspie-viz/style.css"
+      },
+      "shortDescription": "Pie slices with variable radii — a second metric without a second chart.",
+      "longDescription": "A pie chart where each slice has both an arc (encoding share) AND a variable radius (encoding a second metric like growth or margin). Two dimensions in one figure — power-user composition that rewards a closer look from your audience. Configurable radius range and palette keep the second metric visually disciplined.",
+      "category": "Part-to-Whole",
+      "useCases": [
+        "Revenue share (arc) × growth rate (radius)",
+        "Customer count (arc) × ARPU (radius)",
+        "Spend share (arc) × ROI (radius)",
+        "Holding weight (arc) × YTD return (radius)"
+      ],
+      "examples": [
+        "Revenue mix with growth rate as radius",
+        "Holdings: weight + YTD return"
+      ],
+      "tags": [
+        "pie",
+        "variable-radius",
+        "two-metric",
+        "composition",
+        "specialty"
+      ]
+    },
+    {
+      "id": "venn-viz",
+      "name": "Venn / Euler Diagram",
+      "description": "Venn / Euler Diagram — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/venn-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/venn-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/venn-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/venn-viz/style.css"
+      },
+      "shortDescription": "Venn and Euler diagrams that respect proportion — overlaps actually overlap.",
+      "longDescription": "Renders Venn and Euler diagrams with circle areas and intersections proportional to set sizes. Handles 2-3 sets cleanly. The right tool when 'which customers are in both lists?' is the question and a list-overlap stat doesn't tell the visual story. Counts and percentages render inside each region for quick exact reads.",
+      "category": "Distribution",
+      "useCases": [
+        "Audience overlap across 3 ad platforms",
+        "Customers in two product cohorts",
+        "Skill set overlap across team members",
+        "Survey respondents fitting multiple personas"
+      ],
+      "examples": [
+        "3 ad platforms with audience overlap",
+        "2 product cohorts with shared customers"
+      ],
+      "tags": [
+        "venn",
+        "euler",
+        "overlap",
+        "set",
+        "intersection"
+      ]
+    },
+    {
+      "id": "verticalprogress-viz",
+      "name": "Vertical Progress Bars",
+      "description": "Vertical Progress Bars — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/verticalprogress-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/verticalprogress-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/verticalprogress-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/verticalprogress-viz/style.css"
+      },
+      "shortDescription": "Vertical progress bars — thermometer-style goal tracking.",
+      "longDescription": "Vertical fill bars with goal lines and value labels, perfect for thermometer-style fundraising trackers, capacity meters, and any time vertical orientation matches the spatial metaphor — like tanks, towers, or growing toward a ceiling. Optional milestone markers along each bar mark intermediate goals.",
+      "category": "KPI",
+      "useCases": [
+        "Fundraising thermometer",
+        "Tank or storage capacity meter",
+        "Goal attainment per region as vertical fills",
+        "Vertical OKR tracker"
+      ],
+      "examples": [
+        "Fundraising: $87k of $100k goal",
+        "Capacity: 4 tanks at 60-90% fill"
+      ],
+      "tags": [
+        "progress",
+        "vertical",
+        "thermometer",
+        "kpi",
+        "goal"
+      ]
+    },
+    {
+      "id": "violin-viz",
+      "name": "Violin Plot",
+      "description": "Violin Plot — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/violin-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/violin-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/violin-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/violin-viz/style.css"
+      },
+      "shortDescription": "Violin plots — distribution shape per category, fully revealed.",
+      "longDescription": "A density curve for each category mirrored to form a violin shape, often with an inner box plot. Shows multimodality, skew, and tails that box plots hide. The right pick when 'how is this distributed?' matters per category. Configurable bandwidth and side-by-side or paired layouts for compare scenarios.",
+      "category": "Distribution",
+      "useCases": [
+        "Salary distribution per role",
+        "Page load time per region",
+        "Test score distribution per class",
+        "Order value distribution per channel"
+      ],
+      "examples": [
+        "Salaries across 6 roles",
+        "Page load time across 8 regions"
+      ],
+      "tags": [
+        "violin",
+        "distribution",
+        "density",
+        "comparison",
+        "shape"
+      ]
+    },
+    {
+      "id": "waffle-viz",
+      "name": "Title",
+      "description": "Title — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/waffle-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/waffle-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/waffle-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/waffle-viz/style.css"
+      },
+      "shortDescription": "Waffle charts — proportions as a 10×10 grid that anyone can read.",
+      "longDescription": "A 10×10 (or N×N) grid of squares where each square is one percent of the whole. More accurate than a pie for small-difference comparisons and far more accessible to general audiences. Beloved by editorial and infographic designers. A more honest pie alternative that keeps small percentages visually present.",
+      "category": "Part-to-Whole",
+      "useCases": [
+        "Survey response breakdown for an editorial piece",
+        "Annual report composition stat",
+        "Public-facing percentage communication",
+        "Infographic key fact"
+      ],
+      "examples": [
+        "100 squares: 38 promoters, 47 passives, 15 detractors",
+        "Population breakdown: 60/25/15"
+      ],
+      "tags": [
+        "waffle",
+        "grid",
+        "proportion",
+        "infographic",
+        "share"
+      ]
+    },
+    {
+      "id": "windrose-viz",
+      "name": "Wind Rose / Polar Bar",
+      "description": "Wind Rose / Polar Bar — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/windrose-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/windrose-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/windrose-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/windrose-viz/style.css"
+      },
+      "shortDescription": "Polar bars that read like a compass — direction and magnitude together.",
+      "longDescription": "Bars radiating outward from center on a 360-degree compass, with length encoding magnitude per direction. Born for wind data, but equally home with any directional metric — bearings, hours of day, or 12-month cycles. Configurable bin count, baseline, and color scale for editorial control.",
+      "category": "Distribution",
+      "useCases": [
+        "Wind speed by direction at a weather station",
+        "Activity by hour of day in polar form",
+        "12-month seasonality on a circular axis",
+        "Vehicle bearing distribution"
+      ],
+      "examples": [
+        "Wind speed × 16 compass directions",
+        "Activity by hour of day, radial"
+      ],
+      "tags": [
+        "wind-rose",
+        "polar",
+        "compass",
+        "directional",
+        "rose"
+      ]
+    },
+    {
+      "id": "wordcloud-viz",
+      "name": "Word / Tag Cloud",
+      "description": "Word / Tag Cloud — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/wordcloud-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/wordcloud-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/wordcloud-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/wordcloud-viz/style.css"
+      },
+      "shortDescription": "Word clouds that don't look terrible — sized by frequency, hand-tuned typography.",
+      "longDescription": "Words sized by frequency and laid out without overlap, with attention to typography and palette so the result reads as a designed object rather than the default cloud. Best for editorial summaries and feedback comprehension. Optional sentiment coloring and exclusion lists for cleaner output.",
+      "category": "Specialty",
+      "useCases": [
+        "Customer feedback theme summary",
+        "Survey open-text response cloud",
+        "Top trending tags from a month of content",
+        "Brand mention cloud from social listening"
+      ],
+      "examples": [
+        "Top 80 themes from 5,000 NPS comments",
+        "Trending tags from a content month"
+      ],
+      "tags": [
+        "word-cloud",
+        "text",
+        "frequency",
+        "typography",
+        "qualitative"
+      ]
+    },
+    {
+      "id": "xybubble-animated-viz",
+      "name": "Animated XY Bubble Timeline",
+      "description": "Animated XY Bubble Timeline — community visualization.",
+      "iconUrl": "gs://vizstudio-cid9483029/xybubble-animated-viz/icon-256.webp",
+      "resource": {
+        "js": "gs://vizstudio-cid9483029/xybubble-animated-viz/script.js",
+        "config": "gs://vizstudio-cid9483029/xybubble-animated-viz/config.json",
+        "css": "gs://vizstudio-cid9483029/xybubble-animated-viz/style.css"
+      },
+      "shortDescription": "An animated bubble chart through time — Hans Rosling, in your dashboard.",
+      "longDescription": "Bubbles plotted on x/y with size as a third metric, animating through a time dimension. Pause, scrub, replay. The famous Gapminder pattern, ready to drop into any dashboard — a chart that turns historical data into a story you can re-watch. Hover any bubble at any frame to see exact values and identity.",
+      "category": "Time Series",
+      "useCases": [
+        "Country GDP × life expectancy × population over decades",
+        "Customer ARR × growth × headcount over quarters",
+        "Marketing spend × revenue × reach by month",
+        "Product price × volume × market share over years"
+      ],
+      "examples": [
+        "GDP × life expectancy across 50 countries, 1960-2025",
+        "Quarterly customer metrics across 100 accounts"
+      ],
+      "tags": [
+        "bubble",
+        "animated",
+        "time-series",
+        "scatter",
+        "gapminder"
+      ]
+    }
+  ]
+}

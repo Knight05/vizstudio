@@ -1,0 +1,3 @@
+-- DEPRECATED: This project no longer uses Supabase. RLS / triggers are
+-- not needed because auth lives in the app via Better-Auth and Prisma
+-- handles authorization at the query layer. This file can be deleted.

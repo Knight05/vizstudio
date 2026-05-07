@@ -1,0 +1,183 @@
+// Viz Studio — Prisma schema
+// Postgres on Neon (free tier). Auth lives inside the app via Better-Auth,
+// so the User / Session / Account / Verification tables live here too.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ─── Better-Auth: User ───────────────────────────────────
+// Holds both auth identity AND app profile fields. Created
+// automatically on first sign-up by Better-Auth.
+model User {
+  id            String   @id
+  name          String?
+  email         String   @unique
+  emailVerified Boolean  @default(false) @map("email_verified")
+  image         String?
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt      @map("updated_at")
+
+  sessions     Session[]
+  accounts     Account[]
+
+  // App-specific
+  subscription Subscription?
+  licenseKeys  LicenseKey[]
+  downloads    Download[]
+  favorites    Favorite[]
+
+  @@map("users")
+}
+
+model Session {
+  id        String   @id
+  userId    String   @map("user_id")
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime @map("expires_at")
+  token     String   @unique
+  ipAddress String?  @map("ip_address")
+  userAgent String?  @map("user_agent")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt      @map("updated_at")
+
+  @@index([userId])
+  @@map("sessions")
+}
+
+model Account {
+  id                    String    @id
+  userId                String    @map("user_id")
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accountId             String    @map("account_id")
+  providerId            String    @map("provider_id")
+  accessToken           String?   @map("access_token")
+  refreshToken          String?   @map("refresh_token")
+  idToken               String?   @map("id_token")
+  accessTokenExpiresAt  DateTime? @map("access_token_expires_at")
+  refreshTokenExpiresAt DateTime? @map("refresh_token_expires_at")
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now()) @map("created_at")
+  updatedAt             DateTime  @updatedAt      @map("updated_at")
+
+  @@unique([providerId, accountId])
+  @@index([userId])
+  @@map("accounts")
+}
+
+model Verification {
+  id         String   @id
+  identifier String
+  value      String
+  expiresAt  DateTime @map("expires_at")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt      @map("updated_at")
+
+  @@index([identifier])
+  @@map("verifications")
+}
+
+// ─── Subscriptions (Stripe-backed) ───────────────────────
+enum SubscriptionTier {
+  FREE
+  PRO
+  TEAM
+}
+
+enum SubscriptionStatus {
+  active
+  trialing
+  past_due
+  canceled
+  incomplete
+  incomplete_expired
+  unpaid
+  paused
+}
+
+model Subscription {
+  id                   String             @id @default(cuid())
+  userId               String             @unique @map("user_id")
+  user                 User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  tier                 SubscriptionTier   @default(FREE)
+  status               SubscriptionStatus @default(active)
+
+  stripeCustomerId     String?            @unique @map("stripe_customer_id")
+  stripeSubscriptionId String?            @unique @map("stripe_subscription_id")
+  stripePriceId        String?            @map("stripe_price_id")
+
+  currentPeriodStart   DateTime?          @map("current_period_start")
+  currentPeriodEnd     DateTime?          @map("current_period_end")
+  cancelAtPeriodEnd    Boolean            @default(false) @map("cancel_at_period_end")
+
+  createdAt            DateTime           @default(now()) @map("created_at")
+  updatedAt            DateTime           @updatedAt      @map("updated_at")
+
+  @@index([stripeCustomerId])
+  @@map("subscriptions")
+}
+
+// ─── License Keys ────────────────────────────────────────
+model LicenseKey {
+  id         String    @id @default(cuid())
+  userId     String    @map("user_id")
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  key        String    @unique
+  label      String?
+  active     Boolean   @default(true)
+  lastUsedAt DateTime? @map("last_used_at")
+
+  createdAt  DateTime  @default(now()) @map("created_at")
+  revokedAt  DateTime? @map("revoked_at")
+
+  @@index([userId])
+  @@map("license_keys")
+}
+
+// ─── Downloads log ───────────────────────────────────────
+model Download {
+  id        String   @id @default(cuid())
+  userId    String?  @map("user_id")
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  chartId   String   @map("chart_id")
+  ip        String?
+  userAgent String?  @map("user_agent")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([userId, createdAt])
+  @@index([chartId, createdAt])
+  @@map("downloads")
+}
+
+// ─── Favorites ───────────────────────────────────────────
+model Favorite {
+  id        String   @id @default(cuid())
+  userId    String   @map("user_id")
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  chartId   String   @map("chart_id")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@unique([userId, chartId])
+  @@map("favorites")
+}
+
+// ─── Newsletter / early-access signups ───────────────────
+model Lead {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  source    String?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("leads")
+}
