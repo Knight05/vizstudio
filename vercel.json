@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "buildCommand": "prisma generate && next build",
-  "installCommand": "pnpm install --frozen-lockfile || npm install",
+  "installCommand": "rm -rf node_modules && pnpm install --no-frozen-lockfile",
   "regions": ["iad1"],
   "headers": [
     {
@@ -22,6 +22,4 @@
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=300, must-revalidate" }
       ]
-    }
-  ]
-}
+ 
