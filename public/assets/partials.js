@@ -55,7 +55,6 @@
         '</nav>' +
         '<div class="right">' +
           '<a class="btn" href="/login">Log in</a>' +
-          '<a class="btn" href="' + root + 'suggest.html">Suggest a chart</a>' +
           '<a class="btn primary" href="' + root + 'get-started.html">Get Started</a>' +
           '<button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">' +
             '<span></span><span></span><span></span>' +
@@ -68,7 +67,6 @@
         '<a href="' + root + 'index.html#how">How it works</a>' +
         '<a href="' + root + 'index.html#pricing">Pricing</a>' +
         '<a href="' + root + 'index.html#faq">FAQ</a>' +
-        '<a href="' + root + 'suggest.html">Suggest a chart</a>' +
         '<a href="/login">Log in</a>' +
         '<a class="btn primary" href="' + root + 'get-started.html">Get Started →</a>' +
       '</div>' +

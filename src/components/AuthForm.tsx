@@ -54,6 +54,7 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [company, setCompany] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -68,6 +69,7 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
           email,
           password,
           name: name || email.split("@")[0],
+          company,
           callbackURL: next,
         });
         if (error) throw new Error(error.message ?? "Sign-up failed");
@@ -101,16 +103,29 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
 
       <form onSubmit={handleSubmit} style={{ display: "grid", gap: 14 }}>
         {mode === "signup" && (
-          <label style={{ display: "grid", gap: 5 }}>
-            <span style={C.label}>Name</span>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="optional"
-              style={C.input}
-            />
-          </label>
+          <>
+            <label style={{ display: "grid", gap: 5 }}>
+              <span style={C.label}>Name</span>
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="optional"
+                style={C.input}
+              />
+            </label>
+            <label style={{ display: "grid", gap: 5 }}>
+              <span style={C.label}>Company</span>
+              <input
+                type="text"
+                required
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
+                placeholder="your company name"
+                style={C.input}
+              />
+            </label>
+          </>
         )}
         <label style={{ display: "grid", gap: 5 }}>
           <span style={C.label}>Email</span>

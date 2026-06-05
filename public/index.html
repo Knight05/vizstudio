@@ -2003,8 +2003,9 @@ html, body { overflow-x: clip; }
       <a class="lib-tile" data-cat="time" href="charts/yoyline-viz.html"><img src="icons/yoyline-viz.png" alt="Year-over-Year Line — Data Studio chart" loading="lazy"><span class="name">Year-over-Year Line</span></a>
       <a class="lib-tile" data-cat="tree" href="charts/treemapzoom-viz.html"><img src="icons/treemapzoom-viz.png" alt="Zoomable Treemap — Data Studio chart" loading="lazy"><span class="name">Zoomable Treemap</span></a>
     </div>
-    <div style="text-align: center; margin-top: 36px;">
+    <div style="text-align: center; margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
       <a href="#library" class="btn big">Open full gallery →</a>
+      <a href="suggest.html" class="btn big">Suggest a chart →</a>
     </div>
   </div>
 </section>
@@ -3746,8 +3747,4 @@ tickerTrack.innerHTML = tickerHTML;
   build(document.getElementById('heroMarquee1'), ICONS.slice(0, half * 2), false);
   build(document.getElementById('heroMarquee2'), [...ICONS.slice(half)].reverse().concat(ICONS.slice(0, half)), true);
 })();
-</script>
-
-<script src="assets/partials.js"></script>
-</body>
-</html>
+</scri
