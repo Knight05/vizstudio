@@ -2,6 +2,20 @@ import type { NextConfig } from "next";
 
 const config: NextConfig = {
   reactStrictMode: true,
+  async redirects() {
+    // Old app marketing pages -> static site equivalents
+    return [
+      { source: "/showcase", destination: "/#library", permanent: false },
+      { source: "/pricing", destination: "/#pricing", permanent: false },
+      { source: "/docs/:path*", destination: "/how-to-add-a-chart.html", permanent: false },
+      { source: "/charts/:slug([^.]+)", destination: "/charts/:slug.html", permanent: false },
+      { source: "/legal/terms", destination: "/terms.html", permanent: false },
+      { source: "/legal/privacy", destination: "/privacy.html", permanent: false },
+      { source: "/about", destination: "/", permanent: false },
+      { source: "/changelog", destination: "/", permanent: false },
+      { source: "/roadmap", destination: "/", permanent: false },
+    ];
+  },
   async rewrites() {
     // Serve the static marketing site (public/index.html) at the root.
     // App routes (/admin, /dashboard, /login, /signup, /api/*) are untouched.
