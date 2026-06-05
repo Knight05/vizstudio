@@ -1,4 +1,4 @@
-# Viz Studio — vizstudio.io 
+# Viz Studio — vizstudio.io
 
 The SaaS site for Viz Studio: 118 community D3.js visualizations for Google Looker Studio.
 

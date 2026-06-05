@@ -1,36 +1,30 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 /**
- * Coming-soon mode.
- *
- * Every page route except "/" is redirected to "/" (the coming soon page).
- * What stays live:
- *   - /icons/*        — chart thumbnails for Looker Studio embeds
- *   - /api/*          — API routes (auth, stripe, trpc) keep responding
- *   - /manifest.json  — Looker Studio component manifest
- *   - /favicon.ico, /robots.txt, /sitemap.xml — standard web metadata
- *   - /_next/*        — Next.js framework assets
- *
- * To exit coming-soon mode: delete this file and restore the previous
- * /dashboard auth gate (see git history for the original middleware).
+ * Lightweight middleware: gate /dashboard routes by checking for a
+ * Better-Auth session cookie. We don't decode the token here (that
+ * needs Node runtime); we just check presence and bounce to /login.
+ * The dashboard server component then does a real getSession() check.
  */
 export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+  const pathname = request.nextUrl.pathname;
+  const isProtected = pathname.startsWith("/dashboard");
+  if (!isProtected) return NextResponse.next();
 
-  // Don't redirect the root itself — that's the coming soon page.
-  if (pathname === "/") return NextResponse.next();
+  // Better-Auth uses these cookie names by default.
+  const hasSession =
+    request.cookies.has("better-auth.session_token") ||
+    request.cookies.has("__Secure-better-auth.session_token");
 
-  const url = request.nextUrl.clone();
-  url.pathname = "/";
-  url.search = "";
-  return NextResponse.redirect(url, 307);
+  if (!hasSession) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/login";
+    url.searchParams.set("next", pathname);
+    return NextResponse.redirect(url);
+  }
+  return NextResponse.next();
 }
 
 export const config = {
-  // Run middleware on every path except whitelisted asset routes.
-  // The matcher's negative lookahead is the source of truth — what's NOT
-  // listed here gets redirected to "/".
-  matcher: [
-    "/((?!_next/static|_next/image|icons/|api/|favicon\\.ico|manifest\\.json|robots\\.txt|sitemap\\.xml).*)",
-  ],
+  matcher: ["/dashboard/:path*"],
 };

@@ -172,12 +172,10 @@ model Favorite {
   @@map("favorites")
 }
 
-// ─── Newsletter / early-access signups ───────────────────
-model Lead {
+// ─── Site form submissions (signup / suggest / subscribe) ─
+model FormSubmission {
   id        String   @id @default(cuid())
-  email     String   @unique
-  source    String?
-  createdAt DateTime @default(now()) @map("created_at")
-
-  @@map("leads")
-}
+  form      String   // "signup" | "suggest" | "subscribe"
+  email     String?
+  name      String?
+  message   String?  // suggestion text / extra det

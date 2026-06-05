@@ -2,9 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { AuthForm } from "@/components/AuthForm";
 
-export const metadata = { title: "Sign up" };
-// AuthForm uses useSearchParams() — needs dynamic rendering
-export const dynamic = "force-dynamic";
+export const metadata = { title: "Start free" };
 
 export default function SignupPage() {
   return (
