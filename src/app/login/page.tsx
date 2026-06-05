@@ -10,4 +10,10 @@ export default function LoginPage() {
   return (
     <>
       <Navbar />
-      <main className="mx-auto
+      <main className="mx-auto max-w-md px-6 py-20">
+        <AuthForm mode="login" />
+      </main>
+      <Footer />
+    </>
+  );
+}

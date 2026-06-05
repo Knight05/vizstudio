@@ -178,4 +178,23 @@ model FormSubmission {
   form      String   // "signup" | "suggest" | "subscribe"
   email     String?
   name      String?
-  message   String?  // suggestion text / extra det
+  message   String?  // suggestion text / extra detail
+  payload   Json?    // full raw submission
+  source    String?  // page path or referrer
+  ip        String?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([form, createdAt])
+  @@index([email])
+  @@map("form_submissions")
+}
+
+// ─── Newsletter / early-access signups ───────────────────
+model Lead {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  source    String?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("leads")
+}
