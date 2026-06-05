@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -39,13 +39,31 @@ export type PortalProps = {
   initialKeys: PortalKey[];
   favorites: { id: string; chartId: string }[];
   downloadCount: number;
+  /** Client's GCS bucket (falls back to the shared library bucket). */
+  bucket: string;
+  bucketProvisioned: boolean;
+  chartCount: number;
 };
 
-const TABS = ["overview", "billing", "downloads", "support", "settings"] as const;
+type PortalChart = {
+  id: string;
+  name: string;
+  category: string;
+  shortDescription: string;
+  longDescription: string;
+  description: string;
+  useCases?: string[];
+  screenshotUrl: string | null;
+};
+
+const CAL_CONNECTOR_URL = "/google-calendar-connector.html";
+
+const TABS = ["overview", "charts", "billing", "downloads", "support", "settings"] as const;
 type Tab = (typeof TABS)[number];
 
 const TAB_LABELS: Record<Tab, string> = {
   overview: "Home",
+  charts: "Charts",
   billing: "Billing",
   downloads: "Downloads & keys",
   support: "Support",
@@ -68,6 +86,9 @@ function IconSprite() {
         <symbol id="i-sparkle" viewBox="0 0 16 16"><path fill="currentColor" d="M8 1l1.5 4.5L14 7l-4.5 1.5L8 13l-1.5-4.5L2 7l4.5-1.5L8 1z" /></symbol>
         <symbol id="i-bolt" viewBox="0 0 16 16"><path fill="currentColor" d="M9 1L3 9h4l-1 6 6-8H8l1-6z" /></symbol>
         <symbol id="i-data" viewBox="0 0 16 16"><ellipse cx="8" cy="3.5" rx="5" ry="1.6" fill="none" stroke="currentColor" strokeWidth="1.4" /><path fill="none" stroke="currentColor" strokeWidth="1.4" d="M3 3.5v9c0 .9 2.2 1.6 5 1.6s5-.7 5-1.6v-9M3 8c0 .9 2.2 1.6 5 1.6S13 8.9 13 8" /></symbol>
+        <symbol id="i-search" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" strokeWidth="1.4" /><path stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" d="M10.5 10.5L13.5 13.5" /></symbol>
+        <symbol id="i-key" viewBox="0 0 16 16"><circle cx="5" cy="8" r="3" fill="none" stroke="currentColor" strokeWidth="1.4" /><path stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" fill="none" d="M8 8h6M11.5 8v2.5M14 8v2" /></symbol>
+        <symbol id="i-cal" viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.4" /><path stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3" /></symbol>
       </defs>
     </svg>
   );
@@ -82,7 +103,8 @@ function Icon({ id }: { id: string }) {
 }
 
 function StatusPill({ status }: { status: string }) {
-  const good = status === "active" || status === "trialing" || status === "paid";
+  const good =
+    status === "active" || status === "trialing" || status === "paid" || status === "verified";
   const bad =
     status === "past_due" || status === "unpaid" || status === "canceled" ||
     status === "failed" || status === "void" || status === "uncollectible";
@@ -99,6 +121,29 @@ function initials(name: string | null, email: string) {
   return ((parts[0]?.[0] ?? "") + (parts[1]?.[0] ?? "")).toUpperCase() || "VZ";
 }
 
+/* Copy-to-clipboard field with feedback */
+function CopyField({ value, onCopy }: { value: string; onCopy?: () => void }) {
+  const [copied, setCopied] = useState(false);
+  async function copy() {
+    await navigator.clipboard.writeText(value);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1200);
+    onCopy?.();
+  }
+  return (
+    <div className="copy-row">
+      <code>{value}</code>
+      <button
+        className="pbtn"
+        style={copied ? { color: "var(--acc-green)" } : undefined}
+        onClick={copy}
+      >
+        {copied ? "Copied ✓" : "Copy"}
+      </button>
+    </div>
+  );
+}
+
 /* ════════════════════════════════════════════════════════
    Shell
    ════════════════════════════════════════════════════════ */
@@ -112,6 +157,7 @@ export function PortalClient(props: PortalProps) {
 
   const NAV: { tab: Tab; icon: string; kb?: string }[] = [
     { tab: "overview", icon: "i-home" },
+    { tab: "charts", icon: "i-charts", kb: String(props.chartCount) },
     { tab: "billing", icon: "i-reports" },
     { tab: "downloads", icon: "i-download", kb: String(props.initialKeys.length) },
     { tab: "support", icon: "i-help" },
@@ -144,13 +190,12 @@ export function PortalClient(props: PortalProps) {
           ))}
         </nav>
 
-        <div className="sb-section">Library</div>
+        <div className="sb-section">Resources</div>
         <nav style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-          <Link className="sb-link" href="/showcase">
-            <Icon id="i-library" />
-            All charts
-            <span className="kb">118</span>
-          </Link>
+          <a className="sb-link" href={CAL_CONNECTOR_URL} target="_blank" rel="noreferrer">
+            <Icon id="i-cal" />
+            Calendar connector
+          </a>
           <Link className="sb-link" href="/pricing">
             <Icon id="i-bolt" />
             Pricing
@@ -190,15 +235,16 @@ export function PortalClient(props: PortalProps) {
             <button className="icon-btn" title="Support" onClick={() => switchTab("support")}>
               <Icon id="i-help" />
             </button>
-            <Link href="/showcase" className="pbtn-primary">
+            <button className="pbtn-primary" onClick={() => switchTab("charts")}>
               <Icon id="i-plus" />
               New chart
-            </Link>
+            </button>
           </div>
         </div>
 
         <div className="workspace">
           {tab === "overview" && <OverviewTab {...props} goTo={switchTab} />}
+          {tab === "charts" && <ChartsTab {...props} />}
           {tab === "billing" && <BillingTab {...props} />}
           {tab === "downloads" && <DownloadsTab {...props} />}
           {tab === "support" && <SupportTab />}
@@ -214,11 +260,21 @@ export function PortalClient(props: PortalProps) {
    ════════════════════════════════════════════════════════ */
 function OverviewTab(props: PortalProps & { goTo: (t: Tab) => void }) {
   const first = props.user.name?.split(" ")[0];
+  const firstKey = props.initialKeys[0] ?? null;
+  const [keyCopied, setKeyCopied] = useState(false);
+
+  async function copyKey() {
+    if (!firstKey) return;
+    await navigator.clipboard.writeText(firstKey.key);
+    setKeyCopied(true);
+    setTimeout(() => setKeyCopied(false), 1200);
+    track("license_key_copied");
+  }
 
   const stats: { label: string; value: string | number; tab: Tab }[] = [
+    { label: "Charts", value: props.chartCount, tab: "charts" },
     { label: "Downloads", value: props.downloadCount, tab: "downloads" },
     { label: "License keys", value: props.initialKeys.length, tab: "downloads" },
-    { label: "Favorites", value: props.favorites.length, tab: "overview" },
     { label: "Payment", value: props.status.replace("_", " "), tab: "billing" },
   ];
 
@@ -245,16 +301,16 @@ function OverviewTab(props: PortalProps & { goTo: (t: Tab) => void }) {
       </div>
 
       <div className="qa-grid">
-        <Link href="/showcase" className="qa-card">
+        <button className="qa-card" onClick={() => props.goTo("charts")}>
           <div className="qa-icon" style={{ background: "color-mix(in oklch, #6366f1 25%, transparent)" }}>
             <svg style={{ color: "#a5b4fc" }}><use href="#i-charts" /></svg>
           </div>
           <div>
-            <div className="qa-title">Build a chart</div>
-            <div className="qa-body">Pick from 118 D3-powered visualizations and drop them into Looker Studio.</div>
+            <div className="qa-title">Add a chart</div>
+            <div className="qa-body">Browse {props.chartCount} D3-powered visualizations and copy your add-link for Looker Studio.</div>
           </div>
-          <div className="qa-foot"><span>Browse library</span><span>→</span></div>
-        </Link>
+          <div className="qa-foot"><span>Open library</span><span>→</span></div>
+        </button>
         <button className="qa-card" onClick={() => props.goTo("billing")}>
           <div className="qa-icon" style={{ background: "color-mix(in oklch, #ec4899 25%, transparent)" }}>
             <svg style={{ color: "#f9a8d4" }}><use href="#i-reports" /></svg>
@@ -277,6 +333,86 @@ function OverviewTab(props: PortalProps & { goTo: (t: Tab) => void }) {
         </button>
       </div>
 
+      {/* quick links: license key, all-charts link, calendar connector */}
+      <div className="pcard">
+        <h3>Quick links</h3>
+        <p className="lead">Everything you need to plug Viz Studio into Looker Studio.</p>
+
+        <div className="ql-row">
+          <div className="ql-ic"><Icon id="i-key" /></div>
+          <div className="ql-main">
+            <div className="ql-t">License key</div>
+            <div className="ql-s">
+              {firstKey
+                ? "Paste into a chart's style panel to remove the watermark."
+                : props.tier === "FREE"
+                  ? "Included with Pro and Team plans."
+                  : "Generate one under Downloads & keys."}
+            </div>
+          </div>
+          <div className="ql-act">
+            {firstKey ? (
+              <>
+                <span className="kkey">{firstKey.key}</span>
+                <button
+                  className="pbtn"
+                  style={keyCopied ? { color: "var(--acc-green)" } : undefined}
+                  onClick={copyKey}
+                >
+                  {keyCopied ? "Copied ✓" : "Copy"}
+                </button>
+              </>
+            ) : props.tier === "FREE" ? (
+              <Link href="/pricing" className="pbtn" style={{ textDecoration: "none" }}>
+                Upgrade →
+              </Link>
+            ) : (
+              <button className="pbtn" onClick={() => props.goTo("downloads")}>
+                Generate →
+              </button>
+            )}
+          </div>
+        </div>
+
+        <div className="ql-row">
+          <div className="ql-ic"><Icon id="i-library" /></div>
+          <div className="ql-main">
+            <div className="ql-t">All charts — one manifest</div>
+            <div className="ql-s">
+              Add the entire library to Looker Studio in one go.
+            </div>
+          </div>
+          <div className="ql-act" style={{ flex: 1, minWidth: 260, maxWidth: 420 }}>
+            <div style={{ flex: 1 }}>
+              <CopyField
+                value={`gs://${props.bucket}`}
+                onCopy={() => track("library_link_copied", { scope: "all" })}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="ql-row">
+          <div className="ql-ic"><Icon id="i-cal" /></div>
+          <div className="ql-main">
+            <div className="ql-t">Google Calendar connector</div>
+            <div className="ql-s">Pull calendar events straight into your reports.</div>
+          </div>
+          <div className="ql-act">
+            <a
+              className="pbtn"
+              style={{ textDecoration: "none" }}
+              href={CAL_CONNECTOR_URL}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => track("calendar_connector_open")}
+            >
+              Open →
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div className="stat-grid">
         {stats.map((s) => (
           <button key={s.label} className="stat" onClick={() => props.goTo(s.tab)}>
@@ -285,26 +421,175 @@ function OverviewTab(props: PortalProps & { goTo: (t: Tab) => void }) {
           </button>
         ))}
       </div>
+    </>
+  );
+}
 
-      <div>
-        <div className="section-title" style={{ marginBottom: 10 }}>
-          <span>Favorites</span>
-          <Link href="/showcase">Browse all →</Link>
-        </div>
-        {props.favorites.length === 0 ? (
-          <div className="pcard" style={{ color: "var(--muted)", fontSize: 12.5 }}>
-            No favorites yet. Browse the{" "}
-            <Link href="/showcase" style={{ color: "var(--text)" }}>showcase</Link>{" "}
-            and star the charts you use most.
-          </div>
-        ) : (
-          <div className="fav-grid">
-            {props.favorites.map((f) => (
-              <Link key={f.id} href={`/charts/${f.chartId}`}>{f.chartId}</Link>
-            ))}
-          </div>
-        )}
+/* ════════════════════════════════════════════════════════
+   Charts library
+   ════════════════════════════════════════════════════════ */
+function ChartsTab(props: PortalProps) {
+  const chartsQuery = trpc.charts.list.useQuery(undefined, { staleTime: 10 * 60_000 });
+  const recordDownload = trpc.charts.recordDownload.useMutation();
+
+  const [q, setQ] = useState("");
+  const [cat, setCat] = useState<string | null>(null);
+  const [sel, setSel] = useState<PortalChart | null>(null);
+
+  // Close modal on Escape
+  useEffect(() => {
+    if (!sel) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setSel(null);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [sel]);
+
+  const all = (chartsQuery.data?.components ?? []) as unknown as PortalChart[];
+  const cats = Array.from(new Set(all.map((c) => c.category)));
+
+  const needle = q.trim().toLowerCase();
+  const filtered = all.filter(
+    (c) =>
+      (!cat || c.category === cat) &&
+      (!needle ||
+        c.name.toLowerCase().includes(needle) ||
+        c.shortDescription?.toLowerCase().includes(needle) ||
+        c.id.includes(needle)),
+  );
+
+  function openChart(c: PortalChart) {
+    setSel(c);
+    track("portal_chart_view", { chart_id: c.id });
+  }
+
+  return (
+    <>
+      <div className="page-head">
+        <h1>Chart library</h1>
+        <p>
+          {props.chartCount} visualizations, ready for Looker Studio. Click a chart for
+          details and your add-link.
+        </p>
       </div>
+
+      {/* all-charts banner */}
+      <div className="lib-banner">
+        <div style={{ flex: 1, minWidth: 220 }}>
+          <div className="t">Add the entire library</div>
+          <div className="s">
+            Paste this manifest path once in Looker Studio (Community visualizations →
+            Build your own) and every chart shows up in your report.
+            {!props.bucketProvisioned && " Your private bucket is still being set up — this shared path works in the meantime."}
+          </div>
+        </div>
+        <div style={{ flex: 1, minWidth: 260, maxWidth: 440 }}>
+          <CopyField
+            value={`gs://${props.bucket}`}
+            onCopy={() => track("library_link_copied", { scope: "all" })}
+          />
+        </div>
+      </div>
+
+      {/* filters */}
+      <div className="filter-row">
+        <div className="copy-row" style={{ flex: 1, minWidth: 200, maxWidth: 320, padding: "5px 8px 5px 11px" }}>
+          <Icon id="i-search" />
+          <input
+            className="pinput"
+            style={{ border: 0, background: "transparent", padding: "3px 6px" }}
+            placeholder="Search charts…"
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+          />
+        </div>
+        <button className={cn("cat-pill", !cat && "on")} onClick={() => setCat(null)}>
+          All
+        </button>
+        {cats.map((c) => (
+          <button
+            key={c}
+            className={cn("cat-pill", cat === c && "on")}
+            onClick={() => setCat(cat === c ? null : c)}
+          >
+            {c}
+          </button>
+        ))}
+      </div>
+
+      {/* grid */}
+      {chartsQuery.isLoading ? (
+        <div className="pcard" style={{ color: "var(--muted)", fontSize: 12.5 }}>
+          Loading the library…
+        </div>
+      ) : filtered.length === 0 ? (
+        <div className="pcard" style={{ color: "var(--muted)", fontSize: 12.5 }}>
+          No charts match &ldquo;{q}&rdquo;. Try a different search, or{" "}
+          <button
+            style={{ all: "unset", color: "var(--text)", cursor: "pointer", textDecoration: "underline" }}
+            onClick={() => { setQ(""); setCat(null); }}
+          >
+            clear filters
+          </button>.
+        </div>
+      ) : (
+        <div className="chart-grid">
+          {filtered.map((c) => (
+            <button key={c.id} className="chart-card" onClick={() => openChart(c)}>
+              <div className="ic">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`/icons/${c.id}.png`} alt="" loading="lazy" />
+              </div>
+              <div>
+                <div className="nm">{c.name}</div>
+                <div className="ds">{c.shortDescription || c.description}</div>
+              </div>
+              <div className="ct">{c.category}</div>
+            </button>
+          ))}
+        </div>
+      )}
+
+      {/* detail modal */}
+      {sel && (
+        <div className="pmodal-ov" onClick={() => setSel(null)}>
+          <div className="pmodal" onClick={(e) => e.stopPropagation()}>
+            <div className="shot">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={sel.screenshotUrl ?? `/icons/${sel.id}.png`}
+                alt={`${sel.name} screenshot`}
+              />
+            </div>
+            <div className="body">
+              <div className="head">
+                <div>
+                  <h2>{sel.name}</h2>
+                  <div className="cat">{sel.category} · {sel.id}</div>
+                </div>
+                <button className="x" onClick={() => setSel(null)} title="Close">✕</button>
+              </div>
+
+              <p className="desc">{sel.longDescription || sel.description}</p>
+
+              <div className="add-box">
+                <div className="t">Add to Looker Studio</div>
+                <CopyField
+                  value={`gs://${props.bucket}/${sel.id}`}
+                  onCopy={() => {
+                    track("chart_link_copied", { chart_id: sel.id });
+                    recordDownload.mutate({ chartId: sel.id });
+                  }}
+                />
+                <ol>
+                  <li>In your report: Insert → Community visualizations</li>
+                  <li>Click &ldquo;+ Explore more&rdquo; → &ldquo;Build your own&rdquo;</li>
+                  <li>Paste the manifest path above → Submit</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
@@ -314,12 +599,12 @@ function OverviewTab(props: PortalProps & { goTo: (t: Tab) => void }) {
    ════════════════════════════════════════════════════════ */
 const PLAN_FEATS: Record<PortalProps["tier"], string[]> = {
   FREE: [
-    "Preview all 118 charts",
+    "Preview all charts",
     "Watermarked exports",
     "Community support",
   ],
   PRO: [
-    "All 118 charts unlocked",
+    "All charts unlocked",
     "Every palette · no watermark",
     "2 license keys",
     "Priority support",
@@ -595,9 +880,7 @@ function DownloadsTab(props: PortalProps) {
           <div style={{ fontSize: 12.5, color: "var(--muted)" }}>Loading…</div>
         ) : !downloadsQuery.data || downloadsQuery.data.length === 0 ? (
           <div style={{ fontSize: 12.5, color: "var(--muted)" }}>
-            No downloads yet. Head to the{" "}
-            <Link href="/showcase" style={{ color: "var(--text)" }}>showcase</Link>{" "}
-            to grab your first chart.
+            No downloads yet. Open the chart library and copy your first add-link.
           </div>
         ) : (
           <table className="invoices">
@@ -610,11 +893,7 @@ function DownloadsTab(props: PortalProps) {
             <tbody>
               {downloadsQuery.data.map((d) => (
                 <tr key={d.id}>
-                  <td>
-                    <Link href={`/charts/${d.chartId}`} style={{ color: "var(--text)", textDecoration: "none" }}>
-                      {d.chartId}
-                    </Link>
-                  </td>
+                  <td style={{ fontFamily: "var(--mono)", fontSize: 12 }}>{d.chartId}</td>
                   <td style={{ textAlign: "right", whiteSpace: "nowrap" }}>
                     {new Date(d.createdAt).toLocaleString()}
                   </td>

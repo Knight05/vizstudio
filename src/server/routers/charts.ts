@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { router, publicProcedure, protectedProcedure } from "../trpc";
-import { loadManifest, getChartBySlug } from "@/lib/manifest";
+import { loadManifest, getChartBySlug, screenshotFor } from "@/lib/manifest";
 import { TRPCError } from "@trpc/server";
 
 export const chartsRouter = router({
@@ -30,7 +30,13 @@ export const chartsRouter = router({
             c.tags.some((t) => t.includes(q)),
         );
       }
-      return { ...manifest, components };
+      return {
+        ...manifest,
+        components: components.map((c) => ({
+          ...c,
+          screenshotUrl: screenshotFor(c.id),
+        })),
+      };
     }),
 
   /** Get a single chart by slug. */
@@ -41,7 +47,7 @@ export const chartsRouter = router({
       if (!chart) {
         throw new TRPCError({ code: "NOT_FOUND", message: "Chart not found" });
       }
-      return chart;
+      return { ...chart, screenshotUrl: screenshotFor(chart.id) };
     }),
 
   /** Toggle favorite (auth-required). */

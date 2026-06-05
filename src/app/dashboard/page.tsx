@@ -2,6 +2,8 @@ import { redirect } from "next/navigation";
 import { headers } from "next/headers";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
+import { loadManifest } from "@/lib/manifest";
+import { SOURCE_BUCKET } from "@/lib/gcs";
 import { PortalClient } from "./portal-client";
 
 export const metadata = { title: "Client Portal" };
@@ -51,6 +53,9 @@ export default async function DashboardPage() {
       }))}
       favorites={user.favorites.map((f) => ({ id: f.id, chartId: f.chartId }))}
       downloadCount={downloadCount}
+      bucket={user.gcsBucket ?? SOURCE_BUCKET}
+      bucketProvisioned={Boolean(user.gcsBucket)}
+      chartCount={loadManifest().components.length}
     />
   );
 }

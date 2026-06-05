@@ -685,3 +685,205 @@ html, body {
   .pshell .sb-section, .pshell .sb-spacer, .pshell .sb-user { display: none; }
   .pshell .sb-link .kb { display: none; }
 }
+
+/* ── portal: charts library ── */
+.pshell .lib-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: var(--r-lg);
+  border: 1px solid color-mix(in oklch, var(--acc-green) 35%, var(--border));
+  background:
+    radial-gradient(600px 120px at 0% 0%, color-mix(in oklch, var(--acc-green) 10%, transparent), transparent),
+    var(--panel);
+}
+.pshell .lib-banner .t { font-size: 14.5px; font-weight: 700; }
+.pshell .lib-banner .s { font-size: 12px; color: var(--muted); margin-top: 2px; max-width: 52ch; }
+.pshell .filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.pshell .cat-pill {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text-dim);
+  cursor: pointer;
+}
+.pshell .cat-pill:hover { border-color: var(--border-2); color: var(--text); }
+.pshell .cat-pill.on { background: var(--panel-2); color: var(--text); border-color: var(--border-2); }
+.pshell .chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 12px;
+}
+.pshell .chart-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 14px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+}
+.pshell .chart-card:hover { border-color: var(--border-2); background: var(--panel-2); }
+.pshell .chart-card .ic {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-md);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  flex: none;
+}
+.pshell .chart-card .ic img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pshell .chart-card .nm { font-size: 13px; font-weight: 600; }
+.pshell .chart-card .ds {
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.pshell .chart-card .ct {
+  margin-top: auto;
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted-2);
+}
+
+/* copy field */
+.pshell .copy-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-1);
+  border-radius: var(--r-md);
+  padding: 7px 8px 7px 11px;
+}
+.pshell .copy-row code {
+  flex: 1;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text);
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+.pshell .copy-row code::-webkit-scrollbar { display: none; }
+.pshell .copy-row .pbtn { padding: 5px 11px; flex: none; }
+
+/* quick links */
+.pshell .ql-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 0;
+  flex-wrap: wrap;
+}
+.pshell .ql-row + .ql-row { border-top: 1px solid color-mix(in oklch, var(--border) 60%, transparent); }
+.pshell .ql-row .ql-ic {
+  width: 30px;
+  height: 30px;
+  flex: none;
+  border-radius: var(--r-md);
+  display: grid;
+  place-items: center;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+}
+.pshell .ql-row .ql-ic svg { width: 14px; height: 14px; }
+.pshell .ql-row .ql-t { font-size: 12.5px; font-weight: 600; }
+.pshell .ql-row .ql-s { font-size: 11px; color: var(--muted); }
+.pshell .ql-row .ql-main { flex: 1; min-width: 160px; }
+.pshell .ql-row .ql-act { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.pshell .ql-row .kkey { font-family: var(--mono); font-size: 12px; }
+
+/* modal */
+.pshell .pmodal-ov {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: color-mix(in oklch, var(--bg) 70%, transparent);
+  backdrop-filter: blur(4px);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+.pshell .pmodal {
+  width: 100%;
+  max-width: 720px;
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  background: var(--panel);
+  border: 1px solid var(--border-2);
+  border-radius: 12px;
+  box-shadow: 0 24px 80px rgb(0 0 0 / 0.5);
+}
+.pshell .pmodal .shot {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+.pshell .pmodal .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pshell .pmodal .body { padding: 20px; display: grid; gap: 14px; }
+.pshell .pmodal .head { display: flex; align-items: start; justify-content: space-between; gap: 12px; }
+.pshell .pmodal h2 { margin: 0; font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
+.pshell .pmodal .cat {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.pshell .pmodal .desc { font-size: 13px; color: var(--text-dim); line-height: 1.6; margin: 0; }
+.pshell .pmodal .x {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--border);
+  background: var(--panel-2);
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+.pshell .pmodal .x:hover { color: var(--text); border-color: var(--border-2); }
+.pshell .pmodal .add-box {
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--bg-1);
+  padding: 14px;
+  display: grid;
+  gap: 10px;
+}
+.pshell .pmodal .add-box .t { font-size: 12.5px; font-weight: 700; }
+.pshell .pmodal .add-box ol {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 11.5px;
+  color: var(--muted);
+  display: grid;
+  gap: 3px;
+}
