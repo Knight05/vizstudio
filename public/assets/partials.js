@@ -54,6 +54,7 @@
           '<a href="' + root + 'index.html#faq">FAQ</a>' +
         '</nav>' +
         '<div class="right">' +
+          '<a class="btn" href="/login">Log in</a>' +
           '<a class="btn" href="' + root + 'suggest.html">Suggest a chart</a>' +
           '<a class="btn primary" href="' + root + 'get-started.html">Get Started</a>' +
           '<button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">' +
@@ -68,6 +69,7 @@
         '<a href="' + root + 'index.html#pricing">Pricing</a>' +
         '<a href="' + root + 'index.html#faq">FAQ</a>' +
         '<a href="' + root + 'suggest.html">Suggest a chart</a>' +
+        '<a href="/login">Log in</a>' +
         '<a class="btn primary" href="' + root + 'get-started.html">Get Started →</a>' +
       '</div>' +
     '</header>';
@@ -109,6 +111,7 @@
             '<h4>Company</h4>' +
             '<ul>' +
               '<li><a href="' + root + 'get-started.html">Get started</a></li>' +
+              '<li><a href="/login">Client login</a></li>' +
               '<li><a href="' + root + 'terms.html">Terms of Service</a></li>' +
               '<li><a href="' + root + 'privacy.html">Privacy Policy</a></li>' +
             '</ul>' +
