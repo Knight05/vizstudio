@@ -3,6 +3,7 @@ import { prismaAdapter } from "better-auth/adapters/prisma";
 import { nextCookies } from "better-auth/next-js";
 import { Resend } from "resend";
 import { prisma } from "./prisma";
+import { provisionNewUser } from "./provisioning";
 
 const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
@@ -26,6 +27,26 @@ export const auth = betterAuth({
 
   database: prismaAdapter(prisma, { provider: "postgresql" }),
 
+  // Throttle abuse: each signup creates a GCS bucket + ~1000-object copy,
+  // so keep auth endpoints tightly rate-limited (per-IP, in-memory).
+  rateLimit: {
+    enabled: true,
+    window: 60,
+    max: 30,
+    customRules: {
+      "/sign-up/email": { window: 60, max: 3 },
+      "/request-password-reset": { window: 60, max: 3 },
+      "/forget-password": { window: 60, max: 3 },
+      "/sign-in/email": { window: 60, max: 10 },
+    },
+  },
+
+  advanced: {
+    // Defense-in-depth for session cookies behind Vercel's proxy.
+    useSecureCookies: process.env.NODE_ENV === "production",
+    ipAddressHeaders: ["x-forwarded-for", "x-real-ip"],
+  },
+
   emailAndPassword: {
     enabled: true,
     requireEmailVerification: false, // flip to true once Resend is configured in prod
@@ -38,7 +59,7 @@ export const auth = betterAuth({
       await resend.emails.send({
         from: FROM,
         to: user.email,
-        subject: "Reset your Viz Studio password",
+        subject: "Set your Viz Studio password",
         html: resetPasswordEmail(url),
       });
     },
@@ -61,6 +82,12 @@ export const auth = betterAuth({
   },
 
   user: {
+    additionalFields: {
+      // Client company name — drives the GCS bucket name on signup.
+      company: { type: "string", required: false, input: true },
+      // Provisioned bucket (set server-side, never by the client).
+      gcsBucket: { type: "string", required: false, input: false },
+    },
     changeEmail: {
       enabled: true,
       updateEmailWithoutVerification: true,
@@ -99,6 +126,21 @@ export const auth = betterAuth({
     updateAge: 60 * 60 * 24,      // refresh once per day
   },
 
+  databaseHooks: {
+    user: {
+      create: {
+        // New client signup → provision GCS bucket (copied + manifests
+        // rewritten from the prod bucket) and send the password-setup
+        // email. provisionNewUser never throws.
+        after: async (user) => {
+          await provisionNewUser(
+            user as typeof user & { company?: string | null }
+          );
+        },
+      },
+    },
+  },
+
   // Set cookies via Next.js cookie store automatically.
   plugins: [nextCookies()],
 });
@@ -110,9 +152,9 @@ export type AuthUser = Session["user"];
 function resetPasswordEmail(url: string) {
   return `
     <div style="font-family:ui-monospace,SFMono-Regular,monospace;background:#1a1a1f;color:#eee;padding:32px;border-radius:8px;max-width:480px;margin:0 auto;">
-      <h2 style="margin:0 0 12px;">Reset your password</h2>
-      <p style="color:#aaa;line-height:1.55;">Click below to set a new password. This link expires in 1 hour.</p>
-      <a href="${url}" style="display:inline-block;margin-top:18px;padding:10px 18px;background:#7ed957;color:#111;text-decoration:none;border-radius:6px;font-weight:600;">Reset password</a>
+      <h2 style="margin:0 0 12px;">Set your password</h2>
+      <p style="color:#aaa;line-height:1.55;">Click below to set your Viz Studio password. This link expires in 1 hour.</p>
+      <a href="${url}" style="display:inline-block;margin-top:18px;padding:10px 18px;background:#7ed957;color:#111;text-decoration:none;border-radius:6px;font-weight:600;">Set password</a>
       <p style="color:#666;font-size:11px;margin-top:24px;">Didn't request this? Ignore this email.</p>
     </div>
   `;
