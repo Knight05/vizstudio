@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Get Started — vizstudio</title>
+<meta name="description" content="Request access to vizstudio — 78 premium D3 charts for Data Studio. Use your work email and we'll get you set up.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/forms.css">
+</head>
+<body>
+<div class="blobs"><span class="blob blob-1"></span><span class="blob blob-2"></span><span class="blob blob-3"></span></div>
+
+<div id="site-nav"></div>
+
+<main>
+<section class="form-page">
+  <div class="wrap">
+    <div class="form-card">
+      <div class="form-eyebrow">Get Started</div>
+      <h1>Get access to the full library.</h1>
+      <p class="sub">No credit card required. Use your work email — we'll follow up with setup instructions.</p>
+
+      <form data-form="signup" novalidate>
+        <div class="form-field">
+          <label for="su-name">Full name</label>
+          <input id="su-name" name="name" type="text" required autocomplete="name" placeholder="Jane Doe">
+          <span class="err"></span>
+        </div>
+        <div class="form-field">
+          <label for="su-email">Work email</label>
+          <input id="su-email" name="email" type="email" required data-business="1" autocomplete="email" placeholder="jane@yourcompany.com">
+          <span class="hint">We require a business email to keep trial abuse out.</span>
+          <span class="err"></span>
+        </div>
+        <div class="form-field">
+          <label for="su-company">Company</label>
+          <input id="su-company" name="company" type="text" required autocomplete="organization" placeholder="Acme Inc.">
+          <span class="err"></span>
+        </div>
+        <div class="form-field">
+          <label for="su-role">Role</label>
+          <select id="su-role" name="role" required>
+            <option value="">Select…</option>
+            <option>Analyst / BI</option>
+            <option>Marketer</option>
+            <option>Engineer</option>
+            <option>Product Manager</option>
+            <option>Executive</option>
+            <option>Other</option>
+          </select>
+          <span class="err"></span>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary">Request access →</button>
+          <div class="micro">By continuing you agree to our <a href="terms.html" style="color: var(--acc-4);">Terms</a> and <a href="privacy.html" style="color: var(--acc-4);">Privacy Policy</a>.</div>
+        </div>
+      </form>
+
+      <div class="form-success">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h2>Request received.</h2>
+        <p>We'll follow up by email with setup instructions shortly.</p>
+        <a class="btn" href="index.html">← Back to charts</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="site-footer"><footer class="footer-fallback"><nav aria-label="Footer"><a href="index.html">Home</a> · <a href="index.html#library">Charts</a> · <a href="get-started.html">Get Started</a> · <a href="suggest.html">Suggest a Chart</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms of Service</a></nav><p>© vizstudio — premium D3 community visualizations for Data Studio.</p></footer></div>
+
+<script src="assets/forms.js"></script>
+<script src="assets/partials.js"></script>
+</body>
+</html>

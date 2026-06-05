@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Add a Community Chart to Data Studio — vizstudio</title>
+<meta name="description" content="Step-by-step guide with screenshots: add any vizstudio community visualization to a Data Studio report in under 4 minutes — no code required.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+/* ── guide page ── */
+.guide-hero { padding: 72px 0 24px; text-align: center; }
+.guide-hero h1 { font-family: var(--display); font-size: clamp(30px, 5vw, 46px); font-weight: 700; letter-spacing: -0.02em; margin: 14px 0 12px; }
+.guide-hero .sub { color: var(--text-dim); font-size: 17px; line-height: 1.6; max-width: 640px; margin: 0 auto; }
+.guide-meta { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 22px; }
+.guide-meta .chip { font-family: var(--mono); font-size: 12px; color: var(--text-dim); border: 1px solid var(--border-strong); border-radius: 999px; padding: 6px 14px; background: var(--surface); }
+
+.guide-body { max-width: 880px; margin: 0 auto; padding: 24px 0 40px; }
+
+.step { margin: 0 0 56px; }
+.step-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 10px; }
+.step-num { font-family: var(--mono); font-size: 13px; font-weight: 500; color: #fff; background: var(--accent-grad); border-radius: 999px; min-width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; flex: none; transform: translateY(4px); }
+.step h2 { font-family: var(--display); font-size: 24px; font-weight: 700; letter-spacing: -0.015em; margin: 0; }
+.step p { color: var(--text-dim); font-size: 16px; line-height: 1.65; margin: 0 0 14px; }
+.step strong { color: var(--text); font-weight: 600; }
+.step ul { padding-left: 18px; color: var(--text-dim); font-size: 16px; line-height: 1.65; margin: 0 0 14px; }
+.step li { margin-bottom: 6px; }
+.step code { font-family: var(--mono); font-size: 13.5px; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 2px 7px; color: var(--acc-4); }
+
+.shot { margin: 18px 0 0; border: 1px solid var(--border-strong); border-radius: var(--r-lg); overflow: hidden; background: #fff; box-shadow: 0 20px 50px -30px rgba(0,0,0,0.8); }
+.shot img { display: block; width: 100%; height: auto; }
+.shot-cap { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-top: 10px; }
+
+.callout { border: 1px solid var(--border-strong); border-left: 3px solid var(--acc-2); border-radius: var(--r-md); background: var(--surface); padding: 14px 18px; margin: 16px 0; color: var(--text-dim); font-size: 15px; line-height: 1.6; }
+.callout strong { color: var(--text); }
+
+.routes { width: 100%; border-collapse: collapse; margin: 16px 0 8px; font-size: 15px; }
+.routes th { text-align: left; font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; padding: 10px 14px; border-bottom: 1px solid var(--border-strong); }
+.routes td { color: var(--text-dim); padding: 12px 14px; border-bottom: 1px solid var(--border); line-height: 1.55; }
+.routes td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; }
+
+.trouble { border: 1px solid var(--border); border-radius: var(--r-md); background: var(--surface); margin: 0 0 10px; }
+.trouble summary { cursor: pointer; padding: 14px 18px; font-weight: 600; color: var(--text); font-size: 15.5px; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+.trouble summary::after { content: '+'; font-family: var(--mono); color: var(--muted); font-size: 18px; }
+.trouble[open] summary::after { content: '–'; }
+.trouble div { padding: 0 18px 16px; color: var(--text-dim); font-size: 15px; line-height: 1.6; }
+
+.guide-cta { text-align: center; border: 1px solid var(--border-strong); border-radius: var(--r-xl); background: var(--surface); padding: 44px 28px; margin: 56px 0 72px; }
+.guide-cta h2 { font-family: var(--display); font-size: 28px; font-weight: 700; margin: 0 0 10px; }
+.guide-cta p { color: var(--text-dim); margin: 0 0 22px; }
+@media (max-width: 640px) {
+  .guide-hero { padding-top: 48px; }
+  .step h2 { font-size: 20px; }
+}
+</style>
+</head>
+<body>
+<div class="blobs"><span class="blob blob-1"></span><span class="blob blob-2"></span><span class="blob blob-3"></span></div>
+
+<div id="site-nav"></div>
+
+<main>
+<section class="guide-hero">
+  <div class="wrap">
+    <div class="eyebrow">Guide</div>
+    <h1>Add a community chart to <span class="gradient-text">Data Studio</span></h1>
+    <p class="sub">From a blank report to a fully styled vizstudio chart in eight steps. No code, no extensions — just the manifest path we send you when you get access.</p>
+    <div class="guide-meta">
+      <span class="chip">⏱ 2–4 minutes</span>
+      <span class="chip">UI verified June 2026</span>
+      <span class="chip">78 charts, one path</span>
+    </div>
+  </div>
+</section>
+
+<section class="guide-body wrap">
+
+  <div class="callout">
+    <strong>Before you start:</strong> you'll need edit access to a Data Studio report, at least one connected data source, and your vizstudio manifest path — it looks like <code>gs://your-bucket-id</code> and arrives with your welcome email. In this guide we use the placeholder <code>gs://your-bucket-id</code>; swap in your real path wherever you see it.
+  </div>
+
+  <div class="step">
+    <div class="step-head"><span class="step-num">1</span><h2>Open a report in Edit mode</h2></div>
+    <p>Sign in to <strong>lookerstudio.google.com</strong> (Google's current home for Data Studio) and open the report you want the chart in. Make sure you're editing — the top-right button reads <strong>View</strong> (offering to switch back) and the File / Edit / View menu bar is visible.</p>
+    <figure class="shot"><picture><source srcset="images/guide/01-open-report-edit-mode.webp" type="image/webp"><img src="images/guide/01-open-report-edit-mode.png" alt="Data Studio report open in Edit mode, with the menu bar visible and the View button top-right" loading="lazy" decoding="async"></picture></figure>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><span class="step-num">2</span><h2>Click the Community visualizations button</h2></div>
+    <p>On the toolbar, just right of <strong>Add a chart</strong>, click the small <strong>grid-with-a-plus icon</strong>. Hover it and the tooltip reads &ldquo;Community visualizations and components&rdquo;.</p>
+    <figure class="shot"><picture><source srcset="images/guide/02-toolbar-community-button.webp" type="image/webp"><img src="images/guide/02-toolbar-community-button.png" alt="Toolbar with the grid-with-a-plus Community visualizations button highlighted, right of Add a chart" loading="lazy" decoding="async"></picture></figure>
+    <div class="callout">Heads-up: the old route via <strong>Insert → Community visualizations</strong> no longer exists. The toolbar button is the only way in.</div>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><span class="step-num">3</span><h2>Choose &ldquo;+ Explore more&rdquo;</h2></div>
+    <p>A dropdown panel opens with three areas:</p>
+    <ul>
+      <li><strong>Featured</strong> — Google and partner promoted charts</li>
+      <li><strong>Added report resources</strong> — chart libraries already loaded into <em>this</em> report. If vizstudio is already here, click a chart and jump to step 7.</li>
+      <li><strong>+ Explore more</strong> — at the very bottom. Click it to load new charts.</li>
+    </ul>
+    <figure class="shot"><picture><source srcset="images/guide/03-community-dropdown.webp" type="image/webp"><img src="images/guide/03-community-dropdown.png" alt="Community visualizations dropdown showing Featured, Added report resources, and Explore more" loading="lazy" decoding="async"></picture></figure>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><span class="step-num">4</span><h2>Pick &ldquo;Build your own visualization&rdquo;</h2></div>
+    <p>A <strong>Community Gallery</strong> sheet slides up from the bottom. Click the top-left tile, <strong>Build your own visualization</strong> (the wrench icon). Don't worry — you're not building anything; this is just how Data Studio loads charts from a path.</p>
+    <figure class="shot"><picture><source srcset="images/guide/04-community-gallery.webp" type="image/webp"><img src="images/guide/04-community-gallery.png" alt="Community Gallery sheet with the Build your own visualization tile highlighted" loading="lazy" decoding="async"></picture></figure>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><span class="step-num">5</span><h2>Paste the manifest path and Submit</h2></div>
+    <p>The sheet switches to <strong>Community Visualization Developers</strong> with a single <strong>Manifest path</strong> field. Paste your path — for example <code>gs://your-bucket-id</code> — and click <strong>Submit</strong>.</p>
+    <p>Two things to get right: it's the bucket path only (Data Studio appends <code>/manifest.json</code> automatically), and there's no trailing slash.</p>
+    <figure class="shot"><picture><source srcset="images/guide/05-manifest-path.webp" type="image/webp"><img src="images/guide/05-manifest-path.png" alt="Manifest path field with a gs:// placeholder path entered and the Submit button highlighted" loading="lazy" decoding="async"></picture></figure>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><span class="step-num">6</span><h2>Pick your chart</h2></div>
+    <p>After Submit, every chart in the library appears as a card — name, thumbnail, description, all 78 of them. Click a card and the chart is added to your report resources <strong>and dropped onto the current page</strong>.</p>
+    <figure class="shot"><picture><source srcset="images/guide/06-chart-picker.webp" type="image/webp"><img src="images/guide/06-chart-picker.png" alt="Chart picker showing community visualization cards after submitting the manifest path" loading="lazy" decoding="async"></picture></figure>
+    <div class="callout">First time only: Data Studio shows a &ldquo;trust this community visualization&rdquo; prompt. Click <strong>Accept and add</strong> — it's the standard safety gate for any third-party chart, and it remembers your choice.</div>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><span class="step-num">7</span><h2>Drop in dimensions and metrics</h2></div>
+    <p>Select the chart on the canvas. The right panel becomes <strong>Community visualization properties</strong> with two tabs: <strong>Setup</strong> and <strong>Style</strong>. In Setup:</p>
+    <ul>
+      <li>Confirm the <strong>Data source</strong></li>
+      <li>Drag a categorical field into the <strong>Dimension</strong> slot(s)</li>
+      <li>Drag a numeric field into the <strong>Metric</strong> slot(s)</li>
+      <li>Add a Sort, Filter, or Date range as needed</li>
+      <li>Flip on <strong>Cross-filtering</strong> under Chart interactions to let clicks filter the rest of the page</li>
+    </ul>
+    <p>The chart re-renders within a second of each change.</p>
+    <figure class="shot"><picture><source srcset="images/guide/07-setup-panel.webp" type="image/webp"><img src="images/guide/07-setup-panel.png" alt="Setup tab with dimension and metric slots and the cross-filtering toggle" loading="lazy" decoding="async"></picture></figure>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><span class="step-num">8</span><h2>Style it your way</h2></div>
+    <p>Click the <strong>Style</strong> tab. Every vizstudio chart ships a panel section per concern — colors, fonts, axes, legend, tooltips, labels, plus chart-specific toggles. Charts inherit your <strong>report theme by default</strong>, so they match the rest of your dashboard out of the box; override anything you like. Resize with the selection handles — every chart is fully responsive.</p>
+    <figure class="shot"><picture><source srcset="images/guide/08-style-panel.webp" type="image/webp"><img src="images/guide/08-style-panel.png" alt="Style tab showing color, font, axis, and legend options for the community chart" loading="lazy" decoding="async"></picture></figure>
+  </div>
+
+  <h2 style="font-family: var(--display); font-size: 26px; font-weight: 700; margin: 0 0 6px;">Two ways to add the same chart</h2>
+  <table class="routes">
+    <thead><tr><th>Method</th><th>Best for</th><th>Steps</th></tr></thead>
+    <tbody>
+      <tr><td>Manifest path</td><td>Discovery — browse every chart in the library</td><td>1 → 2 → 3 → 4 → 5 → 6</td></tr>
+      <tr><td>Component ID</td><td>Repeat use of a known chart — paste the path <em>and</em> the chart's ID (e.g. <code>bump-viz</code>) to skip the picker</td><td>1 → 2 → 3 → 4 → 5, with the Component ID field filled in</td></tr>
+    </tbody>
+  </table>
+  <p style="color: var(--text-dim); font-size: 15px; margin: 6px 0 48px;">Repeat users with a known component ID get a chart on the page in under 60 seconds.</p>
+
+  <h2 style="font-family: var(--display); font-size: 26px; font-weight: 700; margin: 0 0 14px;">Troubleshooting</h2>
+
+  <details class="trouble">
+    <summary>The &ldquo;authorize this visualization&rdquo; prompt keeps coming back</summary>
+    <div>It's per-user, per-chart. Click <strong>Accept and add</strong> once and Data Studio remembers it for your account. If it reappears, you're probably in a shared report under a different Google account — re-add the chart while signed in as the account that will view it.</div>
+  </details>
+
+  <details class="trouble">
+    <summary>&ldquo;Failed to load community visualization&rdquo;</summary>
+    <div>Almost always a typo in the manifest path. Re-check it character for character — bucket path only, no <code>/manifest.json</code>, no trailing slash. If it still fails, reach out and we'll verify your library's access from our side.</div>
+  </details>
+
+  <details class="trouble">
+    <summary>Chart renders blank, no error</summary>
+    <div>Confirm a dimension <em>and</em> a metric are both filled in — most charts need at least one of each before they can draw. Also check your date range and filters aren't excluding every row.</div>
+  </details>
+
+  <details class="trouble">
+    <summary>Cross-filter clicks do nothing</summary>
+    <div>Confirm <strong>Cross-filtering</strong> is checked in this chart's Setup tab under Chart interactions, and that the other charts on the page share the <strong>same dimension</strong> — that's what the filter travels on.</div>
+  </details>
+
+  <div class="guide-cta">
+    <h2>Ready to try it with real charts?</h2>
+    <p>Get your manifest path and all 78 charts — free to start, no credit card.</p>
+    <div class="cta-row" style="justify-content:center;">
+      <a class="btn btn-primary" href="get-started.html">Get Started →</a>
+      <a class="btn" href="index.html#library">Browse the library</a>
+    </div>
+  </div>
+
+</section>
+</main>
+
+<div id="site-footer"><footer class="footer-fallback"><nav aria-label="Footer"><a href="index.html">Home</a> · <a href="index.html#library">Charts</a> · <a href="get-started.html">Get Started</a> · <a href="suggest.html">Suggest a Chart</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms of Service</a></nav><p>© vizstudio — premium D3 community visualizations for Data Studio.</p></footer></div>
+
+<script src="assets/partials.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /charts/_drafts/
+
+Sitemap: https://vizstudio.io/sitemap.xml

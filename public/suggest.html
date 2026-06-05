@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suggest a chart — vizstudio</title>
+<meta name="description" content="Not seeing the chart or functionality you're looking for? Tell us — we ship new charts every week.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/forms.css">
+</head>
+<body>
+<div class="blobs"><span class="blob blob-1"></span><span class="blob blob-2"></span><span class="blob blob-3"></span></div>
+
+<div id="site-nav"></div>
+
+<main>
+<section class="form-page">
+  <div class="wrap">
+    <div class="form-card">
+      <div class="form-eyebrow">Suggest a chart</div>
+      <h1>Not seeing the chart or functionality you're looking for?</h1>
+      <p class="sub">Tell us what you'd build with it. We ship new charts every week — yours might be next on the list.</p>
+
+      <form data-form="suggest" novalidate>
+        <div class="form-field">
+          <label for="sg-name">Chart name or type</label>
+          <input id="sg-name" name="chart_name" type="text" required placeholder="e.g. Marimekko, Sankey-with-cohorts, NPS gauge with band-history">
+          <span class="err"></span>
+        </div>
+        <div class="form-field">
+          <label for="sg-desc">What would you build with it?</label>
+          <textarea id="sg-desc" name="description" required placeholder="Describe the data shape, the question it answers, and where you'd put it in your dashboard. Screenshots welcome — paste a link."></textarea>
+          <span class="err"></span>
+        </div>
+        <div class="form-field">
+          <label for="sg-email">Your email <span style="text-transform: none; color: var(--muted);">(optional — so we can tell you when it ships)</span></label>
+          <input id="sg-email" name="email" type="email" placeholder="you@company.com">
+          <span class="err"></span>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary">Send suggestion →</button>
+          <div class="micro">No spam. We read every one.</div>
+        </div>
+      </form>
+
+      <div class="form-success">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h2>Got it — thanks.</h2>
+        <p>We log every suggestion. If you left an email, you'll hear back when the chart ships (or sooner if we have questions).</p>
+        <a class="btn" href="index.html">← Back to charts</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="site-footer"><footer class="footer-fallback"><nav aria-label="Footer"><a href="index.html">Home</a> · <a href="index.html#library">Charts</a> · <a href="get-started.html">Get Started</a> · <a href="suggest.html">Suggest a Chart</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms of Service</a></nav><p>© vizstudio — premium D3 community visualizations for Data Studio.</p></footer></div>
+
+<script src="assets/forms.js"></script>
+<script src="assets/partials.js"></script>
+</body>
+</html>
