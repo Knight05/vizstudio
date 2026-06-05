@@ -67,6 +67,34 @@ export const billingRouter = router({
       return { url: session.url };
     }),
 
+  /** Invoice history for the client portal. */
+  invoices: protectedProcedure.query(async ({ ctx }) => {
+    const sub = await ctx.prisma.subscription.findUnique({
+      where: { userId: ctx.user.id },
+    });
+    if (!sub?.stripeCustomerId) return [];
+
+    try {
+      const invoices = await stripe.invoices.list({
+        customer: sub.stripeCustomerId,
+        limit: 24,
+      });
+      return invoices.data.map((inv) => ({
+        id: inv.id,
+        number: inv.number,
+        date: inv.created * 1000,
+        amount: inv.amount_paid || inv.amount_due,
+        currency: inv.currency,
+        status: inv.status,
+        hostedUrl: inv.hosted_invoice_url ?? null,
+        pdfUrl: inv.invoice_pdf ?? null,
+      }));
+    } catch {
+      // Stripe unreachable / misconfigured — show empty history, not an error.
+      return [];
+    }
+  }),
+
   /** Open the Stripe billing portal. */
   createPortalSession: protectedProcedure.mutation(async ({ ctx }) => {
     const sub = await ctx.prisma.subscription.findUnique({

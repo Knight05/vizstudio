@@ -60,6 +60,25 @@ export const auth = betterAuth({
     },
   },
 
+  user: {
+    changeEmail: {
+      enabled: true,
+      updateEmailWithoutVerification: true,
+      sendChangeEmailConfirmation: async ({ user, newEmail, url }) => {
+        if (!resend) {
+          console.log("[auth] change email (no Resend):", user.email, "→", newEmail, url);
+          return;
+        }
+        await resend.emails.send({
+          from: FROM,
+          to: user.email,
+          subject: "Confirm your new Viz Studio email",
+          html: changeEmailEmail(newEmail, url),
+        });
+      },
+    },
+  },
+
   socialProviders: {
     google: process.env.GOOGLE_CLIENT_ID
       ? {
@@ -94,6 +113,17 @@ function resetPasswordEmail(url: string) {
       <h2 style="margin:0 0 12px;">Reset your password</h2>
       <p style="color:#aaa;line-height:1.55;">Click below to set a new password. This link expires in 1 hour.</p>
       <a href="${url}" style="display:inline-block;margin-top:18px;padding:10px 18px;background:#7ed957;color:#111;text-decoration:none;border-radius:6px;font-weight:600;">Reset password</a>
+      <p style="color:#666;font-size:11px;margin-top:24px;">Didn't request this? Ignore this email.</p>
+    </div>
+  `;
+}
+
+function changeEmailEmail(newEmail: string, url: string) {
+  return `
+    <div style="font-family:ui-monospace,SFMono-Regular,monospace;background:#1a1a1f;color:#eee;padding:32px;border-radius:8px;max-width:480px;margin:0 auto;">
+      <h2 style="margin:0 0 12px;">Confirm email change</h2>
+      <p style="color:#aaa;line-height:1.55;">You asked to change your Viz Studio email to <strong style="color:#eee;">${newEmail}</strong>. Click below to confirm.</p>
+      <a href="${url}" style="display:inline-block;margin-top:18px;padding:10px 18px;background:#7ed957;color:#111;text-decoration:none;border-radius:6px;font-weight:600;">Confirm change</a>
       <p style="color:#666;font-size:11px;margin-top:24px;">Didn't request this? Ignore this email.</p>
     </div>
   `;

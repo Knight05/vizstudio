@@ -18,6 +18,48 @@ export const userRouter = router({
     });
   }),
 
+  /** Download history for the client portal. */
+  downloads: protectedProcedure.query(async ({ ctx }) => {
+    return ctx.prisma.download.findMany({
+      where: { userId: ctx.user.id },
+      orderBy: { createdAt: "desc" },
+      take: 50,
+      select: { id: true, chartId: true, createdAt: true },
+    });
+  }),
+
+  /** Update display name. */
+  updateProfile: protectedProcedure
+    .input(z.object({ name: z.string().trim().min(1).max(120) }))
+    .mutation(async ({ ctx, input }) => {
+      return ctx.prisma.user.update({
+        where: { id: ctx.user.id },
+        data: { name: input.name },
+        select: { id: true, name: true },
+      });
+    }),
+
+  /** Support / chart request — lands in the admin forms inbox. */
+  submitSupport: protectedProcedure
+    .input(
+      z.object({
+        topic: z.enum(["support", "billing", "chart-request", "bug"]),
+        message: z.string().trim().min(1).max(4000),
+      }),
+    )
+    .mutation(async ({ ctx, input }) => {
+      await ctx.prisma.formSubmission.create({
+        data: {
+          form: "support",
+          email: ctx.user.email,
+          name: ctx.user.name ?? null,
+          message: input.message,
+          source: `portal:${input.topic}`,
+        },
+      });
+      return { ok: true };
+    }),
+
   /** Issue a new license key (Pro/Team only). */
   createLicenseKey: protectedProcedure
     .input(z.object({ label: z.string().optional() }))

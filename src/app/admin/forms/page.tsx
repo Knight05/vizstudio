@@ -3,7 +3,7 @@ import type { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
 import { formatDate } from "@/lib/utils";
 
-const TABS = ["all", "signup", "suggest", "subscribe", "leads"] as const;
+const TABS = ["all", "support", "signup", "suggest", "subscribe", "leads"] as const;
 type Tab = (typeof TABS)[number];
 
 export default async function AdminFormsPage({
