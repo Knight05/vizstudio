@@ -3,7 +3,7 @@ import { headers } from "next/headers";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { loadManifest } from "@/lib/manifest";
-import { SOURCE_BUCKET } from "@/lib/gcs";
+import { provisionClientBucket } from "@/lib/gcs";
 import { PortalClient } from "./portal-client";
 
 export const metadata = { title: "Client Portal" };
@@ -31,6 +31,22 @@ export default async function DashboardPage() {
   const tier = user.subscription?.tier ?? "FREE";
   const status = user.subscription?.status ?? "active";
 
+  // Signup provisioning can fail or lag — retry here so the client always
+  // ends up with their own bucket. Never expose the shared prod bucket.
+  let gcsBucket = user.gcsBucket;
+  if (!gcsBucket && process.env.GCP_SERVICE_ACCOUNT_EMAIL) {
+    try {
+      const company = user.company || user.name || user.email.split("@")[0];
+      gcsBucket = await provisionClientBucket(company);
+      await prisma.user.update({
+        where: { id: user.id },
+        data: { gcsBucket },
+      });
+    } catch (err) {
+      console.error(`[dashboard] bucket retry failed for ${user.email}:`, err);
+    }
+  }
+
   return (
     <PortalClient
       user={{
@@ -53,8 +69,8 @@ export default async function DashboardPage() {
       }))}
       favorites={user.favorites.map((f) => ({ id: f.id, chartId: f.chartId }))}
       downloadCount={downloadCount}
-      bucket={user.gcsBucket ?? SOURCE_BUCKET}
-      bucketProvisioned={Boolean(user.gcsBucket)}
+      bucket={gcsBucket ?? ""}
+      bucketProvisioned={Boolean(gcsBucket)}
       chartCount={loadManifest().components.length}
     />
   );

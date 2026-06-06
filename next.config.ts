@@ -5,6 +5,9 @@ const config: NextConfig = {
   async redirects() {
     // Old app marketing pages -> static site equivalents
     return [
+      // Account creation now lives on the static get-started page (real
+      // passwordless signup). Funnel all old /signup links there, query intact.
+      { source: "/signup", destination: "/get-started.html", permanent: false },
       { source: "/showcase", destination: "/#library", permanent: false },
       { source: "/pricing", destination: "/#pricing", permanent: false },
       { source: "/docs/:path*", destination: "/how-to-add-a-chart.html", permanent: false },

@@ -51,6 +51,14 @@ export const auth = betterAuth({
     enabled: true,
     requireEmailVerification: false, // flip to true once Resend is configured in prod
     minPasswordLength: 8,
+    // Signup never collects a password — the set-password email (reset flow)
+    // doubles as email verification, so mark the address verified here.
+    onPasswordReset: async ({ user }) => {
+      await prisma.user.update({
+        where: { id: user.id },
+        data: { emailVerified: true },
+      });
+    },
     sendResetPassword: async ({ user, url }) => {
       if (!resend) {
         console.log("[auth] reset password (no Resend):", user.email, url);

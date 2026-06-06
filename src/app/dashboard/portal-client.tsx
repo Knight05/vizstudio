@@ -260,16 +260,6 @@ export function PortalClient(props: PortalProps) {
    ════════════════════════════════════════════════════════ */
 function OverviewTab(props: PortalProps & { goTo: (t: Tab) => void }) {
   const first = props.user.name?.split(" ")[0];
-  const firstKey = props.initialKeys[0] ?? null;
-  const [keyCopied, setKeyCopied] = useState(false);
-
-  async function copyKey() {
-    if (!firstKey) return;
-    await navigator.clipboard.writeText(firstKey.key);
-    setKeyCopied(true);
-    setTimeout(() => setKeyCopied(false), 1200);
-    track("license_key_copied");
-  }
 
   const stats: { label: string; value: string | number; tab: Tab }[] = [
     { label: "Charts", value: props.chartCount, tab: "charts" },
@@ -307,7 +297,7 @@ function OverviewTab(props: PortalProps & { goTo: (t: Tab) => void }) {
           </div>
           <div>
             <div className="qa-title">Add a chart</div>
-            <div className="qa-body">Browse {props.chartCount} D3-powered visualizations and copy your add-link for Looker Studio.</div>
+            <div className="qa-body">Browse {props.chartCount} D3-powered visualizations and copy your add-link for Data Studio.</div>
           </div>
           <div className="qa-foot"><span>Open library</span><span>→</span></div>
         </button>
@@ -333,61 +323,31 @@ function OverviewTab(props: PortalProps & { goTo: (t: Tab) => void }) {
         </button>
       </div>
 
-      {/* quick links: license key, all-charts link, calendar connector */}
+      {/* quick links: all-charts link, calendar connector */}
       <div className="pcard">
         <h3>Quick links</h3>
-        <p className="lead">Everything you need to plug Viz Studio into Looker Studio.</p>
-
-        <div className="ql-row">
-          <div className="ql-ic"><Icon id="i-key" /></div>
-          <div className="ql-main">
-            <div className="ql-t">License key</div>
-            <div className="ql-s">
-              {firstKey
-                ? "Paste into a chart's style panel to remove the watermark."
-                : props.tier === "FREE"
-                  ? "Included with Pro and Team plans."
-                  : "Generate one under Downloads & keys."}
-            </div>
-          </div>
-          <div className="ql-act">
-            {firstKey ? (
-              <>
-                <span className="kkey">{firstKey.key}</span>
-                <button
-                  className="pbtn"
-                  style={keyCopied ? { color: "var(--acc-green)" } : undefined}
-                  onClick={copyKey}
-                >
-                  {keyCopied ? "Copied ✓" : "Copy"}
-                </button>
-              </>
-            ) : props.tier === "FREE" ? (
-              <Link href="/pricing" className="pbtn" style={{ textDecoration: "none" }}>
-                Upgrade →
-              </Link>
-            ) : (
-              <button className="pbtn" onClick={() => props.goTo("downloads")}>
-                Generate →
-              </button>
-            )}
-          </div>
-        </div>
+        <p className="lead">Everything you need to plug Viz Studio into Data Studio.</p>
 
         <div className="ql-row">
           <div className="ql-ic"><Icon id="i-library" /></div>
           <div className="ql-main">
             <div className="ql-t">All charts — one manifest</div>
             <div className="ql-s">
-              Add the entire library to Looker Studio in one go.
+              Add the entire library to Data Studio in one go.
             </div>
           </div>
           <div className="ql-act" style={{ flex: 1, minWidth: 260, maxWidth: 420 }}>
             <div style={{ flex: 1 }}>
-              <CopyField
-                value={`gs://${props.bucket}`}
-                onCopy={() => track("library_link_copied", { scope: "all" })}
-              />
+              {props.bucketProvisioned ? (
+                <CopyField
+                  value={`gs://${props.bucket}`}
+                  onCopy={() => track("library_link_copied", { scope: "all" })}
+                />
+              ) : (
+                <div className="ql-s">
+                  Your private library path is being set up — refresh in a minute.
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -467,8 +427,11 @@ function ChartsTab(props: PortalProps) {
       <div className="page-head">
         <h1>Chart library</h1>
         <p>
-          {props.chartCount} visualizations, ready for Looker Studio. Click a chart for
-          details and your add-link.
+          {props.chartCount} visualizations, ready for Data Studio. Click a chart for
+          details and your add-link.{" "}
+          <a href="/how-to-add-a-chart.html" target="_blank" rel="noreferrer" style={{ color: "var(--text)" }}>
+            Full how-to guide →
+          </a>
         </p>
       </div>
 
@@ -477,17 +440,19 @@ function ChartsTab(props: PortalProps) {
         <div style={{ flex: 1, minWidth: 220 }}>
           <div className="t">Add the entire library</div>
           <div className="s">
-            Paste this manifest path once in Looker Studio (Community visualizations →
-            Build your own) and every chart shows up in your report.
-            {!props.bucketProvisioned && " Your private bucket is still being set up — this shared path works in the meantime."}
+            {props.bucketProvisioned
+              ? "Paste this manifest path once in Data Studio (Community visualizations → Build your own) and every chart shows up in your report."
+              : "Your private library path is being set up — refresh in a minute and it will appear here."}
           </div>
         </div>
-        <div style={{ flex: 1, minWidth: 260, maxWidth: 440 }}>
-          <CopyField
-            value={`gs://${props.bucket}`}
-            onCopy={() => track("library_link_copied", { scope: "all" })}
-          />
-        </div>
+        {props.bucketProvisioned && (
+          <div style={{ flex: 1, minWidth: 260, maxWidth: 440 }}>
+            <CopyField
+              value={`gs://${props.bucket}`}
+              onCopy={() => track("library_link_copied", { scope: "all" })}
+            />
+          </div>
+        )}
       </div>
 
       {/* filters */}
@@ -572,19 +537,34 @@ function ChartsTab(props: PortalProps) {
               <p className="desc">{sel.longDescription || sel.description}</p>
 
               <div className="add-box">
-                <div className="t">Add to Looker Studio</div>
-                <CopyField
-                  value={`gs://${props.bucket}/${sel.id}`}
-                  onCopy={() => {
-                    track("chart_link_copied", { chart_id: sel.id });
-                    recordDownload.mutate({ chartId: sel.id });
-                  }}
-                />
+                <div className="t">Add to Data Studio</div>
+                {props.bucketProvisioned ? (
+                  <CopyField
+                    value={`gs://${props.bucket}/${sel.id}`}
+                    onCopy={() => {
+                      track("chart_link_copied", { chart_id: sel.id });
+                      recordDownload.mutate({ chartId: sel.id });
+                    }}
+                  />
+                ) : (
+                  <div style={{ fontSize: 12, color: "var(--muted)" }}>
+                    Your private add-link is being set up — refresh in a minute.
+                  </div>
+                )}
                 <ol>
-                  <li>In your report: Insert → Community visualizations</li>
+                  <li>In your report&apos;s toolbar, open the chart picker → Community visualizations</li>
                   <li>Click &ldquo;+ Explore more&rdquo; → &ldquo;Build your own&rdquo;</li>
                   <li>Paste the manifest path above → Submit</li>
                 </ol>
+                <a
+                  href="/how-to-add-a-chart.html"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ fontSize: 11.5, color: "var(--text)" }}
+                  onClick={() => track("howto_open", { chart_id: sel.id })}
+                >
+                  Full step-by-step guide →
+                </a>
               </div>
             </div>
           </div>

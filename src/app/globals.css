@@ -839,12 +839,18 @@ html, body {
 }
 .pshell .pmodal .shot {
   width: 100%;
-  aspect-ratio: 16 / 9;
   background: var(--bg-2);
   border-bottom: 1px solid var(--border);
   overflow: hidden;
 }
-.pshell .pmodal .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Show the full screenshot — no cropping. */
+.pshell .pmodal .shot img {
+  width: 100%;
+  height: auto;
+  max-height: min(60vh, 460px);
+  object-fit: contain;
+  display: block;
+}
 .pshell .pmodal .body { padding: 20px; display: grid; gap: 14px; }
 .pshell .pmodal .head { display: flex; align-items: start; justify-content: space-between; gap: 12px; }
 .pshell .pmodal h2 { margin: 0; font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }

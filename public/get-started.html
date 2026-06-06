@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Get Started — vizstudio</title>
-<meta name="description" content="Request access to vizstudio — 78 premium D3 charts for Data Studio. Use your work email and we'll get you set up.">
+<title>Create your account — vizstudio</title>
+<meta name="description" content="Create your vizstudio account — 75+ premium D3 charts for Data Studio. No credit card required. We'll email you a link to set your password.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,29 +22,29 @@
   <div class="wrap">
     <div class="form-card">
       <div class="form-eyebrow">Get Started</div>
-      <h1>Get access to the full library.</h1>
-      <p class="sub">No credit card required. Use your work email — we'll follow up with setup instructions.</p>
+      <h1>Create your account.</h1>
+      <p class="sub">No credit card required. We'll email you a link to verify your address and set your password — then you're in.</p>
 
-      <form data-form="signup" novalidate>
+      <form id="signup-form" novalidate>
         <div class="form-field">
           <label for="su-name">Full name</label>
           <input id="su-name" name="name" type="text" required autocomplete="name" placeholder="Jane Doe">
           <span class="err"></span>
         </div>
         <div class="form-field">
-          <label for="su-email">Work email</label>
-          <input id="su-email" name="email" type="email" required data-business="1" autocomplete="email" placeholder="jane@yourcompany.com">
-          <span class="hint">We require a business email to keep trial abuse out.</span>
+          <label for="su-email">Email</label>
+          <input id="su-email" name="email" type="email" required autocomplete="email" placeholder="jane@company.com">
+          <span class="hint">We'll send a link here to set your password.</span>
           <span class="err"></span>
         </div>
         <div class="form-field">
           <label for="su-company">Company</label>
-          <input id="su-company" name="company" type="text" required autocomplete="organization" placeholder="Acme Inc.">
+          <input id="su-company" name="company" type="text" required autocomplete="organization" placeholder="Where you work">
           <span class="err"></span>
         </div>
         <div class="form-field">
-          <label for="su-role">Role</label>
-          <select id="su-role" name="role" required>
+          <label for="su-role">Role <span style="color:var(--muted);font-weight:400;">(optional)</span></label>
+          <select id="su-role" name="role">
             <option value="">Select…</option>
             <option>Analyst / BI</option>
             <option>Marketer</option>
@@ -56,17 +56,20 @@
           <span class="err"></span>
         </div>
         <div class="form-submit">
-          <button type="submit" class="btn btn-primary">Request access →</button>
+          <button type="submit" class="btn btn-primary">Create account →</button>
           <div class="micro">By continuing you agree to our <a href="terms.html" style="color: var(--acc-4);">Terms</a> and <a href="privacy.html" style="color: var(--acc-4);">Privacy Policy</a>.</div>
         </div>
       </form>
 
       <div class="form-success">
         <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-        <h2>Request received.</h2>
-        <p>We'll follow up by email with setup instructions shortly.</p>
-        <a class="btn" href="index.html">← Back to charts</a>
+        <h2>Check your inbox.</h2>
+        <p>Your account is ready. We emailed you a link to verify your address and set your password.</p>
+        <a class="btn btn-primary" href="/dashboard">Continue to your portal →</a>
+        <a class="btn" href="index.html" style="margin-top:8px;">← Back to charts</a>
       </div>
+
+      <p class="micro" style="text-align:center;margin-top:18px;">Already have an account? <a href="/login" style="color: var(--acc-4);">Log in</a></p>
     </div>
   </div>
 </section>
@@ -76,5 +79,74 @@
 
 <script src="assets/forms.js"></script>
 <script src="assets/partials.js"></script>
+<script>
+/* Real account creation — passwordless. Posts to the same-origin Better-Auth
+   sign-up endpoint; the set-password email (sent server-side) is the user's
+   real credential setup. No data-form attribute, so forms.js skips this form. */
+(function () {
+  var form = document.getElementById('signup-form');
+  if (!form) return;
+  var btn = form.querySelector('button[type="submit"]');
+  var card = form.closest('.form-card');
+
+  function isEmail(s) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s); }
+  function fieldOf(i) { return i.closest('.form-field'); }
+  function showErr(i, msg) { var f = fieldOf(i); if (!f) return; f.classList.add('err'); var e = f.querySelector('.err'); if (e && msg) e.textContent = msg; }
+  function clearErr(i) { var f = fieldOf(i); if (f) f.classList.remove('err'); }
+
+  function randomPassword() {
+    var a = new Uint8Array(24);
+    crypto.getRandomValues(a);
+    return Array.from(a, function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+  }
+
+  form.addEventListener('submit', async function (ev) {
+    ev.preventDefault();
+    var name = form.elements['name'], email = form.elements['email'], company = form.elements['company'];
+    var valid = true;
+    [name, email, company].forEach(clearErr);
+    if (!name.value.trim()) { showErr(name, 'Required.'); valid = false; }
+    if (!email.value.trim()) { showErr(email, 'Required.'); valid = false; }
+    else if (!isEmail(email.value.trim())) { showErr(email, 'Enter a valid email.'); valid = false; }
+    if (!company.value.trim()) { showErr(company, 'Required.'); valid = false; }
+    if (!valid) return;
+
+    var orig = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Creating account…';
+
+    try {
+      var res = await fetch('/api/auth/sign-up/email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name.value.trim(),
+          email: email.value.trim(),
+          password: randomPassword(),
+          company: company.value.trim(),
+          callbackURL: '/dashboard'
+        })
+      });
+      if (!res.ok) {
+        var data = {};
+        try { data = await res.json(); } catch (e) {}
+        var msg = (data && (data.message || (data.error && data.error.message))) || 'Could not create your account. Please try again.';
+        if (/exist|taken|already/i.test(msg)) { msg = 'An account with this email already exists — try logging in.'; }
+        showErr(email, msg);
+        btn.disabled = false;
+        btn.textContent = orig;
+        return;
+      }
+      var success = card.querySelector('.form-success');
+      if (success) { form.style.display = 'none'; success.classList.add('on'); }
+      else { window.location.href = '/dashboard'; }
+    } catch (e) {
+      showErr(email, 'Network error — please try again.');
+      btn.disabled = false;
+      btn.textContent = orig;
+    }
+  });
+})();
+</script>
 </body>
 </html>

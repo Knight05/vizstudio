@@ -14,9 +14,14 @@ const FREE_MAIL = new Set([
   'me.com', 'mac.com', 'rocketmail.com', 'duck.com', 'pm.me'
 ]);
 
+// TESTING: set to true to allow personal/free email domains (gmail, etc.)
+// through the signup form. Flip back to false to re-enable the business-email gate.
+const ALLOW_FREE_EMAIL = true;
+
 function isEmail(s) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s); }
 function isBusinessEmail(s) {
   if (!isEmail(s)) return false;
+  if (ALLOW_FREE_EMAIL) return true;
   const dom = s.split('@').pop().toLowerCase();
   return !FREE_MAIL.has(dom);
 }
