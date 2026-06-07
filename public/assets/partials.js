@@ -110,15 +110,16 @@
             '<ul>' +
               '<li><a href="' + root + 'get-started.html">Get started</a></li>' +
               '<li><a href="/login">Client login</a></li>' +
-              '<li><a href="' + root + 'terms.html">Terms of Service</a></li>' +
-              '<li><a href="' + root + 'privacy.html">Privacy Policy</a></li>' +
             '</ul>' +
           '</div>' +
         '</div>' +
         '<div class="foot-bot">' +
           '<span>© 2026 Viz Studio LLC · Built for data teams, by data teams.</span>' +
           '<span><a href="' + root + 'terms.html" style="color: var(--text-dim);">Terms of Service</a> · <a href="' + root + 'privacy.html" style="color: var(--text-dim);">Privacy Policy</a></span>' +
-          '<span class="socials-note" style="color:var(--muted);font-size:12px;">vizstudio</span>' +
+          '<a href="' + root + 'index.html" class="logo footer-wordmark">' +
+            '<span class="logo-mark inline" aria-hidden="true">' + LOGO_FOOTER + '</span>' +
+            ' vizstudio' +
+          '</a>' +
         '</div>' +
       '</div>' +
     '</footer>';

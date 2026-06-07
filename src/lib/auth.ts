@@ -137,13 +137,24 @@ export const auth = betterAuth({
   databaseHooks: {
     user: {
       create: {
-        // New client signup → provision GCS bucket (copied + manifests
-        // rewritten from the prod bucket) and send the password-setup
-        // email. provisionNewUser never throws.
+        // New client signup → send the password-setup email and provision a
+        // GCS bucket (copied + manifests rewritten from the prod bucket).
+        // provisionNewUser never throws.
+        //
+        // The bucket copy (~1000 objects) can outlast the request, so run the
+        // whole job in the background via Next.js `after()`: the signup HTTP
+        // response returns immediately and provisioning continues afterward
+        // within the route's maxDuration budget (see api/auth/[...all]/route.ts).
+        // Falls back to inline awaiting if `after()` isn't available (e.g.
+        // called outside a request scope, such as a script or seed).
         after: async (user) => {
-          await provisionNewUser(
-            user as typeof user & { company?: string | null }
-          );
+          const u = user as typeof user & { company?: string | null };
+          try {
+            const { after } = await import("next/server");
+            after(() => provisionNewUser(u));
+          } catch {
+            await provisionNewUser(u);
+          }
         },
       },
     },
