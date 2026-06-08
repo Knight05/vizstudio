@@ -1,0 +1,13 @@
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Google Calendar">
+  <!-- white card body -->
+  <rect x="8" y="8" width="32" height="32" rx="4" fill="#FFFFFF" stroke="#E4E7EB" stroke-width="1"/>
+  <!-- colored frame segments (Google brand colors) -->
+  <path d="M8 12a4 4 0 0 1 4-4h11v4H8z" fill="#4285F4"/>            <!-- top: blue -->
+  <path d="M40 12a4 4 0 0 0-4-4H25v4h15z" fill="#FBBC04"/>          <!-- top-right: yellow -->
+  <path d="M8 36a4 4 0 0 0 4 4h11v-4H8z" fill="#34A853"/>           <!-- bottom: green -->
+  <path d="M40 36a4 4 0 0 1-4 4H25v-4h15z" fill="#EA4335"/>         <!-- bottom-right: red -->
+  <!-- inner page (keeps centre clean white over the frame) -->
+  <rect x="12" y="12" width="24" height="24" fill="#FFFFFF"/>
+  <!-- the 31 -->
+  <text x="24" y="31" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="16" font-weight="700" fill="#4285F4" letter-spacing="-0.5">31</text>
+</svg>

@@ -688,7 +688,7 @@ footer {
 .nav.scrolled { background: color-mix(in oklch, var(--bg) 90%, transparent); border-bottom-color: var(--border); }
 .nav .row { display: flex; align-items: center; gap: 36px; padding: 18px 0; transition: padding .25s; max-width: 1240px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
 .nav.scrolled .row { padding-top: 12px; padding-bottom: 12px; }
-.logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; letter-spacing: -0.01em; color: var(--text); text-decoration: none; }
+.logo { display: inline-flex; align-items: center; gap: 9px; font-weight: 700; font-size: 13px; letter-spacing: -0.01em; color: var(--text); text-decoration: none; }
 .logo-mark.inline { width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; }
 .logo-mark.inline svg, .logo-mark.inline img { width: 100%; height: 100%; display: block; }
 .nav nav { display: flex; gap: 28px; font-size: 14px; color: var(--text-dim); }
@@ -760,3 +760,4 @@ footer .newsletter button { background: var(--accent-grad); color: white; border
 .footer-fallback{padding:28px 20px;color:var(--muted,#6b718a);font-size:13px;text-align:center}
 .footer-fallback a{color:inherit}
 .footer-fallback p{margin:8px 0 0}
+ 
