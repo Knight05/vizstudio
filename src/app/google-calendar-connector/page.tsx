@@ -35,4 +35,8 @@ export default function Page() {
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" key="l3" />
       <link rel="stylesheet" href="/assets/style.css" key="l4" />
       <style dangerouslySetInnerHTML={{ __html: STYLES }} />
-      <div
+      <div dangerouslySetInnerHTML={{ __html: BODY }} />
+      <Script src="/assets/partials.js" strategy="afterInteractive" key="s1" />
+    </>
+  );
+}
