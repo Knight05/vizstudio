@@ -177,6 +177,9 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
               onChange={(e) => setPassword(e.target.value)}
               style={C.input}
             />
+            <Link href="/forgot-password" style={{ fontSize: 12, color: "#9aa1c0", justifySelf: "end" }}>
+              Forgot password?
+            </Link>
           </label>
         )}
 

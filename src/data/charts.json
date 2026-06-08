@@ -1,0 +1,3861 @@
+{
+  "categories": [
+    {
+      "key": "kpi",
+      "label": "KPI, Status & Goals",
+      "blurb": "Headline metrics, gauges, progress and traffic-light status — the answers stakeholders look for first."
+    },
+    {
+      "key": "bars",
+      "label": "Bars, Columns & Ranking",
+      "blurb": "Categorical comparison done right — single bars, grouped, mirrored, raced, and Pareto-sorted."
+    },
+    {
+      "key": "parts",
+      "label": "Pies, Donuts & Part-to-Whole",
+      "blurb": "Share-of-total visualizations that don't feel like 2009 — multi-ring, semi-circle, variable radius."
+    },
+    {
+      "key": "dist",
+      "label": "Distribution & Statistical",
+      "blurb": "Where the data actually lives — beeswarm, hexbin, Q-Q, and waffle for proportion-by-count."
+    },
+    {
+      "key": "scatter",
+      "label": "Scatter, Correlation & Bubbles",
+      "blurb": "Two metrics, one chart, every outlier. Bubbles, quadrants, trendlines, hexbin density."
+    },
+    {
+      "key": "time",
+      "label": "Time Series & Trends",
+      "blurb": "Movement over time — annotated lines, YoY overlays, streamgraphs, bump charts, animated races."
+    },
+    {
+      "key": "flow",
+      "label": "Networks, Flows & Relationships",
+      "blurb": "Who connects to whom, and how strongly — chord, sankey, arc, force, parallel sets, matrix."
+    },
+    {
+      "key": "geo",
+      "label": "Maps & Geo",
+      "blurb": "Country, state, and point geography — tile choropleths, bubble maps, 3D orthographic globe."
+    },
+    {
+      "key": "tree",
+      "label": "Hierarchies & Drilldown",
+      "blurb": "Multi-level structure made interactive — sunburst, zoomable treemap, slice/dice, radial tree."
+    },
+    {
+      "key": "finance",
+      "label": "Finance & Performance",
+      "blurb": "Earnings, cashflow, variance, break-even — the visuals an analyst will actually defend."
+    },
+    {
+      "key": "combo",
+      "label": "Tables, Calendars & Combo",
+      "blurb": "Dense data done well — comparison tables, calendar heatmaps, dual-axis, KPI sparklines."
+    }
+  ],
+  "charts": [
+    {
+      "id": "abtest-viz",
+      "name": "A/B Test Results",
+      "tagline": "CI bars for A/B variants — significance baked in.",
+      "long": "Stop screenshotting your stats notebook. A/B Test Results renders each variant as a horizontal bar with confidence intervals, sample size, and a clear winner annotation — so PMs and execs read the same number you do.",
+      "what": "Plots variant means with 95% CI whiskers, annotates statistically significant winners, and surfaces sample size + lift % on hover.",
+      "why": "It moves the conversation from \"which one looks better?\" to \"which one is real?\" without a stats lecture.",
+      "uses": [
+        {
+          "tag": "Growth",
+          "body": "Landing-page CTA test — show lift with confidence band, not a single number."
+        },
+        {
+          "tag": "Product",
+          "body": "Feature-flag experiments rolled up by cohort and surface."
+        },
+        {
+          "tag": "Marketing",
+          "body": "Subject-line and creative tests reviewed in a weekly readout."
+        }
+      ],
+      "keywords": "A/B test chart Data Studio, confidence interval bar chart, experiment readout visualization",
+      "category": "bars",
+      "catLabel": "Bars, Columns & Ranking",
+      "screenshot": "data-studio-ab-test-results-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-ab-test-results-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_xysdolms2d",
+      "related": [
+        {
+          "id": "barrace-viz",
+          "name": "Animated Bar Race",
+          "tagline": "The animated bar chart race that wins every monthly review."
+        },
+        {
+          "id": "curvedcol-animated-viz",
+          "name": "Curved Columns (Animated + Zoom)",
+          "tagline": "Animated curved columns — bars that arc to draw the eye."
+        },
+        {
+          "id": "curvedcol-static-viz",
+          "name": "Curved Columns (Static)",
+          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+        },
+        {
+          "id": "dumbbell-viz",
+          "name": "Dumbbell Chart",
+          "tagline": "Two dots, one line — every gap between A and B made obvious."
+        }
+      ]
+    },
+    {
+      "id": "analystratings-viz",
+      "name": "Breakdown Chart",
+      "tagline": "Donut + progress bars for category breakdowns — the dominant slice highlighted automatically.",
+      "long": "Breakdown Chart pairs a composite donut with horizontal progress bars so every category reads two ways: as a slice of the whole and as a value-vs-max bar. The dominant category gets an accent color so the headline lands in half a second.",
+      "what": "Renders a center donut with category arcs, plus a stacked row of horizontal progress bars. Auto-detects the largest category and highlights it.",
+      "why": "Two encodings (angle and length) for the same data lets the viewer pick whichever they read fastest. The auto-accent kills the \"so what?\" question.",
+      "uses": [
+        {
+          "tag": "Finance",
+          "body": "Analyst rating distribution — Buy / Hold / Sell with the dominant call highlighted."
+        },
+        {
+          "tag": "Survey",
+          "body": "Top-2-box satisfaction broken down by tier."
+        },
+        {
+          "tag": "Product",
+          "body": "Feature usage share with the runaway leader colored."
+        }
+      ],
+      "keywords": "breakdown chart Data Studio, composite donut bar chart, distribution visualization",
+      "category": "kpi",
+      "catLabel": "KPI, Status & Goals",
+      "screenshot": "data-studio-analyst-ratings-breakdown-vizstudio.png",
+      "screenshotWebp": "data-studio-analyst-ratings-breakdown-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_8yriywmt2d",
+      "related": [
+        {
+          "id": "bulletchart-viz",
+          "name": "Bullet Chart",
+          "tagline": "Stephen Few's gauge replacement — actual, target, and ranges in one bar."
+        },
+        {
+          "id": "kpisparkline-viz",
+          "name": "KPI Sparkline Cards",
+          "tagline": "Headline numbers with trend lines baked in — the executive scorecard, refined."
+        },
+        {
+          "id": "progresscircles-viz",
+          "name": "Progress Circles",
+          "tagline": "A row of donuts that each say \"X% done\" — instantly readable."
+        },
+        {
+          "id": "semicirclegauge-viz",
+          "name": "Semicircle Gauge",
+          "tagline": "Half-circle gauge — same story, half the real estate."
+        }
+      ]
+    },
+    {
+      "id": "arcdiagram-viz",
+      "name": "Arc Diagram",
+      "tagline": "Node-link arc diagram — relationships you can actually trace.",
+      "long": "Arc Diagram lays nodes along a single axis and connects them with semi-circular arcs, with thickness encoding strength. It’s the cleanest way to show pairwise relationships when you don’t want a hairball.",
+      "what": "Sorts nodes along a horizontal baseline, draws arcs above (and optionally below), scales nodes by degree, and supports source/target/single/gradient arc colors.",
+      "why": "When force-directed graphs become noise, arcs let people read every connection in order. Hover to highlight a node's full ego network.",
+      "uses": [
+        {
+          "tag": "SaaS",
+          "body": "User-to-feature adoption with thick arcs showing the heaviest users."
+        },
+        {
+          "tag": "Supply chain",
+          "body": "Co-shipment pairs surfaced for SKUs that travel together."
+        },
+        {
+          "tag": "Research",
+          "body": "Co-authorship graph for a journal issue."
+        }
+      ],
+      "keywords": "arc diagram Data Studio, node-link chart, relationship visualization",
+      "category": "flow",
+      "catLabel": "Networks, Flows & Relationships",
+      "screenshot": "data-studio-arc-diagram-network-vizstudio.png",
+      "screenshotWebp": "data-studio-arc-diagram-network-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_r6gqdoms2d",
+      "related": [
+        {
+          "id": "audioverlap-viz",
+          "name": "Audience Overlap",
+          "tagline": "Proportional circles for audience segments — overlaps you can see."
+        },
+        {
+          "id": "bipartite-viz",
+          "name": "Bipartite Graph",
+          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+        },
+        {
+          "id": "chord-viz",
+          "name": "Chord Diagram",
+          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+        },
+        {
+          "id": "connmap-viz",
+          "name": "Connection Map",
+          "tagline": "Entity rows with bezier arcs — pairwise strength, sorted."
+        }
+      ]
+    },
+    {
+      "id": "audioverlap-viz",
+      "name": "Audience Overlap",
+      "tagline": "Proportional circles for audience segments — overlaps you can see.",
+      "long": "Audience Overlap draws each segment as a circle sized by population, then overlaps shared members so intersections are visible at a glance. Stop counting in spreadsheets — let the geometry do the work.",
+      "what": "Renders sized circles per segment with overlap regions weighted by shared members; tooltips show counts and overlap %.",
+      "why": "Reveals \"too much overlap\" segments before a campaign goes out — your CRM team’s favorite new chart.",
+      "uses": [
+        {
+          "tag": "Marketing",
+          "body": "Email list overlap before a multi-segment send."
+        },
+        {
+          "tag": "Product",
+          "body": "Cohort intersection — Pro AND Mobile AND Daily users."
+        },
+        {
+          "tag": "Ads",
+          "body": "Lookalike audiences vs. existing customers."
+        }
+      ],
+      "keywords": "audience overlap chart, Venn-style segment chart Data Studio, CRM segmentation",
+      "category": "flow",
+      "catLabel": "Networks, Flows & Relationships",
+      "screenshot": "data-studio-audience-overlap-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-audience-overlap-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_nbsn6uq62d",
+      "related": [
+        {
+          "id": "arcdiagram-viz",
+          "name": "Arc Diagram",
+          "tagline": "Node-link arc diagram — relationships you can actually trace."
+        },
+        {
+          "id": "bipartite-viz",
+          "name": "Bipartite Graph",
+          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+        },
+        {
+          "id": "chord-viz",
+          "name": "Chord Diagram",
+          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+        },
+        {
+          "id": "connmap-viz",
+          "name": "Connection Map",
+          "tagline": "Entity rows with bezier arcs — pairwise strength, sorted."
+        }
+      ]
+    },
+    {
+      "id": "barrace-viz",
+      "name": "Animated Bar Race",
+      "tagline": "The animated bar chart race that wins every monthly review.",
+      "long": "Animated Bar Race transitions a ranked bar chart smoothly across time — top categories climb, fall, and overtake each other with watermark labels for context. Built for screen-recording, demos, and that one slide everyone remembers.",
+      "what": "Smoothly interpolated horizontal bars per time step, with auto-ranking, watermark time labels, customizable color, and play/pause controls.",
+      "why": "Static rankings are forgettable. A race is memorable — and it’s the only way to *feel* a category overtake another.",
+      "uses": [
+        {
+          "tag": "Marketing",
+          "body": "Channel revenue share by month over a year."
+        },
+        {
+          "tag": "Sports",
+          "body": "League standings over a season."
+        },
+        {
+          "tag": "SaaS",
+          "body": "Top 10 features by daily usage across the quarter."
+        }
+      ],
+      "keywords": "bar chart race, animated ranking chart, Data Studio bar race",
+      "category": "bars",
+      "catLabel": "Bars, Columns & Ranking",
+      "screenshot": "data-studio-animated-bar-race-vizstudio.png",
+      "screenshotWebp": "data-studio-animated-bar-race-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_gohxyzm72d",
+      "related": [
+        {
+          "id": "abtest-viz",
+          "name": "A/B Test Results",
+          "tagline": "CI bars for A/B variants — significance baked in."
+        },
+        {
+          "id": "curvedcol-animated-viz",
+          "name": "Curved Columns (Animated + Zoom)",
+          "tagline": "Animated curved columns — bars that arc to draw the eye."
+        },
+        {
+          "id": "curvedcol-static-viz",
+          "name": "Curved Columns (Static)",
+          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+        },
+        {
+          "id": "dumbbell-viz",
+          "name": "Dumbbell Chart",
+          "tagline": "Two dots, one line — every gap between A and B made obvious."
+        }
+      ]
+    },
+    {
+      "id": "beeswarm-viz",
+      "name": "Beeswarm / Swarm Plot",
+      "tagline": "Every individual point, no overlap — distributions that boxplots hide.",
+      "long": "Beeswarm plots every record as a circle along one axis, using force collision so points sit next to each other instead of stacking. You see the true shape of the distribution — the gaps, the clumps, the long tail.",
+      "what": "Force-positions individual data points along an axis with collision detection. Optional grouping by dimension and sizing by a second metric.",
+      "why": "Box plots and violins smooth away the story. Beeswarm shows every customer, every deal, every order — including the ones you’ll want to investigate.",
+      "uses": [
+        {
+          "tag": "Sales",
+          "body": "Deal size by rep — see whose pipeline is bimodal."
+        },
+        {
+          "tag": "HR",
+          "body": "Compensation by level with each employee as a dot."
+        },
+        {
+          "tag": "Logistics",
+          "body": "Delivery time per route with outliers visible."
+        }
+      ],
+      "keywords": "beeswarm plot Data Studio, swarm chart distribution, individual data point chart",
+      "category": "dist",
+      "catLabel": "Distribution & Statistical",
+      "screenshot": "data-studio-beeswarm-swarm-plot-vizstudio.png",
+      "screenshotWebp": "data-studio-beeswarm-swarm-plot-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_wo3a22012d",
+      "related": [
+        {
+          "id": "hexbindensity-viz",
+          "name": "Hexbin Density Plot",
+          "tagline": "Hexagonal density plot — same hex grid, focused on point density."
+        },
+        {
+          "id": "qq-viz",
+          "name": "Q-Q Plot",
+          "tagline": "Q-Q plot — does this distribution match the one you expect?"
+        }
+      ]
+    },
+    {
+      "id": "bigcalendar-viz",
+      "name": "Big Calendar",
+      "tagline": "Full calendar grid — event volume painted across every cell.",
+      "long": "Big Calendar lays out a month or year as a heat-tinted grid, with each day colored by your metric. It’s the dashboard equivalent of leaving a wall calendar open — instantly readable, no axis required.",
+      "what": "Renders a full calendar grid (month or year), tints each day cell by a metric, supports tooltips, and cross-filters to the rest of the page.",
+      "why": "Time-of-week and time-of-year patterns jump out — the Tuesday slump, the Black Friday spike, the December lull.",
+      "uses": [
+        {
+          "tag": "Ecommerce",
+          "body": "Daily revenue colored across the year, holidays obvious."
+        },
+        {
+          "tag": "Ops",
+          "body": "Incident count per day in a year-at-a-glance heat layout."
+        },
+        {
+          "tag": "HR",
+          "body": "PTO calendar with team coverage at a glance."
+        }
+      ],
+      "keywords": "calendar heatmap Data Studio, year calendar chart, day-level activity visualization",
+      "category": "combo",
+      "catLabel": "Tables, Calendars & Combo",
+      "screenshot": "data-studio-big-calendar-events-vizstudio.png",
+      "screenshotWebp": "data-studio-big-calendar-events-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_ja42lw502d",
+      "related": [
+        {
+          "id": "calendarHeatmap",
+          "name": "Mini Calendar",
+          "tagline": "Compact monthly calendar — one cell, one number, instant pattern."
+        },
+        {
+          "id": "convheatmap-viz",
+          "name": "Conversion Heatmap",
+          "tagline": "Day-of-week × hour heatmap — when your audience actually shows up."
+        },
+        {
+          "id": "datatable-viz",
+          "name": "Row Over Row Comparison Table",
+          "tagline": "Row over row — DoD / MoM / YoY comparison table with deltas and % change."
+        },
+        {
+          "id": "engageheatmap-viz",
+          "name": "Engagement Heatmap",
+          "tagline": "Row × column matrix — normalize how you want, color tells the story."
+        }
+      ]
+    },
+    {
+      "id": "bipartite-viz",
+      "name": "Bipartite Graph",
+      "tagline": "Two columns, every link explicit — A-to-B relationships made obvious.",
+      "long": "Bipartite Graph stacks two node groups in parallel columns and draws every link between them. When you have a clean A-side and B-side relationship — customer-to-product, user-to-feature, doctor-to-prescription — bipartite reads in seconds.",
+      "what": "Two parallel columns of labeled nodes with weighted links connecting the sides; hover-highlight an ego network.",
+      "why": "Cleaner than a force graph when the structure is genuinely two-sided.",
+      "uses": [
+        {
+          "tag": "Ecom",
+          "body": "Customers ↔ purchased categories."
+        },
+        {
+          "tag": "Health",
+          "body": "Doctors ↔ prescribed drugs (anonymized)."
+        },
+        {
+          "tag": "Hiring",
+          "body": "Candidates ↔ skills required."
+        }
+      ],
+      "keywords": "bipartite graph Data Studio, two-mode network chart, link visualization",
+      "category": "flow",
+      "catLabel": "Networks, Flows & Relationships",
+      "screenshot": "data-studio-bipartite-graph-vizstudio.png",
+      "screenshotWebp": "data-studio-bipartite-graph-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_dtqpean72d",
+      "related": [
+        {
+          "id": "arcdiagram-viz",
+          "name": "Arc Diagram",
+          "tagline": "Node-link arc diagram — relationships you can actually trace."
+        },
+        {
+          "id": "audioverlap-viz",
+          "name": "Audience Overlap",
+          "tagline": "Proportional circles for audience segments — overlaps you can see."
+        },
+        {
+          "id": "chord-viz",
+          "name": "Chord Diagram",
+          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+        },
+        {
+          "id": "connmap-viz",
+          "name": "Connection Map",
+          "tagline": "Entity rows with bezier arcs — pairwise strength, sorted."
+        }
+      ]
+    },
+    {
+      "id": "breakeven-viz",
+      "name": "Break-Even Chart",
+      "tagline": "Fixed cost, variable cost, revenue — and the exact unit where they cross.",
+      "long": "Break-Even Chart layers fixed cost, total cost, and revenue lines and annotates the crossover point with the break-even volume. It’s the chart every finance class teaches and every spreadsheet hides — finally first-class in your dashboard.",
+      "what": "Plots fixed cost (horizontal), total cost, and revenue lines on shared axes; annotates the intersection with units and dollars.",
+      "why": "Frees the break-even conversation from a static Excel cell. Live-update by tweaking inputs in your source.",
+      "uses": [
+        {
+          "tag": "FP&A",
+          "body": "Product launch break-even sensitivity."
+        },
+        {
+          "tag": "Operations",
+          "body": "Plant utilization vs. fixed overhead."
+        },
+        {
+          "tag": "Pricing",
+          "body": "New tier launch — units to recoup engineering cost."
+        }
+      ],
+      "keywords": "break-even analysis chart, fixed cost variable cost visualization, Data Studio finance chart",
+      "category": "finance",
+      "catLabel": "Finance & Performance",
+      "screenshot": "data-studio-break-even-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-break-even-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_sqzzb9ms2d",
+      "related": [
+        {
+          "id": "cashflow-viz",
+          "name": "Cashflow",
+          "tagline": "Income up, expense down — the zero line tells the story."
+        },
+        {
+          "id": "earningsdot-viz",
+          "name": "Actual Over Target Dot Chart",
+          "tagline": "Actual over target dots — beats and misses, colored automatically."
+        },
+        {
+          "id": "revenuebreakdown-viz",
+          "name": "Revenue Breakdown (Bar + Line Combo)",
+          "tagline": "Revenue mix bars + margin line — the public-company readout view."
+        }
+      ]
+    },
+    {
+      "id": "bubble-viz",
+      "name": "Bubble Chart",
+      "tagline": "X × Y × size — three metrics, one chart, zero squinting.",
+      "long": "Bubble Chart encodes a third metric as circle size on top of a standard scatter, with optional category color. It’s the workhorse for any \"big and growing\" / \"small and shrinking\" story.",
+      "what": "Renders circles sized by a third metric on x/y axes, with optional category coloring, hover tooltip, and click-to-filter.",
+      "why": "Adds a magnitude dimension without forcing a second chart. The eye reads area and position simultaneously.",
+      "uses": [
+        {
+          "tag": "Strategy",
+          "body": "Markets by revenue × growth × size (the BCG-matrix you actually deploy)."
+        },
+        {
+          "tag": "Sales",
+          "body": "Accounts by deal count × ACV × pipeline."
+        },
+        {
+          "tag": "Product",
+          "body": "Features by usage × satisfaction × engineering cost."
+        }
+      ],
+      "keywords": "bubble chart Data Studio, scatter bubble visualization, 3-metric chart",
+      "category": "scatter",
+      "catLabel": "Scatter, Correlation & Bubbles",
+      "screenshot": "data-studio-bubble-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-bubble-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_kbgy084s2d",
+      "related": [
+        {
+          "id": "bubblegrid",
+          "name": "Bubble Grid",
+          "tagline": "A grid of bubbles — counts and magnitudes across two categorical axes."
+        },
+        {
+          "id": "hexbin-viz",
+          "name": "Hexbin Scatter",
+          "tagline": "Hexagonal density — scatter plots that survive 100k points."
+        },
+        {
+          "id": "quadrant-viz",
+          "name": "Quadrant Scatter",
+          "tagline": "Four-quadrant scatter — the strategy chart you've drawn on whiteboards."
+        },
+        {
+          "id": "scattertrend-viz",
+          "name": "Scatter Plot with Trendline",
+          "tagline": "Scatter with a fitted trend line — correlation without the chart-junk."
+        }
+      ]
+    },
+    {
+      "id": "bubblegrid",
+      "name": "Bubble Grid",
+      "tagline": "A grid of bubbles — counts and magnitudes across two categorical axes.",
+      "long": "Bubble Grid arranges sized circles on a discrete row × column grid, perfect when both axes are categorical (region × product, stage × source). It’s a heatmap that uses area instead of opacity — and it always looks deliberate.",
+      "what": "Rows × columns of bubbles, area-sized by the metric, optional color encoding for a secondary metric.",
+      "why": "Reads denser than a heatmap when the value range is wide — the eye can compare areas across the grid even when small.",
+      "uses": [
+        {
+          "tag": "SaaS",
+          "body": "Activations by plan × geography."
+        },
+        {
+          "tag": "Retail",
+          "body": "Sales by category × store format."
+        },
+        {
+          "tag": "Support",
+          "body": "Ticket volume by issue × priority."
+        }
+      ],
+      "keywords": "bubble grid chart, dot matrix visualization, categorical bubble chart Data Studio",
+      "category": "scatter",
+      "catLabel": "Scatter, Correlation & Bubbles",
+      "screenshot": "data-studio-bubble-grid-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-bubble-grid-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_j03azc5s2d",
+      "related": [
+        {
+          "id": "bubble-viz",
+          "name": "Bubble Chart",
+          "tagline": "X × Y × size — three metrics, one chart, zero squinting."
+        },
+        {
+          "id": "hexbin-viz",
+          "name": "Hexbin Scatter",
+          "tagline": "Hexagonal density — scatter plots that survive 100k points."
+        },
+        {
+          "id": "quadrant-viz",
+          "name": "Quadrant Scatter",
+          "tagline": "Four-quadrant scatter — the strategy chart you've drawn on whiteboards."
+        },
+        {
+          "id": "scattertrend-viz",
+          "name": "Scatter Plot with Trendline",
+          "tagline": "Scatter with a fitted trend line — correlation without the chart-junk."
+        }
+      ]
+    },
+    {
+      "id": "bubblemap-viz",
+      "name": "Bubble Map",
+      "tagline": "Packed bubbles, sized by a metric — every category, no axis tax.",
+      "long": "Bubble Map packs every category into a tight cluster of circles sized by your metric. With packed, force-directed, and grid layouts, plus gradient/single/series colors, it’s the catch-all for \"show me everything, biggest to smallest.\"",
+      "what": "Three layouts (packed, force, grid), three color modes (single, gradient, series), with inside/outside labels, tooltips, and click-to-cross-filter.",
+      "why": "Bar charts run out of room past 30 categories. Bubble map keeps reading well at 200.",
+      "uses": [
+        {
+          "tag": "Marketing",
+          "body": "All campaigns by spend, biggest in the center."
+        },
+        {
+          "tag": "Ops",
+          "body": "SKUs by units sold across the catalog."
+        },
+        {
+          "tag": "HR",
+          "body": "Headcount by team across the org."
+        }
+      ],
+      "keywords": "bubble pack chart, packed circle chart Data Studio, category bubble visualization",
+      "category": "geo",
+      "catLabel": "Maps & Geo",
+      "screenshot": "data-studio-bubble-map-vizstudio.png",
+      "screenshotWebp": "data-studio-bubble-map-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/zMJvF",
+      "related": [
+        {
+          "id": "choropleth-viz",
+          "name": "Choropleth Map",
+          "tagline": "Tile-grid map — every state or country, no projection pain."
+        },
+        {
+          "id": "interactiveGlobe-viz",
+          "name": "Interactive 3D Globe",
+          "tagline": "Real country polygons, drag-to-rotate, auto-spin, atmosphere glow — the 3D world your dashboard actually needs."
+        }
+      ]
+    },
+    {
+      "id": "bulletchart-viz",
+      "name": "Bullet Chart",
+      "tagline": "Stephen Few's gauge replacement — actual, target, and ranges in one bar.",
+      "long": "Bullet Chart packs four data points — actual, target, qualitative ranges, and an optional comparative measure — into a compact horizontal bar. Designed to replace fluffy speedometers with dense, scannable performance bars.",
+      "what": "Filled actual bar over banded ranges (poor / satisfactory / good), with a perpendicular tick for target and an optional comparative marker.",
+      "why": "More information per pixel than any gauge. Once teams adopt it, they don’t go back.",
+      "uses": [
+        {
+          "tag": "Exec",
+          "body": "Quarterly KPI scorecard — one bullet per KPI with target and good/poor bands."
+        },
+        {
+          "tag": "Sales",
+          "body": "Quota attainment vs. last year vs. plan."
+        },
+        {
+          "tag": "Ops",
+          "body": "SLA performance — actual against target band."
+        }
+      ],
+      "keywords": "bullet chart Data Studio, Stephen Few KPI chart, target vs actual bar",
+      "category": "kpi",
+      "catLabel": "KPI, Status & Goals",
+      "screenshot": "data-studio-bullet-chart-kpi-vizstudio.png",
+      "screenshotWebp": "data-studio-bullet-chart-kpi-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_7vxecf5s2d",
+      "related": [
+        {
+          "id": "analystratings-viz",
+          "name": "Breakdown Chart",
+          "tagline": "Donut + progress bars for category breakdowns — the dominant slice highlighted automatically."
+        },
+        {
+          "id": "kpisparkline-viz",
+          "name": "KPI Sparkline Cards",
+          "tagline": "Headline numbers with trend lines baked in — the executive scorecard, refined."
+        },
+        {
+          "id": "progresscircles-viz",
+          "name": "Progress Circles",
+          "tagline": "A row of donuts that each say \"X% done\" — instantly readable."
+        },
+        {
+          "id": "semicirclegauge-viz",
+          "name": "Semicircle Gauge",
+          "tagline": "Half-circle gauge — same story, half the real estate."
+        }
+      ]
+    },
+    {
+      "id": "bump-viz",
+      "name": "Bump Chart",
+      "tagline": "Rank-over-time line chart — who's climbing, who's sliding.",
+      "long": "Bump Chart connects each category’s rank at every time step with a colored line. The eye follows the line — overtakes, slides, and surprises all read instantly. The animated cousin of a bar race, but every period on screen at once.",
+      "what": "Plots category rank over time as smooth lines, with consistent per-category color, tooltips, and optional value labels at endpoints.",
+      "why": "Lines that cross are inherently storyable. Better than a stacked area when the categorical order matters.",
+      "uses": [
+        {
+          "tag": "Marketing",
+          "body": "Channel rank by attributed revenue across 12 months."
+        },
+        {
+          "tag": "Sports",
+          "body": "Conference standings week by week."
+        },
+        {
+          "tag": "Product",
+          "body": "Top 8 features by daily users over a quarter."
+        }
+      ],
+      "keywords": "bump chart Data Studio, rank over time chart, line ranking visualization",
+      "category": "time",
+      "catLabel": "Time Series & Trends",
+      "screenshot": "data-studio-bump-chart-rank-tracking-vizstudio.png",
+      "screenshotWebp": "data-studio-bump-chart-rank-tracking-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_bnixt43r2d",
+      "related": [
+        {
+          "id": "dualaxis-viz",
+          "name": "Chart Title",
+          "tagline": "Two metrics, two scales, one line of sight — without the lie factor."
+        },
+        {
+          "id": "stackedarea-viz",
+          "name": "Stacked Area Chart",
+          "tagline": "Stacked area over time — composition and trend on the same canvas."
+        },
+        {
+          "id": "stackedneg-animated-viz",
+          "name": "Stacked Bar Chart with Negative Values (Animated + Zoom)",
+          "tagline": "Same signed stacked bar, animated entrance + zoom controls."
+        },
+        {
+          "id": "stackedneg-viz",
+          "name": "Stacked Bar Chart with Negative Values (Static)",
+          "tagline": "Stacked bars with negative values — wins above, losses below, total preserved."
+        }
+      ]
+    },
+    {
+      "id": "calendarHeatmap",
+      "name": "Mini Calendar",
+      "tagline": "Compact monthly calendar — one cell, one number, instant pattern.",
+      "long": "Mini Calendar gives you a tight monthly grid with cells tinted by your metric — perfect for a small slot on a dashboard where a full calendar would dominate. Click a cell to cross-filter the rest of the page.",
+      "what": "Compact monthly calendar with metric-tinted cells, tooltip on hover, cross-filter on click, and optional event highlighting.",
+      "why": "Day-of-week effects are visible without a full year heatmap.",
+      "uses": [
+        {
+          "tag": "Marketing",
+          "body": "This-month conversions tinted per day."
+        },
+        {
+          "tag": "Ops",
+          "body": "Incident counts for the current month."
+        },
+        {
+          "tag": "Content",
+          "body": "Posts published per day with engagement tint."
+        }
+      ],
+      "keywords": "mini calendar heatmap Data Studio, monthly heatmap, day-tinted calendar",
+      "category": "combo",
+      "catLabel": "Tables, Calendars & Combo",
+      "screenshot": "data-studio-mini-calendar-heatmap-vizstudio.png",
+      "screenshotWebp": "data-studio-mini-calendar-heatmap-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_r5bgky012d",
+      "related": [
+        {
+          "id": "bigcalendar-viz",
+          "name": "Big Calendar",
+          "tagline": "Full calendar grid — event volume painted across every cell."
+        },
+        {
+          "id": "convheatmap-viz",
+          "name": "Conversion Heatmap",
+          "tagline": "Day-of-week × hour heatmap — when your audience actually shows up."
+        },
+        {
+          "id": "datatable-viz",
+          "name": "Row Over Row Comparison Table",
+          "tagline": "Row over row — DoD / MoM / YoY comparison table with deltas and % change."
+        },
+        {
+          "id": "engageheatmap-viz",
+          "name": "Engagement Heatmap",
+          "tagline": "Row × column matrix — normalize how you want, color tells the story."
+        }
+      ]
+    },
+    {
+      "id": "cashflow-viz",
+      "name": "Cashflow",
+      "tagline": "Income up, expense down — the zero line tells the story.",
+      "long": "Cashflow is a mirror bar chart: income bars rise above the baseline, expenses drop below. A bold KPI header sums the net balance, theme-aware colors keep the canvas clean, and label-fit logic handles dense monthly time axes automatically.",
+      "what": "Mirror bars around a zero baseline for one period dimension and two metrics (Income, Expense). Includes net-balance KPI header, legend, tooltip, cross-filter, theme-aware colors, compact number formatting.",
+      "why": "Net cashflow narratives need both the magnitude and the polarity in one read. A mirror bar gives both, plus the implicit \"are we in the black?\" via the zero line.",
+      "uses": [
+        {
+          "tag": "Finance",
+          "body": "Monthly P&L — revenue up, opex down, net delta at top."
+        },
+        {
+          "tag": "SaaS",
+          "body": "Bookings vs refunds across quarters."
+        },
+        {
+          "tag": "Personal finance",
+          "body": "Income vs expense for budgeting dashboards."
+        }
+      ],
+      "keywords": "cashflow chart Data Studio, mirror bar chart, income vs expense visualization",
+      "category": "finance",
+      "catLabel": "Finance & Performance",
+      "screenshot": "data-studio-cashflow-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-cashflow-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_q7qqfw012d",
+      "related": [
+        {
+          "id": "breakeven-viz",
+          "name": "Break-Even Chart",
+          "tagline": "Fixed cost, variable cost, revenue — and the exact unit where they cross."
+        },
+        {
+          "id": "earningsdot-viz",
+          "name": "Actual Over Target Dot Chart",
+          "tagline": "Actual over target dots — beats and misses, colored automatically."
+        },
+        {
+          "id": "revenuebreakdown-viz",
+          "name": "Revenue Breakdown (Bar + Line Combo)",
+          "tagline": "Revenue mix bars + margin line — the public-company readout view."
+        }
+      ]
+    },
+    {
+      "id": "choropleth-viz",
+      "name": "Choropleth Map",
+      "tagline": "Tile-grid map — every state or country, no projection pain.",
+      "long": "Choropleth Map ditches the wonky shapefile rendering and lays out US states or world countries as a tile grid. Sequential, diverging, or binned color scales; square, rounded, hex, or circular tiles. Click a tile to cross-filter the page.",
+      "what": "Accepts state abbreviations/names or ISO-2/ISO-3 country codes. Sequential/diverging/binned color, tile shape options, legend positioning, tooltip metric, cross-filter on click.",
+      "why": "Real-world map projections under-represent small dense states (hello, RI) and over-emphasize large empty ones. Tile grids give every entity equal voice.",
+      "uses": [
+        {
+          "tag": "Sales",
+          "body": "Revenue by state with the top 5 tiles called out."
+        },
+        {
+          "tag": "Marketing",
+          "body": "CPL by country across a global campaign."
+        },
+        {
+          "tag": "Public sector",
+          "body": "Indicator by region without distorting Alaska."
+        }
+      ],
+      "keywords": "tile grid map Data Studio, choropleth state map, country tile chart",
+      "category": "geo",
+      "catLabel": "Maps & Geo",
+      "screenshot": "data-studio-choropleth-map-vizstudio.png",
+      "screenshotWebp": "data-studio-choropleth-map-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_h6r57an72d",
+      "related": [
+        {
+          "id": "bubblemap-viz",
+          "name": "Bubble Map",
+          "tagline": "Packed bubbles, sized by a metric — every category, no axis tax."
+        },
+        {
+          "id": "interactiveGlobe-viz",
+          "name": "Interactive 3D Globe",
+          "tagline": "Real country polygons, drag-to-rotate, auto-spin, atmosphere glow — the 3D world your dashboard actually needs."
+        }
+      ]
+    },
+    {
+      "id": "chord-viz",
+      "name": "Chord Diagram",
+      "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted.",
+      "long": "Chord Diagram is the chart for symmetric relationship matrices — co-purchase, origin↔destination, referral↔conversion. Categorical arcs sit around a ring, ribbons connect them with width = flow magnitude.",
+      "what": "Directed (Source→Target) or undirected modes, sortable groups (alphabetical / by total / data order), per-group palette, ribbon color source (source/target/larger), hover highlighting, configurable tooltip + cross-filter.",
+      "why": "Sankey is for left-to-right flow. Chord is for circular, symmetric flow — and looks elegant at a glance.",
+      "uses": [
+        {
+          "tag": "Ecom",
+          "body": "Co-purchase matrix — which categories sell together."
+        },
+        {
+          "tag": "Travel",
+          "body": "Origin ↔ destination passenger volume."
+        },
+        {
+          "tag": "Marketing",
+          "body": "Cross-channel referral flow."
+        }
+      ],
+      "keywords": "chord diagram Data Studio, circular flow chart, relationship ribbon visualization",
+      "category": "flow",
+      "catLabel": "Networks, Flows & Relationships",
+      "screenshot": "data-studio-chord-diagram-vizstudio.png",
+      "screenshotWebp": "data-studio-chord-diagram-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_6kaqgcn72d",
+      "related": [
+        {
+          "id": "arcdiagram-viz",
+          "name": "Arc Diagram",
+          "tagline": "Node-link arc diagram — relationships you can actually trace."
+        },
+        {
+          "id": "audioverlap-viz",
+          "name": "Audience Overlap",
+          "tagline": "Proportional circles for audience segments — overlaps you can see."
+        },
+        {
+          "id": "bipartite-viz",
+          "name": "Bipartite Graph",
+          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+        },
+        {
+          "id": "connmap-viz",
+          "name": "Connection Map",
+          "tagline": "Entity rows with bezier arcs — pairwise strength, sorted."
+        }
+      ]
+    },
+    {
+      "id": "connmap-viz",
+      "name": "Connection Map",
+      "tagline": "Entity rows with bezier arcs — pairwise strength, sorted.",
+      "long": "Connection Map lists entities as horizontal rows and draws bezier arcs between them, with arc thickness = connection strength. When you want a chord diagram but with searchable, sortable rows down the side, this is it.",
+      "what": "Vertical entity list with bezier arcs across, sorted by total strength, with hover and cross-filter.",
+      "why": "Easier to scan than a chord ring when entity names matter — labels stay readable.",
+      "uses": [
+        {
+          "tag": "Sales",
+          "body": "Account ↔ account referral strength."
+        },
+        {
+          "tag": "HR",
+          "body": "Team ↔ team collaboration intensity."
+        },
+        {
+          "tag": "Cyber",
+          "body": "Asset ↔ asset traffic volume."
+        }
+      ],
+      "keywords": "connection map chart, entity relationship visualization Data Studio",
+      "category": "flow",
+      "catLabel": "Networks, Flows & Relationships",
+      "screenshot": "data-studio-connection-map-geo-vizstudio.png",
+      "screenshotWebp": "data-studio-connection-map-geo-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_aobau3lt2d",
+      "related": [
+        {
+          "id": "arcdiagram-viz",
+          "name": "Arc Diagram",
+          "tagline": "Node-link arc diagram — relationships you can actually trace."
+        },
+        {
+          "id": "audioverlap-viz",
+          "name": "Audience Overlap",
+          "tagline": "Proportional circles for audience segments — overlaps you can see."
+        },
+        {
+          "id": "bipartite-viz",
+          "name": "Bipartite Graph",
+          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+        },
+        {
+          "id": "chord-viz",
+          "name": "Chord Diagram",
+          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+        }
+      ]
+    },
+    {
+      "id": "convheatmap-viz",
+      "name": "Conversion Heatmap",
+      "tagline": "Day-of-week × hour heatmap — when your audience actually shows up.",
+      "long": "Conversion Heatmap maps a metric across a 7-day × 24-hour grid, surfacing peaks and dead zones without a single date filter. The defining chart for content scheduling, support staffing, and ad timing.",
+      "what": "7 × 24 grid of cells tinted by your metric (conversion %, count, revenue), with axis labels, tooltip, and cross-filter on click.",
+      "why": "Aggregates time-of-day behavior so the patterns leap out — Tuesday at 2pm vs Saturday at 10am, instantly comparable.",
+      "uses": [
+        {
+          "tag": "Ecom",
+          "body": "Conversion rate by hour and weekday — schedule promos to peaks."
+        },
+        {
+          "tag": "Support",
+          "body": "Ticket arrival pattern to staff the queue."
+        },
+        {
+          "tag": "Marketing",
+          "body": "Click-through by send time across campaigns."
+        }
+      ],
+      "keywords": "conversion heatmap Data Studio, hour-of-day visualization, day-of-week heatmap",
+      "category": "combo",
+      "catLabel": "Tables, Calendars & Combo",
+      "screenshot": "data-studio-conversion-heatmap-vizstudio.png",
+      "screenshotWebp": "data-studio-conversion-heatmap-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_71ezxtpt2d",
+      "related": [
+        {
+          "id": "bigcalendar-viz",
+          "name": "Big Calendar",
+          "tagline": "Full calendar grid — event volume painted across every cell."
+        },
+        {
+          "id": "calendarHeatmap",
+          "name": "Mini Calendar",
+          "tagline": "Compact monthly calendar — one cell, one number, instant pattern."
+        },
+        {
+          "id": "datatable-viz",
+          "name": "Row Over Row Comparison Table",
+          "tagline": "Row over row — DoD / MoM / YoY comparison table with deltas and % change."
+        },
+        {
+          "id": "engageheatmap-viz",
+          "name": "Engagement Heatmap",
+          "tagline": "Row × column matrix — normalize how you want, color tells the story."
+        }
+      ]
+    },
+    {
+      "id": "curvedcol-animated-viz",
+      "name": "Curved Columns (Animated + Zoom)",
+      "tagline": "Animated curved columns — bars that arc to draw the eye.",
+      "long": "Curved Columns (Animated + Zoom) renders categorical bars as smooth arcs instead of straight verticals. Add animated entrance and zoom controls and you have a chart that’s presentation-ready out of the box.",
+      "what": "Animated curved column bars with metric height, zoom controls, hover tooltip, and per-bar color.",
+      "why": "Differentiates your charts visually in a sea of standard rectangles — useful for marketing dashboards and product launches.",
+      "uses": [
+        {
+          "tag": "Marketing",
+          "body": "Campaign performance bars at the top of a launch dashboard."
+        },
+        {
+          "tag": "Comms",
+          "body": "Press impressions per article in a quarterly recap."
+        },
+        {
+          "tag": "Sales",
+          "body": "New logos per quarter for a board deck."
+        }
+      ],
+      "keywords": "curved column chart, animated bar chart Data Studio, decorative bar chart",
+      "category": "bars",
+      "catLabel": "Bars, Columns & Ranking",
+      "screenshot": "data-studio-curved-columns-animated-vizstudio.png",
+      "screenshotWebp": "data-studio-curved-columns-animated-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_dwgmrbmt2d",
+      "related": [
+        {
+          "id": "abtest-viz",
+          "name": "A/B Test Results",
+          "tagline": "CI bars for A/B variants — significance baked in."
+        },
+        {
+          "id": "barrace-viz",
+          "name": "Animated Bar Race",
+          "tagline": "The animated bar chart race that wins every monthly review."
+        },
+        {
+          "id": "curvedcol-static-viz",
+          "name": "Curved Columns (Static)",
+          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+        },
+        {
+          "id": "dumbbell-viz",
+          "name": "Dumbbell Chart",
+          "tagline": "Two dots, one line — every gap between A and B made obvious."
+        }
+      ]
+    },
+    {
+      "id": "curvedcol-static-viz",
+      "name": "Curved Columns (Static)",
+      "tagline": "Curved columns, static — the still-frame version with the same elegance.",
+      "long": "Curved Columns (Static) is the no-animation cousin — same arc-shaped column geometry, no entrance motion, ideal for printable dashboards and exported reports.",
+      "what": "Static curved column geometry per category, with tooltip and cross-filter.",
+      "why": "Animation isn’t always welcome — for PDFs, embeds, and print, this gives the same visual differentiation without motion.",
+      "uses": [
+        {
+          "tag": "PDF reports",
+          "body": "Quarterly board deck PDFs that need decorative charts."
+        },
+        {
+          "tag": "Embed",
+          "body": "Public dashboards where animations distract."
+        },
+        {
+          "tag": "Brand",
+          "body": "On-brand chart treatment for marketing pages."
+        }
+      ],
+      "keywords": "curved column chart static, decorative bar chart Data Studio",
+      "category": "bars",
+      "catLabel": "Bars, Columns & Ranking",
+      "screenshot": "data-studio-curved-columns-static-vizstudio.png",
+      "screenshotWebp": "data-studio-curved-columns-static-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_byg2eemt2d",
+      "related": [
+        {
+          "id": "abtest-viz",
+          "name": "A/B Test Results",
+          "tagline": "CI bars for A/B variants — significance baked in."
+        },
+        {
+          "id": "barrace-viz",
+          "name": "Animated Bar Race",
+          "tagline": "The animated bar chart race that wins every monthly review."
+        },
+        {
+          "id": "curvedcol-animated-viz",
+          "name": "Curved Columns (Animated + Zoom)",
+          "tagline": "Animated curved columns — bars that arc to draw the eye."
+        },
+        {
+          "id": "dumbbell-viz",
+          "name": "Dumbbell Chart",
+          "tagline": "Two dots, one line — every gap between A and B made obvious."
+        }
+      ]
+    },
+    {
+      "id": "datatable-viz",
+      "name": "Row Over Row Comparison Table",
+      "tagline": "Row over row — DoD / MoM / YoY comparison table with deltas and % change.",
+      "long": "Row Over Row Comparison Table is the analyst’s love letter to themselves: a clean comparison grid with absolute deltas, % change, per-metric formatting, theme-aware coloring, and no Excel grid lines pretending to be design.",
+      "what": "Period-over-period comparison table (DoD/MoM/YoY) with Current, Prior, Δ, and % Change columns. Theme-aware coloring, per-metric formatting, sticky headers.",
+      "why": "Standard Data tables don’t do period comparison — this one was built for the way analysts actually talk.",
+      "uses": [
+        {
+          "tag": "Marketing",
+          "body": "Weekly metrics WoW: spend, leads, CPL, conversion rate."
+        },
+        {
+          "tag": "Finance",
+          "body": "Monthly P&L line items MoM with % change colored."
+        },
+        {
+          "tag": "Product",
+          "body": "Daily DAU/WAU YoY for trend conversations."
+        }
+      ],
+      "keywords": "comparison table Data Studio, MoM YoY table, period over period table",
+      "category": "combo",
+      "catLabel": "Tables, Calendars & Combo",
+      "screenshot": "data-studio-row-over-row-data-table-vizstudio.png",
+      "screenshotWebp": "data-studio-row-over-row-data-table-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_y57lhen72d",
+      "related": [
+        {
+          "id": "bigcalendar-viz",
+          "name": "Big Calendar",
+          "tagline": "Full calendar grid — event volume painted across every cell."
+        },
+        {
+          "id": "calendarHeatmap",
+          "name": "Mini Calendar",
+          "tagline": "Compact monthly calendar — one cell, one number, instant pattern."
+        },
+        {
+          "id": "convheatmap-viz",
+          "name": "Conversion Heatmap",
+          "tagline": "Day-of-week × hour heatmap — when your audience actually shows up."
+        },
+        {
+          "id": "engageheatmap-viz",
+          "name": "Engagement Heatmap",
+          "tagline": "Row × column matrix — normalize how you want, color tells the story."
+        }
+      ]
+    },
+    {
+      "id": "depwheel-viz",
+      "name": "Dependency Wheel",
+      "tagline": "Dependency wheel — a chord diagram that shows what hangs on what.",
+      "long": "Dependency Wheel arranges entities around a ring and draws directed arcs showing dependency strength. Hover one node to see exactly what it depends on (and what depends on it).",
+      "what": "Circular node layout with directed dependency arcs, hover-highlight an ego dependency network, optional tick marks and group palettes.",
+      "why": "Software, supply chains, and org topologies all have implicit dependency graphs. This makes them visible.",
+      "uses": [
+        {
+          "tag": "Engineering",
+          "body": "Service-to-service dependency map."
+        },
+        {
+          "tag": "Ops",
+          "body": "Supplier dependency for a critical SKU."
+        },
+        {
+          "tag": "Compliance",
+          "body": "Process dependencies for a control audit."
+        }
+      ],
+      "keywords": "dependency wheel chart, circular dependency visualization Data Studio",
+      "category": "flow",
+      "catLabel": "Networks, Flows & Relationships",
+      "screenshot": "data-studio-dependency-wheel-chord-vizstudio.png",
+      "screenshotWebp": "data-studio-dependency-wheel-chord-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_6x3a2qmt2d",
+      "related": [
+        {
+          "id": "arcdiagram-viz",
+          "name": "Arc Diagram",
+          "tagline": "Node-link arc diagram — relationships you can actually trace."
+        },
+        {
+          "id": "audioverlap-viz",
+          "name": "Audience Overlap",
+          "tagline": "Proportional circles for audience segments — overlaps you can see."
+        },
+        {
+          "id": "bipartite-viz",
+          "name": "Bipartite Graph",
+          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+        },
+        {
+          "id": "chord-viz",
+          "name": "Chord Diagram",
+          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+        }
+      ]
+    },
+    {
+      "id": "dualaxis-viz",
+      "name": "Chart Title",
+      "tagline": "Two metrics, two scales, one line of sight — without the lie factor.",
+      "long": "Dual Axis pairs two metrics on independent y-axes — bars for volume, line for rate, or any combination. Carefully designed scales and ticks keep the chart honest while staying readable.",
+      "what": "Bar + line, or two lines, with independent scaled y-axes, shared x-axis, legend, tooltip, and cross-filter.",
+      "why": "Volume and rate often need the same chart and never the same scale. Dual axis solves that without forcing a second visualization.",
+      "uses": [
+        {
+          "tag": "Marketing",
+          "body": "Spend (bars) and CPL (line) over time."
+        },
+        {
+          "tag": "Product",
+          "body": "Sessions (bars) and conversion % (line)."
+        },
+        {
+          "tag": "Sales",
+          "body": "Pipeline volume (bars) and win rate % (line)."
+        }
+      ],
+      "keywords": "dual axis chart Data Studio, bar plus line chart, two-axis visualization",
+      "category": "time",
+      "catLabel": "Time Series & Trends",
+      "screenshot": "data-studio-dual-axis-line-bar-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-dual-axis-line-bar-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_8w4o9c7y2d",
+      "related": [
+        {
+          "id": "bump-viz",
+          "name": "Bump Chart",
+          "tagline": "Rank-over-time line chart — who's climbing, who's sliding."
+        },
+        {
+          "id": "stackedarea-viz",
+          "name": "Stacked Area Chart",
+          "tagline": "Stacked area over time — composition and trend on the same canvas."
+        },
+        {
+          "id": "stackedneg-animated-viz",
+          "name": "Stacked Bar Chart with Negative Values (Animated + Zoom)",
+          "tagline": "Same signed stacked bar, animated entrance + zoom controls."
+        },
+        {
+          "id": "stackedneg-viz",
+          "name": "Stacked Bar Chart with Negative Values (Static)",
+          "tagline": "Stacked bars with negative values — wins above, losses below, total preserved."
+        }
+      ]
+    },
+    {
+      "id": "dualdonut-viz",
+      "name": "Dual Donut",
+      "tagline": "Two donuts side-by-side — current vs prior, plan vs actual, the comparison view.",
+      "long": "Dual Donut renders two same-scale donut charts in parallel, perfect for any \"before vs after\" split — current vs prior, plan vs actual, treatment vs control. Per-slice tooltips and a unified legend keep it readable.",
+      "what": "Two donut charts in a row sharing a legend, with per-slice tooltips, total center labels, and cross-filtering.",
+      "why": "A single donut shows composition; two donuts show how composition shifted — and that’s usually the story.",
+      "uses": [
+        {
+          "tag": "Finance",
+          "body": "Revenue mix this year vs last."
+        },
+        {
+          "tag": "Marketing",
+          "body": "Channel mix planned vs actual."
+        },
+        {
+          "tag": "HR",
+          "body": "Headcount mix before vs after reorg."
+        }
+      ],
+      "keywords": "dual donut chart Data Studio, paired donut visualization, comparison pie chart",
+      "category": "parts",
+      "catLabel": "Pies, Donuts & Part-to-Whole",
+      "screenshot": "data-studio-dual-donut-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-dual-donut-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_ku7fcf7y2d",
+      "related": [
+        {
+          "id": "multiring-viz",
+          "name": "Multi-ring Donut",
+          "tagline": "Nested donut rings — multiple metrics, same center, one composition."
+        },
+        {
+          "id": "vardonut-viz",
+          "name": "Variable-Radius Nested Donut",
+          "tagline": "Variable-radius nested donut — two metrics per slice, one chart."
+        },
+        {
+          "id": "varradiuspie-viz",
+          "name": "Variable Radius Pie Chart",
+          "tagline": "Variable-radius pie — angle is share, radius is a second metric."
+        },
+        {
+          "id": "waffle-viz",
+          "name": "Waffle Chart",
+          "tagline": "10×10 grid — every square is 1% — the part-to-whole everyone reads correctly."
+        }
+      ]
+    },
+    {
+      "id": "dumbbell-viz",
+      "name": "Dumbbell Chart",
+      "tagline": "Two dots, one line — every gap between A and B made obvious.",
+      "long": "Dumbbell Chart connects two related values per category with a line and emphasizes the gap between them. The classic chart for before vs after, men vs women, this vs target — anywhere a pair matters more than the absolute values.",
+      "what": "One row per category with two value markers (start, end) connected by a line; optional gap-magnitude color.",
+      "why": "Side-by-side bars are noisy. Dumbbells let the eye read \"how big is the gap?\" first — exactly what most paired comparisons need.",
+      "uses": [
+        {
+          "tag": "HR",
+          "body": "Pay gap by role: target vs current."
+        },
+        {
+          "tag": "Marketing",
+          "body": "Engagement before vs after a campaign launch."
+        },
+        {
+          "tag": "Product",
+          "body": "Feature usage at launch vs 90 days later."
+        }
+      ],
+      "keywords": "dumbbell chart Data Studio, two-point comparison chart, gap visualization",
+      "category": "bars",
+      "catLabel": "Bars, Columns & Ranking",
+      "screenshot": "data-studio-dumbbell-chart-comparison-vizstudio.png",
+      "screenshotWebp": "data-studio-dumbbell-chart-comparison-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_olghdt7y2d",
+      "related": [
+        {
+          "id": "abtest-viz",
+          "name": "A/B Test Results",
+          "tagline": "CI bars for A/B variants — significance baked in."
+        },
+        {
+          "id": "barrace-viz",
+          "name": "Animated Bar Race",
+          "tagline": "The animated bar chart race that wins every monthly review."
+        },
+        {
+          "id": "curvedcol-animated-viz",
+          "name": "Curved Columns (Animated + Zoom)",
+          "tagline": "Animated curved columns — bars that arc to draw the eye."
+        },
+        {
+          "id": "curvedcol-static-viz",
+          "name": "Curved Columns (Static)",
+          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+        }
+      ]
+    },
+    {
+      "id": "earningsdot-viz",
+      "name": "Actual Over Target Dot Chart",
+      "tagline": "Actual over target dots — beats and misses, colored automatically.",
+      "long": "Actual Over Target Dot Chart plots actual values as colored dots against an optional target line. Beats are green, misses are red — earnings season in a single chart.",
+      "what": "Dot markers for actuals positioned vs a target metric line, with beat / miss coloring and tooltip detail.",
+      "why": "Designed for the specific shape of earnings, sales targets, and SLA reporting — actual vs target as a per-period verdict.",
+      "uses": [
+        {
+          "tag": "Finance",
+          "body": "Quarterly EPS actual vs consensus."
+        },
+        {
+          "tag": "Sales",
+          "body": "Monthly bookings vs quota by team."
+        },
+        {
+          "tag": "Ops",
+          "body": "SLA per service vs threshold."
+        }
+      ],
+      "keywords": "actual vs target chart Data Studio, earnings beat miss visualization, dot chart",
+      "category": "finance",
+      "catLabel": "Finance & Performance",
+      "screenshot": "data-studio-actual-vs-target-dot-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-actual-vs-target-dot-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_55lcyx012d",
+      "related": [
+        {
+          "id": "breakeven-viz",
+          "name": "Break-Even Chart",
+          "tagline": "Fixed cost, variable cost, revenue — and the exact unit where they cross."
+        },
+        {
+          "id": "cashflow-viz",
+          "name": "Cashflow",
+          "tagline": "Income up, expense down — the zero line tells the story."
+        },
+        {
+          "id": "revenuebreakdown-viz",
+          "name": "Revenue Breakdown (Bar + Line Combo)",
+          "tagline": "Revenue mix bars + margin line — the public-company readout view."
+        }
+      ]
+    },
+    {
+      "id": "engageheatmap-viz",
+      "name": "Engagement Heatmap",
+      "tagline": "Row × column matrix — normalize how you want, color tells the story.",
+      "long": "Engagement Heatmap is the general-purpose matrix view: rows × columns × value with column, row, or global normalization. Sequential or diverging scales, legend included, cross-filter on click.",
+      "what": "Row/column/global normalized cell tints with sequential or diverging color, axis labels, color legend, cross-filter, theme-aware.",
+      "why": "Heatmaps are only as good as their normalization. This one gives you all three modes so the pattern you want is what you see.",
+      "uses": [
+        {
+          "tag": "Marketing",
+          "body": "Campaign × audience response rate, column-normalized."
+        },
+        {
+          "tag": "Product",
+          "body": "Feature × cohort retention, row-normalized."
+        },
+        {
+          "tag": "HR",
+          "body": "Skill × role distribution, globally normalized."
+        }
+      ],
+      "keywords": "engagement heatmap Data Studio, normalized matrix chart, row column heatmap",
+      "category": "combo",
+      "catLabel": "Tables, Calendars & Combo",
+      "screenshot": "data-studio-engagement-heatmap-vizstudio.png",
+      "screenshotWebp": "data-studio-engagement-heatmap-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_1hppj5pt2d",
+      "related": [
+        {
+          "id": "bigcalendar-viz",
+          "name": "Big Calendar",
+          "tagline": "Full calendar grid — event volume painted across every cell."
+        },
+        {
+          "id": "calendarHeatmap",
+          "name": "Mini Calendar",
+          "tagline": "Compact monthly calendar — one cell, one number, instant pattern."
+        },
+        {
+          "id": "convheatmap-viz",
+          "name": "Conversion Heatmap",
+          "tagline": "Day-of-week × hour heatmap — when your audience actually shows up."
+        },
+        {
+          "id": "datatable-viz",
+          "name": "Row Over Row Comparison Table",
+          "tagline": "Row over row — DoD / MoM / YoY comparison table with deltas and % change."
+        }
+      ]
+    },
+    {
+      "id": "flowmap-viz",
+      "name": "Flow Map",
+      "tagline": "Geographic flow lines — origins, destinations, and volumes on a map.",
+      "long": "Flow Map draws origin-to-destination flows on a geographic canvas with weighted line thickness. Build a logistics chart that actually reads like a map — not a tangle of arrows.",
+      "what": "Origin/destination pairs as bezier flows on a geographic projection, weighted by volume, with hover-highlight and tooltip.",
+      "why": "Spreadsheet shipment data hides geography. Flow maps put it back.",
+      "uses": [
+        {
+          "tag": "Logistics",
+          "body": "Inbound shipments by origin country."
+        },
+        {
+          "tag": "Marketing",
+          "body": "Cross-region campaign reach."
+        },
+        {
+          "tag": "Travel",
+          "body": "Top inter-city passenger flows."
+        }
+      ],
+      "keywords": "flow map Data Studio, origin destination chart, geographic flow visualization",
+      "category": "flow",
+      "catLabel": "Networks, Flows & Relationships",
+      "screenshot": "data-studio-flow-map-geo-routes-vizstudio.png",
+      "screenshotWebp": "data-studio-flow-map-geo-routes-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_e3d3yupt2d",
+      "related": [
+        {
+          "id": "arcdiagram-viz",
+          "name": "Arc Diagram",
+          "tagline": "Node-link arc diagram — relationships you can actually trace."
+        },
+        {
+          "id": "audioverlap-viz",
+          "name": "Audience Overlap",
+          "tagline": "Proportional circles for audience segments — overlaps you can see."
+        },
+        {
+          "id": "bipartite-viz",
+          "name": "Bipartite Graph",
+          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+        },
+        {
+          "id": "chord-viz",
+          "name": "Chord Diagram",
+          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+        }
+      ]
+    },
+    {
+      "id": "forcenet-viz",
+      "name": "Force-Directed Network",
+      "tagline": "Force-directed network — the classic node graph, properly tuned.",
+      "long": "Force-Directed Network applies physics to your edge list, settling nodes into a layout where related entities cluster naturally. The right chart when relationship topology *is* the story.",
+      "what": "Force-simulated node-link layout with charge, link distance, and collision, plus hover-highlight, drag-to-fix, and click cross-filter.",
+      "why": "Edge lists hide structure. A force layout exposes communities, hubs, and bridges in seconds.",
+      "uses": [
+        {
+          "tag": "Comms",
+          "body": "Co-mention network for a press cycle."
+        },
+        {
+          "tag": "Engineering",
+          "body": "Service dependency network."
+        },
+        {
+          "tag": "Sales",
+          "body": "Account introduction graph from CRM."
+        }
+      ],
+      "keywords": "force-directed graph Data Studio, network chart, node link visualization",
+      "category": "flow",
+      "catLabel": "Networks, Flows & Relationships",
+      "screenshot": "data-studio-force-directed-network-graph-vizstudio.png",
+      "screenshotWebp": "data-studio-force-directed-network-graph-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_w6fh4vpt2d",
+      "related": [
+        {
+          "id": "arcdiagram-viz",
+          "name": "Arc Diagram",
+          "tagline": "Node-link arc diagram — relationships you can actually trace."
+        },
+        {
+          "id": "audioverlap-viz",
+          "name": "Audience Overlap",
+          "tagline": "Proportional circles for audience segments — overlaps you can see."
+        },
+        {
+          "id": "bipartite-viz",
+          "name": "Bipartite Graph",
+          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+        },
+        {
+          "id": "chord-viz",
+          "name": "Chord Diagram",
+          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+        }
+      ]
+    },
+    {
+      "id": "groupedbar-viz",
+      "name": "Grouped Bar Chart",
+      "tagline": "Side-by-side bars per category — the comparison chart everyone reads correctly.",
+      "long": "Grouped Bar Chart places two to four bars side-by-side within each category, sharing a y-axis and a legend. Cleaner than stacked when the absolute values per series matter more than the total.",
+      "what": "Multi-series grouped bars per category with legend, tooltip, theme-aware colors, and cross-filter.",
+      "why": "Stacked bars compress the smaller series. Grouped bars give every series equal real estate.",
+      "uses": [
+        {
+          "tag": "Sales",
+          "body": "Current vs prior vs plan per region."
+        },
+        {
+          "tag": "Marketing",
+          "body": "Spend vs revenue vs leads per channel."
+        },
+        {
+          "tag": "Operations",
+          "body": "Volume by shift across multiple sites."
+        }
+      ],
+      "keywords": "grouped bar chart Data Studio, side by side bar comparison, multi-series bars",
+      "category": "bars",
+      "catLabel": "Bars, Columns & Ranking",
+      "screenshot": "data-studio-grouped-bar-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-grouped-bar-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_bb6jxxpt2d",
+      "related": [
+        {
+          "id": "abtest-viz",
+          "name": "A/B Test Results",
+          "tagline": "CI bars for A/B variants — significance baked in."
+        },
+        {
+          "id": "barrace-viz",
+          "name": "Animated Bar Race",
+          "tagline": "The animated bar chart race that wins every monthly review."
+        },
+        {
+          "id": "curvedcol-animated-viz",
+          "name": "Curved Columns (Animated + Zoom)",
+          "tagline": "Animated curved columns — bars that arc to draw the eye."
+        },
+        {
+          "id": "curvedcol-static-viz",
+          "name": "Curved Columns (Static)",
+          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+        }
+      ]
+    },
+    {
+      "id": "hexbin-viz",
+      "name": "Hexbin Scatter",
+      "tagline": "Hexagonal density — scatter plots that survive 100k points.",
+      "long": "Hexbin Scatter bins two numeric metrics onto a pointy-top hexagon grid and shades each cell by density, average X, or average Y. Optional Category dimension surfaces top-3 categories in tooltips and joins cross-filters. 12 palettes, 4 density scales, optional trend line and marginals.",
+      "what": "Hexagon bin grid over x/y metrics; density / avg-X / avg-Y color modes; 12 palettes, 4 scales (linear/sqrt/log/power); optional trend line; optional marginal distributions; min-count filter; click cross-filter.",
+      "why": "Scatter overplots at scale. Hexbin keeps every region readable and surfaces hot zones immediately.",
+      "uses": [
+        {
+          "tag": "Marketing",
+          "body": "CTR × CPC density across thousands of keywords."
+        },
+        {
+          "tag": "Product",
+          "body": "Session length × pages-viewed density."
+        },
+        {
+          "tag": "Finance",
+          "body": "Risk × return density across positions."
+        }
+      ],
+      "keywords": "hexbin chart Data Studio, hexagonal density plot, scatter density visualization",
+      "category": "scatter",
+      "catLabel": "Scatter, Correlation & Bubbles",
+      "screenshot": "data-studio-hexbin-scatter-plot-vizstudio.png",
+      "screenshotWebp": "data-studio-hexbin-scatter-plot-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_7ea20ypt2d",
+      "related": [
+        {
+          "id": "bubble-viz",
+          "name": "Bubble Chart",
+          "tagline": "X × Y × size — three metrics, one chart, zero squinting."
+        },
+        {
+          "id": "bubblegrid",
+          "name": "Bubble Grid",
+          "tagline": "A grid of bubbles — counts and magnitudes across two categorical axes."
+        },
+        {
+          "id": "quadrant-viz",
+          "name": "Quadrant Scatter",
+          "tagline": "Four-quadrant scatter — the strategy chart you've drawn on whiteboards."
+        },
+        {
+          "id": "scattertrend-viz",
+          "name": "Scatter Plot with Trendline",
+          "tagline": "Scatter with a fitted trend line — correlation without the chart-junk."
+        }
+      ]
+    },
+    {
+      "id": "hexbindensity-viz",
+      "name": "Hexbin Density Plot",
+      "tagline": "Hexagonal density plot — same hex grid, focused on point density.",
+      "long": "Hexbin Density Plot is the density-only cousin of Hexbin Scatter — pure point-density coloring, ideal when you don’t need an avg-X or avg-Y mode and just want the where-do-records-cluster picture.",
+      "what": "Hex grid with density coloring across two metrics, configurable bin size and color scale.",
+      "why": "When density alone is the answer, this is the leaner chart.",
+      "uses": [
+        {
+          "tag": "Analytics",
+          "body": "Where users cluster in a feature × tenure plane."
+        },
+        {
+          "tag": "Quant",
+          "body": "Trade size × hold-time density."
+        },
+        {
+          "tag": "Geo",
+          "body": "2D event density when projection isn’t needed."
+        }
+      ],
+      "keywords": "hexbin density chart, density plot Data Studio, hex grid visualization",
+      "category": "dist",
+      "catLabel": "Distribution & Statistical",
+      "screenshot": "data-studio-hexbin-density-plot-vizstudio.png",
+      "screenshotWebp": "data-studio-hexbin-density-plot-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_gvuvnzpt2d",
+      "related": [
+        {
+          "id": "beeswarm-viz",
+          "name": "Beeswarm / Swarm Plot",
+          "tagline": "Every individual point, no overlap — distributions that boxplots hide."
+        },
+        {
+          "id": "qq-viz",
+          "name": "Q-Q Plot",
+          "tagline": "Q-Q plot — does this distribution match the one you expect?"
+        }
+      ]
+    },
+    {
+      "id": "interactiveGlobe-viz",
+      "name": "Interactive 3D Globe",
+      "tagline": "Real country polygons, drag-to-rotate, auto-spin, atmosphere glow — the 3D world your dashboard actually needs.",
+      "long": "SVG-based interactive 3D orthographic globe with real country polygons (Natural Earth 110m), drag-to-rotate, auto-spin animation, zoom, choropleth color scale, atmosphere glow, graticule grid, tooltips, country labels, cross-filtering, and full style customization. 1 country dimension (ISO-3/ISO-2/name/numeric), 1 metric.",
+      "what": "Renders the world as an interactive SVG orthographic projection using Natural Earth 110m country polygons. Drag to rotate, scroll to zoom, optional auto-spin. Cells colored by your metric, with atmosphere glow, graticule grid, country labels, hover tooltips, and click cross-filtering.",
+      "why": "Flat maps distort. A real-polygon globe with atmosphere and graticule lines is a presentation-grade view — and it cross-filters the rest of the report on click.",
+      "uses": [
+        {
+          "tag": "Marketing",
+          "body": "Revenue per country with the globe spinning in the lobby."
+        },
+        {
+          "tag": "NGO",
+          "body": "Indicator across regions in an executive summary."
+        },
+        {
+          "tag": "Travel",
+          "body": "Booking volume per country with tooltip detail."
+        }
+      ],
+      "keywords": "3D globe chart Data Studio, orthographic projection visualization, world choropleth globe, Natural Earth polygons",
+      "category": "geo",
+      "catLabel": "Maps & Geo",
+      "screenshot": "data-studio-interactive-3d-globe-vizstudio.png",
+      "screenshotWebp": "data-studio-interactive-3d-globe-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_2nvm80pt2d",
+      "related": [
+        {
+          "id": "bubblemap-viz",
+          "name": "Bubble Map",
+          "tagline": "Packed bubbles, sized by a metric — every category, no axis tax."
+        },
+        {
+          "id": "choropleth-viz",
+          "name": "Choropleth Map",
+          "tagline": "Tile-grid map — every state or country, no projection pain."
+        }
+      ]
+    },
+    {
+      "id": "kpisparkline-viz",
+      "name": "KPI Sparkline Cards",
+      "tagline": "Headline numbers with trend lines baked in — the executive scorecard, refined.",
+      "long": "KPI Sparkline Cards combine a large headline metric, a delta vs. prior period, and an inline sparkline so leaders can see the number, the change, and the trajectory in a single glance.",
+      "what": "Grid of KPI cards, each with primary metric, %-change indicator, and a 30/60/90-day sparkline.",
+      "why": "Replaces three separate scorecards with one focused row. The sparkline kills the \"but is that good?\" follow-up.",
+      "uses": [
+        {
+          "tag": "Exec",
+          "body": "MBR: Revenue, MRR, Churn %, NPS across the top."
+        },
+        {
+          "tag": "SaaS",
+          "body": "DAU, WAU, activation, retention with mini-trends."
+        },
+        {
+          "tag": "Marketing",
+          "body": "Spend, Leads, CPL, Conversion at a glance."
+        }
+      ],
+      "keywords": "KPI cards Data Studio, sparkline scorecard, executive dashboard widget",
+      "category": "kpi",
+      "catLabel": "KPI, Status & Goals",
+      "screenshot": "data-studio-kpi-sparkline-cards-vizstudio.png",
+      "screenshotWebp": "data-studio-kpi-sparkline-cards-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_zdjo32502d",
+      "related": [
+        {
+          "id": "analystratings-viz",
+          "name": "Breakdown Chart",
+          "tagline": "Donut + progress bars for category breakdowns — the dominant slice highlighted automatically."
+        },
+        {
+          "id": "bulletchart-viz",
+          "name": "Bullet Chart",
+          "tagline": "Stephen Few's gauge replacement — actual, target, and ranges in one bar."
+        },
+        {
+          "id": "progresscircles-viz",
+          "name": "Progress Circles",
+          "tagline": "A row of donuts that each say \"X% done\" — instantly readable."
+        },
+        {
+          "id": "semicirclegauge-viz",
+          "name": "Semicircle Gauge",
+          "tagline": "Half-circle gauge — same story, half the real estate."
+        }
+      ]
+    },
+    {
+      "id": "lollipopchart",
+      "name": "Lollipop Chart",
+      "tagline": "Cleaner than a bar chart — a dot and a stem, nothing wasted.",
+      "long": "Lollipop Chart strips bar charts to a stem and a dot, reducing ink while keeping ranking and magnitude. The chart that says \"we have taste\" without sacrificing readability.",
+      "what": "One row per category with a horizontal stem ending in a value-sized dot; optional color encoding.",
+      "why": "Reads less heavy than bars when categories are many — and looks intentional.",
+      "uses": [
+        {
+          "tag": "Marketing",
+          "body": "Campaign performance ranked by ROI."
+        },
+        {
+          "tag": "HR",
+          "body": "Salary by role with dots at current pay."
+        },
+        {
+          "tag": "Ops",
+          "body": "SKUs ranked by margin."
+        }
+      ],
+      "keywords": "lollipop chart Data Studio, dot and stem chart, minimalist bar chart",
+      "category": "bars",
+      "catLabel": "Bars, Columns & Ranking",
+      "screenshot": "data-studio-lollipop-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-lollipop-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_5fn493pt2d",
+      "related": [
+        {
+          "id": "abtest-viz",
+          "name": "A/B Test Results",
+          "tagline": "CI bars for A/B variants — significance baked in."
+        },
+        {
+          "id": "barrace-viz",
+          "name": "Animated Bar Race",
+          "tagline": "The animated bar chart race that wins every monthly review."
+        },
+        {
+          "id": "curvedcol-animated-viz",
+          "name": "Curved Columns (Animated + Zoom)",
+          "tagline": "Animated curved columns — bars that arc to draw the eye."
+        },
+        {
+          "id": "curvedcol-static-viz",
+          "name": "Curved Columns (Static)",
+          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+        }
+      ]
+    },
+    {
+      "id": "matrixchart-viz",
+      "name": "Adjacency Matrix",
+      "tagline": "Adjacency matrix — the most scalable way to see a network.",
+      "long": "Adjacency Matrix lists every entity along both axes and shades each cell by edge weight. When force graphs become spaghetti at 100+ nodes, the matrix stays readable.",
+      "what": "Entity × entity grid with cell tint = edge weight, sortable axes, hover detail, cross-filter on click.",
+      "why": "Networks past ~50 nodes are unreadable as graphs. Matrices keep scaling.",
+      "uses": [
+        {
+          "tag": "Engineering",
+          "body": "Service call graph at scale."
+        },
+        {
+          "tag": "Marketing",
+          "body": "Customer ↔ channel matrix."
+        },
+        {
+          "tag": "Org",
+          "body": "Email volume between teams."
+        }
+      ],
+      "keywords": "adjacency matrix chart Data Studio, network matrix visualization, edge matrix",
+      "category": "flow",
+      "catLabel": "Networks, Flows & Relationships",
+      "screenshot": "data-studio-adjacency-matrix-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-adjacency-matrix-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_6cow118y2d",
+      "related": [
+        {
+          "id": "arcdiagram-viz",
+          "name": "Arc Diagram",
+          "tagline": "Node-link arc diagram — relationships you can actually trace."
+        },
+        {
+          "id": "audioverlap-viz",
+          "name": "Audience Overlap",
+          "tagline": "Proportional circles for audience segments — overlaps you can see."
+        },
+        {
+          "id": "bipartite-viz",
+          "name": "Bipartite Graph",
+          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+        },
+        {
+          "id": "chord-viz",
+          "name": "Chord Diagram",
+          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+        }
+      ]
+    },
+    {
+      "id": "mirrorbar-viz",
+      "name": "Mirror Bar Chart",
+      "tagline": "Two series mirrored around a baseline — comparisons that read in one glance.",
+      "long": "Mirror Bar Chart places one series above and one below a shared axis. Population pyramids, income vs expense, app A vs app B — anywhere two parallel series want a clean reflection.",
+      "what": "Two-series mirrored bars around a shared central axis, with category labels in the middle and legend.",
+      "why": "Side-by-side bars make the eye work harder. Mirroring makes the \"who’s bigger?\" question literal.",
+      "uses": [
+        {
+          "tag": "HR",
+          "body": "Population pyramid by age and gender."
+        },
+        {
+          "tag": "Finance",
+          "body": "Income above, expenses below per month."
+        },
+        {
+          "tag": "Marketing",
+          "body": "Acquired vs lost customers per segment."
+        }
+      ],
+      "keywords": "mirror bar chart Data Studio, population pyramid, two-sided bar chart",
+      "category": "bars",
+      "catLabel": "Bars, Columns & Ranking",
+      "screenshot": "data-studio-mirror-bar-chart-tornado-vizstudio.png",
+      "screenshotWebp": "data-studio-mirror-bar-chart-tornado-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_92xl55pt2d",
+      "related": [
+        {
+          "id": "abtest-viz",
+          "name": "A/B Test Results",
+          "tagline": "CI bars for A/B variants — significance baked in."
+        },
+        {
+          "id": "barrace-viz",
+          "name": "Animated Bar Race",
+          "tagline": "The animated bar chart race that wins every monthly review."
+        },
+        {
+          "id": "curvedcol-animated-viz",
+          "name": "Curved Columns (Animated + Zoom)",
+          "tagline": "Animated curved columns — bars that arc to draw the eye."
+        },
+        {
+          "id": "curvedcol-static-viz",
+          "name": "Curved Columns (Static)",
+          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+        }
+      ]
+    },
+    {
+      "id": "multiring-viz",
+      "name": "Multi-ring Donut",
+      "tagline": "Nested donut rings — multiple metrics, same center, one composition.",
+      "long": "Multi-ring Donut stacks two or three donut rings around a shared center. Use it when one category breakdown has sub-shares that matter as much as the totals.",
+      "what": "Two or three concentric donut rings sharing center labels, with hover tooltip on each ring.",
+      "why": "Sunburst overcomplicates simple two-level breakdowns. Multi-ring keeps the donut familiarity.",
+      "uses": [
+        {
+          "tag": "Marketing",
+          "body": "Channel share with sub-channel breakdown."
+        },
+        {
+          "tag": "Finance",
+          "body": "Revenue by segment with product mix per segment."
+        },
+        {
+          "tag": "Product",
+          "body": "Plan tier mix with feature usage per tier."
+        }
+      ],
+      "keywords": "multi-ring donut chart Data Studio, nested donut visualization, ring chart",
+      "category": "parts",
+      "catLabel": "Pies, Donuts & Part-to-Whole",
+      "screenshot": "data-studio-multi-ring-donut-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-multi-ring-donut-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_0hpap8pt2d",
+      "related": [
+        {
+          "id": "dualdonut-viz",
+          "name": "Dual Donut",
+          "tagline": "Two donuts side-by-side — current vs prior, plan vs actual, the comparison view."
+        },
+        {
+          "id": "vardonut-viz",
+          "name": "Variable-Radius Nested Donut",
+          "tagline": "Variable-radius nested donut — two metrics per slice, one chart."
+        },
+        {
+          "id": "varradiuspie-viz",
+          "name": "Variable Radius Pie Chart",
+          "tagline": "Variable-radius pie — angle is share, radius is a second metric."
+        },
+        {
+          "id": "waffle-viz",
+          "name": "Waffle Chart",
+          "tagline": "10×10 grid — every square is 1% — the part-to-whole everyone reads correctly."
+        }
+      ]
+    },
+    {
+      "id": "oppositediagram",
+      "name": "Opposite Diagram",
+      "tagline": "Two-sided pros vs cons — opposing forces, one chart.",
+      "long": "Opposite Diagram visualizes two opposing forces — pros vs cons, supports vs blocks, drivers vs detractors — as parallel rows of weighted bars. The strategic two-sider, ready for a slide.",
+      "what": "Two parallel columns of bars, weighted, with center labels and per-side coloring.",
+      "why": "Decision frameworks live in tables; this chart turns them into a chart your audience can read.",
+      "uses": [
+        {
+          "tag": "Strategy",
+          "body": "Pros vs cons for a major decision."
+        },
+        {
+          "tag": "UX",
+          "body": "Usability strengths vs blockers."
+        },
+        {
+          "tag": "M&A",
+          "body": "Synergy vs risk for a target."
+        }
+      ],
+      "keywords": "opposite diagram chart, pros vs cons visualization, two-sided chart Data Studio",
+      "category": "flow",
+      "catLabel": "Networks, Flows & Relationships",
+      "screenshot": "data-studio-opposite-diagram-comparison-vizstudio.png",
+      "screenshotWebp": "data-studio-opposite-diagram-comparison-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_po3l9aqt2d",
+      "related": [
+        {
+          "id": "arcdiagram-viz",
+          "name": "Arc Diagram",
+          "tagline": "Node-link arc diagram — relationships you can actually trace."
+        },
+        {
+          "id": "audioverlap-viz",
+          "name": "Audience Overlap",
+          "tagline": "Proportional circles for audience segments — overlaps you can see."
+        },
+        {
+          "id": "bipartite-viz",
+          "name": "Bipartite Graph",
+          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+        },
+        {
+          "id": "chord-viz",
+          "name": "Chord Diagram",
+          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+        }
+      ]
+    },
+    {
+      "id": "parallelcoords-viz",
+      "name": "Parallel Coordinates Plot",
+      "tagline": "Parallel axes — every record drawn across every dimension.",
+      "long": "Parallel Coordinates Plot puts each numeric dimension on a vertical axis and draws every record as a polyline crossing them. The fastest way to spot multivariate patterns — and the multivariate scatter that doesn’t need PCA.",
+      "what": "N vertical axes, one per metric, with one line per record traversing them. Brushing on any axis filters the rest; supports color by dimension.",
+      "why": "Show how five or six metrics co-vary on a single canvas — and let viewers brush to query.",
+      "uses": [
+        {
+          "tag": "Quant",
+          "body": "Stock fundamentals across PE, PB, ROE, growth, margin."
+        },
+        {
+          "tag": "HR",
+          "body": "Compensation, tenure, level, performance, attrition risk."
+        },
+        {
+          "tag": "Product",
+          "body": "User attributes across engagement metrics."
+        }
+      ],
+      "keywords": "parallel coordinates plot Data Studio, multivariate chart, brushing visualization",
+      "category": "flow",
+      "catLabel": "Networks, Flows & Relationships",
+      "screenshot": "data-studio-parallel-coordinates-plot-vizstudio.png",
+      "screenshotWebp": "data-studio-parallel-coordinates-plot-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_d9i1zcqt2d",
+      "related": [
+        {
+          "id": "arcdiagram-viz",
+          "name": "Arc Diagram",
+          "tagline": "Node-link arc diagram — relationships you can actually trace."
+        },
+        {
+          "id": "audioverlap-viz",
+          "name": "Audience Overlap",
+          "tagline": "Proportional circles for audience segments — overlaps you can see."
+        },
+        {
+          "id": "bipartite-viz",
+          "name": "Bipartite Graph",
+          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+        },
+        {
+          "id": "chord-viz",
+          "name": "Chord Diagram",
+          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+        }
+      ]
+    },
+    {
+      "id": "parallelsets-viz",
+      "name": "Parallel Sets",
+      "tagline": "Categorical flow — Sankey for nominal data, lane by lane.",
+      "long": "Parallel Sets visualize categorical co-occurrence across several dimensions as flowing ribbons between parallel category bars. The categorical sibling of parallel coordinates.",
+      "what": "N parallel category columns, with width-weighted ribbons between adjacent columns showing co-membership.",
+      "why": "When every dimension is categorical, scatter and parallel coordinates don’t apply. Parallel sets do.",
+      "uses": [
+        {
+          "tag": "Survey",
+          "body": "Demographic × answer × segment."
+        },
+        {
+          "tag": "Ecom",
+          "body": "Source × device × purchase outcome."
+        },
+        {
+          "tag": "HR",
+          "body": "Department × role × tenure bucket."
+        }
+      ],
+      "keywords": "parallel sets chart Data Studio, categorical flow visualization, sankey for categories",
+      "category": "flow",
+      "catLabel": "Networks, Flows & Relationships",
+      "screenshot": "data-studio-parallel-sets-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-parallel-sets-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_hupmn88y2d",
+      "related": [
+        {
+          "id": "arcdiagram-viz",
+          "name": "Arc Diagram",
+          "tagline": "Node-link arc diagram — relationships you can actually trace."
+        },
+        {
+          "id": "audioverlap-viz",
+          "name": "Audience Overlap",
+          "tagline": "Proportional circles for audience segments — overlaps you can see."
+        },
+        {
+          "id": "bipartite-viz",
+          "name": "Bipartite Graph",
+          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+        },
+        {
+          "id": "chord-viz",
+          "name": "Chord Diagram",
+          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+        }
+      ]
+    },
+    {
+      "id": "pareto-viz",
+      "name": "Pareto Chart",
+      "tagline": "Bars + cumulative line — the 80/20 rule, made obvious.",
+      "long": "Pareto Chart sorts categories descending by value and overlays a cumulative percentage line — exactly the chart Joseph Juran intended for prioritization. The 80% cutoff is rendered automatically.",
+      "what": "Descending sorted bars with a cumulative % line, optional 80% reference line, tooltip, and cross-filter.",
+      "why": "Prioritization conversations end here. The handful of bars before the cumulative line crosses 80% is your roadmap.",
+      "uses": [
+        {
+          "tag": "QA",
+          "body": "Defect cause analysis — top causes covering 80% of defects."
+        },
+        {
+          "tag": "Ops",
+          "body": "Cost driver Pareto for procurement."
+        },
+        {
+          "tag": "Support",
+          "body": "Top ticket categories."
+        }
+      ],
+      "keywords": "pareto chart Data Studio, 80/20 analysis, descending bar with cumulative line",
+      "category": "bars",
+      "catLabel": "Bars, Columns & Ranking",
+      "screenshot": "data-studio-pareto-chart-80-20-vizstudio.png",
+      "screenshotWebp": "data-studio-pareto-chart-80-20-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_2srlty012d",
+      "related": [
+        {
+          "id": "abtest-viz",
+          "name": "A/B Test Results",
+          "tagline": "CI bars for A/B variants — significance baked in."
+        },
+        {
+          "id": "barrace-viz",
+          "name": "Animated Bar Race",
+          "tagline": "The animated bar chart race that wins every monthly review."
+        },
+        {
+          "id": "curvedcol-animated-viz",
+          "name": "Curved Columns (Animated + Zoom)",
+          "tagline": "Animated curved columns — bars that arc to draw the eye."
+        },
+        {
+          "id": "curvedcol-static-viz",
+          "name": "Curved Columns (Static)",
+          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+        }
+      ]
+    },
+    {
+      "id": "portfoliobarcode-viz",
+      "name": "Portfolio Barcode",
+      "tagline": "Portfolio barcode — every holding as a vertical strip, weighted and colored.",
+      "long": "Portfolio Barcode renders each holding as a narrow vertical strip, width or color encoding weight and category. Dense, ordered, and surprisingly readable for portfolios of 100+ positions.",
+      "what": "Vertical barcode strips per holding, with width-or-color encoding for weight or category, hover detail, cross-filter on click.",
+      "why": "Traditional portfolio pies fail past 20 holdings. Barcode keeps every position visible.",
+      "uses": [
+        {
+          "tag": "Asset mgmt",
+          "body": "Equity book at sector glance."
+        },
+        {
+          "tag": "Crypto",
+          "body": "Token positions by market cap."
+        },
+        {
+          "tag": "VC",
+          "body": "Fund holdings by stage."
+        }
+      ],
+      "keywords": "portfolio barcode chart, holdings visualization Data Studio, position bar strip",
+      "category": "flow",
+      "catLabel": "Networks, Flows & Relationships",
+      "screenshot": "data-studio-portfolio-barcode-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-portfolio-barcode-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_vmg39eqt2d",
+      "related": [
+        {
+          "id": "arcdiagram-viz",
+          "name": "Arc Diagram",
+          "tagline": "Node-link arc diagram — relationships you can actually trace."
+        },
+        {
+          "id": "audioverlap-viz",
+          "name": "Audience Overlap",
+          "tagline": "Proportional circles for audience segments — overlaps you can see."
+        },
+        {
+          "id": "bipartite-viz",
+          "name": "Bipartite Graph",
+          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+        },
+        {
+          "id": "chord-viz",
+          "name": "Chord Diagram",
+          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+        }
+      ]
+    },
+    {
+      "id": "portfoliopiebarcode-viz",
+      "name": "Portfolio Pie Barcode",
+      "tagline": "Portfolio pie + barcode — composition and per-position detail in one chart.",
+      "long": "Portfolio Pie Barcode pairs the macro view (sector or asset-class pie) with the micro view (per-position barcode) in a single composition. The portfolio overview that doesn’t force a click-through.",
+      "what": "Pie chart for top-level composition next to a barcode strip for every individual position; click a slice to filter the strip.",
+      "why": "Two questions — sector mix and per-position weight — answered on one canvas.",
+      "uses": [
+        {
+          "tag": "Asset mgmt",
+          "body": "Sector pie + position barcode for a daily review."
+        },
+        {
+          "tag": "VC",
+          "body": "Stage pie + investment barcode."
+        },
+        {
+          "tag": "Pension fund",
+          "body": "Asset class pie + holding barcode."
+        }
+      ],
+      "keywords": "portfolio composition chart, pie plus barcode Data Studio, holdings visualization",
+      "category": "flow",
+      "catLabel": "Networks, Flows & Relationships",
+      "screenshot": "data-studio-portfolio-pie-barcode-vizstudio.png",
+      "screenshotWebp": "data-studio-portfolio-pie-barcode-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_zop3tfqt2d",
+      "related": [
+        {
+          "id": "arcdiagram-viz",
+          "name": "Arc Diagram",
+          "tagline": "Node-link arc diagram — relationships you can actually trace."
+        },
+        {
+          "id": "audioverlap-viz",
+          "name": "Audience Overlap",
+          "tagline": "Proportional circles for audience segments — overlaps you can see."
+        },
+        {
+          "id": "bipartite-viz",
+          "name": "Bipartite Graph",
+          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+        },
+        {
+          "id": "chord-viz",
+          "name": "Chord Diagram",
+          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+        }
+      ]
+    },
+    {
+      "id": "progresscircles-viz",
+      "name": "Progress Circles",
+      "tagline": "A row of donuts that each say \"X% done\" — instantly readable.",
+      "long": "Progress Circles render a grid of circular gauges, one per category, each filled to a percentage with the value in the center. Perfect for OKR tracking and any tile-of-tiles goal layout.",
+      "what": "N circular progress rings sized uniformly, each with label and configurable color thresholds.",
+      "why": "More visually interesting than a bar list when you have ≤12 items and want each to feel like a card.",
+      "uses": [
+        {
+          "tag": "Strategy",
+          "body": "Quarterly OKRs — one circle per KR."
+        },
+        {
+          "tag": "Marketing",
+          "body": "Campaign delivery progress per goal."
+        },
+        {
+          "tag": "Learning",
+          "body": "Training module completion per employee."
+        }
+      ],
+      "keywords": "progress circles chart Data Studio, OKR widget, donut gauge grid",
+      "category": "kpi",
+      "catLabel": "KPI, Status & Goals",
+      "screenshot": "data-studio-progress-circles-radial-vizstudio.png",
+      "screenshotWebp": "data-studio-progress-circles-radial-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_0e8aphqt2d",
+      "related": [
+        {
+          "id": "analystratings-viz",
+          "name": "Breakdown Chart",
+          "tagline": "Donut + progress bars for category breakdowns — the dominant slice highlighted automatically."
+        },
+        {
+          "id": "bulletchart-viz",
+          "name": "Bullet Chart",
+          "tagline": "Stephen Few's gauge replacement — actual, target, and ranges in one bar."
+        },
+        {
+          "id": "kpisparkline-viz",
+          "name": "KPI Sparkline Cards",
+          "tagline": "Headline numbers with trend lines baked in — the executive scorecard, refined."
+        },
+        {
+          "id": "semicirclegauge-viz",
+          "name": "Semicircle Gauge",
+          "tagline": "Half-circle gauge — same story, half the real estate."
+        }
+      ]
+    },
+    {
+      "id": "pyramidarea-viz",
+      "name": "Pyramid Area Chart",
+      "tagline": "Categorical magnitude as overlapping pyramids — distinctive and on-brand.",
+      "long": "Pyramid Area Chart renders categories as overlapping pyramid silhouettes along a baseline. Magnitude is encoded by height and width — the look of an architectural section drawing, the function of a bar chart.",
+      "what": "Overlapping pyramid silhouettes per category sized by metric, with theme-aware colors and labels.",
+      "why": "When a bar chart needs to feel editorial — annual reports, brand storytelling, hero slots — this is the version.",
+      "uses": [
+        {
+          "tag": "Editorial",
+          "body": "Annual report headline charts."
+        },
+        {
+          "tag": "Marketing",
+          "body": "Brand campaign performance hero."
+        },
+        {
+          "tag": "Communications",
+          "body": "Press impressions per outlet."
+        }
+      ],
+      "keywords": "pyramid area chart, decorative magnitude chart Data Studio",
+      "category": "bars",
+      "catLabel": "Bars, Columns & Ranking",
+      "screenshot": "data-studio-pyramid-area-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-pyramid-area-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_8ooyay012d",
+      "related": [
+        {
+          "id": "abtest-viz",
+          "name": "A/B Test Results",
+          "tagline": "CI bars for A/B variants — significance baked in."
+        },
+        {
+          "id": "barrace-viz",
+          "name": "Animated Bar Race",
+          "tagline": "The animated bar chart race that wins every monthly review."
+        },
+        {
+          "id": "curvedcol-animated-viz",
+          "name": "Curved Columns (Animated + Zoom)",
+          "tagline": "Animated curved columns — bars that arc to draw the eye."
+        },
+        {
+          "id": "curvedcol-static-viz",
+          "name": "Curved Columns (Static)",
+          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+        }
+      ]
+    },
+    {
+      "id": "qq-viz",
+      "name": "Q-Q Plot",
+      "tagline": "Q-Q plot — does this distribution match the one you expect?",
+      "long": "Q-Q Plot graphs the quantiles of your data against the quantiles of a reference distribution. A straight line means \"yes, this is normal\" (or whatever you compared against). Anything else is worth investigating.",
+      "what": "Sample quantiles vs theoretical (normal by default) with reference line, optional band, and tooltip.",
+      "why": "Histograms blur shape; a Q-Q plot says \"normal or not\" without a paragraph of stats.",
+      "uses": [
+        {
+          "tag": "Quant",
+          "body": "Returns normality check."
+        },
+        {
+          "tag": "QA",
+          "body": "Process output vs spec distribution."
+        },
+        {
+          "tag": "Research",
+          "body": "Pre-test of model residuals."
+        }
+      ],
+      "keywords": "Q-Q plot Data Studio, quantile chart, distribution comparison",
+      "category": "dist",
+      "catLabel": "Distribution & Statistical",
+      "screenshot": "data-studio-qq-plot-quantile-vizstudio.png",
+      "screenshotWebp": "data-studio-qq-plot-quantile-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_lov5jjqt2d",
+      "related": [
+        {
+          "id": "beeswarm-viz",
+          "name": "Beeswarm / Swarm Plot",
+          "tagline": "Every individual point, no overlap — distributions that boxplots hide."
+        },
+        {
+          "id": "hexbindensity-viz",
+          "name": "Hexbin Density Plot",
+          "tagline": "Hexagonal density plot — same hex grid, focused on point density."
+        }
+      ]
+    },
+    {
+      "id": "quadrant-viz",
+      "name": "Quadrant Scatter",
+      "tagline": "Four-quadrant scatter — the strategy chart you've drawn on whiteboards.",
+      "long": "Quadrant Scatter splits your x/y plane into four labeled quadrants by configurable thresholds. Bubbles or dots, hover detail, cross-filter — the BCG / 2×2 framework that actually lives in your dashboard.",
+      "what": "x/y scatter with vertical/horizontal threshold lines splitting the canvas into four labeled quadrants, optional bubble sizing.",
+      "why": "Strategy conversations are quadrant-shaped. Bring them into the dashboard.",
+      "uses": [
+        {
+          "tag": "Strategy",
+          "body": "Markets by growth × share, four quadrants labeled."
+        },
+        {
+          "tag": "Product",
+          "body": "Features by value × effort."
+        },
+        {
+          "tag": "Sales",
+          "body": "Accounts by potential × engagement."
+        }
+      ],
+      "keywords": "quadrant scatter Data Studio, 2x2 matrix chart, BCG matrix visualization",
+      "category": "scatter",
+      "catLabel": "Scatter, Correlation & Bubbles",
+      "screenshot": "data-studio-quadrant-scatter-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-quadrant-scatter-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_19jmzin72d",
+      "related": [
+        {
+          "id": "bubble-viz",
+          "name": "Bubble Chart",
+          "tagline": "X × Y × size — three metrics, one chart, zero squinting."
+        },
+        {
+          "id": "bubblegrid",
+          "name": "Bubble Grid",
+          "tagline": "A grid of bubbles — counts and magnitudes across two categorical axes."
+        },
+        {
+          "id": "hexbin-viz",
+          "name": "Hexbin Scatter",
+          "tagline": "Hexagonal density — scatter plots that survive 100k points."
+        },
+        {
+          "id": "scattertrend-viz",
+          "name": "Scatter Plot with Trendline",
+          "tagline": "Scatter with a fitted trend line — correlation without the chart-junk."
+        }
+      ]
+    },
+    {
+      "id": "radartable-viz",
+      "name": "Radar Chart with Data Table",
+      "tagline": "Radar chart with a sibling data table — visual and exact.",
+      "long": "Radar Chart with Data Table pairs a polygon radar across N metrics with a sortable table of the underlying values. The radar tells the shape story; the table answers \"what was the exact number?\" without a second view.",
+      "what": "Radar polygon per category over shared metric axes, alongside a sortable data table with the values, theme-aware coloring.",
+      "why": "Radar charts are good at shape, bad at precision. Adding the table fixes the only complaint about radars.",
+      "uses": [
+        {
+          "tag": "Product",
+          "body": "Feature comparison: us vs competitor across attributes."
+        },
+        {
+          "tag": "HR",
+          "body": "Team capability radar across competencies."
+        },
+        {
+          "tag": "Sales",
+          "body": "Account fit score across criteria."
+        }
+      ],
+      "keywords": "radar chart with table Data Studio, spider chart with data, capability radar",
+      "category": "combo",
+      "catLabel": "Tables, Calendars & Combo",
+      "screenshot": "data-studio-radar-chart-data-table-vizstudio.png",
+      "screenshotWebp": "data-studio-radar-chart-data-table-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_z8zacd9y2d",
+      "related": [
+        {
+          "id": "bigcalendar-viz",
+          "name": "Big Calendar",
+          "tagline": "Full calendar grid — event volume painted across every cell."
+        },
+        {
+          "id": "calendarHeatmap",
+          "name": "Mini Calendar",
+          "tagline": "Compact monthly calendar — one cell, one number, instant pattern."
+        },
+        {
+          "id": "convheatmap-viz",
+          "name": "Conversion Heatmap",
+          "tagline": "Day-of-week × hour heatmap — when your audience actually shows up."
+        },
+        {
+          "id": "datatable-viz",
+          "name": "Row Over Row Comparison Table",
+          "tagline": "Row over row — DoD / MoM / YoY comparison table with deltas and % change."
+        }
+      ]
+    },
+    {
+      "id": "radialtree-viz",
+      "name": "Radial Tree",
+      "tagline": "Radial hierarchy — branches arrayed around a center, every level visible.",
+      "long": "Radial Tree lays out hierarchical data as branches radiating from a center, with node depth = ring and node size = metric. The most space-efficient way to show 3–5 hierarchy levels at once.",
+      "what": "Hierarchical tree laid out radially with sized nodes, link curves, configurable depth coloring, hover-highlight.",
+      "why": "Trees grow tall fast. Radial layout keeps width and depth balanced.",
+      "uses": [
+        {
+          "tag": "Org",
+          "body": "Org tree from CEO outward."
+        },
+        {
+          "tag": "Taxonomy",
+          "body": "Product taxonomy four levels deep."
+        },
+        {
+          "tag": "Content",
+          "body": "Article category hierarchy."
+        }
+      ],
+      "keywords": "radial tree chart Data Studio, hierarchy visualization, radial dendrogram",
+      "category": "flow",
+      "catLabel": "Networks, Flows & Relationships",
+      "screenshot": "data-studio-radial-tree-hierarchy-vizstudio.png",
+      "screenshotWebp": "data-studio-radial-tree-hierarchy-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_k9cof5012d",
+      "related": [
+        {
+          "id": "arcdiagram-viz",
+          "name": "Arc Diagram",
+          "tagline": "Node-link arc diagram — relationships you can actually trace."
+        },
+        {
+          "id": "audioverlap-viz",
+          "name": "Audience Overlap",
+          "tagline": "Proportional circles for audience segments — overlaps you can see."
+        },
+        {
+          "id": "bipartite-viz",
+          "name": "Bipartite Graph",
+          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+        },
+        {
+          "id": "chord-viz",
+          "name": "Chord Diagram",
+          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+        }
+      ]
+    },
+    {
+      "id": "revenuebreakdown-viz",
+      "name": "Revenue Breakdown (Bar + Line Combo)",
+      "tagline": "Revenue mix bars + margin line — the public-company readout view.",
+      "long": "Revenue Breakdown is a grouped bar chart with up to 4 bar metrics and an optional line overlay (e.g. Net Margin %). Dark theme with a green color scheme, legend, tooltip, cross-filter, and a Quarterly / Annual view toggle.",
+      "what": "Grouped bars for up to 4 revenue components per period plus an optional overlay line for a ratio metric (margin %, etc.); Q/A view toggle.",
+      "why": "Designed for the way public-company earnings actually look — revenue mix + margin trend on one panel.",
+      "uses": [
+        {
+          "tag": "Public co",
+          "body": "Quarterly segment revenue + net margin %."
+        },
+        {
+          "tag": "SaaS",
+          "body": "New / expansion / churn / contraction bars + NRR line."
+        },
+        {
+          "tag": "Retail",
+          "body": "Channel mix bars + same-store growth line."
+        }
+      ],
+      "keywords": "revenue breakdown chart Data Studio, bar plus line, segment revenue visualization",
+      "category": "finance",
+      "catLabel": "Finance & Performance",
+      "screenshot": "data-studio-revenue-breakdown-bar-line-combo-vizstudio.png",
+      "screenshotWebp": "data-studio-revenue-breakdown-bar-line-combo-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_ujzlxjn72d",
+      "related": [
+        {
+          "id": "breakeven-viz",
+          "name": "Break-Even Chart",
+          "tagline": "Fixed cost, variable cost, revenue — and the exact unit where they cross."
+        },
+        {
+          "id": "cashflow-viz",
+          "name": "Cashflow",
+          "tagline": "Income up, expense down — the zero line tells the story."
+        },
+        {
+          "id": "earningsdot-viz",
+          "name": "Actual Over Target Dot Chart",
+          "tagline": "Actual over target dots — beats and misses, colored automatically."
+        }
+      ]
+    },
+    {
+      "id": "scattertrend-viz",
+      "name": "Scatter Plot with Trendline",
+      "tagline": "Scatter with a fitted trend line — correlation without the chart-junk.",
+      "long": "Scatter Plot with Trendline overlays a linear (or polynomial) trend on a standard scatter, with R² in the corner so analytical claims are calibrated.",
+      "what": "x/y scatter with regression line, R² annotation, configurable curve order, tooltip, cross-filter, optional grouping color.",
+      "why": "Correlations get over-claimed. R² + a visible trend keeps everyone honest.",
+      "uses": [
+        {
+          "tag": "Marketing",
+          "body": "Spend vs leads with fit and R²."
+        },
+        {
+          "tag": "Product",
+          "body": "Feature usage vs retention."
+        },
+        {
+          "tag": "Finance",
+          "body": "Volume vs cost per unit."
+        }
+      ],
+      "keywords": "scatter with trendline Data Studio, regression chart, R squared visualization",
+      "category": "scatter",
+      "catLabel": "Scatter, Correlation & Bubbles",
+      "screenshot": "data-studio-scatter-plot-trendline-vizstudio.png",
+      "screenshotWebp": "data-studio-scatter-plot-trendline-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_vz4njpqt2d",
+      "related": [
+        {
+          "id": "bubble-viz",
+          "name": "Bubble Chart",
+          "tagline": "X × Y × size — three metrics, one chart, zero squinting."
+        },
+        {
+          "id": "bubblegrid",
+          "name": "Bubble Grid",
+          "tagline": "A grid of bubbles — counts and magnitudes across two categorical axes."
+        },
+        {
+          "id": "hexbin-viz",
+          "name": "Hexbin Scatter",
+          "tagline": "Hexagonal density — scatter plots that survive 100k points."
+        },
+        {
+          "id": "quadrant-viz",
+          "name": "Quadrant Scatter",
+          "tagline": "Four-quadrant scatter — the strategy chart you've drawn on whiteboards."
+        }
+      ]
+    },
+    {
+      "id": "semicirclegauge-viz",
+      "name": "Semicircle Gauge",
+      "tagline": "Half-circle gauge — same story, half the real estate.",
+      "long": "Semicircle Gauge delivers the same goal-attainment narrative as a full circle in a slim half-arc footprint. Pair with a tile-style layout to fit six KPIs in a single row.",
+      "what": "180° arc filled to current value with threshold bands and a center metric.",
+      "why": "Looks deliberate next to KPI cards; fits where a full circle won’t.",
+      "uses": [
+        {
+          "tag": "Mobile dashboards",
+          "body": "Tile-style KPI rows."
+        },
+        {
+          "tag": "Risk register",
+          "body": "Likelihood score per risk."
+        },
+        {
+          "tag": "Health",
+          "body": "% of daily goal in a slim card."
+        }
+      ],
+      "keywords": "semicircle gauge Data Studio, half-arc gauge, compact KPI widget",
+      "category": "kpi",
+      "catLabel": "KPI, Status & Goals",
+      "screenshot": "data-studio-semicircle-gauge-vizstudio.png",
+      "screenshotWebp": "data-studio-semicircle-gauge-vizstudio.webp",
+      "dsLink": null,
+      "related": [
+        {
+          "id": "analystratings-viz",
+          "name": "Breakdown Chart",
+          "tagline": "Donut + progress bars for category breakdowns — the dominant slice highlighted automatically."
+        },
+        {
+          "id": "bulletchart-viz",
+          "name": "Bullet Chart",
+          "tagline": "Stephen Few's gauge replacement — actual, target, and ranges in one bar."
+        },
+        {
+          "id": "kpisparkline-viz",
+          "name": "KPI Sparkline Cards",
+          "tagline": "Headline numbers with trend lines baked in — the executive scorecard, refined."
+        },
+        {
+          "id": "progresscircles-viz",
+          "name": "Progress Circles",
+          "tagline": "A row of donuts that each say \"X% done\" — instantly readable."
+        }
+      ]
+    },
+    {
+      "id": "semicirclepie-viz",
+      "name": "Semi-Circle Pie Chart",
+      "tagline": "Half-pie — composition in a single horizontal slot.",
+      "long": "Semi-Circle Pie Chart is the donut’s skinny cousin — perfect for headers, narrow dashboard slots, and any place a full pie eats too much vertical space.",
+      "what": "Half-circle pie with category slices, optional center label, hover tooltip, cross-filter.",
+      "why": "Composition charts shouldn’t require half the dashboard. This is one row, full story.",
+      "uses": [
+        {
+          "tag": "Dashboard headers",
+          "body": "Quick category split above a KPI grid."
+        },
+        {
+          "tag": "Mobile",
+          "body": "Compact mix view that fits one column."
+        },
+        {
+          "tag": "Marketing",
+          "body": "Channel mix in a dashboard banner."
+        }
+      ],
+      "keywords": "semicircle pie chart Data Studio, half donut chart, compact composition chart",
+      "category": "kpi",
+      "catLabel": "KPI, Status & Goals",
+      "screenshot": "data-studio-semi-circle-pie-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-semi-circle-pie-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_ekceck702d",
+      "related": [
+        {
+          "id": "analystratings-viz",
+          "name": "Breakdown Chart",
+          "tagline": "Donut + progress bars for category breakdowns — the dominant slice highlighted automatically."
+        },
+        {
+          "id": "bulletchart-viz",
+          "name": "Bullet Chart",
+          "tagline": "Stephen Few's gauge replacement — actual, target, and ranges in one bar."
+        },
+        {
+          "id": "kpisparkline-viz",
+          "name": "KPI Sparkline Cards",
+          "tagline": "Headline numbers with trend lines baked in — the executive scorecard, refined."
+        },
+        {
+          "id": "progresscircles-viz",
+          "name": "Progress Circles",
+          "tagline": "A row of donuts that each say \"X% done\" — instantly readable."
+        }
+      ]
+    },
+    {
+      "id": "simplecol-viz",
+      "name": "Simple Column Chart",
+      "tagline": "A clean column chart — opinionated defaults, theme-aware.",
+      "long": "Simple Column Chart is the everyday bar chart, redone — opinionated spacing, theme-aware coloring, deliberate axis ticks, label-fit logic that handles dense categories automatically.",
+      "what": "Single-series vertical bars with theme-aware colors, axis fit, tooltip, value labels, cross-filter.",
+      "why": "Stock Data bar charts work — but they look it. This one is the same chart with the rough edges polished.",
+      "uses": [
+        {
+          "tag": "Reporting",
+          "body": "Daily revenue for the last 90 days."
+        },
+        {
+          "tag": "Marketing",
+          "body": "Campaign clicks ranked."
+        },
+        {
+          "tag": "Operations",
+          "body": "Volume per warehouse."
+        }
+      ],
+      "keywords": "column chart Data Studio, polished bar chart, themed bar chart",
+      "category": "bars",
+      "catLabel": "Bars, Columns & Ranking",
+      "screenshot": "data-studio-simple-column-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-simple-column-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_yfp793502d",
+      "related": [
+        {
+          "id": "abtest-viz",
+          "name": "A/B Test Results",
+          "tagline": "CI bars for A/B variants — significance baked in."
+        },
+        {
+          "id": "barrace-viz",
+          "name": "Animated Bar Race",
+          "tagline": "The animated bar chart race that wins every monthly review."
+        },
+        {
+          "id": "curvedcol-animated-viz",
+          "name": "Curved Columns (Animated + Zoom)",
+          "tagline": "Animated curved columns — bars that arc to draw the eye."
+        },
+        {
+          "id": "curvedcol-static-viz",
+          "name": "Curved Columns (Static)",
+          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+        }
+      ]
+    },
+    {
+      "id": "slicedice-viz",
+      "name": "Slice / Dice Treemap",
+      "tagline": "Slice / dice treemap — horizontal, vertical, or alternating tiling.",
+      "long": "Slice / Dice Treemap gives you three classic tiling algorithms — slice (horizontal stripes), dice (vertical stripes), or slice-dice (alternating) — so the structure of your hierarchy *looks* like hierarchy, not a random rectangle pile.",
+      "what": "Treemap with slice/dice/slice-dice tiling, multi-dimension drilldown, click-to-zoom, breadcrumb navigation, theme-aware colors.",
+      "why": "Squarified treemaps prioritize compactness over structure. Slice/dice prioritizes the hierarchy itself — easier to read at depth.",
+      "uses": [
+        {
+          "tag": "Finance",
+          "body": "Sector → industry → ticker treemap."
+        },
+        {
+          "tag": "Org",
+          "body": "Division → team → person headcount."
+        },
+        {
+          "tag": "Content",
+          "body": "Category → tag → article volume."
+        }
+      ],
+      "keywords": "slice dice treemap Data Studio, hierarchical chart, treemap drilldown",
+      "category": "tree",
+      "catLabel": "Hierarchies & Drilldown",
+      "screenshot": "data-studio-slice-dice-treemap-vizstudio.png",
+      "screenshotWebp": "data-studio-slice-dice-treemap-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_gsboed602d",
+      "related": [
+        {
+          "id": "smallmultiples-viz",
+          "name": "Small Multiples / Trellis Grid",
+          "tagline": "Small multiples — the same chart, repeated, every dimension visible."
+        },
+        {
+          "id": "sunburstChart",
+          "name": "Sunburst Chart",
+          "tagline": "Radial hierarchy — concentric rings drill into your structure."
+        },
+        {
+          "id": "treemapzoom-viz",
+          "name": "Zoomable Treemap",
+          "tagline": "Zoomable treemap — drill into any tile, breadcrumb back out."
+        }
+      ]
+    },
+    {
+      "id": "smallmultiples-viz",
+      "name": "Small Multiples / Trellis Grid",
+      "tagline": "Small multiples — the same chart, repeated, every dimension visible.",
+      "long": "Small Multiples / Trellis Grid breaks one big chart into a grid of small charts, one per category, sharing axes. The Tufte-blessed way to compare a pattern across N segments in a single image.",
+      "what": "Grid of identical small charts (line, bar, area, scatter), one per category, with shared axes, free or fixed scale, common tooltip.",
+      "why": "Stacking 12 series on one line chart is unreadable. Splitting them into 12 small charts is honest.",
+      "uses": [
+        {
+          "tag": "Marketing",
+          "body": "Channel performance over time, one mini-chart per channel."
+        },
+        {
+          "tag": "Product",
+          "body": "Cohort retention per cohort."
+        },
+        {
+          "tag": "Sales",
+          "body": "Pipeline progression per region."
+        }
+      ],
+      "keywords": "small multiples chart Data Studio, trellis grid, faceted chart",
+      "category": "tree",
+      "catLabel": "Hierarchies & Drilldown",
+      "screenshot": "data-studio-small-multiples-trellis-vizstudio.png",
+      "screenshotWebp": "data-studio-small-multiples-trellis-vizstudio.webp",
+      "dsLink": null,
+      "related": [
+        {
+          "id": "slicedice-viz",
+          "name": "Slice / Dice Treemap",
+          "tagline": "Slice / dice treemap — horizontal, vertical, or alternating tiling."
+        },
+        {
+          "id": "sunburstChart",
+          "name": "Sunburst Chart",
+          "tagline": "Radial hierarchy — concentric rings drill into your structure."
+        },
+        {
+          "id": "treemapzoom-viz",
+          "name": "Zoomable Treemap",
+          "tagline": "Zoomable treemap — drill into any tile, breadcrumb back out."
+        }
+      ]
+    },
+    {
+      "id": "solidgauge-viz",
+      "name": "Solid Gauge",
+      "tagline": "A radial gauge for any \"X out of target\" story — without speedometer kitsch.",
+      "long": "Solid Gauge fills a circular arc proportional to a metric’s progress toward a configurable target, with optional zones (red/amber/green) baked into the ring. Goal attainment, communicated cleanly.",
+      "what": "270° or full-circle filled gauge with center value, %-to-target, and optional threshold bands.",
+      "why": "Goal pages need a single hero number — this gives them one with built-in context.",
+      "uses": [
+        {
+          "tag": "Sales",
+          "body": "Quota attainment — 78% of $4M."
+        },
+        {
+          "tag": "Support",
+          "body": "% tickets resolved within SLA."
+        },
+        {
+          "tag": "Fundraising",
+          "body": "% of campaign goal."
+        }
+      ],
+      "keywords": "solid gauge Data Studio, goal completion chart, KPI gauge",
+      "category": "kpi",
+      "catLabel": "KPI, Status & Goals",
+      "screenshot": "data-studio-solid-gauge-kpi-vizstudio.png",
+      "screenshotWebp": "data-studio-solid-gauge-kpi-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_b03yjz502d",
+      "related": [
+        {
+          "id": "analystratings-viz",
+          "name": "Breakdown Chart",
+          "tagline": "Donut + progress bars for category breakdowns — the dominant slice highlighted automatically."
+        },
+        {
+          "id": "bulletchart-viz",
+          "name": "Bullet Chart",
+          "tagline": "Stephen Few's gauge replacement — actual, target, and ranges in one bar."
+        },
+        {
+          "id": "kpisparkline-viz",
+          "name": "KPI Sparkline Cards",
+          "tagline": "Headline numbers with trend lines baked in — the executive scorecard, refined."
+        },
+        {
+          "id": "progresscircles-viz",
+          "name": "Progress Circles",
+          "tagline": "A row of donuts that each say \"X% done\" — instantly readable."
+        }
+      ]
+    },
+    {
+      "id": "stackedarea-viz",
+      "name": "Stacked Area Chart",
+      "tagline": "Stacked area over time — composition and trend on the same canvas.",
+      "long": "Stacked Area Chart layers series totals over time, sharing a baseline. Use it when both \"how big is the total?\" and \"how is the mix shifting?\" are the questions.",
+      "what": "Stacked area layers per series sharing a baseline, with legend, tooltip, theme-aware colors, smooth or stepped interpolation.",
+      "why": "Lines + composition together — without a second chart.",
+      "uses": [
+        {
+          "tag": "Marketing",
+          "body": "Channel revenue stacked by month."
+        },
+        {
+          "tag": "Product",
+          "body": "DAU split by platform."
+        },
+        {
+          "tag": "Finance",
+          "body": "Expense mix over quarters."
+        }
+      ],
+      "keywords": "stacked area chart Data Studio, composition trend, area trend chart",
+      "category": "time",
+      "catLabel": "Time Series & Trends",
+      "screenshot": "data-studio-stacked-area-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-stacked-area-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_9wgbgsqt2d",
+      "related": [
+        {
+          "id": "bump-viz",
+          "name": "Bump Chart",
+          "tagline": "Rank-over-time line chart — who's climbing, who's sliding."
+        },
+        {
+          "id": "dualaxis-viz",
+          "name": "Chart Title",
+          "tagline": "Two metrics, two scales, one line of sight — without the lie factor."
+        },
+        {
+          "id": "stackedneg-animated-viz",
+          "name": "Stacked Bar Chart with Negative Values (Animated + Zoom)",
+          "tagline": "Same signed stacked bar, animated entrance + zoom controls."
+        },
+        {
+          "id": "stackedneg-viz",
+          "name": "Stacked Bar Chart with Negative Values (Static)",
+          "tagline": "Stacked bars with negative values — wins above, losses below, total preserved."
+        }
+      ]
+    },
+    {
+      "id": "stackedneg-animated-viz",
+      "name": "Stacked Bar Chart with Negative Values (Animated + Zoom)",
+      "tagline": "Same signed stacked bar, animated entrance + zoom controls.",
+      "long": "Stacked Bar Chart with Negative Values (Animated + Zoom) is the kinetic version — smooth entry animation per stack and a zoom control for dense time axes.",
+      "what": "Animated entrance for positive/negative stacked bars with a draggable zoom control over the time axis.",
+      "why": "Animation gives early-readers a moment to follow the story; the zoom keeps long histories legible.",
+      "uses": [
+        {
+          "tag": "Investor decks",
+          "body": "Quarterly cashflow with animated entrance."
+        },
+        {
+          "tag": "Climate",
+          "body": "Emissions vs offsets across decades, zoomed to recent years."
+        },
+        {
+          "tag": "Sales",
+          "body": "Bookings net of churn for a decade with zoom-to-quarter."
+        }
+      ],
+      "keywords": "animated stacked bar negative, signed stacked bar zoom, Data Studio finance chart",
+      "category": "time",
+      "catLabel": "Time Series & Trends",
+      "screenshot": "data-studio-stacked-bar-negative-animated-vizstudio.png",
+      "screenshotWebp": "data-studio-stacked-bar-negative-animated-vizstudio.webp",
+      "dsLink": null,
+      "related": [
+        {
+          "id": "bump-viz",
+          "name": "Bump Chart",
+          "tagline": "Rank-over-time line chart — who's climbing, who's sliding."
+        },
+        {
+          "id": "dualaxis-viz",
+          "name": "Chart Title",
+          "tagline": "Two metrics, two scales, one line of sight — without the lie factor."
+        },
+        {
+          "id": "stackedarea-viz",
+          "name": "Stacked Area Chart",
+          "tagline": "Stacked area over time — composition and trend on the same canvas."
+        },
+        {
+          "id": "stackedneg-viz",
+          "name": "Stacked Bar Chart with Negative Values (Static)",
+          "tagline": "Stacked bars with negative values — wins above, losses below, total preserved."
+        }
+      ]
+    },
+    {
+      "id": "stackedneg-viz",
+      "name": "Stacked Bar Chart with Negative Values (Static)",
+      "tagline": "Stacked bars with negative values — wins above, losses below, total preserved.",
+      "long": "Stacked Bar Chart with Negative Values handles the case standard stacked bars fail: a mix of positive and negative contributions stacked separately above and below the zero line, with the net total visible.",
+      "what": "Positive series stacked above zero, negative stacked below, with optional net-total line per category and tooltip.",
+      "why": "Most charting tools force negatives into separate panes. This keeps them on the same chart, the way the data is structured.",
+      "uses": [
+        {
+          "tag": "Finance",
+          "body": "Revenue contributions vs returns per period."
+        },
+        {
+          "tag": "Climate",
+          "body": "Emissions vs offsets per year."
+        },
+        {
+          "tag": "Sales",
+          "body": "New bookings vs churn per quarter."
+        }
+      ],
+      "keywords": "stacked bar negative values Data Studio, signed stacked bar, net total chart",
+      "category": "time",
+      "catLabel": "Time Series & Trends",
+      "screenshot": "data-studio-stacked-bar-negative-static-vizstudio.png",
+      "screenshotWebp": "data-studio-stacked-bar-negative-static-vizstudio.webp",
+      "dsLink": null,
+      "related": [
+        {
+          "id": "bump-viz",
+          "name": "Bump Chart",
+          "tagline": "Rank-over-time line chart — who's climbing, who's sliding."
+        },
+        {
+          "id": "dualaxis-viz",
+          "name": "Chart Title",
+          "tagline": "Two metrics, two scales, one line of sight — without the lie factor."
+        },
+        {
+          "id": "stackedarea-viz",
+          "name": "Stacked Area Chart",
+          "tagline": "Stacked area over time — composition and trend on the same canvas."
+        },
+        {
+          "id": "stackedneg-animated-viz",
+          "name": "Stacked Bar Chart with Negative Values (Animated + Zoom)",
+          "tagline": "Same signed stacked bar, animated entrance + zoom controls."
+        }
+      ]
+    },
+    {
+      "id": "storyflow-viz",
+      "name": "Story Flow / Narrative",
+      "tagline": "Narrative timeline — characters, threads, and where they meet.",
+      "long": "Story Flow / Narrative draws character or thread lines across a time axis, bending them together at shared events. Inspired by the storyline charts of Tufte and Munzner — perfect for project histories, character relationships, and incident reconstruction.",
+      "what": "One smooth line per character/thread across a time axis, lines converge at shared events, with tooltips on each event.",
+      "why": "Project history and character interaction are inherently flowing — story flow respects that geometry.",
+      "uses": [
+        {
+          "tag": "Incident response",
+          "body": "Engineers and services through an incident timeline."
+        },
+        {
+          "tag": "Media",
+          "body": "Characters across episodes."
+        },
+        {
+          "tag": "PMO",
+          "body": "Workstreams meeting at shared milestones."
+        }
+      ],
+      "keywords": "story flow chart, narrative chart Data Studio, storyline visualization",
+      "category": "flow",
+      "catLabel": "Networks, Flows & Relationships",
+      "screenshot": "data-studio-story-flow-narrative-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-story-flow-narrative-chart-vizstudio.webp",
+      "dsLink": null,
+      "related": [
+        {
+          "id": "arcdiagram-viz",
+          "name": "Arc Diagram",
+          "tagline": "Node-link arc diagram — relationships you can actually trace."
+        },
+        {
+          "id": "audioverlap-viz",
+          "name": "Audience Overlap",
+          "tagline": "Proportional circles for audience segments — overlaps you can see."
+        },
+        {
+          "id": "bipartite-viz",
+          "name": "Bipartite Graph",
+          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+        },
+        {
+          "id": "chord-viz",
+          "name": "Chord Diagram",
+          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+        }
+      ]
+    },
+    {
+      "id": "streamgraph-viz",
+      "name": "Streamgraph",
+      "tagline": "Stacked area, no fixed baseline — flowing composition over time.",
+      "long": "Streamgraph stacks series around a central baseline that floats, producing flowing shapes that emphasize change in composition rather than totals. The chart for music genre share, ad spend mix, and any narrative \"how did the wave shift?\"",
+      "what": "Floating-baseline stacked area with smooth interpolation, per-category color, tooltip, and label leaders.",
+      "why": "Best for showing how composition shifts when the absolute total isn’t the headline.",
+      "uses": [
+        {
+          "tag": "Marketing",
+          "body": "Channel share over years."
+        },
+        {
+          "tag": "Media",
+          "body": "Topic share in a news corpus."
+        },
+        {
+          "tag": "Music",
+          "body": "Genre share by decade."
+        }
+      ],
+      "keywords": "streamgraph Data Studio, flowing area chart, composition over time",
+      "category": "time",
+      "catLabel": "Time Series & Trends",
+      "screenshot": "data-studio-streamgraph-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-streamgraph-chart-vizstudio.webp",
+      "dsLink": null,
+      "related": [
+        {
+          "id": "bump-viz",
+          "name": "Bump Chart",
+          "tagline": "Rank-over-time line chart — who's climbing, who's sliding."
+        },
+        {
+          "id": "dualaxis-viz",
+          "name": "Chart Title",
+          "tagline": "Two metrics, two scales, one line of sight — without the lie factor."
+        },
+        {
+          "id": "stackedarea-viz",
+          "name": "Stacked Area Chart",
+          "tagline": "Stacked area over time — composition and trend on the same canvas."
+        },
+        {
+          "id": "stackedneg-animated-viz",
+          "name": "Stacked Bar Chart with Negative Values (Animated + Zoom)",
+          "tagline": "Same signed stacked bar, animated entrance + zoom controls."
+        }
+      ]
+    },
+    {
+      "id": "streamwave-viz",
+      "name": "Stream Wave Chart",
+      "tagline": "Stream wave — streamgraph with a wavier silhouette for editorial flair.",
+      "long": "Stream Wave Chart is a streamgraph variant tuned for design-forward dashboards — smoother silhouettes, configurable curvature, and theme-aware accent gradients. The streamgraph you put on a marketing page.",
+      "what": "Streamgraph with extra silhouette smoothing, configurable curvature, accent gradients, tooltip.",
+      "why": "Streamgraphs are striking; stream wave makes them gallery-ready.",
+      "uses": [
+        {
+          "tag": "Marketing",
+          "body": "Brand campaign mix over a launch period."
+        },
+        {
+          "tag": "Editorial",
+          "body": "Topic share for a year-in-review."
+        },
+        {
+          "tag": "Content",
+          "body": "Article output per author over months."
+        }
+      ],
+      "keywords": "stream wave chart, gradient streamgraph Data Studio, editorial composition chart",
+      "category": "time",
+      "catLabel": "Time Series & Trends",
+      "screenshot": "data-studio-stream-wave-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-stream-wave-chart-vizstudio.webp",
+      "dsLink": null,
+      "related": [
+        {
+          "id": "bump-viz",
+          "name": "Bump Chart",
+          "tagline": "Rank-over-time line chart — who's climbing, who's sliding."
+        },
+        {
+          "id": "dualaxis-viz",
+          "name": "Chart Title",
+          "tagline": "Two metrics, two scales, one line of sight — without the lie factor."
+        },
+        {
+          "id": "stackedarea-viz",
+          "name": "Stacked Area Chart",
+          "tagline": "Stacked area over time — composition and trend on the same canvas."
+        },
+        {
+          "id": "stackedneg-animated-viz",
+          "name": "Stacked Bar Chart with Negative Values (Animated + Zoom)",
+          "tagline": "Same signed stacked bar, animated entrance + zoom controls."
+        }
+      ]
+    },
+    {
+      "id": "sunburstChart",
+      "name": "Sunburst Chart",
+      "tagline": "Radial hierarchy — concentric rings drill into your structure.",
+      "long": "Sunburst Chart renders nested dimensions as concentric arcs sized by a metric. Up to 5 levels, three color modes (By Depth / By Category / Single), configurable inner radius, smart auto-rotated labels with truncation + min-size culling, breadcrumb tooltip with %-of-total, and cross-filter on click.",
+      "what": "Up to 5 nested dimensions as concentric arcs. Color modes (By Depth / By Category / Single), inner radius config, label truncation + min-size cull, breadcrumb tooltip, click cross-filter through ancestors.",
+      "why": "Treemaps are great; sunbursts are great when the hierarchy itself is the protagonist.",
+      "uses": [
+        {
+          "tag": "Finance",
+          "body": "Sector → industry → company."
+        },
+        {
+          "tag": "Ops",
+          "body": "Region → country → city → store."
+        },
+        {
+          "tag": "Engineering",
+          "body": "Service → endpoint → status."
+        }
+      ],
+      "keywords": "sunburst chart Data Studio, radial hierarchy chart, drilldown visualization",
+      "category": "tree",
+      "catLabel": "Hierarchies & Drilldown",
+      "screenshot": "data-studio-sunburst-chart-hierarchy-vizstudio.png",
+      "screenshotWebp": "data-studio-sunburst-chart-hierarchy-vizstudio.webp",
+      "dsLink": null,
+      "related": [
+        {
+          "id": "slicedice-viz",
+          "name": "Slice / Dice Treemap",
+          "tagline": "Slice / dice treemap — horizontal, vertical, or alternating tiling."
+        },
+        {
+          "id": "smallmultiples-viz",
+          "name": "Small Multiples / Trellis Grid",
+          "tagline": "Small multiples — the same chart, repeated, every dimension visible."
+        },
+        {
+          "id": "treemapzoom-viz",
+          "name": "Zoomable Treemap",
+          "tagline": "Zoomable treemap — drill into any tile, breadcrumb back out."
+        }
+      ]
+    },
+    {
+      "id": "timeseries-viz",
+      "name": "Time Series with Annotations",
+      "tagline": "Time series with annotated events — context where it actually happened.",
+      "long": "Time Series with Annotations is a clean line chart that lets you mark events on the timeline — launches, incidents, campaigns, holidays. The annotations are first-class, not a hack.",
+      "what": "Single or multi-series line over time with vertical event annotations (label + color), tooltip, cross-filter.",
+      "why": "Spikes in a time series only mean something with context. Annotations put the context inline.",
+      "uses": [
+        {
+          "tag": "Product",
+          "body": "DAU line with launch annotations."
+        },
+        {
+          "tag": "Marketing",
+          "body": "Conversion line with campaign markers."
+        },
+        {
+          "tag": "Ops",
+          "body": "Latency with incident annotations."
+        }
+      ],
+      "keywords": "annotated time series Data Studio, event marker chart, line chart annotations",
+      "category": "time",
+      "catLabel": "Time Series & Trends",
+      "screenshot": "data-studio-time-series-annotations-vizstudio.png",
+      "screenshotWebp": "data-studio-time-series-annotations-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_adp7o6ae3d",
+      "related": [
+        {
+          "id": "bump-viz",
+          "name": "Bump Chart",
+          "tagline": "Rank-over-time line chart — who's climbing, who's sliding."
+        },
+        {
+          "id": "dualaxis-viz",
+          "name": "Chart Title",
+          "tagline": "Two metrics, two scales, one line of sight — without the lie factor."
+        },
+        {
+          "id": "stackedarea-viz",
+          "name": "Stacked Area Chart",
+          "tagline": "Stacked area over time — composition and trend on the same canvas."
+        },
+        {
+          "id": "stackedneg-animated-viz",
+          "name": "Stacked Bar Chart with Negative Values (Animated + Zoom)",
+          "tagline": "Same signed stacked bar, animated entrance + zoom controls."
+        }
+      ]
+    },
+    {
+      "id": "trafficsrc-viz",
+      "name": "Traffic Sources Chord",
+      "tagline": "Traffic source chord — every channel-to-conversion flow ribboned.",
+      "long": "Traffic Sources Chord is a chord diagram tuned for marketing attribution — sources on the outside, conversions on the inside, ribbons weighted by flow. Multi-touch attribution finally readable.",
+      "what": "Chord diagram with sources and conversions as arcs, ribbons weighted by flow, with hover-highlight and tooltip.",
+      "why": "Sankey is one-directional; for true multi-touch ↔ multi-conversion flows, chord reads cleaner.",
+      "uses": [
+        {
+          "tag": "Marketing",
+          "body": "Channel ↔ conversion type flow."
+        },
+        {
+          "tag": "Ecom",
+          "body": "Source ↔ purchased category."
+        },
+        {
+          "tag": "B2B",
+          "body": "Lead source ↔ pipeline stage."
+        }
+      ],
+      "keywords": "traffic source chord Data Studio, attribution chart, marketing flow chord",
+      "category": "flow",
+      "catLabel": "Networks, Flows & Relationships",
+      "screenshot": "data-studio-traffic-sources-chord-diagram-vizstudio.png",
+      "screenshotWebp": "data-studio-traffic-sources-chord-diagram-vizstudio.webp",
+      "dsLink": null,
+      "related": [
+        {
+          "id": "arcdiagram-viz",
+          "name": "Arc Diagram",
+          "tagline": "Node-link arc diagram — relationships you can actually trace."
+        },
+        {
+          "id": "audioverlap-viz",
+          "name": "Audience Overlap",
+          "tagline": "Proportional circles for audience segments — overlaps you can see."
+        },
+        {
+          "id": "bipartite-viz",
+          "name": "Bipartite Graph",
+          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+        },
+        {
+          "id": "chord-viz",
+          "name": "Chord Diagram",
+          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+        }
+      ]
+    },
+    {
+      "id": "treemapzoom-viz",
+      "name": "Zoomable Treemap",
+      "tagline": "Zoomable treemap — drill into any tile, breadcrumb back out.",
+      "long": "Zoomable Treemap supports 1–6 dimensions of drilldown — click any tile to zoom in, breadcrumb to drill back out. Squarify or binary tiling, theme-aware colors.",
+      "what": "Treemap with click-to-zoom multi-level drilldown, breadcrumb navigation, squarify or binary tiling, theme colors.",
+      "why": "Static treemaps run out of room past two levels; zoom keeps every level useful.",
+      "uses": [
+        {
+          "tag": "Finance",
+          "body": "Sector → industry → company."
+        },
+        {
+          "tag": "Ops",
+          "body": "Region → country → store."
+        },
+        {
+          "tag": "Content",
+          "body": "Category → subcategory → article."
+        }
+      ],
+      "keywords": "zoomable treemap Data Studio, drilldown chart, hierarchical treemap",
+      "category": "tree",
+      "catLabel": "Hierarchies & Drilldown",
+      "screenshot": "data-studio-zoomable-treemap-vizstudio.png",
+      "screenshotWebp": "data-studio-zoomable-treemap-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_kmopn9v62d",
+      "related": [
+        {
+          "id": "slicedice-viz",
+          "name": "Slice / Dice Treemap",
+          "tagline": "Slice / dice treemap — horizontal, vertical, or alternating tiling."
+        },
+        {
+          "id": "smallmultiples-viz",
+          "name": "Small Multiples / Trellis Grid",
+          "tagline": "Small multiples — the same chart, repeated, every dimension visible."
+        },
+        {
+          "id": "sunburstChart",
+          "name": "Sunburst Chart",
+          "tagline": "Radial hierarchy — concentric rings drill into your structure."
+        }
+      ]
+    },
+    {
+      "id": "vardonut-viz",
+      "name": "Variable-Radius Nested Donut",
+      "tagline": "Variable-radius nested donut — two metrics per slice, one chart.",
+      "long": "Variable-Radius Nested Donut combines angular share with radial magnitude — angle = share, radius = a second metric. Nest two of them and you have a four-metric composition chart in a single ring.",
+      "what": "Donut with per-slice angle for share and per-slice radius for a second metric, nested for two breakdowns.",
+      "why": "When a regular donut loses a metric — variable-radius keeps it.",
+      "uses": [
+        {
+          "tag": "Marketing",
+          "body": "Channel share (angle) and ROAS (radius)."
+        },
+        {
+          "tag": "Finance",
+          "body": "Segment share and growth."
+        },
+        {
+          "tag": "Product",
+          "body": "Plan share and ARPU."
+        }
+      ],
+      "keywords": "variable radius donut Data Studio, nightingale rose chart, polar bar donut",
+      "category": "parts",
+      "catLabel": "Pies, Donuts & Part-to-Whole",
+      "screenshot": "data-studio-variable-radius-nested-donut-vizstudio.png",
+      "screenshotWebp": "data-studio-variable-radius-nested-donut-vizstudio.webp",
+      "dsLink": null,
+      "related": [
+        {
+          "id": "dualdonut-viz",
+          "name": "Dual Donut",
+          "tagline": "Two donuts side-by-side — current vs prior, plan vs actual, the comparison view."
+        },
+        {
+          "id": "multiring-viz",
+          "name": "Multi-ring Donut",
+          "tagline": "Nested donut rings — multiple metrics, same center, one composition."
+        },
+        {
+          "id": "varradiuspie-viz",
+          "name": "Variable Radius Pie Chart",
+          "tagline": "Variable-radius pie — angle is share, radius is a second metric."
+        },
+        {
+          "id": "waffle-viz",
+          "name": "Waffle Chart",
+          "tagline": "10×10 grid — every square is 1% — the part-to-whole everyone reads correctly."
+        }
+      ]
+    },
+    {
+      "id": "variancebar-viz",
+      "name": "Variance Bar",
+      "tagline": "Variance bars — actual minus baseline, signed and sorted.",
+      "long": "Variance Bar Chart subtracts a baseline from each category’s actual and draws the signed difference. Sorted by magnitude or direction, the chart tells the story before you read the labels.",
+      "what": "Signed horizontal or vertical bars showing actual-minus-baseline per category, optional sorting, theme-aware colors.",
+      "why": "Tables of plan vs actual hide the story; variance bars surface it.",
+      "uses": [
+        {
+          "tag": "Finance",
+          "body": "Actual vs budget per cost center."
+        },
+        {
+          "tag": "Sales",
+          "body": "Actual vs forecast per region."
+        },
+        {
+          "tag": "Ops",
+          "body": "Spec vs measured per unit."
+        }
+      ],
+      "keywords": "variance bar chart Data Studio, plan vs actual chart, signed bar chart",
+      "category": "bars",
+      "catLabel": "Bars, Columns & Ranking",
+      "screenshot": "data-studio-variance-bar-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-variance-bar-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_5k4lkvpt2d",
+      "related": [
+        {
+          "id": "abtest-viz",
+          "name": "A/B Test Results",
+          "tagline": "CI bars for A/B variants — significance baked in."
+        },
+        {
+          "id": "barrace-viz",
+          "name": "Animated Bar Race",
+          "tagline": "The animated bar chart race that wins every monthly review."
+        },
+        {
+          "id": "curvedcol-animated-viz",
+          "name": "Curved Columns (Animated + Zoom)",
+          "tagline": "Animated curved columns — bars that arc to draw the eye."
+        },
+        {
+          "id": "curvedcol-static-viz",
+          "name": "Curved Columns (Static)",
+          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+        }
+      ]
+    },
+    {
+      "id": "varradiuspie-viz",
+      "name": "Variable Radius Pie Chart",
+      "tagline": "Variable-radius pie — angle is share, radius is a second metric.",
+      "long": "Variable Radius Pie Chart (a.k.a. nightingale rose) keeps the angle = share rule but extends each slice’s radius by a second metric — so volume × magnitude reads at a glance.",
+      "what": "Pie with each slice extended to a per-slice radius driven by a second metric, with tooltip and legend.",
+      "why": "Two metrics in one chart, in the form your audience already knows.",
+      "uses": [
+        {
+          "tag": "Sales",
+          "body": "Customer share by region (angle) × LTV (radius)."
+        },
+        {
+          "tag": "Marketing",
+          "body": "Channel mix (angle) × conversion rate (radius)."
+        },
+        {
+          "tag": "Logistics",
+          "body": "SKU share (angle) × margin (radius)."
+        }
+      ],
+      "keywords": "variable radius pie Data Studio, nightingale rose chart, polar area chart",
+      "category": "parts",
+      "catLabel": "Pies, Donuts & Part-to-Whole",
+      "screenshot": "data-studio-variable-radius-pie-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-variable-radius-pie-chart-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_tuskjaof3d",
+      "related": [
+        {
+          "id": "dualdonut-viz",
+          "name": "Dual Donut",
+          "tagline": "Two donuts side-by-side — current vs prior, plan vs actual, the comparison view."
+        },
+        {
+          "id": "multiring-viz",
+          "name": "Multi-ring Donut",
+          "tagline": "Nested donut rings — multiple metrics, same center, one composition."
+        },
+        {
+          "id": "vardonut-viz",
+          "name": "Variable-Radius Nested Donut",
+          "tagline": "Variable-radius nested donut — two metrics per slice, one chart."
+        },
+        {
+          "id": "waffle-viz",
+          "name": "Waffle Chart",
+          "tagline": "10×10 grid — every square is 1% — the part-to-whole everyone reads correctly."
+        }
+      ]
+    },
+    {
+      "id": "venn-viz",
+      "name": "Venn / Euler Diagram",
+      "tagline": "Venn / Euler diagrams — set overlaps with the right geometry.",
+      "long": "Venn / Euler Diagram renders 2–4 set overlaps with circle sizes proportional to set size and intersection geometry placed correctly. For audience overlaps, feature overlaps, and any \"who’s in all three?\" question.",
+      "what": "2–4 circle Venn/Euler diagram with sized circles, correct overlap geometry, count labels, tooltip.",
+      "why": "The Venn diagram every dashboard tries to fake with text. This one does the math.",
+      "uses": [
+        {
+          "tag": "Marketing",
+          "body": "Audience overlap across three campaigns."
+        },
+        {
+          "tag": "Product",
+          "body": "Users of features A, B, C."
+        },
+        {
+          "tag": "Sales",
+          "body": "Accounts in CRM × Newsletter × Webinar."
+        }
+      ],
+      "keywords": "Venn diagram Data Studio, Euler chart, set overlap visualization",
+      "category": "flow",
+      "catLabel": "Networks, Flows & Relationships",
+      "screenshot": null,
+      "screenshotWebp": null,
+      "dsLink": null,
+      "related": [
+        {
+          "id": "arcdiagram-viz",
+          "name": "Arc Diagram",
+          "tagline": "Node-link arc diagram — relationships you can actually trace."
+        },
+        {
+          "id": "audioverlap-viz",
+          "name": "Audience Overlap",
+          "tagline": "Proportional circles for audience segments — overlaps you can see."
+        },
+        {
+          "id": "bipartite-viz",
+          "name": "Bipartite Graph",
+          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+        },
+        {
+          "id": "chord-viz",
+          "name": "Chord Diagram",
+          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+        }
+      ]
+    },
+    {
+      "id": "waffle-viz",
+      "name": "Waffle Chart",
+      "tagline": "10×10 grid — every square is 1% — the part-to-whole everyone reads correctly.",
+      "long": "Waffle Chart turns part-to-whole into a 100-square grid where each square represents 1% of the total, colored by category. Easier to read percentages from than a pie, and looks fantastic.",
+      "what": "10x10 grid where each square = 1%, filled by category with configurable fill direction, tooltip, cross-filter.",
+      "why": "Pies fail at small slices; waffle charts show every percentage point.",
+      "uses": [
+        {
+          "tag": "Demographics",
+          "body": "Population breakdown."
+        },
+        {
+          "tag": "Marketing",
+          "body": "Audience share by segment."
+        },
+        {
+          "tag": "Finance",
+          "body": "Revenue mix at 1% granularity."
+        }
+      ],
+      "keywords": "waffle chart Data Studio, 100 square chart, part to whole visualization",
+      "category": "parts",
+      "catLabel": "Pies, Donuts & Part-to-Whole",
+      "screenshot": "data-studio-waffle-chart-vizstudio.png",
+      "screenshotWebp": "data-studio-waffle-chart-vizstudio.webp",
+      "dsLink": null,
+      "related": [
+        {
+          "id": "dualdonut-viz",
+          "name": "Dual Donut",
+          "tagline": "Two donuts side-by-side — current vs prior, plan vs actual, the comparison view."
+        },
+        {
+          "id": "multiring-viz",
+          "name": "Multi-ring Donut",
+          "tagline": "Nested donut rings — multiple metrics, same center, one composition."
+        },
+        {
+          "id": "vardonut-viz",
+          "name": "Variable-Radius Nested Donut",
+          "tagline": "Variable-radius nested donut — two metrics per slice, one chart."
+        },
+        {
+          "id": "varradiuspie-viz",
+          "name": "Variable Radius Pie Chart",
+          "tagline": "Variable-radius pie — angle is share, radius is a second metric."
+        }
+      ]
+    },
+    {
+      "id": "windrose-viz",
+      "name": "Wind Rose / Polar Bar",
+      "tagline": "Polar bars — magnitude by direction, distribution by angle.",
+      "long": "Wind Rose / Polar Bar arrays category bars around 360° instead of along a baseline. Built for directional data (wind, time-of-day, compass) but useful anywhere magnitude has a natural angular axis.",
+      "what": "Polar bars at angles per category with bar length = magnitude, optional stacked segments, tooltip, theme color.",
+      "why": "Directional data on a linear axis loses its meaning; polar layout preserves it.",
+      "uses": [
+        {
+          "tag": "Climate",
+          "body": "Wind speed and direction."
+        },
+        {
+          "tag": "Travel",
+          "body": "Inbound passenger by origin compass bearing."
+        },
+        {
+          "tag": "Marketing",
+          "body": "Engagement by hour-of-day around the clock."
+        }
+      ],
+      "keywords": "wind rose chart Data Studio, polar bar chart, directional chart",
+      "category": "bars",
+      "catLabel": "Bars, Columns & Ranking",
+      "screenshot": "data-studio-wind-rose-polar-bar-vizstudio.png",
+      "screenshotWebp": "data-studio-wind-rose-polar-bar-vizstudio.webp",
+      "dsLink": null,
+      "related": [
+        {
+          "id": "abtest-viz",
+          "name": "A/B Test Results",
+          "tagline": "CI bars for A/B variants — significance baked in."
+        },
+        {
+          "id": "barrace-viz",
+          "name": "Animated Bar Race",
+          "tagline": "The animated bar chart race that wins every monthly review."
+        },
+        {
+          "id": "curvedcol-animated-viz",
+          "name": "Curved Columns (Animated + Zoom)",
+          "tagline": "Animated curved columns — bars that arc to draw the eye."
+        },
+        {
+          "id": "curvedcol-static-viz",
+          "name": "Curved Columns (Static)",
+          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+        }
+      ]
+    },
+    {
+      "id": "wordcloud-viz",
+      "name": "Word Cloud",
+      "tagline": "Word cloud — frequency-weighted, color-coded, optional category grouping.",
+      "long": "Word Cloud renders terms sized by frequency, optionally colored by category, with click-to-cross-filter. The fastest way to summarize unstructured text — and the chart your CMO actually asks for.",
+      "what": "Frequency-weighted word layout with optional color-by-category and cross-filter on click.",
+      "why": "Sometimes the question is \"what are people talking about?\" — and the word cloud is the right answer, no apology.",
+      "uses": [
+        {
+          "tag": "Support",
+          "body": "Top ticket terms across a quarter."
+        },
+        {
+          "tag": "Survey",
+          "body": "Open-ended response themes."
+        },
+        {
+          "tag": "Social",
+          "body": "Top brand mentions in the news."
+        }
+      ],
+      "keywords": "word cloud Data Studio, tag cloud chart, frequency word visualization",
+      "category": "combo",
+      "catLabel": "Tables, Calendars & Combo",
+      "screenshot": "data-studio-word-tag-cloud-vizstudio.png",
+      "screenshotWebp": "data-studio-word-tag-cloud-vizstudio.webp",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_rbb5shmf3d",
+      "related": [
+        {
+          "id": "bigcalendar-viz",
+          "name": "Big Calendar",
+          "tagline": "Full calendar grid — event volume painted across every cell."
+        },
+        {
+          "id": "calendarHeatmap",
+          "name": "Mini Calendar",
+          "tagline": "Compact monthly calendar — one cell, one number, instant pattern."
+        },
+        {
+          "id": "convheatmap-viz",
+          "name": "Conversion Heatmap",
+          "tagline": "Day-of-week × hour heatmap — when your audience actually shows up."
+        },
+        {
+          "id": "datatable-viz",
+          "name": "Row Over Row Comparison Table",
+          "tagline": "Row over row — DoD / MoM / YoY comparison table with deltas and % change."
+        }
+      ]
+    },
+    {
+      "id": "yoyline-viz",
+      "name": "Year-over-Year Line",
+      "tagline": "Year-over-year overlay — current vs prior, with the delta shaded.",
+      "long": "Year-over-Year Line overlays current year and prior year on the same axis, with optional shaded delta to make growth or decline obvious. The default chart for any \"how are we doing vs last year?\" conversation.",
+      "what": "Two lines on shared axes (current vs prior year), optional shaded delta region, tooltip, cross-filter.",
+      "why": "MoM and YoY tables make people math. This chart makes them see.",
+      "uses": [
+        {
+          "tag": "Retail",
+          "body": "Sales YoY with delta shaded green/red."
+        },
+        {
+          "tag": "Marketing",
+          "body": "Leads YoY across the funnel."
+        },
+        {
+          "tag": "Finance",
+          "body": "Revenue YoY with shaded variance band."
+        }
+      ],
+      "keywords": "year over year line chart Data Studio, YoY overlay chart, prior year comparison",
+      "category": "time",
+      "catLabel": "Time Series & Trends",
+      "screenshot": null,
+      "screenshotWebp": null,
+      "dsLink": "https://datastudio.google.com/u/0/reporting/1a14e617-7aee-461f-8fb0-eceb12f6cc5e/page/p_ylikm2502d",
+      "related": [
+        {
+          "id": "bump-viz",
+          "name": "Bump Chart",
+          "tagline": "Rank-over-time line chart — who's climbing, who's sliding."
+        },
+        {
+          "id": "dualaxis-viz",
+          "name": "Chart Title",
+          "tagline": "Two metrics, two scales, one line of sight — without the lie factor."
+        },
+        {
+          "id": "stackedarea-viz",
+          "name": "Stacked Area Chart",
+          "tagline": "Stacked area over time — composition and trend on the same canvas."
+        },
+        {
+          "id": "stackedneg-animated-viz",
+          "name": "Stacked Bar Chart with Negative Values (Animated + Zoom)",
+          "tagline": "Same signed stacked bar, animated entrance + zoom controls."
+        }
+      ]
+    }
+  ]
+}

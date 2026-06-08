@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PWF1TRML22"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PWF1TRML22');
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Google Calendar Connector for Data Studio — vizstudio</title>
@@ -193,7 +201,6 @@
       <details><summary>Does my calendar data pass through vizstudio servers?</summary><p>No. The connector runs in Google's own Apps Script infrastructure and talks directly to the Google Calendar API. Your events go from Google to Google — we never see them.</p></details>
       <details><summary>Can I connect more than one calendar?</summary><p>Yes — enter multiple Calendar IDs (your own, shared team calendars, a sales or holiday calendar, room resources) and each event row carries its calendar name. Link them all to one report and split or blend them however you like.</p></details>
       <details><summary>Can I overlay calendar events on my sales data?</summary><p>Yes — that's the headline use case. Blend the connector with your sales source on date, and events from your sales and holiday calendars line up against revenue. When a number skyrockets, the event that caused it is right there in the chart.</p></details>
-      <details><summary>What does the free trial include?</summary><p>Trial mode connects your primary calendar with the last 7 days of events — enough to wire up a full dashboard. A license unlocks all calendars and your full date range.</p></details>
       <details><summary>Do I need the vizstudio charts to use the connector?</summary><p>No — connector data works with every native Data Studio chart. But calendars are awkward in stock charts, which is why the plan ships both together.</p></details>
     </div>
   </div>
@@ -201,6 +208,4 @@
 </main>
 
 <div id="site-footer"><footer class="footer-fallback"><nav aria-label="Footer"><a href="index.html">Home</a> · <a href="index.html#library">Charts</a> · <a href="get-started.html">Get Started</a> · <a href="suggest.html">Suggest a Chart</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms of Service</a></nav><p>© vizstudio — premium D3 community visualizations for Data Studio.</p></footer></div>
-<script src="assets/partials.js"></script>
-</body>
-</html>
+<script src="assets/partial

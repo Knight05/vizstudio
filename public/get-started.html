@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PWF1TRML22"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PWF1TRML22');
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Create your account — vizstudio</title>
@@ -115,10 +123,19 @@
     btn.disabled = true;
     btn.textContent = 'Creating account…';
 
+    // Abort if the server doesn't respond — surfaces a real "timeout" instead
+    // of a misleading "Network error" when the auth function hangs.
+    var ctrl = new AbortController();
+    var timedOut = false;
+    var timer = setTimeout(function () { timedOut = true; ctrl.abort(); }, 25000);
+    function reset() { clearTimeout(timer); btn.disabled = false; btn.textContent = orig; }
+    function track(ev, params) { try { if (window.gtag) gtag('event', ev, params || {}); } catch (e) {} }
+
     try {
       var res = await fetch('/api/auth/sign-up/email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        signal: ctrl.signal,
         body: JSON.stringify({
           name: name.value.trim(),
           email: email.value.trim(),
@@ -127,26 +144,5 @@
           callbackURL: '/dashboard'
         })
       });
-      if (!res.ok) {
-        var data = {};
-        try { data = await res.json(); } catch (e) {}
-        var msg = (data && (data.message || (data.error && data.error.message))) || 'Could not create your account. Please try again.';
-        if (/exist|taken|already/i.test(msg)) { msg = 'An account with this email already exists — try logging in.'; }
-        showErr(email, msg);
-        btn.disabled = false;
-        btn.textContent = orig;
-        return;
-      }
-      var success = card.querySelector('.form-success');
-      if (success) { form.style.display = 'none'; success.classList.add('on'); }
-      else { window.location.href = '/dashboard'; }
-    } catch (e) {
-      showErr(email, 'Network error — please try again.');
-      btn.disabled = false;
-      btn.textContent = orig;
-    }
-  });
-})();
-</script>
-</body>
-</html>
+      clearTimeout(timer);
+  

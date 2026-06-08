@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PWF1TRML22"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PWF1TRML22');
+</script>
 <meta charset="utf-8">
 <title>vizstudio — 75+ premium Data Studio charts, easy to install</title>
 <meta name="description" content="A premium library of 75+ hand-built D3 community visualizations for Google Data Studio (Looker Studio). Sunburst, sankey, choropleth, bump charts and more — theme-aware, cross-filtering, easy to add.">
@@ -896,7 +904,9 @@ html[data-viz-density="thin"] .hero-dash svg path { stroke-width: 1px; }
 .faq { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
 .fitem { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; transition: border-color .2s, background .2s; }
 .fitem[open] { border-color: rgba(139,92,246,0.35); background: color-mix(in oklch, var(--surface) 85%, var(--acc-2)); }
-.fitem summary { list-style: none; padding: 20px 24px; font-weight: 500; font-size: 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.fitem summary { list-style: none; padding: 20px 24px; font-weight: 500; font-size: 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; outline: none; -webkit-tap-highlight-color: transparent; }
+.fitem summary:focus { outline: none; }
+.fitem summary:focus-visible { outline: 2px solid rgba(139,92,246,0.6); outline-offset: -2px; border-radius: var(--r-md); }
 .fitem summary::-webkit-details-marker { display: none; }
 .fitem summary .plus { width: 20px; height: 20px; position: relative; flex-shrink: 0; }
 .fitem summary .plus::before, .fitem summary .plus::after { content: ''; position: absolute; background: var(--text-dim); border-radius: 1px; top: 50%; left: 50%; transform: translate(-50%, -50%); transition: transform .3s; }
@@ -3706,16 +3716,4 @@ tickerTrack.innerHTML = tickerHTML;
     const track = document.createElement('div');
     track.className = 'hero-marquee-track' + (reverse ? ' reverse' : '');
     track.innerHTML = [...list, ...list].map(k =>
-      `<a class="hero-marquee-tile" href="charts/${k}.html"><img src="icons/${k}.png" alt="" loading="lazy" onerror="this.style.opacity=.2"/></a>`
-    ).join('');
-    el.appendChild(track);
-  };
-  const half = Math.ceil(ICONS.length / 2);
-  build(document.getElementById('heroMarquee1'), ICONS.slice(0, half * 2), false);
-  build(document.getElementById('heroMarquee2'), [...ICONS.slice(half)].reverse().concat(ICONS.slice(0, half)), true);
-})();
-</script>
-
-  <script src="assets/partials.js"></script>
-</body>
-</html>
+      `<a c

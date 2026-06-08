@@ -11,7 +11,10 @@ const config: NextConfig = {
       { source: "/showcase", destination: "/#library", permanent: false },
       { source: "/pricing", destination: "/#pricing", permanent: false },
       { source: "/docs/:path*", destination: "/how-to-add-a-chart.html", permanent: false },
-      { source: "/charts/:slug([^.]+)", destination: "/charts/:slug.html", permanent: false },
+      // Chart pages are now dynamic Next routes at /charts/:slug (SSG from
+      // src/data/charts.json). Permanently consolidate the old static .html
+      // URLs onto the clean canonical slug to avoid duplicate content.
+      { source: "/charts/:slug.html", destination: "/charts/:slug", permanent: true },
       { source: "/legal/terms", destination: "/terms.html", permanent: false },
       { source: "/legal/privacy", destination: "/privacy.html", permanent: false },
       { source: "/about", destination: "/", permanent: false },
@@ -34,14 +37,4 @@ const config: NextConfig = {
   typescript: { ignoreBuildErrors: true },
   eslint: { ignoreDuringBuilds: true },
   images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "storage.googleapis.com" },
-      { protocol: "https", hostname: "*.supabase.co" },
-    ],
-  },
-  experimental: {
-    typedRoutes: false,
-  },
-};
-
-export default config;
+    remotePa

@@ -8,7 +8,7 @@ import { prisma } from "@/lib/prisma";
  * static site (different origin) can POST to it.
  */
 
-const ALLOWED_FORMS = ["signup", "suggest", "subscribe"] as const;
+const ALLOWED_FORMS = ["signup", "suggest", "subscribe", "reportissue"] as const;
 
 const bodySchema = z
   .object({
@@ -17,6 +17,7 @@ const bodySchema = z
     name: z.string().max(120).optional(),
     message: z.string().max(4000).optional(),
     description: z.string().max(4000).optional(), // site forms use "description"
+    category: z.string().max(60).optional(), // report-issue category (kept in payload)
     source: z.string().max(300).optional(),
     // honeypot — bots fill this, humans never see it
     website: z.string().max(0).optional(),

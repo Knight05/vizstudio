@@ -3,7 +3,7 @@ import type { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
 import { formatDate } from "@/lib/utils";
 
-const TABS = ["all", "support", "signup", "suggest", "subscribe", "leads"] as const;
+const TABS = ["all", "support", "reportissue", "signup", "suggest", "subscribe", "leads"] as const;
 type Tab = (typeof TABS)[number];
 
 export default async function AdminFormsPage({
@@ -102,6 +102,15 @@ export default async function AdminFormsPage({
                   <td className="px-4 py-3">{s.name ?? "—"}</td>
                   <td className="px-4 py-3">{s.email ?? "—"}</td>
                   <td className="px-4 py-3 max-w-[44ch] whitespace-pre-wrap text-text-dim">
+                    {(() => {
+                      const category =
+                        s.payload && typeof s.payload === "object" && !Array.isArray(s.payload)
+                          ? (s.payload as Record<string, unknown>).category
+                          : undefined;
+                      return typeof category === "string" && category ? (
+                        <span className="pill mb-1 mr-2 inline-block">{category}</span>
+                      ) : null;
+                    })()}
                     {s.message ?? "—"}
                   </td>
                   <td className="px-4 py-3 max-w-[24ch] truncate text-text-dim">
