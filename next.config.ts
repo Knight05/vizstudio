@@ -26,7 +26,14 @@ const config: NextConfig = {
     // Serve the static marketing site (public/index.html) at the root.
     // App routes (/admin, /dashboard, /login, /signup, /api/*) are untouched.
     return {
-      beforeFiles: [{ source: "/", destination: "/index.html" }],
+      beforeFiles: [
+        { source: "/", destination: "/index.html" },
+        { source: "/get-started", destination: "/get-started.html" },
+        { source: "/suggest", destination: "/suggest.html" },
+        { source: "/how-to-add-a-chart", destination: "/how-to-add-a-chart.html" },
+        { source: "/privacy", destination: "/privacy.html" },
+        { source: "/terms", destination: "/terms.html" },
+      ],
       afterFiles: [],
       fallback: [],
     };

@@ -2136,7 +2136,8 @@ html, body { overflow-x: clip; }
       <h2>Stay in the know.</h2>
       <p>Get a short monthly email when we ship new charts, drop new features, or publish a deep-dive on data viz.</p>
       <form class="subscribe-form" novalidate>
-        <input type="email" name="email" required placeholder="you@company.com" autocomplete="email">
+        <input type="email" name="email" required maxlength="254" placeholder="you@company.com" autocomplete="email">
+        <span aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;"><input name="website" type="text" tabindex="-1" autocomplete="off"></span>
         <button type="submit">Subscribe →</button>
       </form>
       <div class="subscribe-msg"></div>
@@ -3716,4 +3717,16 @@ tickerTrack.innerHTML = tickerHTML;
     const track = document.createElement('div');
     track.className = 'hero-marquee-track' + (reverse ? ' reverse' : '');
     track.innerHTML = [...list, ...list].map(k =>
-      `<a c
+      `<a class="hero-marquee-tile" href="/charts/${k}"><img src="icons/${k}.png" alt="" loading="lazy" onerror="this.style.opacity=.2"/></a>`
+    ).join('');
+    el.appendChild(track);
+  };
+  const half = Math.ceil(ICONS.length / 2);
+  build(document.getElementById('heroMarquee1'), ICONS.slice(0, half * 2), false);
+  build(document.getElementById('heroMarquee2'), [...ICONS.slice(half)].reverse().concat(ICONS.slice(0, half)), true);
+})();
+</script>
+
+  <script src="assets/partials.js"></script>
+</body>
+</html>
