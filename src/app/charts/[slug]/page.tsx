@@ -160,7 +160,7 @@ export default async function ChartPage({
                 </div>
                 <p className="chart-tagline">{chart.tagline}</p>
                 <div className="chart-cta-row">
-                  <a className="btn btn-primary" href="/get-started.html">
+                  <a className="btn btn-primary" href="/get-started">
                     Add to Data Studio →
                   </a>
                   {chart.dsLink && (
@@ -324,7 +324,7 @@ export default async function ChartPage({
               <div className="pricing-strip-right">
                 <a
                   className="btn btn-primary pricing-strip-cta"
-                  href="/get-started.html"
+                  href="/get-started"
                 >
                   Start free →
                 </a>

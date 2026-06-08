@@ -1,18 +1,53 @@
-import Script from "next/script";
+import SiteNav from "@/components/marketing/SiteNav";
+import SiteFooter from "@/components/marketing/SiteFooter";
 
-const BODY = "<div class=\"card\">\n  <div class=\"code\">404</div>\n  <h1>This chart doesn't exist. Yet.</h1>\n  <p>The page you're looking for moved, was renamed, or never shipped. The 75+ charts that did ship are one click away.</p>\n  <div class=\"bars\"><span></span><span></span><span></span><span></span><span></span></div>\n  <div class=\"row\">\n    <a class=\"btn primary\" href=\"//#library\">Browse all charts</a>\n    <a class=\"btn\" href=\"/index.html\">Back to home</a>\n  </div>\n</div>";
-const STYLES = "\n:root { --bg:#0a0b14; --surface:#12141f; --border:rgba(255,255,255,0.07); --text:#eef0f7; --dim:#9aa0b4; --muted:#6b718a; --acc:#6366f1; --grad:linear-gradient(135deg,#6366f1 0%,#8b5cf6 60%,#ec4899 100%); }\n* { margin:0; padding:0; box-sizing:border-box; }\nbody { background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; min-height:100vh; display:grid; place-items:center; padding:24px; }\n.card { text-align:center; max-width:520px; }\n.code { font-family:'JetBrains Mono',monospace; font-size:96px; font-weight:700; letter-spacing:-0.04em; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; line-height:1; }\nh1 { font-size:24px; font-weight:600; margin:18px 0 10px; letter-spacing:-0.02em; }\np { color:var(--dim); font-size:15px; line-height:1.6; margin-bottom:28px; }\n.row { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }\n.btn { display:inline-block; padding:11px 22px; border-radius:10px; font-size:14px; font-weight:600; text-decoration:none; color:var(--text); border:1px solid var(--border); transition:border-color .2s, transform .2s; }\n.btn:hover { border-color:rgba(255,255,255,0.25); transform:translateY(-1px); }\n.btn.primary { background:var(--grad); border:none; color:#fff; box-shadow:0 8px 24px -8px rgba(139,92,246,0.5); }\n.bars { display:flex; gap:6px; justify-content:center; align-items:flex-end; height:48px; margin-bottom:28px; }\n.bars span { width:10px; border-radius:3px; background:var(--grad); opacity:.85; animation:b 1.4s ease-in-out infinite alternate; }\n.bars span:nth-child(1){height:40%} .bars span:nth-child(2){height:75%;animation-delay:.15s} .bars span:nth-child(3){height:55%;animation-delay:.3s} .bars span:nth-child(4){height:90%;animation-delay:.45s} .bars span:nth-child(5){height:30%;animation-delay:.6s}\n@keyframes b { to { transform:scaleY(0.55); } }\n\n";
+const STYLES = `
+.nf-main { min-height: 64vh; display: grid; place-items: center; padding: 72px 24px 88px; }
+.nf-card { text-align: center; max-width: 560px; }
+.nf-code {
+  font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 104px; font-weight: 700;
+  letter-spacing: -0.04em; line-height: 1;
+  background: var(--accent-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.nf-title { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; margin: 18px 0 10px; color: var(--text); }
+.nf-sub { color: var(--text-dim); font-size: 15px; line-height: 1.6; margin: 0 auto 26px; max-width: 46ch; }
+.nf-bars { display: flex; gap: 6px; justify-content: center; align-items: flex-end; height: 46px; margin-bottom: 28px; }
+.nf-bars span { width: 10px; border-radius: 3px; background: var(--accent-grad); opacity: .85; animation: nfb 1.4s ease-in-out infinite alternate; }
+.nf-bars span:nth-child(1){height:40%} .nf-bars span:nth-child(2){height:75%;animation-delay:.15s}
+.nf-bars span:nth-child(3){height:55%;animation-delay:.3s} .nf-bars span:nth-child(4){height:90%;animation-delay:.45s}
+.nf-bars span:nth-child(5){height:30%;animation-delay:.6s}
+@keyframes nfb { to { transform: scaleY(0.55); } }
+.nf-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+`;
 
 export default function NotFound() {
   return (
     <>
-      <link rel="icon" href="/favicon.svg" type="image/svg+xml" key="l0" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" key="l1" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" key="l2" />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" key="l3" />
+      <link rel="stylesheet" href="/assets/style.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&display=swap"
+      />
       <style dangerouslySetInnerHTML={{ __html: STYLES }} />
-      <div dangerouslySetInnerHTML={{ __html: BODY }} />
-
+      <SiteNav />
+      <main className="nf-main">
+        <div className="nf-card">
+          <div className="nf-code">404</div>
+          <h1 className="nf-title">This page doesn&rsquo;t exist. Yet.</h1>
+          <p className="nf-sub">
+            The page you&rsquo;re looking for moved, was renamed, or never shipped. The 75+ charts
+            that did ship are one click away.
+          </p>
+          <div className="nf-bars"><span></span><span></span><span></span><span></span><span></span></div>
+          <div className="nf-row">
+            <a className="btn btn-primary" href="/#library">Browse all charts</a>
+            <a className="btn" href="/">Back to home</a>
+          </div>
+        </div>
+      </main>
+      <SiteFooter />
     </>
   );
 }

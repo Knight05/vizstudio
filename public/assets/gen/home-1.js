@@ -925,7 +925,7 @@ function buildFeatured() {
   const grid = document.getElementById('featuredGrid');
   if (!grid) return;
   grid.innerHTML = FEATURED.map(f => `
-    <a class="featured-card" href="charts/${f.slug}.html">
+    <a class="featured-card" href="/charts/${f.slug}">
       <div class="fc-shot"><img src="${f.img}" alt="${f.name}" loading="lazy"></div>
       <div class="fc-body">
         <div class="fc-cat"><span>${f.cat}</span><span class="pill">${f.diff}</span></div>

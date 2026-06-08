@@ -7,7 +7,7 @@
       if (!img) return;
       const m = img.src.match(/icons\/([^/]+)\.png$/);
       if (!m) return;
-      const href = 'charts/' + m[1] + '.html';
+      const href = '/charts/' + m[1];
       if (el.tagName === 'A') { el.href = href; }
       else { el.style.cursor = 'pointer'; el.addEventListener('click', () => { window.location.href = href; }); }
     });

@@ -1,5 +1,6 @@
-import Link from "next/link";
 import type { Metadata } from "next";
+import SiteNav from "@/components/marketing/SiteNav";
+import SiteFooter from "@/components/marketing/SiteFooter";
 import { ReportIssueForm } from "./report-issue-form";
 
 export const metadata: Metadata = {
@@ -11,49 +12,40 @@ export const metadata: Metadata = {
 
 export default function ReportIssuePage() {
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        background: "var(--bg)",
-        color: "var(--text)",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        padding: "56px 24px 72px",
-      }}
-    >
-      <Link
-        href="/"
+    <>
+      <link rel="stylesheet" href="/assets/style.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&display=swap"
+      />
+      <SiteNav />
+      <main
         style={{
-          marginBottom: 36,
-          fontSize: 15,
-          fontWeight: 700,
-          color: "var(--text)",
-          textDecoration: "none",
-          letterSpacing: "-0.01em",
+          minHeight: "64vh",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          padding: "64px 24px 80px",
         }}
       >
-        ✦ vizstudio
-      </Link>
+        <div style={{ width: "100%", maxWidth: 560, marginBottom: 24 }}>
+          <div className="section-eyebrow" style={{ marginBottom: 10 }}>
+            Support
+          </div>
+          <h1 style={{ fontSize: 30, fontWeight: 700, margin: "0 0 8px", letterSpacing: "-0.02em", color: "var(--text)" }}>
+            Report an issue
+          </h1>
+          <p style={{ fontSize: 14.5, color: "var(--text-dim)", margin: 0, lineHeight: 1.6 }}>
+            Something not working the way it should? Send us the details and we&apos;ll get on it.
+            The more specific you are, the faster we can fix it.
+          </p>
+        </div>
 
-      <div style={{ width: "100%", maxWidth: 560, marginBottom: 24 }}>
-        <h1 style={{ fontSize: 26, fontWeight: 700, margin: "0 0 8px", letterSpacing: "-0.02em" }}>
-          Report an issue
-        </h1>
-        <p style={{ fontSize: 14, color: "var(--muted)", margin: 0, lineHeight: 1.6 }}>
-          Something not working the way it should? Send us the details and we&apos;ll get on it.
-          The more specific you are, the faster we can fix it.
-        </p>
-      </div>
-
-      <ReportIssueForm />
-
-      <Link
-        href="/"
-        style={{ marginTop: 28, fontSize: 12.5, color: "var(--muted)", textDecoration: "none" }}
-      >
-        ← Back to vizstudio.io
-      </Link>
-    </main>
+        <ReportIssueForm />
+      </main>
+      <SiteFooter />
+    </>
   );
 }
