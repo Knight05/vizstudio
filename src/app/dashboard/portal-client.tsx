@@ -56,7 +56,7 @@ type PortalChart = {
   screenshotUrl: string | null;
 };
 
-const CAL_CONNECTOR_URL = "/google-calendar-connector.html";
+const CAL_CONNECTOR_URL = "/google-calendar-connector";
 
 const TABS = ["overview", "charts", "billing", "downloads", "support", "settings"] as const;
 type Tab = (typeof TABS)[number];
@@ -429,7 +429,7 @@ function ChartsTab(props: PortalProps) {
         <p>
           {props.chartCount} visualizations, ready for Data Studio. Click a chart for
           details and your add-link.{" "}
-          <a href="/how-to-add-a-chart.html" target="_blank" rel="noreferrer" style={{ color: "var(--text)" }}>
+          <a href="/how-to-add-a-chart" target="_blank" rel="noreferrer" style={{ color: "var(--text)" }}>
             Full how-to guide →
           </a>
         </p>
@@ -557,7 +557,7 @@ function ChartsTab(props: PortalProps) {
                   <li>Paste the manifest path above → Submit</li>
                 </ol>
                 <a
-                  href="/how-to-add-a-chart.html"
+                  href="/how-to-add-a-chart"
                   target="_blank"
                   rel="noreferrer"
                   style={{ fontSize: 11.5, color: "var(--text)" }}

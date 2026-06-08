@@ -30,7 +30,7 @@
 (function () {
   // Compute the relative root prefix from the current page's path.
   // Pages under /charts/ need "../" to reach index.html, get-started.html, etc.
-  // Pages at the site root (index.html, get-started.html, suggest.html) use "".
+  // Pages at the site root (/, /get-started, /suggest) use "".
   var path = (typeof location !== 'undefined' ? location.pathname : '') || '';
   var inCharts = /\/charts\//i.test(path);
   var root = inCharts ? '../' : '';

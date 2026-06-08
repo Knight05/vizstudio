@@ -29,7 +29,7 @@ export default function SiteNav() {
           <a className="btn" href="/login">
             Log in
           </a>
-          <a className="btn primary" href="/get-started.html">
+          <a className="btn primary" href="/get-started">
             Get Started
           </a>
           <button
@@ -57,7 +57,7 @@ export default function SiteNav() {
         <a href="/#pricing">Pricing</a>
         <a href="/#faq">FAQ</a>
         <a href="/login">Log in</a>
-        <a className="btn primary" href="/get-started.html">
+        <a className="btn primary" href="/get-started">
           Get Started →
         </a>
       </div>

@@ -32,15 +32,15 @@ export default function SiteFooter() {
             <h4>Resources</h4>
             <ul>
               <li><a href="/#how">How it works</a></li>
-              <li><a href="/how-to-add-a-chart.html">Add a chart to Data Studio</a></li>
+              <li><a href="/how-to-add-a-chart">Add a chart to Data Studio</a></li>
               <li><a href="/#library">Chart library</a></li>
-              <li><a href="/suggest.html">Suggest a chart</a></li>
+              <li><a href="/suggest">Suggest a chart</a></li>
             </ul>
           </div>
           <div>
             <h4>Company</h4>
             <ul>
-              <li><a href="/get-started.html">Get started</a></li>
+              <li><a href="/get-started">Get started</a></li>
               <li><a href="/login">Client login</a></li>
             </ul>
           </div>
@@ -48,11 +48,11 @@ export default function SiteFooter() {
         <div className="foot-bot">
           <span>© 2026 Viz Studio LLC · Built for data teams, by data teams.</span>
           <span>
-            <a href="/terms.html" style={{ color: "var(--text-dim)" }}>
+            <a href="/terms" style={{ color: "var(--text-dim)" }}>
               Terms of Service
             </a>{" "}
             ·{" "}
-            <a href="/privacy.html" style={{ color: "var(--text-dim)" }}>
+            <a href="/privacy" style={{ color: "var(--text-dim)" }}>
               Privacy Policy
             </a>
           </span>

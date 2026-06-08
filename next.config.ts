@@ -7,16 +7,16 @@ const config: NextConfig = {
     return [
       // Account creation now lives on the static get-started page (real
       // passwordless signup). Funnel all old /signup links there, query intact.
-      { source: "/signup", destination: "/get-started.html", permanent: false },
+      { source: "/signup", destination: "/get-started", permanent: false },
       { source: "/showcase", destination: "/#library", permanent: false },
       { source: "/pricing", destination: "/#pricing", permanent: false },
-      { source: "/docs/:path*", destination: "/how-to-add-a-chart.html", permanent: false },
+      { source: "/docs/:path*", destination: "/how-to-add-a-chart", permanent: false },
       // Chart pages are now dynamic Next routes at /charts/:slug (SSG from
       // src/data/charts.json). Permanently consolidate the old static .html
       // URLs onto the clean canonical slug to avoid duplicate content.
       { source: "/charts/:slug.html", destination: "/charts/:slug", permanent: true },
-      { source: "/legal/terms", destination: "/terms.html", permanent: false },
-      { source: "/legal/privacy", destination: "/privacy.html", permanent: false },
+      { source: "/legal/terms", destination: "/terms", permanent: false },
+      { source: "/legal/privacy", destination: "/privacy", permanent: false },
       { source: "/about", destination: "/", permanent: false },
       { source: "/changelog", destination: "/", permanent: false },
       { source: "/roadmap", destination: "/", permanent: false },
@@ -26,14 +26,7 @@ const config: NextConfig = {
     // Serve the static marketing site (public/index.html) at the root.
     // App routes (/admin, /dashboard, /login, /signup, /api/*) are untouched.
     return {
-      beforeFiles: [
-        { source: "/", destination: "/index.html" },
-        { source: "/get-started", destination: "/get-started.html" },
-        { source: "/suggest", destination: "/suggest.html" },
-        { source: "/how-to-add-a-chart", destination: "/how-to-add-a-chart.html" },
-        { source: "/privacy", destination: "/privacy.html" },
-        { source: "/terms", destination: "/terms.html" },
-      ],
+      beforeFiles: [],
       afterFiles: [],
       fallback: [],
     };
