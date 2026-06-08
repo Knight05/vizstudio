@@ -8,6 +8,8 @@ import { provisionClientBucket } from "./gcs";
  *   1. Email the user a link to set their password (the real credential setup)
  *   2. Provision a public GCS bucket seeded from the prod bucket
  *   3. Save the bucket name on the user record
+ *   4. Issue a Calendar Connector license key + record it in the license-keys
+ *      spreadsheet (the connector validates against it) and as a LicenseKey row
  *
  * Email is sent FIRST and in its own try/catch so a slow or failing bucket
  * copy can never starve the credential email — without the set-password link
@@ -48,5 +50,28 @@ export async function provisionNewUser(user: {
     }
   } else {
     console.log("[provisioning] GCP env not set — skipping bucket for", user.email);
+  }
+
+  // 4. Calendar Connector license key — issue one, record it in the license-keys
+  // spreadsheet (the connector validates against it), and persist a LicenseKey
+  // row so it shows in the client portal. Independent of the bucket step so
+  // either can succeed on its own.
+  if (process.env.CALENDAR_KEYS_SHEET_ID) {
+    try {
+      const { provisionCalendarKey } = await import("./calendar-keys");
+      const calendarKey = await provisionCalendarKey(user.email);
+      await prisma.licenseKey.create({
+        data: {
+          userId: user.id,
+          key: calendarKey,
+          label: "Calendar Connector",
+          active: true,
+        },
+      });
+    } catch (err) {
+      console.error(`[provisioning] calendar key failed for ${user.email}:`, err);
+    }
+  } else {
+    console.log("[provisioning] CALENDAR_KEYS_SHEET_ID not set — skipping calendar key for", user.email);
   }
 }
