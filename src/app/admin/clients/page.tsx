@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
 import { formatDate } from "@/lib/utils";
+import { requireAdmin } from "@/lib/admin";
 import { PaymentBadge } from "../payment-status";
 
 const FILTERS = ["all", "paid", "past_due", "trialing", "free"] as const;
@@ -32,6 +33,7 @@ export default async function AdminClientsPage({
 }: {
   searchParams: Promise<{ filter?: string; q?: string }>;
 }) {
+  await requireAdmin();
   const sp = await searchParams;
   const filter: Filter = FILTERS.includes(sp.filter as Filter)
     ? (sp.filter as Filter)

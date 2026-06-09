@@ -1,10 +1,11 @@
+(function () {
 // vizstudio forms — shared submit handler
 //
 // Each <form data-form="<name>"> is intercepted and POSTed to FORM_ENDPOINT.
 // Replace FORM_ENDPOINT with your real form-handler URL (Formspree, Web3Forms,
 // Netlify Forms, or your own backend). Until you do, the form just shows a
 // local success state.
-const FORM_ENDPOINT = 'https://vizstudio.io/api/forms'; // vizstudio backend — stores submissions for the admin panel
+const FORM_ENDPOINT = '/api/forms'; // vizstudio backend — stores submissions for the admin panel
 const CONTACT_EMAIL = 'brandonlea05@gmail.com'; // mailto fallback until FORM_ENDPOINT is set
 
 const FREE_MAIL = new Set([
@@ -84,6 +85,11 @@ document.querySelectorAll('form[data-form]').forEach((form) => {
       }
       data[input.name] = v;
     });
+
+    // Honeypot — humans never see/fill this; bots usually do.
+    const hp = form.querySelector('input[name="website"]');
+    if (hp) data.website = (hp.value || '').trim();
+
     if (!valid) return;
 
     const btn = form.querySelector('button[type="submit"]');
@@ -125,7 +131,8 @@ document.querySelectorAll('.subscribe-form').forEach((form) => {
     }
     btn.textContent = 'Sending…';
     btn.disabled = true;
-    const ok = await submitForm(form, { form: 'subscribe', email: v });
+    const hp = form.querySelector('input[name="website"]');
+    const ok = await submitForm(form, { form: 'subscribe', email: v, website: hp ? (hp.value || '').trim() : '' });
     if (ok) {
       btn.textContent = '✓ Subscribed';
       btn.classList.add('done');
@@ -137,3 +144,4 @@ document.querySelectorAll('.subscribe-form').forEach((form) => {
     }
   });
 });
+})();

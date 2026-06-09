@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
 import { formatDate } from "@/lib/utils";
+import { requireAdmin } from "@/lib/admin";
 
 const TABS = ["all", "support", "reportissue", "signup", "suggest", "subscribe", "leads"] as const;
 type Tab = (typeof TABS)[number];
@@ -11,6 +12,7 @@ export default async function AdminFormsPage({
 }: {
   searchParams: Promise<{ tab?: string }>;
 }) {
+  await requireAdmin();
   const sp = await searchParams;
   const tab: Tab = TABS.includes(sp.tab as Tab) ? (sp.tab as Tab) : "all";
 

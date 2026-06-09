@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { formatDate } from "@/lib/utils";
+import { requireAdmin } from "@/lib/admin";
 
 export default async function AdminOverviewPage() {
+  await requireAdmin();
   const since7d = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
 
   const [

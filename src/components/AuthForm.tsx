@@ -57,7 +57,12 @@ function generatePassword(): string {
 export function AuthForm({ mode }: { mode: "login" | "signup" }) {
   const router = useRouter();
   const params = useSearchParams();
-  const next = params.get("next") ?? "/dashboard";
+  // Only allow same-origin relative paths — blocks open redirect via ?next=
+  const rawNext = params.get("next") ?? "/dashboard";
+  const next =
+    rawNext.startsWith("/") && !rawNext.startsWith("//") && !rawNext.includes("\\")
+      ? rawNext
+      : "/dashboard";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -109,10 +114,11 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
         </h1>
         <p style={{ fontSize: 13, color: "#9aa1c0", margin: "0 0 18px", lineHeight: 1.6 }}>
           We sent a link to <span style={{ color: "#e7e9f5" }}>{email}</span>.
-          Open it to verify your email and set your password — then you&apos;re in.
+          Open it to verify your email and set your password. Once it&apos;s set,
+          log in to reach your portal.
         </p>
-        <button type="button" style={C.button} onClick={() => { router.replace(next); router.refresh(); }}>
-          Continue to your portal →
+        <button type="button" style={C.button} onClick={() => { router.replace("/login"); router.refresh(); }}>
+          Go to log in →
         </button>
       </div>
     );

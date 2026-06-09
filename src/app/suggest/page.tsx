@@ -1,4 +1,4 @@
-import Script from "next/script";
+import ClientScripts from "@/components/ClientScripts";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   "title": "Suggest a chart — vizstudio",
@@ -19,8 +19,7 @@ export default function Page() {
       <link rel="stylesheet" href="/assets/forms.css" key="l5" />
       <style dangerouslySetInnerHTML={{ __html: STYLES }} />
       <div dangerouslySetInnerHTML={{ __html: BODY }} />
-      <Script src="/assets/forms.js" strategy="afterInteractive" key="s1" />
-      <Script src="/assets/partials.js" strategy="afterInteractive" key="s2" />
+      <ClientScripts srcs={["/assets/forms.js", "/assets/partials.js"]} />
     </>
   );
 }

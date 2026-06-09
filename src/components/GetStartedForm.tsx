@@ -90,6 +90,21 @@ export function GetStartedForm() {
         return;
       }
 
+      // Record the lead (incl. role, which isn't a Better-Auth field) for the
+      // admin panel. Best-effort — never block the signup success state on it.
+      fetch("/api/forms", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          form: "signup",
+          name: name.trim(),
+          email: email.trim(),
+          company: company.trim(),
+          role: role.trim() || undefined,
+          source: "/get-started",
+        }),
+      }).catch(() => {});
+
       setDone(true);
     } catch {
       setErrors({ email: "Network error — please try again." });
@@ -215,11 +230,12 @@ export function GetStartedForm() {
                   </div>
                   <h2>Check your inbox.</h2>
                   <p>
-                    Your account is ready. We emailed you a link to verify your address and set your
-                    password.
+                    We emailed{email ? <> <strong>{email}</strong></> : " you"} a link to verify your
+                    address and set your password. Once your password is set, you can log in to your
+                    portal.
                   </p>
-                  <a className="btn btn-primary" href="/dashboard">
-                    Continue to your portal →
+                  <a className="btn btn-primary" href="/login">
+                    Go to log in →
                   </a>
                   <a className="btn" href="/" style={{ marginTop: 8 }}>
                     ← Back to charts

@@ -96,7 +96,7 @@ function IconSprite() {
 
 function Icon({ id }: { id: string }) {
   return (
-    <svg>
+    <svg width={14} height={14}>
       <use href={`#${id}`} />
     </svg>
   );
@@ -752,6 +752,7 @@ function DownloadsTab(props: PortalProps) {
   const create = trpc.user.createLicenseKey.useMutation({
     onSuccess: () => {
       utils.user.me.invalidate();
+      setLabel("");
       track("license_key_created");
     },
   });
@@ -763,9 +764,13 @@ function DownloadsTab(props: PortalProps) {
   const [copied, setCopied] = useState<string | null>(null);
 
   async function copy(key: string) {
-    await navigator.clipboard.writeText(key);
-    setCopied(key);
-    setTimeout(() => setCopied(null), 1200);
+    try {
+      await navigator.clipboard.writeText(key);
+      setCopied(key);
+      setTimeout(() => setCopied(null), 1200);
+    } catch {
+      // Clipboard can be blocked (permissions / insecure context) — no-op.
+    }
   }
 
   return (
@@ -803,14 +808,17 @@ function DownloadsTab(props: PortalProps) {
                 <button
                   className="pbtn-primary"
                   style={{ padding: "9px 14px" }}
-                  onClick={() => {
-                    create.mutate({ label: label || undefined });
-                    setLabel("");
-                  }}
+                  onClick={() => create.mutate({ label: label || undefined })}
                   disabled={create.isPending}
                 >
                   {create.isPending ? "Creating…" : "Generate key"}
                 </button>
+              </div>
+            )}
+
+            {(create.error || revoke.error) && (
+              <div style={{ fontSize: 12.5, color: "var(--acc-rose)", marginBottom: 10 }}>
+                {create.error?.message ?? revoke.error?.message}
               </div>
             )}
 

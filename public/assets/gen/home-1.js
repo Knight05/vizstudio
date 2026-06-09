@@ -1,3 +1,4 @@
+(function () {
 
 // ═══════════════════════════════════════════════════════════════
 // vizstudio landing — motion & charts (vanilla, no deps)
@@ -1133,3 +1134,4 @@ const tickerHTML = [...TICKER, ...TICKER].map((t, i) => `
   </span>`).join('');
 tickerTrack.innerHTML = tickerHTML;
 
+})();

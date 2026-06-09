@@ -1,4 +1,4 @@
-import Script from "next/script";
+import ClientScripts from "@/components/ClientScripts";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   "title": "vizstudio — 75+ premium Data Studio charts, easy to install",
@@ -39,14 +39,19 @@ export default function Page() {
       <link rel="stylesheet" href="/assets/forms.css" key="l4" />
       <style dangerouslySetInnerHTML={{ __html: STYLES }} />
       <div dangerouslySetInnerHTML={{ __html: BODY }} />
-      <Script src="/assets/gen/home-1.js" strategy="afterInteractive" key="s1" />
-      <Script src="/assets/gen/home-2.js" strategy="afterInteractive" key="s2" />
-      <Script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" strategy="afterInteractive" key="s3" />
-      <Script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js" strategy="afterInteractive" key="s4" />
-      <Script src="/assets/gen/home-5.js" strategy="afterInteractive" key="s5" />
-      <Script src="/assets/gen/home-6.js" strategy="afterInteractive" key="s6" />
-      <Script src="/assets/gen/home-7.js" strategy="afterInteractive" key="s7" />
-      <Script src="/assets/partials.js" strategy="afterInteractive" key="s8" />
+      <ClientScripts
+        srcs={[
+          "/assets/gen/home-1.js",
+          "/assets/gen/home-2.js",
+          "https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js",
+          "https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js",
+          "/assets/gen/home-5.js",
+          "/assets/gen/home-6.js",
+          "/assets/gen/home-7.js",
+          "/assets/forms.js",
+          "/assets/partials.js",
+        ]}
+      />
     </>
   );
 }

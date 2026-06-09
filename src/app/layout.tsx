@@ -5,15 +5,15 @@ import { TRPCProvider } from "@/trpc/provider";
 
 export const metadata: Metadata = {
   title: {
-    default: "Viz Studio — 118 community visualizations for Looker Studio",
+    default: "Viz Studio — 75+ community visualizations for Looker Studio",
     template: "%s · Viz Studio",
   },
   description:
-    "The most complete D3.js chart library for Google Looker Studio. 118 battle-tested visualizations — KPIs, time series, distributions, networks, and more. One subscription, every chart.",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"),
+    "The most complete D3.js chart library for Google Looker Studio. 75+ battle-tested visualizations — KPIs, time series, distributions, networks, and more. One subscription, every chart.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "https://vizstudio.io"),
   openGraph: {
     title: "Viz Studio",
-    description: "118 community visualizations for Looker Studio.",
+    description: "75+ community visualizations for Looker Studio.",
     type: "website",
     siteName: "Viz Studio",
   },

@@ -20,9 +20,21 @@ const FROM = process.env.RESEND_FROM ?? "Viz Studio <noreply@vizstudio.io>";
  * - Sessions stored in Postgres via Prisma adapter
  * - Transactional email via Resend (3000/mo free)
  */
+if (process.env.NODE_ENV === "production" && !process.env.BETTER_AUTH_SECRET) {
+  console.error(
+    "[auth] BETTER_AUTH_SECRET is not set in production — sessions are NOT safely signed. Set it in Vercel env immediately.",
+  );
+}
+
 export const auth = betterAuth({
   appName: "Viz Studio",
-  baseURL: process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
+  // Never fall back to localhost in production — a missing env var here
+  // previously broke prod signups (auth callbacks pointed at localhost).
+  baseURL:
+    process.env.NEXT_PUBLIC_APP_URL ??
+    (process.env.NODE_ENV === "production"
+      ? "https://vizstudio.io"
+      : "http://localhost:3000"),
   secret: process.env.BETTER_AUTH_SECRET,
 
   database: prismaAdapter(prisma, { provider: "postgresql" }),

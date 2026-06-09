@@ -2,30 +2,8 @@
 // Mount points expected: <div id="site-nav"></div>  and  <div id="site-footer"></div>
 // Edit the templates below to change the nav/footer everywhere on the site.
 
-// ── Preview password gate — remove before public launch ──────────────────
-(function () {
-  var PW = 'viz37', K = 'vz_gate_ok';
-  try { if (localStorage.getItem(K) === '1') return; } catch (e) { return; }
-  var p = prompt('This site is private. Enter password to view:');
-  while (p !== null && p !== PW) { p = prompt('Incorrect password. Try again:'); }
-  if (p === PW) { try { localStorage.setItem(K, '1'); } catch (e) {} return; }
-  document.write('<body style="margin:0;background:#0b0c14;color:#e7e7f0;font-family:Inter,system-ui,sans-serif;display:flex;align-items:center;justify-content:center;height:100vh"><div style="text-align:center"><h1 style="font-size:18px;margin:0 0 8px">Password required</h1><p style="opacity:.7;margin:0">Refresh the page to try again.</p></div></body>');
-  if (window.stop) window.stop();
-})();
-
-// ── Google Analytics 4 (gtag.js) — loaded on every page via this shared file
-(function () {
-  if (window.gtag) return; // already loaded inline on this page
-  var s = document.createElement('script');
-  s.async = true;
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PWF1TRML22';
-  document.head.appendChild(s);
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  window.gtag = gtag;
-  gtag('js', new Date());
-  gtag('config', 'G-PWF1TRML22');
-})();
+// NOTE: the preview password gate and GA4 init both live in src/app/layout.tsx
+// (single source of truth) — do not duplicate them here.
 
 (function () {
   // Compute the relative root prefix from the current page's path.
@@ -82,8 +60,8 @@
               ' vizstudio' +
             '</a>' +
             '<p>The premium chart library for Data Studio teams who care about how their data looks.</p>' +
-            '<form class="newsletter" onsubmit="event.preventDefault(); this.querySelector(\'input\').value=\'\'; this.querySelector(\'button\').textContent=\'✓ thanks\';">' +
-              '<input type="email" placeholder="you@company.com" required>' +
+            '<form class="newsletter" novalidate>' +
+              '<input type="email" name="email" placeholder="you@company.com" required>' +
               '<button type="submit">Subscribe</button>' +
             '</form>' +
           '</div>' +
@@ -140,5 +118,36 @@
   } else {
     mount('site-nav', NAV_HTML);
     mount('site-footer', FOOTER_HTML);
+  }
+
+  // Footer newsletter — real submit to /api/forms. Delegated on document so it
+  // works for the injected footer and survives SPA re-injection; the window
+  // flag prevents double-binding when this script re-runs.
+  if (!window.__vzNewsletterBound) {
+    window.__vzNewsletterBound = true;
+    document.addEventListener('submit', function (e) {
+      var form = e.target;
+      if (!form || !form.classList || !form.classList.contains('newsletter')) return;
+      e.preventDefault();
+      var input = form.querySelector('input[type="email"]');
+      var btn = form.querySelector('button');
+      var email = input && input.value ? input.value.trim() : '';
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        if (input) input.focus();
+        return;
+      }
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+      fetch('/api/forms', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ form: 'subscribe', email: email, source: location.pathname }),
+      }).then(function (r) {
+        if (!r.ok) throw new Error('status ' + r.status);
+        if (input) input.value = '';
+        if (btn) btn.textContent = '✓ thanks';
+      }).catch(function () {
+        if (btn) { btn.disabled = false; btn.textContent = 'Subscribe'; }
+      });
+    });
   }
 })();

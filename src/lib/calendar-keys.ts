@@ -94,7 +94,7 @@ async function appendRow(sheetId: string, tab: string, row: string[]): Promise<v
   const token = await getSheetsToken();
   const url =
     `${SHEETS_API}/${sheetId}/values/${encodeURIComponent(tab)}!A:E:append` +
-    `?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`;
+    `?valueInputOption=RAW&insertDataOption=INSERT_ROWS`;
   const res = await fetch(url, {
     method: "POST",
     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },

@@ -1,4 +1,4 @@
-import Script from "next/script";
+import ClientScripts from "@/components/ClientScripts";
 import type { Metadata } from "next";
 import { GetStartedForm } from "@/components/GetStartedForm";
 
@@ -28,7 +28,7 @@ export default function Page() {
       <GetStartedForm />
 
       {/* Nav/footer partials only. */}
-      <Script src="/assets/partials.js" strategy="afterInteractive" key="s2" />
+      <ClientScripts srcs={["/assets/partials.js"]} />
     </>
   );
 }

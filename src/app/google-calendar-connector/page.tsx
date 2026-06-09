@@ -1,4 +1,4 @@
-import Script from "next/script";
+import ClientScripts from "@/components/ClientScripts";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   "title": "Google Calendar Connector for Data Studio — vizstudio",
@@ -36,7 +36,7 @@ export default function Page() {
       <link rel="stylesheet" href="/assets/style.css" key="l4" />
       <style dangerouslySetInnerHTML={{ __html: STYLES }} />
       <div dangerouslySetInnerHTML={{ __html: BODY }} />
-      <Script src="/assets/partials.js" strategy="afterInteractive" key="s1" />
+      <ClientScripts srcs={["/assets/partials.js"]} />
     </>
   );
 }

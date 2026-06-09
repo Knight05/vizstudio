@@ -8,6 +8,11 @@ import { PortalClient } from "./portal-client";
 
 export const metadata = { title: "Client Portal" };
 
+// Concurrency guard: two parallel dashboard loads (double-click, reload during
+// the ~minute-long copy) must not provision two buckets for the same user.
+// Module-level map dedupes in-flight provisioning per warm instance.
+const inflightProvisioning = new Map<string, Promise<string>>();
+
 export default async function DashboardPage() {
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session?.user) redirect("/login?next=/dashboard");
@@ -36,12 +41,21 @@ export default async function DashboardPage() {
   let gcsBucket = user.gcsBucket;
   if (!gcsBucket && process.env.GCP_SERVICE_ACCOUNT_EMAIL) {
     try {
-      const company = user.company || user.name || user.email.split("@")[0];
-      gcsBucket = await provisionClientBucket(company);
-      await prisma.user.update({
-        where: { id: user.id },
-        data: { gcsBucket },
-      });
+      let job = inflightProvisioning.get(user.id);
+      if (!job) {
+        const company = user.company || user.name || user.email.split("@")[0];
+        job = provisionClientBucket(company)
+          .then(async (bucket) => {
+            await prisma.user.update({
+              where: { id: user.id },
+              data: { gcsBucket: bucket },
+            });
+            return bucket;
+          })
+          .finally(() => inflightProvisioning.delete(user.id));
+        inflightProvisioning.set(user.id, job);
+      }
+      gcsBucket = await job;
     } catch (err) {
       console.error(`[dashboard] bucket retry failed for ${user.email}:`, err);
     }
