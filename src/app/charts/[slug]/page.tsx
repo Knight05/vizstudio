@@ -302,33 +302,22 @@ export default async function ChartPage({
           <div className="wrap">
             <div className="section-eyebrow">Pricing</div>
             <h2 className="pricing-strip-title">Included in your vizstudio plan.</h2>
-            <div className="pricing-strip-card">
+            <div className="price-band">
               <div>
-                <div className="pricing-strip-prices">
-                  <span className="price">
-                    <span className="amount">$50</span>
-                    <span className="per">/ month</span>
-                  </span>
-                  <span className="or">or</span>
-                  <span className="price">
-                    <span className="amount">$500</span>
-                    <span className="per">/ year</span>
-                  </span>
+                <div className="amounts">
+                  <div className="amt"><span className="val">$50</span><span className="per">/ month</span></div>
+                  <div className="amt"><span className="or">or</span></div>
+                  <div className="amt"><span className="val">$500</span><span className="per">/ year</span></div>
                 </div>
-                <p className="pricing-strip-copy">
+                <p>
                   One plan, everything in it — the Google Calendar Connector plus
                   the full library of 75+ charts. No per-seat upcharges, no
                   metering. Build a real dashboard before you pay a cent.
                 </p>
               </div>
-              <div className="pricing-strip-right">
-                <a
-                  className="btn btn-primary pricing-strip-cta"
-                  href="/get-started"
-                >
-                  Start free →
-                </a>
-                <div className="pricing-strip-note">No credit card required.</div>
+              <div className="cta-side">
+                <a className="btn btn-primary" href="/get-started">Start free →</a>
+                <div className="micro">No credit card required.</div>
               </div>
             </div>
           </div>

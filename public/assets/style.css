@@ -761,24 +761,22 @@ footer .newsletter button { background: var(--accent-grad); color: white; border
 .footer-fallback a{color:inherit}
 .footer-fallback p{margin:8px 0 0}
 
-/* ── Chart page pricing strip (markup in charts/[slug]/page.tsx) ───────────── */
+
+/* ── Chart page pricing strip (matches calendar .price-band) ──────────────── */
 .pricing-strip { padding: 56px 0 76px; }
-.pricing-strip .section-eyebrow { margin-bottom: 10px; }
-.pricing-strip-title { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 22px; color: var(--text); }
-.pricing-strip-card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 18px;
-  padding: 32px; display: grid; grid-template-columns: 1.5fr 1fr; gap: 32px; align-items: center;
+.pricing-strip .section-eyebrow { margin-bottom: 8px; }
+.pricing-strip-title { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 18px; color: var(--text); }
+.price-band {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg, 16px);
+  padding: 32px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: center; margin-top: 8px;
 }
-.pricing-strip-prices { display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; }
-.pricing-strip-prices .price { display: inline-flex; align-items: baseline; gap: 6px; }
-.pricing-strip-prices .amount {
-  font-size: 40px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;
-  background: var(--accent-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: var(--acc, #8b5cf6);
-}
-.pricing-strip-prices .per { font-size: 14px; color: var(--text-dim); }
-.pricing-strip-prices .or { font-size: 14px; color: var(--muted, var(--text-dim)); }
-.pricing-strip-copy { color: var(--text-dim); font-size: 14.5px; line-height: 1.6; margin: 14px 0 0; max-width: 54ch; }
-.pricing-strip-right { text-align: center; }
-.pricing-strip-cta { width: 100%; justify-content: center; }
-.pricing-strip-note { margin-top: 10px; font-size: 12px; color: var(--text-dim); }
-@media (max-width: 760px) { .pricing-strip-card { grid-template-columns: 1fr; gap: 22px; } }
+.price-band .amounts { display: flex; gap: 28px; align-items: baseline; flex-wrap: wrap; }
+.price-band .amt { display: flex; align-items: baseline; gap: 6px; }
+.price-band .amt .val { font-size: 40px; font-weight: 700; letter-spacing: -0.03em; }
+.price-band .amt .per { color: var(--text-dim); font-size: 14px; }
+.price-band .amt .or { color: var(--muted, var(--text-dim)); font-size: 14px; }
+.price-band p { color: var(--text-dim); font-size: 14px; margin: 10px 0 0; }
+.price-band .cta-side { text-align: center; }
+.price-band .cta-side .btn { width: 100%; justify-content: center; }
+.price-band .cta-side .micro { margin-top: 10px; font-size: 12px; color: var(--text-dim); }
+@media (max-width: 760px) { .price-band { grid-template-columns: 1fr; gap: 22px; } }
