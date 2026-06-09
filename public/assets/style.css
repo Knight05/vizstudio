@@ -755,7 +755,9 @@ footer .newsletter button { background: var(--accent-grad); color: white; border
   width: 8px; height: 8px;
   border-radius: 50%;
   background: var(--accent-grad);
-  box-shadow: 0 0 12px rgba(139,92,246,0.7
+  box-shadow: 0 0 12px rgba(139,92,246,0.7);
+}
+
 /* no-JS fallback footer (replaced by partials.js at runtime) */
 .footer-fallback{padding:28px 20px;color:var(--muted,#6b718a);font-size:13px;text-align:center}
 .footer-fallback a{color:inherit}
