@@ -1,9 +1,9 @@
-// vizstudio — shared nav + footer partials
+// vizstudio - shared nav + footer partials
 // Mount points expected: <div id="site-nav"></div>  and  <div id="site-footer"></div>
 // Edit the templates below to change the nav/footer everywhere on the site.
 
 // NOTE: the preview password gate and GA4 init both live in src/app/layout.tsx
-// (single source of truth) — do not duplicate them here.
+// (single source of truth) - do not duplicate them here.
 
 (function () {
   // Compute the relative root prefix from the current page's path.
@@ -13,7 +13,7 @@
   var inCharts = /\/charts\//i.test(path);
   var root = inCharts ? '../' : '';
 
-  // Brand mark — webp logo file (matches the site accent gradient).
+  // Brand mark - webp logo file (matches the site accent gradient).
   var LOGO_SVG = '<img src="/logo.webp" alt="" width="24" height="24" loading="eager" decoding="async">';
   var LOGO_FOOTER = LOGO_SVG;
 
@@ -120,7 +120,7 @@
     mount('site-footer', FOOTER_HTML);
   }
 
-  // Footer newsletter — real submit to /api/forms. Delegated on document so it
+  // Footer newsletter - real submit to /api/forms. Delegated on document so it
   // works for the injected footer and survives SPA re-injection; the window
   // flag prevents double-binding when this script re-runs.
   if (!window.__vzNewsletterBound) {

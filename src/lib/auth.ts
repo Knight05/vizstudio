@@ -22,13 +22,13 @@ const FROM = process.env.RESEND_FROM ?? "Viz Studio <noreply@vizstudio.io>";
  */
 if (process.env.NODE_ENV === "production" && !process.env.BETTER_AUTH_SECRET) {
   console.error(
-    "[auth] BETTER_AUTH_SECRET is not set in production — sessions are NOT safely signed. Set it in Vercel env immediately.",
+    "[auth] BETTER_AUTH_SECRET is not set in production: sessions are NOT safely signed. Set it in Vercel env immediately.",
   );
 }
 
 export const auth = betterAuth({
   appName: "Viz Studio",
-  // Never fall back to localhost in production — a missing env var here
+  // Never fall back to localhost in production - a missing env var here
   // previously broke prod signups (auth callbacks pointed at localhost).
   baseURL:
     process.env.NEXT_PUBLIC_APP_URL ??
@@ -63,12 +63,12 @@ export const auth = betterAuth({
     enabled: true,
     requireEmailVerification: false, // flip to true once Resend is configured in prod
     // Signup must NOT create a session. The user has only a throwaway random
-    // password at this point — granting a session here would let them into the
+    // password at this point - granting a session here would let them into the
     // portal without ever setting a real one. They must follow the emailed
     // set-password link, then sign in with email + password.
     autoSignIn: false,
     minPasswordLength: 8,
-    // Signup never collects a password — the set-password email (reset flow)
+    // Signup never collects a password - the set-password email (reset flow)
     // doubles as email verification, so mark the address verified here.
     onPasswordReset: async ({ user }) => {
       await prisma.user.update({
@@ -108,7 +108,7 @@ export const auth = betterAuth({
 
   user: {
     additionalFields: {
-      // Client company name — drives the GCS bucket name on signup.
+      // Client company name - drives the GCS bucket name on signup.
       company: { type: "string", required: false, input: true },
       // Provisioned bucket (set server-side, never by the client).
       gcsBucket: { type: "string", required: false, input: false },

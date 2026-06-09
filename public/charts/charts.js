@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────
-// vizstudio.io — live chart renderers for detail pages
+// vizstudio.io - live chart renderers for detail pages
 // ─────────────────────────────────────────────────────────────
 // Each function takes { mount, width, height, data? } and renders
 // directly into the mount element. Color palette is OKLCH-based

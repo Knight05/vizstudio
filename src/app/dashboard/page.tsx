@@ -36,7 +36,7 @@ export default async function DashboardPage() {
   const tier = user.subscription?.tier ?? "FREE";
   const status = user.subscription?.status ?? "active";
 
-  // Signup provisioning can fail or lag — retry here so the client always
+  // Signup provisioning can fail or lag - retry here so the client always
   // ends up with their own bucket. Never expose the shared prod bucket.
   let gcsBucket = user.gcsBucket;
   if (!gcsBucket && process.env.GCP_SERVICE_ACCOUNT_EMAIL) {

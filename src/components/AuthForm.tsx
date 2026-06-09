@@ -46,7 +46,7 @@ const C = {
   } as React.CSSProperties,
 };
 
-/** Throwaway placeholder password — the user sets their real one via the
+/** Throwaway placeholder password - the user sets their real one via the
  *  emailed set-password link after verifying their address. */
 function generatePassword(): string {
   const bytes = new Uint8Array(24);
@@ -57,7 +57,7 @@ function generatePassword(): string {
 export function AuthForm({ mode }: { mode: "login" | "signup" }) {
   const router = useRouter();
   const params = useSearchParams();
-  // Only allow same-origin relative paths — blocks open redirect via ?next=
+  // Only allow same-origin relative paths - blocks open redirect via ?next=
   const rawNext = params.get("next") ?? "/dashboard";
   const next =
     rawNext.startsWith("/") && !rawNext.startsWith("//") && !rawNext.includes("\\")
@@ -191,7 +191,7 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
 
         {mode === "signup" && (
           <p style={{ fontSize: 12, color: "#9aa1c0", margin: 0, lineHeight: 1.5 }}>
-            No password needed yet — we&apos;ll email you a link to verify your
+            No password needed yet. We&apos;ll email you a link to verify your
             address and set one.
           </p>
         )}

@@ -3,22 +3,22 @@
     {
       "key": "kpi",
       "label": "KPI, Status & Goals",
-      "blurb": "Headline metrics, gauges, progress and traffic-light status — the answers stakeholders look for first."
+      "blurb": "Headline metrics, gauges, progress and traffic-light status, the answers stakeholders look for first."
     },
     {
       "key": "bars",
       "label": "Bars, Columns & Ranking",
-      "blurb": "Categorical comparison done right — single bars, grouped, mirrored, raced, and Pareto-sorted."
+      "blurb": "Categorical comparison done right: single bars, grouped, mirrored, raced, and Pareto-sorted."
     },
     {
       "key": "parts",
       "label": "Pies, Donuts & Part-to-Whole",
-      "blurb": "Share-of-total visualizations that don't feel like 2009 — multi-ring, semi-circle, variable radius."
+      "blurb": "Share-of-total visualizations that don't feel like 2009: multi-ring, semi-circle, variable radius."
     },
     {
       "key": "dist",
       "label": "Distribution & Statistical",
-      "blurb": "Where the data actually lives — beeswarm, hexbin, Q-Q, and waffle for proportion-by-count."
+      "blurb": "Where the data actually lives: beeswarm, hexbin, Q-Q, and waffle for proportion-by-count."
     },
     {
       "key": "scatter",
@@ -28,46 +28,46 @@
     {
       "key": "time",
       "label": "Time Series & Trends",
-      "blurb": "Movement over time — annotated lines, YoY overlays, streamgraphs, bump charts, animated races."
+      "blurb": "Movement over time: annotated lines, YoY overlays, streamgraphs, bump charts, animated races."
     },
     {
       "key": "flow",
       "label": "Networks, Flows & Relationships",
-      "blurb": "Who connects to whom, and how strongly — chord, sankey, arc, force, parallel sets, matrix."
+      "blurb": "Who connects to whom, and how strongly: chord, sankey, arc, force, parallel sets, matrix."
     },
     {
       "key": "geo",
       "label": "Maps & Geo",
-      "blurb": "Country, state, and point geography — tile choropleths, bubble maps, 3D orthographic globe."
+      "blurb": "Country, state, and point geography: tile choropleths, bubble maps, 3D orthographic globe."
     },
     {
       "key": "tree",
       "label": "Hierarchies & Drilldown",
-      "blurb": "Multi-level structure made interactive — sunburst, zoomable treemap, slice/dice, radial tree."
+      "blurb": "Multi-level structure made interactive: sunburst, zoomable treemap, slice/dice, radial tree."
     },
     {
       "key": "finance",
       "label": "Finance & Performance",
-      "blurb": "Earnings, cashflow, variance, break-even — the visuals an analyst will actually defend."
+      "blurb": "Earnings, cashflow, variance, break-even, the visuals an analyst will actually defend."
     },
     {
       "key": "combo",
       "label": "Tables, Calendars & Combo",
-      "blurb": "Dense data done well — comparison tables, calendar heatmaps, dual-axis, KPI sparklines."
+      "blurb": "Dense data done well: comparison tables, calendar heatmaps, dual-axis, KPI sparklines."
     }
   ],
   "charts": [
     {
       "id": "abtest-viz",
       "name": "A/B Test Results",
-      "tagline": "CI bars for A/B variants — significance baked in.",
-      "long": "Stop screenshotting your stats notebook. A/B Test Results renders each variant as a horizontal bar with confidence intervals, sample size, and a clear winner annotation — so PMs and execs read the same number you do.",
+      "tagline": "CI bars for A/B variants: significance baked in.",
+      "long": "Stop screenshotting your stats notebook. A/B Test Results renders each variant as a horizontal bar with confidence intervals, sample size, and a clear winner annotation, so PMs and execs read the same number you do.",
       "what": "Plots variant means with 95% CI whiskers, annotates statistically significant winners, and surfaces sample size + lift % on hover.",
       "why": "It moves the conversation from \"which one looks better?\" to \"which one is real?\" without a stats lecture.",
       "uses": [
         {
           "tag": "Growth",
-          "body": "Landing-page CTA test — show lift with confidence band, not a single number."
+          "body": "Landing-page CTA test: show lift with confidence band, not a single number."
         },
         {
           "tag": "Product",
@@ -93,31 +93,31 @@
         {
           "id": "curvedcol-animated-viz",
           "name": "Curved Columns (Animated + Zoom)",
-          "tagline": "Animated curved columns — bars that arc to draw the eye."
+          "tagline": "Animated curved columns: bars that arc to draw the eye."
         },
         {
           "id": "curvedcol-static-viz",
           "name": "Curved Columns (Static)",
-          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+          "tagline": "Curved columns, static, the still-frame version with the same elegance."
         },
         {
           "id": "dumbbell-viz",
           "name": "Dumbbell Chart",
-          "tagline": "Two dots, one line — every gap between A and B made obvious."
+          "tagline": "Two dots, one line: every gap between A and B made obvious."
         }
       ]
     },
     {
       "id": "analystratings-viz",
       "name": "Breakdown Chart",
-      "tagline": "Donut + progress bars for category breakdowns — the dominant slice highlighted automatically.",
+      "tagline": "Donut + progress bars for category breakdowns, the dominant slice highlighted automatically.",
       "long": "Breakdown Chart pairs a composite donut with horizontal progress bars so every category reads two ways: as a slice of the whole and as a value-vs-max bar. The dominant category gets an accent color so the headline lands in half a second.",
       "what": "Renders a center donut with category arcs, plus a stacked row of horizontal progress bars. Auto-detects the largest category and highlights it.",
       "why": "Two encodings (angle and length) for the same data lets the viewer pick whichever they read fastest. The auto-accent kills the \"so what?\" question.",
       "uses": [
         {
           "tag": "Finance",
-          "body": "Analyst rating distribution — Buy / Hold / Sell with the dominant call highlighted."
+          "body": "Analyst rating distribution: Buy / Hold / Sell with the dominant call highlighted."
         },
         {
           "tag": "Survey",
@@ -138,29 +138,29 @@
         {
           "id": "bulletchart-viz",
           "name": "Bullet Chart",
-          "tagline": "Stephen Few's gauge replacement — actual, target, and ranges in one bar."
+          "tagline": "Stephen Few's gauge replacement: actual, target, and ranges in one bar."
         },
         {
           "id": "kpisparkline-viz",
           "name": "KPI Sparkline Cards",
-          "tagline": "Headline numbers with trend lines baked in — the executive scorecard, refined."
+          "tagline": "Headline numbers with trend lines baked in, the executive scorecard, refined."
         },
         {
           "id": "progresscircles-viz",
           "name": "Progress Circles",
-          "tagline": "A row of donuts that each say \"X% done\" — instantly readable."
+          "tagline": "A row of donuts that each say \"X% done\": instantly readable."
         },
         {
           "id": "semicirclegauge-viz",
           "name": "Semicircle Gauge",
-          "tagline": "Half-circle gauge — same story, half the real estate."
+          "tagline": "Half-circle gauge: same story, half the real estate."
         }
       ]
     },
     {
       "id": "arcdiagram-viz",
       "name": "Arc Diagram",
-      "tagline": "Node-link arc diagram — relationships you can actually trace.",
+      "tagline": "Node-link arc diagram: relationships you can actually trace.",
       "long": "Arc Diagram lays nodes along a single axis and connects them with semi-circular arcs, with thickness encoding strength. It’s the cleanest way to show pairwise relationships when you don’t want a hairball.",
       "what": "Sorts nodes along a horizontal baseline, draws arcs above (and optionally below), scales nodes by degree, and supports source/target/single/gradient arc colors.",
       "why": "When force-directed graphs become noise, arcs let people read every connection in order. Hover to highlight a node's full ego network.",
@@ -188,32 +188,32 @@
         {
           "id": "audioverlap-viz",
           "name": "Audience Overlap",
-          "tagline": "Proportional circles for audience segments — overlaps you can see."
+          "tagline": "Proportional circles for audience segments: overlaps you can see."
         },
         {
           "id": "bipartite-viz",
           "name": "Bipartite Graph",
-          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+          "tagline": "Two columns, every link explicit: A-to-B relationships made obvious."
         },
         {
           "id": "chord-viz",
           "name": "Chord Diagram",
-          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+          "tagline": "Circular chord ribbons: every pairwise flow, perfectly weighted."
         },
         {
           "id": "connmap-viz",
           "name": "Connection Map",
-          "tagline": "Entity rows with bezier arcs — pairwise strength, sorted."
+          "tagline": "Entity rows with bezier arcs: pairwise strength, sorted."
         }
       ]
     },
     {
       "id": "audioverlap-viz",
       "name": "Audience Overlap",
-      "tagline": "Proportional circles for audience segments — overlaps you can see.",
-      "long": "Audience Overlap draws each segment as a circle sized by population, then overlaps shared members so intersections are visible at a glance. Stop counting in spreadsheets — let the geometry do the work.",
+      "tagline": "Proportional circles for audience segments: overlaps you can see.",
+      "long": "Audience Overlap draws each segment as a circle sized by population, then overlaps shared members so intersections are visible at a glance. Stop counting in spreadsheets: let the geometry do the work.",
       "what": "Renders sized circles per segment with overlap regions weighted by shared members; tooltips show counts and overlap %.",
-      "why": "Reveals \"too much overlap\" segments before a campaign goes out — your CRM team’s favorite new chart.",
+      "why": "Reveals \"too much overlap\" segments before a campaign goes out, your CRM team’s favorite new chart.",
       "uses": [
         {
           "tag": "Marketing",
@@ -221,7 +221,7 @@
         },
         {
           "tag": "Product",
-          "body": "Cohort intersection — Pro AND Mobile AND Daily users."
+          "body": "Cohort intersection: Pro AND Mobile AND Daily users."
         },
         {
           "tag": "Ads",
@@ -238,22 +238,22 @@
         {
           "id": "arcdiagram-viz",
           "name": "Arc Diagram",
-          "tagline": "Node-link arc diagram — relationships you can actually trace."
+          "tagline": "Node-link arc diagram: relationships you can actually trace."
         },
         {
           "id": "bipartite-viz",
           "name": "Bipartite Graph",
-          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+          "tagline": "Two columns, every link explicit: A-to-B relationships made obvious."
         },
         {
           "id": "chord-viz",
           "name": "Chord Diagram",
-          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+          "tagline": "Circular chord ribbons: every pairwise flow, perfectly weighted."
         },
         {
           "id": "connmap-viz",
           "name": "Connection Map",
-          "tagline": "Entity rows with bezier arcs — pairwise strength, sorted."
+          "tagline": "Entity rows with bezier arcs: pairwise strength, sorted."
         }
       ]
     },
@@ -261,9 +261,9 @@
       "id": "barrace-viz",
       "name": "Animated Bar Race",
       "tagline": "The animated bar chart race that wins every monthly review.",
-      "long": "Animated Bar Race transitions a ranked bar chart smoothly across time — top categories climb, fall, and overtake each other with watermark labels for context. Built for screen-recording, demos, and that one slide everyone remembers.",
+      "long": "Animated Bar Race transitions a ranked bar chart smoothly across time: top categories climb, fall, and overtake each other with watermark labels for context. Built for screen-recording, demos, and that one slide everyone remembers.",
       "what": "Smoothly interpolated horizontal bars per time step, with auto-ranking, watermark time labels, customizable color, and play/pause controls.",
-      "why": "Static rankings are forgettable. A race is memorable — and it’s the only way to *feel* a category overtake another.",
+      "why": "Static rankings are forgettable. A race is memorable, and it’s the only way to *feel* a category overtake another.",
       "uses": [
         {
           "tag": "Marketing",
@@ -288,36 +288,36 @@
         {
           "id": "abtest-viz",
           "name": "A/B Test Results",
-          "tagline": "CI bars for A/B variants — significance baked in."
+          "tagline": "CI bars for A/B variants: significance baked in."
         },
         {
           "id": "curvedcol-animated-viz",
           "name": "Curved Columns (Animated + Zoom)",
-          "tagline": "Animated curved columns — bars that arc to draw the eye."
+          "tagline": "Animated curved columns: bars that arc to draw the eye."
         },
         {
           "id": "curvedcol-static-viz",
           "name": "Curved Columns (Static)",
-          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+          "tagline": "Curved columns, static, the still-frame version with the same elegance."
         },
         {
           "id": "dumbbell-viz",
           "name": "Dumbbell Chart",
-          "tagline": "Two dots, one line — every gap between A and B made obvious."
+          "tagline": "Two dots, one line: every gap between A and B made obvious."
         }
       ]
     },
     {
       "id": "beeswarm-viz",
       "name": "Beeswarm / Swarm Plot",
-      "tagline": "Every individual point, no overlap — distributions that boxplots hide.",
-      "long": "Beeswarm plots every record as a circle along one axis, using force collision so points sit next to each other instead of stacking. You see the true shape of the distribution — the gaps, the clumps, the long tail.",
+      "tagline": "Every individual point, no overlap: distributions that boxplots hide.",
+      "long": "Beeswarm plots every record as a circle along one axis, using force collision so points sit next to each other instead of stacking. You see the true shape of the distribution, the gaps, the clumps, the long tail.",
       "what": "Force-positions individual data points along an axis with collision detection. Optional grouping by dimension and sizing by a second metric.",
-      "why": "Box plots and violins smooth away the story. Beeswarm shows every customer, every deal, every order — including the ones you’ll want to investigate.",
+      "why": "Box plots and violins smooth away the story. Beeswarm shows every customer, every deal, every order: including the ones you’ll want to investigate.",
       "uses": [
         {
           "tag": "Sales",
-          "body": "Deal size by rep — see whose pipeline is bimodal."
+          "body": "Deal size by rep: see whose pipeline is bimodal."
         },
         {
           "tag": "HR",
@@ -338,22 +338,22 @@
         {
           "id": "hexbindensity-viz",
           "name": "Hexbin Density Plot",
-          "tagline": "Hexagonal density plot — same hex grid, focused on point density."
+          "tagline": "Hexagonal density plot: same hex grid, focused on point density."
         },
         {
           "id": "qq-viz",
           "name": "Q-Q Plot",
-          "tagline": "Q-Q plot — does this distribution match the one you expect?"
+          "tagline": "Q-Q plot: does this distribution match the one you expect?"
         }
       ]
     },
     {
       "id": "bigcalendar-viz",
       "name": "Big Calendar",
-      "tagline": "Full calendar grid — event volume painted across every cell.",
-      "long": "Big Calendar lays out a month or year as a heat-tinted grid, with each day colored by your metric. It’s the dashboard equivalent of leaving a wall calendar open — instantly readable, no axis required.",
+      "tagline": "Full calendar grid: event volume painted across every cell.",
+      "long": "Big Calendar lays out a month or year as a heat-tinted grid, with each day colored by your metric. It’s the dashboard equivalent of leaving a wall calendar open: instantly readable, no axis required.",
       "what": "Renders a full calendar grid (month or year), tints each day cell by a metric, supports tooltips, and cross-filters to the rest of the page.",
-      "why": "Time-of-week and time-of-year patterns jump out — the Tuesday slump, the Black Friday spike, the December lull.",
+      "why": "Time-of-week and time-of-year patterns jump out, the Tuesday slump, the Black Friday spike, the December lull.",
       "uses": [
         {
           "tag": "Ecommerce",
@@ -378,30 +378,30 @@
         {
           "id": "calendarHeatmap",
           "name": "Mini Calendar",
-          "tagline": "Compact monthly calendar — one cell, one number, instant pattern."
+          "tagline": "Compact monthly calendar: one cell, one number, instant pattern."
         },
         {
           "id": "convheatmap-viz",
           "name": "Conversion Heatmap",
-          "tagline": "Day-of-week × hour heatmap — when your audience actually shows up."
+          "tagline": "Day-of-week × hour heatmap: when your audience actually shows up."
         },
         {
           "id": "datatable-viz",
           "name": "Row Over Row Comparison Table",
-          "tagline": "Row over row — DoD / MoM / YoY comparison table with deltas and % change."
+          "tagline": "Row over row: DoD / MoM / YoY comparison table with deltas and % change."
         },
         {
           "id": "engageheatmap-viz",
           "name": "Engagement Heatmap",
-          "tagline": "Row × column matrix — normalize how you want, color tells the story."
+          "tagline": "Row × column matrix: normalize how you want, color tells the story."
         }
       ]
     },
     {
       "id": "bipartite-viz",
       "name": "Bipartite Graph",
-      "tagline": "Two columns, every link explicit — A-to-B relationships made obvious.",
-      "long": "Bipartite Graph stacks two node groups in parallel columns and draws every link between them. When you have a clean A-side and B-side relationship — customer-to-product, user-to-feature, doctor-to-prescription — bipartite reads in seconds.",
+      "tagline": "Two columns, every link explicit: A-to-B relationships made obvious.",
+      "long": "Bipartite Graph stacks two node groups in parallel columns and draws every link between them. When you have a clean A-side and B-side relationship (customer-to-product, user-to-feature, doctor-to-prescription), bipartite reads in seconds.",
       "what": "Two parallel columns of labeled nodes with weighted links connecting the sides; hover-highlight an ego network.",
       "why": "Cleaner than a force graph when the structure is genuinely two-sided.",
       "uses": [
@@ -428,30 +428,30 @@
         {
           "id": "arcdiagram-viz",
           "name": "Arc Diagram",
-          "tagline": "Node-link arc diagram — relationships you can actually trace."
+          "tagline": "Node-link arc diagram: relationships you can actually trace."
         },
         {
           "id": "audioverlap-viz",
           "name": "Audience Overlap",
-          "tagline": "Proportional circles for audience segments — overlaps you can see."
+          "tagline": "Proportional circles for audience segments: overlaps you can see."
         },
         {
           "id": "chord-viz",
           "name": "Chord Diagram",
-          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+          "tagline": "Circular chord ribbons: every pairwise flow, perfectly weighted."
         },
         {
           "id": "connmap-viz",
           "name": "Connection Map",
-          "tagline": "Entity rows with bezier arcs — pairwise strength, sorted."
+          "tagline": "Entity rows with bezier arcs: pairwise strength, sorted."
         }
       ]
     },
     {
       "id": "breakeven-viz",
       "name": "Break-Even Chart",
-      "tagline": "Fixed cost, variable cost, revenue — and the exact unit where they cross.",
-      "long": "Break-Even Chart layers fixed cost, total cost, and revenue lines and annotates the crossover point with the break-even volume. It’s the chart every finance class teaches and every spreadsheet hides — finally first-class in your dashboard.",
+      "tagline": "Fixed cost, variable cost, revenue, and the exact unit where they cross.",
+      "long": "Break-Even Chart layers fixed cost, total cost, and revenue lines and annotates the crossover point with the break-even volume. It’s the chart every finance class teaches and every spreadsheet hides: finally first-class in your dashboard.",
       "what": "Plots fixed cost (horizontal), total cost, and revenue lines on shared axes; annotates the intersection with units and dollars.",
       "why": "Frees the break-even conversation from a static Excel cell. Live-update by tweaking inputs in your source.",
       "uses": [
@@ -465,7 +465,7 @@
         },
         {
           "tag": "Pricing",
-          "body": "New tier launch — units to recoup engineering cost."
+          "body": "New tier launch: units to recoup engineering cost."
         }
       ],
       "keywords": "break-even analysis chart, fixed cost variable cost visualization, Data Studio finance chart",
@@ -478,24 +478,24 @@
         {
           "id": "cashflow-viz",
           "name": "Cashflow",
-          "tagline": "Income up, expense down — the zero line tells the story."
+          "tagline": "Income up, expense down, the zero line tells the story."
         },
         {
           "id": "earningsdot-viz",
           "name": "Actual Over Target Dot Chart",
-          "tagline": "Actual over target dots — beats and misses, colored automatically."
+          "tagline": "Actual over target dots: beats and misses, colored automatically."
         },
         {
           "id": "revenuebreakdown-viz",
           "name": "Revenue Breakdown (Bar + Line Combo)",
-          "tagline": "Revenue mix bars + margin line — the public-company readout view."
+          "tagline": "Revenue mix bars + margin line, the public-company readout view."
         }
       ]
     },
     {
       "id": "bubble-viz",
       "name": "Bubble Chart",
-      "tagline": "X × Y × size — three metrics, one chart, zero squinting.",
+      "tagline": "X × Y × size: three metrics, one chart, zero squinting.",
       "long": "Bubble Chart encodes a third metric as circle size on top of a standard scatter, with optional category color. It’s the workhorse for any \"big and growing\" / \"small and shrinking\" story.",
       "what": "Renders circles sized by a third metric on x/y axes, with optional category coloring, hover tooltip, and click-to-filter.",
       "why": "Adds a magnitude dimension without forcing a second chart. The eye reads area and position simultaneously.",
@@ -523,32 +523,32 @@
         {
           "id": "bubblegrid",
           "name": "Bubble Grid",
-          "tagline": "A grid of bubbles — counts and magnitudes across two categorical axes."
+          "tagline": "A grid of bubbles: counts and magnitudes across two categorical axes."
         },
         {
           "id": "hexbin-viz",
           "name": "Hexbin Scatter",
-          "tagline": "Hexagonal density — scatter plots that survive 100k points."
+          "tagline": "Hexagonal density: scatter plots that survive 100k points."
         },
         {
           "id": "quadrant-viz",
           "name": "Quadrant Scatter",
-          "tagline": "Four-quadrant scatter — the strategy chart you've drawn on whiteboards."
+          "tagline": "Four-quadrant scatter, the strategy chart you've drawn on whiteboards."
         },
         {
           "id": "scattertrend-viz",
           "name": "Scatter Plot with Trendline",
-          "tagline": "Scatter with a fitted trend line — correlation without the chart-junk."
+          "tagline": "Scatter with a fitted trend line: correlation without the chart-junk."
         }
       ]
     },
     {
       "id": "bubblegrid",
       "name": "Bubble Grid",
-      "tagline": "A grid of bubbles — counts and magnitudes across two categorical axes.",
-      "long": "Bubble Grid arranges sized circles on a discrete row × column grid, perfect when both axes are categorical (region × product, stage × source). It’s a heatmap that uses area instead of opacity — and it always looks deliberate.",
+      "tagline": "A grid of bubbles: counts and magnitudes across two categorical axes.",
+      "long": "Bubble Grid arranges sized circles on a discrete row × column grid, perfect when both axes are categorical (region × product, stage × source). It’s a heatmap that uses area instead of opacity, and it always looks deliberate.",
       "what": "Rows × columns of bubbles, area-sized by the metric, optional color encoding for a secondary metric.",
-      "why": "Reads denser than a heatmap when the value range is wide — the eye can compare areas across the grid even when small.",
+      "why": "Reads denser than a heatmap when the value range is wide, the eye can compare areas across the grid even when small.",
       "uses": [
         {
           "tag": "SaaS",
@@ -573,29 +573,29 @@
         {
           "id": "bubble-viz",
           "name": "Bubble Chart",
-          "tagline": "X × Y × size — three metrics, one chart, zero squinting."
+          "tagline": "X × Y × size: three metrics, one chart, zero squinting."
         },
         {
           "id": "hexbin-viz",
           "name": "Hexbin Scatter",
-          "tagline": "Hexagonal density — scatter plots that survive 100k points."
+          "tagline": "Hexagonal density: scatter plots that survive 100k points."
         },
         {
           "id": "quadrant-viz",
           "name": "Quadrant Scatter",
-          "tagline": "Four-quadrant scatter — the strategy chart you've drawn on whiteboards."
+          "tagline": "Four-quadrant scatter, the strategy chart you've drawn on whiteboards."
         },
         {
           "id": "scattertrend-viz",
           "name": "Scatter Plot with Trendline",
-          "tagline": "Scatter with a fitted trend line — correlation without the chart-junk."
+          "tagline": "Scatter with a fitted trend line: correlation without the chart-junk."
         }
       ]
     },
     {
       "id": "bubblemap-viz",
       "name": "Bubble Map",
-      "tagline": "Packed bubbles, sized by a metric — every category, no axis tax.",
+      "tagline": "Packed bubbles, sized by a metric: every category, no axis tax.",
       "long": "Bubble Map packs every category into a tight cluster of circles sized by your metric. With packed, force-directed, and grid layouts, plus gradient/single/series colors, it’s the catch-all for \"show me everything, biggest to smallest.\"",
       "what": "Three layouts (packed, force, grid), three color modes (single, gradient, series), with inside/outside labels, tooltips, and click-to-cross-filter.",
       "why": "Bar charts run out of room past 30 categories. Bubble map keeps reading well at 200.",
@@ -623,26 +623,26 @@
         {
           "id": "choropleth-viz",
           "name": "Choropleth Map",
-          "tagline": "Tile-grid map — every state or country, no projection pain."
+          "tagline": "Tile-grid map: every state or country, no projection pain."
         },
         {
           "id": "interactiveGlobe-viz",
           "name": "Interactive 3D Globe",
-          "tagline": "Real country polygons, drag-to-rotate, auto-spin, atmosphere glow — the 3D world your dashboard actually needs."
+          "tagline": "Real country polygons, drag-to-rotate, auto-spin, atmosphere glow, the 3D world your dashboard actually needs."
         }
       ]
     },
     {
       "id": "bulletchart-viz",
       "name": "Bullet Chart",
-      "tagline": "Stephen Few's gauge replacement — actual, target, and ranges in one bar.",
-      "long": "Bullet Chart packs four data points — actual, target, qualitative ranges, and an optional comparative measure — into a compact horizontal bar. Designed to replace fluffy speedometers with dense, scannable performance bars.",
+      "tagline": "Stephen Few's gauge replacement: actual, target, and ranges in one bar.",
+      "long": "Bullet Chart packs four data points (actual, target, qualitative ranges, and an optional comparative measure) into a compact horizontal bar. Designed to replace fluffy speedometers with dense, scannable performance bars.",
       "what": "Filled actual bar over banded ranges (poor / satisfactory / good), with a perpendicular tick for target and an optional comparative marker.",
       "why": "More information per pixel than any gauge. Once teams adopt it, they don’t go back.",
       "uses": [
         {
           "tag": "Exec",
-          "body": "Quarterly KPI scorecard — one bullet per KPI with target and good/poor bands."
+          "body": "Quarterly KPI scorecard: one bullet per KPI with target and good/poor bands."
         },
         {
           "tag": "Sales",
@@ -650,7 +650,7 @@
         },
         {
           "tag": "Ops",
-          "body": "SLA performance — actual against target band."
+          "body": "SLA performance: actual against target band."
         }
       ],
       "keywords": "bullet chart Data Studio, Stephen Few KPI chart, target vs actual bar",
@@ -663,30 +663,30 @@
         {
           "id": "analystratings-viz",
           "name": "Breakdown Chart",
-          "tagline": "Donut + progress bars for category breakdowns — the dominant slice highlighted automatically."
+          "tagline": "Donut + progress bars for category breakdowns, the dominant slice highlighted automatically."
         },
         {
           "id": "kpisparkline-viz",
           "name": "KPI Sparkline Cards",
-          "tagline": "Headline numbers with trend lines baked in — the executive scorecard, refined."
+          "tagline": "Headline numbers with trend lines baked in, the executive scorecard, refined."
         },
         {
           "id": "progresscircles-viz",
           "name": "Progress Circles",
-          "tagline": "A row of donuts that each say \"X% done\" — instantly readable."
+          "tagline": "A row of donuts that each say \"X% done\": instantly readable."
         },
         {
           "id": "semicirclegauge-viz",
           "name": "Semicircle Gauge",
-          "tagline": "Half-circle gauge — same story, half the real estate."
+          "tagline": "Half-circle gauge: same story, half the real estate."
         }
       ]
     },
     {
       "id": "bump-viz",
       "name": "Bump Chart",
-      "tagline": "Rank-over-time line chart — who's climbing, who's sliding.",
-      "long": "Bump Chart connects each category’s rank at every time step with a colored line. The eye follows the line — overtakes, slides, and surprises all read instantly. The animated cousin of a bar race, but every period on screen at once.",
+      "tagline": "Rank-over-time line chart: who's climbing, who's sliding.",
+      "long": "Bump Chart connects each category’s rank at every time step with a colored line. The eye follows the line: overtakes, slides, and surprises all read instantly. The animated cousin of a bar race, but every period on screen at once.",
       "what": "Plots category rank over time as smooth lines, with consistent per-category color, tooltips, and optional value labels at endpoints.",
       "why": "Lines that cross are inherently storyable. Better than a stacked area when the categorical order matters.",
       "uses": [
@@ -713,12 +713,12 @@
         {
           "id": "dualaxis-viz",
           "name": "Chart Title",
-          "tagline": "Two metrics, two scales, one line of sight — without the lie factor."
+          "tagline": "Two metrics, two scales, one line of sight: without the lie factor."
         },
         {
           "id": "stackedarea-viz",
           "name": "Stacked Area Chart",
-          "tagline": "Stacked area over time — composition and trend on the same canvas."
+          "tagline": "Stacked area over time: composition and trend on the same canvas."
         },
         {
           "id": "stackedneg-animated-viz",
@@ -728,15 +728,15 @@
         {
           "id": "stackedneg-viz",
           "name": "Stacked Bar Chart with Negative Values (Static)",
-          "tagline": "Stacked bars with negative values — wins above, losses below, total preserved."
+          "tagline": "Stacked bars with negative values: wins above, losses below, total preserved."
         }
       ]
     },
     {
       "id": "calendarHeatmap",
       "name": "Mini Calendar",
-      "tagline": "Compact monthly calendar — one cell, one number, instant pattern.",
-      "long": "Mini Calendar gives you a tight monthly grid with cells tinted by your metric — perfect for a small slot on a dashboard where a full calendar would dominate. Click a cell to cross-filter the rest of the page.",
+      "tagline": "Compact monthly calendar: one cell, one number, instant pattern.",
+      "long": "Mini Calendar gives you a tight monthly grid with cells tinted by your metric: perfect for a small slot on a dashboard where a full calendar would dominate. Click a cell to cross-filter the rest of the page.",
       "what": "Compact monthly calendar with metric-tinted cells, tooltip on hover, cross-filter on click, and optional event highlighting.",
       "why": "Day-of-week effects are visible without a full year heatmap.",
       "uses": [
@@ -763,36 +763,36 @@
         {
           "id": "bigcalendar-viz",
           "name": "Big Calendar",
-          "tagline": "Full calendar grid — event volume painted across every cell."
+          "tagline": "Full calendar grid: event volume painted across every cell."
         },
         {
           "id": "convheatmap-viz",
           "name": "Conversion Heatmap",
-          "tagline": "Day-of-week × hour heatmap — when your audience actually shows up."
+          "tagline": "Day-of-week × hour heatmap: when your audience actually shows up."
         },
         {
           "id": "datatable-viz",
           "name": "Row Over Row Comparison Table",
-          "tagline": "Row over row — DoD / MoM / YoY comparison table with deltas and % change."
+          "tagline": "Row over row: DoD / MoM / YoY comparison table with deltas and % change."
         },
         {
           "id": "engageheatmap-viz",
           "name": "Engagement Heatmap",
-          "tagline": "Row × column matrix — normalize how you want, color tells the story."
+          "tagline": "Row × column matrix: normalize how you want, color tells the story."
         }
       ]
     },
     {
       "id": "cashflow-viz",
       "name": "Cashflow",
-      "tagline": "Income up, expense down — the zero line tells the story.",
+      "tagline": "Income up, expense down, the zero line tells the story.",
       "long": "Cashflow is a mirror bar chart: income bars rise above the baseline, expenses drop below. A bold KPI header sums the net balance, theme-aware colors keep the canvas clean, and label-fit logic handles dense monthly time axes automatically.",
       "what": "Mirror bars around a zero baseline for one period dimension and two metrics (Income, Expense). Includes net-balance KPI header, legend, tooltip, cross-filter, theme-aware colors, compact number formatting.",
       "why": "Net cashflow narratives need both the magnitude and the polarity in one read. A mirror bar gives both, plus the implicit \"are we in the black?\" via the zero line.",
       "uses": [
         {
           "tag": "Finance",
-          "body": "Monthly P&L — revenue up, opex down, net delta at top."
+          "body": "Monthly P&L: revenue up, opex down, net delta at top."
         },
         {
           "tag": "SaaS",
@@ -813,24 +813,24 @@
         {
           "id": "breakeven-viz",
           "name": "Break-Even Chart",
-          "tagline": "Fixed cost, variable cost, revenue — and the exact unit where they cross."
+          "tagline": "Fixed cost, variable cost, revenue, and the exact unit where they cross."
         },
         {
           "id": "earningsdot-viz",
           "name": "Actual Over Target Dot Chart",
-          "tagline": "Actual over target dots — beats and misses, colored automatically."
+          "tagline": "Actual over target dots: beats and misses, colored automatically."
         },
         {
           "id": "revenuebreakdown-viz",
           "name": "Revenue Breakdown (Bar + Line Combo)",
-          "tagline": "Revenue mix bars + margin line — the public-company readout view."
+          "tagline": "Revenue mix bars + margin line, the public-company readout view."
         }
       ]
     },
     {
       "id": "choropleth-viz",
       "name": "Choropleth Map",
-      "tagline": "Tile-grid map — every state or country, no projection pain.",
+      "tagline": "Tile-grid map: every state or country, no projection pain.",
       "long": "Choropleth Map ditches the wonky shapefile rendering and lays out US states or world countries as a tile grid. Sequential, diverging, or binned color scales; square, rounded, hex, or circular tiles. Click a tile to cross-filter the page.",
       "what": "Accepts state abbreviations/names or ISO-2/ISO-3 country codes. Sequential/diverging/binned color, tile shape options, legend positioning, tooltip metric, cross-filter on click.",
       "why": "Real-world map projections under-represent small dense states (hello, RI) and over-emphasize large empty ones. Tile grids give every entity equal voice.",
@@ -858,26 +858,26 @@
         {
           "id": "bubblemap-viz",
           "name": "Bubble Map",
-          "tagline": "Packed bubbles, sized by a metric — every category, no axis tax."
+          "tagline": "Packed bubbles, sized by a metric: every category, no axis tax."
         },
         {
           "id": "interactiveGlobe-viz",
           "name": "Interactive 3D Globe",
-          "tagline": "Real country polygons, drag-to-rotate, auto-spin, atmosphere glow — the 3D world your dashboard actually needs."
+          "tagline": "Real country polygons, drag-to-rotate, auto-spin, atmosphere glow, the 3D world your dashboard actually needs."
         }
       ]
     },
     {
       "id": "chord-viz",
       "name": "Chord Diagram",
-      "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted.",
-      "long": "Chord Diagram is the chart for symmetric relationship matrices — co-purchase, origin↔destination, referral↔conversion. Categorical arcs sit around a ring, ribbons connect them with width = flow magnitude.",
+      "tagline": "Circular chord ribbons: every pairwise flow, perfectly weighted.",
+      "long": "Chord Diagram is the chart for symmetric relationship matrices: co-purchase, origin↔destination, referral↔conversion. Categorical arcs sit around a ring, ribbons connect them with width = flow magnitude.",
       "what": "Directed (Source→Target) or undirected modes, sortable groups (alphabetical / by total / data order), per-group palette, ribbon color source (source/target/larger), hover highlighting, configurable tooltip + cross-filter.",
-      "why": "Sankey is for left-to-right flow. Chord is for circular, symmetric flow — and looks elegant at a glance.",
+      "why": "Sankey is for left-to-right flow. Chord is for circular, symmetric flow, and looks elegant at a glance.",
       "uses": [
         {
           "tag": "Ecom",
-          "body": "Co-purchase matrix — which categories sell together."
+          "body": "Co-purchase matrix, which categories sell together."
         },
         {
           "tag": "Travel",
@@ -898,32 +898,32 @@
         {
           "id": "arcdiagram-viz",
           "name": "Arc Diagram",
-          "tagline": "Node-link arc diagram — relationships you can actually trace."
+          "tagline": "Node-link arc diagram: relationships you can actually trace."
         },
         {
           "id": "audioverlap-viz",
           "name": "Audience Overlap",
-          "tagline": "Proportional circles for audience segments — overlaps you can see."
+          "tagline": "Proportional circles for audience segments: overlaps you can see."
         },
         {
           "id": "bipartite-viz",
           "name": "Bipartite Graph",
-          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+          "tagline": "Two columns, every link explicit: A-to-B relationships made obvious."
         },
         {
           "id": "connmap-viz",
           "name": "Connection Map",
-          "tagline": "Entity rows with bezier arcs — pairwise strength, sorted."
+          "tagline": "Entity rows with bezier arcs: pairwise strength, sorted."
         }
       ]
     },
     {
       "id": "connmap-viz",
       "name": "Connection Map",
-      "tagline": "Entity rows with bezier arcs — pairwise strength, sorted.",
+      "tagline": "Entity rows with bezier arcs: pairwise strength, sorted.",
       "long": "Connection Map lists entities as horizontal rows and draws bezier arcs between them, with arc thickness = connection strength. When you want a chord diagram but with searchable, sortable rows down the side, this is it.",
       "what": "Vertical entity list with bezier arcs across, sorted by total strength, with hover and cross-filter.",
-      "why": "Easier to scan than a chord ring when entity names matter — labels stay readable.",
+      "why": "Easier to scan than a chord ring when entity names matter: labels stay readable.",
       "uses": [
         {
           "tag": "Sales",
@@ -948,36 +948,36 @@
         {
           "id": "arcdiagram-viz",
           "name": "Arc Diagram",
-          "tagline": "Node-link arc diagram — relationships you can actually trace."
+          "tagline": "Node-link arc diagram: relationships you can actually trace."
         },
         {
           "id": "audioverlap-viz",
           "name": "Audience Overlap",
-          "tagline": "Proportional circles for audience segments — overlaps you can see."
+          "tagline": "Proportional circles for audience segments: overlaps you can see."
         },
         {
           "id": "bipartite-viz",
           "name": "Bipartite Graph",
-          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+          "tagline": "Two columns, every link explicit: A-to-B relationships made obvious."
         },
         {
           "id": "chord-viz",
           "name": "Chord Diagram",
-          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+          "tagline": "Circular chord ribbons: every pairwise flow, perfectly weighted."
         }
       ]
     },
     {
       "id": "convheatmap-viz",
       "name": "Conversion Heatmap",
-      "tagline": "Day-of-week × hour heatmap — when your audience actually shows up.",
+      "tagline": "Day-of-week × hour heatmap: when your audience actually shows up.",
       "long": "Conversion Heatmap maps a metric across a 7-day × 24-hour grid, surfacing peaks and dead zones without a single date filter. The defining chart for content scheduling, support staffing, and ad timing.",
       "what": "7 × 24 grid of cells tinted by your metric (conversion %, count, revenue), with axis labels, tooltip, and cross-filter on click.",
-      "why": "Aggregates time-of-day behavior so the patterns leap out — Tuesday at 2pm vs Saturday at 10am, instantly comparable.",
+      "why": "Aggregates time-of-day behavior so the patterns leap out: Tuesday at 2pm vs Saturday at 10am, instantly comparable.",
       "uses": [
         {
           "tag": "Ecom",
-          "body": "Conversion rate by hour and weekday — schedule promos to peaks."
+          "body": "Conversion rate by hour and weekday: schedule promos to peaks."
         },
         {
           "tag": "Support",
@@ -998,32 +998,32 @@
         {
           "id": "bigcalendar-viz",
           "name": "Big Calendar",
-          "tagline": "Full calendar grid — event volume painted across every cell."
+          "tagline": "Full calendar grid: event volume painted across every cell."
         },
         {
           "id": "calendarHeatmap",
           "name": "Mini Calendar",
-          "tagline": "Compact monthly calendar — one cell, one number, instant pattern."
+          "tagline": "Compact monthly calendar: one cell, one number, instant pattern."
         },
         {
           "id": "datatable-viz",
           "name": "Row Over Row Comparison Table",
-          "tagline": "Row over row — DoD / MoM / YoY comparison table with deltas and % change."
+          "tagline": "Row over row: DoD / MoM / YoY comparison table with deltas and % change."
         },
         {
           "id": "engageheatmap-viz",
           "name": "Engagement Heatmap",
-          "tagline": "Row × column matrix — normalize how you want, color tells the story."
+          "tagline": "Row × column matrix: normalize how you want, color tells the story."
         }
       ]
     },
     {
       "id": "curvedcol-animated-viz",
       "name": "Curved Columns (Animated + Zoom)",
-      "tagline": "Animated curved columns — bars that arc to draw the eye.",
+      "tagline": "Animated curved columns: bars that arc to draw the eye.",
       "long": "Curved Columns (Animated + Zoom) renders categorical bars as smooth arcs instead of straight verticals. Add animated entrance and zoom controls and you have a chart that’s presentation-ready out of the box.",
       "what": "Animated curved column bars with metric height, zoom controls, hover tooltip, and per-bar color.",
-      "why": "Differentiates your charts visually in a sea of standard rectangles — useful for marketing dashboards and product launches.",
+      "why": "Differentiates your charts visually in a sea of standard rectangles: useful for marketing dashboards and product launches.",
       "uses": [
         {
           "tag": "Marketing",
@@ -1048,7 +1048,7 @@
         {
           "id": "abtest-viz",
           "name": "A/B Test Results",
-          "tagline": "CI bars for A/B variants — significance baked in."
+          "tagline": "CI bars for A/B variants: significance baked in."
         },
         {
           "id": "barrace-viz",
@@ -1058,22 +1058,22 @@
         {
           "id": "curvedcol-static-viz",
           "name": "Curved Columns (Static)",
-          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+          "tagline": "Curved columns, static, the still-frame version with the same elegance."
         },
         {
           "id": "dumbbell-viz",
           "name": "Dumbbell Chart",
-          "tagline": "Two dots, one line — every gap between A and B made obvious."
+          "tagline": "Two dots, one line: every gap between A and B made obvious."
         }
       ]
     },
     {
       "id": "curvedcol-static-viz",
       "name": "Curved Columns (Static)",
-      "tagline": "Curved columns, static — the still-frame version with the same elegance.",
-      "long": "Curved Columns (Static) is the no-animation cousin — same arc-shaped column geometry, no entrance motion, ideal for printable dashboards and exported reports.",
+      "tagline": "Curved columns, static, the still-frame version with the same elegance.",
+      "long": "Curved Columns (Static) is the no-animation cousin: same arc-shaped column geometry, no entrance motion, ideal for printable dashboards and exported reports.",
       "what": "Static curved column geometry per category, with tooltip and cross-filter.",
-      "why": "Animation isn’t always welcome — for PDFs, embeds, and print, this gives the same visual differentiation without motion.",
+      "why": "Animation isn’t always welcome: for PDFs, embeds, and print, this gives the same visual differentiation without motion.",
       "uses": [
         {
           "tag": "PDF reports",
@@ -1098,7 +1098,7 @@
         {
           "id": "abtest-viz",
           "name": "A/B Test Results",
-          "tagline": "CI bars for A/B variants — significance baked in."
+          "tagline": "CI bars for A/B variants: significance baked in."
         },
         {
           "id": "barrace-viz",
@@ -1108,22 +1108,22 @@
         {
           "id": "curvedcol-animated-viz",
           "name": "Curved Columns (Animated + Zoom)",
-          "tagline": "Animated curved columns — bars that arc to draw the eye."
+          "tagline": "Animated curved columns: bars that arc to draw the eye."
         },
         {
           "id": "dumbbell-viz",
           "name": "Dumbbell Chart",
-          "tagline": "Two dots, one line — every gap between A and B made obvious."
+          "tagline": "Two dots, one line: every gap between A and B made obvious."
         }
       ]
     },
     {
       "id": "datatable-viz",
       "name": "Row Over Row Comparison Table",
-      "tagline": "Row over row — DoD / MoM / YoY comparison table with deltas and % change.",
+      "tagline": "Row over row: DoD / MoM / YoY comparison table with deltas and % change.",
       "long": "Row Over Row Comparison Table is the analyst’s love letter to themselves: a clean comparison grid with absolute deltas, % change, per-metric formatting, theme-aware coloring, and no Excel grid lines pretending to be design.",
       "what": "Period-over-period comparison table (DoD/MoM/YoY) with Current, Prior, Δ, and % Change columns. Theme-aware coloring, per-metric formatting, sticky headers.",
-      "why": "Standard Data tables don’t do period comparison — this one was built for the way analysts actually talk.",
+      "why": "Standard Data tables don’t do period comparison: this one was built for the way analysts actually talk.",
       "uses": [
         {
           "tag": "Marketing",
@@ -1148,29 +1148,29 @@
         {
           "id": "bigcalendar-viz",
           "name": "Big Calendar",
-          "tagline": "Full calendar grid — event volume painted across every cell."
+          "tagline": "Full calendar grid: event volume painted across every cell."
         },
         {
           "id": "calendarHeatmap",
           "name": "Mini Calendar",
-          "tagline": "Compact monthly calendar — one cell, one number, instant pattern."
+          "tagline": "Compact monthly calendar: one cell, one number, instant pattern."
         },
         {
           "id": "convheatmap-viz",
           "name": "Conversion Heatmap",
-          "tagline": "Day-of-week × hour heatmap — when your audience actually shows up."
+          "tagline": "Day-of-week × hour heatmap: when your audience actually shows up."
         },
         {
           "id": "engageheatmap-viz",
           "name": "Engagement Heatmap",
-          "tagline": "Row × column matrix — normalize how you want, color tells the story."
+          "tagline": "Row × column matrix: normalize how you want, color tells the story."
         }
       ]
     },
     {
       "id": "depwheel-viz",
       "name": "Dependency Wheel",
-      "tagline": "Dependency wheel — a chord diagram that shows what hangs on what.",
+      "tagline": "Dependency wheel, a chord diagram that shows what hangs on what.",
       "long": "Dependency Wheel arranges entities around a ring and draws directed arcs showing dependency strength. Hover one node to see exactly what it depends on (and what depends on it).",
       "what": "Circular node layout with directed dependency arcs, hover-highlight an ego dependency network, optional tick marks and group palettes.",
       "why": "Software, supply chains, and org topologies all have implicit dependency graphs. This makes them visible.",
@@ -1198,30 +1198,30 @@
         {
           "id": "arcdiagram-viz",
           "name": "Arc Diagram",
-          "tagline": "Node-link arc diagram — relationships you can actually trace."
+          "tagline": "Node-link arc diagram: relationships you can actually trace."
         },
         {
           "id": "audioverlap-viz",
           "name": "Audience Overlap",
-          "tagline": "Proportional circles for audience segments — overlaps you can see."
+          "tagline": "Proportional circles for audience segments: overlaps you can see."
         },
         {
           "id": "bipartite-viz",
           "name": "Bipartite Graph",
-          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+          "tagline": "Two columns, every link explicit: A-to-B relationships made obvious."
         },
         {
           "id": "chord-viz",
           "name": "Chord Diagram",
-          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+          "tagline": "Circular chord ribbons: every pairwise flow, perfectly weighted."
         }
       ]
     },
     {
       "id": "dualaxis-viz",
       "name": "Chart Title",
-      "tagline": "Two metrics, two scales, one line of sight — without the lie factor.",
-      "long": "Dual Axis pairs two metrics on independent y-axes — bars for volume, line for rate, or any combination. Carefully designed scales and ticks keep the chart honest while staying readable.",
+      "tagline": "Two metrics, two scales, one line of sight: without the lie factor.",
+      "long": "Dual Axis pairs two metrics on independent y-axes: bars for volume, line for rate, or any combination. Carefully designed scales and ticks keep the chart honest while staying readable.",
       "what": "Bar + line, or two lines, with independent scaled y-axes, shared x-axis, legend, tooltip, and cross-filter.",
       "why": "Volume and rate often need the same chart and never the same scale. Dual axis solves that without forcing a second visualization.",
       "uses": [
@@ -1248,12 +1248,12 @@
         {
           "id": "bump-viz",
           "name": "Bump Chart",
-          "tagline": "Rank-over-time line chart — who's climbing, who's sliding."
+          "tagline": "Rank-over-time line chart: who's climbing, who's sliding."
         },
         {
           "id": "stackedarea-viz",
           "name": "Stacked Area Chart",
-          "tagline": "Stacked area over time — composition and trend on the same canvas."
+          "tagline": "Stacked area over time: composition and trend on the same canvas."
         },
         {
           "id": "stackedneg-animated-viz",
@@ -1263,17 +1263,17 @@
         {
           "id": "stackedneg-viz",
           "name": "Stacked Bar Chart with Negative Values (Static)",
-          "tagline": "Stacked bars with negative values — wins above, losses below, total preserved."
+          "tagline": "Stacked bars with negative values: wins above, losses below, total preserved."
         }
       ]
     },
     {
       "id": "dualdonut-viz",
       "name": "Dual Donut",
-      "tagline": "Two donuts side-by-side — current vs prior, plan vs actual, the comparison view.",
-      "long": "Dual Donut renders two same-scale donut charts in parallel, perfect for any \"before vs after\" split — current vs prior, plan vs actual, treatment vs control. Per-slice tooltips and a unified legend keep it readable.",
+      "tagline": "Two donuts side-by-side: current vs prior, plan vs actual, the comparison view.",
+      "long": "Dual Donut renders two same-scale donut charts in parallel, perfect for any \"before vs after\" split: current vs prior, plan vs actual, treatment vs control. Per-slice tooltips and a unified legend keep it readable.",
       "what": "Two donut charts in a row sharing a legend, with per-slice tooltips, total center labels, and cross-filtering.",
-      "why": "A single donut shows composition; two donuts show how composition shifted — and that’s usually the story.",
+      "why": "A single donut shows composition; two donuts show how composition shifted, and that’s usually the story.",
       "uses": [
         {
           "tag": "Finance",
@@ -1298,32 +1298,32 @@
         {
           "id": "multiring-viz",
           "name": "Multi-ring Donut",
-          "tagline": "Nested donut rings — multiple metrics, same center, one composition."
+          "tagline": "Nested donut rings: multiple metrics, same center, one composition."
         },
         {
           "id": "vardonut-viz",
           "name": "Variable-Radius Nested Donut",
-          "tagline": "Variable-radius nested donut — two metrics per slice, one chart."
+          "tagline": "Variable-radius nested donut: two metrics per slice, one chart."
         },
         {
           "id": "varradiuspie-viz",
           "name": "Variable Radius Pie Chart",
-          "tagline": "Variable-radius pie — angle is share, radius is a second metric."
+          "tagline": "Variable-radius pie: angle is share, radius is a second metric."
         },
         {
           "id": "waffle-viz",
           "name": "Waffle Chart",
-          "tagline": "10×10 grid — every square is 1% — the part-to-whole everyone reads correctly."
+          "tagline": "10×10 grid (every square is 1%), the part-to-whole everyone reads correctly."
         }
       ]
     },
     {
       "id": "dumbbell-viz",
       "name": "Dumbbell Chart",
-      "tagline": "Two dots, one line — every gap between A and B made obvious.",
-      "long": "Dumbbell Chart connects two related values per category with a line and emphasizes the gap between them. The classic chart for before vs after, men vs women, this vs target — anywhere a pair matters more than the absolute values.",
+      "tagline": "Two dots, one line: every gap between A and B made obvious.",
+      "long": "Dumbbell Chart connects two related values per category with a line and emphasizes the gap between them. The classic chart for before vs after, men vs women, this vs target: anywhere a pair matters more than the absolute values.",
       "what": "One row per category with two value markers (start, end) connected by a line; optional gap-magnitude color.",
-      "why": "Side-by-side bars are noisy. Dumbbells let the eye read \"how big is the gap?\" first — exactly what most paired comparisons need.",
+      "why": "Side-by-side bars are noisy. Dumbbells let the eye read \"how big is the gap?\" first: exactly what most paired comparisons need.",
       "uses": [
         {
           "tag": "HR",
@@ -1348,7 +1348,7 @@
         {
           "id": "abtest-viz",
           "name": "A/B Test Results",
-          "tagline": "CI bars for A/B variants — significance baked in."
+          "tagline": "CI bars for A/B variants: significance baked in."
         },
         {
           "id": "barrace-viz",
@@ -1358,22 +1358,22 @@
         {
           "id": "curvedcol-animated-viz",
           "name": "Curved Columns (Animated + Zoom)",
-          "tagline": "Animated curved columns — bars that arc to draw the eye."
+          "tagline": "Animated curved columns: bars that arc to draw the eye."
         },
         {
           "id": "curvedcol-static-viz",
           "name": "Curved Columns (Static)",
-          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+          "tagline": "Curved columns, static, the still-frame version with the same elegance."
         }
       ]
     },
     {
       "id": "earningsdot-viz",
       "name": "Actual Over Target Dot Chart",
-      "tagline": "Actual over target dots — beats and misses, colored automatically.",
-      "long": "Actual Over Target Dot Chart plots actual values as colored dots against an optional target line. Beats are green, misses are red — earnings season in a single chart.",
+      "tagline": "Actual over target dots: beats and misses, colored automatically.",
+      "long": "Actual Over Target Dot Chart plots actual values as colored dots against an optional target line. Beats are green, misses are red: earnings season in a single chart.",
       "what": "Dot markers for actuals positioned vs a target metric line, with beat / miss coloring and tooltip detail.",
-      "why": "Designed for the specific shape of earnings, sales targets, and SLA reporting — actual vs target as a per-period verdict.",
+      "why": "Designed for the specific shape of earnings, sales targets, and SLA reporting: actual vs target as a per-period verdict.",
       "uses": [
         {
           "tag": "Finance",
@@ -1398,24 +1398,24 @@
         {
           "id": "breakeven-viz",
           "name": "Break-Even Chart",
-          "tagline": "Fixed cost, variable cost, revenue — and the exact unit where they cross."
+          "tagline": "Fixed cost, variable cost, revenue, and the exact unit where they cross."
         },
         {
           "id": "cashflow-viz",
           "name": "Cashflow",
-          "tagline": "Income up, expense down — the zero line tells the story."
+          "tagline": "Income up, expense down, the zero line tells the story."
         },
         {
           "id": "revenuebreakdown-viz",
           "name": "Revenue Breakdown (Bar + Line Combo)",
-          "tagline": "Revenue mix bars + margin line — the public-company readout view."
+          "tagline": "Revenue mix bars + margin line, the public-company readout view."
         }
       ]
     },
     {
       "id": "engageheatmap-viz",
       "name": "Engagement Heatmap",
-      "tagline": "Row × column matrix — normalize how you want, color tells the story.",
+      "tagline": "Row × column matrix: normalize how you want, color tells the story.",
       "long": "Engagement Heatmap is the general-purpose matrix view: rows × columns × value with column, row, or global normalization. Sequential or diverging scales, legend included, cross-filter on click.",
       "what": "Row/column/global normalized cell tints with sequential or diverging color, axis labels, color legend, cross-filter, theme-aware.",
       "why": "Heatmaps are only as good as their normalization. This one gives you all three modes so the pattern you want is what you see.",
@@ -1443,30 +1443,30 @@
         {
           "id": "bigcalendar-viz",
           "name": "Big Calendar",
-          "tagline": "Full calendar grid — event volume painted across every cell."
+          "tagline": "Full calendar grid: event volume painted across every cell."
         },
         {
           "id": "calendarHeatmap",
           "name": "Mini Calendar",
-          "tagline": "Compact monthly calendar — one cell, one number, instant pattern."
+          "tagline": "Compact monthly calendar: one cell, one number, instant pattern."
         },
         {
           "id": "convheatmap-viz",
           "name": "Conversion Heatmap",
-          "tagline": "Day-of-week × hour heatmap — when your audience actually shows up."
+          "tagline": "Day-of-week × hour heatmap: when your audience actually shows up."
         },
         {
           "id": "datatable-viz",
           "name": "Row Over Row Comparison Table",
-          "tagline": "Row over row — DoD / MoM / YoY comparison table with deltas and % change."
+          "tagline": "Row over row: DoD / MoM / YoY comparison table with deltas and % change."
         }
       ]
     },
     {
       "id": "flowmap-viz",
       "name": "Flow Map",
-      "tagline": "Geographic flow lines — origins, destinations, and volumes on a map.",
-      "long": "Flow Map draws origin-to-destination flows on a geographic canvas with weighted line thickness. Build a logistics chart that actually reads like a map — not a tangle of arrows.",
+      "tagline": "Geographic flow lines: origins, destinations, and volumes on a map.",
+      "long": "Flow Map draws origin-to-destination flows on a geographic canvas with weighted line thickness. Build a logistics chart that actually reads like a map, not a tangle of arrows.",
       "what": "Origin/destination pairs as bezier flows on a geographic projection, weighted by volume, with hover-highlight and tooltip.",
       "why": "Spreadsheet shipment data hides geography. Flow maps put it back.",
       "uses": [
@@ -1493,29 +1493,29 @@
         {
           "id": "arcdiagram-viz",
           "name": "Arc Diagram",
-          "tagline": "Node-link arc diagram — relationships you can actually trace."
+          "tagline": "Node-link arc diagram: relationships you can actually trace."
         },
         {
           "id": "audioverlap-viz",
           "name": "Audience Overlap",
-          "tagline": "Proportional circles for audience segments — overlaps you can see."
+          "tagline": "Proportional circles for audience segments: overlaps you can see."
         },
         {
           "id": "bipartite-viz",
           "name": "Bipartite Graph",
-          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+          "tagline": "Two columns, every link explicit: A-to-B relationships made obvious."
         },
         {
           "id": "chord-viz",
           "name": "Chord Diagram",
-          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+          "tagline": "Circular chord ribbons: every pairwise flow, perfectly weighted."
         }
       ]
     },
     {
       "id": "forcenet-viz",
       "name": "Force-Directed Network",
-      "tagline": "Force-directed network — the classic node graph, properly tuned.",
+      "tagline": "Force-directed network, the classic node graph, properly tuned.",
       "long": "Force-Directed Network applies physics to your edge list, settling nodes into a layout where related entities cluster naturally. The right chart when relationship topology *is* the story.",
       "what": "Force-simulated node-link layout with charge, link distance, and collision, plus hover-highlight, drag-to-fix, and click cross-filter.",
       "why": "Edge lists hide structure. A force layout exposes communities, hubs, and bridges in seconds.",
@@ -1543,29 +1543,29 @@
         {
           "id": "arcdiagram-viz",
           "name": "Arc Diagram",
-          "tagline": "Node-link arc diagram — relationships you can actually trace."
+          "tagline": "Node-link arc diagram: relationships you can actually trace."
         },
         {
           "id": "audioverlap-viz",
           "name": "Audience Overlap",
-          "tagline": "Proportional circles for audience segments — overlaps you can see."
+          "tagline": "Proportional circles for audience segments: overlaps you can see."
         },
         {
           "id": "bipartite-viz",
           "name": "Bipartite Graph",
-          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+          "tagline": "Two columns, every link explicit: A-to-B relationships made obvious."
         },
         {
           "id": "chord-viz",
           "name": "Chord Diagram",
-          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+          "tagline": "Circular chord ribbons: every pairwise flow, perfectly weighted."
         }
       ]
     },
     {
       "id": "groupedbar-viz",
       "name": "Grouped Bar Chart",
-      "tagline": "Side-by-side bars per category — the comparison chart everyone reads correctly.",
+      "tagline": "Side-by-side bars per category, the comparison chart everyone reads correctly.",
       "long": "Grouped Bar Chart places two to four bars side-by-side within each category, sharing a y-axis and a legend. Cleaner than stacked when the absolute values per series matter more than the total.",
       "what": "Multi-series grouped bars per category with legend, tooltip, theme-aware colors, and cross-filter.",
       "why": "Stacked bars compress the smaller series. Grouped bars give every series equal real estate.",
@@ -1593,7 +1593,7 @@
         {
           "id": "abtest-viz",
           "name": "A/B Test Results",
-          "tagline": "CI bars for A/B variants — significance baked in."
+          "tagline": "CI bars for A/B variants: significance baked in."
         },
         {
           "id": "barrace-viz",
@@ -1603,19 +1603,19 @@
         {
           "id": "curvedcol-animated-viz",
           "name": "Curved Columns (Animated + Zoom)",
-          "tagline": "Animated curved columns — bars that arc to draw the eye."
+          "tagline": "Animated curved columns: bars that arc to draw the eye."
         },
         {
           "id": "curvedcol-static-viz",
           "name": "Curved Columns (Static)",
-          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+          "tagline": "Curved columns, static, the still-frame version with the same elegance."
         }
       ]
     },
     {
       "id": "hexbin-viz",
       "name": "Hexbin Scatter",
-      "tagline": "Hexagonal density — scatter plots that survive 100k points.",
+      "tagline": "Hexagonal density: scatter plots that survive 100k points.",
       "long": "Hexbin Scatter bins two numeric metrics onto a pointy-top hexagon grid and shades each cell by density, average X, or average Y. Optional Category dimension surfaces top-3 categories in tooltips and joins cross-filters. 12 palettes, 4 density scales, optional trend line and marginals.",
       "what": "Hexagon bin grid over x/y metrics; density / avg-X / avg-Y color modes; 12 palettes, 4 scales (linear/sqrt/log/power); optional trend line; optional marginal distributions; min-count filter; click cross-filter.",
       "why": "Scatter overplots at scale. Hexbin keeps every region readable and surfaces hot zones immediately.",
@@ -1643,30 +1643,30 @@
         {
           "id": "bubble-viz",
           "name": "Bubble Chart",
-          "tagline": "X × Y × size — three metrics, one chart, zero squinting."
+          "tagline": "X × Y × size: three metrics, one chart, zero squinting."
         },
         {
           "id": "bubblegrid",
           "name": "Bubble Grid",
-          "tagline": "A grid of bubbles — counts and magnitudes across two categorical axes."
+          "tagline": "A grid of bubbles: counts and magnitudes across two categorical axes."
         },
         {
           "id": "quadrant-viz",
           "name": "Quadrant Scatter",
-          "tagline": "Four-quadrant scatter — the strategy chart you've drawn on whiteboards."
+          "tagline": "Four-quadrant scatter, the strategy chart you've drawn on whiteboards."
         },
         {
           "id": "scattertrend-viz",
           "name": "Scatter Plot with Trendline",
-          "tagline": "Scatter with a fitted trend line — correlation without the chart-junk."
+          "tagline": "Scatter with a fitted trend line: correlation without the chart-junk."
         }
       ]
     },
     {
       "id": "hexbindensity-viz",
       "name": "Hexbin Density Plot",
-      "tagline": "Hexagonal density plot — same hex grid, focused on point density.",
-      "long": "Hexbin Density Plot is the density-only cousin of Hexbin Scatter — pure point-density coloring, ideal when you don’t need an avg-X or avg-Y mode and just want the where-do-records-cluster picture.",
+      "tagline": "Hexagonal density plot: same hex grid, focused on point density.",
+      "long": "Hexbin Density Plot is the density-only cousin of Hexbin Scatter: pure point-density coloring, ideal when you don’t need an avg-X or avg-Y mode and just want the where-do-records-cluster picture.",
       "what": "Hex grid with density coloring across two metrics, configurable bin size and color scale.",
       "why": "When density alone is the answer, this is the leaner chart.",
       "uses": [
@@ -1693,22 +1693,22 @@
         {
           "id": "beeswarm-viz",
           "name": "Beeswarm / Swarm Plot",
-          "tagline": "Every individual point, no overlap — distributions that boxplots hide."
+          "tagline": "Every individual point, no overlap: distributions that boxplots hide."
         },
         {
           "id": "qq-viz",
           "name": "Q-Q Plot",
-          "tagline": "Q-Q plot — does this distribution match the one you expect?"
+          "tagline": "Q-Q plot: does this distribution match the one you expect?"
         }
       ]
     },
     {
       "id": "interactiveGlobe-viz",
       "name": "Interactive 3D Globe",
-      "tagline": "Real country polygons, drag-to-rotate, auto-spin, atmosphere glow — the 3D world your dashboard actually needs.",
+      "tagline": "Real country polygons, drag-to-rotate, auto-spin, atmosphere glow, the 3D world your dashboard actually needs.",
       "long": "SVG-based interactive 3D orthographic globe with real country polygons (Natural Earth 110m), drag-to-rotate, auto-spin animation, zoom, choropleth color scale, atmosphere glow, graticule grid, tooltips, country labels, cross-filtering, and full style customization. 1 country dimension (ISO-3/ISO-2/name/numeric), 1 metric.",
       "what": "Renders the world as an interactive SVG orthographic projection using Natural Earth 110m country polygons. Drag to rotate, scroll to zoom, optional auto-spin. Cells colored by your metric, with atmosphere glow, graticule grid, country labels, hover tooltips, and click cross-filtering.",
-      "why": "Flat maps distort. A real-polygon globe with atmosphere and graticule lines is a presentation-grade view — and it cross-filters the rest of the report on click.",
+      "why": "Flat maps distort. A real-polygon globe with atmosphere and graticule lines is a presentation-grade view, and it cross-filters the rest of the report on click.",
       "uses": [
         {
           "tag": "Marketing",
@@ -1733,19 +1733,19 @@
         {
           "id": "bubblemap-viz",
           "name": "Bubble Map",
-          "tagline": "Packed bubbles, sized by a metric — every category, no axis tax."
+          "tagline": "Packed bubbles, sized by a metric: every category, no axis tax."
         },
         {
           "id": "choropleth-viz",
           "name": "Choropleth Map",
-          "tagline": "Tile-grid map — every state or country, no projection pain."
+          "tagline": "Tile-grid map: every state or country, no projection pain."
         }
       ]
     },
     {
       "id": "kpisparkline-viz",
       "name": "KPI Sparkline Cards",
-      "tagline": "Headline numbers with trend lines baked in — the executive scorecard, refined.",
+      "tagline": "Headline numbers with trend lines baked in, the executive scorecard, refined.",
       "long": "KPI Sparkline Cards combine a large headline metric, a delta vs. prior period, and an inline sparkline so leaders can see the number, the change, and the trajectory in a single glance.",
       "what": "Grid of KPI cards, each with primary metric, %-change indicator, and a 30/60/90-day sparkline.",
       "why": "Replaces three separate scorecards with one focused row. The sparkline kills the \"but is that good?\" follow-up.",
@@ -1773,32 +1773,32 @@
         {
           "id": "analystratings-viz",
           "name": "Breakdown Chart",
-          "tagline": "Donut + progress bars for category breakdowns — the dominant slice highlighted automatically."
+          "tagline": "Donut + progress bars for category breakdowns, the dominant slice highlighted automatically."
         },
         {
           "id": "bulletchart-viz",
           "name": "Bullet Chart",
-          "tagline": "Stephen Few's gauge replacement — actual, target, and ranges in one bar."
+          "tagline": "Stephen Few's gauge replacement: actual, target, and ranges in one bar."
         },
         {
           "id": "progresscircles-viz",
           "name": "Progress Circles",
-          "tagline": "A row of donuts that each say \"X% done\" — instantly readable."
+          "tagline": "A row of donuts that each say \"X% done\": instantly readable."
         },
         {
           "id": "semicirclegauge-viz",
           "name": "Semicircle Gauge",
-          "tagline": "Half-circle gauge — same story, half the real estate."
+          "tagline": "Half-circle gauge: same story, half the real estate."
         }
       ]
     },
     {
       "id": "lollipopchart",
       "name": "Lollipop Chart",
-      "tagline": "Cleaner than a bar chart — a dot and a stem, nothing wasted.",
+      "tagline": "Cleaner than a bar chart, a dot and a stem, nothing wasted.",
       "long": "Lollipop Chart strips bar charts to a stem and a dot, reducing ink while keeping ranking and magnitude. The chart that says \"we have taste\" without sacrificing readability.",
       "what": "One row per category with a horizontal stem ending in a value-sized dot; optional color encoding.",
-      "why": "Reads less heavy than bars when categories are many — and looks intentional.",
+      "why": "Reads less heavy than bars when categories are many, and looks intentional.",
       "uses": [
         {
           "tag": "Marketing",
@@ -1823,7 +1823,7 @@
         {
           "id": "abtest-viz",
           "name": "A/B Test Results",
-          "tagline": "CI bars for A/B variants — significance baked in."
+          "tagline": "CI bars for A/B variants: significance baked in."
         },
         {
           "id": "barrace-viz",
@@ -1833,19 +1833,19 @@
         {
           "id": "curvedcol-animated-viz",
           "name": "Curved Columns (Animated + Zoom)",
-          "tagline": "Animated curved columns — bars that arc to draw the eye."
+          "tagline": "Animated curved columns: bars that arc to draw the eye."
         },
         {
           "id": "curvedcol-static-viz",
           "name": "Curved Columns (Static)",
-          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+          "tagline": "Curved columns, static, the still-frame version with the same elegance."
         }
       ]
     },
     {
       "id": "matrixchart-viz",
       "name": "Adjacency Matrix",
-      "tagline": "Adjacency matrix — the most scalable way to see a network.",
+      "tagline": "Adjacency matrix, the most scalable way to see a network.",
       "long": "Adjacency Matrix lists every entity along both axes and shades each cell by edge weight. When force graphs become spaghetti at 100+ nodes, the matrix stays readable.",
       "what": "Entity × entity grid with cell tint = edge weight, sortable axes, hover detail, cross-filter on click.",
       "why": "Networks past ~50 nodes are unreadable as graphs. Matrices keep scaling.",
@@ -1873,30 +1873,30 @@
         {
           "id": "arcdiagram-viz",
           "name": "Arc Diagram",
-          "tagline": "Node-link arc diagram — relationships you can actually trace."
+          "tagline": "Node-link arc diagram: relationships you can actually trace."
         },
         {
           "id": "audioverlap-viz",
           "name": "Audience Overlap",
-          "tagline": "Proportional circles for audience segments — overlaps you can see."
+          "tagline": "Proportional circles for audience segments: overlaps you can see."
         },
         {
           "id": "bipartite-viz",
           "name": "Bipartite Graph",
-          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+          "tagline": "Two columns, every link explicit: A-to-B relationships made obvious."
         },
         {
           "id": "chord-viz",
           "name": "Chord Diagram",
-          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+          "tagline": "Circular chord ribbons: every pairwise flow, perfectly weighted."
         }
       ]
     },
     {
       "id": "mirrorbar-viz",
       "name": "Mirror Bar Chart",
-      "tagline": "Two series mirrored around a baseline — comparisons that read in one glance.",
-      "long": "Mirror Bar Chart places one series above and one below a shared axis. Population pyramids, income vs expense, app A vs app B — anywhere two parallel series want a clean reflection.",
+      "tagline": "Two series mirrored around a baseline: comparisons that read in one glance.",
+      "long": "Mirror Bar Chart places one series above and one below a shared axis. Population pyramids, income vs expense, app A vs app B: anywhere two parallel series want a clean reflection.",
       "what": "Two-series mirrored bars around a shared central axis, with category labels in the middle and legend.",
       "why": "Side-by-side bars make the eye work harder. Mirroring makes the \"who’s bigger?\" question literal.",
       "uses": [
@@ -1923,7 +1923,7 @@
         {
           "id": "abtest-viz",
           "name": "A/B Test Results",
-          "tagline": "CI bars for A/B variants — significance baked in."
+          "tagline": "CI bars for A/B variants: significance baked in."
         },
         {
           "id": "barrace-viz",
@@ -1933,19 +1933,19 @@
         {
           "id": "curvedcol-animated-viz",
           "name": "Curved Columns (Animated + Zoom)",
-          "tagline": "Animated curved columns — bars that arc to draw the eye."
+          "tagline": "Animated curved columns: bars that arc to draw the eye."
         },
         {
           "id": "curvedcol-static-viz",
           "name": "Curved Columns (Static)",
-          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+          "tagline": "Curved columns, static, the still-frame version with the same elegance."
         }
       ]
     },
     {
       "id": "multiring-viz",
       "name": "Multi-ring Donut",
-      "tagline": "Nested donut rings — multiple metrics, same center, one composition.",
+      "tagline": "Nested donut rings: multiple metrics, same center, one composition.",
       "long": "Multi-ring Donut stacks two or three donut rings around a shared center. Use it when one category breakdown has sub-shares that matter as much as the totals.",
       "what": "Two or three concentric donut rings sharing center labels, with hover tooltip on each ring.",
       "why": "Sunburst overcomplicates simple two-level breakdowns. Multi-ring keeps the donut familiarity.",
@@ -1973,30 +1973,30 @@
         {
           "id": "dualdonut-viz",
           "name": "Dual Donut",
-          "tagline": "Two donuts side-by-side — current vs prior, plan vs actual, the comparison view."
+          "tagline": "Two donuts side-by-side: current vs prior, plan vs actual, the comparison view."
         },
         {
           "id": "vardonut-viz",
           "name": "Variable-Radius Nested Donut",
-          "tagline": "Variable-radius nested donut — two metrics per slice, one chart."
+          "tagline": "Variable-radius nested donut: two metrics per slice, one chart."
         },
         {
           "id": "varradiuspie-viz",
           "name": "Variable Radius Pie Chart",
-          "tagline": "Variable-radius pie — angle is share, radius is a second metric."
+          "tagline": "Variable-radius pie: angle is share, radius is a second metric."
         },
         {
           "id": "waffle-viz",
           "name": "Waffle Chart",
-          "tagline": "10×10 grid — every square is 1% — the part-to-whole everyone reads correctly."
+          "tagline": "10×10 grid (every square is 1%), the part-to-whole everyone reads correctly."
         }
       ]
     },
     {
       "id": "oppositediagram",
       "name": "Opposite Diagram",
-      "tagline": "Two-sided pros vs cons — opposing forces, one chart.",
-      "long": "Opposite Diagram visualizes two opposing forces — pros vs cons, supports vs blocks, drivers vs detractors — as parallel rows of weighted bars. The strategic two-sider, ready for a slide.",
+      "tagline": "Two-sided pros vs cons: opposing forces, one chart.",
+      "long": "Opposite Diagram visualizes two opposing forces (pros vs cons, supports vs blocks, drivers vs detractors) as parallel rows of weighted bars. The strategic two-sider, ready for a slide.",
       "what": "Two parallel columns of bars, weighted, with center labels and per-side coloring.",
       "why": "Decision frameworks live in tables; this chart turns them into a chart your audience can read.",
       "uses": [
@@ -2023,32 +2023,32 @@
         {
           "id": "arcdiagram-viz",
           "name": "Arc Diagram",
-          "tagline": "Node-link arc diagram — relationships you can actually trace."
+          "tagline": "Node-link arc diagram: relationships you can actually trace."
         },
         {
           "id": "audioverlap-viz",
           "name": "Audience Overlap",
-          "tagline": "Proportional circles for audience segments — overlaps you can see."
+          "tagline": "Proportional circles for audience segments: overlaps you can see."
         },
         {
           "id": "bipartite-viz",
           "name": "Bipartite Graph",
-          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+          "tagline": "Two columns, every link explicit: A-to-B relationships made obvious."
         },
         {
           "id": "chord-viz",
           "name": "Chord Diagram",
-          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+          "tagline": "Circular chord ribbons: every pairwise flow, perfectly weighted."
         }
       ]
     },
     {
       "id": "parallelcoords-viz",
       "name": "Parallel Coordinates Plot",
-      "tagline": "Parallel axes — every record drawn across every dimension.",
-      "long": "Parallel Coordinates Plot puts each numeric dimension on a vertical axis and draws every record as a polyline crossing them. The fastest way to spot multivariate patterns — and the multivariate scatter that doesn’t need PCA.",
+      "tagline": "Parallel axes: every record drawn across every dimension.",
+      "long": "Parallel Coordinates Plot puts each numeric dimension on a vertical axis and draws every record as a polyline crossing them. The fastest way to spot multivariate patterns, and the multivariate scatter that doesn’t need PCA.",
       "what": "N vertical axes, one per metric, with one line per record traversing them. Brushing on any axis filters the rest; supports color by dimension.",
-      "why": "Show how five or six metrics co-vary on a single canvas — and let viewers brush to query.",
+      "why": "Show how five or six metrics co-vary on a single canvas, and let viewers brush to query.",
       "uses": [
         {
           "tag": "Quant",
@@ -2073,29 +2073,29 @@
         {
           "id": "arcdiagram-viz",
           "name": "Arc Diagram",
-          "tagline": "Node-link arc diagram — relationships you can actually trace."
+          "tagline": "Node-link arc diagram: relationships you can actually trace."
         },
         {
           "id": "audioverlap-viz",
           "name": "Audience Overlap",
-          "tagline": "Proportional circles for audience segments — overlaps you can see."
+          "tagline": "Proportional circles for audience segments: overlaps you can see."
         },
         {
           "id": "bipartite-viz",
           "name": "Bipartite Graph",
-          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+          "tagline": "Two columns, every link explicit: A-to-B relationships made obvious."
         },
         {
           "id": "chord-viz",
           "name": "Chord Diagram",
-          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+          "tagline": "Circular chord ribbons: every pairwise flow, perfectly weighted."
         }
       ]
     },
     {
       "id": "parallelsets-viz",
       "name": "Parallel Sets",
-      "tagline": "Categorical flow — Sankey for nominal data, lane by lane.",
+      "tagline": "Categorical flow: Sankey for nominal data, lane by lane.",
       "long": "Parallel Sets visualize categorical co-occurrence across several dimensions as flowing ribbons between parallel category bars. The categorical sibling of parallel coordinates.",
       "what": "N parallel category columns, with width-weighted ribbons between adjacent columns showing co-membership.",
       "why": "When every dimension is categorical, scatter and parallel coordinates don’t apply. Parallel sets do.",
@@ -2123,36 +2123,36 @@
         {
           "id": "arcdiagram-viz",
           "name": "Arc Diagram",
-          "tagline": "Node-link arc diagram — relationships you can actually trace."
+          "tagline": "Node-link arc diagram: relationships you can actually trace."
         },
         {
           "id": "audioverlap-viz",
           "name": "Audience Overlap",
-          "tagline": "Proportional circles for audience segments — overlaps you can see."
+          "tagline": "Proportional circles for audience segments: overlaps you can see."
         },
         {
           "id": "bipartite-viz",
           "name": "Bipartite Graph",
-          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+          "tagline": "Two columns, every link explicit: A-to-B relationships made obvious."
         },
         {
           "id": "chord-viz",
           "name": "Chord Diagram",
-          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+          "tagline": "Circular chord ribbons: every pairwise flow, perfectly weighted."
         }
       ]
     },
     {
       "id": "pareto-viz",
       "name": "Pareto Chart",
-      "tagline": "Bars + cumulative line — the 80/20 rule, made obvious.",
-      "long": "Pareto Chart sorts categories descending by value and overlays a cumulative percentage line — exactly the chart Joseph Juran intended for prioritization. The 80% cutoff is rendered automatically.",
+      "tagline": "Bars + cumulative line, the 80/20 rule, made obvious.",
+      "long": "Pareto Chart sorts categories descending by value and overlays a cumulative percentage line: exactly the chart Joseph Juran intended for prioritization. The 80% cutoff is rendered automatically.",
       "what": "Descending sorted bars with a cumulative % line, optional 80% reference line, tooltip, and cross-filter.",
       "why": "Prioritization conversations end here. The handful of bars before the cumulative line crosses 80% is your roadmap.",
       "uses": [
         {
           "tag": "QA",
-          "body": "Defect cause analysis — top causes covering 80% of defects."
+          "body": "Defect cause analysis: top causes covering 80% of defects."
         },
         {
           "tag": "Ops",
@@ -2173,7 +2173,7 @@
         {
           "id": "abtest-viz",
           "name": "A/B Test Results",
-          "tagline": "CI bars for A/B variants — significance baked in."
+          "tagline": "CI bars for A/B variants: significance baked in."
         },
         {
           "id": "barrace-viz",
@@ -2183,19 +2183,19 @@
         {
           "id": "curvedcol-animated-viz",
           "name": "Curved Columns (Animated + Zoom)",
-          "tagline": "Animated curved columns — bars that arc to draw the eye."
+          "tagline": "Animated curved columns: bars that arc to draw the eye."
         },
         {
           "id": "curvedcol-static-viz",
           "name": "Curved Columns (Static)",
-          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+          "tagline": "Curved columns, static, the still-frame version with the same elegance."
         }
       ]
     },
     {
       "id": "portfoliobarcode-viz",
       "name": "Portfolio Barcode",
-      "tagline": "Portfolio barcode — every holding as a vertical strip, weighted and colored.",
+      "tagline": "Portfolio barcode: every holding as a vertical strip, weighted and colored.",
       "long": "Portfolio Barcode renders each holding as a narrow vertical strip, width or color encoding weight and category. Dense, ordered, and surprisingly readable for portfolios of 100+ positions.",
       "what": "Vertical barcode strips per holding, with width-or-color encoding for weight or category, hover detail, cross-filter on click.",
       "why": "Traditional portfolio pies fail past 20 holdings. Barcode keeps every position visible.",
@@ -2223,32 +2223,32 @@
         {
           "id": "arcdiagram-viz",
           "name": "Arc Diagram",
-          "tagline": "Node-link arc diagram — relationships you can actually trace."
+          "tagline": "Node-link arc diagram: relationships you can actually trace."
         },
         {
           "id": "audioverlap-viz",
           "name": "Audience Overlap",
-          "tagline": "Proportional circles for audience segments — overlaps you can see."
+          "tagline": "Proportional circles for audience segments: overlaps you can see."
         },
         {
           "id": "bipartite-viz",
           "name": "Bipartite Graph",
-          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+          "tagline": "Two columns, every link explicit: A-to-B relationships made obvious."
         },
         {
           "id": "chord-viz",
           "name": "Chord Diagram",
-          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+          "tagline": "Circular chord ribbons: every pairwise flow, perfectly weighted."
         }
       ]
     },
     {
       "id": "portfoliopiebarcode-viz",
       "name": "Portfolio Pie Barcode",
-      "tagline": "Portfolio pie + barcode — composition and per-position detail in one chart.",
+      "tagline": "Portfolio pie + barcode: composition and per-position detail in one chart.",
       "long": "Portfolio Pie Barcode pairs the macro view (sector or asset-class pie) with the micro view (per-position barcode) in a single composition. The portfolio overview that doesn’t force a click-through.",
       "what": "Pie chart for top-level composition next to a barcode strip for every individual position; click a slice to filter the strip.",
-      "why": "Two questions — sector mix and per-position weight — answered on one canvas.",
+      "why": "Two questions (sector mix and per-position weight) answered on one canvas.",
       "uses": [
         {
           "tag": "Asset mgmt",
@@ -2273,36 +2273,36 @@
         {
           "id": "arcdiagram-viz",
           "name": "Arc Diagram",
-          "tagline": "Node-link arc diagram — relationships you can actually trace."
+          "tagline": "Node-link arc diagram: relationships you can actually trace."
         },
         {
           "id": "audioverlap-viz",
           "name": "Audience Overlap",
-          "tagline": "Proportional circles for audience segments — overlaps you can see."
+          "tagline": "Proportional circles for audience segments: overlaps you can see."
         },
         {
           "id": "bipartite-viz",
           "name": "Bipartite Graph",
-          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+          "tagline": "Two columns, every link explicit: A-to-B relationships made obvious."
         },
         {
           "id": "chord-viz",
           "name": "Chord Diagram",
-          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+          "tagline": "Circular chord ribbons: every pairwise flow, perfectly weighted."
         }
       ]
     },
     {
       "id": "progresscircles-viz",
       "name": "Progress Circles",
-      "tagline": "A row of donuts that each say \"X% done\" — instantly readable.",
+      "tagline": "A row of donuts that each say \"X% done\": instantly readable.",
       "long": "Progress Circles render a grid of circular gauges, one per category, each filled to a percentage with the value in the center. Perfect for OKR tracking and any tile-of-tiles goal layout.",
       "what": "N circular progress rings sized uniformly, each with label and configurable color thresholds.",
       "why": "More visually interesting than a bar list when you have ≤12 items and want each to feel like a card.",
       "uses": [
         {
           "tag": "Strategy",
-          "body": "Quarterly OKRs — one circle per KR."
+          "body": "Quarterly OKRs: one circle per KR."
         },
         {
           "tag": "Marketing",
@@ -2323,32 +2323,32 @@
         {
           "id": "analystratings-viz",
           "name": "Breakdown Chart",
-          "tagline": "Donut + progress bars for category breakdowns — the dominant slice highlighted automatically."
+          "tagline": "Donut + progress bars for category breakdowns, the dominant slice highlighted automatically."
         },
         {
           "id": "bulletchart-viz",
           "name": "Bullet Chart",
-          "tagline": "Stephen Few's gauge replacement — actual, target, and ranges in one bar."
+          "tagline": "Stephen Few's gauge replacement: actual, target, and ranges in one bar."
         },
         {
           "id": "kpisparkline-viz",
           "name": "KPI Sparkline Cards",
-          "tagline": "Headline numbers with trend lines baked in — the executive scorecard, refined."
+          "tagline": "Headline numbers with trend lines baked in, the executive scorecard, refined."
         },
         {
           "id": "semicirclegauge-viz",
           "name": "Semicircle Gauge",
-          "tagline": "Half-circle gauge — same story, half the real estate."
+          "tagline": "Half-circle gauge: same story, half the real estate."
         }
       ]
     },
     {
       "id": "pyramidarea-viz",
       "name": "Pyramid Area Chart",
-      "tagline": "Categorical magnitude as overlapping pyramids — distinctive and on-brand.",
-      "long": "Pyramid Area Chart renders categories as overlapping pyramid silhouettes along a baseline. Magnitude is encoded by height and width — the look of an architectural section drawing, the function of a bar chart.",
+      "tagline": "Categorical magnitude as overlapping pyramids: distinctive and on-brand.",
+      "long": "Pyramid Area Chart renders categories as overlapping pyramid silhouettes along a baseline. Magnitude is encoded by height and width, the look of an architectural section drawing, the function of a bar chart.",
       "what": "Overlapping pyramid silhouettes per category sized by metric, with theme-aware colors and labels.",
-      "why": "When a bar chart needs to feel editorial — annual reports, brand storytelling, hero slots — this is the version.",
+      "why": "When a bar chart needs to feel editorial (annual reports, brand storytelling, hero slots), this is the version.",
       "uses": [
         {
           "tag": "Editorial",
@@ -2373,7 +2373,7 @@
         {
           "id": "abtest-viz",
           "name": "A/B Test Results",
-          "tagline": "CI bars for A/B variants — significance baked in."
+          "tagline": "CI bars for A/B variants: significance baked in."
         },
         {
           "id": "barrace-viz",
@@ -2383,19 +2383,19 @@
         {
           "id": "curvedcol-animated-viz",
           "name": "Curved Columns (Animated + Zoom)",
-          "tagline": "Animated curved columns — bars that arc to draw the eye."
+          "tagline": "Animated curved columns: bars that arc to draw the eye."
         },
         {
           "id": "curvedcol-static-viz",
           "name": "Curved Columns (Static)",
-          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+          "tagline": "Curved columns, static, the still-frame version with the same elegance."
         }
       ]
     },
     {
       "id": "qq-viz",
       "name": "Q-Q Plot",
-      "tagline": "Q-Q plot — does this distribution match the one you expect?",
+      "tagline": "Q-Q plot: does this distribution match the one you expect?",
       "long": "Q-Q Plot graphs the quantiles of your data against the quantiles of a reference distribution. A straight line means \"yes, this is normal\" (or whatever you compared against). Anything else is worth investigating.",
       "what": "Sample quantiles vs theoretical (normal by default) with reference line, optional band, and tooltip.",
       "why": "Histograms blur shape; a Q-Q plot says \"normal or not\" without a paragraph of stats.",
@@ -2423,20 +2423,20 @@
         {
           "id": "beeswarm-viz",
           "name": "Beeswarm / Swarm Plot",
-          "tagline": "Every individual point, no overlap — distributions that boxplots hide."
+          "tagline": "Every individual point, no overlap: distributions that boxplots hide."
         },
         {
           "id": "hexbindensity-viz",
           "name": "Hexbin Density Plot",
-          "tagline": "Hexagonal density plot — same hex grid, focused on point density."
+          "tagline": "Hexagonal density plot: same hex grid, focused on point density."
         }
       ]
     },
     {
       "id": "quadrant-viz",
       "name": "Quadrant Scatter",
-      "tagline": "Four-quadrant scatter — the strategy chart you've drawn on whiteboards.",
-      "long": "Quadrant Scatter splits your x/y plane into four labeled quadrants by configurable thresholds. Bubbles or dots, hover detail, cross-filter — the BCG / 2×2 framework that actually lives in your dashboard.",
+      "tagline": "Four-quadrant scatter, the strategy chart you've drawn on whiteboards.",
+      "long": "Quadrant Scatter splits your x/y plane into four labeled quadrants by configurable thresholds. Bubbles or dots, hover detail, cross-filter, the BCG / 2×2 framework that actually lives in your dashboard.",
       "what": "x/y scatter with vertical/horizontal threshold lines splitting the canvas into four labeled quadrants, optional bubble sizing.",
       "why": "Strategy conversations are quadrant-shaped. Bring them into the dashboard.",
       "uses": [
@@ -2463,29 +2463,29 @@
         {
           "id": "bubble-viz",
           "name": "Bubble Chart",
-          "tagline": "X × Y × size — three metrics, one chart, zero squinting."
+          "tagline": "X × Y × size: three metrics, one chart, zero squinting."
         },
         {
           "id": "bubblegrid",
           "name": "Bubble Grid",
-          "tagline": "A grid of bubbles — counts and magnitudes across two categorical axes."
+          "tagline": "A grid of bubbles: counts and magnitudes across two categorical axes."
         },
         {
           "id": "hexbin-viz",
           "name": "Hexbin Scatter",
-          "tagline": "Hexagonal density — scatter plots that survive 100k points."
+          "tagline": "Hexagonal density: scatter plots that survive 100k points."
         },
         {
           "id": "scattertrend-viz",
           "name": "Scatter Plot with Trendline",
-          "tagline": "Scatter with a fitted trend line — correlation without the chart-junk."
+          "tagline": "Scatter with a fitted trend line: correlation without the chart-junk."
         }
       ]
     },
     {
       "id": "radartable-viz",
       "name": "Radar Chart with Data Table",
-      "tagline": "Radar chart with a sibling data table — visual and exact.",
+      "tagline": "Radar chart with a sibling data table: visual and exact.",
       "long": "Radar Chart with Data Table pairs a polygon radar across N metrics with a sortable table of the underlying values. The radar tells the shape story; the table answers \"what was the exact number?\" without a second view.",
       "what": "Radar polygon per category over shared metric axes, alongside a sortable data table with the values, theme-aware coloring.",
       "why": "Radar charts are good at shape, bad at precision. Adding the table fixes the only complaint about radars.",
@@ -2513,29 +2513,29 @@
         {
           "id": "bigcalendar-viz",
           "name": "Big Calendar",
-          "tagline": "Full calendar grid — event volume painted across every cell."
+          "tagline": "Full calendar grid: event volume painted across every cell."
         },
         {
           "id": "calendarHeatmap",
           "name": "Mini Calendar",
-          "tagline": "Compact monthly calendar — one cell, one number, instant pattern."
+          "tagline": "Compact monthly calendar: one cell, one number, instant pattern."
         },
         {
           "id": "convheatmap-viz",
           "name": "Conversion Heatmap",
-          "tagline": "Day-of-week × hour heatmap — when your audience actually shows up."
+          "tagline": "Day-of-week × hour heatmap: when your audience actually shows up."
         },
         {
           "id": "datatable-viz",
           "name": "Row Over Row Comparison Table",
-          "tagline": "Row over row — DoD / MoM / YoY comparison table with deltas and % change."
+          "tagline": "Row over row: DoD / MoM / YoY comparison table with deltas and % change."
         }
       ]
     },
     {
       "id": "radialtree-viz",
       "name": "Radial Tree",
-      "tagline": "Radial hierarchy — branches arrayed around a center, every level visible.",
+      "tagline": "Radial hierarchy: branches arrayed around a center, every level visible.",
       "long": "Radial Tree lays out hierarchical data as branches radiating from a center, with node depth = ring and node size = metric. The most space-efficient way to show 3–5 hierarchy levels at once.",
       "what": "Hierarchical tree laid out radially with sized nodes, link curves, configurable depth coloring, hover-highlight.",
       "why": "Trees grow tall fast. Radial layout keeps width and depth balanced.",
@@ -2563,32 +2563,32 @@
         {
           "id": "arcdiagram-viz",
           "name": "Arc Diagram",
-          "tagline": "Node-link arc diagram — relationships you can actually trace."
+          "tagline": "Node-link arc diagram: relationships you can actually trace."
         },
         {
           "id": "audioverlap-viz",
           "name": "Audience Overlap",
-          "tagline": "Proportional circles for audience segments — overlaps you can see."
+          "tagline": "Proportional circles for audience segments: overlaps you can see."
         },
         {
           "id": "bipartite-viz",
           "name": "Bipartite Graph",
-          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+          "tagline": "Two columns, every link explicit: A-to-B relationships made obvious."
         },
         {
           "id": "chord-viz",
           "name": "Chord Diagram",
-          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+          "tagline": "Circular chord ribbons: every pairwise flow, perfectly weighted."
         }
       ]
     },
     {
       "id": "revenuebreakdown-viz",
       "name": "Revenue Breakdown (Bar + Line Combo)",
-      "tagline": "Revenue mix bars + margin line — the public-company readout view.",
+      "tagline": "Revenue mix bars + margin line, the public-company readout view.",
       "long": "Revenue Breakdown is a grouped bar chart with up to 4 bar metrics and an optional line overlay (e.g. Net Margin %). Dark theme with a green color scheme, legend, tooltip, cross-filter, and a Quarterly / Annual view toggle.",
       "what": "Grouped bars for up to 4 revenue components per period plus an optional overlay line for a ratio metric (margin %, etc.); Q/A view toggle.",
-      "why": "Designed for the way public-company earnings actually look — revenue mix + margin trend on one panel.",
+      "why": "Designed for the way public-company earnings actually look: revenue mix + margin trend on one panel.",
       "uses": [
         {
           "tag": "Public co",
@@ -2613,24 +2613,24 @@
         {
           "id": "breakeven-viz",
           "name": "Break-Even Chart",
-          "tagline": "Fixed cost, variable cost, revenue — and the exact unit where they cross."
+          "tagline": "Fixed cost, variable cost, revenue, and the exact unit where they cross."
         },
         {
           "id": "cashflow-viz",
           "name": "Cashflow",
-          "tagline": "Income up, expense down — the zero line tells the story."
+          "tagline": "Income up, expense down, the zero line tells the story."
         },
         {
           "id": "earningsdot-viz",
           "name": "Actual Over Target Dot Chart",
-          "tagline": "Actual over target dots — beats and misses, colored automatically."
+          "tagline": "Actual over target dots: beats and misses, colored automatically."
         }
       ]
     },
     {
       "id": "scattertrend-viz",
       "name": "Scatter Plot with Trendline",
-      "tagline": "Scatter with a fitted trend line — correlation without the chart-junk.",
+      "tagline": "Scatter with a fitted trend line: correlation without the chart-junk.",
       "long": "Scatter Plot with Trendline overlays a linear (or polynomial) trend on a standard scatter, with R² in the corner so analytical claims are calibrated.",
       "what": "x/y scatter with regression line, R² annotation, configurable curve order, tooltip, cross-filter, optional grouping color.",
       "why": "Correlations get over-claimed. R² + a visible trend keeps everyone honest.",
@@ -2658,29 +2658,29 @@
         {
           "id": "bubble-viz",
           "name": "Bubble Chart",
-          "tagline": "X × Y × size — three metrics, one chart, zero squinting."
+          "tagline": "X × Y × size: three metrics, one chart, zero squinting."
         },
         {
           "id": "bubblegrid",
           "name": "Bubble Grid",
-          "tagline": "A grid of bubbles — counts and magnitudes across two categorical axes."
+          "tagline": "A grid of bubbles: counts and magnitudes across two categorical axes."
         },
         {
           "id": "hexbin-viz",
           "name": "Hexbin Scatter",
-          "tagline": "Hexagonal density — scatter plots that survive 100k points."
+          "tagline": "Hexagonal density: scatter plots that survive 100k points."
         },
         {
           "id": "quadrant-viz",
           "name": "Quadrant Scatter",
-          "tagline": "Four-quadrant scatter — the strategy chart you've drawn on whiteboards."
+          "tagline": "Four-quadrant scatter, the strategy chart you've drawn on whiteboards."
         }
       ]
     },
     {
       "id": "semicirclegauge-viz",
       "name": "Semicircle Gauge",
-      "tagline": "Half-circle gauge — same story, half the real estate.",
+      "tagline": "Half-circle gauge: same story, half the real estate.",
       "long": "Semicircle Gauge delivers the same goal-attainment narrative as a full circle in a slim half-arc footprint. Pair with a tile-style layout to fit six KPIs in a single row.",
       "what": "180° arc filled to current value with threshold bands and a center metric.",
       "why": "Looks deliberate next to KPI cards; fits where a full circle won’t.",
@@ -2708,30 +2708,30 @@
         {
           "id": "analystratings-viz",
           "name": "Breakdown Chart",
-          "tagline": "Donut + progress bars for category breakdowns — the dominant slice highlighted automatically."
+          "tagline": "Donut + progress bars for category breakdowns, the dominant slice highlighted automatically."
         },
         {
           "id": "bulletchart-viz",
           "name": "Bullet Chart",
-          "tagline": "Stephen Few's gauge replacement — actual, target, and ranges in one bar."
+          "tagline": "Stephen Few's gauge replacement: actual, target, and ranges in one bar."
         },
         {
           "id": "kpisparkline-viz",
           "name": "KPI Sparkline Cards",
-          "tagline": "Headline numbers with trend lines baked in — the executive scorecard, refined."
+          "tagline": "Headline numbers with trend lines baked in, the executive scorecard, refined."
         },
         {
           "id": "progresscircles-viz",
           "name": "Progress Circles",
-          "tagline": "A row of donuts that each say \"X% done\" — instantly readable."
+          "tagline": "A row of donuts that each say \"X% done\": instantly readable."
         }
       ]
     },
     {
       "id": "semicirclepie-viz",
       "name": "Semi-Circle Pie Chart",
-      "tagline": "Half-pie — composition in a single horizontal slot.",
-      "long": "Semi-Circle Pie Chart is the donut’s skinny cousin — perfect for headers, narrow dashboard slots, and any place a full pie eats too much vertical space.",
+      "tagline": "Half-pie: composition in a single horizontal slot.",
+      "long": "Semi-Circle Pie Chart is the donut’s skinny cousin: perfect for headers, narrow dashboard slots, and any place a full pie eats too much vertical space.",
       "what": "Half-circle pie with category slices, optional center label, hover tooltip, cross-filter.",
       "why": "Composition charts shouldn’t require half the dashboard. This is one row, full story.",
       "uses": [
@@ -2758,32 +2758,32 @@
         {
           "id": "analystratings-viz",
           "name": "Breakdown Chart",
-          "tagline": "Donut + progress bars for category breakdowns — the dominant slice highlighted automatically."
+          "tagline": "Donut + progress bars for category breakdowns, the dominant slice highlighted automatically."
         },
         {
           "id": "bulletchart-viz",
           "name": "Bullet Chart",
-          "tagline": "Stephen Few's gauge replacement — actual, target, and ranges in one bar."
+          "tagline": "Stephen Few's gauge replacement: actual, target, and ranges in one bar."
         },
         {
           "id": "kpisparkline-viz",
           "name": "KPI Sparkline Cards",
-          "tagline": "Headline numbers with trend lines baked in — the executive scorecard, refined."
+          "tagline": "Headline numbers with trend lines baked in, the executive scorecard, refined."
         },
         {
           "id": "progresscircles-viz",
           "name": "Progress Circles",
-          "tagline": "A row of donuts that each say \"X% done\" — instantly readable."
+          "tagline": "A row of donuts that each say \"X% done\": instantly readable."
         }
       ]
     },
     {
       "id": "simplecol-viz",
       "name": "Simple Column Chart",
-      "tagline": "A clean column chart — opinionated defaults, theme-aware.",
-      "long": "Simple Column Chart is the everyday bar chart, redone — opinionated spacing, theme-aware coloring, deliberate axis ticks, label-fit logic that handles dense categories automatically.",
+      "tagline": "A clean column chart: opinionated defaults, theme-aware.",
+      "long": "Simple Column Chart is the everyday bar chart, redone: opinionated spacing, theme-aware coloring, deliberate axis ticks, label-fit logic that handles dense categories automatically.",
       "what": "Single-series vertical bars with theme-aware colors, axis fit, tooltip, value labels, cross-filter.",
-      "why": "Stock Data bar charts work — but they look it. This one is the same chart with the rough edges polished.",
+      "why": "Stock Data bar charts work, but they look it. This one is the same chart with the rough edges polished.",
       "uses": [
         {
           "tag": "Reporting",
@@ -2808,7 +2808,7 @@
         {
           "id": "abtest-viz",
           "name": "A/B Test Results",
-          "tagline": "CI bars for A/B variants — significance baked in."
+          "tagline": "CI bars for A/B variants: significance baked in."
         },
         {
           "id": "barrace-viz",
@@ -2818,22 +2818,22 @@
         {
           "id": "curvedcol-animated-viz",
           "name": "Curved Columns (Animated + Zoom)",
-          "tagline": "Animated curved columns — bars that arc to draw the eye."
+          "tagline": "Animated curved columns: bars that arc to draw the eye."
         },
         {
           "id": "curvedcol-static-viz",
           "name": "Curved Columns (Static)",
-          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+          "tagline": "Curved columns, static, the still-frame version with the same elegance."
         }
       ]
     },
     {
       "id": "slicedice-viz",
       "name": "Slice / Dice Treemap",
-      "tagline": "Slice / dice treemap — horizontal, vertical, or alternating tiling.",
-      "long": "Slice / Dice Treemap gives you three classic tiling algorithms — slice (horizontal stripes), dice (vertical stripes), or slice-dice (alternating) — so the structure of your hierarchy *looks* like hierarchy, not a random rectangle pile.",
+      "tagline": "Slice / dice treemap: horizontal, vertical, or alternating tiling.",
+      "long": "Slice / Dice Treemap gives you three classic tiling algorithms: slice (horizontal stripes), dice (vertical stripes), or slice-dice (alternating), so the structure of your hierarchy *looks* like hierarchy, not a random rectangle pile.",
       "what": "Treemap with slice/dice/slice-dice tiling, multi-dimension drilldown, click-to-zoom, breadcrumb navigation, theme-aware colors.",
-      "why": "Squarified treemaps prioritize compactness over structure. Slice/dice prioritizes the hierarchy itself — easier to read at depth.",
+      "why": "Squarified treemaps prioritize compactness over structure. Slice/dice prioritizes the hierarchy itself: easier to read at depth.",
       "uses": [
         {
           "tag": "Finance",
@@ -2858,24 +2858,24 @@
         {
           "id": "smallmultiples-viz",
           "name": "Small Multiples / Trellis Grid",
-          "tagline": "Small multiples — the same chart, repeated, every dimension visible."
+          "tagline": "Small multiples, the same chart, repeated, every dimension visible."
         },
         {
           "id": "sunburstChart",
           "name": "Sunburst Chart",
-          "tagline": "Radial hierarchy — concentric rings drill into your structure."
+          "tagline": "Radial hierarchy: concentric rings drill into your structure."
         },
         {
           "id": "treemapzoom-viz",
           "name": "Zoomable Treemap",
-          "tagline": "Zoomable treemap — drill into any tile, breadcrumb back out."
+          "tagline": "Zoomable treemap: drill into any tile, breadcrumb back out."
         }
       ]
     },
     {
       "id": "smallmultiples-viz",
       "name": "Small Multiples / Trellis Grid",
-      "tagline": "Small multiples — the same chart, repeated, every dimension visible.",
+      "tagline": "Small multiples, the same chart, repeated, every dimension visible.",
       "long": "Small Multiples / Trellis Grid breaks one big chart into a grid of small charts, one per category, sharing axes. The Tufte-blessed way to compare a pattern across N segments in a single image.",
       "what": "Grid of identical small charts (line, bar, area, scatter), one per category, with shared axes, free or fixed scale, common tooltip.",
       "why": "Stacking 12 series on one line chart is unreadable. Splitting them into 12 small charts is honest.",
@@ -2903,31 +2903,31 @@
         {
           "id": "slicedice-viz",
           "name": "Slice / Dice Treemap",
-          "tagline": "Slice / dice treemap — horizontal, vertical, or alternating tiling."
+          "tagline": "Slice / dice treemap: horizontal, vertical, or alternating tiling."
         },
         {
           "id": "sunburstChart",
           "name": "Sunburst Chart",
-          "tagline": "Radial hierarchy — concentric rings drill into your structure."
+          "tagline": "Radial hierarchy: concentric rings drill into your structure."
         },
         {
           "id": "treemapzoom-viz",
           "name": "Zoomable Treemap",
-          "tagline": "Zoomable treemap — drill into any tile, breadcrumb back out."
+          "tagline": "Zoomable treemap: drill into any tile, breadcrumb back out."
         }
       ]
     },
     {
       "id": "solidgauge-viz",
       "name": "Solid Gauge",
-      "tagline": "A radial gauge for any \"X out of target\" story — without speedometer kitsch.",
+      "tagline": "A radial gauge for any \"X out of target\" story: without speedometer kitsch.",
       "long": "Solid Gauge fills a circular arc proportional to a metric’s progress toward a configurable target, with optional zones (red/amber/green) baked into the ring. Goal attainment, communicated cleanly.",
       "what": "270° or full-circle filled gauge with center value, %-to-target, and optional threshold bands.",
-      "why": "Goal pages need a single hero number — this gives them one with built-in context.",
+      "why": "Goal pages need a single hero number: this gives them one with built-in context.",
       "uses": [
         {
           "tag": "Sales",
-          "body": "Quota attainment — 78% of $4M."
+          "body": "Quota attainment: 78% of $4M."
         },
         {
           "tag": "Support",
@@ -2948,32 +2948,32 @@
         {
           "id": "analystratings-viz",
           "name": "Breakdown Chart",
-          "tagline": "Donut + progress bars for category breakdowns — the dominant slice highlighted automatically."
+          "tagline": "Donut + progress bars for category breakdowns, the dominant slice highlighted automatically."
         },
         {
           "id": "bulletchart-viz",
           "name": "Bullet Chart",
-          "tagline": "Stephen Few's gauge replacement — actual, target, and ranges in one bar."
+          "tagline": "Stephen Few's gauge replacement: actual, target, and ranges in one bar."
         },
         {
           "id": "kpisparkline-viz",
           "name": "KPI Sparkline Cards",
-          "tagline": "Headline numbers with trend lines baked in — the executive scorecard, refined."
+          "tagline": "Headline numbers with trend lines baked in, the executive scorecard, refined."
         },
         {
           "id": "progresscircles-viz",
           "name": "Progress Circles",
-          "tagline": "A row of donuts that each say \"X% done\" — instantly readable."
+          "tagline": "A row of donuts that each say \"X% done\": instantly readable."
         }
       ]
     },
     {
       "id": "stackedarea-viz",
       "name": "Stacked Area Chart",
-      "tagline": "Stacked area over time — composition and trend on the same canvas.",
+      "tagline": "Stacked area over time: composition and trend on the same canvas.",
       "long": "Stacked Area Chart layers series totals over time, sharing a baseline. Use it when both \"how big is the total?\" and \"how is the mix shifting?\" are the questions.",
       "what": "Stacked area layers per series sharing a baseline, with legend, tooltip, theme-aware colors, smooth or stepped interpolation.",
-      "why": "Lines + composition together — without a second chart.",
+      "why": "Lines + composition together: without a second chart.",
       "uses": [
         {
           "tag": "Marketing",
@@ -2998,12 +2998,12 @@
         {
           "id": "bump-viz",
           "name": "Bump Chart",
-          "tagline": "Rank-over-time line chart — who's climbing, who's sliding."
+          "tagline": "Rank-over-time line chart: who's climbing, who's sliding."
         },
         {
           "id": "dualaxis-viz",
           "name": "Chart Title",
-          "tagline": "Two metrics, two scales, one line of sight — without the lie factor."
+          "tagline": "Two metrics, two scales, one line of sight: without the lie factor."
         },
         {
           "id": "stackedneg-animated-viz",
@@ -3013,7 +3013,7 @@
         {
           "id": "stackedneg-viz",
           "name": "Stacked Bar Chart with Negative Values (Static)",
-          "tagline": "Stacked bars with negative values — wins above, losses below, total preserved."
+          "tagline": "Stacked bars with negative values: wins above, losses below, total preserved."
         }
       ]
     },
@@ -3021,7 +3021,7 @@
       "id": "stackedneg-animated-viz",
       "name": "Stacked Bar Chart with Negative Values (Animated + Zoom)",
       "tagline": "Same signed stacked bar, animated entrance + zoom controls.",
-      "long": "Stacked Bar Chart with Negative Values (Animated + Zoom) is the kinetic version — smooth entry animation per stack and a zoom control for dense time axes.",
+      "long": "Stacked Bar Chart with Negative Values (Animated + Zoom) is the kinetic version: smooth entry animation per stack and a zoom control for dense time axes.",
       "what": "Animated entrance for positive/negative stacked bars with a draggable zoom control over the time axis.",
       "why": "Animation gives early-readers a moment to follow the story; the zoom keeps long histories legible.",
       "uses": [
@@ -3048,29 +3048,29 @@
         {
           "id": "bump-viz",
           "name": "Bump Chart",
-          "tagline": "Rank-over-time line chart — who's climbing, who's sliding."
+          "tagline": "Rank-over-time line chart: who's climbing, who's sliding."
         },
         {
           "id": "dualaxis-viz",
           "name": "Chart Title",
-          "tagline": "Two metrics, two scales, one line of sight — without the lie factor."
+          "tagline": "Two metrics, two scales, one line of sight: without the lie factor."
         },
         {
           "id": "stackedarea-viz",
           "name": "Stacked Area Chart",
-          "tagline": "Stacked area over time — composition and trend on the same canvas."
+          "tagline": "Stacked area over time: composition and trend on the same canvas."
         },
         {
           "id": "stackedneg-viz",
           "name": "Stacked Bar Chart with Negative Values (Static)",
-          "tagline": "Stacked bars with negative values — wins above, losses below, total preserved."
+          "tagline": "Stacked bars with negative values: wins above, losses below, total preserved."
         }
       ]
     },
     {
       "id": "stackedneg-viz",
       "name": "Stacked Bar Chart with Negative Values (Static)",
-      "tagline": "Stacked bars with negative values — wins above, losses below, total preserved.",
+      "tagline": "Stacked bars with negative values: wins above, losses below, total preserved.",
       "long": "Stacked Bar Chart with Negative Values handles the case standard stacked bars fail: a mix of positive and negative contributions stacked separately above and below the zero line, with the net total visible.",
       "what": "Positive series stacked above zero, negative stacked below, with optional net-total line per category and tooltip.",
       "why": "Most charting tools force negatives into separate panes. This keeps them on the same chart, the way the data is structured.",
@@ -3098,17 +3098,17 @@
         {
           "id": "bump-viz",
           "name": "Bump Chart",
-          "tagline": "Rank-over-time line chart — who's climbing, who's sliding."
+          "tagline": "Rank-over-time line chart: who's climbing, who's sliding."
         },
         {
           "id": "dualaxis-viz",
           "name": "Chart Title",
-          "tagline": "Two metrics, two scales, one line of sight — without the lie factor."
+          "tagline": "Two metrics, two scales, one line of sight: without the lie factor."
         },
         {
           "id": "stackedarea-viz",
           "name": "Stacked Area Chart",
-          "tagline": "Stacked area over time — composition and trend on the same canvas."
+          "tagline": "Stacked area over time: composition and trend on the same canvas."
         },
         {
           "id": "stackedneg-animated-viz",
@@ -3120,10 +3120,10 @@
     {
       "id": "storyflow-viz",
       "name": "Story Flow / Narrative",
-      "tagline": "Narrative timeline — characters, threads, and where they meet.",
-      "long": "Story Flow / Narrative draws character or thread lines across a time axis, bending them together at shared events. Inspired by the storyline charts of Tufte and Munzner — perfect for project histories, character relationships, and incident reconstruction.",
+      "tagline": "Narrative timeline: characters, threads, and where they meet.",
+      "long": "Story Flow / Narrative draws character or thread lines across a time axis, bending them together at shared events. Inspired by the storyline charts of Tufte and Munzner: perfect for project histories, character relationships, and incident reconstruction.",
       "what": "One smooth line per character/thread across a time axis, lines converge at shared events, with tooltips on each event.",
-      "why": "Project history and character interaction are inherently flowing — story flow respects that geometry.",
+      "why": "Project history and character interaction are inherently flowing: story flow respects that geometry.",
       "uses": [
         {
           "tag": "Incident response",
@@ -3148,29 +3148,29 @@
         {
           "id": "arcdiagram-viz",
           "name": "Arc Diagram",
-          "tagline": "Node-link arc diagram — relationships you can actually trace."
+          "tagline": "Node-link arc diagram: relationships you can actually trace."
         },
         {
           "id": "audioverlap-viz",
           "name": "Audience Overlap",
-          "tagline": "Proportional circles for audience segments — overlaps you can see."
+          "tagline": "Proportional circles for audience segments: overlaps you can see."
         },
         {
           "id": "bipartite-viz",
           "name": "Bipartite Graph",
-          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+          "tagline": "Two columns, every link explicit: A-to-B relationships made obvious."
         },
         {
           "id": "chord-viz",
           "name": "Chord Diagram",
-          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+          "tagline": "Circular chord ribbons: every pairwise flow, perfectly weighted."
         }
       ]
     },
     {
       "id": "streamgraph-viz",
       "name": "Streamgraph",
-      "tagline": "Stacked area, no fixed baseline — flowing composition over time.",
+      "tagline": "Stacked area, no fixed baseline: flowing composition over time.",
       "long": "Streamgraph stacks series around a central baseline that floats, producing flowing shapes that emphasize change in composition rather than totals. The chart for music genre share, ad spend mix, and any narrative \"how did the wave shift?\"",
       "what": "Floating-baseline stacked area with smooth interpolation, per-category color, tooltip, and label leaders.",
       "why": "Best for showing how composition shifts when the absolute total isn’t the headline.",
@@ -3198,17 +3198,17 @@
         {
           "id": "bump-viz",
           "name": "Bump Chart",
-          "tagline": "Rank-over-time line chart — who's climbing, who's sliding."
+          "tagline": "Rank-over-time line chart: who's climbing, who's sliding."
         },
         {
           "id": "dualaxis-viz",
           "name": "Chart Title",
-          "tagline": "Two metrics, two scales, one line of sight — without the lie factor."
+          "tagline": "Two metrics, two scales, one line of sight: without the lie factor."
         },
         {
           "id": "stackedarea-viz",
           "name": "Stacked Area Chart",
-          "tagline": "Stacked area over time — composition and trend on the same canvas."
+          "tagline": "Stacked area over time: composition and trend on the same canvas."
         },
         {
           "id": "stackedneg-animated-viz",
@@ -3220,8 +3220,8 @@
     {
       "id": "streamwave-viz",
       "name": "Stream Wave Chart",
-      "tagline": "Stream wave — streamgraph with a wavier silhouette for editorial flair.",
-      "long": "Stream Wave Chart is a streamgraph variant tuned for design-forward dashboards — smoother silhouettes, configurable curvature, and theme-aware accent gradients. The streamgraph you put on a marketing page.",
+      "tagline": "Stream wave: streamgraph with a wavier silhouette for editorial flair.",
+      "long": "Stream Wave Chart is a streamgraph variant tuned for design-forward dashboards: smoother silhouettes, configurable curvature, and theme-aware accent gradients. The streamgraph you put on a marketing page.",
       "what": "Streamgraph with extra silhouette smoothing, configurable curvature, accent gradients, tooltip.",
       "why": "Streamgraphs are striking; stream wave makes them gallery-ready.",
       "uses": [
@@ -3248,17 +3248,17 @@
         {
           "id": "bump-viz",
           "name": "Bump Chart",
-          "tagline": "Rank-over-time line chart — who's climbing, who's sliding."
+          "tagline": "Rank-over-time line chart: who's climbing, who's sliding."
         },
         {
           "id": "dualaxis-viz",
           "name": "Chart Title",
-          "tagline": "Two metrics, two scales, one line of sight — without the lie factor."
+          "tagline": "Two metrics, two scales, one line of sight: without the lie factor."
         },
         {
           "id": "stackedarea-viz",
           "name": "Stacked Area Chart",
-          "tagline": "Stacked area over time — composition and trend on the same canvas."
+          "tagline": "Stacked area over time: composition and trend on the same canvas."
         },
         {
           "id": "stackedneg-animated-viz",
@@ -3270,7 +3270,7 @@
     {
       "id": "sunburstChart",
       "name": "Sunburst Chart",
-      "tagline": "Radial hierarchy — concentric rings drill into your structure.",
+      "tagline": "Radial hierarchy: concentric rings drill into your structure.",
       "long": "Sunburst Chart renders nested dimensions as concentric arcs sized by a metric. Up to 5 levels, three color modes (By Depth / By Category / Single), configurable inner radius, smart auto-rotated labels with truncation + min-size culling, breadcrumb tooltip with %-of-total, and cross-filter on click.",
       "what": "Up to 5 nested dimensions as concentric arcs. Color modes (By Depth / By Category / Single), inner radius config, label truncation + min-size cull, breadcrumb tooltip, click cross-filter through ancestors.",
       "why": "Treemaps are great; sunbursts are great when the hierarchy itself is the protagonist.",
@@ -3298,25 +3298,25 @@
         {
           "id": "slicedice-viz",
           "name": "Slice / Dice Treemap",
-          "tagline": "Slice / dice treemap — horizontal, vertical, or alternating tiling."
+          "tagline": "Slice / dice treemap: horizontal, vertical, or alternating tiling."
         },
         {
           "id": "smallmultiples-viz",
           "name": "Small Multiples / Trellis Grid",
-          "tagline": "Small multiples — the same chart, repeated, every dimension visible."
+          "tagline": "Small multiples, the same chart, repeated, every dimension visible."
         },
         {
           "id": "treemapzoom-viz",
           "name": "Zoomable Treemap",
-          "tagline": "Zoomable treemap — drill into any tile, breadcrumb back out."
+          "tagline": "Zoomable treemap: drill into any tile, breadcrumb back out."
         }
       ]
     },
     {
       "id": "timeseries-viz",
       "name": "Time Series with Annotations",
-      "tagline": "Time series with annotated events — context where it actually happened.",
-      "long": "Time Series with Annotations is a clean line chart that lets you mark events on the timeline — launches, incidents, campaigns, holidays. The annotations are first-class, not a hack.",
+      "tagline": "Time series with annotated events: context where it actually happened.",
+      "long": "Time Series with Annotations is a clean line chart that lets you mark events on the timeline: launches, incidents, campaigns, holidays. The annotations are first-class, not a hack.",
       "what": "Single or multi-series line over time with vertical event annotations (label + color), tooltip, cross-filter.",
       "why": "Spikes in a time series only mean something with context. Annotations put the context inline.",
       "uses": [
@@ -3343,17 +3343,17 @@
         {
           "id": "bump-viz",
           "name": "Bump Chart",
-          "tagline": "Rank-over-time line chart — who's climbing, who's sliding."
+          "tagline": "Rank-over-time line chart: who's climbing, who's sliding."
         },
         {
           "id": "dualaxis-viz",
           "name": "Chart Title",
-          "tagline": "Two metrics, two scales, one line of sight — without the lie factor."
+          "tagline": "Two metrics, two scales, one line of sight: without the lie factor."
         },
         {
           "id": "stackedarea-viz",
           "name": "Stacked Area Chart",
-          "tagline": "Stacked area over time — composition and trend on the same canvas."
+          "tagline": "Stacked area over time: composition and trend on the same canvas."
         },
         {
           "id": "stackedneg-animated-viz",
@@ -3365,8 +3365,8 @@
     {
       "id": "trafficsrc-viz",
       "name": "Traffic Sources Chord",
-      "tagline": "Traffic source chord — every channel-to-conversion flow ribboned.",
-      "long": "Traffic Sources Chord is a chord diagram tuned for marketing attribution — sources on the outside, conversions on the inside, ribbons weighted by flow. Multi-touch attribution finally readable.",
+      "tagline": "Traffic source chord: every channel-to-conversion flow ribboned.",
+      "long": "Traffic Sources Chord is a chord diagram tuned for marketing attribution: sources on the outside, conversions on the inside, ribbons weighted by flow. Multi-touch attribution finally readable.",
       "what": "Chord diagram with sources and conversions as arcs, ribbons weighted by flow, with hover-highlight and tooltip.",
       "why": "Sankey is one-directional; for true multi-touch ↔ multi-conversion flows, chord reads cleaner.",
       "uses": [
@@ -3393,30 +3393,30 @@
         {
           "id": "arcdiagram-viz",
           "name": "Arc Diagram",
-          "tagline": "Node-link arc diagram — relationships you can actually trace."
+          "tagline": "Node-link arc diagram: relationships you can actually trace."
         },
         {
           "id": "audioverlap-viz",
           "name": "Audience Overlap",
-          "tagline": "Proportional circles for audience segments — overlaps you can see."
+          "tagline": "Proportional circles for audience segments: overlaps you can see."
         },
         {
           "id": "bipartite-viz",
           "name": "Bipartite Graph",
-          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+          "tagline": "Two columns, every link explicit: A-to-B relationships made obvious."
         },
         {
           "id": "chord-viz",
           "name": "Chord Diagram",
-          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+          "tagline": "Circular chord ribbons: every pairwise flow, perfectly weighted."
         }
       ]
     },
     {
       "id": "treemapzoom-viz",
       "name": "Zoomable Treemap",
-      "tagline": "Zoomable treemap — drill into any tile, breadcrumb back out.",
-      "long": "Zoomable Treemap supports 1–6 dimensions of drilldown — click any tile to zoom in, breadcrumb to drill back out. Squarify or binary tiling, theme-aware colors.",
+      "tagline": "Zoomable treemap: drill into any tile, breadcrumb back out.",
+      "long": "Zoomable Treemap supports 1–6 dimensions of drilldown: click any tile to zoom in, breadcrumb to drill back out. Squarify or binary tiling, theme-aware colors.",
       "what": "Treemap with click-to-zoom multi-level drilldown, breadcrumb navigation, squarify or binary tiling, theme colors.",
       "why": "Static treemaps run out of room past two levels; zoom keeps every level useful.",
       "uses": [
@@ -3443,27 +3443,27 @@
         {
           "id": "slicedice-viz",
           "name": "Slice / Dice Treemap",
-          "tagline": "Slice / dice treemap — horizontal, vertical, or alternating tiling."
+          "tagline": "Slice / dice treemap: horizontal, vertical, or alternating tiling."
         },
         {
           "id": "smallmultiples-viz",
           "name": "Small Multiples / Trellis Grid",
-          "tagline": "Small multiples — the same chart, repeated, every dimension visible."
+          "tagline": "Small multiples, the same chart, repeated, every dimension visible."
         },
         {
           "id": "sunburstChart",
           "name": "Sunburst Chart",
-          "tagline": "Radial hierarchy — concentric rings drill into your structure."
+          "tagline": "Radial hierarchy: concentric rings drill into your structure."
         }
       ]
     },
     {
       "id": "vardonut-viz",
       "name": "Variable-Radius Nested Donut",
-      "tagline": "Variable-radius nested donut — two metrics per slice, one chart.",
-      "long": "Variable-Radius Nested Donut combines angular share with radial magnitude — angle = share, radius = a second metric. Nest two of them and you have a four-metric composition chart in a single ring.",
+      "tagline": "Variable-radius nested donut: two metrics per slice, one chart.",
+      "long": "Variable-Radius Nested Donut combines angular share with radial magnitude: angle = share, radius = a second metric. Nest two of them and you have a four-metric composition chart in a single ring.",
       "what": "Donut with per-slice angle for share and per-slice radius for a second metric, nested for two breakdowns.",
-      "why": "When a regular donut loses a metric — variable-radius keeps it.",
+      "why": "When a regular donut loses a metric: variable-radius keeps it.",
       "uses": [
         {
           "tag": "Marketing",
@@ -3488,29 +3488,29 @@
         {
           "id": "dualdonut-viz",
           "name": "Dual Donut",
-          "tagline": "Two donuts side-by-side — current vs prior, plan vs actual, the comparison view."
+          "tagline": "Two donuts side-by-side: current vs prior, plan vs actual, the comparison view."
         },
         {
           "id": "multiring-viz",
           "name": "Multi-ring Donut",
-          "tagline": "Nested donut rings — multiple metrics, same center, one composition."
+          "tagline": "Nested donut rings: multiple metrics, same center, one composition."
         },
         {
           "id": "varradiuspie-viz",
           "name": "Variable Radius Pie Chart",
-          "tagline": "Variable-radius pie — angle is share, radius is a second metric."
+          "tagline": "Variable-radius pie: angle is share, radius is a second metric."
         },
         {
           "id": "waffle-viz",
           "name": "Waffle Chart",
-          "tagline": "10×10 grid — every square is 1% — the part-to-whole everyone reads correctly."
+          "tagline": "10×10 grid (every square is 1%), the part-to-whole everyone reads correctly."
         }
       ]
     },
     {
       "id": "variancebar-viz",
       "name": "Variance Bar",
-      "tagline": "Variance bars — actual minus baseline, signed and sorted.",
+      "tagline": "Variance bars: actual minus baseline, signed and sorted.",
       "long": "Variance Bar Chart subtracts a baseline from each category’s actual and draws the signed difference. Sorted by magnitude or direction, the chart tells the story before you read the labels.",
       "what": "Signed horizontal or vertical bars showing actual-minus-baseline per category, optional sorting, theme-aware colors.",
       "why": "Tables of plan vs actual hide the story; variance bars surface it.",
@@ -3538,7 +3538,7 @@
         {
           "id": "abtest-viz",
           "name": "A/B Test Results",
-          "tagline": "CI bars for A/B variants — significance baked in."
+          "tagline": "CI bars for A/B variants: significance baked in."
         },
         {
           "id": "barrace-viz",
@@ -3548,20 +3548,20 @@
         {
           "id": "curvedcol-animated-viz",
           "name": "Curved Columns (Animated + Zoom)",
-          "tagline": "Animated curved columns — bars that arc to draw the eye."
+          "tagline": "Animated curved columns: bars that arc to draw the eye."
         },
         {
           "id": "curvedcol-static-viz",
           "name": "Curved Columns (Static)",
-          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+          "tagline": "Curved columns, static, the still-frame version with the same elegance."
         }
       ]
     },
     {
       "id": "varradiuspie-viz",
       "name": "Variable Radius Pie Chart",
-      "tagline": "Variable-radius pie — angle is share, radius is a second metric.",
-      "long": "Variable Radius Pie Chart (a.k.a. nightingale rose) keeps the angle = share rule but extends each slice’s radius by a second metric — so volume × magnitude reads at a glance.",
+      "tagline": "Variable-radius pie: angle is share, radius is a second metric.",
+      "long": "Variable Radius Pie Chart (a.k.a. nightingale rose) keeps the angle = share rule but extends each slice’s radius by a second metric, so volume × magnitude reads at a glance.",
       "what": "Pie with each slice extended to a per-slice radius driven by a second metric, with tooltip and legend.",
       "why": "Two metrics in one chart, in the form your audience already knows.",
       "uses": [
@@ -3588,29 +3588,29 @@
         {
           "id": "dualdonut-viz",
           "name": "Dual Donut",
-          "tagline": "Two donuts side-by-side — current vs prior, plan vs actual, the comparison view."
+          "tagline": "Two donuts side-by-side: current vs prior, plan vs actual, the comparison view."
         },
         {
           "id": "multiring-viz",
           "name": "Multi-ring Donut",
-          "tagline": "Nested donut rings — multiple metrics, same center, one composition."
+          "tagline": "Nested donut rings: multiple metrics, same center, one composition."
         },
         {
           "id": "vardonut-viz",
           "name": "Variable-Radius Nested Donut",
-          "tagline": "Variable-radius nested donut — two metrics per slice, one chart."
+          "tagline": "Variable-radius nested donut: two metrics per slice, one chart."
         },
         {
           "id": "waffle-viz",
           "name": "Waffle Chart",
-          "tagline": "10×10 grid — every square is 1% — the part-to-whole everyone reads correctly."
+          "tagline": "10×10 grid (every square is 1%), the part-to-whole everyone reads correctly."
         }
       ]
     },
     {
       "id": "venn-viz",
       "name": "Venn / Euler Diagram",
-      "tagline": "Venn / Euler diagrams — set overlaps with the right geometry.",
+      "tagline": "Venn / Euler diagrams: set overlaps with the right geometry.",
       "long": "Venn / Euler Diagram renders 2–4 set overlaps with circle sizes proportional to set size and intersection geometry placed correctly. For audience overlaps, feature overlaps, and any \"who’s in all three?\" question.",
       "what": "2–4 circle Venn/Euler diagram with sized circles, correct overlap geometry, count labels, tooltip.",
       "why": "The Venn diagram every dashboard tries to fake with text. This one does the math.",
@@ -3638,29 +3638,29 @@
         {
           "id": "arcdiagram-viz",
           "name": "Arc Diagram",
-          "tagline": "Node-link arc diagram — relationships you can actually trace."
+          "tagline": "Node-link arc diagram: relationships you can actually trace."
         },
         {
           "id": "audioverlap-viz",
           "name": "Audience Overlap",
-          "tagline": "Proportional circles for audience segments — overlaps you can see."
+          "tagline": "Proportional circles for audience segments: overlaps you can see."
         },
         {
           "id": "bipartite-viz",
           "name": "Bipartite Graph",
-          "tagline": "Two columns, every link explicit — A-to-B relationships made obvious."
+          "tagline": "Two columns, every link explicit: A-to-B relationships made obvious."
         },
         {
           "id": "chord-viz",
           "name": "Chord Diagram",
-          "tagline": "Circular chord ribbons — every pairwise flow, perfectly weighted."
+          "tagline": "Circular chord ribbons: every pairwise flow, perfectly weighted."
         }
       ]
     },
     {
       "id": "waffle-viz",
       "name": "Waffle Chart",
-      "tagline": "10×10 grid — every square is 1% — the part-to-whole everyone reads correctly.",
+      "tagline": "10×10 grid (every square is 1%), the part-to-whole everyone reads correctly.",
       "long": "Waffle Chart turns part-to-whole into a 100-square grid where each square represents 1% of the total, colored by category. Easier to read percentages from than a pie, and looks fantastic.",
       "what": "10x10 grid where each square = 1%, filled by category with configurable fill direction, tooltip, cross-filter.",
       "why": "Pies fail at small slices; waffle charts show every percentage point.",
@@ -3688,29 +3688,29 @@
         {
           "id": "dualdonut-viz",
           "name": "Dual Donut",
-          "tagline": "Two donuts side-by-side — current vs prior, plan vs actual, the comparison view."
+          "tagline": "Two donuts side-by-side: current vs prior, plan vs actual, the comparison view."
         },
         {
           "id": "multiring-viz",
           "name": "Multi-ring Donut",
-          "tagline": "Nested donut rings — multiple metrics, same center, one composition."
+          "tagline": "Nested donut rings: multiple metrics, same center, one composition."
         },
         {
           "id": "vardonut-viz",
           "name": "Variable-Radius Nested Donut",
-          "tagline": "Variable-radius nested donut — two metrics per slice, one chart."
+          "tagline": "Variable-radius nested donut: two metrics per slice, one chart."
         },
         {
           "id": "varradiuspie-viz",
           "name": "Variable Radius Pie Chart",
-          "tagline": "Variable-radius pie — angle is share, radius is a second metric."
+          "tagline": "Variable-radius pie: angle is share, radius is a second metric."
         }
       ]
     },
     {
       "id": "windrose-viz",
       "name": "Wind Rose / Polar Bar",
-      "tagline": "Polar bars — magnitude by direction, distribution by angle.",
+      "tagline": "Polar bars: magnitude by direction, distribution by angle.",
       "long": "Wind Rose / Polar Bar arrays category bars around 360° instead of along a baseline. Built for directional data (wind, time-of-day, compass) but useful anywhere magnitude has a natural angular axis.",
       "what": "Polar bars at angles per category with bar length = magnitude, optional stacked segments, tooltip, theme color.",
       "why": "Directional data on a linear axis loses its meaning; polar layout preserves it.",
@@ -3738,7 +3738,7 @@
         {
           "id": "abtest-viz",
           "name": "A/B Test Results",
-          "tagline": "CI bars for A/B variants — significance baked in."
+          "tagline": "CI bars for A/B variants: significance baked in."
         },
         {
           "id": "barrace-viz",
@@ -3748,22 +3748,22 @@
         {
           "id": "curvedcol-animated-viz",
           "name": "Curved Columns (Animated + Zoom)",
-          "tagline": "Animated curved columns — bars that arc to draw the eye."
+          "tagline": "Animated curved columns: bars that arc to draw the eye."
         },
         {
           "id": "curvedcol-static-viz",
           "name": "Curved Columns (Static)",
-          "tagline": "Curved columns, static — the still-frame version with the same elegance."
+          "tagline": "Curved columns, static, the still-frame version with the same elegance."
         }
       ]
     },
     {
       "id": "wordcloud-viz",
       "name": "Word Cloud",
-      "tagline": "Word cloud — frequency-weighted, color-coded, optional category grouping.",
-      "long": "Word Cloud renders terms sized by frequency, optionally colored by category, with click-to-cross-filter. The fastest way to summarize unstructured text — and the chart your CMO actually asks for.",
+      "tagline": "Word cloud: frequency-weighted, color-coded, optional category grouping.",
+      "long": "Word Cloud renders terms sized by frequency, optionally colored by category, with click-to-cross-filter. The fastest way to summarize unstructured text, and the chart your CMO actually asks for.",
       "what": "Frequency-weighted word layout with optional color-by-category and cross-filter on click.",
-      "why": "Sometimes the question is \"what are people talking about?\" — and the word cloud is the right answer, no apology.",
+      "why": "Sometimes the question is \"what are people talking about?\", and the word cloud is the right answer, no apology.",
       "uses": [
         {
           "tag": "Support",
@@ -3788,29 +3788,29 @@
         {
           "id": "bigcalendar-viz",
           "name": "Big Calendar",
-          "tagline": "Full calendar grid — event volume painted across every cell."
+          "tagline": "Full calendar grid: event volume painted across every cell."
         },
         {
           "id": "calendarHeatmap",
           "name": "Mini Calendar",
-          "tagline": "Compact monthly calendar — one cell, one number, instant pattern."
+          "tagline": "Compact monthly calendar: one cell, one number, instant pattern."
         },
         {
           "id": "convheatmap-viz",
           "name": "Conversion Heatmap",
-          "tagline": "Day-of-week × hour heatmap — when your audience actually shows up."
+          "tagline": "Day-of-week × hour heatmap: when your audience actually shows up."
         },
         {
           "id": "datatable-viz",
           "name": "Row Over Row Comparison Table",
-          "tagline": "Row over row — DoD / MoM / YoY comparison table with deltas and % change."
+          "tagline": "Row over row: DoD / MoM / YoY comparison table with deltas and % change."
         }
       ]
     },
     {
       "id": "yoyline-viz",
       "name": "Year-over-Year Line",
-      "tagline": "Year-over-year overlay — current vs prior, with the delta shaded.",
+      "tagline": "Year-over-year overlay: current vs prior, with the delta shaded.",
       "long": "Year-over-Year Line overlays current year and prior year on the same axis, with optional shaded delta to make growth or decline obvious. The default chart for any \"how are we doing vs last year?\" conversation.",
       "what": "Two lines on shared axes (current vs prior year), optional shaded delta region, tooltip, cross-filter.",
       "why": "MoM and YoY tables make people math. This chart makes them see.",
@@ -3838,17 +3838,17 @@
         {
           "id": "bump-viz",
           "name": "Bump Chart",
-          "tagline": "Rank-over-time line chart — who's climbing, who's sliding."
+          "tagline": "Rank-over-time line chart: who's climbing, who's sliding."
         },
         {
           "id": "dualaxis-viz",
           "name": "Chart Title",
-          "tagline": "Two metrics, two scales, one line of sight — without the lie factor."
+          "tagline": "Two metrics, two scales, one line of sight: without the lie factor."
         },
         {
           "id": "stackedarea-viz",
           "name": "Stacked Area Chart",
-          "tagline": "Stacked area over time — composition and trend on the same canvas."
+          "tagline": "Stacked area over time: composition and trend on the same canvas."
         },
         {
           "id": "stackedneg-animated-viz",

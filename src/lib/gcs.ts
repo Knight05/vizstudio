@@ -38,7 +38,7 @@ async function getAccessToken(): Promise<string> {
   }
 
   const email = process.env.GCP_SERVICE_ACCOUNT_EMAIL;
-  // Vercel env vars store newlines as literal "\n" — restore them.
+  // Vercel env vars store newlines as literal "\n" - restore them.
   const key = process.env.GCP_PRIVATE_KEY?.replace(/\\n/g, "\n");
   if (!email || !key) {
     throw new Error("GCP_SERVICE_ACCOUNT_EMAIL / GCP_PRIVATE_KEY not configured");
@@ -177,7 +177,7 @@ async function uploadText(
   if (!res.ok) throw new Error(`Upload failed (${object}): ${res.status} ${await res.text()}`);
 }
 
-// Tiny concurrency pool — keeps the copy fast without hammering the API.
+// Tiny concurrency pool - keeps the copy fast without hammering the API.
 async function pool<T>(items: T[], limit: number, fn: (item: T) => Promise<void>): Promise<void> {
   const queue = [...items];
   const workers = Array.from({ length: Math.min(limit, queue.length) }, async () => {

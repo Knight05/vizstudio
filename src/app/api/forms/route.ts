@@ -64,7 +64,7 @@ const bodySchema = z
     description: z.string().max(4000).optional(), // site forms use "description"
     category: z.string().max(60).optional(), // report-issue category
     source: z.string().max(300).optional(),
-    // honeypot — bots fill this, humans never see it
+    // honeypot - bots fill this, humans never see it
     website: z.string().max(200).optional(),
   })
   .strip(); // drop any unknown keys instead of storing them
@@ -121,7 +121,7 @@ export async function POST(req: NextRequest) {
   }
   const data = parsed.data;
 
-  // Honeypot tripped — pretend success, store nothing.
+  // Honeypot tripped - pretend success, store nothing.
   if (data.website && data.website.trim()) {
     return cors(NextResponse.json({ ok: true }));
   }
@@ -137,7 +137,7 @@ export async function POST(req: NextRequest) {
   const name = clean(data.name, 120) ?? clean(data.chart_name, 160);
   const text = clean(data.message, 4000) ?? clean(data.description, 4000);
 
-  // Only persist known, sanitized extras — never arbitrary keys.
+  // Only persist known, sanitized extras - never arbitrary keys.
   const extras: Record<string, string> = {};
   const category = clean(data.category, 60);
   const company = clean(data.company, 160);

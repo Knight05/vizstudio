@@ -107,7 +107,7 @@ export default async function AdminClientsPage({
               {users.map((u) => (
                 <tr key={u.id} className="border-t border-panel-2">
                   <td className="px-4 py-3">
-                    <div className="font-medium">{u.name ?? "—"}</div>
+                    <div className="font-medium">{u.name ?? "-"}</div>
                     <div className="text-text-dim">{u.email}</div>
                   </td>
                   <td className="px-4 py-3">{u.subscription?.tier ?? "FREE"}</td>
@@ -122,7 +122,7 @@ export default async function AdminClientsPage({
                   <td className="px-4 py-3 whitespace-nowrap text-text-dim">
                     {u.subscription?.currentPeriodEnd
                       ? formatDate(u.subscription.currentPeriodEnd)
-                      : "—"}
+                      : "-"}
                   </td>
                   <td className="px-4 py-3">{u._count.downloads}</td>
                   <td className="px-4 py-3">{u._count.licenseKeys}</td>

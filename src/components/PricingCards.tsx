@@ -80,7 +80,7 @@ export function PricingCards({ isAuthed = false }: { isAuthed?: boolean }) {
           </h3>
           <p className="max-w-[52ch] text-[13px] leading-relaxed text-text-dim font-sans">
             Every plan unlocks every chart. You're paying for support speed,
-            team seats, and removing the watermark — not for which charts you see.
+            team seats, and removing the watermark, not for which charts you see.
           </p>
 
           <div className="mt-2 inline-flex rounded-full border border-border bg-panel p-1 text-[12px]">

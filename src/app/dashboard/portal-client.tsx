@@ -287,7 +287,7 @@ function OverviewTab(props: PortalProps & { goTo: (t: Tab) => void }) {
           </svg>
         </div>
         <h1>{first ? `Welcome back, ${first}` : "Welcome back"}</h1>
-        <p>Your charts, billing, and downloads — all in one place.</p>
+        <p>Your charts, billing, and downloads, all in one place.</p>
       </div>
 
       <div className="qa-grid">
@@ -317,7 +317,7 @@ function OverviewTab(props: PortalProps & { goTo: (t: Tab) => void }) {
           </div>
           <div>
             <div className="qa-title">Request a chart</div>
-            <div className="qa-body">Need a visualization we don&apos;t have yet? Tell us — we ship fast.</div>
+            <div className="qa-body">Need a visualization we don&apos;t have yet? Tell us. We ship fast.</div>
           </div>
           <div className="qa-foot"><span>Support</span><span>→</span></div>
         </button>
@@ -331,7 +331,7 @@ function OverviewTab(props: PortalProps & { goTo: (t: Tab) => void }) {
         <div className="ql-row">
           <div className="ql-ic"><Icon id="i-library" /></div>
           <div className="ql-main">
-            <div className="ql-t">All charts — one manifest</div>
+            <div className="ql-t">All charts: one manifest</div>
             <div className="ql-s">
               Add the entire library to Data Studio in one go.
             </div>
@@ -345,7 +345,7 @@ function OverviewTab(props: PortalProps & { goTo: (t: Tab) => void }) {
                 />
               ) : (
                 <div className="ql-s">
-                  Your private library path is being set up — refresh in a minute.
+                  Your private library path is being set up. Refresh in a minute.
                 </div>
               )}
             </div>
@@ -442,7 +442,7 @@ function ChartsTab(props: PortalProps) {
           <div className="s">
             {props.bucketProvisioned
               ? "Paste this manifest path once in Data Studio (Community visualizations → Build your own) and every chart shows up in your report."
-              : "Your private library path is being set up — refresh in a minute and it will appear here."}
+              : "Your private library path is being set up. Refresh in a minute and it will appear here."}
           </div>
         </div>
         {props.bucketProvisioned && (
@@ -548,7 +548,7 @@ function ChartsTab(props: PortalProps) {
                   />
                 ) : (
                   <div style={{ fontSize: 12, color: "var(--muted)" }}>
-                    Your private add-link is being set up — refresh in a minute.
+                    Your private add-link is being set up. Refresh in a minute.
                   </div>
                 )}
                 <ol>
@@ -676,7 +676,7 @@ function BillingTab(props: PortalProps) {
 
           {!props.hasStripeCustomer ? (
             <div style={{ fontSize: 12.5, color: "var(--muted)" }}>
-              No invoices yet — they&apos;ll appear here after your first payment.
+              No invoices yet. They&apos;ll appear here after your first payment.
             </div>
           ) : invoices.isLoading ? (
             <div style={{ fontSize: 12.5, color: "var(--muted)" }}>Loading invoices…</div>
@@ -769,7 +769,7 @@ function DownloadsTab(props: PortalProps) {
       setCopied(key);
       setTimeout(() => setCopied(null), 1200);
     } catch {
-      // Clipboard can be blocked (permissions / insecure context) — no-op.
+      // Clipboard can be blocked (permissions / insecure context) - no-op.
     }
   }
 
@@ -832,7 +832,7 @@ function DownloadsTab(props: PortalProps) {
                   <div style={{ flex: 1, minWidth: 220 }}>
                     <div className="kkey">{k.key}</div>
                     <div className="kmeta">
-                      {k.label ?? "—"} · created {new Date(k.createdAt).toLocaleDateString()}
+                      {k.label ?? "-"} · created {new Date(k.createdAt).toLocaleDateString()}
                       {k.lastUsedAt && <> · last used {new Date(k.lastUsedAt).toLocaleDateString()}</>}
                     </div>
                   </div>

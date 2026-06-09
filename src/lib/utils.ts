@@ -21,7 +21,7 @@ export function formatDate(d: Date | string) {
 }
 
 export function generateLicenseKey() {
-  // VZ-XXXX-XXXX-XXXX-XXXX — crypto-strength randomness (these are credentials).
+  // VZ-XXXX-XXXX-XXXX-XXXX - crypto-strength randomness (these are credentials).
   // Web Crypto is available in Node 19+ and all browsers. The alphabet has 32
   // chars, which divides 256 evenly, so `byte % 32` is unbiased.
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";

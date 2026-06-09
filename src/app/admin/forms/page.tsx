@@ -54,7 +54,7 @@ export default async function AdminFormsPage({
                 {leads.map((l) => (
                   <tr key={l.id} className="border-t border-panel-2">
                     <td className="px-4 py-3">{l.email}</td>
-                    <td className="px-4 py-3 text-text-dim">{l.source ?? "—"}</td>
+                    <td className="px-4 py-3 text-text-dim">{l.source ?? "-"}</td>
                     <td className="px-4 py-3 whitespace-nowrap text-text-dim">
                       {formatDate(l.createdAt)}
                     </td>
@@ -101,8 +101,8 @@ export default async function AdminFormsPage({
               {subs.map((s) => (
                 <tr key={s.id} className="border-t border-panel-2 align-top">
                   <td className="px-4 py-3"><span className="pill">{s.form}</span></td>
-                  <td className="px-4 py-3">{s.name ?? "—"}</td>
-                  <td className="px-4 py-3">{s.email ?? "—"}</td>
+                  <td className="px-4 py-3">{s.name ?? "-"}</td>
+                  <td className="px-4 py-3">{s.email ?? "-"}</td>
                   <td className="px-4 py-3 max-w-[44ch] whitespace-pre-wrap text-text-dim">
                     {(() => {
                       const category =
@@ -113,10 +113,10 @@ export default async function AdminFormsPage({
                         <span className="pill mb-1 mr-2 inline-block">{category}</span>
                       ) : null;
                     })()}
-                    {s.message ?? "—"}
+                    {s.message ?? "-"}
                   </td>
                   <td className="px-4 py-3 max-w-[24ch] truncate text-text-dim">
-                    {s.source ?? "—"}
+                    {s.source ?? "-"}
                   </td>
                   <td className="px-4 py-3 whitespace-nowrap text-text-dim">
                     {formatDate(s.createdAt)}
