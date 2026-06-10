@@ -64,7 +64,7 @@ function ForgotPasswordForm() {
         redirectTo: "/reset-password",
       });
       if (error) throw new Error(error.message ?? "Could not send the link");
-      // Always show success - never reveal whether an account exists.
+      // Always show success — never reveal whether an account exists.
       setSent(true);
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Something went wrong.");

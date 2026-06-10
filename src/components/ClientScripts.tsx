@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
  * (SPA) navigation. The marketing pages were ported from static HTML and rely
  * on imperative scripts (partials.js builds the nav/footer; home-*.js render the
  * D3 charts). `next/script` dedupes by `src`, so those scripts never fire again
- * when you navigate back to the page from, e.g., the dashboard - leaving the nav
+ * when you navigate back to the page from, e.g., the dashboard — leaving the nav
  * empty and the charts blank. This component appends fresh <script> elements on
  * each mount with `async = false` so execution order matches a full page load.
  */

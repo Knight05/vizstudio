@@ -60,7 +60,7 @@ export function screenshotFor(chartId: string): string | null {
         }`;
       }
     } catch {
-      // screenshots not available - cards fall back to icons
+      // screenshots not available — cards fall back to icons
     }
   }
   return screenshotMap[chartId] ?? null;

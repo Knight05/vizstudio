@@ -1,4 +1,4 @@
-// vizstudio.io - lightweight inline D3 sample renderers per chart-page
+// vizstudio.io — lightweight inline D3 sample renderers per chart-page
 // Each preview is a small, deliberately decorative SVG generated from a tiny
 // sample dataset. They give the page a "this is what it looks like" hero
 // without requiring the actual Data Studio script.
@@ -125,7 +125,7 @@
       el('rect', { x: pad + j * cw + 1, y: pad + i * ch + 1, width: cw - 2, height: ch - 2, fill: c, opacity: 0.15 + v * 0.85, rx: 2 });
     }
   } else if (kind === 'flow' || kind === 'map') {
-    // chord / network - circular nodes + arcs
+    // chord / network — circular nodes + arcs
     const cx = w / 2, cy = h / 2, R = 150;
     const n = 8;
     const nodes = [];

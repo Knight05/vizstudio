@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { GetStartedForm } from "@/components/GetStartedForm";
 
 export const metadata: Metadata = {
-  title: "Create your account",
+  title: "Create your account — vizstudio",
   description:
-    "Start your 14-day free trial of Viz Studio: 75+ premium D3 charts for Looker Studio. No credit card required. We'll email you a link to set your password.",
+    "Create your vizstudio account — 75+ premium D3 charts for Data Studio. No credit card required. We'll email you a link to set your password.",
 };
 
 export default function Page() {
@@ -22,7 +22,7 @@ export default function Page() {
       <link rel="stylesheet" href="/assets/style.css" key="l4" />
       <link rel="stylesheet" href="/assets/forms.css" key="l5" />
 
-      {/* Form submit is handled in-React (GetStartedForm) - no external
+      {/* Form submit is handled in-React (GetStartedForm) — no external
           forms.js / get-started-3.js, which previously allowed a native GET
           submit that leaked field data into the URL. */}
       <GetStartedForm />

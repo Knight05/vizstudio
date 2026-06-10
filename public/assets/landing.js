@@ -1,4 +1,4 @@
-// vizstudio.io - landing-page interactions
+// vizstudio.io — landing-page interactions
 (function () {
   // ── count-up stats ──
   const counters = document.querySelectorAll('[data-count]');

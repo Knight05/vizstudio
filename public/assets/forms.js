@@ -1,11 +1,11 @@
 (function () {
-// vizstudio forms - shared submit handler
+// vizstudio forms — shared submit handler
 //
 // Each <form data-form="<name>"> is intercepted and POSTed to FORM_ENDPOINT.
 // Replace FORM_ENDPOINT with your real form-handler URL (Formspree, Web3Forms,
 // Netlify Forms, or your own backend). Until you do, the form just shows a
 // local success state.
-const FORM_ENDPOINT = '/api/forms'; // vizstudio backend - stores submissions for the admin panel
+const FORM_ENDPOINT = '/api/forms'; // vizstudio backend — stores submissions for the admin panel
 const CONTACT_EMAIL = 'brandonlea05@gmail.com'; // mailto fallback until FORM_ENDPOINT is set
 
 const FREE_MAIL = new Set([
@@ -47,7 +47,7 @@ async function submitForm(form, data) {
       return res.ok;
     } catch (e) { return false; }
   }
-  // No endpoint configured - open a prefilled email draft so submissions
+  // No endpoint configured — open a prefilled email draft so submissions
   // still reach a human, then show the success state.
   if (CONTACT_EMAIL) {
     const subject = encodeURIComponent('[vizstudio] ' + (data.form || 'form') + ' submission');
@@ -86,7 +86,7 @@ document.querySelectorAll('form[data-form]').forEach((form) => {
       data[input.name] = v;
     });
 
-    // Honeypot - humans never see/fill this; bots usually do.
+    // Honeypot — humans never see/fill this; bots usually do.
     const hp = form.querySelector('input[name="website"]');
     if (hp) data.website = (hp.value || '').trim();
 

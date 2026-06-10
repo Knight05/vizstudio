@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { formatDate } from "@/lib/utils";
 import { requireAdmin } from "@/lib/admin";
 import { PaymentBadge } from "../payment-status";
+import { ChartActions } from "./chart-actions";
 
 const FILTERS = ["all", "paid", "past_due", "trialing", "free"] as const;
 type Filter = (typeof FILTERS)[number];
@@ -101,6 +102,7 @@ export default async function AdminClientsPage({
                 <th className="px-4 py-3">Downloads</th>
                 <th className="px-4 py-3">Keys</th>
                 <th className="px-4 py-3">Joined</th>
+                <th className="px-4 py-3">Charts</th>
               </tr>
             </thead>
             <tbody>
@@ -128,6 +130,9 @@ export default async function AdminClientsPage({
                   <td className="px-4 py-3">{u._count.licenseKeys}</td>
                   <td className="px-4 py-3 whitespace-nowrap text-text-dim">
                     {formatDate(u.createdAt)}
+                  </td>
+                  <td className="px-4 py-3">
+                    <ChartActions userId={u.id} hasBucket={!!u.gcsBucket} />
                   </td>
                 </tr>
               ))}

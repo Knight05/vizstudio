@@ -1,8 +1,8 @@
 import Script from "next/script";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  "title": "Terms of Service | vizstudio",
-  "description": "Terms of Service for vizstudio, a product of Viz Studio LLC: premium Data Studio community visualizations.",
+  "title": "Terms of Service — vizstudio",
+  "description": "Terms of Service for vizstudio, a product of Viz Studio LLC — premium Data Studio community visualizations.",
   "alternates": {
     "canonical": "https://vizstudio.io/terms"
   }

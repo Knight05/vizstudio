@@ -6,10 +6,10 @@
   const W = 360, H = 360, R = 140;
   const cx = W/2, cy = H/2;
 
-  // Country sample data - ISO numeric id → {name, code, value}
+  // Country sample data — ISO numeric id → {name, code, value}
   // Values represent "Total purchasers" in arbitrary units.
   const DATA = {
-    840: {name:'United States', code:'US', value: 1240}, // US - top
+    840: {name:'United States', code:'US', value: 1240}, // US — top
     124: {name:'Canada',        code:'CA', value:  680},
     826: {name:'United Kingdom',code:'GB', value:  590},
     276: {name:'Germany',       code:'DE', value:  540},
@@ -98,7 +98,7 @@
   }
 
   function updateBadge() {
-    return; // badge removed - kept as no-op so callers stay simple
+    return; // badge removed — kept as no-op so callers stay simple
   }
 
   function setTop(id, animate) {
@@ -135,7 +135,7 @@
 
   let autopilot = false;
 
-  // tick - auto-rotate (slow) when not dragging or auto-piloting
+  // tick — auto-rotate (slow) when not dragging or auto-piloting
   function tick(ts) {
     if (prevTs == null) prevTs = ts;
     const dt = ts - prevTs;
@@ -177,7 +177,7 @@
   window.addEventListener('touchmove', onMove, { passive: true });
   window.addEventListener('touchend', onUp);
 
-  // story cycle - every ~4.5s pan to the next top region
+  // story cycle — every ~4.5s pan to the next top region
   function cycleStory() {
     storyIdx = (storyIdx + 1) % STORY.length;
     setTop(STORY[storyIdx], true);

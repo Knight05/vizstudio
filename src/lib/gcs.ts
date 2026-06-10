@@ -7,7 +7,7 @@ import { createSign, randomInt } from "node:crypto";
  *
  *   1. Create bucket  vizstudio-<company><6 digits>
  *      - us-south1 (Dallas), Standard, soft-delete 7 days
- *      - public: allUsers → Storage Object Viewer
+ *      - public: allUsers -> Storage Object Viewer
  *   2. Copy every object from the source bucket (GCS server-side rewrite)
  *   3. Rewrite every manifest.json (root + subfolders), replacing the
  *      source bucket name with the new bucket name
@@ -177,6 +177,22 @@ async function uploadText(
   if (!res.ok) throw new Error(`Upload failed (${object}): ${res.status} ${await res.text()}`);
 }
 
+async function deleteObject(bucket: string, object: string): Promise<void> {
+  const res = await gcs(`${API}/b/${bucket}/o/${encodeURIComponent(object)}`, { method: "DELETE" });
+  if (!res.ok && res.status !== 404) {
+    throw new Error(`Delete failed (${object}): ${res.status} ${await res.text()}`);
+  }
+}
+
+async function setCacheControl(bucket: string, object: string, cacheControl: string): Promise<void> {
+  const res = await gcs(`${API}/b/${bucket}/o/${encodeURIComponent(object)}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ cacheControl }),
+  });
+  if (!res.ok) throw new Error(`Metadata patch failed (${object}): ${res.status} ${await res.text()}`);
+}
+
 // Tiny concurrency pool - keeps the copy fast without hammering the API.
 async function pool<T>(items: T[], limit: number, fn: (item: T) => Promise<void>): Promise<void> {
   const queue = [...items];
@@ -214,4 +230,65 @@ export async function provisionClientBucket(company: string): Promise<string> {
 
   console.log(`[gcs] provisioned ${bucket}: ${rest.length} files copied, ${manifests.length} manifests rewritten`);
   return bucket;
+}
+
+// ─── Suspension (unpaid clients) ─────────────────────────
+
+const SUSPEND_MARKER = "__viz_suspended.json";
+
+/**
+ * Self-contained placeholder that replaces each chart's script.js while a
+ * client is suspended. Renders a branded "contact us" panel that fills the
+ * Looker Studio component - no dscc dependency, no data access.
+ */
+const PLACEHOLDER_SCRIPT = `(function () {
+  document.documentElement.style.height = "100%";
+  document.body.style.cssText =
+    "height:100%;margin:0;display:flex;align-items:center;justify-content:center;" +
+    "background:#0e1116;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;";
+  var box = document.createElement("div");
+  box.style.cssText = "text-align:center;padding:24px;max-width:440px;";
+  box.innerHTML =
+    '<div style="font-size:22px;font-weight:700;letter-spacing:.04em;color:#e8ecf1;margin-bottom:10px;">' +
+    'Viz<span style="color:#4f8cff;">.</span>Studio</div>' +
+    '<div style="font-size:13px;line-height:1.65;color:#9aa4b2;">' +
+    'This visualization is currently inactive.<br/>' +
+    'Contact us at <span style="color:#4f8cff;font-weight:600;">vizstudio.io</span> to reactivate your charts.</div>';
+  box.setAttribute("role", "status");
+  document.body.appendChild(box);
+})();`;
+
+/**
+ * Replace every script.js in the client bucket with the placeholder.
+ * Placeholders are uploaded with Cache-Control: no-store so a later restore
+ * takes effect immediately instead of waiting out the default 1h cache.
+ * Returns the number of scripts replaced.
+ */
+export async function suspendClientBucket(bucket: string): Promise<number> {
+  const objects = await listObjects(bucket);
+  const scripts = objects.filter((o) => o.name.endsWith("script.js"));
+
+  await pool(scripts, 8, async (o) => {
+    await uploadText(bucket, o.name, PLACEHOLDER_SCRIPT, "application/javascript");
+    await setCacheControl(bucket, o.name, "no-store");
+  });
+  await uploadText(bucket, SUSPEND_MARKER, JSON.stringify({ suspendedAt: new Date().toISOString() }));
+
+  console.log(`[gcs] suspended ${bucket}: ${scripts.length} scripts replaced`);
+  return scripts.length;
+}
+
+/**
+ * Restore original chart scripts by server-side copying them back from the
+ * source (template) bucket. Returns the number of scripts restored.
+ */
+export async function restoreClientBucket(bucket: string): Promise<number> {
+  const objects = await listObjects(SOURCE_BUCKET);
+  const scripts = objects.filter((o) => o.name.endsWith("script.js"));
+
+  await pool(scripts, 8, (o) => copyObject(SOURCE_BUCKET, bucket, o.name));
+  await deleteObject(bucket, SUSPEND_MARKER);
+
+  console.log(`[gcs] restored ${bucket}: ${scripts.length} scripts copied back`);
+  return scripts.length;
 }

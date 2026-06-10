@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* ══════════════════════════════════════════════════════
-   Design Tokens - vizstudio.io
+   Design Tokens — vizstudio.io
    Dark-first, OKLCH colors, JetBrains-mono spine
    ══════════════════════════════════════════════════════ */
 :root, [data-theme="dark"] {
@@ -179,7 +179,7 @@ html, body {
 ::-webkit-scrollbar-thumb:hover { background: var(--border-2); }
 
 /* ══════════════════════════════════════════════════════
-   Client portal app shell (.pshell) - matches portal mockups
+   Client portal app shell (.pshell) — matches portal mockups
    ══════════════════════════════════════════════════════ */
 .pshell {
   display: flex;
@@ -843,7 +843,7 @@ html, body {
   border-bottom: 1px solid var(--border);
   overflow: hidden;
 }
-/* Show the full screenshot - no cropping. */
+/* Show the full screenshot — no cropping. */
 .pshell .pmodal .shot img {
   width: 100%;
   height: auto;

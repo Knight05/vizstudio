@@ -6,7 +6,7 @@ import SiteFooter from "@/components/marketing/SiteFooter";
 
 const SITE = "https://vizstudio.io";
 
-// Pre-render every chart at build time (SSG) - full static HTML per chart, no backend.
+// Pre-render every chart at build time (SSG) — full static HTML per chart, no backend.
 export function generateStaticParams() {
   return getChartSlugs().map((slug) => ({ slug }));
 }
@@ -27,7 +27,7 @@ export async function generateMetadata({
   const chart = getChart(slug);
   if (!chart) return { title: "Chart not found" };
 
-  const title = `${chart.name} | vizstudio`;
+  const title = `${chart.name} — vizstudio`;
   const description = chart.tagline;
   const url = `${SITE}/charts/${chart.id}`;
   const image = ogImage(chart);
@@ -192,11 +192,11 @@ export default async function ChartPage({
                     <img
                       className="preview-img"
                       src={`/screenshots/${previewSrc}`}
-                      alt={`${chart.name} (Data Studio screenshot)`}
+                      alt={`${chart.name} — Data Studio screenshot`}
                       loading="lazy"
                     />
                   ) : (
-                    // No screenshot yet - fall back to the chart icon, centered.
+                    // No screenshot yet — fall back to the chart icon, centered.
                     <div
                       className="preview-svg-wrap"
                       style={{
@@ -266,7 +266,7 @@ export default async function ChartPage({
                     Viz Studio gallery card.
                   </li>
                   <li>
-                    Bind the dimensions and metrics in the data panel. Done.
+                    Bind the dimensions and metrics in the data panel — done.
                   </li>
                 </ol>
               </div>
@@ -310,7 +310,7 @@ export default async function ChartPage({
                   <div className="amt"><span className="val">$500</span><span className="per">/ year</span></div>
                 </div>
                 <p>
-                  One plan, everything in it: the Google Calendar Connector plus
+                  One plan, everything in it — the Google Calendar Connector plus
                   the full library of 75+ charts. No per-seat upcharges, no
                   metering. Build a real dashboard before you pay a cent.
                 </p>

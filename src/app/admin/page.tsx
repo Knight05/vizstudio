@@ -82,9 +82,9 @@ export default async function AdminOverviewPage() {
                 {recentForms.map((f) => (
                   <tr key={f.id} className="border-t border-panel-2">
                     <td className="px-4 py-3"><span className="pill">{f.form}</span></td>
-                    <td className="px-4 py-3">{f.email ?? "-"}</td>
+                    <td className="px-4 py-3">{f.email ?? "—"}</td>
                     <td className="px-4 py-3 max-w-[40ch] truncate text-text-dim">
-                      {f.message ?? "-"}
+                      {f.message ?? "—"}
                     </td>
                     <td className="px-4 py-3 whitespace-nowrap text-text-dim">
                       {formatDate(f.createdAt)}

@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import { AuthForm } from "@/components/AuthForm";
 
 export const metadata = { title: "Start free" };
-// AuthForm uses useSearchParams() - needs dynamic rendering
+// AuthForm uses useSearchParams() — needs dynamic rendering
 export const dynamic = "force-dynamic";
 
 export default function SignupPage() {

@@ -1,5 +1,5 @@
 
-// vizstudio - wire the library grid tiles to chart-doc pages
+// vizstudio — wire the library grid tiles to chart-doc pages
 (function () {
   function wireFromIcon(scope) {
     scope.querySelectorAll('.lib-grid > *, .hero-marquee-tile, .marquee a, .lib-card').forEach((el) => {

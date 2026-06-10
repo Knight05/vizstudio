@@ -12,10 +12,10 @@ import { provisionClientBucket } from "./gcs";
  *      spreadsheet (the connector validates against it) and as a LicenseKey row
  *
  * Email is sent FIRST and in its own try/catch so a slow or failing bucket
- * copy can never starve the credential email - without the set-password link
+ * copy can never starve the credential email — without the set-password link
  * the user can never actually sign in, so it is the higher priority.
  *
- * Never throws - a provisioning failure must not block signup. Errors are
+ * Never throws — a provisioning failure must not block signup. Errors are
  * logged so they can be retried manually from /admin (bucket also retries on
  * dashboard load).
  */
@@ -36,7 +36,7 @@ export async function provisionNewUser(user: {
     console.error(`[provisioning] password email failed for ${user.email}:`, err);
   }
 
-  // 2+3. Bucket - skip cleanly if GCP env isn't configured (e.g. local dev).
+  // 2+3. Bucket — skip cleanly if GCP env isn't configured (e.g. local dev).
   if (process.env.GCP_SERVICE_ACCOUNT_EMAIL) {
     try {
       const company = user.company || user.name || user.email.split("@")[0];
@@ -49,10 +49,10 @@ export async function provisionNewUser(user: {
       console.error(`[provisioning] bucket setup failed for ${user.email}:`, err);
     }
   } else {
-    console.log("[provisioning] GCP env not set: skipping bucket for", user.email);
+    console.log("[provisioning] GCP env not set — skipping bucket for", user.email);
   }
 
-  // 4. Calendar Connector license key - issue one, record it in the license-keys
+  // 4. Calendar Connector license key — issue one, record it in the license-keys
   // spreadsheet (the connector validates against it), and persist a LicenseKey
   // row so it shows in the client portal. Independent of the bucket step so
   // either can succeed on its own.
@@ -72,6 +72,6 @@ export async function provisionNewUser(user: {
       console.error(`[provisioning] calendar key failed for ${user.email}:`, err);
     }
   } else {
-    console.log("[provisioning] CALENDAR_KEYS_SHEET_ID not set: skipping calendar key for", user.email);
+    console.log("[provisioning] CALENDAR_KEYS_SHEET_ID not set — skipping calendar key for", user.email);
   }
 }

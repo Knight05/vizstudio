@@ -39,7 +39,7 @@ export const userRouter = router({
       });
     }),
 
-  /** Support / chart request - lands in the admin forms inbox. */
+  /** Support / chart request — lands in the admin forms inbox. */
   submitSupport: protectedProcedure
     .input(
       z.object({

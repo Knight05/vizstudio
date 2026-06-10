@@ -1,7 +1,7 @@
 import Stripe from "stripe";
 
 if (!process.env.STRIPE_SECRET_KEY) {
-  // Don't throw during build/dev if unset - allow the app to boot
+  // Don't throw during build/dev if unset — allow the app to boot
   // and surface a user-facing error at purchase time instead.
   console.warn("[stripe] STRIPE_SECRET_KEY is not set");
 }

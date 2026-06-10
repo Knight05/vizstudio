@@ -1,7 +1,7 @@
 const FAQS = [
   {
     q: "How do I install charts into Looker Studio?",
-    a: "Paste your license key in Looker's community viz picker, then paste the chart's Cloud Storage path. Two clicks. Every chart works the same way, no custom install per chart.",
+    a: "Paste your license key in Looker's community viz picker, then paste the chart's Cloud Storage path. Two clicks. Every chart works the same way — no custom install per chart.",
   },
   {
     q: "Does Viz Studio see my data?",
@@ -13,11 +13,11 @@ const FAQS = [
   },
   {
     q: "What happens if I cancel?",
-    a: "Charts keep working until the end of your current period. After that, any report using a Viz Studio chart falls back to a Looker default chart, no broken dashboards, just a graceful downgrade.",
+    a: "Charts keep working until the end of your current period. After that, any report using a Viz Studio chart falls back to a Looker default chart — no broken dashboards, just a graceful downgrade.",
   },
   {
     q: "Do you offer a non-profit or EDU discount?",
-    a: "Yes, 50% off Pro for verified EDU and registered non-profits. Email hello@vizstudio.io with proof of status.",
+    a: "Yes — 50% off Pro for verified EDU and registered non-profits. Email hello@vizstudio.io with proof of status.",
   },
   {
     q: "What if I need a chart you don't have?",
