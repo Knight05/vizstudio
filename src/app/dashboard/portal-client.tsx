@@ -787,7 +787,7 @@ function DownloadsTab(props: PortalProps) {
         </p>
 
         {props.tier === "FREE" ? (
-          <div style={{ fontSize: 12.5, color: "var(--muted)" }}>
+          <div style={{ fontSize: 12.5, color: "var(--muted)", marginBottom: keys.length > 0 ? 14 : 0 }}>
             License keys unlock watermark-free charts.{" "}
             <Link href="/pricing" style={{ color: "var(--text)" }}>Upgrade to get one.</Link>
           </div>
@@ -822,41 +822,46 @@ function DownloadsTab(props: PortalProps) {
               </div>
             )}
 
-            {keys.length === 0 ? (
-              <div style={{ fontSize: 12.5, color: "var(--muted)" }}>
-                No license keys yet. Generate one above.
-              </div>
-            ) : (
-              keys.map((k) => (
-                <div key={k.id} className="key-row">
-                  <div style={{ flex: 1, minWidth: 220 }}>
-                    <div className="kkey">{k.key}</div>
-                    <div className="kmeta">
-                      {k.label ?? "-"} · created {new Date(k.createdAt).toLocaleDateString()}
-                      {k.lastUsedAt && <> · last used {new Date(k.lastUsedAt).toLocaleDateString()}</>}
-                    </div>
-                  </div>
-                  <div style={{ display: "flex", gap: 8 }}>
-                    <button
-                      className="pbtn"
-                      style={copied === k.key ? { color: "var(--acc-green)" } : undefined}
-                      onClick={() => copy(k.key)}
-                    >
-                      {copied === k.key ? "Copied ✓" : "Copy"}
-                    </button>
-                    <button
-                      className="pbtn"
-                      style={{ color: "var(--acc-rose)" }}
-                      onClick={() => revoke.mutate({ id: k.id })}
-                      disabled={revoke.isPending}
-                    >
-                      Revoke
-                    </button>
-                  </div>
-                </div>
-              ))
-            )}
           </>
+        )}
+
+        {keys.length === 0 ? (
+          props.tier !== "FREE" ? (
+            <div style={{ fontSize: 12.5, color: "var(--muted)" }}>
+              No license keys yet. Generate one above.
+            </div>
+          ) : null
+        ) : (
+          keys.map((k) => (
+            <div key={k.id} className="key-row">
+              <div style={{ flex: 1, minWidth: 220 }}>
+                <div className="kkey">{k.key}</div>
+                <div className="kmeta">
+                  {k.label ?? "-"} · created {new Date(k.createdAt).toLocaleDateString()}
+                  {k.lastUsedAt && <> · last used {new Date(k.lastUsedAt).toLocaleDateString()}</>}
+                </div>
+              </div>
+              <div style={{ display: "flex", gap: 8 }}>
+                <button
+                  className="pbtn"
+                  style={copied === k.key ? { color: "var(--acc-green)" } : undefined}
+                  onClick={() => copy(k.key)}
+                >
+                  {copied === k.key ? "Copied ✓" : "Copy"}
+                </button>
+                {props.tier !== "FREE" && (
+                  <button
+                    className="pbtn"
+                    style={{ color: "var(--acc-rose)" }}
+                    onClick={() => revoke.mutate({ id: k.id })}
+                    disabled={revoke.isPending}
+                  >
+                    Revoke
+                  </button>
+                )}
+              </div>
+            </div>
+          ))
         )}
       </div>
 
