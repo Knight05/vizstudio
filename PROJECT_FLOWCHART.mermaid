@@ -1,0 +1,105 @@
+%% Viz.io / vizstudio — full project flowchart
+%% Next.js (App Router) + better-auth + Prisma/Supabase + Stripe + GCS + Google Sheets
+%% Deployed on Vercel -> vizstudio.io (behind viz37 gate). GA4: G-PWF1TRML22
+
+flowchart TD
+
+  visitor([Visitor / browser]):::actor
+
+  subgraph PUBLIC["Public site (Next.js App Router)"]
+    landing["/ landing<br/>Hero · FeatureGrid · PricingCards · FAQ"]
+    charts["/charts/[slug]<br/>78 SSG pages from src/data/charts.json"]
+    statics["Static pages<br/>/privacy /terms /suggest /reportissue<br/>/google-calendar-connector /how-to-add-a-chart"]
+  end
+
+  subgraph AUTH["Authentication (better-auth)"]
+    authpages["/signup · /login<br/>/forgot-password · /reset-password"]
+    authapi["/api/auth/[...all]<br/>email+password · Google OAuth"]
+    hook["databaseHooks.user.create.after<br/>-> provisionNewUser via next after()"]
+  end
+
+  subgraph PROV["Provisioning (on new user)"]
+    pemail["1. Password-setup email<br/>better-auth requestPasswordReset"]
+    bucket["2. GCS client bucket<br/>cloned from prod9021 + manifest rewrite"]
+    calkey["3. Calendar license key<br/>generate -> Sheets (plaintext + sha256)<br/>+ LicenseKey DB row"]
+  end
+
+  subgraph PORTAL["Client portal /dashboard"]
+    pbilling["Billing tab — invoices"]
+    pkeys["License keys tab"]
+    psupport["Support / report-issue form"]
+  end
+
+  subgraph ADMIN["Admin /admin"]
+    aclients["/admin/clients — clients + payment status"]
+    aforms["/admin/forms — form submissions"]
+  end
+
+  subgraph API["Server / API layer"]
+    trpc["tRPC routers<br/>user · charts · billing"]
+    forms["/api/forms — lead/support intake"]
+    scheckout["/api/stripe/checkout"]
+    sportal["/api/stripe/portal"]
+    swebhook["/api/stripe/webhook<br/>checkout.session.completed · subscription.* · invoice.*"]
+  end
+
+  subgraph DATA["Data layer"]
+    prisma["Prisma ORM (src/lib/prisma.ts)"]
+    db[("Supabase Postgres<br/>User · Session · Account · Verification<br/>Subscription · LicenseKey · Download<br/>Favorite · FormSubmission · Lead")]
+  end
+
+  subgraph EXT["External services"]
+    resend{{Resend — email}}
+    gcs{{Google Cloud Storage}}
+    sheets{{Google Sheets API}}
+    goauth{{Google OAuth}}
+    stripe{{Stripe}}
+    ga4{{GA4 G-PWF1TRML22}}
+  end
+
+  subgraph DEPLOY["Deploy pipeline"]
+    gh["GitHub main"] --> vercel["Vercel build<br/>prisma generate + next build"] --> prod["vizstudio.io<br/>behind viz37 gate"]
+  end
+
+  %% --- visitor flow ---
+  visitor --> landing
+  landing --> charts
+  landing --> authpages
+  landing --> statics
+  authpages --> authapi
+  authapi <--> goauth
+  authapi --> hook
+  hook --> pemail
+  hook --> bucket
+  hook --> calkey
+  pemail --> resend
+  bucket --> gcs
+  calkey --> sheets
+  calkey --> prisma
+
+  %% --- authenticated areas ---
+  pemail --> PORTAL
+  bucket --> PORTAL
+  calkey --> PORTAL
+  PORTAL --> trpc
+  pbilling --> scheckout --> stripe
+  pbilling --> sportal --> stripe
+  trpc --> prisma
+
+  %% --- billing webhook loop ---
+  stripe --> swebhook --> prisma
+
+  %% --- forms ---
+  statics --> forms --> prisma
+  psupport --> forms
+
+  %% --- admin reads ---
+  aclients --> trpc
+  aforms --> forms
+
+  %% --- persistence + analytics ---
+  prisma --> db
+  PUBLIC -.GA4 page views.-> ga4
+  PORTAL -.GA4 events.-> ga4
+
+  classDef actor fill:#F1EFE8,stroke:#5F5E5A,color:#2C2C2A;

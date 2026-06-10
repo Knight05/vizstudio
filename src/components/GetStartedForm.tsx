@@ -6,7 +6,7 @@
  * Replaces the old approach (raw HTML injected via dangerouslySetInnerHTML +
  * a separately-loaded /assets/gen/get-started-3.js handler). That setup let the
  * browser perform a native GET submit whenever the external script hadn't
- * attached its listener yet — which both leaked form data into the URL
+ * attached its listener yet - which both leaked form data into the URL
  * (?name=…&email=…) and meant the account was never actually created.
  *
  * Now the submit is handled inline by React (reliable preventDefault), and the
@@ -17,7 +17,8 @@
  * so it does not depend on NEXT_PUBLIC_APP_URL being set correctly in prod.
  */
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getRecaptchaToken, preloadRecaptcha } from "@/lib/recaptcha-client";
 
 const ROLES = [
   "Analyst / BI",
@@ -32,7 +33,7 @@ function isEmail(s: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
 }
 
-/** Throwaway placeholder — the user sets their real password via the emailed
+/** Throwaway placeholder - the user sets their real password via the emailed
  *  set-password link after verifying their address. */
 function randomPassword(): string {
   const a = new Uint8Array(24);
@@ -49,6 +50,11 @@ export function GetStartedForm() {
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
 
+  // Warm up reCAPTCHA so token fetch at submit time is instant.
+  useEffect(() => {
+    preloadRecaptcha();
+  }, []);
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
@@ -62,9 +68,15 @@ export function GetStartedForm() {
 
     setLoading(true);
     try {
+      // reCAPTCHA v3 - verified server-side by Better-Auth's captcha plugin.
+      // Tokens are single-use, so the /api/forms call below mints its own.
+      const captchaToken = await getRecaptchaToken("signup");
       const res = await fetch("/api/auth/sign-up/email", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          ...(captchaToken ? { "x-captcha-response": captchaToken } : {}),
+        },
         body: JSON.stringify({
           name: name.trim(),
           email: email.trim(),
@@ -83,7 +95,7 @@ export function GetStartedForm() {
           (data && (data.message || (data.error && data.error.message))) ||
           "Could not create your account. Please try again.";
         if (/exist|taken|already/i.test(msg)) {
-          msg = "An account with this email already exists — try logging in.";
+          msg = "An account with this email already exists. Try logging in.";
         }
         setErrors({ email: msg });
         setLoading(false);
@@ -91,23 +103,28 @@ export function GetStartedForm() {
       }
 
       // Record the lead (incl. role, which isn't a Better-Auth field) for the
-      // admin panel. Best-effort — never block the signup success state on it.
-      fetch("/api/forms", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          form: "signup",
-          name: name.trim(),
-          email: email.trim(),
-          company: company.trim(),
-          role: role.trim() || undefined,
-          source: "/get-started",
-        }),
-      }).catch(() => {});
+      // admin panel. Best-effort - never block the signup success state on it.
+      getRecaptchaToken("signup")
+        .then((leadToken) =>
+          fetch("/api/forms", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              form: "signup",
+              name: name.trim(),
+              email: email.trim(),
+              company: company.trim(),
+              role: role.trim() || undefined,
+              source: "/get-started",
+              recaptchaToken: leadToken || undefined,
+            }),
+          }),
+        )
+        .catch(() => {});
 
       setDone(true);
     } catch {
-      setErrors({ email: "Network error — please try again." });
+      setErrors({ email: "Network error, please try again." });
       setLoading(false);
     }
   }
@@ -129,8 +146,8 @@ export function GetStartedForm() {
               <div className="form-eyebrow">Get Started</div>
               <h1>Create your account.</h1>
               <p className="sub">
-                No credit card required. We&apos;ll email you a link to verify your address and set
-                your password — then you&apos;re in.
+                Start your 14-day free trial, no credit card required. We&apos;ll email you a link to
+                verify your address and set your password, then you&apos;re in.
               </p>
 
               {!done ? (
@@ -261,7 +278,7 @@ export function GetStartedForm() {
             <a href="/get-started">Get Started</a> · <a href="/suggest">Suggest a Chart</a> ·{" "}
             <a href="/privacy">Privacy</a> · <a href="/terms">Terms of Service</a>
           </nav>
-          <p>© vizstudio — premium D3 community visualizations for Data Studio.</p>
+          <p>© vizstudio, premium D3 community visualizations for Data Studio.</p>
         </footer>
       </div>
     </>

@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, Suspense } from "react";
+import { useEffect, useState, Suspense } from "react";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
+import { getRecaptchaToken, preloadRecaptcha } from "@/lib/recaptcha-client";
 
 // Request-a-reset page. Emails a set-password link (Better-Auth reset flow)
 // that lands on /reset-password?token=…
@@ -53,18 +54,26 @@ function ForgotPasswordForm() {
   const [error, setError] = useState<string | null>(null);
   const [sent, setSent] = useState(false);
 
+  useEffect(() => {
+    preloadRecaptcha();
+  }, []);
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
     setLoading(true);
     try {
+      const captchaToken = await getRecaptchaToken("forgot_password");
       // Better-Auth emails the reset link via sendResetPassword (see lib/auth.ts).
       const { error } = await authClient.requestPasswordReset({
         email: email.trim(),
         redirectTo: "/reset-password",
+        fetchOptions: captchaToken
+          ? { headers: { "x-captcha-response": captchaToken } }
+          : undefined,
       });
       if (error) throw new Error(error.message ?? "Could not send the link");
-      // Always show success — never reveal whether an account exists.
+      // Always show success - never reveal whether an account exists.
       setSent(true);
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
@@ -104,6 +113,8 @@ function ForgotPasswordForm() {
           <span style={C.label}>Email</span>
           <input
             type="email"
+            name="email"
+            autoComplete="username"
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}

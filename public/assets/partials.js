@@ -1,9 +1,9 @@
-// vizstudio — shared nav + footer partials
+// vizstudio - shared nav + footer partials
 // Mount points expected: <div id="site-nav"></div>  and  <div id="site-footer"></div>
 // Edit the templates below to change the nav/footer everywhere on the site.
 
 // NOTE: the preview password gate and GA4 init both live in src/app/layout.tsx
-// (single source of truth) — do not duplicate them here.
+// (single source of truth) - do not duplicate them here.
 
 (function () {
   // Compute the relative root prefix from the current page's path.
@@ -13,7 +13,7 @@
   var inCharts = /\/charts\//i.test(path);
   var root = inCharts ? '../' : '';
 
-  // Brand mark — webp logo file (matches the site accent gradient).
+  // Brand mark - webp logo file (matches the site accent gradient).
   var LOGO_SVG = '<img src="/logo.webp" alt="" width="24" height="24" loading="eager" decoding="async">';
   var LOGO_FOOTER = LOGO_SVG;
 
@@ -93,7 +93,7 @@
         '</div>' +
         '<div class="foot-bot">' +
           '<span>© 2026 Viz Studio LLC · Built for data teams, by data teams.</span>' +
-          '<span><a href="/terms" style="color: var(--text-dim);">Terms of Service</a> · <a href="/privacy" style="color: var(--text-dim);">Privacy Policy</a></span>' +
+          '<span><a href="/terms" style="color: var(--text-dim);">Terms of Service</a> · <a href="/privacy" style="color: var(--text-dim);">Privacy Policy</a> · <a href="#cookie-settings" style="color: var(--text-dim);">Cookie settings</a></span>' +
           '<a href="/" class="logo footer-wordmark">' +
             '<span class="logo-mark inline" aria-hidden="true">' + LOGO_FOOTER + '</span>' +
             ' vizstudio' +
@@ -120,7 +120,7 @@
     mount('site-footer', FOOTER_HTML);
   }
 
-  // Footer newsletter — real submit to /api/forms. Delegated on document so it
+  // Footer newsletter - real submit to /api/forms. Delegated on document so it
   // works for the injected footer and survives SPA re-injection; the window
   // flag prevents double-binding when this script re-runs.
   if (!window.__vzNewsletterBound) {
@@ -137,17 +137,11 @@
         return;
       }
       if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
-      fetch('/api/forms', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ form: 'subscribe', email: email, source: location.pathname }),
-      }).then(function (r) {
-        if (!r.ok) throw new Error('status ' + r.status);
-        if (input) input.value = '';
-        if (btn) btn.textContent = '✓ thanks';
-      }).catch(function () {
-        if (btn) { btn.disabled = false; btn.textContent = 'Subscribe'; }
-      });
-    });
-  }
-})();
+      // reCAPTCHA v3 token first (helper defined in app/layout.tsx; resolves
+      // '' when not configured - the server skips verification then).
+      var tokenP = (typeof window.vzGetRecaptchaToken === 'function')
+        ? window.vzGetRecaptchaToken('subscribe').catch(function () { return ''; })
+        : Promise.resolve('');
+      tokenP.then(function (tok) {
+        return fetch('/api/forms', {
+          method: '

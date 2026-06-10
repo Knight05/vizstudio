@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { signIn, signUp } from "@/lib/auth-client";
+import { getRecaptchaToken, preloadRecaptcha } from "@/lib/recaptcha-client";
 
 // Styled to match the vizstudio static site (dark indigo/violet).
 const C = {
@@ -46,7 +47,7 @@ const C = {
   } as React.CSSProperties,
 };
 
-/** Throwaway placeholder password — the user sets their real one via the
+/** Throwaway placeholder password - the user sets their real one via the
  *  emailed set-password link after verifying their address. */
 function generatePassword(): string {
   const bytes = new Uint8Array(24);
@@ -57,7 +58,7 @@ function generatePassword(): string {
 export function AuthForm({ mode }: { mode: "login" | "signup" }) {
   const router = useRouter();
   const params = useSearchParams();
-  // Only allow same-origin relative paths — blocks open redirect via ?next=
+  // Only allow same-origin relative paths - blocks open redirect via ?next=
   const rawNext = params.get("next") ?? "/dashboard";
   const next =
     rawNext.startsWith("/") && !rawNext.startsWith("//") && !rawNext.includes("\\")
@@ -72,12 +73,22 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
   const [error, setError] = useState<string | null>(null);
   const [created, setCreated] = useState(false);
 
+  // Warm up reCAPTCHA so the token is instant at submit time.
+  useEffect(() => {
+    preloadRecaptcha();
+  }, []);
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
     setLoading(true);
 
     try {
+      const captchaToken = await getRecaptchaToken(mode === "signup" ? "signup" : "login");
+      const fetchOptions = captchaToken
+        ? { headers: { "x-captcha-response": captchaToken } }
+        : undefined;
+
       if (mode === "signup") {
         const { error } = await signUp.email({
           email,
@@ -85,6 +96,7 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
           name,
           company,
           callbackURL: next,
+          fetchOptions,
         });
         if (error) throw new Error(error.message ?? "Sign-up failed");
         setCreated(true);
@@ -94,6 +106,7 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
           email,
           password,
           callbackURL: next,
+          fetchOptions,
         });
         if (error) throw new Error(error.message ?? "Login failed");
       }
@@ -142,6 +155,8 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
               <span style={C.label}>Name</span>
               <input
                 type="text"
+                name="name"
+                autoComplete="name"
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -153,6 +168,8 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
               <span style={C.label}>Company</span>
               <input
                 type="text"
+                name="company"
+                autoComplete="organization"
                 required
                 value={company}
                 onChange={(e) => setCompany(e.target.value)}
@@ -164,8 +181,12 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
         )}
         <label style={{ display: "grid", gap: 5 }}>
           <span style={C.label}>Email</span>
+          {/* name + autocomplete are required for Chrome to offer to save /
+              autofill credentials on this form */}
           <input
             type="email"
+            name="email"
+            autoComplete={mode === "login" ? "username" : "email"}
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -177,6 +198,8 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
             <span style={C.label}>Password</span>
             <input
               type="password"
+              name="password"
+              autoComplete="current-password"
               required
               minLength={8}
               value={password}
@@ -191,7 +214,7 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
 
         {mode === "signup" && (
           <p style={{ fontSize: 12, color: "#9aa1c0", margin: 0, lineHeight: 1.5 }}>
-            No password needed yet — we&apos;ll email you a link to verify your
+            No password needed yet. We&apos;ll email you a link to verify your
             address and set one.
           </p>
         )}

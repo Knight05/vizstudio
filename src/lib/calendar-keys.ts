@@ -45,7 +45,7 @@ async function getSheetsToken(): Promise<string> {
     return cachedToken.token;
   }
   const email = process.env.GCP_SERVICE_ACCOUNT_EMAIL;
-  // Vercel stores newlines as literal "\n" — restore them.
+  // Vercel stores newlines as literal "\n" - restore them.
   const key = process.env.GCP_PRIVATE_KEY?.replace(/\\n/g, "\n");
   if (!email || !key) {
     throw new Error("GCP_SERVICE_ACCOUNT_EMAIL / GCP_PRIVATE_KEY not configured");
@@ -74,7 +74,7 @@ async function getSheetsToken(): Promise<string> {
   return data.access_token;
 }
 
-/** CAL-XXXXXXXXXXXX-NNN — 12 uppercase hex + a 3-digit suffix. */
+/** CAL-XXXXXXXXXXXX-NNN - 12 uppercase hex + a 3-digit suffix. */
 export function generateCalendarKey(): string {
   const body = randomBytes(6).toString("hex").toUpperCase(); // 12 hex chars
   const seq = String(randomInt(0, 1000)).padStart(3, "0");
@@ -110,7 +110,7 @@ async function appendRow(sheetId: string, tab: string, row: string[]): Promise<v
  * license-keys spreadsheet (plaintext + hashed tabs). Returns the plaintext key
  * so the caller can store it / email it to the user.
  *
- * Throws if the sheet write fails — the caller (provisionNewUser) swallows and
+ * Throws if the sheet write fails - the caller (provisionNewUser) swallows and
  * logs so this never blocks signup.
  */
 export async function provisionCalendarKey(email: string): Promise<string> {

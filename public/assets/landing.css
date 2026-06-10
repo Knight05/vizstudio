@@ -1,7 +1,7 @@
-/* vizstudio.io — landing-style homepage components
+/* vizstudio.io - landing-style homepage components
    Layered on top of style.css. Tokens reused from there. */
 
-/* ── hero — two-column, with right side mockup ── */
+/* ── hero - two-column, with right side mockup ── */
 .lp-hero {
   padding: 60px 0 30px;
   position: relative;

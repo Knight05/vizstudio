@@ -1,11 +1,11 @@
 (function () {
 
 // ═══════════════════════════════════════════════════════════════
-// vizstudio landing — motion & charts (vanilla, no deps)
+// vizstudio landing - motion & charts (vanilla, no deps)
 // ═══════════════════════════════════════════════════════════════
 
 // ─── Mobile menu ────────────────────────────────────────────
-// Burger / mobile menu — nav is injected by partials.js, so try a few times
+// Burger / mobile menu - nav is injected by partials.js, so try a few times
 // after load until the elements appear.
 function wireBurger() {
   const burger = document.getElementById('navBurger');
@@ -116,7 +116,7 @@ const makeLogoItem = (name, i) => `<div class="logo-item">${shapes[i % shapes.le
 */
 
 // ═══════════════════════════════════════════════════════════
-// CHARTS — vanilla SVG + small deterministic data
+// CHARTS - vanilla SVG + small deterministic data
 // ═══════════════════════════════════════════════════════════
 const PAL = ['#6366f1', '#8b5cf6', '#ec4899', '#22d3ee', '#f59e0b', '#10b981'];
 function svgNS(n, attrs = {}, children = []) {
@@ -133,7 +133,7 @@ function makeSvg(host, w, h) {
 }
 const rand = (seed) => { let s = seed; return () => (s = (s * 1664525 + 1013904223) % 4294967296) / 4294967296; };
 
-// — hero main: stacked area (animated values)
+// - hero main: stacked area (animated values)
 const heroData = {
   series: [
     Array.from({length: 14}, (_, i) => 20 + Math.sin(i * 0.5) * 8 + i),
@@ -193,7 +193,7 @@ setInterval(() => {
   renderHeroMain();
 }, 2800);
 
-// — hero side: donut
+// - hero side: donut
 function renderHeroSide() {
   const host = document.getElementById('hero-side');
   if (!host) return;
@@ -223,7 +223,7 @@ function renderHeroSide() {
 renderHeroSide();
 addEventListener('resize', renderHeroSide);
 
-// ─── Hero variant F — dashboard mockup charts ─────────────────
+// ─── Hero variant F - dashboard mockup charts ─────────────────
 function renderHeroDash() {
   // Main: stacked area
   const main = document.getElementById('hd-chart-main');
@@ -346,7 +346,7 @@ function renderHeroDash() {
   }
 }
 
-// ─── Hero variant G — marquee rows ────────────────────────────
+// ─── Hero variant G - marquee rows ────────────────────────────
 const MARQUEE_ICONS = [
   'timeseries-viz','sunburstChart','waffle-viz','streamgraph-viz','bubble-viz','choropleth-viz',
   'npsgauge-viz','hexbin-viz','venn-viz','radialtree-viz','ridgeplot-viz','dualdonut-viz',
@@ -524,7 +524,7 @@ function buildShowcase() {
     io.observe(div);
   });
 }
-/* buildShowcase() disabled — live D3 showcase script renders these cards */
+/* buildShowcase() disabled - live D3 showcase script renders these cards */
 
 // ─── Library grid (real chart icons) ────────────────────────
 const LIBRARY = [
@@ -686,7 +686,7 @@ function buildLibrary() {
     });
   });
 }
-/* buildLibrary() disabled — library grid is server-rendered static HTML now */
+/* buildLibrary() disabled - library grid is server-rendered static HTML now */
 
 // ─── Featured 16 (documented charts) ────────────────────────
 const FEATURED = [
@@ -696,7 +696,7 @@ const FEATURED = [
     cat: 'Comparison',
     diff: 'Easy',
     img: 'screenshots/data-studio-row-over-row-data-table-vizstudio.png',
-    what: 'A period-over-period comparison table — DoD, MoM or YoY — with absolute deltas, % change, and per-metric formatting baked in.',
+    what: 'A period-over-period comparison table (DoD, MoM or YoY) with absolute deltas, % change, and per-metric formatting baked in.',
     why:  'Beats every default Data Studio table the moment your exec asks "compared to what?". Saves the analyst from rebuilding the same view weekly.',
   },
   {
@@ -715,7 +715,7 @@ const FEATURED = [
     diff: 'Intermediate',
     img: 'screenshots/data-studio-big-calendar-events-vizstudio.png',
     what: 'A full month or year calendar grid, every day tinted by your metric. Hover for tooltips, click to cross-filter.',
-    why:  'Time-of-week and seasonal patterns leap out — the Tuesday slump, the Black Friday spike, the December lull.',
+    why:  'Time-of-week and seasonal patterns leap out, the Tuesday slump, the Black Friday spike, the December lull.',
   },
   {
     slug: 'calendarHeatmap',
@@ -938,12 +938,12 @@ function buildFeatured() {
     </a>
   `).join('');
 }
-/* buildFeatured() disabled — featured cards are server-rendered static HTML now */
+/* buildFeatured() disabled - featured cards are server-rendered static HTML now */
 
 // ─── Pricing toggle ─────────────────────────────────────────
 const toggle = document.getElementById('toggle');
 const priceGrid = document.getElementById('priceGrid');
-toggle.querySelectorAll('button').forEach(btn => {
+if (toggle && priceGrid) toggle.querySelectorAll('button').forEach(btn => {
   btn.addEventListener('click', () => {
     toggle.querySelectorAll('button').forEach(b => b.classList.toggle('on', b === btn));
     toggle.classList.toggle('annual', btn.dataset.p === 'annual');
@@ -1042,10 +1042,10 @@ const stepIO = new IntersectionObserver((entries) => {
 document.querySelectorAll('.step-anim').forEach(el => stepIO.observe(el));
 
 // ═══════════════════════════════════════════════════════════
-// LOGO VARIANTS — paint inline SVG into each .logo-mark based on data-logo
+// LOGO VARIANTS - paint inline SVG into each .logo-mark based on data-logo
 // ═══════════════════════════════════════════════════════════
 const LOGO_SVGS = {
-  a: ``, // gradient square w/ css corner — no SVG needed
+  a: ``, // gradient square w/ css corner - no SVG needed
   b: `<svg viewBox="0 0 24 24" fill="none" stroke="url(#gradB)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
         <defs><linearGradient id="gradB" x1="0" y1="0" x2="24" y2="24"><stop offset="0%" stop-color="var(--acc)"/><stop offset="100%" stop-color="var(--acc-3)"/></linearGradient></defs>
         <polyline points="3 17 9 11 13 15 21 5"/>
@@ -1113,7 +1113,7 @@ function paintLogos(variant) {
 }
 
 // ═══════════════════════════════════════════════════════════
-// HERO TICKER — build items
+// HERO TICKER - build items
 // ═══════════════════════════════════════════════════════════
 const TICKER = [
   { k: 'MRR',          v: '$412K',    d: '+4.8%', dir: 'up' },

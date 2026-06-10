@@ -54,7 +54,7 @@ export async function POST(req: NextRequest) {
         break;
       }
       default:
-        // Unhandled — ack anyway so Stripe doesn't retry.
+        // Unhandled - ack anyway so Stripe doesn't retry.
         break;
     }
   } catch (err) {

@@ -1,11 +1,11 @@
 (function () {
-// vizstudio forms — shared submit handler
+// vizstudio forms - shared submit handler
 //
 // Each <form data-form="<name>"> is intercepted and POSTed to FORM_ENDPOINT.
 // Replace FORM_ENDPOINT with your real form-handler URL (Formspree, Web3Forms,
 // Netlify Forms, or your own backend). Until you do, the form just shows a
 // local success state.
-const FORM_ENDPOINT = '/api/forms'; // vizstudio backend — stores submissions for the admin panel
+const FORM_ENDPOINT = '/api/forms'; // vizstudio backend - stores submissions for the admin panel
 const CONTACT_EMAIL = 'brandonlea05@gmail.com'; // mailto fallback until FORM_ENDPOINT is set
 
 const FREE_MAIL = new Set([
@@ -39,6 +39,14 @@ function clearField(field) {
 async function submitForm(form, data) {
   if (FORM_ENDPOINT) {
     try {
+      // reCAPTCHA v3 - helper defined globally in app/layout.tsx. Resolves ''
+      // when not configured, in which case the server skips verification.
+      if (typeof window.vzGetRecaptchaToken === 'function') {
+        try {
+          const tok = await window.vzGetRecaptchaToken(data.form || 'submit');
+          if (tok) data.recaptchaToken = tok;
+        } catch (e) { /* submit anyway; server decides */ }
+      }
       const res = await fetch(FORM_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -47,7 +55,7 @@ async function submitForm(form, data) {
       return res.ok;
     } catch (e) { return false; }
   }
-  // No endpoint configured — open a prefilled email draft so submissions
+  // No endpoint configured - open a prefilled email draft so submissions
   // still reach a human, then show the success state.
   if (CONTACT_EMAIL) {
     const subject = encodeURIComponent('[vizstudio] ' + (data.form || 'form') + ' submission');
@@ -86,7 +94,7 @@ document.querySelectorAll('form[data-form]').forEach((form) => {
       data[input.name] = v;
     });
 
-    // Honeypot — humans never see/fill this; bots usually do.
+    // Honeypot - humans never see/fill this; bots usually do.
     const hp = form.querySelector('input[name="website"]');
     if (hp) data.website = (hp.value || '').trim();
 
@@ -131,17 +139,4 @@ document.querySelectorAll('.subscribe-form').forEach((form) => {
     }
     btn.textContent = 'Sending…';
     btn.disabled = true;
-    const hp = form.querySelector('input[name="website"]');
-    const ok = await submitForm(form, { form: 'subscribe', email: v, website: hp ? (hp.value || '').trim() : '' });
-    if (ok) {
-      btn.textContent = '✓ Subscribed';
-      btn.classList.add('done');
-      if (msg) msg.textContent = "You're in. Look for our next update soon.";
-      input.value = '';
-    } else {
-      btn.textContent = 'Try again';
-      btn.disabled = false;
-    }
-  });
-});
-})();
+    const hp = form.querySelector('input[nam

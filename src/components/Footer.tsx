@@ -38,12 +38,13 @@ export function Footer() {
           ["Contact", "mailto:hello@vizstudio.io"],
           ["Terms", "/legal/terms"],
           ["Privacy", "/legal/privacy"],
+          ["Cookie settings", "#cookie-settings"],
         ]} />
       </div>
 
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-page items-center justify-between px-6 py-4 text-[11px] text-muted">
-          <span>© {new Date().getFullYear()} Viz Studio · vizstudio.io</span>
+          <span>© {new Date().getFullYear()} Viz Studio LLC · vizstudio.io</span>
           <span>Made with D3.js · Powered by OKLCH</span>
         </div>
       </div>
@@ -69,9 +70,4 @@ function FooterCol({
             <Link href={href} className="hover:text-text">
               {label}
             </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+       

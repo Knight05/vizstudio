@@ -90,7 +90,7 @@ export const billingRouter = router({
         pdfUrl: inv.invoice_pdf ?? null,
       }));
     } catch {
-      // Stripe unreachable / misconfigured — show empty history, not an error.
+      // Stripe unreachable / misconfigured - show empty history, not an error.
       return [];
     }
   }),

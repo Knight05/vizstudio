@@ -1,6 +1,6 @@
 /**
  * Server-rendered marketing footer, ported from public/assets/partials.js.
- * Pure markup — no client JS needed (the newsletter is a no-op like the static site).
+ * Pure markup - no client JS needed (the newsletter is a no-op like the static site).
  */
 export default function SiteFooter() {
   return (

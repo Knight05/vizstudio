@@ -1,5 +1,5 @@
 
-/* Real account creation — passwordless. Posts to the same-origin Better-Auth
+/* Real account creation - passwordless. Posts to the same-origin Better-Auth
    sign-up endpoint; the set-password email (sent server-side) is the user's
    real credential setup. No data-form attribute, so forms.js skips this form. */
 (function () {
@@ -50,7 +50,7 @@
         var data = {};
         try { data = await res.json(); } catch (e) {}
         var msg = (data && (data.message || (data.error && data.error.message))) || 'Could not create your account. Please try again.';
-        if (/exist|taken|already/i.test(msg)) { msg = 'An account with this email already exists — try logging in.'; }
+        if (/exist|taken|already/i.test(msg)) { msg = 'An account with this email already exists. Try logging in.'; }
         showErr(email, msg);
         btn.disabled = false;
         btn.textContent = orig;
@@ -60,7 +60,7 @@
       if (success) { form.style.display = 'none'; success.classList.add('on'); }
       else { window.location.href = '/dashboard'; }
     } catch (e) {
-      showErr(email, 'Network error — please try again.');
+      showErr(email, 'Network error, please try again.');
       btn.disabled = false;
       btn.textContent = orig;
     }

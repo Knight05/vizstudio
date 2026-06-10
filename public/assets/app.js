@@ -1,4 +1,4 @@
-// vizstudio.io — gallery search + category filter
+// vizstudio.io - gallery search + category filter
 (function () {
   const input = document.getElementById('q');
   const stats = document.getElementById('search-stats');

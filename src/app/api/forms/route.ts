@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
+import { verifyRecaptcha } from "@/lib/recaptcha";
 
 /**
  * Public endpoint that receives submissions from the static marketing
@@ -64,8 +65,11 @@ const bodySchema = z
     description: z.string().max(4000).optional(), // site forms use "description"
     category: z.string().max(60).optional(), // report-issue category
     source: z.string().max(300).optional(),
-    // honeypot — bots fill this, humans never see it
+    // honeypot - bots fill this, humans never see it
     website: z.string().max(200).optional(),
+    // reCAPTCHA v3 token (action = form name). Verified server-side; the
+    // check is skipped entirely when RECAPTCHA_SECRET_KEY isn't configured.
+    recaptchaToken: z.string().max(5000).optional(),
   })
   .strip(); // drop any unknown keys instead of storing them
 
@@ -121,9 +125,21 @@ export async function POST(req: NextRequest) {
   }
   const data = parsed.data;
 
-  // Honeypot tripped — pretend success, store nothing.
+  // Honeypot tripped - pretend success, store nothing.
   if (data.website && data.website.trim()) {
     return cors(NextResponse.json({ ok: true }));
+  }
+
+  // reCAPTCHA v3 - token action must match the form name (clients mint
+  // tokens with action = form). No-ops when the secret key isn't set.
+  const captcha = await verifyRecaptcha(data.recaptchaToken, {
+    action: data.form,
+    ip: ip === "unknown" ? undefined : ip,
+  });
+  if (!captcha.ok) {
+    return cors(
+      NextResponse.json({ ok: false, error: "Verification failed" }, { status: 400 }),
+    );
   }
 
   const form = data.form;
@@ -137,7 +153,7 @@ export async function POST(req: NextRequest) {
   const name = clean(data.name, 120) ?? clean(data.chart_name, 160);
   const text = clean(data.message, 4000) ?? clean(data.description, 4000);
 
-  // Only persist known, sanitized extras — never arbitrary keys.
+  // Only persist known, sanitized extras - never arbitrary keys.
   const extras: Record<string, string> = {};
   const category = clean(data.category, 60);
   const company = clean(data.company, 160);
@@ -146,28 +162,4 @@ export async function POST(req: NextRequest) {
   if (category) extras.category = category;
   if (company) extras.company = company;
   if (role) extras.role = role;
-  if (chartName) extras.chart_name = chartName;
-
-  await prisma.formSubmission.create({
-    data: {
-      form,
-      email: email ?? null,
-      name: name ?? null,
-      message: text,
-      source: clean(data.source, 300) ?? req.headers.get("referer") ?? null,
-      ip: ip === "unknown" ? null : ip,
-      payload: Object.keys(extras).length ? extras : undefined,
-    },
-  });
-
-  // Signup / subscribe emails also become Leads (deduped).
-  if (email && (form === "subscribe" || form === "signup")) {
-    await prisma.lead.upsert({
-      where: { email },
-      update: {},
-      create: { email, source: form },
-    });
-  }
-
-  return cors(NextResponse.json({ ok: true }));
-}
+  if (cha

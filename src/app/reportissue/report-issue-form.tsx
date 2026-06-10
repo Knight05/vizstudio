@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getRecaptchaToken, preloadRecaptcha } from "@/lib/recaptcha-client";
 
 /* ── GA4 helper ─────────────────────────────────────────── */
 declare global {
@@ -31,6 +32,10 @@ export function ReportIssueForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
 
+  useEffect(() => {
+    preloadRecaptcha();
+  }, []);
+
   const canSubmit =
     status !== "sending" &&
     message.trim().length > 0 &&
@@ -40,6 +45,7 @@ export function ReportIssueForm() {
     setStatus("sending");
     setError(null);
     try {
+      const recaptchaToken = await getRecaptchaToken("reportissue");
       const res = await fetch("/api/forms", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -49,7 +55,8 @@ export function ReportIssueForm() {
           category,
           message: message.trim(),
           source: "/reportissue",
-          website, // honeypot — empty for humans
+          website, // honeypot - empty for humans
+          recaptchaToken: recaptchaToken || undefined,
         }),
       });
       const json = (await res.json().catch(() => ({}))) as { ok?: boolean };
@@ -68,7 +75,7 @@ export function ReportIssueForm() {
       <div style={S.card}>
         <div style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>Report received ✓</div>
         <p style={{ fontSize: 13, color: "var(--muted)", margin: "0 0 20px", lineHeight: 1.6 }}>
-          Thanks — it&apos;s in the team&apos;s inbox. If you left an email, we&apos;ll follow up there.
+          Thanks, it&apos;s in the team&apos;s inbox. If you left an email, we&apos;ll follow up there.
         </p>
         <button
           style={S.btnSecondary}
@@ -125,7 +132,7 @@ export function ReportIssueForm() {
           />
         </label>
 
-        {/* Honeypot — hidden from humans, bots fill it */}
+        {/* Honeypot - hidden from humans, bots fill it */}
         <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", top: "-9999px" }}>
           <label>
             Leave this field empty

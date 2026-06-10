@@ -95,6 +95,8 @@ function ResetPasswordForm() {
           <span style={C.label}>New password</span>
           <input
             type="password"
+            name="new-password"
+            autoComplete="new-password"
             required
             minLength={8}
             value={password}
@@ -106,6 +108,8 @@ function ResetPasswordForm() {
           <span style={C.label}>Confirm password</span>
           <input
             type="password"
+            name="confirm-password"
+            autoComplete="new-password"
             required
             minLength={8}
             value={confirm}
