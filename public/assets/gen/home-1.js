@@ -943,7 +943,7 @@ function buildFeatured() {
 // ─── Pricing toggle ─────────────────────────────────────────
 const toggle = document.getElementById('toggle');
 const priceGrid = document.getElementById('priceGrid');
-toggle.querySelectorAll('button').forEach(btn => {
+if (toggle && priceGrid) toggle.querySelectorAll('button').forEach(btn => {
   btn.addEventListener('click', () => {
     toggle.querySelectorAll('button').forEach(b => b.classList.toggle('on', b === btn));
     toggle.classList.toggle('annual', btn.dataset.p === 'annual');

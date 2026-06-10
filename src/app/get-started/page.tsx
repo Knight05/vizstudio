@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { GetStartedForm } from "@/components/GetStartedForm";
 
 export const metadata: Metadata = {
-  title: "Create your account | vizstudio",
+  title: "Create your account",
   description:
-    "Create your vizstudio account: 75+ premium D3 charts for Data Studio. No credit card required. We'll email you a link to set your password.",
+    "Start your 14-day free trial of Viz Studio: 75+ premium D3 charts for Looker Studio. No credit card required. We'll email you a link to set your password.",
 };
 
 export default function Page() {

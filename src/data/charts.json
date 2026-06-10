@@ -712,7 +712,7 @@
       "related": [
         {
           "id": "dualaxis-viz",
-          "name": "Chart Title",
+          "name": "Dual Axis Chart",
           "tagline": "Two metrics, two scales, one line of sight: without the lie factor."
         },
         {
@@ -1219,7 +1219,7 @@
     },
     {
       "id": "dualaxis-viz",
-      "name": "Chart Title",
+      "name": "Dual Axis Chart",
       "tagline": "Two metrics, two scales, one line of sight: without the lie factor.",
       "long": "Dual Axis pairs two metrics on independent y-axes: bars for volume, line for rate, or any combination. Carefully designed scales and ticks keep the chart honest while staying readable.",
       "what": "Bar + line, or two lines, with independent scaled y-axes, shared x-axis, legend, tooltip, and cross-filter.",
@@ -3002,7 +3002,7 @@
         },
         {
           "id": "dualaxis-viz",
-          "name": "Chart Title",
+          "name": "Dual Axis Chart",
           "tagline": "Two metrics, two scales, one line of sight: without the lie factor."
         },
         {
@@ -3052,7 +3052,7 @@
         },
         {
           "id": "dualaxis-viz",
-          "name": "Chart Title",
+          "name": "Dual Axis Chart",
           "tagline": "Two metrics, two scales, one line of sight: without the lie factor."
         },
         {
@@ -3102,7 +3102,7 @@
         },
         {
           "id": "dualaxis-viz",
-          "name": "Chart Title",
+          "name": "Dual Axis Chart",
           "tagline": "Two metrics, two scales, one line of sight: without the lie factor."
         },
         {
@@ -3202,7 +3202,7 @@
         },
         {
           "id": "dualaxis-viz",
-          "name": "Chart Title",
+          "name": "Dual Axis Chart",
           "tagline": "Two metrics, two scales, one line of sight: without the lie factor."
         },
         {
@@ -3252,7 +3252,7 @@
         },
         {
           "id": "dualaxis-viz",
-          "name": "Chart Title",
+          "name": "Dual Axis Chart",
           "tagline": "Two metrics, two scales, one line of sight: without the lie factor."
         },
         {
@@ -3347,7 +3347,7 @@
         },
         {
           "id": "dualaxis-viz",
-          "name": "Chart Title",
+          "name": "Dual Axis Chart",
           "tagline": "Two metrics, two scales, one line of sight: without the lie factor."
         },
         {
@@ -3842,7 +3842,7 @@
         },
         {
           "id": "dualaxis-viz",
-          "name": "Chart Title",
+          "name": "Dual Axis Chart",
           "tagline": "Two metrics, two scales, one line of sight: without the lie factor."
         },
         {

@@ -129,8 +129,8 @@ export function GetStartedForm() {
               <div className="form-eyebrow">Get Started</div>
               <h1>Create your account.</h1>
               <p className="sub">
-                No credit card required. We&apos;ll email you a link to verify your address and set
-                your password, then you&apos;re in.
+                Start your 14-day free trial, no credit card required. We&apos;ll email you a link to
+                verify your address and set your password, then you&apos;re in.
               </p>
 
               {!done ? (
