@@ -144,4 +144,22 @@
         : Promise.resolve('');
       tokenP.then(function (tok) {
         return fetch('/api/forms', {
-          method: '
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            form: 'subscribe',
+            email: email,
+            source: location.pathname,
+            recaptchaToken: tok || undefined,
+          }),
+        });
+      }).then(function (r) {
+        if (!r.ok) throw new Error('status ' + r.status);
+        if (input) input.value = '';
+        if (btn) btn.textContent = '✓ thanks';
+      }).catch(function () {
+        if (btn) { btn.disabled = false; btn.textContent = 'Subscribe'; }
+      });
+    });
+  }
+})();

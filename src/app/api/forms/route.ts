@@ -14,6 +14,7 @@ import { verifyRecaptcha } from "@/lib/recaptcha";
  *    stripped (no unbounded passthrough payload)
  *  - all stored strings are sanitized (control chars / null bytes removed)
  *  - silent honeypot
+ *  - reCAPTCHA v3 (skipped when RECAPTCHA_SECRET_KEY isn't configured)
  *  - best-effort per-IP rate limiting
  */
 
@@ -162,4 +163,28 @@ export async function POST(req: NextRequest) {
   if (category) extras.category = category;
   if (company) extras.company = company;
   if (role) extras.role = role;
-  if (cha
+  if (chartName) extras.chart_name = chartName;
+
+  await prisma.formSubmission.create({
+    data: {
+      form,
+      email: email ?? null,
+      name: name ?? null,
+      message: text,
+      source: clean(data.source, 300) ?? req.headers.get("referer") ?? null,
+      ip: ip === "unknown" ? null : ip,
+      payload: Object.keys(extras).length ? extras : undefined,
+    },
+  });
+
+  // Signup / subscribe emails also become Leads (deduped).
+  if (email && (form === "subscribe" || form === "signup")) {
+    await prisma.lead.upsert({
+      where: { email },
+      update: {},
+      create: { email, source: form },
+    });
+  }
+
+  return cors(NextResponse.json({ ok: true }));
+}

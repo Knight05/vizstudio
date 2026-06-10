@@ -70,4 +70,9 @@ function FooterCol({
             <Link href={href} className="hover:text-text">
               {label}
             </Link>
-       
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}

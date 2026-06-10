@@ -139,4 +139,17 @@ document.querySelectorAll('.subscribe-form').forEach((form) => {
     }
     btn.textContent = 'Sending…';
     btn.disabled = true;
-    const hp = form.querySelector('input[nam
+    const hp = form.querySelector('input[name="website"]');
+    const ok = await submitForm(form, { form: 'subscribe', email: v, website: hp ? (hp.value || '').trim() : '' });
+    if (ok) {
+      btn.textContent = '✓ Subscribed';
+      btn.classList.add('done');
+      if (msg) msg.textContent = "You're in. Look for our next update soon.";
+      input.value = '';
+    } else {
+      btn.textContent = 'Try again';
+      btn.disabled = false;
+    }
+  });
+});
+})();
