@@ -1,7 +1,16 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import "./globals.css";
 import { TRPCProvider } from "@/trpc/provider";
+
+// maximumScale: 1 stops iOS Safari's auto-zoom when focusing inputs <16px,
+// which was knocking the mobile layout off-grid. Manual pinch-zoom still works
+// (iOS ignores maximum-scale for user-initiated zoom since iOS 10).
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
   title: {
