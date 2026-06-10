@@ -19,7 +19,7 @@ export function isAdminEmail(email?: string | null) {
 /** Server-component guard: redirects non-admins away. */
 export async function requireAdmin() {
   const session = await auth.api.getSession({ headers: await headers() });
-  if (!session?.user) redirect("/login?next=/admin");
+  if (!session?.user) redirect("/login?next=/vz-ops-37");
   if (!isAdminEmail(session.user.email)) redirect("/dashboard");
   return session.user;
 }

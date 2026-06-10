@@ -21,7 +21,7 @@ export default async function AdminFormsPage({
       {TABS.map((t) => (
         <Link
           key={t}
-          href={t === "all" ? "/admin/forms" : `/admin/forms?tab=${t}`}
+          href={t === "all" ? "/vz-ops-37/forms" : `/vz-ops-37/forms?tab=${t}`}
           className={`pill hover:bg-panel-2 ${t === tab ? "bg-panel-2" : ""}`}
         >
           {t}

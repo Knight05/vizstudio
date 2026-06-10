@@ -22,13 +22,13 @@ export default async function AdminLayout({
             Admin
           </h1>
           <nav className="mt-4 flex gap-2 text-[13px]">
-            <Link href="/admin" className="pill hover:bg-panel-2">
+            <Link href="/vz-ops-37" className="pill hover:bg-panel-2">
               Overview
             </Link>
-            <Link href="/admin/clients" className="pill hover:bg-panel-2">
+            <Link href="/vz-ops-37/clients" className="pill hover:bg-panel-2">
               Clients
             </Link>
-            <Link href="/admin/forms" className="pill hover:bg-panel-2">
+            <Link href="/vz-ops-37/forms" className="pill hover:bg-panel-2">
               Forms
             </Link>
           </nav>

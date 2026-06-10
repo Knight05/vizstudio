@@ -69,13 +69,13 @@ export default async function AdminClientsPage({
         {FILTERS.map((f) => (
           <Link
             key={f}
-            href={f === "all" ? "/admin/clients" : `/admin/clients?filter=${f}`}
+            href={f === "all" ? "/vz-ops-37/clients" : `/vz-ops-37/clients?filter=${f}`}
             className={`pill hover:bg-panel-2 ${f === filter ? "bg-panel-2" : ""}`}
           >
             {f.replace("_", " ")}
           </Link>
         ))}
-        <form className="ml-auto" action="/admin/clients">
+        <form className="ml-auto" action="/vz-ops-37/clients">
           {filter !== "all" && <input type="hidden" name="filter" value={filter} />}
           <input
             name="q"

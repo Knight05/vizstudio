@@ -35,13 +35,13 @@ export default async function AdminOverviewPage() {
   const freeUsers = totalUsers - paidSubs - pastDue - trialing;
 
   const stats: Array<{ label: string; value: number; href: string }> = [
-    { label: "Clients", value: totalUsers, href: "/admin/clients" },
-    { label: "Paid · on time", value: paidSubs, href: "/admin/clients?filter=paid" },
-    { label: "Past due", value: pastDue, href: "/admin/clients?filter=past_due" },
-    { label: "Trialing", value: trialing, href: "/admin/clients?filter=trialing" },
-    { label: "Free", value: Math.max(freeUsers, 0), href: "/admin/clients?filter=free" },
-    { label: "Leads", value: leads, href: "/admin/forms?tab=leads" },
-    { label: "Forms · 7 days", value: forms7d, href: "/admin/forms" },
+    { label: "Clients", value: totalUsers, href: "/vz-ops-37/clients" },
+    { label: "Paid · on time", value: paidSubs, href: "/vz-ops-37/clients?filter=paid" },
+    { label: "Past due", value: pastDue, href: "/vz-ops-37/clients?filter=past_due" },
+    { label: "Trialing", value: trialing, href: "/vz-ops-37/clients?filter=trialing" },
+    { label: "Free", value: Math.max(freeUsers, 0), href: "/vz-ops-37/clients?filter=free" },
+    { label: "Leads", value: leads, href: "/vz-ops-37/forms?tab=leads" },
+    { label: "Forms · 7 days", value: forms7d, href: "/vz-ops-37/forms" },
   ];
 
   return (
