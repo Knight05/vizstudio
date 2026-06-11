@@ -184,10 +184,12 @@ model FormSubmission {
   payload   Json?    // full raw submission
   source    String?  // page path or referrer
   ip        String?
+  status    String   @default("new") // "new" | "read" | "resolved"
   createdAt DateTime @default(now()) @map("created_at")
 
   @@index([form, createdAt])
   @@index([email])
+  @@index([status])
   @@map("form_submissions")
 }
 

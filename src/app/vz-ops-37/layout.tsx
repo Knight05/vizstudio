@@ -31,6 +31,9 @@ export default async function AdminLayout({
             <Link href="/vz-ops-37/forms" className="pill hover:bg-panel-2">
               Forms
             </Link>
+            <Link href="/vz-ops-37/content" className="pill hover:bg-panel-2">
+              Content
+            </Link>
           </nav>
         </div>
         {children}

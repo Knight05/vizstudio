@@ -109,8 +109,12 @@ export default async function AdminClientsPage({
               {users.map((u) => (
                 <tr key={u.id} className="border-t border-panel-2">
                   <td className="px-4 py-3">
-                    <div className="font-medium">{u.name ?? "-"}</div>
-                    <div className="text-text-dim">{u.email}</div>
+                    <Link href={`/vz-ops-37/clients/${u.id}`} className="group">
+                      <div className="font-medium group-hover:underline">
+                        {u.name ?? "-"}
+                      </div>
+                      <div className="text-text-dim">{u.email}</div>
+                    </Link>
                   </td>
                   <td className="px-4 py-3">{u.subscription?.tier ?? "FREE"}</td>
                   <td className="px-4 py-3">

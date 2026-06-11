@@ -7,26 +7,63 @@ import { requireAdmin } from "@/lib/admin";
 const TABS = ["all", "support", "reportissue", "signup", "suggest", "subscribe", "leads"] as const;
 type Tab = (typeof TABS)[number];
 
+const STATUSES = ["all", "new", "read", "resolved"] as const;
+type StatusFilter = (typeof STATUSES)[number];
+
+const STATUS_STYLE: Record<string, string> = {
+  new: "text-[var(--acc-green,#4ade80)]",
+  read: "text-text-dim",
+  resolved: "text-muted line-through",
+};
+
 export default async function AdminFormsPage({
   searchParams,
 }: {
-  searchParams: Promise<{ tab?: string }>;
+  searchParams: Promise<{ tab?: string; status?: string }>;
 }) {
   await requireAdmin();
   const sp = await searchParams;
   const tab: Tab = TABS.includes(sp.tab as Tab) ? (sp.tab as Tab) : "all";
+  const status: StatusFilter = STATUSES.includes(sp.status as StatusFilter)
+    ? (sp.status as StatusFilter)
+    : "all";
 
-  const tabs = (
-    <div className="mb-4 flex flex-wrap gap-2">
+  const qs = (t: Tab, s: StatusFilter) => {
+    const p = new URLSearchParams();
+    if (t !== "all") p.set("tab", t);
+    if (s !== "all") p.set("status", s);
+    const str = p.toString();
+    return str ? `/vz-ops-37/forms?${str}` : "/vz-ops-37/forms";
+  };
+
+  const header = (
+    <div className="mb-4 flex flex-wrap items-center gap-2">
       {TABS.map((t) => (
         <Link
           key={t}
-          href={t === "all" ? "/vz-ops-37/forms" : `/vz-ops-37/forms?tab=${t}`}
+          href={qs(t, status)}
           className={`pill hover:bg-panel-2 ${t === tab ? "bg-panel-2" : ""}`}
         >
           {t}
         </Link>
       ))}
+      <span className="mx-1 h-4 w-px bg-panel-2" />
+      {tab !== "leads" &&
+        STATUSES.map((s) => (
+          <Link
+            key={s}
+            href={qs(tab, s)}
+            className={`pill hover:bg-panel-2 ${s === status ? "bg-panel-2" : ""}`}
+          >
+            {s === "all" ? "any status" : s}
+          </Link>
+        ))}
+      <a
+        href={`/api/admin/forms/export?tab=${tab}`}
+        className="pill ml-auto hover:bg-panel-2"
+      >
+        Export CSV ↓
+      </a>
     </div>
   );
 
@@ -37,7 +74,7 @@ export default async function AdminFormsPage({
     });
     return (
       <section>
-        {tabs}
+        {header}
         {leads.length === 0 ? (
           <div className="card p-6 text-[13px] text-text-dim">No leads yet.</div>
         ) : (
@@ -68,8 +105,10 @@ export default async function AdminFormsPage({
     );
   }
 
-  const where: Prisma.FormSubmissionWhereInput =
-    tab === "all" ? {} : { form: tab };
+  const where: Prisma.FormSubmissionWhereInput = {
+    ...(tab === "all" ? {} : { form: tab }),
+    ...(status === "all" ? {} : { status }),
+  };
 
   const subs = await prisma.formSubmission.findMany({
     where,
@@ -79,7 +118,7 @@ export default async function AdminFormsPage({
 
   return (
     <section>
-      {tabs}
+      {header}
       {subs.length === 0 ? (
         <div className="card p-6 text-[13px] text-text-dim">
           No submissions yet for this view.
@@ -89,37 +128,42 @@ export default async function AdminFormsPage({
           <table className="w-full text-[12.5px]">
             <thead>
               <tr className="text-left text-[10px] uppercase tracking-widest text-muted">
+                <th className="px-4 py-3">Status</th>
                 <th className="px-4 py-3">Form</th>
                 <th className="px-4 py-3">Name</th>
                 <th className="px-4 py-3">Email</th>
                 <th className="px-4 py-3">Message</th>
-                <th className="px-4 py-3">Source</th>
                 <th className="px-4 py-3">When</th>
+                <th className="px-4 py-3" />
               </tr>
             </thead>
             <tbody>
               {subs.map((s) => (
-                <tr key={s.id} className="border-t border-panel-2 align-top">
+                <tr
+                  key={s.id}
+                  className={`border-t border-panel-2 align-top ${
+                    s.status === "new" ? "font-medium" : ""
+                  }`}
+                >
+                  <td className={`px-4 py-3 ${STATUS_STYLE[s.status] ?? ""}`}>
+                    {s.status}
+                  </td>
                   <td className="px-4 py-3"><span className="pill">{s.form}</span></td>
                   <td className="px-4 py-3">{s.name ?? "-"}</td>
                   <td className="px-4 py-3">{s.email ?? "-"}</td>
-                  <td className="px-4 py-3 max-w-[44ch] whitespace-pre-wrap text-text-dim">
-                    {(() => {
-                      const category =
-                        s.payload && typeof s.payload === "object" && !Array.isArray(s.payload)
-                          ? (s.payload as Record<string, unknown>).category
-                          : undefined;
-                      return typeof category === "string" && category ? (
-                        <span className="pill mb-1 mr-2 inline-block">{category}</span>
-                      ) : null;
-                    })()}
+                  <td className="px-4 py-3 max-w-[40ch] truncate text-text-dim">
                     {s.message ?? "-"}
-                  </td>
-                  <td className="px-4 py-3 max-w-[24ch] truncate text-text-dim">
-                    {s.source ?? "-"}
                   </td>
                   <td className="px-4 py-3 whitespace-nowrap text-text-dim">
                     {formatDate(s.createdAt)}
+                  </td>
+                  <td className="px-4 py-3">
+                    <Link
+                      href={`/vz-ops-37/forms/${s.id}`}
+                      className="pill hover:bg-panel-2"
+                    >
+                      Open →
+                    </Link>
                   </td>
                 </tr>
               ))}
