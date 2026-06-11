@@ -8,8 +8,9 @@ import { useEffect, useState } from "react";
  * - layout.tsx sets `gtag('consent','default', …denied…)` before GA4 loads,
  *   honoring any previously saved choice from localStorage.
  * - This banner appears only when no choice has been saved yet.
- * - Accept → analytics consent granted (GA4 starts setting cookies).
- *   Decline → stays denied (GA4 sends cookieless pings only).
+ * - Accept → full consent (analytics + advertising signals), so GA4 audiences
+ *   and future remarketing campaigns work without another consent pass.
+ *   Decline → everything stays denied (GA4 sends cookieless pings only).
  * - Any element with `data-cookie-settings` or an <a href="#cookie-settings">
  *   (e.g. the footer link) reopens the banner so users can change their mind.
  */
@@ -31,9 +32,9 @@ function applyConsent(value: "granted" | "denied") {
   if (typeof window !== "undefined" && window.gtag) {
     window.gtag("consent", "update", {
       analytics_storage: value,
-      ad_storage: "denied",
-      ad_user_data: "denied",
-      ad_personalization: "denied",
+      ad_storage: value,
+      ad_user_data: value,
+      ad_personalization: value,
     });
     if (value === "granted") {
       window.gtag("event", "cookie_consent_granted");
@@ -73,10 +74,11 @@ export function CookieConsent() {
     <div role="dialog" aria-label="Cookie settings" style={S.wrap}>
       <div style={S.card}>
         <div style={{ flex: "1 1 320px", minWidth: 0 }}>
-          <div style={S.title}>Cookies &amp; analytics</div>
+          <div style={S.title}>We value your privacy</div>
           <p style={S.text}>
-            We use Google Analytics cookies to understand how the site is used
-            and improve it. No advertising or cross-site tracking. See our{" "}
+            We use cookies to analyze traffic, improve your experience, and
+            support our marketing. You can change your choice anytime via
+            &ldquo;Cookie settings&rdquo; in the footer. See our{" "}
             <a href="/privacy" style={S.link}>
               Privacy Policy
             </a>
@@ -102,7 +104,7 @@ export function CookieConsent() {
               setVisible(false);
             }}
           >
-            Accept
+            Accept all
           </button>
         </div>
       </div>

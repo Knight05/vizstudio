@@ -72,9 +72,9 @@ export default function RootLayout({
             var vzConsent = 'denied';
             try { if (localStorage.getItem('vz_cookie_consent') === 'granted') vzConsent = 'granted'; } catch (e) {}
             gtag('consent', 'default', {
-              ad_storage: 'denied',
-              ad_user_data: 'denied',
-              ad_personalization: 'denied',
+              ad_storage: vzConsent,
+              ad_user_data: vzConsent,
+              ad_personalization: vzConsent,
               analytics_storage: vzConsent,
               wait_for_update: 500
             });
