@@ -391,7 +391,7 @@ h2.section-title {
 .chart-hero-actions { grid-column: 1; grid-row: 2; align-self: start; }
 .chart-hero-media { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
 @media (max-width: 1024px) {
-  /* Mobile: title → preview image → CTAs + trust line (DOM order). */
+  /* Mobile: title -> preview image -> CTAs + trust line (DOM order). */
   .chart-hero-grid { grid-template-columns: 1fr; grid-template-rows: none; gap: 26px; }
   .chart-hero-copy, .chart-hero-media, .chart-hero-actions { grid-column: 1; grid-row: auto; }
   .chart-hero-copy .chart-tagline { margin-bottom: 0; }
@@ -784,4 +784,21 @@ footer .newsletter button { background: var(--accent-grad); color: white; border
 .footer-fallback p{margin:8px 0 0}
 
 
-/* ── Chart page pricing strip (matches calendar .price-band) ────
+/* ── Chart page pricing strip (matches calendar .price-band) ──────────────── */
+.pricing-strip { padding: 56px 0 76px; }
+.pricing-strip .section-eyebrow { margin-bottom: 8px; }
+.pricing-strip-title { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 18px; color: var(--text); }
+.price-band {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg, 16px);
+  padding: 32px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: center; margin-top: 8px;
+}
+.price-band .amounts { display: flex; gap: 28px; align-items: baseline; flex-wrap: wrap; }
+.price-band .amt { display: flex; align-items: baseline; gap: 6px; }
+.price-band .amt .val { font-size: 40px; font-weight: 700; letter-spacing: -0.03em; }
+.price-band .amt .per { color: var(--text-dim); font-size: 14px; }
+.price-band .amt .or { color: var(--muted, var(--text-dim)); font-size: 14px; }
+.price-band p { color: var(--text-dim); font-size: 14px; margin: 10px 0 0; }
+.price-band .cta-side { text-align: center; }
+.price-band .cta-side .btn { width: 100%; justify-content: center; }
+.price-band .cta-side .micro { margin-top: 10px; font-size: 12px; color: var(--text-dim); }
+@media (max-width: 760px) { .price-band { grid-template-columns: 1fr; gap: 22px; } }

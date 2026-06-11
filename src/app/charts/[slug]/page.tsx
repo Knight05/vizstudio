@@ -319,4 +319,14 @@ export default async function ChartPage({
               </div>
               <div className="cta-side">
                 <a className="btn btn-primary" href="/get-started">Start free →</a>
-                <div className="micro">No 
+                <div className="micro">No credit card required.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <SiteFooter />
+    </>
+  );
+}
