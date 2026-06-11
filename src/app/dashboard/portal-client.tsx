@@ -32,6 +32,8 @@ export type PortalKey = {
 export type PortalProps = {
   user: { name: string | null; email: string; emailVerified: boolean; createdAt: string };
   tier: "FREE" | "PRO" | "TEAM";
+  /** Marketing plan name derived from the Stripe price ("Monthly" | "Annual"). */
+  planLabel?: "Monthly" | "Annual" | null;
   status: string;
   periodEnd: string | null;
   cancelAtPeriodEnd: boolean;
@@ -210,14 +212,18 @@ export function PortalClient(props: PortalProps) {
             <div>
               <div className="sb-user-name">{props.user.name ?? props.user.email}</div>
               <div className="sb-user-handle">
-                {props.tier === "FREE" ? "Free" : props.tier === "PRO" ? "Pro" : "Team"} plan
+                {props.tier === "FREE"
+                  ? "Free trial"
+                  : props.tier === "PRO"
+                    ? `${props.planLabel ?? "Pro"} plan`
+                    : "Team plan"}
               </div>
             </div>
           </div>
           {props.tier === "FREE" && (
             <Link href="/pricing" className="sb-user-cta">
               <Icon id="i-sparkle" />
-              Upgrade to Pro
+              Upgrade plan
             </Link>
           )}
         </div>
@@ -584,10 +590,11 @@ const PLAN_FEATS: Record<PortalProps["tier"], string[]> = {
     "Community support",
   ],
   PRO: [
-    "All charts unlocked",
-    "Every palette · no watermark",
+    "Full chart library · 75+ types",
+    "Unlimited reports & viewers",
+    "Custom branding · no watermark",
     "2 license keys",
-    "Priority support",
+    "Email support",
   ],
   TEAM: [
     "Everything in Pro",
@@ -618,29 +625,88 @@ function BillingTab(props: PortalProps) {
         <div className="pcard">
           <div className="plan-tag">Current plan</div>
           <div className="plan-name" style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            {props.tier === "FREE" ? "Free" : props.tier === "PRO" ? "Pro" : "Team"}
+            {props.tier === "FREE"
+              ? "Free trial"
+              : props.tier === "PRO"
+                ? (props.planLabel ?? "Pro")
+                : "Team"}
             <StatusPill status={props.status} />
           </div>
           <div className="plan-price">
             {props.tier === "FREE" ? (
-              <><b>$0</b> / month</>
-            ) : props.periodEnd ? (
-              props.cancelAtPeriodEnd
-                ? <>Cancels on <b>{new Date(props.periodEnd).toLocaleDateString()}</b></>
-                : <>Renews on <b>{new Date(props.periodEnd).toLocaleDateString()}</b></>
+              <><b>$0</b> — 14-day trial</>
             ) : (
-              <>Active subscription</>
+              <>
+                {props.planLabel === "Annual" ? (
+                  <><b>$500</b> / year</>
+                ) : props.planLabel === "Monthly" ? (
+                  <><b>$50</b> / month</>
+                ) : (
+                  <>Active subscription</>
+                )}
+                {props.periodEnd && (
+                  <>
+                    {" · "}
+                    {props.cancelAtPeriodEnd
+                      ? <>cancels {new Date(props.periodEnd).toLocaleDateString()}</>
+                      : <>renews {new Date(props.periodEnd).toLocaleDateString()}</>}
+                  </>
+                )}
+              </>
             )}
           </div>
           <ul className="plan-feats">
             {PLAN_FEATS[props.tier].map((f) => <li key={f}>{f}</li>)}
           </ul>
+          {props.tier === "FREE" && (
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: 10,
+                margin: "14px 0 4px",
+              }}
+            >
+              {([
+                { plan: "PRO_MONTHLY", name: "Monthly", price: "$50/mo", note: "Cancel anytime" },
+                { plan: "PRO_YEARLY", name: "Annual", price: "$500/yr", note: "Save $100" },
+              ] as const).map((p) => (
+                <form
+                  key={p.plan}
+                  action={`/api/stripe/checkout?plan=${p.plan}`}
+                  method="POST"
+                  style={{ display: "contents" }}
+                >
+                  <button
+                    type="submit"
+                    onClick={() => track("billing_upgrade_click", { plan: p.plan })}
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                      gap: 2,
+                      padding: "12px 14px",
+                      borderRadius: 12,
+                      border: "1px solid var(--border)",
+                      background: "var(--panel)",
+                      color: "var(--text)",
+                      cursor: "pointer",
+                      textAlign: "left",
+                    }}
+                  >
+                    <span style={{ fontSize: 13, fontWeight: 600 }}>
+                      {p.name} · {p.price}
+                    </span>
+                    <span style={{ fontSize: 11.5, color: "var(--muted)" }}>{p.note}</span>
+                  </button>
+                </form>
+              ))}
+            </div>
+          )}
+
           <div className="plan-actions">
             {props.tier === "FREE" ? (
-              <>
-                <Link href="/pricing" className="primary">Upgrade to Pro →</Link>
-                <Link href="/pricing">Compare plans</Link>
-              </>
+              <Link href="/pricing">Compare plans →</Link>
             ) : (
               <>
                 {props.hasStripeCustomer && (

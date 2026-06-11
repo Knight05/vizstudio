@@ -70,6 +70,15 @@ export default async function DashboardPage() {
         createdAt: user.createdAt.toISOString(),
       }}
       tier={tier}
+      planLabel={
+        user.subscription?.stripePriceId &&
+        user.subscription.stripePriceId === process.env.STRIPE_PRICE_PRO_YEARLY
+          ? "Annual"
+          : user.subscription?.stripePriceId &&
+              user.subscription.stripePriceId === process.env.STRIPE_PRICE_PRO_MONTHLY
+            ? "Monthly"
+            : null
+      }
       status={status}
       periodEnd={user.subscription?.currentPeriodEnd?.toISOString() ?? null}
       cancelAtPeriodEnd={user.subscription?.cancelAtPeriodEnd ?? false}

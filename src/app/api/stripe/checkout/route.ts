@@ -13,9 +13,13 @@ const PRICE_MAP: Record<string, string | undefined> = {
 
 export async function POST(req: NextRequest) {
   const plan = new URL(req.url).searchParams.get("plan") ?? "";
+  if (!(plan in PRICE_MAP)) {
+    return NextResponse.json({ error: "Unknown plan" }, { status: 400 });
+  }
   const priceId = PRICE_MAP[plan];
   if (!priceId) {
-    return NextResponse.json({ error: "Unknown plan" }, { status: 400 });
+    // Stripe price IDs not configured yet - degrade to a friendly notice.
+    return NextResponse.redirect(new URL("/pricing?checkout=unavailable", req.url), 303);
   }
 
   const session = await auth.api.getSession({ headers: await headers() });
@@ -24,36 +28,41 @@ export async function POST(req: NextRequest) {
   }
   const user = session.user;
 
-  const sub = await prisma.subscription.findUnique({
-    where: { userId: user.id },
-  });
-  let customerId = sub?.stripeCustomerId ?? undefined;
-  if (!customerId) {
-    const customer = await stripe.customers.create({
-      email: user.email,
-      metadata: { userId: user.id },
-    });
-    customerId = customer.id;
-    await prisma.subscription.upsert({
+  try {
+    const sub = await prisma.subscription.findUnique({
       where: { userId: user.id },
-      create: { userId: user.id, stripeCustomerId: customerId },
-      update: { stripeCustomerId: customerId },
     });
-  }
+    let customerId = sub?.stripeCustomerId ?? undefined;
+    if (!customerId) {
+      const customer = await stripe.customers.create({
+        email: user.email,
+        metadata: { userId: user.id },
+      });
+      customerId = customer.id;
+      await prisma.subscription.upsert({
+        where: { userId: user.id },
+        create: { userId: user.id, stripeCustomerId: customerId },
+        update: { stripeCustomerId: customerId },
+      });
+    }
 
-  const origin = process.env.NEXT_PUBLIC_APP_URL ?? req.nextUrl.origin;
-  const checkout = await stripe.checkout.sessions.create({
-    customer: customerId,
-    mode: "subscription",
-    line_items: [{ price: priceId, quantity: 1 }],
-    allow_promotion_codes: true,
-    success_url: `${origin}/dashboard?checkout=success`,
-    cancel_url:  `${origin}/pricing?checkout=cancelled`,
-    subscription_data: { metadata: { userId: user.id } },
-  });
+    const origin = process.env.NEXT_PUBLIC_APP_URL ?? req.nextUrl.origin;
+    const checkout = await stripe.checkout.sessions.create({
+      customer: customerId,
+      mode: "subscription",
+      line_items: [{ price: priceId, quantity: 1 }],
+      allow_promotion_codes: true,
+      success_url: `${origin}/dashboard?checkout=success`,
+      cancel_url:  `${origin}/pricing?checkout=cancelled`,
+      subscription_data: { metadata: { userId: user.id } },
+    });
 
-  if (!checkout.url) {
-    return NextResponse.json({ error: "Stripe returned no URL" }, { status: 500 });
+    if (!checkout.url) {
+      throw new Error("Stripe returned no checkout URL");
+    }
+    return NextResponse.redirect(checkout.url, 303);
+  } catch (err) {
+    console.error("[stripe.checkout] failed:", err);
+    return NextResponse.redirect(new URL("/pricing?checkout=unavailable", req.url), 303);
   }
-  return NextResponse.redirect(checkout.url, 303);
 }
