@@ -83,7 +83,7 @@ export default async function ChartPage({
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      name: `${chart.name} for Data Studio`,
+      name: `${chart.name} for Looker Studio`,
       url: `${SITE}/charts/${chart.id}`,
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
@@ -100,7 +100,7 @@ export default async function ChartPage({
       : [
           {
             tag: "Use case",
-            body: `Add a ${chart.name.toLowerCase()} to any Data Studio report that needs it.`,
+            body: `Add a ${chart.name.toLowerCase()} to any Looker Studio report that needs it.`,
           },
         ];
 
@@ -143,7 +143,7 @@ export default async function ChartPage({
         <section className="chart-hero">
           <div className="wrap">
             <div className="chart-hero-grid">
-              <div>
+              <div className="chart-hero-copy">
                 <div className="chart-title-row">
                   <div className="chart-hero-icon">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -156,31 +156,11 @@ export default async function ChartPage({
                   <h1 className="chart-title">{chart.name}</h1>
                 </div>
                 <div className="chart-eyebrow">
-                  {chart.name} for Data Studio, formerly known as Looker Studio.
+                  {chart.name} for Looker Studio (formerly Data Studio).
                 </div>
                 <p className="chart-tagline">{chart.tagline}</p>
-                <div className="chart-cta-row">
-                  <a className="btn btn-primary" href="/get-started">
-                    Add to Data Studio →
-                  </a>
-                  {chart.dsLink && (
-                    <a
-                      className="btn"
-                      href={chart.dsLink}
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      Open live demo
-                    </a>
-                  )}
-                </div>
-                <div className="chart-trust">
-                  <span>Cross-filter ready</span>
-                  <span>Theme-aware</span>
-                  <span>Setup in 30s</span>
-                </div>
               </div>
-              <div>
+              <div className="chart-hero-media">
                 <div className="chart-preview">
                   <div className="preview-bar">
                     <span className="dot"></span>
@@ -192,7 +172,7 @@ export default async function ChartPage({
                     <img
                       className="preview-img"
                       src={`/screenshots/${previewSrc}`}
-                      alt={`${chart.name} (Data Studio screenshot)`}
+                      alt={`${chart.name} (Looker Studio screenshot)`}
                       loading="lazy"
                     />
                   ) : (
@@ -216,6 +196,28 @@ export default async function ChartPage({
                       />
                     </div>
                   )}
+                </div>
+              </div>
+              <div className="chart-hero-actions">
+                <div className="chart-cta-row">
+                  <a className="btn btn-primary" href="/get-started">
+                    Add to Looker Studio →
+                  </a>
+                  {chart.dsLink && (
+                    <a
+                      className="btn"
+                      href={chart.dsLink}
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Open live demo
+                    </a>
+                  )}
+                </div>
+                <div className="chart-trust">
+                  <span>Cross-filter ready</span>
+                  <span>Theme-aware</span>
+                  <span className="trust-extra">Setup in 30s</span>
                 </div>
               </div>
             </div>
@@ -255,7 +257,7 @@ export default async function ChartPage({
                   }}
                 >
                   <li>
-                    Open your Data Studio report and click{" "}
+                    Open your Looker Studio report and click{" "}
                     <strong>
                       Add a chart → Community visualizations → Explore more
                     </strong>
@@ -317,14 +319,4 @@ export default async function ChartPage({
               </div>
               <div className="cta-side">
                 <a className="btn btn-primary" href="/get-started">Start free →</a>
-                <div className="micro">No credit card required.</div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <SiteFooter />
-    </>
-  );
-}
+                <div className="micro">No 

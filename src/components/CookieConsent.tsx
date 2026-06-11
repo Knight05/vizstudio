@@ -73,18 +73,12 @@ export function CookieConsent() {
   return (
     <div role="dialog" aria-label="Cookie settings" style={S.wrap}>
       <div style={S.card}>
-        <div style={{ flex: "1 1 320px", minWidth: 0 }}>
-          <div style={S.title}>We value your privacy</div>
-          <p style={S.text}>
-            We use cookies to analyze traffic, improve your experience, and
-            support our marketing. You can change your choice anytime via
-            &ldquo;Cookie settings&rdquo; in the footer. See our{" "}
-            <a href="/privacy" style={S.link}>
-              Privacy Policy
-            </a>
-            .
-          </p>
-        </div>
+        <p style={S.text}>
+          We use cookies to analyze traffic and improve your experience.{" "}
+          <a href="/privacy" style={S.link}>
+            Privacy Policy
+          </a>
+        </p>
         <div style={S.actions}>
           <button
             type="button"
@@ -119,37 +113,36 @@ const S: Record<string, React.CSSProperties> = {
     right: 0,
     bottom: 0,
     zIndex: 9999,
-    padding: "0 16px 16px",
+    padding: "0 10px 10px",
     display: "flex",
     justifyContent: "center",
     pointerEvents: "none",
   },
+  // Slim single-row bar (not a card) so it never buries the page CTAs.
   card: {
     pointerEvents: "auto",
     display: "flex",
     flexWrap: "wrap",
     alignItems: "center",
-    gap: 16,
+    justifyContent: "center",
+    gap: "6px 12px",
     width: "100%",
     maxWidth: 720,
-    background: "#11131f",
+    background: "rgba(17,19,31,0.96)",
     border: "1px solid rgba(148,163,255,0.18)",
-    borderRadius: 14,
-    padding: "16px 20px",
-    boxShadow: "0 16px 60px rgba(0,0,0,0.55)",
+    borderRadius: 10,
+    padding: "8px 14px",
+    boxShadow: "0 10px 40px rgba(0,0,0,0.5)",
     fontFamily: "Inter, system-ui, sans-serif",
-  },
-  title: {
-    fontSize: 13.5,
-    fontWeight: 700,
-    color: "#e7e9f5",
-    marginBottom: 4,
+    backdropFilter: "blur(8px)",
   },
   text: {
-    fontSize: 12.5,
-    lineHeight: 1.55,
-    color: "#9aa1c0",
+    fontSize: 12,
+    lineHeight: 1.4,
+    color: "#b4bad4",
     margin: 0,
+    flex: "1 1 240px",
+    minWidth: 0,
   },
   link: { color: "#a5b4fc", textDecoration: "underline" },
   actions: {
@@ -161,9 +154,9 @@ const S: Record<string, React.CSSProperties> = {
   btnPrimary: {
     background: "linear-gradient(90deg,#6366f1,#8b5cf6,#d946ef)",
     border: "none",
-    borderRadius: 8,
-    padding: "9px 16px",
-    fontSize: 13,
+    borderRadius: 7,
+    padding: "6px 14px",
+    fontSize: 12.5,
     fontWeight: 600,
     color: "#fff",
     cursor: "pointer",
@@ -171,9 +164,9 @@ const S: Record<string, React.CSSProperties> = {
   btnSecondary: {
     background: "transparent",
     border: "1px solid rgba(148,163,255,0.25)",
-    borderRadius: 8,
-    padding: "9px 16px",
-    fontSize: 13,
+    borderRadius: 7,
+    padding: "6px 12px",
+    fontSize: 12.5,
     fontWeight: 600,
     color: "#c7cbe6",
     cursor: "pointer",

@@ -382,12 +382,20 @@ h2.section-title {
 .chart-hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: 56px;
+  grid-template-rows: auto auto;
+  gap: 0 56px;
   align-items: center;
 }
+/* Desktop: copy + actions stack in the left column, preview spans both rows on the right. */
+.chart-hero-copy { grid-column: 1; grid-row: 1; align-self: end; }
+.chart-hero-actions { grid-column: 1; grid-row: 2; align-self: start; }
+.chart-hero-media { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
 @media (max-width: 1024px) {
-  .chart-hero-grid { grid-template-columns: 1fr; gap: 36px; }
-  .chart-hero { padding-top: 48px; }
+  /* Mobile: title → preview image → CTAs + trust line (DOM order). */
+  .chart-hero-grid { grid-template-columns: 1fr; grid-template-rows: none; gap: 26px; }
+  .chart-hero-copy, .chart-hero-media, .chart-hero-actions { grid-column: 1; grid-row: auto; }
+  .chart-hero-copy .chart-tagline { margin-bottom: 0; }
+  .chart-hero { padding-top: 40px; }
 }
 .chart-hero-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
@@ -452,6 +460,18 @@ h2.section-title {
 @media (max-width: 720px) {
   .chart-hero-icon { width: 72px; height: 72px; padding: 11px; border-radius: 16px; }
   .chart-title-row { gap: 16px; }
+  /* Hide breadcrumb path on mobile - prime real estate */
+  .crumbs { display: none; }
+  /* CTAs side by side */
+  .chart-cta-row { flex-wrap: nowrap; gap: 10px; margin-bottom: 16px; }
+  .chart-cta-row .btn {
+    flex: 1 1 0;
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 13px 8px; font-size: 13.5px; white-space: nowrap; text-align: center;
+  }
+  /* Trust/features on one line; "Setup in 30s" hidden if space is tight */
+  .chart-trust { flex-wrap: nowrap; gap: 16px; white-space: nowrap; overflow: hidden; }
+  .chart-trust .trust-extra { display: none; }
 }
 .chart-hero-icon img { width: 100%; height: 100%; object-fit: contain; }
 h1.chart-title {
@@ -464,7 +484,7 @@ h1.chart-title {
 }
 .chart-tagline {
   font-size: 19px;
-  color: var(--text-dim);
+  color: #c3c8db; /* brighter than --text-dim: WCAG AA on the gradient hero */
   line-height: 1.55;
   margin: 0 0 26px;
   max-width: 540px;
@@ -764,21 +784,4 @@ footer .newsletter button { background: var(--accent-grad); color: white; border
 .footer-fallback p{margin:8px 0 0}
 
 
-/* ── Chart page pricing strip (matches calendar .price-band) ──────────────── */
-.pricing-strip { padding: 56px 0 76px; }
-.pricing-strip .section-eyebrow { margin-bottom: 8px; }
-.pricing-strip-title { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 18px; color: var(--text); }
-.price-band {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg, 16px);
-  padding: 32px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: center; margin-top: 8px;
-}
-.price-band .amounts { display: flex; gap: 28px; align-items: baseline; flex-wrap: wrap; }
-.price-band .amt { display: flex; align-items: baseline; gap: 6px; }
-.price-band .amt .val { font-size: 40px; font-weight: 700; letter-spacing: -0.03em; }
-.price-band .amt .per { color: var(--text-dim); font-size: 14px; }
-.price-band .amt .or { color: var(--muted, var(--text-dim)); font-size: 14px; }
-.price-band p { color: var(--text-dim); font-size: 14px; margin: 10px 0 0; }
-.price-band .cta-side { text-align: center; }
-.price-band .cta-side .btn { width: 100%; justify-content: center; }
-.price-band .cta-side .micro { margin-top: 10px; font-size: 12px; color: var(--text-dim); }
-@media (max-width: 760px) { .price-band { grid-template-columns: 1fr; gap: 22px; } }
+/* ── Chart page pricing strip (matches calendar .price-band) ────
