@@ -6,7 +6,7 @@
 // Netlify Forms, or your own backend). Until you do, the form just shows a
 // local success state.
 const FORM_ENDPOINT = '/api/forms'; // vizstudio backend - stores submissions for the admin panel
-const CONTACT_EMAIL = 'brandonlea05@gmail.com'; // mailto fallback until FORM_ENDPOINT is set
+const CONTACT_EMAIL = 'support@vizstudio.io'; // mailto fallback until FORM_ENDPOINT is set
 
 const FREE_MAIL = new Set([
   'gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'icloud.com',
