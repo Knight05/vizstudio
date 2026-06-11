@@ -23,15 +23,72 @@ export const metadata: Metadata = {
   description:
     "The most complete D3.js chart library for Google Looker Studio. 75+ battle-tested visualizations: KPIs, time series, distributions, networks, and more. One subscription, every chart.",
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "https://vizstudio.io"),
+  applicationName: "Viz Studio",
+  keywords: [
+    "Looker Studio charts",
+    "Looker Studio community visualizations",
+    "Data Studio charts",
+    "custom charts for Looker Studio",
+    "D3.js visualizations",
+    "Looker Studio chart library",
+  ],
+  category: "technology",
   openGraph: {
     title: "Viz Studio",
     description: "75+ community visualizations for Looker Studio.",
     type: "website",
     siteName: "Viz Studio",
+    locale: "en_US",
+    url: "https://vizstudio.io/",
+    images: [
+      {
+        url: "https://vizstudio.io/images/hero-dashboard-dark.png",
+        width: 1242,
+        height: 741,
+        alt: "Viz Studio chart library for Looker Studio",
+      },
+    ],
   },
   twitter: { card: "summary_large_image", creator: "@vizstudio" },
   icons: { icon: "/favicon.svg" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
+
+// Site-wide structured data: Organization + WebSite (schema.org).
+// Referenced by page-level JSON-LD via @id anchors.
+const SITE_JSONLD = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://vizstudio.io/#org",
+    name: "Viz Studio",
+    legalName: "Viz Studio LLC",
+    url: "https://vizstudio.io/",
+    logo: "https://vizstudio.io/logo-256.png",
+    email: "support@vizstudio.io",
+    description:
+      "Viz Studio builds premium D3.js community visualizations and connectors for Google Looker Studio (Data Studio).",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://vizstudio.io/#website",
+    url: "https://vizstudio.io/",
+    name: "Viz Studio",
+    description: "75+ premium community visualizations for Looker Studio.",
+    publisher: { "@id": "https://vizstudio.io/#org" },
+  },
+];
 
 export default function RootLayout({
   children,
@@ -56,6 +113,10 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(SITE_JSONLD) }}
         />
       </head>
       <body>

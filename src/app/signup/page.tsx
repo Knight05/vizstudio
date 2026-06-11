@@ -2,7 +2,11 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { AuthForm } from "@/components/AuthForm";
 
-export const metadata = { title: "Start free" };
+export const metadata = {
+  title: "Start free",
+  // /get-started is the canonical signup page; keep this variant unindexed.
+  robots: { index: false, follow: false },
+};
 // AuthForm uses useSearchParams() - needs dynamic rendering
 export const dynamic = "force-dynamic";
 

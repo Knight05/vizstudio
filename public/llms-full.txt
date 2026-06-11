@@ -1,0 +1,593 @@
+# Viz Studio
+
+> Viz Studio (vizstudio.io) is a subscription library of 75+ premium, hand-built D3.js community visualizations (custom charts) for Google Looker Studio — formerly Google Data Studio — plus a Google Calendar connector. One plan unlocks everything: $50/month or $500/year, with a 14-day free trial and no credit card required.
+
+Key facts:
+- 78 charts across 11 categories; all theme-aware, cross-filtering, and responsive
+- Charts render inside Google's community-visualization sandbox; report data is never sent to Viz Studio servers
+- No code required: paste a gs:// manifest path into Looker Studio once and every chart appears
+- Operated by Viz Studio LLC; support: support@vizstudio.io
+
+## Pages
+
+- [Home](https://vizstudio.io/): product overview, full chart library, FAQ
+- [Pricing](https://vizstudio.io/pricing): $50/month or $500/year, every plan unlocks all charts
+- [How to add a chart](https://vizstudio.io/how-to-add-a-chart): 10-step setup guide, under 4 minutes
+- [Google Calendar Connector](https://vizstudio.io/google-calendar-connector): bring calendar events into Looker Studio
+- [Get started](https://vizstudio.io/get-started): create an account, 14-day free trial
+- [Suggest a chart](https://vizstudio.io/suggest): request new chart types
+
+## Charts
+
+### Bars, Columns & Ranking
+
+#### A/B Test Results — https://vizstudio.io/charts/abtest-viz
+
+CI bars for A/B variants: significance baked in.
+What it is: Plots variant means with 95% CI whiskers, annotates statistically significant winners, and surfaces sample size + lift % on hover.
+Why it works: It moves the conversation from "which one looks better?" to "which one is real?" without a stats lecture.
+Keywords: A/B test chart Data Studio, confidence interval bar chart, experiment readout visualization
+
+#### Animated Bar Race — https://vizstudio.io/charts/barrace-viz
+
+The animated bar chart race that wins every monthly review.
+What it is: Smoothly interpolated horizontal bars per time step, with auto-ranking, watermark time labels, customizable color, and play/pause controls.
+Why it works: Static rankings are forgettable. A race is memorable, and it’s the only way to *feel* a category overtake another.
+Keywords: bar chart race, animated ranking chart, Data Studio bar race
+
+#### Curved Columns (Animated + Zoom) — https://vizstudio.io/charts/curvedcol-animated-viz
+
+Animated curved columns: bars that arc to draw the eye.
+What it is: Animated curved column bars with metric height, zoom controls, hover tooltip, and per-bar color.
+Why it works: Differentiates your charts visually in a sea of standard rectangles: useful for marketing dashboards and product launches.
+Keywords: curved column chart, animated bar chart Data Studio, decorative bar chart
+
+#### Curved Columns (Static) — https://vizstudio.io/charts/curvedcol-static-viz
+
+Curved columns, static, the still-frame version with the same elegance.
+What it is: Static curved column geometry per category, with tooltip and cross-filter.
+Why it works: Animation isn’t always welcome: for PDFs, embeds, and print, this gives the same visual differentiation without motion.
+Keywords: curved column chart static, decorative bar chart Data Studio
+
+#### Dumbbell Chart — https://vizstudio.io/charts/dumbbell-viz
+
+Two dots, one line: every gap between A and B made obvious.
+What it is: One row per category with two value markers (start, end) connected by a line; optional gap-magnitude color.
+Why it works: Side-by-side bars are noisy. Dumbbells let the eye read "how big is the gap?" first: exactly what most paired comparisons need.
+Keywords: dumbbell chart Data Studio, two-point comparison chart, gap visualization
+
+#### Grouped Bar Chart — https://vizstudio.io/charts/groupedbar-viz
+
+Side-by-side bars per category, the comparison chart everyone reads correctly.
+What it is: Multi-series grouped bars per category with legend, tooltip, theme-aware colors, and cross-filter.
+Why it works: Stacked bars compress the smaller series. Grouped bars give every series equal real estate.
+Keywords: grouped bar chart Data Studio, side by side bar comparison, multi-series bars
+
+#### Lollipop Chart — https://vizstudio.io/charts/lollipopchart
+
+Cleaner than a bar chart, a dot and a stem, nothing wasted.
+What it is: One row per category with a horizontal stem ending in a value-sized dot; optional color encoding.
+Why it works: Reads less heavy than bars when categories are many, and looks intentional.
+Keywords: lollipop chart Data Studio, dot and stem chart, minimalist bar chart
+
+#### Mirror Bar Chart — https://vizstudio.io/charts/mirrorbar-viz
+
+Two series mirrored around a baseline: comparisons that read in one glance.
+What it is: Two-series mirrored bars around a shared central axis, with category labels in the middle and legend.
+Why it works: Side-by-side bars make the eye work harder. Mirroring makes the "who’s bigger?" question literal.
+Keywords: mirror bar chart Data Studio, population pyramid, two-sided bar chart
+
+#### Pareto Chart — https://vizstudio.io/charts/pareto-viz
+
+Bars + cumulative line, the 80/20 rule, made obvious.
+What it is: Descending sorted bars with a cumulative % line, optional 80% reference line, tooltip, and cross-filter.
+Why it works: Prioritization conversations end here. The handful of bars before the cumulative line crosses 80% is your roadmap.
+Keywords: pareto chart Data Studio, 80/20 analysis, descending bar with cumulative line
+
+#### Pyramid Area Chart — https://vizstudio.io/charts/pyramidarea-viz
+
+Categorical magnitude as overlapping pyramids: distinctive and on-brand.
+What it is: Overlapping pyramid silhouettes per category sized by metric, with theme-aware colors and labels.
+Why it works: When a bar chart needs to feel editorial (annual reports, brand storytelling, hero slots), this is the version.
+Keywords: pyramid area chart, decorative magnitude chart Data Studio
+
+#### Simple Column Chart — https://vizstudio.io/charts/simplecol-viz
+
+A clean column chart: opinionated defaults, theme-aware.
+What it is: Single-series vertical bars with theme-aware colors, axis fit, tooltip, value labels, cross-filter.
+Why it works: Stock Data bar charts work, but they look it. This one is the same chart with the rough edges polished.
+Keywords: column chart Data Studio, polished bar chart, themed bar chart
+
+#### Variance Bar — https://vizstudio.io/charts/variancebar-viz
+
+Variance bars: actual minus baseline, signed and sorted.
+What it is: Signed horizontal or vertical bars showing actual-minus-baseline per category, optional sorting, theme-aware colors.
+Why it works: Tables of plan vs actual hide the story; variance bars surface it.
+Keywords: variance bar chart Data Studio, plan vs actual chart, signed bar chart
+
+#### Wind Rose / Polar Bar — https://vizstudio.io/charts/windrose-viz
+
+Polar bars: magnitude by direction, distribution by angle.
+What it is: Polar bars at angles per category with bar length = magnitude, optional stacked segments, tooltip, theme color.
+Why it works: Directional data on a linear axis loses its meaning; polar layout preserves it.
+Keywords: wind rose chart Data Studio, polar bar chart, directional chart
+
+### Distribution & Statistical
+
+#### Beeswarm / Swarm Plot — https://vizstudio.io/charts/beeswarm-viz
+
+Every individual point, no overlap: distributions that boxplots hide.
+What it is: Force-positions individual data points along an axis with collision detection. Optional grouping by dimension and sizing by a second metric.
+Why it works: Box plots and violins smooth away the story. Beeswarm shows every customer, every deal, every order: including the ones you’ll want to investigate.
+Keywords: beeswarm plot Data Studio, swarm chart distribution, individual data point chart
+
+#### Hexbin Density Plot — https://vizstudio.io/charts/hexbindensity-viz
+
+Hexagonal density plot: same hex grid, focused on point density.
+What it is: Hex grid with density coloring across two metrics, configurable bin size and color scale.
+Why it works: When density alone is the answer, this is the leaner chart.
+Keywords: hexbin density chart, density plot Data Studio, hex grid visualization
+
+#### Q-Q Plot — https://vizstudio.io/charts/qq-viz
+
+Q-Q plot: does this distribution match the one you expect?
+What it is: Sample quantiles vs theoretical (normal by default) with reference line, optional band, and tooltip.
+Why it works: Histograms blur shape; a Q-Q plot says "normal or not" without a paragraph of stats.
+Keywords: Q-Q plot Data Studio, quantile chart, distribution comparison
+
+### Finance & Performance
+
+#### Break-Even Chart — https://vizstudio.io/charts/breakeven-viz
+
+Fixed cost, variable cost, revenue, and the exact unit where they cross.
+What it is: Plots fixed cost (horizontal), total cost, and revenue lines on shared axes; annotates the intersection with units and dollars.
+Why it works: Frees the break-even conversation from a static Excel cell. Live-update by tweaking inputs in your source.
+Keywords: break-even analysis chart, fixed cost variable cost visualization, Data Studio finance chart
+
+#### Cashflow — https://vizstudio.io/charts/cashflow-viz
+
+Income up, expense down, the zero line tells the story.
+What it is: Mirror bars around a zero baseline for one period dimension and two metrics (Income, Expense). Includes net-balance KPI header, legend, tooltip, cross-filter, theme-aware colors, compact number formatting.
+Why it works: Net cashflow narratives need both the magnitude and the polarity in one read. A mirror bar gives both, plus the implicit "are we in the black?" via the zero line.
+Keywords: cashflow chart Data Studio, mirror bar chart, income vs expense visualization
+
+#### Actual Over Target Dot Chart — https://vizstudio.io/charts/earningsdot-viz
+
+Actual over target dots: beats and misses, colored automatically.
+What it is: Dot markers for actuals positioned vs a target metric line, with beat / miss coloring and tooltip detail.
+Why it works: Designed for the specific shape of earnings, sales targets, and SLA reporting: actual vs target as a per-period verdict.
+Keywords: actual vs target chart Data Studio, earnings beat miss visualization, dot chart
+
+#### Revenue Breakdown (Bar + Line Combo) — https://vizstudio.io/charts/revenuebreakdown-viz
+
+Revenue mix bars + margin line, the public-company readout view.
+What it is: Grouped bars for up to 4 revenue components per period plus an optional overlay line for a ratio metric (margin %, etc.); Q/A view toggle.
+Why it works: Designed for the way public-company earnings actually look: revenue mix + margin trend on one panel.
+Keywords: revenue breakdown chart Data Studio, bar plus line, segment revenue visualization
+
+### Hierarchies & Drilldown
+
+#### Slice / Dice Treemap — https://vizstudio.io/charts/slicedice-viz
+
+Slice / dice treemap: horizontal, vertical, or alternating tiling.
+What it is: Treemap with slice/dice/slice-dice tiling, multi-dimension drilldown, click-to-zoom, breadcrumb navigation, theme-aware colors.
+Why it works: Squarified treemaps prioritize compactness over structure. Slice/dice prioritizes the hierarchy itself: easier to read at depth.
+Keywords: slice dice treemap Data Studio, hierarchical chart, treemap drilldown
+
+#### Small Multiples / Trellis Grid — https://vizstudio.io/charts/smallmultiples-viz
+
+Small multiples, the same chart, repeated, every dimension visible.
+What it is: Grid of identical small charts (line, bar, area, scatter), one per category, with shared axes, free or fixed scale, common tooltip.
+Why it works: Stacking 12 series on one line chart is unreadable. Splitting them into 12 small charts is honest.
+Keywords: small multiples chart Data Studio, trellis grid, faceted chart
+
+#### Sunburst Chart — https://vizstudio.io/charts/sunburstChart
+
+Radial hierarchy: concentric rings drill into your structure.
+What it is: Up to 5 nested dimensions as concentric arcs. Color modes (By Depth / By Category / Single), inner radius config, label truncation + min-size cull, breadcrumb tooltip, click cross-filter through ancestors.
+Why it works: Treemaps are great; sunbursts are great when the hierarchy itself is the protagonist.
+Keywords: sunburst chart Data Studio, radial hierarchy chart, drilldown visualization
+
+#### Zoomable Treemap — https://vizstudio.io/charts/treemapzoom-viz
+
+Zoomable treemap: drill into any tile, breadcrumb back out.
+What it is: Treemap with click-to-zoom multi-level drilldown, breadcrumb navigation, squarify or binary tiling, theme colors.
+Why it works: Static treemaps run out of room past two levels; zoom keeps every level useful.
+Keywords: zoomable treemap Data Studio, drilldown chart, hierarchical treemap
+
+### KPI, Status & Goals
+
+#### Breakdown Chart — https://vizstudio.io/charts/analystratings-viz
+
+Donut + progress bars for category breakdowns, the dominant slice highlighted automatically.
+What it is: Renders a center donut with category arcs, plus a stacked row of horizontal progress bars. Auto-detects the largest category and highlights it.
+Why it works: Two encodings (angle and length) for the same data lets the viewer pick whichever they read fastest. The auto-accent kills the "so what?" question.
+Keywords: breakdown chart Data Studio, composite donut bar chart, distribution visualization
+
+#### Bullet Chart — https://vizstudio.io/charts/bulletchart-viz
+
+Stephen Few's gauge replacement: actual, target, and ranges in one bar.
+What it is: Filled actual bar over banded ranges (poor / satisfactory / good), with a perpendicular tick for target and an optional comparative marker.
+Why it works: More information per pixel than any gauge. Once teams adopt it, they don’t go back.
+Keywords: bullet chart Data Studio, Stephen Few KPI chart, target vs actual bar
+
+#### KPI Sparkline Cards — https://vizstudio.io/charts/kpisparkline-viz
+
+Headline numbers with trend lines baked in, the executive scorecard, refined.
+What it is: Grid of KPI cards, each with primary metric, %-change indicator, and a 30/60/90-day sparkline.
+Why it works: Replaces three separate scorecards with one focused row. The sparkline kills the "but is that good?" follow-up.
+Keywords: KPI cards Data Studio, sparkline scorecard, executive dashboard widget
+
+#### Progress Circles — https://vizstudio.io/charts/progresscircles-viz
+
+A row of donuts that each say "X% done": instantly readable.
+What it is: N circular progress rings sized uniformly, each with label and configurable color thresholds.
+Why it works: More visually interesting than a bar list when you have ≤12 items and want each to feel like a card.
+Keywords: progress circles chart Data Studio, OKR widget, donut gauge grid
+
+#### Semicircle Gauge — https://vizstudio.io/charts/semicirclegauge-viz
+
+Half-circle gauge: same story, half the real estate.
+What it is: 180° arc filled to current value with threshold bands and a center metric.
+Why it works: Looks deliberate next to KPI cards; fits where a full circle won’t.
+Keywords: semicircle gauge Data Studio, half-arc gauge, compact KPI widget
+
+#### Semi-Circle Pie Chart — https://vizstudio.io/charts/semicirclepie-viz
+
+Half-pie: composition in a single horizontal slot.
+What it is: Half-circle pie with category slices, optional center label, hover tooltip, cross-filter.
+Why it works: Composition charts shouldn’t require half the dashboard. This is one row, full story.
+Keywords: semicircle pie chart Data Studio, half donut chart, compact composition chart
+
+#### Solid Gauge — https://vizstudio.io/charts/solidgauge-viz
+
+A radial gauge for any "X out of target" story: without speedometer kitsch.
+What it is: 270° or full-circle filled gauge with center value, %-to-target, and optional threshold bands.
+Why it works: Goal pages need a single hero number: this gives them one with built-in context.
+Keywords: solid gauge Data Studio, goal completion chart, KPI gauge
+
+### Maps & Geo
+
+#### Bubble Map — https://vizstudio.io/charts/bubblemap-viz
+
+Packed bubbles, sized by a metric: every category, no axis tax.
+What it is: Three layouts (packed, force, grid), three color modes (single, gradient, series), with inside/outside labels, tooltips, and click-to-cross-filter.
+Why it works: Bar charts run out of room past 30 categories. Bubble map keeps reading well at 200.
+Keywords: bubble pack chart, packed circle chart Data Studio, category bubble visualization
+
+#### Choropleth Map — https://vizstudio.io/charts/choropleth-viz
+
+Tile-grid map: every state or country, no projection pain.
+What it is: Accepts state abbreviations/names or ISO-2/ISO-3 country codes. Sequential/diverging/binned color, tile shape options, legend positioning, tooltip metric, cross-filter on click.
+Why it works: Real-world map projections under-represent small dense states (hello, RI) and over-emphasize large empty ones. Tile grids give every entity equal voice.
+Keywords: tile grid map Data Studio, choropleth state map, country tile chart
+
+#### Interactive 3D Globe — https://vizstudio.io/charts/interactiveGlobe-viz
+
+Real country polygons, drag-to-rotate, auto-spin, atmosphere glow, the 3D world your dashboard actually needs.
+What it is: Renders the world as an interactive SVG orthographic projection using Natural Earth 110m country polygons. Drag to rotate, scroll to zoom, optional auto-spin. Cells colored by your metric, with atmosphere glow, graticule grid, country labels, hover tooltips, and click cross-filtering.
+Why it works: Flat maps distort. A real-polygon globe with atmosphere and graticule lines is a presentation-grade view, and it cross-filters the rest of the report on click.
+Keywords: 3D globe chart Data Studio, orthographic projection visualization, world choropleth globe, Natural Earth polygons
+
+### Networks, Flows & Relationships
+
+#### Arc Diagram — https://vizstudio.io/charts/arcdiagram-viz
+
+Node-link arc diagram: relationships you can actually trace.
+What it is: Sorts nodes along a horizontal baseline, draws arcs above (and optionally below), scales nodes by degree, and supports source/target/single/gradient arc colors.
+Why it works: When force-directed graphs become noise, arcs let people read every connection in order. Hover to highlight a node's full ego network.
+Keywords: arc diagram Data Studio, node-link chart, relationship visualization
+
+#### Audience Overlap — https://vizstudio.io/charts/audioverlap-viz
+
+Proportional circles for audience segments: overlaps you can see.
+What it is: Renders sized circles per segment with overlap regions weighted by shared members; tooltips show counts and overlap %.
+Why it works: Reveals "too much overlap" segments before a campaign goes out, your CRM team’s favorite new chart.
+Keywords: audience overlap chart, Venn-style segment chart Data Studio, CRM segmentation
+
+#### Bipartite Graph — https://vizstudio.io/charts/bipartite-viz
+
+Two columns, every link explicit: A-to-B relationships made obvious.
+What it is: Two parallel columns of labeled nodes with weighted links connecting the sides; hover-highlight an ego network.
+Why it works: Cleaner than a force graph when the structure is genuinely two-sided.
+Keywords: bipartite graph Data Studio, two-mode network chart, link visualization
+
+#### Chord Diagram — https://vizstudio.io/charts/chord-viz
+
+Circular chord ribbons: every pairwise flow, perfectly weighted.
+What it is: Directed (Source→Target) or undirected modes, sortable groups (alphabetical / by total / data order), per-group palette, ribbon color source (source/target/larger), hover highlighting, configurable tooltip + cross-filter.
+Why it works: Sankey is for left-to-right flow. Chord is for circular, symmetric flow, and looks elegant at a glance.
+Keywords: chord diagram Data Studio, circular flow chart, relationship ribbon visualization
+
+#### Connection Map — https://vizstudio.io/charts/connmap-viz
+
+Entity rows with bezier arcs: pairwise strength, sorted.
+What it is: Vertical entity list with bezier arcs across, sorted by total strength, with hover and cross-filter.
+Why it works: Easier to scan than a chord ring when entity names matter: labels stay readable.
+Keywords: connection map chart, entity relationship visualization Data Studio
+
+#### Dependency Wheel — https://vizstudio.io/charts/depwheel-viz
+
+Dependency wheel, a chord diagram that shows what hangs on what.
+What it is: Circular node layout with directed dependency arcs, hover-highlight an ego dependency network, optional tick marks and group palettes.
+Why it works: Software, supply chains, and org topologies all have implicit dependency graphs. This makes them visible.
+Keywords: dependency wheel chart, circular dependency visualization Data Studio
+
+#### Flow Map — https://vizstudio.io/charts/flowmap-viz
+
+Geographic flow lines: origins, destinations, and volumes on a map.
+What it is: Origin/destination pairs as bezier flows on a geographic projection, weighted by volume, with hover-highlight and tooltip.
+Why it works: Spreadsheet shipment data hides geography. Flow maps put it back.
+Keywords: flow map Data Studio, origin destination chart, geographic flow visualization
+
+#### Force-Directed Network — https://vizstudio.io/charts/forcenet-viz
+
+Force-directed network, the classic node graph, properly tuned.
+What it is: Force-simulated node-link layout with charge, link distance, and collision, plus hover-highlight, drag-to-fix, and click cross-filter.
+Why it works: Edge lists hide structure. A force layout exposes communities, hubs, and bridges in seconds.
+Keywords: force-directed graph Data Studio, network chart, node link visualization
+
+#### Adjacency Matrix — https://vizstudio.io/charts/matrixchart-viz
+
+Adjacency matrix, the most scalable way to see a network.
+What it is: Entity × entity grid with cell tint = edge weight, sortable axes, hover detail, cross-filter on click.
+Why it works: Networks past ~50 nodes are unreadable as graphs. Matrices keep scaling.
+Keywords: adjacency matrix chart Data Studio, network matrix visualization, edge matrix
+
+#### Opposite Diagram — https://vizstudio.io/charts/oppositediagram
+
+Two-sided pros vs cons: opposing forces, one chart.
+What it is: Two parallel columns of bars, weighted, with center labels and per-side coloring.
+Why it works: Decision frameworks live in tables; this chart turns them into a chart your audience can read.
+Keywords: opposite diagram chart, pros vs cons visualization, two-sided chart Data Studio
+
+#### Parallel Coordinates Plot — https://vizstudio.io/charts/parallelcoords-viz
+
+Parallel axes: every record drawn across every dimension.
+What it is: N vertical axes, one per metric, with one line per record traversing them. Brushing on any axis filters the rest; supports color by dimension.
+Why it works: Show how five or six metrics co-vary on a single canvas, and let viewers brush to query.
+Keywords: parallel coordinates plot Data Studio, multivariate chart, brushing visualization
+
+#### Parallel Sets — https://vizstudio.io/charts/parallelsets-viz
+
+Categorical flow: Sankey for nominal data, lane by lane.
+What it is: N parallel category columns, with width-weighted ribbons between adjacent columns showing co-membership.
+Why it works: When every dimension is categorical, scatter and parallel coordinates don’t apply. Parallel sets do.
+Keywords: parallel sets chart Data Studio, categorical flow visualization, sankey for categories
+
+#### Portfolio Barcode — https://vizstudio.io/charts/portfoliobarcode-viz
+
+Portfolio barcode: every holding as a vertical strip, weighted and colored.
+What it is: Vertical barcode strips per holding, with width-or-color encoding for weight or category, hover detail, cross-filter on click.
+Why it works: Traditional portfolio pies fail past 20 holdings. Barcode keeps every position visible.
+Keywords: portfolio barcode chart, holdings visualization Data Studio, position bar strip
+
+#### Portfolio Pie Barcode — https://vizstudio.io/charts/portfoliopiebarcode-viz
+
+Portfolio pie + barcode: composition and per-position detail in one chart.
+What it is: Pie chart for top-level composition next to a barcode strip for every individual position; click a slice to filter the strip.
+Why it works: Two questions (sector mix and per-position weight) answered on one canvas.
+Keywords: portfolio composition chart, pie plus barcode Data Studio, holdings visualization
+
+#### Radial Tree — https://vizstudio.io/charts/radialtree-viz
+
+Radial hierarchy: branches arrayed around a center, every level visible.
+What it is: Hierarchical tree laid out radially with sized nodes, link curves, configurable depth coloring, hover-highlight.
+Why it works: Trees grow tall fast. Radial layout keeps width and depth balanced.
+Keywords: radial tree chart Data Studio, hierarchy visualization, radial dendrogram
+
+#### Story Flow / Narrative — https://vizstudio.io/charts/storyflow-viz
+
+Narrative timeline: characters, threads, and where they meet.
+What it is: One smooth line per character/thread across a time axis, lines converge at shared events, with tooltips on each event.
+Why it works: Project history and character interaction are inherently flowing: story flow respects that geometry.
+Keywords: story flow chart, narrative chart Data Studio, storyline visualization
+
+#### Traffic Sources Chord — https://vizstudio.io/charts/trafficsrc-viz
+
+Traffic source chord: every channel-to-conversion flow ribboned.
+What it is: Chord diagram with sources and conversions as arcs, ribbons weighted by flow, with hover-highlight and tooltip.
+Why it works: Sankey is one-directional; for true multi-touch ↔ multi-conversion flows, chord reads cleaner.
+Keywords: traffic source chord Data Studio, attribution chart, marketing flow chord
+
+#### Venn / Euler Diagram — https://vizstudio.io/charts/venn-viz
+
+Venn / Euler diagrams: set overlaps with the right geometry.
+What it is: 2–4 circle Venn/Euler diagram with sized circles, correct overlap geometry, count labels, tooltip.
+Why it works: The Venn diagram every dashboard tries to fake with text. This one does the math.
+Keywords: Venn diagram Data Studio, Euler chart, set overlap visualization
+
+### Pies, Donuts & Part-to-Whole
+
+#### Dual Donut — https://vizstudio.io/charts/dualdonut-viz
+
+Two donuts side-by-side: current vs prior, plan vs actual, the comparison view.
+What it is: Two donut charts in a row sharing a legend, with per-slice tooltips, total center labels, and cross-filtering.
+Why it works: A single donut shows composition; two donuts show how composition shifted, and that’s usually the story.
+Keywords: dual donut chart Data Studio, paired donut visualization, comparison pie chart
+
+#### Multi-ring Donut — https://vizstudio.io/charts/multiring-viz
+
+Nested donut rings: multiple metrics, same center, one composition.
+What it is: Two or three concentric donut rings sharing center labels, with hover tooltip on each ring.
+Why it works: Sunburst overcomplicates simple two-level breakdowns. Multi-ring keeps the donut familiarity.
+Keywords: multi-ring donut chart Data Studio, nested donut visualization, ring chart
+
+#### Variable-Radius Nested Donut — https://vizstudio.io/charts/vardonut-viz
+
+Variable-radius nested donut: two metrics per slice, one chart.
+What it is: Donut with per-slice angle for share and per-slice radius for a second metric, nested for two breakdowns.
+Why it works: When a regular donut loses a metric: variable-radius keeps it.
+Keywords: variable radius donut Data Studio, nightingale rose chart, polar bar donut
+
+#### Variable Radius Pie Chart — https://vizstudio.io/charts/varradiuspie-viz
+
+Variable-radius pie: angle is share, radius is a second metric.
+What it is: Pie with each slice extended to a per-slice radius driven by a second metric, with tooltip and legend.
+Why it works: Two metrics in one chart, in the form your audience already knows.
+Keywords: variable radius pie Data Studio, nightingale rose chart, polar area chart
+
+#### Waffle Chart — https://vizstudio.io/charts/waffle-viz
+
+10×10 grid (every square is 1%), the part-to-whole everyone reads correctly.
+What it is: 10x10 grid where each square = 1%, filled by category with configurable fill direction, tooltip, cross-filter.
+Why it works: Pies fail at small slices; waffle charts show every percentage point.
+Keywords: waffle chart Data Studio, 100 square chart, part to whole visualization
+
+### Scatter, Correlation & Bubbles
+
+#### Bubble Chart — https://vizstudio.io/charts/bubble-viz
+
+X × Y × size: three metrics, one chart, zero squinting.
+What it is: Renders circles sized by a third metric on x/y axes, with optional category coloring, hover tooltip, and click-to-filter.
+Why it works: Adds a magnitude dimension without forcing a second chart. The eye reads area and position simultaneously.
+Keywords: bubble chart Data Studio, scatter bubble visualization, 3-metric chart
+
+#### Bubble Grid — https://vizstudio.io/charts/bubblegrid
+
+A grid of bubbles: counts and magnitudes across two categorical axes.
+What it is: Rows × columns of bubbles, area-sized by the metric, optional color encoding for a secondary metric.
+Why it works: Reads denser than a heatmap when the value range is wide, the eye can compare areas across the grid even when small.
+Keywords: bubble grid chart, dot matrix visualization, categorical bubble chart Data Studio
+
+#### Hexbin Scatter — https://vizstudio.io/charts/hexbin-viz
+
+Hexagonal density: scatter plots that survive 100k points.
+What it is: Hexagon bin grid over x/y metrics; density / avg-X / avg-Y color modes; 12 palettes, 4 scales (linear/sqrt/log/power); optional trend line; optional marginal distributions; min-count filter; click cross-filter.
+Why it works: Scatter overplots at scale. Hexbin keeps every region readable and surfaces hot zones immediately.
+Keywords: hexbin chart Data Studio, hexagonal density plot, scatter density visualization
+
+#### Quadrant Scatter — https://vizstudio.io/charts/quadrant-viz
+
+Four-quadrant scatter, the strategy chart you've drawn on whiteboards.
+What it is: x/y scatter with vertical/horizontal threshold lines splitting the canvas into four labeled quadrants, optional bubble sizing.
+Why it works: Strategy conversations are quadrant-shaped. Bring them into the dashboard.
+Keywords: quadrant scatter Data Studio, 2x2 matrix chart, BCG matrix visualization
+
+#### Scatter Plot with Trendline — https://vizstudio.io/charts/scattertrend-viz
+
+Scatter with a fitted trend line: correlation without the chart-junk.
+What it is: x/y scatter with regression line, R² annotation, configurable curve order, tooltip, cross-filter, optional grouping color.
+Why it works: Correlations get over-claimed. R² + a visible trend keeps everyone honest.
+Keywords: scatter with trendline Data Studio, regression chart, R squared visualization
+
+### Tables, Calendars & Combo
+
+#### Big Calendar — https://vizstudio.io/charts/bigcalendar-viz
+
+Full calendar grid: event volume painted across every cell.
+What it is: Renders a full calendar grid (month or year), tints each day cell by a metric, supports tooltips, and cross-filters to the rest of the page.
+Why it works: Time-of-week and time-of-year patterns jump out, the Tuesday slump, the Black Friday spike, the December lull.
+Keywords: calendar heatmap Data Studio, year calendar chart, day-level activity visualization
+
+#### Mini Calendar — https://vizstudio.io/charts/calendarHeatmap
+
+Compact monthly calendar: one cell, one number, instant pattern.
+What it is: Compact monthly calendar with metric-tinted cells, tooltip on hover, cross-filter on click, and optional event highlighting.
+Why it works: Day-of-week effects are visible without a full year heatmap.
+Keywords: mini calendar heatmap Data Studio, monthly heatmap, day-tinted calendar
+
+#### Conversion Heatmap — https://vizstudio.io/charts/convheatmap-viz
+
+Day-of-week × hour heatmap: when your audience actually shows up.
+What it is: 7 × 24 grid of cells tinted by your metric (conversion %, count, revenue), with axis labels, tooltip, and cross-filter on click.
+Why it works: Aggregates time-of-day behavior so the patterns leap out: Tuesday at 2pm vs Saturday at 10am, instantly comparable.
+Keywords: conversion heatmap Data Studio, hour-of-day visualization, day-of-week heatmap
+
+#### Row Over Row Comparison Table — https://vizstudio.io/charts/datatable-viz
+
+Row over row: DoD / MoM / YoY comparison table with deltas and % change.
+What it is: Period-over-period comparison table (DoD/MoM/YoY) with Current, Prior, Δ, and % Change columns. Theme-aware coloring, per-metric formatting, sticky headers.
+Why it works: Standard Data tables don’t do period comparison: this one was built for the way analysts actually talk.
+Keywords: comparison table Data Studio, MoM YoY table, period over period table
+
+#### Engagement Heatmap — https://vizstudio.io/charts/engageheatmap-viz
+
+Row × column matrix: normalize how you want, color tells the story.
+What it is: Row/column/global normalized cell tints with sequential or diverging color, axis labels, color legend, cross-filter, theme-aware.
+Why it works: Heatmaps are only as good as their normalization. This one gives you all three modes so the pattern you want is what you see.
+Keywords: engagement heatmap Data Studio, normalized matrix chart, row column heatmap
+
+#### Radar Chart with Data Table — https://vizstudio.io/charts/radartable-viz
+
+Radar chart with a sibling data table: visual and exact.
+What it is: Radar polygon per category over shared metric axes, alongside a sortable data table with the values, theme-aware coloring.
+Why it works: Radar charts are good at shape, bad at precision. Adding the table fixes the only complaint about radars.
+Keywords: radar chart with table Data Studio, spider chart with data, capability radar
+
+#### Word Cloud — https://vizstudio.io/charts/wordcloud-viz
+
+Word cloud: frequency-weighted, color-coded, optional category grouping.
+What it is: Frequency-weighted word layout with optional color-by-category and cross-filter on click.
+Why it works: Sometimes the question is "what are people talking about?", and the word cloud is the right answer, no apology.
+Keywords: word cloud Data Studio, tag cloud chart, frequency word visualization
+
+### Time Series & Trends
+
+#### Bump Chart — https://vizstudio.io/charts/bump-viz
+
+Rank-over-time line chart: who's climbing, who's sliding.
+What it is: Plots category rank over time as smooth lines, with consistent per-category color, tooltips, and optional value labels at endpoints.
+Why it works: Lines that cross are inherently storyable. Better than a stacked area when the categorical order matters.
+Keywords: bump chart Data Studio, rank over time chart, line ranking visualization
+
+#### Dual Axis Chart — https://vizstudio.io/charts/dualaxis-viz
+
+Two metrics, two scales, one line of sight: without the lie factor.
+What it is: Bar + line, or two lines, with independent scaled y-axes, shared x-axis, legend, tooltip, and cross-filter.
+Why it works: Volume and rate often need the same chart and never the same scale. Dual axis solves that without forcing a second visualization.
+Keywords: dual axis chart Data Studio, bar plus line chart, two-axis visualization
+
+#### Stacked Area Chart — https://vizstudio.io/charts/stackedarea-viz
+
+Stacked area over time: composition and trend on the same canvas.
+What it is: Stacked area layers per series sharing a baseline, with legend, tooltip, theme-aware colors, smooth or stepped interpolation.
+Why it works: Lines + composition together: without a second chart.
+Keywords: stacked area chart Data Studio, composition trend, area trend chart
+
+#### Stacked Bar Chart with Negative Values (Animated + Zoom) — https://vizstudio.io/charts/stackedneg-animated-viz
+
+Same signed stacked bar, animated entrance + zoom controls.
+What it is: Animated entrance for positive/negative stacked bars with a draggable zoom control over the time axis.
+Why it works: Animation gives early-readers a moment to follow the story; the zoom keeps long histories legible.
+Keywords: animated stacked bar negative, signed stacked bar zoom, Data Studio finance chart
+
+#### Stacked Bar Chart with Negative Values (Static) — https://vizstudio.io/charts/stackedneg-viz
+
+Stacked bars with negative values: wins above, losses below, total preserved.
+What it is: Positive series stacked above zero, negative stacked below, with optional net-total line per category and tooltip.
+Why it works: Most charting tools force negatives into separate panes. This keeps them on the same chart, the way the data is structured.
+Keywords: stacked bar negative values Data Studio, signed stacked bar, net total chart
+
+#### Streamgraph — https://vizstudio.io/charts/streamgraph-viz
+
+Stacked area, no fixed baseline: flowing composition over time.
+What it is: Floating-baseline stacked area with smooth interpolation, per-category color, tooltip, and label leaders.
+Why it works: Best for showing how composition shifts when the absolute total isn’t the headline.
+Keywords: streamgraph Data Studio, flowing area chart, composition over time
+
+#### Stream Wave Chart — https://vizstudio.io/charts/streamwave-viz
+
+Stream wave: streamgraph with a wavier silhouette for editorial flair.
+What it is: Streamgraph with extra silhouette smoothing, configurable curvature, accent gradients, tooltip.
+Why it works: Streamgraphs are striking; stream wave makes them gallery-ready.
+Keywords: stream wave chart, gradient streamgraph Data Studio, editorial composition chart
+
+#### Time Series with Annotations — https://vizstudio.io/charts/timeseries-viz
+
+Time series with annotated events: context where it actually happened.
+What it is: Single or multi-series line over time with vertical event annotations (label + color), tooltip, cross-filter.
+Why it works: Spikes in a time series only mean something with context. Annotations put the context inline.
+Keywords: annotated time series Data Studio, event marker chart, line chart annotations
+
+#### Year-over-Year Line — https://vizstudio.io/charts/yoyline-viz
+
+Year-over-year overlay: current vs prior, with the delta shaded.
+What it is: Two lines on shared axes (current vs prior year), optional shaded delta region, tooltip, cross-filter.
+Why it works: MoM and YoY tables make people math. This chart makes them see.
+Keywords: year over year line chart Data Studio, YoY overlay chart, prior year comparison
+
+## Legal
+
+- [Privacy Policy](https://vizstudio.io/privacy)
+- [Terms of Service](https://vizstudio.io/terms)

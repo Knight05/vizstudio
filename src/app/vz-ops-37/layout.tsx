@@ -3,7 +3,10 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { requireAdmin } from "@/lib/admin";
 
-export const metadata = { title: "Admin" };
+export const metadata = {
+  title: "Admin",
+  robots: { index: false, follow: false },
+};
 export const dynamic = "force-dynamic";
 
 export default async function AdminLayout({

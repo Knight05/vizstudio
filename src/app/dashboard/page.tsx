@@ -6,7 +6,10 @@ import { loadManifest } from "@/lib/manifest";
 import { provisionClientBucket } from "@/lib/gcs";
 import { PortalClient } from "./portal-client";
 
-export const metadata = { title: "Client Portal" };
+export const metadata = {
+  title: "Client Portal",
+  robots: { index: false, follow: false },
+};
 
 // Concurrency guard: two parallel dashboard loads (double-click, reload during
 // the ~minute-long copy) must not provision two buckets for the same user.

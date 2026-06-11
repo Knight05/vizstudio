@@ -89,6 +89,15 @@ export default async function ChartPage({
       operatingSystem: "Web",
       description: chart.tagline,
       isPartOf: { "@type": "SoftwareApplication", name: "vizstudio", url: `${SITE}/` },
+      keywords: chart.keywords || undefined,
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "USD",
+        lowPrice: "50",
+        highPrice: "500",
+        url: `${SITE}/pricing`,
+        description: "One subscription unlocks the full Viz Studio library of 75+ charts.",
+      },
       ...(image ? { image } : {}),
     },
   ];

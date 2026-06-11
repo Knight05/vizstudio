@@ -1,0 +1,140 @@
+# Viz Studio
+
+> Viz Studio (vizstudio.io) is a subscription library of 75+ premium, hand-built D3.js community visualizations (custom charts) for Google Looker Studio — formerly Google Data Studio — plus a Google Calendar connector. One plan unlocks everything: $50/month or $500/year, with a 14-day free trial and no credit card required.
+
+Key facts:
+- 78 charts across 11 categories; all theme-aware, cross-filtering, and responsive
+- Charts render inside Google's community-visualization sandbox; report data is never sent to Viz Studio servers
+- No code required: paste a gs:// manifest path into Looker Studio once and every chart appears
+- Operated by Viz Studio LLC; support: support@vizstudio.io
+
+## Pages
+
+- [Home](https://vizstudio.io/): product overview, full chart library, FAQ
+- [Pricing](https://vizstudio.io/pricing): $50/month or $500/year, every plan unlocks all charts
+- [How to add a chart](https://vizstudio.io/how-to-add-a-chart): 10-step setup guide, under 4 minutes
+- [Google Calendar Connector](https://vizstudio.io/google-calendar-connector): bring calendar events into Looker Studio
+- [Get started](https://vizstudio.io/get-started): create an account, 14-day free trial
+- [Suggest a chart](https://vizstudio.io/suggest): request new chart types
+
+## Charts
+
+### Bars, Columns & Ranking
+
+- [A/B Test Results](https://vizstudio.io/charts/abtest-viz): CI bars for A/B variants: significance baked in.
+- [Animated Bar Race](https://vizstudio.io/charts/barrace-viz): The animated bar chart race that wins every monthly review.
+- [Curved Columns (Animated + Zoom)](https://vizstudio.io/charts/curvedcol-animated-viz): Animated curved columns: bars that arc to draw the eye.
+- [Curved Columns (Static)](https://vizstudio.io/charts/curvedcol-static-viz): Curved columns, static, the still-frame version with the same elegance.
+- [Dumbbell Chart](https://vizstudio.io/charts/dumbbell-viz): Two dots, one line: every gap between A and B made obvious.
+- [Grouped Bar Chart](https://vizstudio.io/charts/groupedbar-viz): Side-by-side bars per category, the comparison chart everyone reads correctly.
+- [Lollipop Chart](https://vizstudio.io/charts/lollipopchart): Cleaner than a bar chart, a dot and a stem, nothing wasted.
+- [Mirror Bar Chart](https://vizstudio.io/charts/mirrorbar-viz): Two series mirrored around a baseline: comparisons that read in one glance.
+- [Pareto Chart](https://vizstudio.io/charts/pareto-viz): Bars + cumulative line, the 80/20 rule, made obvious.
+- [Pyramid Area Chart](https://vizstudio.io/charts/pyramidarea-viz): Categorical magnitude as overlapping pyramids: distinctive and on-brand.
+- [Simple Column Chart](https://vizstudio.io/charts/simplecol-viz): A clean column chart: opinionated defaults, theme-aware.
+- [Variance Bar](https://vizstudio.io/charts/variancebar-viz): Variance bars: actual minus baseline, signed and sorted.
+- [Wind Rose / Polar Bar](https://vizstudio.io/charts/windrose-viz): Polar bars: magnitude by direction, distribution by angle.
+
+### Distribution & Statistical
+
+- [Beeswarm / Swarm Plot](https://vizstudio.io/charts/beeswarm-viz): Every individual point, no overlap: distributions that boxplots hide.
+- [Hexbin Density Plot](https://vizstudio.io/charts/hexbindensity-viz): Hexagonal density plot: same hex grid, focused on point density.
+- [Q-Q Plot](https://vizstudio.io/charts/qq-viz): Q-Q plot: does this distribution match the one you expect?
+
+### Finance & Performance
+
+- [Break-Even Chart](https://vizstudio.io/charts/breakeven-viz): Fixed cost, variable cost, revenue, and the exact unit where they cross.
+- [Cashflow](https://vizstudio.io/charts/cashflow-viz): Income up, expense down, the zero line tells the story.
+- [Actual Over Target Dot Chart](https://vizstudio.io/charts/earningsdot-viz): Actual over target dots: beats and misses, colored automatically.
+- [Revenue Breakdown (Bar + Line Combo)](https://vizstudio.io/charts/revenuebreakdown-viz): Revenue mix bars + margin line, the public-company readout view.
+
+### Hierarchies & Drilldown
+
+- [Slice / Dice Treemap](https://vizstudio.io/charts/slicedice-viz): Slice / dice treemap: horizontal, vertical, or alternating tiling.
+- [Small Multiples / Trellis Grid](https://vizstudio.io/charts/smallmultiples-viz): Small multiples, the same chart, repeated, every dimension visible.
+- [Sunburst Chart](https://vizstudio.io/charts/sunburstChart): Radial hierarchy: concentric rings drill into your structure.
+- [Zoomable Treemap](https://vizstudio.io/charts/treemapzoom-viz): Zoomable treemap: drill into any tile, breadcrumb back out.
+
+### KPI, Status & Goals
+
+- [Breakdown Chart](https://vizstudio.io/charts/analystratings-viz): Donut + progress bars for category breakdowns, the dominant slice highlighted automatically.
+- [Bullet Chart](https://vizstudio.io/charts/bulletchart-viz): Stephen Few's gauge replacement: actual, target, and ranges in one bar.
+- [KPI Sparkline Cards](https://vizstudio.io/charts/kpisparkline-viz): Headline numbers with trend lines baked in, the executive scorecard, refined.
+- [Progress Circles](https://vizstudio.io/charts/progresscircles-viz): A row of donuts that each say "X% done": instantly readable.
+- [Semicircle Gauge](https://vizstudio.io/charts/semicirclegauge-viz): Half-circle gauge: same story, half the real estate.
+- [Semi-Circle Pie Chart](https://vizstudio.io/charts/semicirclepie-viz): Half-pie: composition in a single horizontal slot.
+- [Solid Gauge](https://vizstudio.io/charts/solidgauge-viz): A radial gauge for any "X out of target" story: without speedometer kitsch.
+
+### Maps & Geo
+
+- [Bubble Map](https://vizstudio.io/charts/bubblemap-viz): Packed bubbles, sized by a metric: every category, no axis tax.
+- [Choropleth Map](https://vizstudio.io/charts/choropleth-viz): Tile-grid map: every state or country, no projection pain.
+- [Interactive 3D Globe](https://vizstudio.io/charts/interactiveGlobe-viz): Real country polygons, drag-to-rotate, auto-spin, atmosphere glow, the 3D world your dashboard actually needs.
+
+### Networks, Flows & Relationships
+
+- [Arc Diagram](https://vizstudio.io/charts/arcdiagram-viz): Node-link arc diagram: relationships you can actually trace.
+- [Audience Overlap](https://vizstudio.io/charts/audioverlap-viz): Proportional circles for audience segments: overlaps you can see.
+- [Bipartite Graph](https://vizstudio.io/charts/bipartite-viz): Two columns, every link explicit: A-to-B relationships made obvious.
+- [Chord Diagram](https://vizstudio.io/charts/chord-viz): Circular chord ribbons: every pairwise flow, perfectly weighted.
+- [Connection Map](https://vizstudio.io/charts/connmap-viz): Entity rows with bezier arcs: pairwise strength, sorted.
+- [Dependency Wheel](https://vizstudio.io/charts/depwheel-viz): Dependency wheel, a chord diagram that shows what hangs on what.
+- [Flow Map](https://vizstudio.io/charts/flowmap-viz): Geographic flow lines: origins, destinations, and volumes on a map.
+- [Force-Directed Network](https://vizstudio.io/charts/forcenet-viz): Force-directed network, the classic node graph, properly tuned.
+- [Adjacency Matrix](https://vizstudio.io/charts/matrixchart-viz): Adjacency matrix, the most scalable way to see a network.
+- [Opposite Diagram](https://vizstudio.io/charts/oppositediagram): Two-sided pros vs cons: opposing forces, one chart.
+- [Parallel Coordinates Plot](https://vizstudio.io/charts/parallelcoords-viz): Parallel axes: every record drawn across every dimension.
+- [Parallel Sets](https://vizstudio.io/charts/parallelsets-viz): Categorical flow: Sankey for nominal data, lane by lane.
+- [Portfolio Barcode](https://vizstudio.io/charts/portfoliobarcode-viz): Portfolio barcode: every holding as a vertical strip, weighted and colored.
+- [Portfolio Pie Barcode](https://vizstudio.io/charts/portfoliopiebarcode-viz): Portfolio pie + barcode: composition and per-position detail in one chart.
+- [Radial Tree](https://vizstudio.io/charts/radialtree-viz): Radial hierarchy: branches arrayed around a center, every level visible.
+- [Story Flow / Narrative](https://vizstudio.io/charts/storyflow-viz): Narrative timeline: characters, threads, and where they meet.
+- [Traffic Sources Chord](https://vizstudio.io/charts/trafficsrc-viz): Traffic source chord: every channel-to-conversion flow ribboned.
+- [Venn / Euler Diagram](https://vizstudio.io/charts/venn-viz): Venn / Euler diagrams: set overlaps with the right geometry.
+
+### Pies, Donuts & Part-to-Whole
+
+- [Dual Donut](https://vizstudio.io/charts/dualdonut-viz): Two donuts side-by-side: current vs prior, plan vs actual, the comparison view.
+- [Multi-ring Donut](https://vizstudio.io/charts/multiring-viz): Nested donut rings: multiple metrics, same center, one composition.
+- [Variable-Radius Nested Donut](https://vizstudio.io/charts/vardonut-viz): Variable-radius nested donut: two metrics per slice, one chart.
+- [Variable Radius Pie Chart](https://vizstudio.io/charts/varradiuspie-viz): Variable-radius pie: angle is share, radius is a second metric.
+- [Waffle Chart](https://vizstudio.io/charts/waffle-viz): 10×10 grid (every square is 1%), the part-to-whole everyone reads correctly.
+
+### Scatter, Correlation & Bubbles
+
+- [Bubble Chart](https://vizstudio.io/charts/bubble-viz): X × Y × size: three metrics, one chart, zero squinting.
+- [Bubble Grid](https://vizstudio.io/charts/bubblegrid): A grid of bubbles: counts and magnitudes across two categorical axes.
+- [Hexbin Scatter](https://vizstudio.io/charts/hexbin-viz): Hexagonal density: scatter plots that survive 100k points.
+- [Quadrant Scatter](https://vizstudio.io/charts/quadrant-viz): Four-quadrant scatter, the strategy chart you've drawn on whiteboards.
+- [Scatter Plot with Trendline](https://vizstudio.io/charts/scattertrend-viz): Scatter with a fitted trend line: correlation without the chart-junk.
+
+### Tables, Calendars & Combo
+
+- [Big Calendar](https://vizstudio.io/charts/bigcalendar-viz): Full calendar grid: event volume painted across every cell.
+- [Mini Calendar](https://vizstudio.io/charts/calendarHeatmap): Compact monthly calendar: one cell, one number, instant pattern.
+- [Conversion Heatmap](https://vizstudio.io/charts/convheatmap-viz): Day-of-week × hour heatmap: when your audience actually shows up.
+- [Row Over Row Comparison Table](https://vizstudio.io/charts/datatable-viz): Row over row: DoD / MoM / YoY comparison table with deltas and % change.
+- [Engagement Heatmap](https://vizstudio.io/charts/engageheatmap-viz): Row × column matrix: normalize how you want, color tells the story.
+- [Radar Chart with Data Table](https://vizstudio.io/charts/radartable-viz): Radar chart with a sibling data table: visual and exact.
+- [Word Cloud](https://vizstudio.io/charts/wordcloud-viz): Word cloud: frequency-weighted, color-coded, optional category grouping.
+
+### Time Series & Trends
+
+- [Bump Chart](https://vizstudio.io/charts/bump-viz): Rank-over-time line chart: who's climbing, who's sliding.
+- [Dual Axis Chart](https://vizstudio.io/charts/dualaxis-viz): Two metrics, two scales, one line of sight: without the lie factor.
+- [Stacked Area Chart](https://vizstudio.io/charts/stackedarea-viz): Stacked area over time: composition and trend on the same canvas.
+- [Stacked Bar Chart with Negative Values (Animated + Zoom)](https://vizstudio.io/charts/stackedneg-animated-viz): Same signed stacked bar, animated entrance + zoom controls.
+- [Stacked Bar Chart with Negative Values (Static)](https://vizstudio.io/charts/stackedneg-viz): Stacked bars with negative values: wins above, losses below, total preserved.
+- [Streamgraph](https://vizstudio.io/charts/streamgraph-viz): Stacked area, no fixed baseline: flowing composition over time.
+- [Stream Wave Chart](https://vizstudio.io/charts/streamwave-viz): Stream wave: streamgraph with a wavier silhouette for editorial flair.
+- [Time Series with Annotations](https://vizstudio.io/charts/timeseries-viz): Time series with annotated events: context where it actually happened.
+- [Year-over-Year Line](https://vizstudio.io/charts/yoyline-viz): Year-over-year overlay: current vs prior, with the delta shaded.
+
+## Legal
+
+- [Privacy Policy](https://vizstudio.io/privacy)
+- [Terms of Service](https://vizstudio.io/terms)
+
+## Optional
+
+- [llms-full.txt](https://vizstudio.io/llms-full.txt): expanded chart-by-chart descriptions

@@ -2,7 +2,10 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { AuthForm } from "@/components/AuthForm";
 
-export const metadata = { title: "Log in" };
+export const metadata = {
+  title: "Log in",
+  robots: { index: false, follow: false },
+};
 // AuthForm uses useSearchParams() - needs dynamic rendering
 export const dynamic = "force-dynamic";
 

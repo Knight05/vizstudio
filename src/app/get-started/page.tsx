@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   title: "Create your account",
   description:
     "Start your 14-day free trial of Viz Studio: 75+ premium D3 charts for Looker Studio. No credit card required. We'll email you a link to set your password.",
+  alternates: { canonical: "https://vizstudio.io/get-started" },
+  openGraph: {
+    type: "website",
+    url: "https://vizstudio.io/get-started",
+    title: "Create your account | vizstudio",
+    description:
+      "Start your 14-day free trial of Viz Studio: 75+ premium D3 charts for Looker Studio. No credit card required.",
+  },
 };
 
 export default function Page() {

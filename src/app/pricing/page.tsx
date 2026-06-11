@@ -17,8 +17,56 @@ export const metadata: Metadata = {
       "Every plan unlocks the entire chart library. $50/month or $500/year. 14-day free trial.",
     url: `${SITE}/pricing`,
     type: "website",
+    images: [`${SITE}/images/hero-dashboard-dark.png`],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pricing | vizstudio",
+    description:
+      "Every plan unlocks the entire chart library. $50/month or $500/year. 14-day free trial.",
+    images: [`${SITE}/images/hero-dashboard-dark.png`],
   },
 };
+
+// Pricing structured data: the PRO product with both offers + breadcrumbs.
+const PRICING_JSONLD = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Viz Studio PRO",
+    description:
+      "One subscription, every chart: all 75+ premium Looker Studio community visualizations plus the Google Calendar Connector. 14-day free trial, no credit card required.",
+    url: `${SITE}/pricing`,
+    image: `${SITE}/images/hero-dashboard-dark.png`,
+    brand: { "@type": "Brand", name: "Viz Studio" },
+    offers: [
+      {
+        "@type": "Offer",
+        name: "PRO Monthly",
+        price: "50",
+        priceCurrency: "USD",
+        url: `${SITE}/pricing`,
+        availability: "https://schema.org/InStock",
+      },
+      {
+        "@type": "Offer",
+        name: "PRO Yearly",
+        price: "500",
+        priceCurrency: "USD",
+        url: `${SITE}/pricing`,
+        availability: "https://schema.org/InStock",
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "Pricing", item: `${SITE}/pricing` },
+    ],
+  },
+];
 
 const CHECK = (
   <svg
@@ -96,6 +144,10 @@ export default async function PricingPage({
         <div className="blob b2" />
       </div>
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(PRICING_JSONLD) }}
+      />
       <SiteNav />
 
       <main>
