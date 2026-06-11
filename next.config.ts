@@ -23,7 +23,6 @@ const config: NextConfig = {
       // passwordless signup). Funnel all old /signup links there, query intact.
       { source: "/signup", destination: "/get-started", permanent: false },
       { source: "/showcase", destination: "/#library", permanent: false },
-      { source: "/pricing", destination: "/#pricing", permanent: false },
       { source: "/docs/:path*", destination: "/how-to-add-a-chart", permanent: false },
       // Chart pages are now dynamic Next routes at /charts/:slug (SSG from
       // src/data/charts.json). Permanently consolidate the old static .html
