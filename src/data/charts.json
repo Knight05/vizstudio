@@ -3316,9 +3316,9 @@
       "id": "timeseries-viz",
       "name": "Time Series with Annotations",
       "tagline": "Time series with annotated events: context where it actually happened.",
-      "long": "Time Series with Annotations is a clean line chart that lets you mark events on the timeline: launches, incidents, campaigns, holidays. The annotations are first-class, not a hack.",
-      "what": "Single or multi-series line over time with vertical event annotations (label + color), tooltip, cross-filter.",
-      "why": "Spikes in a time series only mean something with context. Annotations put the context inline.",
+      "long": "Time Series with Annotations is a clean multi-series line chart with one superpower: it marks real events directly on the timeline. Launches, campaigns, incidents, holidays - each one gets its own icon, color, and label, pinned to the exact date it happened. Annotations are first-class here, not a hack.",
+      "what": "Plot up to five metrics over time, then layer event annotations on top from a second data source. Match events to one of 10 annotation types by keyword - each with its own icon and color from a library of 30 built-in icons (or any emoji) - and let viewers hover any marker for the full story. Tooltips, cross-filtering, and theme support included.",
+      "why": "A spike without context is just a question mark. Was it the campaign? The outage? Black Friday? Annotations answer it right on the chart, so nobody has to dig through a changelog to explain the data.",
       "uses": [
         {
           "tag": "Product",

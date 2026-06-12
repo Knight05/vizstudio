@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getChart, getChartSlugs, getAdjacentCharts } from "@/lib/charts";
 import SiteNav from "@/components/marketing/SiteNav";
 import SiteFooter from "@/components/marketing/SiteFooter";
+import TimeseriesExtras from "@/components/marketing/TimeseriesExtras";
 
 const SITE = "https://vizstudio.io";
 
@@ -246,6 +247,8 @@ export default async function ChartPage({
 
                 <h2>Why use it</h2>
                 <p>{chart.why}</p>
+
+                {chart.id === "timeseries-viz" && <TimeseriesExtras />}
 
                 <h2>Three ways teams use it</h2>
                 <div className="use-cases">
