@@ -26,20 +26,14 @@ export default function SiteFooter() {
               <li><a href="/#library">Charts</a></li>
               <li><a href="/#pricing">Pricing</a></li>
               <li><a href="/#faq">FAQ</a></li>
+              <li><a href="/#how">How it works</a></li>
             </ul>
           </div>
           <div>
             <h4>Resources</h4>
             <ul>
-              <li><a href="/#how">How it works</a></li>
               <li><a href="/how-to-add-a-chart">Add a chart to Data Studio</a></li>
-              <li><a href="/#library">Chart library</a></li>
               <li><a href="/suggest">Suggest a chart</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Company</h4>
-            <ul>
               <li><a href="/get-started">Get started</a></li>
               <li><a href="/login">Client login</a></li>
             </ul>

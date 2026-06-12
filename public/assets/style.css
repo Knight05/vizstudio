@@ -49,13 +49,26 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 
 /* ── ambient gradient blobs ── */
-.blobs { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+.blobs {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;
+  /* Promote to an isolated compositor layer. Without this, the fixed,
+     heavily-blurred + screen-blended blobs force iOS to re-rasterize the
+     page (text blanks on scroll, "reloads" on scroll-back). */
+  isolation: isolate;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
 .blob {
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
   opacity: 0.35;
   mix-blend-mode: screen;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 .blob-1 { width: 600px; height: 600px; top: -200px; left: -150px; background: #6366f1; }
 .blob-2 { width: 500px; height: 500px; top: 20%; right: -150px; background: #ec4899; opacity: 0.25; }
@@ -736,7 +749,7 @@ footer {
 
 footer { padding: 64px 0 32px; border-top: 1px solid var(--border); margin-top: 64px; background: var(--bg); }
 footer > .wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
-.foot-grid { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 48px; margin-bottom: 48px; }
+.foot-grid { display: grid; grid-template-columns: 1.6fr repeat(2, 1fr); gap: 48px; margin-bottom: 48px; }
 footer h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 0 0 14px; font-weight: 500; }
 footer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
 footer ul li a { color: var(--text-dim); text-decoration: none; }
