@@ -33,6 +33,9 @@ try:
 except Exception:
     pass
 
+ds_icon = Image.open("/tmp/ic_ds_208.png").convert("RGBA")
+ds_icon = ds_icon.resize((26 * S, 26 * S), Image.LANCZOS)
+
 logo = Image.open(LOGO).convert("RGBA")
 logo = logo.resize((26 * S, 26 * S), Image.LANCZOS)
 
@@ -42,21 +45,9 @@ names = {c["id"]: c["name"] for c in charts}
 
 AA = 4
 
-def draw_datastudio_logo(d, cx, cy):
-    """Looker Studio community-viz glyph: three linked nodes."""
-    GRAY = (128, 134, 139, 255)
-    LINK = (158, 166, 174, 255)
-    # node centers (CSS px offsets, scaled)
-    A = (cx - 6 * S, cy + 6 * S)   # bottom-left, filled blue
-    B = (cx + 6 * S, cy - 5 * S)   # top-right, outlined blue
-    C = (cx - 5 * S, cy - 6 * S)   # top-left, outlined gray (small)
-    lw = int(1.6 * S)
-    d.line([A, B], fill=LINK, width=lw)
-    d.line([C, B], fill=LINK, width=lw)
-    rA, rB, rC = int(3.8 * S), int(4.4 * S), int(2.8 * S)
-    d.ellipse([A[0]-rA, A[1]-rA, A[0]+rA, A[1]+rA], fill=BLUE)
-    d.ellipse([B[0]-rB, B[1]-rB, B[0]+rB, B[1]+rB], fill=(255,255,255,255), outline=BLUE, width=int(1.8 * S))
-    d.ellipse([C[0]-rC, C[1]-rC, C[0]+rC, C[1]+rC], fill=(255,255,255,255), outline=GRAY, width=int(1.6 * S))
+def draw_datastudio_logo(card, cx, cy):
+    """Official Looker/Data Studio icon (ic_data_studio.svg from gstatic), pasted unmodified."""
+    card.paste(ds_icon, (cx - ds_icon.size[0] // 2, cy - ds_icon.size[1] // 2), ds_icon)
 
 def draw_icons(d, card, w):
     cy = HEADER_H // 2
@@ -80,8 +71,8 @@ def frame(src_path, title, out_path):
     card.paste(shot, (0, HEADER_H))
     d = ImageDraw.Draw(card)
     d.rectangle([0, HEADER_H - S, w, HEADER_H - 1], fill=DIV)
-    glyph_w = 23 * S
-    draw_datastudio_logo(d, PAD_L + glyph_w // 2, HEADER_H // 2)
+    glyph_w = 26 * S
+    draw_datastudio_logo(card, PAD_L + glyph_w // 2, HEADER_H // 2)
     tx = PAD_L + glyph_w + 12 * S
     tb = d.textbbox((0, 0), title, font=font)
     d.text((tx, (HEADER_H - (tb[3] - tb[1])) / 2 - tb[1]), title, font=font, fill=TITLE_COL)
