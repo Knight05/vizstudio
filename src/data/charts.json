@@ -83,7 +83,7 @@
       "catLabel": "Bars, Columns & Ranking",
       "screenshot": "data-studio-ab-test-results-chart-vizstudio.png",
       "screenshotWebp": "data-studio-ab-test-results-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_xysdolms2d",
       "related": [
         {
           "id": "barrace-viz",
@@ -133,7 +133,7 @@
       "catLabel": "KPI, Status & Goals",
       "screenshot": "data-studio-analyst-ratings-breakdown-vizstudio.png",
       "screenshotWebp": "data-studio-analyst-ratings-breakdown-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_8yriywmt2d",
       "related": [
         {
           "id": "bulletchart-viz",
@@ -183,7 +183,7 @@
       "catLabel": "Networks, Flows & Relationships",
       "screenshot": "data-studio-arc-diagram-network-vizstudio.png",
       "screenshotWebp": "data-studio-arc-diagram-network-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_r6gqdoms2d",
       "related": [
         {
           "id": "audioverlap-viz",
@@ -233,7 +233,7 @@
       "catLabel": "Networks, Flows & Relationships",
       "screenshot": "data-studio-audience-overlap-chart-vizstudio.png",
       "screenshotWebp": "data-studio-audience-overlap-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_nbsn6uq62d",
       "related": [
         {
           "id": "arcdiagram-viz",
@@ -283,7 +283,7 @@
       "catLabel": "Bars, Columns & Ranking",
       "screenshot": "data-studio-animated-bar-race-vizstudio.png",
       "screenshotWebp": "data-studio-animated-bar-race-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_gohxyzm72d",
       "related": [
         {
           "id": "abtest-viz",
@@ -333,7 +333,7 @@
       "catLabel": "Distribution & Statistical",
       "screenshot": "data-studio-beeswarm-swarm-plot-vizstudio.png",
       "screenshotWebp": "data-studio-beeswarm-swarm-plot-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_wo3a22012d",
       "related": [
         {
           "id": "hexbindensity-viz",
@@ -373,7 +373,7 @@
       "catLabel": "Tables, Calendars & Combo",
       "screenshot": "data-studio-big-calendar-events-vizstudio.png",
       "screenshotWebp": "data-studio-big-calendar-events-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_ja42lw502d",
       "related": [
         {
           "id": "calendarHeatmap",
@@ -423,7 +423,7 @@
       "catLabel": "Networks, Flows & Relationships",
       "screenshot": "data-studio-bipartite-graph-vizstudio.png",
       "screenshotWebp": "data-studio-bipartite-graph-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_dtqpean72d",
       "related": [
         {
           "id": "arcdiagram-viz",
@@ -473,7 +473,7 @@
       "catLabel": "Finance & Performance",
       "screenshot": "data-studio-break-even-chart-vizstudio.png",
       "screenshotWebp": "data-studio-break-even-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_sqzzb9ms2d",
       "related": [
         {
           "id": "cashflow-viz",
@@ -518,7 +518,7 @@
       "catLabel": "Scatter, Correlation & Bubbles",
       "screenshot": "data-studio-bubble-chart-vizstudio.png",
       "screenshotWebp": "data-studio-bubble-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_kbgy084s2d",
       "related": [
         {
           "id": "bubblegrid",
@@ -568,7 +568,7 @@
       "catLabel": "Scatter, Correlation & Bubbles",
       "screenshot": "data-studio-bubble-grid-chart-vizstudio.png",
       "screenshotWebp": "data-studio-bubble-grid-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_j03azc5s2d",
       "related": [
         {
           "id": "bubble-viz",
@@ -618,7 +618,7 @@
       "catLabel": "Maps & Geo",
       "screenshot": "data-studio-bubble-map-vizstudio.png",
       "screenshotWebp": "data-studio-bubble-map-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/85118487",
       "related": [
         {
           "id": "choropleth-viz",
@@ -658,7 +658,7 @@
       "catLabel": "KPI, Status & Goals",
       "screenshot": "data-studio-bullet-chart-kpi-vizstudio.png",
       "screenshotWebp": "data-studio-bullet-chart-kpi-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_7vxecf5s2d",
       "related": [
         {
           "id": "analystratings-viz",
@@ -708,7 +708,7 @@
       "catLabel": "Time Series & Trends",
       "screenshot": "data-studio-bump-chart-rank-tracking-vizstudio.png",
       "screenshotWebp": "data-studio-bump-chart-rank-tracking-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_bnixt43r2d",
       "related": [
         {
           "id": "dualaxis-viz",
@@ -758,7 +758,7 @@
       "catLabel": "Tables, Calendars & Combo",
       "screenshot": "data-studio-mini-calendar-heatmap-vizstudio.png",
       "screenshotWebp": "data-studio-mini-calendar-heatmap-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_r5bgky012d",
       "related": [
         {
           "id": "bigcalendar-viz",
@@ -808,7 +808,7 @@
       "catLabel": "Finance & Performance",
       "screenshot": "data-studio-cashflow-chart-vizstudio.png",
       "screenshotWebp": "data-studio-cashflow-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_q7qqfw012d",
       "related": [
         {
           "id": "breakeven-viz",
@@ -853,7 +853,7 @@
       "catLabel": "Maps & Geo",
       "screenshot": "data-studio-choropleth-map-vizstudio.png",
       "screenshotWebp": "data-studio-choropleth-map-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_h6r57an72d",
       "related": [
         {
           "id": "bubblemap-viz",
@@ -893,7 +893,7 @@
       "catLabel": "Networks, Flows & Relationships",
       "screenshot": "data-studio-chord-diagram-vizstudio.png",
       "screenshotWebp": "data-studio-chord-diagram-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_6kaqgcn72d",
       "related": [
         {
           "id": "arcdiagram-viz",
@@ -943,7 +943,7 @@
       "catLabel": "Networks, Flows & Relationships",
       "screenshot": "data-studio-connection-map-geo-vizstudio.png",
       "screenshotWebp": "data-studio-connection-map-geo-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_aobau3lt2d",
       "related": [
         {
           "id": "arcdiagram-viz",
@@ -993,7 +993,7 @@
       "catLabel": "Tables, Calendars & Combo",
       "screenshot": "data-studio-conversion-heatmap-vizstudio.png",
       "screenshotWebp": "data-studio-conversion-heatmap-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_71ezxtpt2d",
       "related": [
         {
           "id": "bigcalendar-viz",
@@ -1043,7 +1043,7 @@
       "catLabel": "Bars, Columns & Ranking",
       "screenshot": "data-studio-curved-columns-animated-vizstudio.png",
       "screenshotWebp": "data-studio-curved-columns-animated-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_dwgmrbmt2d",
       "related": [
         {
           "id": "abtest-viz",
@@ -1093,7 +1093,7 @@
       "catLabel": "Bars, Columns & Ranking",
       "screenshot": "data-studio-curved-columns-static-vizstudio.png",
       "screenshotWebp": "data-studio-curved-columns-static-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_byg2eemt2d",
       "related": [
         {
           "id": "abtest-viz",
@@ -1143,7 +1143,7 @@
       "catLabel": "Tables, Calendars & Combo",
       "screenshot": "data-studio-row-over-row-data-table-vizstudio.png",
       "screenshotWebp": "data-studio-row-over-row-data-table-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_y57lhen72d",
       "related": [
         {
           "id": "bigcalendar-viz",
@@ -1193,7 +1193,7 @@
       "catLabel": "Networks, Flows & Relationships",
       "screenshot": "data-studio-dependency-wheel-chord-vizstudio.png",
       "screenshotWebp": "data-studio-dependency-wheel-chord-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_6x3a2qmt2d",
       "related": [
         {
           "id": "arcdiagram-viz",
@@ -1243,7 +1243,7 @@
       "catLabel": "Time Series & Trends",
       "screenshot": "data-studio-dual-axis-line-bar-chart-vizstudio.png",
       "screenshotWebp": "data-studio-dual-axis-line-bar-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_8w4o9c7y2d",
       "related": [
         {
           "id": "bump-viz",
@@ -1293,7 +1293,7 @@
       "catLabel": "Pies, Donuts & Part-to-Whole",
       "screenshot": "data-studio-dual-donut-chart-vizstudio.png",
       "screenshotWebp": "data-studio-dual-donut-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_ku7fcf7y2d",
       "related": [
         {
           "id": "multiring-viz",
@@ -1343,7 +1343,7 @@
       "catLabel": "Bars, Columns & Ranking",
       "screenshot": "data-studio-dumbbell-chart-comparison-vizstudio.png",
       "screenshotWebp": "data-studio-dumbbell-chart-comparison-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_olghdt7y2d",
       "related": [
         {
           "id": "abtest-viz",
@@ -1393,7 +1393,7 @@
       "catLabel": "Finance & Performance",
       "screenshot": "data-studio-actual-vs-target-dot-chart-vizstudio.png",
       "screenshotWebp": "data-studio-actual-vs-target-dot-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_55lcyx012d",
       "related": [
         {
           "id": "breakeven-viz",
@@ -1438,7 +1438,7 @@
       "catLabel": "Tables, Calendars & Combo",
       "screenshot": "data-studio-engagement-heatmap-vizstudio.png",
       "screenshotWebp": "data-studio-engagement-heatmap-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_1hppj5pt2d",
       "related": [
         {
           "id": "bigcalendar-viz",
@@ -1488,7 +1488,7 @@
       "catLabel": "Networks, Flows & Relationships",
       "screenshot": "data-studio-flow-map-geo-routes-vizstudio.png",
       "screenshotWebp": "data-studio-flow-map-geo-routes-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_e3d3yupt2d",
       "related": [
         {
           "id": "arcdiagram-viz",
@@ -1538,7 +1538,7 @@
       "catLabel": "Networks, Flows & Relationships",
       "screenshot": "data-studio-force-directed-network-graph-vizstudio.png",
       "screenshotWebp": "data-studio-force-directed-network-graph-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_w6fh4vpt2d",
       "related": [
         {
           "id": "arcdiagram-viz",
@@ -1588,7 +1588,7 @@
       "catLabel": "Bars, Columns & Ranking",
       "screenshot": "data-studio-grouped-bar-chart-vizstudio.png",
       "screenshotWebp": "data-studio-grouped-bar-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_bb6jxxpt2d",
       "related": [
         {
           "id": "abtest-viz",
@@ -1638,7 +1638,7 @@
       "catLabel": "Scatter, Correlation & Bubbles",
       "screenshot": "data-studio-hexbin-scatter-plot-vizstudio.png",
       "screenshotWebp": "data-studio-hexbin-scatter-plot-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_7ea20ypt2d",
       "related": [
         {
           "id": "bubble-viz",
@@ -1688,7 +1688,7 @@
       "catLabel": "Distribution & Statistical",
       "screenshot": "data-studio-hexbin-density-plot-vizstudio.png",
       "screenshotWebp": "data-studio-hexbin-density-plot-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_gvuvnzpt2d",
       "related": [
         {
           "id": "beeswarm-viz",
@@ -1728,7 +1728,7 @@
       "catLabel": "Maps & Geo",
       "screenshot": "data-studio-interactive-3d-globe-vizstudio.png",
       "screenshotWebp": "data-studio-interactive-3d-globe-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_2nvm80pt2d",
       "related": [
         {
           "id": "bubblemap-viz",
@@ -1768,7 +1768,7 @@
       "catLabel": "KPI, Status & Goals",
       "screenshot": "data-studio-kpi-sparkline-cards-vizstudio.png",
       "screenshotWebp": "data-studio-kpi-sparkline-cards-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_jzzpx2pt2d",
       "related": [
         {
           "id": "analystratings-viz",
@@ -1818,7 +1818,7 @@
       "catLabel": "Bars, Columns & Ranking",
       "screenshot": "data-studio-lollipop-chart-vizstudio.png",
       "screenshotWebp": "data-studio-lollipop-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_5fn493pt2d",
       "related": [
         {
           "id": "abtest-viz",
@@ -1868,7 +1868,7 @@
       "catLabel": "Networks, Flows & Relationships",
       "screenshot": "data-studio-adjacency-matrix-chart-vizstudio.png",
       "screenshotWebp": "data-studio-adjacency-matrix-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_6cow118y2d",
       "related": [
         {
           "id": "arcdiagram-viz",
@@ -1918,7 +1918,7 @@
       "catLabel": "Bars, Columns & Ranking",
       "screenshot": "data-studio-mirror-bar-chart-tornado-vizstudio.png",
       "screenshotWebp": "data-studio-mirror-bar-chart-tornado-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_92xl55pt2d",
       "related": [
         {
           "id": "abtest-viz",
@@ -1968,7 +1968,7 @@
       "catLabel": "Pies, Donuts & Part-to-Whole",
       "screenshot": "data-studio-multi-ring-donut-chart-vizstudio.png",
       "screenshotWebp": "data-studio-multi-ring-donut-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_0hpap8pt2d",
       "related": [
         {
           "id": "dualdonut-viz",
@@ -2068,7 +2068,7 @@
       "catLabel": "Networks, Flows & Relationships",
       "screenshot": "data-studio-parallel-coordinates-plot-vizstudio.png",
       "screenshotWebp": "data-studio-parallel-coordinates-plot-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_d9i1zcqt2d",
       "related": [
         {
           "id": "arcdiagram-viz",
@@ -2118,7 +2118,7 @@
       "catLabel": "Networks, Flows & Relationships",
       "screenshot": "data-studio-parallel-sets-chart-vizstudio.png",
       "screenshotWebp": "data-studio-parallel-sets-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_hupmn88y2d",
       "related": [
         {
           "id": "arcdiagram-viz",
@@ -2168,7 +2168,7 @@
       "catLabel": "Bars, Columns & Ranking",
       "screenshot": "data-studio-pareto-chart-80-20-vizstudio.png",
       "screenshotWebp": "data-studio-pareto-chart-80-20-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_2srlty012d",
       "related": [
         {
           "id": "abtest-viz",
@@ -2218,7 +2218,7 @@
       "catLabel": "Networks, Flows & Relationships",
       "screenshot": "data-studio-portfolio-barcode-chart-vizstudio.png",
       "screenshotWebp": "data-studio-portfolio-barcode-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_vmg39eqt2d",
       "related": [
         {
           "id": "arcdiagram-viz",
@@ -2268,7 +2268,7 @@
       "catLabel": "Networks, Flows & Relationships",
       "screenshot": "data-studio-portfolio-pie-barcode-vizstudio.png",
       "screenshotWebp": "data-studio-portfolio-pie-barcode-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_zop3tfqt2d",
       "related": [
         {
           "id": "arcdiagram-viz",
@@ -2318,7 +2318,7 @@
       "catLabel": "KPI, Status & Goals",
       "screenshot": "data-studio-progress-circles-radial-vizstudio.png",
       "screenshotWebp": "data-studio-progress-circles-radial-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_0e8aphqt2d",
       "related": [
         {
           "id": "analystratings-viz",
@@ -2368,7 +2368,7 @@
       "catLabel": "Bars, Columns & Ranking",
       "screenshot": "data-studio-pyramid-area-chart-vizstudio.png",
       "screenshotWebp": "data-studio-pyramid-area-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_8ooyay012d",
       "related": [
         {
           "id": "abtest-viz",
@@ -2418,7 +2418,7 @@
       "catLabel": "Distribution & Statistical",
       "screenshot": "data-studio-qq-plot-quantile-vizstudio.png",
       "screenshotWebp": "data-studio-qq-plot-quantile-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_lov5jjqt2d",
       "related": [
         {
           "id": "beeswarm-viz",
@@ -2458,7 +2458,7 @@
       "catLabel": "Scatter, Correlation & Bubbles",
       "screenshot": "data-studio-quadrant-scatter-chart-vizstudio.png",
       "screenshotWebp": "data-studio-quadrant-scatter-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_19jmzin72d",
       "related": [
         {
           "id": "bubble-viz",
@@ -2508,7 +2508,7 @@
       "catLabel": "Tables, Calendars & Combo",
       "screenshot": "data-studio-radar-chart-data-table-vizstudio.png",
       "screenshotWebp": "data-studio-radar-chart-data-table-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_z8zacd9y2d",
       "related": [
         {
           "id": "bigcalendar-viz",
@@ -2558,7 +2558,7 @@
       "catLabel": "Networks, Flows & Relationships",
       "screenshot": "data-studio-radial-tree-hierarchy-vizstudio.png",
       "screenshotWebp": "data-studio-radial-tree-hierarchy-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_k9cof5012d",
       "related": [
         {
           "id": "arcdiagram-viz",
@@ -2608,7 +2608,7 @@
       "catLabel": "Finance & Performance",
       "screenshot": "data-studio-revenue-breakdown-bar-line-combo-vizstudio.png",
       "screenshotWebp": "data-studio-revenue-breakdown-bar-line-combo-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_ujzlxjn72d",
       "related": [
         {
           "id": "breakeven-viz",
@@ -2653,7 +2653,7 @@
       "catLabel": "Scatter, Correlation & Bubbles",
       "screenshot": "data-studio-scatter-plot-trendline-vizstudio.png",
       "screenshotWebp": "data-studio-scatter-plot-trendline-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_vz4njpqt2d",
       "related": [
         {
           "id": "bubble-viz",
@@ -2703,7 +2703,7 @@
       "catLabel": "KPI, Status & Goals",
       "screenshot": "data-studio-semicircle-gauge-vizstudio.png",
       "screenshotWebp": "data-studio-semicircle-gauge-vizstudio.webp",
-      "dsLink": null,
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_rler9bmf3d",
       "related": [
         {
           "id": "analystratings-viz",
@@ -2753,7 +2753,7 @@
       "catLabel": "KPI, Status & Goals",
       "screenshot": "data-studio-semi-circle-pie-chart-vizstudio.png",
       "screenshotWebp": "data-studio-semi-circle-pie-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_ekceck702d",
       "related": [
         {
           "id": "analystratings-viz",
@@ -2803,7 +2803,7 @@
       "catLabel": "Bars, Columns & Ranking",
       "screenshot": "data-studio-simple-column-chart-vizstudio.png",
       "screenshotWebp": "data-studio-simple-column-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_yfp793502d",
       "related": [
         {
           "id": "abtest-viz",
@@ -2853,7 +2853,7 @@
       "catLabel": "Hierarchies & Drilldown",
       "screenshot": "data-studio-slice-dice-treemap-vizstudio.png",
       "screenshotWebp": "data-studio-slice-dice-treemap-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_gsboed602d",
       "related": [
         {
           "id": "smallmultiples-viz",
@@ -2898,7 +2898,7 @@
       "catLabel": "Hierarchies & Drilldown",
       "screenshot": "data-studio-small-multiples-trellis-vizstudio.png",
       "screenshotWebp": "data-studio-small-multiples-trellis-vizstudio.webp",
-      "dsLink": null,
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_zdjo32502d",
       "related": [
         {
           "id": "slicedice-viz",
@@ -2943,7 +2943,7 @@
       "catLabel": "KPI, Status & Goals",
       "screenshot": "data-studio-solid-gauge-kpi-vizstudio.png",
       "screenshotWebp": "data-studio-solid-gauge-kpi-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_b03yjz502d",
       "related": [
         {
           "id": "analystratings-viz",
@@ -2993,7 +2993,7 @@
       "catLabel": "Time Series & Trends",
       "screenshot": "data-studio-stacked-area-chart-vizstudio.png",
       "screenshotWebp": "data-studio-stacked-area-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_9wgbgsqt2d",
       "related": [
         {
           "id": "bump-viz",
@@ -3043,7 +3043,7 @@
       "catLabel": "Time Series & Trends",
       "screenshot": "data-studio-stacked-bar-negative-animated-vizstudio.png",
       "screenshotWebp": "data-studio-stacked-bar-negative-animated-vizstudio.webp",
-      "dsLink": null,
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_k6qb74ig3d",
       "related": [
         {
           "id": "bump-viz",
@@ -3093,7 +3093,7 @@
       "catLabel": "Time Series & Trends",
       "screenshot": "data-studio-stacked-bar-negative-static-vizstudio.png",
       "screenshotWebp": "data-studio-stacked-bar-negative-static-vizstudio.webp",
-      "dsLink": null,
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_m4v41zig3d",
       "related": [
         {
           "id": "bump-viz",
@@ -3143,7 +3143,7 @@
       "catLabel": "Networks, Flows & Relationships",
       "screenshot": "data-studio-story-flow-narrative-chart-vizstudio.png",
       "screenshotWebp": "data-studio-story-flow-narrative-chart-vizstudio.webp",
-      "dsLink": null,
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_ze17ycjg3d",
       "related": [
         {
           "id": "arcdiagram-viz",
@@ -3193,7 +3193,7 @@
       "catLabel": "Time Series & Trends",
       "screenshot": "data-studio-streamgraph-chart-vizstudio.png",
       "screenshotWebp": "data-studio-streamgraph-chart-vizstudio.webp",
-      "dsLink": null,
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_eeiebljg3d",
       "related": [
         {
           "id": "bump-viz",
@@ -3243,7 +3243,7 @@
       "catLabel": "Time Series & Trends",
       "screenshot": "data-studio-stream-wave-chart-vizstudio.png",
       "screenshotWebp": "data-studio-stream-wave-chart-vizstudio.webp",
-      "dsLink": null,
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_9kkygojg3d",
       "related": [
         {
           "id": "bump-viz",
@@ -3293,7 +3293,7 @@
       "catLabel": "Hierarchies & Drilldown",
       "screenshot": "data-studio-sunburst-chart-hierarchy-vizstudio.png",
       "screenshotWebp": "data-studio-sunburst-chart-hierarchy-vizstudio.webp",
-      "dsLink": null,
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_6y2fu4lf3d",
       "related": [
         {
           "id": "slicedice-viz",
@@ -3338,7 +3338,7 @@
       "catLabel": "Time Series & Trends",
       "screenshot": "data-studio-time-series-annotations-vizstudio.png",
       "screenshotWebp": "data-studio-time-series-annotations-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_adp7o6ae3d",
       "related": [
         {
           "id": "bump-viz",
@@ -3388,7 +3388,7 @@
       "catLabel": "Networks, Flows & Relationships",
       "screenshot": "data-studio-traffic-sources-chord-diagram-vizstudio.png",
       "screenshotWebp": "data-studio-traffic-sources-chord-diagram-vizstudio.webp",
-      "dsLink": null,
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_1rl6avig3d",
       "related": [
         {
           "id": "arcdiagram-viz",
@@ -3438,7 +3438,7 @@
       "catLabel": "Hierarchies & Drilldown",
       "screenshot": "data-studio-zoomable-treemap-vizstudio.png",
       "screenshotWebp": "data-studio-zoomable-treemap-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_kmopn9v62d",
       "related": [
         {
           "id": "slicedice-viz",
@@ -3483,7 +3483,7 @@
       "catLabel": "Pies, Donuts & Part-to-Whole",
       "screenshot": "data-studio-variable-radius-nested-donut-vizstudio.png",
       "screenshotWebp": "data-studio-variable-radius-nested-donut-vizstudio.webp",
-      "dsLink": null,
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_aaynhclg3d",
       "related": [
         {
           "id": "dualdonut-viz",
@@ -3533,7 +3533,7 @@
       "catLabel": "Bars, Columns & Ranking",
       "screenshot": "data-studio-variance-bar-chart-vizstudio.png",
       "screenshotWebp": "data-studio-variance-bar-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_5k4lkvpt2d",
       "related": [
         {
           "id": "abtest-viz",
@@ -3583,7 +3583,7 @@
       "catLabel": "Pies, Donuts & Part-to-Whole",
       "screenshot": "data-studio-variable-radius-pie-chart-vizstudio.png",
       "screenshotWebp": "data-studio-variable-radius-pie-chart-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_tuskjaof3d",
       "related": [
         {
           "id": "dualdonut-viz",
@@ -3683,7 +3683,7 @@
       "catLabel": "Pies, Donuts & Part-to-Whole",
       "screenshot": "data-studio-waffle-chart-vizstudio.png",
       "screenshotWebp": "data-studio-waffle-chart-vizstudio.webp",
-      "dsLink": null,
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_ttfqoxlg3d",
       "related": [
         {
           "id": "dualdonut-viz",
@@ -3733,7 +3733,7 @@
       "catLabel": "Bars, Columns & Ranking",
       "screenshot": "data-studio-wind-rose-polar-bar-vizstudio.png",
       "screenshotWebp": "data-studio-wind-rose-polar-bar-vizstudio.webp",
-      "dsLink": null,
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_ylikm2502d",
       "related": [
         {
           "id": "abtest-viz",
@@ -3783,7 +3783,7 @@
       "catLabel": "Tables, Calendars & Combo",
       "screenshot": "data-studio-word-tag-cloud-vizstudio.png",
       "screenshotWebp": "data-studio-word-tag-cloud-vizstudio.webp",
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_rbb5shmf3d",
       "related": [
         {
           "id": "bigcalendar-viz",
@@ -3833,7 +3833,7 @@
       "catLabel": "Time Series & Trends",
       "screenshot": null,
       "screenshotWebp": null,
-      "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
+      "dsLink": null,
       "related": [
         {
           "id": "bump-viz",
