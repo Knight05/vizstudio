@@ -43,14 +43,20 @@ names = {c["id"]: c["name"] for c in charts}
 AA = 4
 
 def draw_datastudio_logo(d, cx, cy):
-    bw, gap = 5 * S, 4 * S
-    heights = [10 * S, 16 * S, 22 * S]
-    total_w = 3 * bw + 2 * gap
-    bx = cx - total_w // 2
-    base = cy + 11 * S
-    for i, h in enumerate(heights):
-        x0 = bx + i * (bw + gap)
-        d.rounded_rectangle([x0, base - h, x0 + bw, base], radius=int(1.5 * S), fill=BLUE)
+    """Looker Studio community-viz glyph: three linked nodes."""
+    GRAY = (128, 134, 139, 255)
+    LINK = (158, 166, 174, 255)
+    # node centers (CSS px offsets, scaled)
+    A = (cx - 6 * S, cy + 6 * S)   # bottom-left, filled blue
+    B = (cx + 6 * S, cy - 5 * S)   # top-right, outlined blue
+    C = (cx - 5 * S, cy - 6 * S)   # top-left, outlined gray (small)
+    lw = int(1.6 * S)
+    d.line([A, B], fill=LINK, width=lw)
+    d.line([C, B], fill=LINK, width=lw)
+    rA, rB, rC = int(3.8 * S), int(4.4 * S), int(2.8 * S)
+    d.ellipse([A[0]-rA, A[1]-rA, A[0]+rA, A[1]+rA], fill=BLUE)
+    d.ellipse([B[0]-rB, B[1]-rB, B[0]+rB, B[1]+rB], fill=(255,255,255,255), outline=BLUE, width=int(1.8 * S))
+    d.ellipse([C[0]-rC, C[1]-rC, C[0]+rC, C[1]+rC], fill=(255,255,255,255), outline=GRAY, width=int(1.6 * S))
 
 def draw_icons(d, card, w):
     cy = HEADER_H // 2
