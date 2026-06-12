@@ -58,3 +58,13 @@ export function getCategories(): Category[] {
 export function getChartsByCategory(key: string): Chart[] {
   return charts.filter((c) => c.category === key);
 }
+
+export function getAdjacentCharts(
+  slug: string
+): { prev: Chart; next: Chart } | null {
+  const i = charts.findIndex((c) => c.id === slug);
+  if (i === -1 || charts.length < 2) return null;
+  const prev = charts[(i - 1 + charts.length) % charts.length];
+  const next = charts[(i + 1) % charts.length];
+  return { prev, next };
+}

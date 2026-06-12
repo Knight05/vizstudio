@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getChart, getChartSlugs } from "@/lib/charts";
+import { getChart, getChartSlugs, getAdjacentCharts } from "@/lib/charts";
 import SiteNav from "@/components/marketing/SiteNav";
 import SiteFooter from "@/components/marketing/SiteFooter";
 
@@ -62,6 +62,7 @@ export default async function ChartPage({
   const chart = getChart(slug);
   if (!chart) notFound();
 
+  const pager = getAdjacentCharts(slug);
   const previewSrc = chart.screenshotWebp ?? chart.screenshot;
   const image = ogImage(chart);
 
@@ -305,6 +306,19 @@ export default async function ChartPage({
                   ))}
                 </div>
               </div>
+            )}
+
+            {pager && (
+              <nav className="chart-pager" aria-label="Browse more charts">
+                <a className="pager-link prev" href={`/charts/${pager.prev.id}`}>
+                  <span className="pager-dir">&larr; Previous chart</span>
+                  <span className="pager-name">{pager.prev.name}</span>
+                </a>
+                <a className="pager-link next" href={`/charts/${pager.next.id}`}>
+                  <span className="pager-dir">Next chart &rarr;</span>
+                  <span className="pager-name">{pager.next.name}</span>
+                </a>
+              </nav>
             )}
           </div>
         </section>

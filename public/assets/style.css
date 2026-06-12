@@ -473,8 +473,6 @@ h2.section-title {
 @media (max-width: 720px) {
   .chart-hero-icon { width: 72px; height: 72px; padding: 11px; border-radius: 16px; }
   .chart-title-row { gap: 16px; }
-  /* Hide breadcrumb path on mobile - prime real estate */
-  .crumbs { display: none; }
   /* CTAs side by side */
   .chart-cta-row { flex-wrap: nowrap; gap: 10px; margin-bottom: 16px; }
   .chart-cta-row .btn {
@@ -708,6 +706,28 @@ footer {
 .crumbs a { color: var(--text-dim); }
 .crumbs a:hover { color: var(--text); }
 .crumbs span { color: var(--muted); }
+/* Hide breadcrumb path on mobile - prime real estate (must follow base rule in cascade) */
+@media (max-width: 720px) { .crumbs { display: none; } }
+
+/* ── chart pager (prev/next) ── */
+.chart-pager { display: flex; gap: 14px; margin-top: 44px; }
+.pager-link {
+  flex: 1 1 0; min-width: 0;
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 16px 18px;
+  border: 1px solid var(--border); border-radius: 12px;
+  background: var(--surface);
+  text-decoration: none;
+  transition: border-color .2s, transform .2s;
+}
+.pager-link:hover { border-color: var(--acc); transform: translateY(-2px); }
+.pager-link.next { align-items: flex-end; text-align: right; }
+.pager-dir { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.pager-name { font-weight: 600; font-size: 15px; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; }
+@media (max-width: 720px) {
+  .chart-pager { gap: 10px; }
+  .pager-link { padding: 13px 14px; }
+}
 
 /* ── small utilities ── */
 .hidden { display: none !important; }
