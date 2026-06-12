@@ -1,23 +1,24 @@
 #!/usr/bin/env python3
-"""Wrap dark chart screenshots in a Looker Studio-style component card header."""
+"""Wrap dark chart screenshots in a Looker Studio-style component card header.
+Layout: [Data Studio bars glyph] Title ............ kebab  (?)  [Viz logo]"""
 import json, os, glob, sys
-from PIL import Image, ImageDraw, ImageFont, ImageOps
+from PIL import Image, ImageDraw, ImageFont
 
 ROOT = "/sessions/kind-peaceful-cerf/mnt/Viz.io/vizstudio"
-SRC = f"{ROOT}/public/screenshots"
+SRC = "/tmp/orig"
 OUT = "/tmp/framed"
 LOGO = f"{ROOT}/public/logo-256.png"
 FONT = "/tmp/Roboto.ttf"
 
-S = 2  # screenshots are 2x; all CSS-px values multiplied by S
+S = 2
 HEADER_H = 52 * S
 PAD_L = 18 * S
 RADIUS = 10 * S
-BORDER = (218, 220, 224, 255)  # #dadce0
-TITLE_COL = (32, 33, 36, 255)  # #202124
-ICON_COL = (95, 99, 104, 255)  # #5f6368
-BLUE = (66, 133, 244, 255)     # #4285f4
-DIV = (232, 234, 237, 255)     # #e8eaed
+BORDER = (218, 220, 224, 255)
+TITLE_COL = (32, 33, 36, 255)
+ICON_COL = (95, 99, 104, 255)
+BLUE = (66, 133, 244, 255)
+DIV = (232, 234, 237, 255)
 
 os.makedirs(OUT, exist_ok=True)
 
@@ -39,28 +40,28 @@ charts = json.load(open(f"{ROOT}/src/data/charts.json"))
 charts = charts["charts"] if isinstance(charts, dict) else charts
 names = {c["id"]: c["name"] for c in charts}
 
-AA = 4  # supersample factor for vector bits
+AA = 4
 
-def draw_icons(d, w):
-    """Right-side icons: vertical kebab, help circle, blue bars. Returns nothing."""
-    cy = HEADER_H // 2
-    x = w - 24 * S  # center of last icon (bars)
-    # blue bars icon (like example, far right)
-    bw, gap = 4 * S, 3 * S
-    heights = [8 * S, 13 * S, 18 * S]
-    bx = x - (3 * bw + 2 * gap) // 2
-    base = cy + 9 * S
+def draw_datastudio_logo(d, cx, cy):
+    bw, gap = 5 * S, 4 * S
+    heights = [10 * S, 16 * S, 22 * S]
+    total_w = 3 * bw + 2 * gap
+    bx = cx - total_w // 2
+    base = cy + 11 * S
     for i, h in enumerate(heights):
         x0 = bx + i * (bw + gap)
-        d.rounded_rectangle([x0, base - h, x0 + bw, base], radius=S, fill=BLUE)
-    # help circle with ?
-    x2 = x - 36 * S
+        d.rounded_rectangle([x0, base - h, x0 + bw, base], radius=int(1.5 * S), fill=BLUE)
+
+def draw_icons(d, card, w):
+    cy = HEADER_H // 2
+    lx = w - 18 * S - logo.size[0]
+    card.paste(logo, (lx, (HEADER_H - logo.size[1]) // 2), logo)
+    x2 = lx - 22 * S
     r = 9 * S
     d.ellipse([x2 - r, cy - r, x2 + r, cy + r], outline=ICON_COL, width=int(1.5 * S))
     tb = d.textbbox((0, 0), "?", font=qfont)
     d.text((x2 - (tb[2]-tb[0])/2 - tb[0], cy - (tb[3]-tb[1])/2 - tb[1]), "?", font=qfont, fill=ICON_COL)
-    # kebab (3 vertical dots)
-    x3 = x - 68 * S
+    x3 = x2 - 32 * S
     dr = int(1.8 * S)
     for dy in (-6 * S, 0, 6 * S):
         d.ellipse([x3 - dr, cy + dy - dr, x3 + dr, cy + dy + dr], fill=ICON_COL)
@@ -70,18 +71,15 @@ def frame(src_path, title, out_path):
     w, h = shot.size
     H = HEADER_H + h
     card = Image.new("RGBA", (w, H), (255, 255, 255, 255))
-    # paste screenshot below header
     card.paste(shot, (0, HEADER_H))
     d = ImageDraw.Draw(card)
-    # divider under header
     d.rectangle([0, HEADER_H - S, w, HEADER_H - 1], fill=DIV)
-    # logo + title
-    card.paste(logo, (PAD_L, (HEADER_H - logo.size[1]) // 2), logo)
-    tx = PAD_L + logo.size[0] + 12 * S
+    glyph_w = 23 * S
+    draw_datastudio_logo(d, PAD_L + glyph_w // 2, HEADER_H // 2)
+    tx = PAD_L + glyph_w + 12 * S
     tb = d.textbbox((0, 0), title, font=font)
     d.text((tx, (HEADER_H - (tb[3] - tb[1])) / 2 - tb[1]), title, font=font, fill=TITLE_COL)
-    draw_icons(d, w)
-    # rounded-corner mask + border
+    draw_icons(d, card, w)
     mask = Image.new("L", (w * AA, H * AA), 0)
     md = ImageDraw.Draw(mask)
     md.rounded_rectangle([0, 0, w * AA - 1, H * AA - 1], radius=RADIUS * AA, fill=255)
