@@ -7,7 +7,7 @@ const FEATURES = [
   {
     tag: "Looker-ready",
     title: "One-click install into any report.",
-    body: "Paste a license key into Looker Studio's community viz picker. Every chart loads in under 800ms, cross-filters natively, and respects your theme.",
+    body: "Paste a license key into Data Studio's community viz picker. Every chart loads in under 800ms, cross-filters natively, and respects your theme.",
   },
   {
     tag: "OKLCH palettes",
@@ -27,7 +27,7 @@ const FEATURES = [
   {
     tag: "Compliant",
     title: "SOC 2 Type II. Zero data egress.",
-    body: "Charts render client-side inside your Looker Studio session. Your data never touches our servers. Auditor-friendly, CISO-approved.",
+    body: "Charts render client-side inside your Data Studio session. Your data never touches our servers. Auditor-friendly, CISO-approved.",
   },
 ];
 

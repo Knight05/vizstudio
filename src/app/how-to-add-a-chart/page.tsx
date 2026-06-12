@@ -23,13 +23,13 @@ const GUIDE_JSONLD = [
   {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "How to add a community chart to Looker Studio (Data Studio)",
-    "description": "Step-by-step guide: add any vizstudio community visualization to a Looker Studio report in under 4 minutes, no code required.",
+    "name": "How to add a community chart to Data Studio (formerly Looker Studio)",
+    "description": "Step-by-step guide: add any vizstudio community visualization to a Data Studio report in under 4 minutes, no code required.",
     "totalTime": "PT4M",
     "tool": [
       {
         "@type": "HowToTool",
-        "name": "Google Looker Studio (Data Studio) report with edit access"
+        "name": "Google Data Studio (formerly Looker Studio) report with edit access"
       },
       {
         "@type": "HowToTool",

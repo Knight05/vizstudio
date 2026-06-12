@@ -83,7 +83,7 @@ export default async function ChartPage({
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      name: `${chart.name} for Looker Studio`,
+      name: `${chart.name} for Data Studio`,
       url: `${SITE}/charts/${chart.id}`,
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
@@ -109,7 +109,7 @@ export default async function ChartPage({
       : [
           {
             tag: "Use case",
-            body: `Add a ${chart.name.toLowerCase()} to any Looker Studio report that needs it.`,
+            body: `Add a ${chart.name.toLowerCase()} to any Data Studio report that needs it.`,
           },
         ];
 
@@ -165,7 +165,7 @@ export default async function ChartPage({
                   <h1 className="chart-title">{chart.name}</h1>
                 </div>
                 <div className="chart-eyebrow">
-                  {chart.name} for Looker Studio (formerly Data Studio).
+                  {chart.name} for Data Studio (formerly Looker Studio).
                 </div>
                 <p className="chart-tagline">{chart.tagline}</p>
               </div>
@@ -181,7 +181,7 @@ export default async function ChartPage({
                     <img
                       className="preview-img"
                       src={`/screenshots/${previewSrc}`}
-                      alt={`${chart.name} (Looker Studio screenshot)`}
+                      alt={`${chart.name} (Data Studio screenshot)`}
                       loading="lazy"
                     />
                   ) : (
@@ -210,7 +210,7 @@ export default async function ChartPage({
               <div className="chart-hero-actions">
                 <div className="chart-cta-row">
                   <a className="btn btn-primary" href="/get-started">
-                    Add to Looker Studio →
+                    Add to Data Studio →
                   </a>
                   {chart.dsLink && (
                     <a
@@ -266,7 +266,7 @@ export default async function ChartPage({
                   }}
                 >
                   <li>
-                    Open your Looker Studio report and click{" "}
+                    Open your Data Studio report and click{" "}
                     <strong>
                       Add a chart → Community visualizations → Explore more
                     </strong>

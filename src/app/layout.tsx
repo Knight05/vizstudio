@@ -17,25 +17,25 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Viz Studio | 75+ community visualizations for Looker Studio",
+    default: "Viz Studio | 75+ community visualizations for Data Studio",
     template: "%s · Viz Studio",
   },
   description:
-    "The most complete D3.js chart library for Google Looker Studio. 75+ battle-tested visualizations: KPIs, time series, distributions, networks, and more. One subscription, every chart.",
+    "The most complete D3.js chart library for Google Data Studio (formerly Looker Studio). 75+ battle-tested visualizations: KPIs, time series, distributions, networks, and more. One subscription, every chart.",
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "https://vizstudio.io"),
   applicationName: "Viz Studio",
   keywords: [
-    "Looker Studio charts",
-    "Looker Studio community visualizations",
     "Data Studio charts",
-    "custom charts for Looker Studio",
+    "Data Studio community visualizations",
+    "Data Studio charts",
+    "custom charts for Data Studio",
     "D3.js visualizations",
-    "Looker Studio chart library",
+    "Data Studio chart library",
   ],
   category: "technology",
   openGraph: {
     title: "Viz Studio",
-    description: "75+ community visualizations for Looker Studio.",
+    description: "75+ community visualizations for Data Studio.",
     type: "website",
     siteName: "Viz Studio",
     locale: "en_US",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
         url: "https://vizstudio.io/images/hero-dashboard-dark.png",
         width: 1242,
         height: 741,
-        alt: "Viz Studio chart library for Looker Studio",
+        alt: "Viz Studio chart library for Data Studio",
       },
     ],
   },
@@ -77,7 +77,7 @@ const SITE_JSONLD = [
     logo: "https://vizstudio.io/logo-256.png",
     email: "support@vizstudio.io",
     description:
-      "Viz Studio builds premium D3.js community visualizations and connectors for Google Looker Studio (Data Studio).",
+      "Viz Studio builds premium D3.js community visualizations and connectors for Google Data Studio (formerly Looker Studio).",
   },
   {
     "@context": "https://schema.org",
@@ -85,7 +85,7 @@ const SITE_JSONLD = [
     "@id": "https://vizstudio.io/#website",
     url: "https://vizstudio.io/",
     name: "Viz Studio",
-    description: "75+ premium community visualizations for Looker Studio.",
+    description: "75+ premium community visualizations for Data Studio.",
     publisher: { "@id": "https://vizstudio.io/#org" },
   },
 ];

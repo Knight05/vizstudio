@@ -23,7 +23,7 @@ export function Hero() {
           </span>
 
           <h1 className="font-sans text-[44px] md:text-[64px] leading-[1.02] font-bold tracking-tight text-text max-w-[16ch]">
-            Looker Studio,
+            Data Studio,
             <br />
             but{" "}
             <span
@@ -42,7 +42,7 @@ export function Hero() {
           <p className="max-w-[58ch] text-[15px] leading-relaxed text-text-dim font-sans">
             {chartCount} hand-crafted D3.js visualizations (from KPI cards to
             Sankey diagrams to hex-bin density maps) that plug straight into
-            Google Looker Studio. One subscription, every chart, live data.
+            Google Data Studio (formerly Looker Studio). One subscription, every chart, live data.
           </p>
 
           <div className="mt-2 flex items-center gap-3">

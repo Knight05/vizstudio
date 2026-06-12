@@ -111,7 +111,7 @@ function renderPlaceholder(el: HTMLElement, name: string, slug: string) {
       <div style="font-family: var(--sans); font-size:18px; font-weight:600; color: var(--text);">${escapeHtml(name)}</div>
       <div style="font-family: var(--mono); font-size:11px; color: var(--muted);">chart source: ${escapeHtml(slug)}</div>
       <div style="margin-top: 8px; font-size:11px; color: var(--text-dim); max-width: 44ch;">
-        This chart's runtime bundle will load from our CDN. See the install section below for Looker Studio integration.
+        This chart's runtime bundle will load from our CDN. See the install section below for Data Studio integration.
       </div>
     </div>
   `;

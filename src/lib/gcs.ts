@@ -239,7 +239,7 @@ const SUSPEND_MARKER = "__viz_suspended.json";
 /**
  * Self-contained placeholder that replaces each chart's script.js while a
  * client is suspended. Renders a branded "contact us" panel that fills the
- * Looker Studio component - no dscc dependency, no data access.
+ * Data Studio component - no dscc dependency, no data access.
  */
 const PLACEHOLDER_SCRIPT = `(function () {
   document.documentElement.style.height = "100%";

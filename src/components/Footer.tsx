@@ -14,7 +14,7 @@ export function Footer() {
             vizstudio.io
           </div>
           <p className="mt-3 max-w-sm text-[12px] leading-relaxed text-text-dim">
-            The most complete D3.js chart library for Google Looker Studio.
+            The most complete D3.js chart library for Google Data Studio (formerly Looker Studio).
             Built by makers who were tired of ugly defaults.
           </p>
         </div>

@@ -9,7 +9,7 @@ const SITE = "https://vizstudio.io";
 export const metadata: Metadata = {
   title: "Pricing | vizstudio",
   description:
-    "Simple pricing for the full Viz Studio chart library. $50/month or $500/year. Every plan unlocks all 75+ premium Looker Studio charts. 14-day free trial, no credit card required.",
+    "Simple pricing for the full Viz Studio chart library. $50/month or $500/year. Every plan unlocks all 75+ premium Data Studio charts. 14-day free trial, no credit card required.",
   alternates: { canonical: `${SITE}/pricing` },
   openGraph: {
     title: "Pricing | vizstudio",
@@ -35,7 +35,7 @@ const PRICING_JSONLD = [
     "@type": "Product",
     name: "Viz Studio PRO",
     description:
-      "One subscription, every chart: all 75+ premium Looker Studio community visualizations plus the Google Calendar Connector. 14-day free trial, no credit card required.",
+      "One subscription, every chart: all 75+ premium Data Studio community visualizations plus the Google Calendar Connector. 14-day free trial, no credit card required.",
     url: `${SITE}/pricing`,
     image: `${SITE}/images/hero-dashboard-dark.png`,
     brand: { "@type": "Brand", name: "Viz Studio" },

@@ -1,11 +1,11 @@
 const FAQS = [
   {
-    q: "How do I install charts into Looker Studio?",
+    q: "How do I install charts into Data Studio?",
     a: "Paste your license key in Looker's community viz picker, then paste the chart's Cloud Storage path. Two clicks. Every chart works the same way, no custom install per chart.",
   },
   {
     q: "Does Viz Studio see my data?",
-    a: "No. Charts render client-side inside your Looker Studio session, the same way Google's native charts do. Your data never touches our servers. We only see license validations (key + domain).",
+    a: "No. Charts render client-side inside your Data Studio session, the same way Google's native charts do. Your data never touches our servers. We only see license validations (key + domain).",
   },
   {
     q: "Can I self-host the charts?",
