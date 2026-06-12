@@ -2,7 +2,7 @@ const FEATURES = [
   {
     tag: "D3.js native",
     title: "Charts that respect your data.",
-    body: "Every viz is hand-built with D3, no wrappers, no bloat. Scales gracefully from 10 rows to 10,000, from phone to boardroom projector.",
+    body: "Every viz is built with D3, no wrappers, no bloat. Scales gracefully from 10 rows to 10,000, from phone to boardroom projector.",
   },
   {
     tag: "Looker-ready",

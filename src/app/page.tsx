@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import chartsData from "@/data/charts.json";
 export const metadata: Metadata = {
   "title": { "absolute": "Viz Studio | 75+ premium Looker Studio charts, easy to install" },
-  "description": "A premium library of 75+ hand-built D3 community visualizations for Google Data Studio (Looker Studio). Sunburst, sankey, choropleth, bump charts and more: theme-aware, cross-filtering, easy to add.",
+  "description": "A premium library of 75+ D3 community visualizations for Google Data Studio (Looker Studio). Sunburst, sankey, choropleth, bump charts and more: theme-aware, cross-filtering, easy to add.",
   "alternates": {
     "canonical": "https://vizstudio.io/"
   },
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "url": "https://vizstudio.io/",
     "siteName": "vizstudio",
     "title": "Viz Studio | 75+ premium Looker Studio charts",
-    "description": "Hand-built D3 community visualizations for Data Studio. Theme-aware, cross-filtering, easy to add.",
+    "description": "Premium D3 community visualizations for Data Studio. Theme-aware, cross-filtering, easy to add.",
     "images": [
       "https://vizstudio.io/images/hero-dashboard-dark.png"
     ]
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   "twitter": {
     "card": "summary_large_image",
     "title": "Viz Studio | 75+ premium Looker Studio charts",
-    "description": "Hand-built D3 community visualizations for Data Studio. Theme-aware, cross-filtering, easy to add.",
+    "description": "Premium D3 community visualizations for Data Studio. Theme-aware, cross-filtering, easy to add.",
     "images": [
       "https://vizstudio.io/images/hero-dashboard-dark.png"
     ]
@@ -43,7 +43,7 @@ const HOME_JSONLD = [
     applicationSubCategory: "Data visualization",
     operatingSystem: "Web",
     description:
-      "A premium library of 75+ hand-built D3 community visualizations for Google Looker Studio (Data Studio). Theme-aware, cross-filtering, easy to add.",
+      "A premium library of 75+ D3 community visualizations for Google Looker Studio (Data Studio). Theme-aware, cross-filtering, easy to add.",
     image: `${SITE}/images/hero-dashboard-dark.png`,
     publisher: { "@id": `${SITE}/#org` },
     offers: {
