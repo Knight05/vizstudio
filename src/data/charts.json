@@ -81,8 +81,8 @@
       "keywords": "A/B test chart Data Studio, confidence interval bar chart, experiment readout visualization",
       "category": "bars",
       "catLabel": "Bars, Columns & Ranking",
-      "screenshot": "data-studio-ab-test-results-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-ab-test-results-chart-vizstudio.webp",
+      "screenshot": "datastudio-abtest-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-abtest-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_xysdolms2d",
       "related": [
         {
@@ -131,8 +131,8 @@
       "keywords": "breakdown chart Data Studio, composite donut bar chart, distribution visualization",
       "category": "kpi",
       "catLabel": "KPI, Status & Goals",
-      "screenshot": "data-studio-analyst-ratings-breakdown-vizstudio.png",
-      "screenshotWebp": "data-studio-analyst-ratings-breakdown-vizstudio.webp",
+      "screenshot": "datastudio-analystratings-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-analystratings-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_8yriywmt2d",
       "related": [
         {
@@ -181,8 +181,8 @@
       "keywords": "arc diagram Data Studio, node-link chart, relationship visualization",
       "category": "flow",
       "catLabel": "Networks, Flows & Relationships",
-      "screenshot": "data-studio-arc-diagram-network-vizstudio.png",
-      "screenshotWebp": "data-studio-arc-diagram-network-vizstudio.webp",
+      "screenshot": "datastudio-arcdiagram-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-arcdiagram-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_r6gqdoms2d",
       "related": [
         {
@@ -231,8 +231,8 @@
       "keywords": "audience overlap chart, Venn-style segment chart Data Studio, CRM segmentation",
       "category": "flow",
       "catLabel": "Networks, Flows & Relationships",
-      "screenshot": "data-studio-audience-overlap-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-audience-overlap-chart-vizstudio.webp",
+      "screenshot": "datastudio-audioverlap-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-audioverlap-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_nbsn6uq62d",
       "related": [
         {
@@ -281,8 +281,8 @@
       "keywords": "bar chart race, animated ranking chart, Data Studio bar race",
       "category": "bars",
       "catLabel": "Bars, Columns & Ranking",
-      "screenshot": "data-studio-animated-bar-race-vizstudio.png",
-      "screenshotWebp": "data-studio-animated-bar-race-vizstudio.webp",
+      "screenshot": "datastudio-barrace-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-barrace-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_gohxyzm72d",
       "related": [
         {
@@ -331,8 +331,8 @@
       "keywords": "beeswarm plot Data Studio, swarm chart distribution, individual data point chart",
       "category": "dist",
       "catLabel": "Distribution & Statistical",
-      "screenshot": "data-studio-beeswarm-swarm-plot-vizstudio.png",
-      "screenshotWebp": "data-studio-beeswarm-swarm-plot-vizstudio.webp",
+      "screenshot": "datastudio-beeswarm-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-beeswarm-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_wo3a22012d",
       "related": [
         {
@@ -371,8 +371,8 @@
       "keywords": "calendar heatmap Data Studio, year calendar chart, day-level activity visualization",
       "category": "combo",
       "catLabel": "Tables, Calendars & Combo",
-      "screenshot": "data-studio-big-calendar-events-vizstudio.png",
-      "screenshotWebp": "data-studio-big-calendar-events-vizstudio.webp",
+      "screenshot": "datastudio-bigcalendar-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-bigcalendar-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_ja42lw502d",
       "related": [
         {
@@ -421,8 +421,8 @@
       "keywords": "bipartite graph Data Studio, two-mode network chart, link visualization",
       "category": "flow",
       "catLabel": "Networks, Flows & Relationships",
-      "screenshot": "data-studio-bipartite-graph-vizstudio.png",
-      "screenshotWebp": "data-studio-bipartite-graph-vizstudio.webp",
+      "screenshot": "datastudio-bipartite-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-bipartite-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_dtqpean72d",
       "related": [
         {
@@ -471,8 +471,8 @@
       "keywords": "break-even analysis chart, fixed cost variable cost visualization, Data Studio finance chart",
       "category": "finance",
       "catLabel": "Finance & Performance",
-      "screenshot": "data-studio-break-even-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-break-even-chart-vizstudio.webp",
+      "screenshot": "datastudio-breakeven-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-breakeven-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_sqzzb9ms2d",
       "related": [
         {
@@ -516,8 +516,8 @@
       "keywords": "bubble chart Data Studio, scatter bubble visualization, 3-metric chart",
       "category": "scatter",
       "catLabel": "Scatter, Correlation & Bubbles",
-      "screenshot": "data-studio-bubble-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-bubble-chart-vizstudio.webp",
+      "screenshot": "datastudio-bubble-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-bubble-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_kbgy084s2d",
       "related": [
         {
@@ -566,8 +566,8 @@
       "keywords": "bubble grid chart, dot matrix visualization, categorical bubble chart Data Studio",
       "category": "scatter",
       "catLabel": "Scatter, Correlation & Bubbles",
-      "screenshot": "data-studio-bubble-grid-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-bubble-grid-chart-vizstudio.webp",
+      "screenshot": "datastudio-bubblegrid-vizstudio.png",
+      "screenshotWebp": "datastudio-bubblegrid-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_j03azc5s2d",
       "related": [
         {
@@ -616,8 +616,8 @@
       "keywords": "bubble pack chart, packed circle chart Data Studio, category bubble visualization",
       "category": "geo",
       "catLabel": "Maps & Geo",
-      "screenshot": "data-studio-bubble-map-vizstudio.png",
-      "screenshotWebp": "data-studio-bubble-map-vizstudio.webp",
+      "screenshot": "datastudio-bubblemap-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-bubblemap-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/85118487",
       "related": [
         {
@@ -656,8 +656,8 @@
       "keywords": "bullet chart Data Studio, Stephen Few KPI chart, target vs actual bar",
       "category": "kpi",
       "catLabel": "KPI, Status & Goals",
-      "screenshot": "data-studio-bullet-chart-kpi-vizstudio.png",
-      "screenshotWebp": "data-studio-bullet-chart-kpi-vizstudio.webp",
+      "screenshot": "datastudio-bulletchart-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-bulletchart-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_7vxecf5s2d",
       "related": [
         {
@@ -706,8 +706,8 @@
       "keywords": "bump chart Data Studio, rank over time chart, line ranking visualization",
       "category": "time",
       "catLabel": "Time Series & Trends",
-      "screenshot": "data-studio-bump-chart-rank-tracking-vizstudio.png",
-      "screenshotWebp": "data-studio-bump-chart-rank-tracking-vizstudio.webp",
+      "screenshot": "datastudio-bump-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-bump-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_bnixt43r2d",
       "related": [
         {
@@ -756,8 +756,8 @@
       "keywords": "mini calendar heatmap Data Studio, monthly heatmap, day-tinted calendar",
       "category": "combo",
       "catLabel": "Tables, Calendars & Combo",
-      "screenshot": "data-studio-mini-calendar-heatmap-vizstudio.png",
-      "screenshotWebp": "data-studio-mini-calendar-heatmap-vizstudio.webp",
+      "screenshot": "datastudio-calendarHeatmap-vizstudio.png",
+      "screenshotWebp": "datastudio-calendarHeatmap-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_r5bgky012d",
       "related": [
         {
@@ -806,8 +806,8 @@
       "keywords": "cashflow chart Data Studio, mirror bar chart, income vs expense visualization",
       "category": "finance",
       "catLabel": "Finance & Performance",
-      "screenshot": "data-studio-cashflow-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-cashflow-chart-vizstudio.webp",
+      "screenshot": "datastudio-cashflow-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-cashflow-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_q7qqfw012d",
       "related": [
         {
@@ -851,8 +851,8 @@
       "keywords": "tile grid map Data Studio, choropleth state map, country tile chart",
       "category": "geo",
       "catLabel": "Maps & Geo",
-      "screenshot": "data-studio-choropleth-map-vizstudio.png",
-      "screenshotWebp": "data-studio-choropleth-map-vizstudio.webp",
+      "screenshot": "datastudio-choropleth-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-choropleth-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_h6r57an72d",
       "related": [
         {
@@ -891,8 +891,8 @@
       "keywords": "chord diagram Data Studio, circular flow chart, relationship ribbon visualization",
       "category": "flow",
       "catLabel": "Networks, Flows & Relationships",
-      "screenshot": "data-studio-chord-diagram-vizstudio.png",
-      "screenshotWebp": "data-studio-chord-diagram-vizstudio.webp",
+      "screenshot": "datastudio-chord-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-chord-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_6kaqgcn72d",
       "related": [
         {
@@ -941,8 +941,8 @@
       "keywords": "connection map chart, entity relationship visualization Data Studio",
       "category": "flow",
       "catLabel": "Networks, Flows & Relationships",
-      "screenshot": "data-studio-connection-map-geo-vizstudio.png",
-      "screenshotWebp": "data-studio-connection-map-geo-vizstudio.webp",
+      "screenshot": "datastudio-connmap-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-connmap-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_aobau3lt2d",
       "related": [
         {
@@ -991,8 +991,8 @@
       "keywords": "conversion heatmap Data Studio, hour-of-day visualization, day-of-week heatmap",
       "category": "combo",
       "catLabel": "Tables, Calendars & Combo",
-      "screenshot": "data-studio-conversion-heatmap-vizstudio.png",
-      "screenshotWebp": "data-studio-conversion-heatmap-vizstudio.webp",
+      "screenshot": "datastudio-convheatmap-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-convheatmap-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_71ezxtpt2d",
       "related": [
         {
@@ -1041,8 +1041,8 @@
       "keywords": "curved column chart, animated bar chart Data Studio, decorative bar chart",
       "category": "bars",
       "catLabel": "Bars, Columns & Ranking",
-      "screenshot": "data-studio-curved-columns-animated-vizstudio.png",
-      "screenshotWebp": "data-studio-curved-columns-animated-vizstudio.webp",
+      "screenshot": "datastudio-curvedcol-animated-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-curvedcol-animated-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_dwgmrbmt2d",
       "related": [
         {
@@ -1091,8 +1091,8 @@
       "keywords": "curved column chart static, decorative bar chart Data Studio",
       "category": "bars",
       "catLabel": "Bars, Columns & Ranking",
-      "screenshot": "data-studio-curved-columns-static-vizstudio.png",
-      "screenshotWebp": "data-studio-curved-columns-static-vizstudio.webp",
+      "screenshot": "datastudio-curvedcol-static-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-curvedcol-static-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_byg2eemt2d",
       "related": [
         {
@@ -1141,8 +1141,8 @@
       "keywords": "comparison table Data Studio, MoM YoY table, period over period table",
       "category": "combo",
       "catLabel": "Tables, Calendars & Combo",
-      "screenshot": "data-studio-row-over-row-data-table-vizstudio.png",
-      "screenshotWebp": "data-studio-row-over-row-data-table-vizstudio.webp",
+      "screenshot": "datastudio-datatable-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-datatable-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_y57lhen72d",
       "related": [
         {
@@ -1191,8 +1191,8 @@
       "keywords": "dependency wheel chart, circular dependency visualization Data Studio",
       "category": "flow",
       "catLabel": "Networks, Flows & Relationships",
-      "screenshot": "data-studio-dependency-wheel-chord-vizstudio.png",
-      "screenshotWebp": "data-studio-dependency-wheel-chord-vizstudio.webp",
+      "screenshot": "datastudio-depwheel-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-depwheel-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_6x3a2qmt2d",
       "related": [
         {
@@ -1241,8 +1241,8 @@
       "keywords": "dual axis chart Data Studio, bar plus line chart, two-axis visualization",
       "category": "time",
       "catLabel": "Time Series & Trends",
-      "screenshot": "data-studio-dual-axis-line-bar-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-dual-axis-line-bar-chart-vizstudio.webp",
+      "screenshot": "datastudio-dualaxis-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-dualaxis-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_8w4o9c7y2d",
       "related": [
         {
@@ -1291,8 +1291,8 @@
       "keywords": "dual donut chart Data Studio, paired donut visualization, comparison pie chart",
       "category": "parts",
       "catLabel": "Pies, Donuts & Part-to-Whole",
-      "screenshot": "data-studio-dual-donut-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-dual-donut-chart-vizstudio.webp",
+      "screenshot": "datastudio-dualdonut-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-dualdonut-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_ku7fcf7y2d",
       "related": [
         {
@@ -1341,8 +1341,8 @@
       "keywords": "dumbbell chart Data Studio, two-point comparison chart, gap visualization",
       "category": "bars",
       "catLabel": "Bars, Columns & Ranking",
-      "screenshot": "data-studio-dumbbell-chart-comparison-vizstudio.png",
-      "screenshotWebp": "data-studio-dumbbell-chart-comparison-vizstudio.webp",
+      "screenshot": "datastudio-dumbbell-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-dumbbell-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_olghdt7y2d",
       "related": [
         {
@@ -1391,8 +1391,8 @@
       "keywords": "actual vs target chart Data Studio, earnings beat miss visualization, dot chart",
       "category": "finance",
       "catLabel": "Finance & Performance",
-      "screenshot": "data-studio-actual-vs-target-dot-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-actual-vs-target-dot-chart-vizstudio.webp",
+      "screenshot": "datastudio-earningsdot-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-earningsdot-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_55lcyx012d",
       "related": [
         {
@@ -1436,8 +1436,8 @@
       "keywords": "engagement heatmap Data Studio, normalized matrix chart, row column heatmap",
       "category": "combo",
       "catLabel": "Tables, Calendars & Combo",
-      "screenshot": "data-studio-engagement-heatmap-vizstudio.png",
-      "screenshotWebp": "data-studio-engagement-heatmap-vizstudio.webp",
+      "screenshot": "datastudio-engageheatmap-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-engageheatmap-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_1hppj5pt2d",
       "related": [
         {
@@ -1486,8 +1486,8 @@
       "keywords": "flow map Data Studio, origin destination chart, geographic flow visualization",
       "category": "flow",
       "catLabel": "Networks, Flows & Relationships",
-      "screenshot": "data-studio-flow-map-geo-routes-vizstudio.png",
-      "screenshotWebp": "data-studio-flow-map-geo-routes-vizstudio.webp",
+      "screenshot": "datastudio-flowmap-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-flowmap-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_e3d3yupt2d",
       "related": [
         {
@@ -1536,8 +1536,8 @@
       "keywords": "force-directed graph Data Studio, network chart, node link visualization",
       "category": "flow",
       "catLabel": "Networks, Flows & Relationships",
-      "screenshot": "data-studio-force-directed-network-graph-vizstudio.png",
-      "screenshotWebp": "data-studio-force-directed-network-graph-vizstudio.webp",
+      "screenshot": "datastudio-forcenet-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-forcenet-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_w6fh4vpt2d",
       "related": [
         {
@@ -1586,8 +1586,8 @@
       "keywords": "grouped bar chart Data Studio, side by side bar comparison, multi-series bars",
       "category": "bars",
       "catLabel": "Bars, Columns & Ranking",
-      "screenshot": "data-studio-grouped-bar-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-grouped-bar-chart-vizstudio.webp",
+      "screenshot": "datastudio-groupedbar-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-groupedbar-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_bb6jxxpt2d",
       "related": [
         {
@@ -1636,8 +1636,8 @@
       "keywords": "hexbin chart Data Studio, hexagonal density plot, scatter density visualization",
       "category": "scatter",
       "catLabel": "Scatter, Correlation & Bubbles",
-      "screenshot": "data-studio-hexbin-scatter-plot-vizstudio.png",
-      "screenshotWebp": "data-studio-hexbin-scatter-plot-vizstudio.webp",
+      "screenshot": "datastudio-hexbin-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-hexbin-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_7ea20ypt2d",
       "related": [
         {
@@ -1686,8 +1686,8 @@
       "keywords": "hexbin density chart, density plot Data Studio, hex grid visualization",
       "category": "dist",
       "catLabel": "Distribution & Statistical",
-      "screenshot": "data-studio-hexbin-density-plot-vizstudio.png",
-      "screenshotWebp": "data-studio-hexbin-density-plot-vizstudio.webp",
+      "screenshot": "datastudio-hexbindensity-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-hexbindensity-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_gvuvnzpt2d",
       "related": [
         {
@@ -1726,8 +1726,8 @@
       "keywords": "3D globe chart Data Studio, orthographic projection visualization, world choropleth globe, Natural Earth polygons",
       "category": "geo",
       "catLabel": "Maps & Geo",
-      "screenshot": "data-studio-interactive-3d-globe-vizstudio.png",
-      "screenshotWebp": "data-studio-interactive-3d-globe-vizstudio.webp",
+      "screenshot": "datastudio-interactiveGlobe-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-interactiveGlobe-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_2nvm80pt2d",
       "related": [
         {
@@ -1766,8 +1766,8 @@
       "keywords": "KPI cards Data Studio, sparkline scorecard, executive dashboard widget",
       "category": "kpi",
       "catLabel": "KPI, Status & Goals",
-      "screenshot": "data-studio-kpi-sparkline-cards-vizstudio.png",
-      "screenshotWebp": "data-studio-kpi-sparkline-cards-vizstudio.webp",
+      "screenshot": "datastudio-kpisparkline-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-kpisparkline-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_jzzpx2pt2d",
       "related": [
         {
@@ -1816,8 +1816,8 @@
       "keywords": "lollipop chart Data Studio, dot and stem chart, minimalist bar chart",
       "category": "bars",
       "catLabel": "Bars, Columns & Ranking",
-      "screenshot": "data-studio-lollipop-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-lollipop-chart-vizstudio.webp",
+      "screenshot": "datastudio-lollipopchart-vizstudio.png",
+      "screenshotWebp": "datastudio-lollipopchart-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_5fn493pt2d",
       "related": [
         {
@@ -1866,8 +1866,8 @@
       "keywords": "adjacency matrix chart Data Studio, network matrix visualization, edge matrix",
       "category": "flow",
       "catLabel": "Networks, Flows & Relationships",
-      "screenshot": "data-studio-adjacency-matrix-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-adjacency-matrix-chart-vizstudio.webp",
+      "screenshot": "datastudio-matrixchart-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-matrixchart-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_6cow118y2d",
       "related": [
         {
@@ -1916,8 +1916,8 @@
       "keywords": "mirror bar chart Data Studio, population pyramid, two-sided bar chart",
       "category": "bars",
       "catLabel": "Bars, Columns & Ranking",
-      "screenshot": "data-studio-mirror-bar-chart-tornado-vizstudio.png",
-      "screenshotWebp": "data-studio-mirror-bar-chart-tornado-vizstudio.webp",
+      "screenshot": "datastudio-mirrorbar-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-mirrorbar-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_92xl55pt2d",
       "related": [
         {
@@ -1966,8 +1966,8 @@
       "keywords": "multi-ring donut chart Data Studio, nested donut visualization, ring chart",
       "category": "parts",
       "catLabel": "Pies, Donuts & Part-to-Whole",
-      "screenshot": "data-studio-multi-ring-donut-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-multi-ring-donut-chart-vizstudio.webp",
+      "screenshot": "datastudio-multiring-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-multiring-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_0hpap8pt2d",
       "related": [
         {
@@ -2016,8 +2016,8 @@
       "keywords": "opposite diagram chart, pros vs cons visualization, two-sided chart Data Studio",
       "category": "flow",
       "catLabel": "Networks, Flows & Relationships",
-      "screenshot": "data-studio-opposite-diagram-comparison-vizstudio.png",
-      "screenshotWebp": "data-studio-opposite-diagram-comparison-vizstudio.webp",
+      "screenshot": "datastudio-oppositediagram-vizstudio.png",
+      "screenshotWebp": "datastudio-oppositediagram-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
       "related": [
         {
@@ -2066,8 +2066,8 @@
       "keywords": "parallel coordinates plot Data Studio, multivariate chart, brushing visualization",
       "category": "flow",
       "catLabel": "Networks, Flows & Relationships",
-      "screenshot": "data-studio-parallel-coordinates-plot-vizstudio.png",
-      "screenshotWebp": "data-studio-parallel-coordinates-plot-vizstudio.webp",
+      "screenshot": "datastudio-parallelcoords-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-parallelcoords-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_d9i1zcqt2d",
       "related": [
         {
@@ -2116,8 +2116,8 @@
       "keywords": "parallel sets chart Data Studio, categorical flow visualization, sankey for categories",
       "category": "flow",
       "catLabel": "Networks, Flows & Relationships",
-      "screenshot": "data-studio-parallel-sets-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-parallel-sets-chart-vizstudio.webp",
+      "screenshot": "datastudio-parallelsets-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-parallelsets-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_hupmn88y2d",
       "related": [
         {
@@ -2166,8 +2166,8 @@
       "keywords": "pareto chart Data Studio, 80/20 analysis, descending bar with cumulative line",
       "category": "bars",
       "catLabel": "Bars, Columns & Ranking",
-      "screenshot": "data-studio-pareto-chart-80-20-vizstudio.png",
-      "screenshotWebp": "data-studio-pareto-chart-80-20-vizstudio.webp",
+      "screenshot": "datastudio-pareto-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-pareto-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_2srlty012d",
       "related": [
         {
@@ -2216,8 +2216,8 @@
       "keywords": "portfolio barcode chart, holdings visualization Data Studio, position bar strip",
       "category": "flow",
       "catLabel": "Networks, Flows & Relationships",
-      "screenshot": "data-studio-portfolio-barcode-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-portfolio-barcode-chart-vizstudio.webp",
+      "screenshot": "datastudio-portfoliobarcode-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-portfoliobarcode-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_vmg39eqt2d",
       "related": [
         {
@@ -2266,8 +2266,8 @@
       "keywords": "portfolio composition chart, pie plus barcode Data Studio, holdings visualization",
       "category": "flow",
       "catLabel": "Networks, Flows & Relationships",
-      "screenshot": "data-studio-portfolio-pie-barcode-vizstudio.png",
-      "screenshotWebp": "data-studio-portfolio-pie-barcode-vizstudio.webp",
+      "screenshot": "datastudio-portfoliopiebarcode-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-portfoliopiebarcode-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_zop3tfqt2d",
       "related": [
         {
@@ -2316,8 +2316,8 @@
       "keywords": "progress circles chart Data Studio, OKR widget, donut gauge grid",
       "category": "kpi",
       "catLabel": "KPI, Status & Goals",
-      "screenshot": "data-studio-progress-circles-radial-vizstudio.png",
-      "screenshotWebp": "data-studio-progress-circles-radial-vizstudio.webp",
+      "screenshot": "datastudio-progresscircles-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-progresscircles-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_0e8aphqt2d",
       "related": [
         {
@@ -2366,8 +2366,8 @@
       "keywords": "pyramid area chart, decorative magnitude chart Data Studio",
       "category": "bars",
       "catLabel": "Bars, Columns & Ranking",
-      "screenshot": "data-studio-pyramid-area-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-pyramid-area-chart-vizstudio.webp",
+      "screenshot": "datastudio-pyramidarea-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-pyramidarea-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_8ooyay012d",
       "related": [
         {
@@ -2416,8 +2416,8 @@
       "keywords": "Q-Q plot Data Studio, quantile chart, distribution comparison",
       "category": "dist",
       "catLabel": "Distribution & Statistical",
-      "screenshot": "data-studio-qq-plot-quantile-vizstudio.png",
-      "screenshotWebp": "data-studio-qq-plot-quantile-vizstudio.webp",
+      "screenshot": "datastudio-qq-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-qq-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_lov5jjqt2d",
       "related": [
         {
@@ -2456,8 +2456,8 @@
       "keywords": "quadrant scatter Data Studio, 2x2 matrix chart, BCG matrix visualization",
       "category": "scatter",
       "catLabel": "Scatter, Correlation & Bubbles",
-      "screenshot": "data-studio-quadrant-scatter-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-quadrant-scatter-chart-vizstudio.webp",
+      "screenshot": "datastudio-quadrant-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-quadrant-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_19jmzin72d",
       "related": [
         {
@@ -2506,8 +2506,8 @@
       "keywords": "radar chart with table Data Studio, spider chart with data, capability radar",
       "category": "combo",
       "catLabel": "Tables, Calendars & Combo",
-      "screenshot": "data-studio-radar-chart-data-table-vizstudio.png",
-      "screenshotWebp": "data-studio-radar-chart-data-table-vizstudio.webp",
+      "screenshot": "datastudio-radartable-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-radartable-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_z8zacd9y2d",
       "related": [
         {
@@ -2556,8 +2556,8 @@
       "keywords": "radial tree chart Data Studio, hierarchy visualization, radial dendrogram",
       "category": "flow",
       "catLabel": "Networks, Flows & Relationships",
-      "screenshot": "data-studio-radial-tree-hierarchy-vizstudio.png",
-      "screenshotWebp": "data-studio-radial-tree-hierarchy-vizstudio.webp",
+      "screenshot": "datastudio-radialtree-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-radialtree-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_k9cof5012d",
       "related": [
         {
@@ -2606,8 +2606,8 @@
       "keywords": "revenue breakdown chart Data Studio, bar plus line, segment revenue visualization",
       "category": "finance",
       "catLabel": "Finance & Performance",
-      "screenshot": "data-studio-revenue-breakdown-bar-line-combo-vizstudio.png",
-      "screenshotWebp": "data-studio-revenue-breakdown-bar-line-combo-vizstudio.webp",
+      "screenshot": "datastudio-revenuebreakdown-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-revenuebreakdown-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_ujzlxjn72d",
       "related": [
         {
@@ -2651,8 +2651,8 @@
       "keywords": "scatter with trendline Data Studio, regression chart, R squared visualization",
       "category": "scatter",
       "catLabel": "Scatter, Correlation & Bubbles",
-      "screenshot": "data-studio-scatter-plot-trendline-vizstudio.png",
-      "screenshotWebp": "data-studio-scatter-plot-trendline-vizstudio.webp",
+      "screenshot": "datastudio-scattertrend-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-scattertrend-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_vz4njpqt2d",
       "related": [
         {
@@ -2701,8 +2701,8 @@
       "keywords": "semicircle gauge Data Studio, half-arc gauge, compact KPI widget",
       "category": "kpi",
       "catLabel": "KPI, Status & Goals",
-      "screenshot": "data-studio-semicircle-gauge-vizstudio.png",
-      "screenshotWebp": "data-studio-semicircle-gauge-vizstudio.webp",
+      "screenshot": "datastudio-semicirclegauge-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-semicirclegauge-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_rler9bmf3d",
       "related": [
         {
@@ -2751,8 +2751,8 @@
       "keywords": "semicircle pie chart Data Studio, half donut chart, compact composition chart",
       "category": "kpi",
       "catLabel": "KPI, Status & Goals",
-      "screenshot": "data-studio-semi-circle-pie-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-semi-circle-pie-chart-vizstudio.webp",
+      "screenshot": "datastudio-semicirclepie-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-semicirclepie-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_ekceck702d",
       "related": [
         {
@@ -2801,8 +2801,8 @@
       "keywords": "column chart Data Studio, polished bar chart, themed bar chart",
       "category": "bars",
       "catLabel": "Bars, Columns & Ranking",
-      "screenshot": "data-studio-simple-column-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-simple-column-chart-vizstudio.webp",
+      "screenshot": "datastudio-simplecol-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-simplecol-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_yfp793502d",
       "related": [
         {
@@ -2851,8 +2851,8 @@
       "keywords": "slice dice treemap Data Studio, hierarchical chart, treemap drilldown",
       "category": "tree",
       "catLabel": "Hierarchies & Drilldown",
-      "screenshot": "data-studio-slice-dice-treemap-vizstudio.png",
-      "screenshotWebp": "data-studio-slice-dice-treemap-vizstudio.webp",
+      "screenshot": "datastudio-slicedice-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-slicedice-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_gsboed602d",
       "related": [
         {
@@ -2896,8 +2896,8 @@
       "keywords": "small multiples chart Data Studio, trellis grid, faceted chart",
       "category": "tree",
       "catLabel": "Hierarchies & Drilldown",
-      "screenshot": "data-studio-small-multiples-trellis-vizstudio.png",
-      "screenshotWebp": "data-studio-small-multiples-trellis-vizstudio.webp",
+      "screenshot": "datastudio-smallmultiples-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-smallmultiples-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_zdjo32502d",
       "related": [
         {
@@ -2941,8 +2941,8 @@
       "keywords": "solid gauge Data Studio, goal completion chart, KPI gauge",
       "category": "kpi",
       "catLabel": "KPI, Status & Goals",
-      "screenshot": "data-studio-solid-gauge-kpi-vizstudio.png",
-      "screenshotWebp": "data-studio-solid-gauge-kpi-vizstudio.webp",
+      "screenshot": "datastudio-solidgauge-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-solidgauge-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_b03yjz502d",
       "related": [
         {
@@ -2991,8 +2991,8 @@
       "keywords": "stacked area chart Data Studio, composition trend, area trend chart",
       "category": "time",
       "catLabel": "Time Series & Trends",
-      "screenshot": "data-studio-stacked-area-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-stacked-area-chart-vizstudio.webp",
+      "screenshot": "datastudio-stackedarea-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-stackedarea-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_9wgbgsqt2d",
       "related": [
         {
@@ -3041,8 +3041,8 @@
       "keywords": "animated stacked bar negative, signed stacked bar zoom, Data Studio finance chart",
       "category": "time",
       "catLabel": "Time Series & Trends",
-      "screenshot": "data-studio-stacked-bar-negative-animated-vizstudio.png",
-      "screenshotWebp": "data-studio-stacked-bar-negative-animated-vizstudio.webp",
+      "screenshot": "datastudio-stackedneg-animated-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-stackedneg-animated-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_k6qb74ig3d",
       "related": [
         {
@@ -3091,8 +3091,8 @@
       "keywords": "stacked bar negative values Data Studio, signed stacked bar, net total chart",
       "category": "time",
       "catLabel": "Time Series & Trends",
-      "screenshot": "data-studio-stacked-bar-negative-static-vizstudio.png",
-      "screenshotWebp": "data-studio-stacked-bar-negative-static-vizstudio.webp",
+      "screenshot": "datastudio-stackedneg-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-stackedneg-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_m4v41zig3d",
       "related": [
         {
@@ -3141,8 +3141,8 @@
       "keywords": "story flow chart, narrative chart Data Studio, storyline visualization",
       "category": "flow",
       "catLabel": "Networks, Flows & Relationships",
-      "screenshot": "data-studio-story-flow-narrative-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-story-flow-narrative-chart-vizstudio.webp",
+      "screenshot": "datastudio-storyflow-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-storyflow-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_ze17ycjg3d",
       "related": [
         {
@@ -3191,8 +3191,8 @@
       "keywords": "streamgraph Data Studio, flowing area chart, composition over time",
       "category": "time",
       "catLabel": "Time Series & Trends",
-      "screenshot": "data-studio-streamgraph-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-streamgraph-chart-vizstudio.webp",
+      "screenshot": "datastudio-streamgraph-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-streamgraph-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_eeiebljg3d",
       "related": [
         {
@@ -3241,8 +3241,8 @@
       "keywords": "stream wave chart, gradient streamgraph Data Studio, editorial composition chart",
       "category": "time",
       "catLabel": "Time Series & Trends",
-      "screenshot": "data-studio-stream-wave-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-stream-wave-chart-vizstudio.webp",
+      "screenshot": "datastudio-streamwave-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-streamwave-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_9kkygojg3d",
       "related": [
         {
@@ -3291,8 +3291,8 @@
       "keywords": "sunburst chart Data Studio, radial hierarchy chart, drilldown visualization",
       "category": "tree",
       "catLabel": "Hierarchies & Drilldown",
-      "screenshot": "data-studio-sunburst-chart-hierarchy-vizstudio.png",
-      "screenshotWebp": "data-studio-sunburst-chart-hierarchy-vizstudio.webp",
+      "screenshot": "datastudio-sunburstChart-vizstudio.png",
+      "screenshotWebp": "datastudio-sunburstChart-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_6y2fu4lf3d",
       "related": [
         {
@@ -3336,8 +3336,8 @@
       "keywords": "annotated time series Data Studio, event marker chart, line chart annotations",
       "category": "time",
       "catLabel": "Time Series & Trends",
-      "screenshot": "data-studio-time-series-annotations-vizstudio.png",
-      "screenshotWebp": "data-studio-time-series-annotations-vizstudio.webp",
+      "screenshot": "datastudio-timeseries-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-timeseries-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_adp7o6ae3d",
       "related": [
         {
@@ -3386,8 +3386,8 @@
       "keywords": "traffic source chord Data Studio, attribution chart, marketing flow chord",
       "category": "flow",
       "catLabel": "Networks, Flows & Relationships",
-      "screenshot": "data-studio-traffic-sources-chord-diagram-vizstudio.png",
-      "screenshotWebp": "data-studio-traffic-sources-chord-diagram-vizstudio.webp",
+      "screenshot": "datastudio-trafficsrc-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-trafficsrc-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_1rl6avig3d",
       "related": [
         {
@@ -3436,8 +3436,8 @@
       "keywords": "zoomable treemap Data Studio, drilldown chart, hierarchical treemap",
       "category": "tree",
       "catLabel": "Hierarchies & Drilldown",
-      "screenshot": "data-studio-zoomable-treemap-vizstudio.png",
-      "screenshotWebp": "data-studio-zoomable-treemap-vizstudio.webp",
+      "screenshot": "datastudio-treemapzoom-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-treemapzoom-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_kmopn9v62d",
       "related": [
         {
@@ -3481,8 +3481,8 @@
       "keywords": "variable radius donut Data Studio, nightingale rose chart, polar bar donut",
       "category": "parts",
       "catLabel": "Pies, Donuts & Part-to-Whole",
-      "screenshot": "data-studio-variable-radius-nested-donut-vizstudio.png",
-      "screenshotWebp": "data-studio-variable-radius-nested-donut-vizstudio.webp",
+      "screenshot": "datastudio-vardonut-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-vardonut-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_aaynhclg3d",
       "related": [
         {
@@ -3531,8 +3531,8 @@
       "keywords": "variance bar chart Data Studio, plan vs actual chart, signed bar chart",
       "category": "bars",
       "catLabel": "Bars, Columns & Ranking",
-      "screenshot": "data-studio-variance-bar-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-variance-bar-chart-vizstudio.webp",
+      "screenshot": "datastudio-variancebar-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-variancebar-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_5k4lkvpt2d",
       "related": [
         {
@@ -3581,8 +3581,8 @@
       "keywords": "variable radius pie Data Studio, nightingale rose chart, polar area chart",
       "category": "parts",
       "catLabel": "Pies, Donuts & Part-to-Whole",
-      "screenshot": "data-studio-variable-radius-pie-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-variable-radius-pie-chart-vizstudio.webp",
+      "screenshot": "datastudio-varradiuspie-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-varradiuspie-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_tuskjaof3d",
       "related": [
         {
@@ -3681,8 +3681,8 @@
       "keywords": "waffle chart Data Studio, 100 square chart, part to whole visualization",
       "category": "parts",
       "catLabel": "Pies, Donuts & Part-to-Whole",
-      "screenshot": "data-studio-waffle-chart-vizstudio.png",
-      "screenshotWebp": "data-studio-waffle-chart-vizstudio.webp",
+      "screenshot": "datastudio-waffle-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-waffle-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_ttfqoxlg3d",
       "related": [
         {
@@ -3731,8 +3731,8 @@
       "keywords": "wind rose chart Data Studio, polar bar chart, directional chart",
       "category": "bars",
       "catLabel": "Bars, Columns & Ranking",
-      "screenshot": "data-studio-wind-rose-polar-bar-vizstudio.png",
-      "screenshotWebp": "data-studio-wind-rose-polar-bar-vizstudio.webp",
+      "screenshot": "datastudio-windrose-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-windrose-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_ylikm2502d",
       "related": [
         {
@@ -3781,8 +3781,8 @@
       "keywords": "word cloud Data Studio, tag cloud chart, frequency word visualization",
       "category": "combo",
       "catLabel": "Tables, Calendars & Combo",
-      "screenshot": "data-studio-word-tag-cloud-vizstudio.png",
-      "screenshotWebp": "data-studio-word-tag-cloud-vizstudio.webp",
+      "screenshot": "datastudio-wordcloud-viz-vizstudio.png",
+      "screenshotWebp": "datastudio-wordcloud-viz-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_rbb5shmf3d",
       "related": [
         {
