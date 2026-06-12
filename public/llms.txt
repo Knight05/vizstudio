@@ -90,7 +90,6 @@ Key facts:
 - [Radial Tree](https://vizstudio.io/charts/radialtree-viz): Radial hierarchy: branches arrayed around a center, every level visible.
 - [Story Flow / Narrative](https://vizstudio.io/charts/storyflow-viz): Narrative timeline: characters, threads, and where they meet.
 - [Traffic Sources Chord](https://vizstudio.io/charts/trafficsrc-viz): Traffic source chord: every channel-to-conversion flow ribboned.
-- [Venn / Euler Diagram](https://vizstudio.io/charts/venn-viz): Venn / Euler diagrams: set overlaps with the right geometry.
 
 ### Pies, Donuts & Part-to-Whole
 

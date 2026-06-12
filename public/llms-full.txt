@@ -390,13 +390,6 @@ What it is: Chord diagram with sources and conversions as arcs, ribbons weighted
 Why it works: Sankey is one-directional; for true multi-touch ↔ multi-conversion flows, chord reads cleaner.
 Keywords: traffic source chord Data Studio, attribution chart, marketing flow chord
 
-#### Venn / Euler Diagram — https://vizstudio.io/charts/venn-viz
-
-Venn / Euler diagrams: set overlaps with the right geometry.
-What it is: 2–4 circle Venn/Euler diagram with sized circles, correct overlap geometry, count labels, tooltip.
-Why it works: The Venn diagram every dashboard tries to fake with text. This one does the math.
-Keywords: Venn diagram Data Studio, Euler chart, set overlap visualization
-
 ### Pies, Donuts & Part-to-Whole
 
 #### Dual Donut — https://vizstudio.io/charts/dualdonut-viz

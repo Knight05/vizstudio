@@ -349,7 +349,7 @@ function renderHeroDash() {
 // ─── Hero variant G - marquee rows ────────────────────────────
 const MARQUEE_ICONS = [
   'timeseries-viz','sunburstChart','waffle-viz','streamgraph-viz','bubble-viz','choropleth-viz',
-  'npsgauge-viz','hexbin-viz','venn-viz','radialtree-viz','ridgeplot-viz','dualdonut-viz',
+  'npsgauge-viz','hexbin-viz','radialtree-viz','ridgeplot-viz','dualdonut-viz',
   'stackedarea-viz','beeswarm-viz','forcenet-viz','calendarHeatmap','flowmap-viz','bump-viz',
   'windrose-viz','treemapzoom-viz','barbell-viz','scattertrend-viz','parallelcoords-viz','curvedcol-static-viz',
 ];
@@ -571,7 +571,7 @@ const LIBRARY = [
   { src: 'portfoliobarcode-viz', name: 'Portfolio barcode', cat: 'part' },
   { src: 'portfoliopiebarcode-viz', name: 'Portfolio pie barcode', cat: 'part' },
   { src: 'revenuebreakdown-viz', name: 'Revenue breakdown', cat: 'part' },
-  { src: 'venn-viz', name: 'Venn', cat: 'part' },
+  { src:  name: 'Venn', cat: 'part' },
   { src: 'parallelsets-viz', name: 'Parallel sets', cat: 'part' },
   // Distribution / relationship
   { src: 'bubble-viz', name: 'Bubble', cat: 'distrib' },

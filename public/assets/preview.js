@@ -43,7 +43,7 @@
     flow: ['chord-viz','depwheel-viz','arcdiagram-viz','forcenet-viz','bipartite-viz','matrixchart-viz','parallelsets-viz','parallelcoords-viz','sankey-viz','trafficsrc-viz','storyflow-viz','connmap-viz','flowmap-viz','radialtree-viz','oppositediagram'],
     map:  ['interactiveGlobe-viz'],
     tree: ['slicedice-viz','treemapzoom-viz','sunburstChart'],
-    misc: ['waffle-viz','dumbbell-viz','lollipopchart','bulletchart-viz','radartable-viz','earningsdot-viz','kpisparkline-viz','wordcloud-viz','datatable-viz','resgant-viz','trafficlight-viz','portfoliobarcode-viz','portfoliopiebarcode-viz','verticalprogress-viz','audioverlap-viz','venn-viz'],
+    misc: ['waffle-viz','dumbbell-viz','lollipopchart','bulletchart-viz','radartable-viz','earningsdot-viz','kpisparkline-viz','wordcloud-viz','datatable-viz','resgant-viz','trafficlight-viz','portfoliobarcode-viz','portfoliopiebarcode-viz','verticalprogress-viz','audioverlap-viz'],
   };
   let kind = 'bar';
   for (const k in TYPE_MAP) if (TYPE_MAP[k].includes(id)) { kind = k; break; }

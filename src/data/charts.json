@@ -3608,56 +3608,6 @@
       ]
     },
     {
-      "id": "venn-viz",
-      "name": "Venn / Euler Diagram",
-      "tagline": "Venn / Euler diagrams: set overlaps with the right geometry.",
-      "long": "Venn / Euler Diagram renders 2–4 set overlaps with circle sizes proportional to set size and intersection geometry placed correctly. For audience overlaps, feature overlaps, and any \"who’s in all three?\" question.",
-      "what": "2–4 circle Venn/Euler diagram with sized circles, correct overlap geometry, count labels, tooltip.",
-      "why": "The Venn diagram every dashboard tries to fake with text. This one does the math.",
-      "uses": [
-        {
-          "tag": "Marketing",
-          "body": "Audience overlap across three campaigns."
-        },
-        {
-          "tag": "Product",
-          "body": "Users of features A, B, C."
-        },
-        {
-          "tag": "Sales",
-          "body": "Accounts in CRM × Newsletter × Webinar."
-        }
-      ],
-      "keywords": "Venn diagram Data Studio, Euler chart, set overlap visualization",
-      "category": "flow",
-      "catLabel": "Networks, Flows & Relationships",
-      "screenshot": null,
-      "screenshotWebp": null,
-      "dsLink": null,
-      "related": [
-        {
-          "id": "arcdiagram-viz",
-          "name": "Arc Diagram",
-          "tagline": "Node-link arc diagram: relationships you can actually trace."
-        },
-        {
-          "id": "audioverlap-viz",
-          "name": "Audience Overlap",
-          "tagline": "Proportional circles for audience segments: overlaps you can see."
-        },
-        {
-          "id": "bipartite-viz",
-          "name": "Bipartite Graph",
-          "tagline": "Two columns, every link explicit: A-to-B relationships made obvious."
-        },
-        {
-          "id": "chord-viz",
-          "name": "Chord Diagram",
-          "tagline": "Circular chord ribbons: every pairwise flow, perfectly weighted."
-        }
-      ]
-    },
-    {
       "id": "waffle-viz",
       "name": "Waffle Chart",
       "tagline": "10×10 grid (every square is 1%), the part-to-whole everyone reads correctly.",

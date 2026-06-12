@@ -2264,37 +2264,6 @@
    ]
   },
   {
-   "id": "venn-viz",
-   "name": "Venn / Euler Diagram",
-   "description": "Venn / Euler Diagram: community visualization.",
-   "iconUrl": "gs://vizstudio-cid9483029/venn-viz/icon-256.webp",
-   "resource": {
-    "js": "gs://vizstudio-cid9483029/venn-viz/script.js",
-    "config": "gs://vizstudio-cid9483029/venn-viz/config.json",
-    "css": "gs://vizstudio-cid9483029/venn-viz/style.css"
-   },
-   "shortDescription": "Venn and Euler diagrams that respect proportion: overlaps actually overlap.",
-   "longDescription": "Renders Venn and Euler diagrams with circle areas and intersections proportional to set sizes. Handles 2-3 sets cleanly. The right tool when 'which customers are in both lists?' is the question and a list-overlap stat doesn't tell the visual story. Counts and percentages render inside each region for quick exact reads.",
-   "category": "Distribution",
-   "useCases": [
-    "Audience overlap across 3 ad platforms",
-    "Customers in two product cohorts",
-    "Skill set overlap across team members",
-    "Survey respondents fitting multiple personas"
-   ],
-   "examples": [
-    "3 ad platforms with audience overlap",
-    "2 product cohorts with shared customers"
-   ],
-   "tags": [
-    "venn",
-    "euler",
-    "overlap",
-    "set",
-    "intersection"
-   ]
-  },
-  {
    "id": "waffle-viz",
    "name": "Title",
    "description": "Title: community visualization.",
