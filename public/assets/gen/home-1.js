@@ -571,7 +571,6 @@ const LIBRARY = [
   { src: 'portfoliobarcode-viz', name: 'Portfolio barcode', cat: 'part' },
   { src: 'portfoliopiebarcode-viz', name: 'Portfolio pie barcode', cat: 'part' },
   { src: 'revenuebreakdown-viz', name: 'Revenue breakdown', cat: 'part' },
-  { src:  name: 'Venn', cat: 'part' },
   { src: 'parallelsets-viz', name: 'Parallel sets', cat: 'part' },
   // Distribution / relationship
   { src: 'bubble-viz', name: 'Bubble', cat: 'distrib' },
