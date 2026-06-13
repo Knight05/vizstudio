@@ -95,6 +95,42 @@ export const billingRouter = router({
     }
   }),
 
+  /** The default card on file, for display in the billing tab. */
+  paymentMethod: protectedProcedure.query(async ({ ctx }) => {
+    const sub = await ctx.prisma.subscription.findUnique({
+      where: { userId: ctx.user.id },
+    });
+    if (!sub?.stripeCustomerId) return null;
+
+    try {
+      const customer = await stripe.customers.retrieve(sub.stripeCustomerId, {
+        expand: ["invoice_settings.default_payment_method"],
+      });
+      if (customer.deleted) return null;
+
+      let pm = customer.invoice_settings?.default_payment_method;
+      // Fall back to the most recent card if no explicit default is set.
+      if (!pm || typeof pm === "string") {
+        const list = await stripe.paymentMethods.list({
+          customer: sub.stripeCustomerId,
+          type: "card",
+          limit: 1,
+        });
+        pm = list.data[0];
+      }
+      if (!pm || typeof pm === "string" || !pm.card) return null;
+
+      return {
+        brand: pm.card.brand,
+        last4: pm.card.last4,
+        expMonth: pm.card.exp_month,
+        expYear: pm.card.exp_year,
+      };
+    } catch {
+      return null;
+    }
+  }),
+
   /** Open the Stripe billing portal. */
   createPortalSession: protectedProcedure.mutation(async ({ ctx }) => {
     const sub = await ctx.prisma.subscription.findUnique({

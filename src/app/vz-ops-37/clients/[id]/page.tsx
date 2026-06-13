@@ -3,8 +3,41 @@ import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { formatDate } from "@/lib/utils";
 import { requireAdmin } from "@/lib/admin";
+import { stripe } from "@/lib/stripe";
+import { paymentStanding, usd } from "@/lib/billing";
 import { PaymentBadge } from "../../payment-status";
 import { ChartActions } from "../chart-actions";
+
+type InvoiceRow = {
+  id: string;
+  number: string | null;
+  date: number;
+  amount: number;
+  currency: string;
+  status: string | null;
+  hostedUrl: string | null;
+  pdfUrl: string | null;
+};
+
+/** Live invoice history for a customer. Degrades to [] if Stripe is unreachable. */
+async function fetchInvoices(customerId: string | null): Promise<InvoiceRow[]> {
+  if (!customerId) return [];
+  try {
+    const invoices = await stripe.invoices.list({ customer: customerId, limit: 24 });
+    return invoices.data.map((inv) => ({
+      id: inv.id,
+      number: inv.number,
+      date: inv.created * 1000,
+      amount: inv.amount_paid || inv.amount_due,
+      currency: inv.currency,
+      status: inv.status,
+      hostedUrl: inv.hosted_invoice_url ?? null,
+      pdfUrl: inv.invoice_pdf ?? null,
+    }));
+  } catch {
+    return [];
+  }
+}
 
 export default async function ClientDetailPage({
   params,
@@ -34,6 +67,8 @@ export default async function ClientDetailPage({
     : [];
 
   const sub = user.subscription;
+  const standing = paymentStanding(sub);
+  const invoices = await fetchInvoices(sub?.stripeCustomerId ?? null);
 
   return (
     <section className="grid gap-4">
@@ -79,15 +114,55 @@ export default async function ClientDetailPage({
           {sub ? (
             <dl className="grid grid-cols-[110px_1fr] gap-y-2 text-[13px]">
               <dt className="text-muted">Plan</dt>
-              <dd>{sub.tier}</dd>
+              <dd>{standing.planLabel}</dd>
               <dt className="text-muted">Payment</dt>
               <dd>
                 <PaymentBadge sub={sub} />
-                {sub.cancelAtPeriodEnd && (
+                {standing.endsAtPeriodEnd && (
                   <span className="ml-2 text-[11px] text-accent-amber">
                     cancels at period end
                   </span>
                 )}
+              </dd>
+              <dt className="text-muted">Paid</dt>
+              <dd>
+                {standing.paid ? (
+                  <>
+                    Yes
+                    {standing.monthlyValue > 0 && (
+                      <span className="text-text-dim">
+                        {" · "}
+                        {usd(standing.monthlyValue)}/mo equiv.
+                      </span>
+                    )}
+                  </>
+                ) : (
+                  "No"
+                )}
+              </dd>
+              <dt className="text-muted">Days left</dt>
+              <dd>
+                {standing.paid && standing.daysLeft !== null ? (
+                  standing.daysLeft < 0 ? (
+                    <span className="text-red-500">
+                      {Math.abs(standing.daysLeft)} days overdue
+                    </span>
+                  ) : (
+                    <span
+                      className={
+                        standing.daysLeft <= 7 ? "text-accent-amber" : undefined
+                      }
+                    >
+                      {standing.daysLeft} day{standing.daysLeft === 1 ? "" : "s"}
+                    </span>
+                  )
+                ) : (
+                  "—"
+                )}
+              </dd>
+              <dt className="text-muted">Auto-renew</dt>
+              <dd>
+                {standing.paid ? (standing.autoRenew ? "On" : "Off") : "—"}
               </dd>
               <dt className="text-muted">Period</dt>
               <dd>
@@ -151,6 +226,82 @@ export default async function ClientDetailPage({
                     {k.lastUsedAt ? formatDate(k.lastUsedAt) : "never"}
                   </td>
                   <td className="py-2 text-text-dim">{formatDate(k.createdAt)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
+
+      <div className="card p-5">
+        <div className="mb-3 flex items-center gap-2">
+          <span className="text-[10px] uppercase tracking-widest text-muted">
+            Invoice history ({invoices.length})
+          </span>
+          {sub?.stripeCustomerId && (
+            <a
+              className="ml-auto text-[11px] text-text-dim underline hover:no-underline"
+              href={`https://dashboard.stripe.com/customers/${sub.stripeCustomerId}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              open in Stripe ↗
+            </a>
+          )}
+        </div>
+        {!sub?.stripeCustomerId ? (
+          <p className="text-[13px] text-text-dim">No Stripe customer yet.</p>
+        ) : invoices.length === 0 ? (
+          <p className="text-[13px] text-text-dim">
+            No invoices on record (or Stripe is unreachable).
+          </p>
+        ) : (
+          <table className="w-full text-[12.5px]">
+            <thead>
+              <tr className="text-left text-[10px] uppercase tracking-widest text-muted">
+                <th className="py-2 pr-4">Date</th>
+                <th className="py-2 pr-4">Invoice</th>
+                <th className="py-2 pr-4">Amount</th>
+                <th className="py-2 pr-4">Status</th>
+                <th className="py-2">Links</th>
+              </tr>
+            </thead>
+            <tbody>
+              {invoices.map((inv) => (
+                <tr key={inv.id} className="border-t border-panel-2">
+                  <td className="py-2 pr-4 whitespace-nowrap text-text-dim">
+                    {formatDate(new Date(inv.date))}
+                  </td>
+                  <td className="py-2 pr-4 font-mono text-[11.5px]">
+                    {inv.number ?? inv.id}
+                  </td>
+                  <td className="py-2 pr-4">{usd(inv.amount, { cents: true })}</td>
+                  <td className="py-2 pr-4">
+                    <span className="pill">{inv.status ?? "open"}</span>
+                  </td>
+                  <td className="py-2 whitespace-nowrap">
+                    {inv.hostedUrl && (
+                      <a
+                        className="underline hover:no-underline"
+                        href={inv.hostedUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        view
+                      </a>
+                    )}
+                    {inv.hostedUrl && inv.pdfUrl && " · "}
+                    {inv.pdfUrl && (
+                      <a
+                        className="underline hover:no-underline"
+                        href={inv.pdfUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        pdf
+                      </a>
+                    )}
+                  </td>
                 </tr>
               ))}
             </tbody>

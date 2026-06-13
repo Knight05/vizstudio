@@ -609,9 +609,19 @@ function BillingTab(props: PortalProps) {
     enabled: props.hasStripeCustomer,
     staleTime: 5 * 60_000,
   });
+  const paymentMethod = trpc.billing.paymentMethod.useQuery(undefined, {
+    enabled: props.hasStripeCustomer,
+    staleTime: 5 * 60_000,
+  });
 
   const maxKeys = props.tier === "TEAM" ? 10 : props.tier === "PRO" ? 2 : 0;
   const keyPct = maxKeys ? Math.min(100, Math.round((props.initialKeys.length / maxKeys) * 100)) : 0;
+
+  // Whole days until the current period ends (null when unknown).
+  const daysLeft = props.periodEnd
+    ? Math.ceil((new Date(props.periodEnd).getTime() - Date.now()) / 86_400_000)
+    : null;
+  const pm = paymentMethod.data;
 
   return (
     <>
@@ -655,6 +665,54 @@ function BillingTab(props: PortalProps) {
               </>
             )}
           </div>
+          {props.tier !== "FREE" && (
+            <div
+              style={{
+                display: "grid",
+                gap: 8,
+                margin: "12px 0 4px",
+                padding: "12px 14px",
+                borderRadius: 12,
+                border: "1px solid var(--border)",
+                background: "var(--panel)",
+                fontSize: 12.5,
+              }}
+            >
+              {props.periodEnd && daysLeft !== null && (
+                <div style={{ display: "flex", justifyContent: "space-between", gap: 12 }}>
+                  <span style={{ color: "var(--muted)" }}>
+                    {props.cancelAtPeriodEnd ? "Access ends" : "Next payment"}
+                  </span>
+                  <span style={{ fontWeight: 600 }}>
+                    {daysLeft < 0
+                      ? "overdue"
+                      : daysLeft === 0
+                        ? "today"
+                        : `in ${daysLeft} day${daysLeft === 1 ? "" : "s"}`}
+                    {" · "}
+                    {new Date(props.periodEnd).toLocaleDateString()}
+                  </span>
+                </div>
+              )}
+              <div style={{ display: "flex", justifyContent: "space-between", gap: 12 }}>
+                <span style={{ color: "var(--muted)" }}>Auto-renew</span>
+                <span style={{ fontWeight: 600 }}>
+                  {props.cancelAtPeriodEnd ? "Off" : "On"}
+                </span>
+              </div>
+              <div style={{ display: "flex", justifyContent: "space-between", gap: 12 }}>
+                <span style={{ color: "var(--muted)" }}>Payment method</span>
+                <span style={{ fontWeight: 600 }}>
+                  {paymentMethod.isLoading
+                    ? "…"
+                    : pm
+                      ? `${pm.brand.replace(/^\w/, (c) => c.toUpperCase())} •••• ${pm.last4} · exp ${String(pm.expMonth).padStart(2, "0")}/${String(pm.expYear).slice(-2)}`
+                      : "—"}
+                </span>
+              </div>
+            </div>
+          )}
+
           <ul className="plan-feats">
             {PLAN_FEATS[props.tier].map((f) => <li key={f}>{f}</li>)}
           </ul>

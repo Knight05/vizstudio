@@ -2,6 +2,7 @@ import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { formatDate } from "@/lib/utils";
 import { requireAdmin } from "@/lib/admin";
+import { mrr, usd } from "@/lib/billing";
 
 export default async function AdminOverviewPage() {
   await requireAdmin();
@@ -15,6 +16,7 @@ export default async function AdminOverviewPage() {
     leads,
     forms7d,
     recentForms,
+    activeSubs,
   ] = await Promise.all([
     prisma.user.count(),
     prisma.subscription.count({
@@ -30,11 +32,17 @@ export default async function AdminOverviewPage() {
       orderBy: { createdAt: "desc" },
       take: 8,
     }),
+    prisma.subscription.findMany({
+      where: { tier: { not: "FREE" }, status: { in: ["active", "trialing"] } },
+    }),
   ]);
 
   const freeUsers = totalUsers - paidSubs - pastDue - trialing;
+  const monthlyRecurring = mrr(activeSubs);
 
-  const stats: Array<{ label: string; value: number; href: string }> = [
+  const stats: Array<{ label: string; value: number | string; href: string }> = [
+    { label: "MRR", value: usd(monthlyRecurring), href: "/vz-ops-37/payments" },
+    { label: "ARR", value: usd(monthlyRecurring * 12), href: "/vz-ops-37/payments" },
     { label: "Clients", value: totalUsers, href: "/vz-ops-37/clients" },
     { label: "Paid · on time", value: paidSubs, href: "/vz-ops-37/clients?filter=paid" },
     { label: "Past due", value: pastDue, href: "/vz-ops-37/clients?filter=past_due" },
