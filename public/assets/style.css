@@ -769,13 +769,13 @@ footer {
 
 footer { padding: 64px 0 32px; border-top: 1px solid var(--border); margin-top: 64px; background: var(--bg); }
 footer > .wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
-.foot-grid { display: grid; grid-template-columns: 1.6fr repeat(2, 1fr); gap: 48px; margin-bottom: 48px; }
+.foot-grid { display: grid; grid-template-columns: 1.6fr repeat(3, 1fr); gap: 48px; margin-bottom: 48px; }
 footer h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 0 0 14px; font-weight: 500; }
 footer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
 footer ul li a { color: var(--text-dim); text-decoration: none; }
 footer ul li a:hover { color: var(--text); }
 footer p { color: var(--text-dim); font-size: 14px; margin: 12px 0 16px; max-width: 280px; line-height: 1.55; }
-footer .newsletter { display: flex; gap: 6px; }
+footer .newsletter { display: flex; gap: 6px; max-width: 260px; }
 footer .newsletter input { flex: 1; background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 10px 12px; border-radius: 6px; font-family: inherit; font-size: 13px; outline: none; transition: border-color .2s; min-width: 0; }
 footer .newsletter input:focus { border-color: var(--acc); }
 footer .newsletter button { background: var(--accent-grad); color: white; border: none; padding: 10px 16px; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; }
