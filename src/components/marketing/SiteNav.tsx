@@ -21,9 +21,8 @@ export default function SiteNav() {
         <nav>
           <a href="/#features">Features</a>
           <a href="/#library">Charts</a>
-          <a href="/#how">How it works</a>
+          <a href="/google-calendar-connector">Google Calendar</a>
           <a href="/#pricing">Pricing</a>
-          <a href="/#faq">FAQ</a>
         </nav>
         <div className="right">
           <a className="btn" href="/login">
@@ -53,9 +52,8 @@ export default function SiteNav() {
       >
         <a href="/#features">Features</a>
         <a href="/#library">Charts</a>
-        <a href="/#how">How it works</a>
+        <a href="/google-calendar-connector">Google Calendar</a>
         <a href="/#pricing">Pricing</a>
-        <a href="/#faq">FAQ</a>
         <a href="/login">Log in</a>
         <a className="btn primary" href="/get-started">
           Get Started →

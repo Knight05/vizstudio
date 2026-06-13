@@ -27,9 +27,8 @@
         '<nav>' +
           '<a href="/#features">Features</a>' +
           '<a href="/#library">Charts</a>' +
-          '<a href="/#how">How it works</a>' +
+          '<a href="/google-calendar-connector">Google Calendar</a>' +
           '<a href="/#pricing">Pricing</a>' +
-          '<a href="/#faq">FAQ</a>' +
         '</nav>' +
         '<div class="right">' +
           '<a class="btn" href="/login">Log in</a>' +
@@ -42,9 +41,8 @@
       '<div class="mobile-menu" id="mobileMenu">' +
         '<a href="/#features">Features</a>' +
         '<a href="/#library">Charts</a>' +
-        '<a href="/#how">How it works</a>' +
+        '<a href="/google-calendar-connector">Google Calendar</a>' +
         '<a href="/#pricing">Pricing</a>' +
-        '<a href="/#faq">FAQ</a>' +
         '<a href="/login">Log in</a>' +
         '<a class="btn primary" href="/get-started">Get Started →</a>' +
       '</div>' +
