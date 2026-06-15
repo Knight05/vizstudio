@@ -282,9 +282,9 @@ function OverviewTab(props: PortalProps & { goTo: (t: Tab) => void }) {
           <svg viewBox="0 0 88 88" fill="none">
             <defs>
               <linearGradient id="pg1" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stopColor="#a78bfa" />
-                <stop offset="0.5" stopColor="#ec4899" />
-                <stop offset="1" stopColor="#f59e0b" />
+                <stop offset="0" stopColor="var(--acc-violet)" />
+                <stop offset="0.5" stopColor="var(--acc-rose)" />
+                <stop offset="1" stopColor="var(--acc-amber)" />
               </linearGradient>
             </defs>
             <path d="M44 4 L48 40 L84 44 L48 48 L44 84 L40 48 L4 44 L40 40 Z" fill="url(#pg1)" opacity="0.85" />
@@ -298,8 +298,8 @@ function OverviewTab(props: PortalProps & { goTo: (t: Tab) => void }) {
 
       <div className="qa-grid">
         <button className="qa-card" onClick={() => props.goTo("charts")}>
-          <div className="qa-icon" style={{ background: "color-mix(in oklch, #6366f1 25%, transparent)" }}>
-            <svg style={{ color: "#a5b4fc" }}><use href="#i-charts" /></svg>
+          <div className="qa-icon" style={{ background: "color-mix(in oklch, var(--acc-violet) 22%, transparent)" }}>
+            <svg style={{ color: "var(--acc-violet)" }}><use href="#i-charts" /></svg>
           </div>
           <div>
             <div className="qa-title">Add a chart</div>
@@ -308,8 +308,8 @@ function OverviewTab(props: PortalProps & { goTo: (t: Tab) => void }) {
           <div className="qa-foot"><span>Open library</span><span>→</span></div>
         </button>
         <button className="qa-card" onClick={() => props.goTo("billing")}>
-          <div className="qa-icon" style={{ background: "color-mix(in oklch, #ec4899 25%, transparent)" }}>
-            <svg style={{ color: "#f9a8d4" }}><use href="#i-reports" /></svg>
+          <div className="qa-icon" style={{ background: "color-mix(in oklch, var(--acc-rose) 22%, transparent)" }}>
+            <svg style={{ color: "var(--acc-rose)" }}><use href="#i-reports" /></svg>
           </div>
           <div>
             <div className="qa-title">Billing & invoices</div>
@@ -318,8 +318,8 @@ function OverviewTab(props: PortalProps & { goTo: (t: Tab) => void }) {
           <div className="qa-foot"><span>{props.tier} plan</span><span>→</span></div>
         </button>
         <button className="qa-card" onClick={() => props.goTo("support")}>
-          <div className="qa-icon" style={{ background: "color-mix(in oklch, #22d3ee 25%, transparent)" }}>
-            <svg style={{ color: "#67e8f9" }}><use href="#i-bolt" /></svg>
+          <div className="qa-icon" style={{ background: "color-mix(in oklch, var(--acc-blue) 22%, transparent)" }}>
+            <svg style={{ color: "var(--acc-blue)" }}><use href="#i-bolt" /></svg>
           </div>
           <div>
             <div className="qa-title">Request a chart</div>
