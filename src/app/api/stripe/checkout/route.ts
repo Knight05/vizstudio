@@ -46,13 +46,23 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    const origin = process.env.NEXT_PUBLIC_APP_URL ?? req.nextUrl.origin;
+    // Always redirect back to the domain the request actually came in on
+    // (e.g. https://vizstudio.io) rather than trusting NEXT_PUBLIC_APP_URL,
+    // which has been mis-set to localhost and bounced paid users off the app.
+    const h = await headers();
+    const fwdHost = h.get("x-forwarded-host") ?? h.get("host");
+    const fwdProto = h.get("x-forwarded-proto") ?? "https";
+    const origin = fwdHost
+      ? `${fwdProto}://${fwdHost}`
+      : process.env.NEXT_PUBLIC_APP_URL ?? req.nextUrl.origin;
     const checkout = await stripe.checkout.sessions.create({
       customer: customerId,
       mode: "subscription",
       line_items: [{ price: priceId, quantity: 1 }],
       allow_promotion_codes: true,
-      success_url: `${origin}/dashboard?checkout=success`,
+      // A completed payment lands inside the app on the Billing tab — never the
+      // public marketing site.
+      success_url: `${origin}/dashboard?tab=billing&checkout=success`,
       cancel_url:  `${origin}/pricing?checkout=cancelled`,
       subscription_data: { metadata: { userId: user.id } },
     });

@@ -45,6 +45,10 @@ export type PortalProps = {
   bucket: string;
   bucketProvisioned: boolean;
   chartCount: number;
+  /** Tab to open on first render (from ?tab=). Defaults to overview. */
+  initialTab?: "overview" | "charts" | "billing" | "downloads" | "support" | "settings";
+  /** Stripe checkout result from ?checkout= ("success" | "cancelled"). */
+  checkoutStatus?: string | null;
 };
 
 type PortalChart = {
@@ -150,12 +154,25 @@ function CopyField({ value, onCopy }: { value: string; onCopy?: () => void }) {
    Shell
    ════════════════════════════════════════════════════════ */
 export function PortalClient(props: PortalProps) {
-  const [tab, setTab] = useState<Tab>("overview");
+  const [tab, setTab] = useState<Tab>(props.initialTab ?? "overview");
+  const [checkoutNotice, setCheckoutNotice] = useState<string | null>(
+    props.checkoutStatus === "success" ? "success" : null,
+  );
 
   function switchTab(t: Tab) {
     setTab(t);
     track("portal_tab_view", { tab: t });
   }
+
+  useEffect(() => {
+    if (props.checkoutStatus !== "success") return;
+    track("checkout_success");
+    // Clean the ?checkout=success&tab=billing params from the URL so a refresh
+    // doesn't re-show the banner, while keeping the user on the billing tab.
+    if (typeof window !== "undefined") {
+      window.history.replaceState(null, "", "/dashboard");
+    }
+  }, [props.checkoutStatus]);
 
   const NAV: { tab: Tab; icon: string; kb?: string }[] = [
     { tab: "overview", icon: "i-home" },
@@ -249,6 +266,35 @@ export function PortalClient(props: PortalProps) {
         </div>
 
         <div className="workspace">
+          {checkoutNotice === "success" && (
+            <div
+              role="status"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                gap: 12,
+                marginBottom: 16,
+                padding: "12px 16px",
+                borderRadius: 12,
+                border: "1px solid var(--acc-green, #2faa6a)",
+                background: "rgba(47,170,106,0.10)",
+                fontSize: 14,
+              }}
+            >
+              <span>
+                <strong>Payment confirmed.</strong> Your subscription is active — thanks for
+                upgrading. Your plan and invoices are below.
+              </span>
+              <button
+                className="pbtn"
+                aria-label="Dismiss"
+                onClick={() => setCheckoutNotice(null)}
+              >
+                Dismiss
+              </button>
+            </div>
+          )}
           {tab === "overview" && <OverviewTab {...props} goTo={switchTab} />}
           {tab === "charts" && <ChartsTab {...props} />}
           {tab === "billing" && <BillingTab {...props} />}

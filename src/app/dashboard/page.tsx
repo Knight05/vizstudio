@@ -16,7 +16,20 @@ export const metadata = {
 // Module-level map dedupes in-flight provisioning per warm instance.
 const inflightProvisioning = new Map<string, Promise<string>>();
 
-export default async function DashboardPage() {
+const TABS = ["overview", "charts", "billing", "downloads", "support", "settings"] as const;
+type Tab = (typeof TABS)[number];
+
+export default async function DashboardPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ tab?: string; checkout?: string }>;
+}) {
+  const params = await searchParams;
+  const initialTab: Tab = (TABS as readonly string[]).includes(params.tab ?? "")
+    ? (params.tab as Tab)
+    : "overview";
+  const checkoutStatus = params.checkout ?? null;
+
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session?.user) redirect("/login?next=/dashboard");
 
@@ -98,6 +111,8 @@ export default async function DashboardPage() {
       bucket={gcsBucket ?? ""}
       bucketProvisioned={Boolean(gcsBucket)}
       chartCount={loadManifest().components.length}
+      initialTab={initialTab}
+      checkoutStatus={checkoutStatus}
     />
   );
 }
