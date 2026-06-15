@@ -572,7 +572,7 @@ function ChartsTab(props: PortalProps) {
             </h1>
             <p>
               Every chart is D3-powered, fully themeable, and pre-loaded with realistic sample
-              data. Click any tile for details and your Looker Studio add-link.{" "}
+              data. Click any tile for details and your Data Studio add-link.{" "}
               <a href="/how-to-add-a-chart" target="_blank" rel="noreferrer" style={{ color: "var(--text)" }}>
                 Full how-to guide →
               </a>
@@ -580,7 +580,6 @@ function ChartsTab(props: PortalProps) {
             <div className="lib-stats">
               <div className="lib-stat"><CountUp value={props.chartCount} /><span>chart types</span></div>
               <div className="lib-stat"><CountUp value={cats.length} /><span>categories</span></div>
-              <div className="lib-stat"><b>D3</b><span>powered</span></div>
               <div className="lib-stat"><b>∞</b><span>themeable</span></div>
             </div>
           </div>
@@ -588,7 +587,7 @@ function ChartsTab(props: PortalProps) {
             <div className="lib-collage" aria-hidden="true">
               {collage.map((c) => (
                 /* eslint-disable-next-line @next/next/no-img-element */
-                <img key={c.id} src={c.screenshotUrl ?? `/icons/${c.id}.png`} alt="" loading="lazy" />
+                <img key={c.id} src={`/icons/${c.id}.png`} alt="" loading="lazy" />
               ))}
             </div>
           )}
@@ -601,7 +600,7 @@ function ChartsTab(props: PortalProps) {
           <div className="t">Add the entire library</div>
           <div className="s">
             {props.bucketProvisioned
-              ? "Paste this manifest path once in Looker Studio (Community visualizations -> Build your own) and every chart shows up in your report."
+              ? "Paste this manifest path once in Data Studio (Community visualizations -> Build your own) and every chart shows up in your report."
               : "Your private library path is being set up. Refresh in a minute and it will appear here."}
           </div>
         </div>
@@ -697,7 +696,7 @@ function ChartsTab(props: PortalProps) {
                 <span className="cg-line" />
                 {isPro(c) && <span className="cg-tag pro">pro</span>}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={c.screenshotUrl ?? `/icons/${c.id}.png`} alt={c.name} loading="lazy" />
+                <img src={`/icons/${c.id}.png`} alt={c.name} loading="lazy" onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = "0"; }} />
                 <span className="cg-open"><Icon id="i-arrow" />Preview</span>
               </div>
               <div className="cg-meta">
@@ -718,6 +717,10 @@ function ChartsTab(props: PortalProps) {
               <img
                 src={sel.screenshotUrl ?? `/icons/${sel.id}.png`}
                 alt={`${sel.name} screenshot`}
+                onError={(e) => {
+                  const t = e.currentTarget as HTMLImageElement;
+                  if (!t.dataset.fallback) { t.dataset.fallback = "1"; t.src = `/icons/${sel.id}.png`; }
+                }}
               />
             </div>
             <div className="body">
