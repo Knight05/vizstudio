@@ -956,7 +956,19 @@ function BillingTab(props: PortalProps) {
 
           <div className="plan-actions">
             {props.tier === "FREE" ? (
-              <Link href="/pricing">Compare plans →</Link>
+              <form
+                action="/api/stripe/checkout?plan=PRO_YEARLY"
+                method="POST"
+                style={{ display: "contents" }}
+              >
+                <button
+                  type="submit"
+                  className="primary"
+                  onClick={() => track("billing_upgrade_click", { plan: "PRO_YEARLY", source: "plan_actions" })}
+                >
+                  Get Pro →
+                </button>
+              </form>
             ) : (
               <>
                 {props.hasStripeCustomer && (
@@ -966,7 +978,11 @@ function BillingTab(props: PortalProps) {
                     </button>
                   </form>
                 )}
-                <Link href="/pricing">Change plan</Link>
+                <form action="/api/stripe/portal" method="POST" style={{ display: "contents" }}>
+                  <button type="submit" onClick={() => track("billing_change_plan")}>
+                    Change plan
+                  </button>
+                </form>
               </>
             )}
           </div>
