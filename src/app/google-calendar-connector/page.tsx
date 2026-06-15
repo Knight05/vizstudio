@@ -126,3 +126,4 @@ export default function Page() {
       <ClientScripts srcs={["/assets/partials.js"]} />
     </>
   );
+}
