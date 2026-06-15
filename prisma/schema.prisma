@@ -202,3 +202,30 @@ model Lead {
 
   @@map("leads")
 }
+// ─── Brute-force defense ───────────────────────
+// Tracks failed email+password sign-in attempts per account+IP and
+// drives a progressive lockout (see src/lib/brute-force.ts). This
+// complements the per-IP rate limiter + reCAPTCHA in src/lib/auth.ts:
+// rate limiting throttles request volume from one IP, while this stops
+// slow / distributed credential-guessing aimed at a single account.
+model LoginAttempt {
+  id           String    @id @default(cuid())
+  email        String
+  ipAddress    String    @map("ip_address")
+  // Failures accumulated toward the *current* lock. Reset to 0 each time a
+  // lock is applied and each time the attempt window decays.
+  failCount    Int       @default(0) @map("fail_count")
+  // How many times this account+IP has been locked. Drives the escalating
+  // lock duration (15m, 30m, 60m, … capped at 24h).
+  lockoutLevel Int       @default(0) @map("lockout_level")
+  // When set and in the future, sign-in is refused for this account+IP.
+  lockedUntil  DateTime? @map("locked_until")
+  lastFailedAt DateTime  @default(now()) @map("last_failed_at")
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @updatedAt      @map("updated_at")
+
+  @@unique([email, ipAddress])
+  @@index([lockedUntil])
+  @@index([email])
+  @@map("login_attempts")
+}

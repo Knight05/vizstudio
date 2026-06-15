@@ -1,10 +1,28 @@
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
+import { APIError, createAuthMiddleware } from "better-auth/api";
 import { nextCookies } from "better-auth/next-js";
 import { captcha } from "better-auth/plugins";
 import { Resend } from "resend";
+import {
+  assertNotLocked,
+  clearFailedLogins,
+  recordFailedLogin,
+} from "./brute-force";
 import { prisma } from "./prisma";
 import { provisionNewUser } from "./provisioning";
+
+// Email + password sign-in endpoint, matched in the brute-force hooks below.
+const SIGN_IN_PATH = "/sign-in/email";
+
+// Pull the caller's IP from the same proxy headers configured under
+// `advanced.ipAddressHeaders`, so account lockouts key off the real client IP
+// behind Vercel's edge rather than the proxy.
+function clientIpFromHeaders(headers: Headers | undefined): string {
+  const xff = headers?.get("x-forwarded-for");
+  if (xff) return xff.split(",")[0]!.trim();
+  return headers?.get("x-real-ip")?.trim() || "unknown";
+}
 
 const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
@@ -58,6 +76,37 @@ export const auth = betterAuth({
     // Defense-in-depth for session cookies behind Vercel's proxy.
     useSecureCookies: process.env.NODE_ENV === "production",
     ipAddressHeaders: ["x-forwarded-for", "x-real-ip"],
+  },
+
+  // Brute-force defense for email + password sign-in. The per-IP rate limiter
+  // above caps request *volume* from one source; these hooks add a progressive
+  // per-(account+IP) lockout that also stops slow / distributed credential
+  // guessing against a single account. State lives in the `login_attempts`
+  // table; see src/lib/brute-force.ts. All DB work fails open.
+  hooks: {
+    // Refuse sign-in up front if this account+IP is currently locked.
+    before: createAuthMiddleware(async (ctx) => {
+      if (ctx.path !== SIGN_IN_PATH) return;
+      const email = (ctx.body as { email?: string } | undefined)?.email;
+      await assertNotLocked(email, clientIpFromHeaders(ctx.headers));
+    }),
+    // After credential verification: count genuine failures, clear on success.
+    after: createAuthMiddleware(async (ctx) => {
+      if (ctx.path !== SIGN_IN_PATH) return;
+      const email = (ctx.body as { email?: string } | undefined)?.email;
+      const ip = clientIpFromHeaders(ctx.headers);
+      const returned = ctx.context.returned;
+      if (returned instanceof APIError) {
+        // 401 = wrong email/password. Ignore our own 429 lock, captcha
+        // rejects, validation errors, etc. so they never inflate the count.
+        if (returned.status === "UNAUTHORIZED") {
+          await recordFailedLogin(email, ip);
+        }
+      } else {
+        // No error returned → credentials were accepted.
+        await clearFailedLogins(email, ip);
+      }
+    }),
   },
 
   emailAndPassword: {
