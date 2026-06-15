@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -59,8 +59,65 @@ type PortalChart = {
   longDescription: string;
   description: string;
   useCases?: string[];
+  tags?: string[];
   screenshotUrl: string | null;
 };
+
+/* Category -> accent color (mirrors the marketing library palette). */
+const CAT_COLOR: Record<string, string> = {
+  KPI: "oklch(0.72 0.16 25)",
+  "Time Series": "oklch(0.74 0.14 200)",
+  Comparison: "oklch(0.70 0.15 268)",
+  Distribution: "oklch(0.72 0.16 300)",
+  "Part-to-Whole": "oklch(0.72 0.17 350)",
+  "Network & Flow": "oklch(0.72 0.14 235)",
+  "Marketing & Funnels": "oklch(0.75 0.14 165)",
+  Finance: "oklch(0.80 0.13 95)",
+  "Project & Ops": "oklch(0.80 0.14 75)",
+  Geo: "oklch(0.74 0.14 145)",
+  Specialty: "oklch(0.66 0.16 330)",
+};
+function catColor(cat: string) {
+  return CAT_COLOR[cat] ?? "oklch(0.70 0.02 260)";
+}
+/** Display order for category pills (present categories only). */
+const CAT_ORDER = [
+  "KPI",
+  "Time Series",
+  "Comparison",
+  "Distribution",
+  "Part-to-Whole",
+  "Network & Flow",
+  "Marketing & Funnels",
+  "Finance",
+  "Project & Ops",
+  "Geo",
+  "Specialty",
+];
+/** Advanced/animated charts get a "pro" ribbon. */
+const PRO_TAGS = ["animated", "globe", "3d", "interactive", "race", "realtime"];
+function isPro(c: PortalChart) {
+  return (c.tags ?? []).some((t) => PRO_TAGS.includes(t.toLowerCase()));
+}
+
+/* Eased count-up number for hero stats. */
+function CountUp({ value }: { value: number }) {
+  const [n, setN] = useState(0);
+  useEffect(() => {
+    let raf = 0;
+    const t0 = performance.now();
+    const dur = 900;
+    const step = (t: number) => {
+      const p = Math.min(1, (t - t0) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      setN(Math.round(value * eased));
+      if (p < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [value]);
+  return <b>{n}</b>;
+}
 
 const CAL_CONNECTOR_URL = "/google-calendar-connector";
 
@@ -95,6 +152,9 @@ function IconSprite() {
         <symbol id="i-search" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" strokeWidth="1.4" /><path stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" d="M10.5 10.5L13.5 13.5" /></symbol>
         <symbol id="i-key" viewBox="0 0 16 16"><circle cx="5" cy="8" r="3" fill="none" stroke="currentColor" strokeWidth="1.4" /><path stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" fill="none" d="M8 8h6M11.5 8v2.5M14 8v2" /></symbol>
         <symbol id="i-cal" viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.4" /><path stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3" /></symbol>
+        <symbol id="i-grid" viewBox="0 0 16 16"><rect x="2" y="2" width="5" height="5" rx="0.5" fill="none" stroke="currentColor" strokeWidth="1.4" /><rect x="9" y="2" width="5" height="5" rx="0.5" fill="none" stroke="currentColor" strokeWidth="1.4" /><rect x="2" y="9" width="5" height="5" rx="0.5" fill="none" stroke="currentColor" strokeWidth="1.4" /><rect x="9" y="9" width="5" height="5" rx="0.5" fill="none" stroke="currentColor" strokeWidth="1.4" /></symbol>
+        <symbol id="i-list" viewBox="0 0 16 16"><circle cx="3.5" cy="4" r="1" fill="currentColor" /><circle cx="3.5" cy="8" r="1" fill="currentColor" /><circle cx="3.5" cy="12" r="1" fill="currentColor" /><path stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" d="M6.5 4h7M6.5 8h7M6.5 12h7" /></symbol>
+        <symbol id="i-arrow" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" d="M3 8h10M9 4l4 4-4 4" /></symbol>
       </defs>
     </svg>
   );
@@ -338,7 +398,14 @@ function OverviewTab(props: PortalProps & { goTo: (t: Tab) => void }) {
             <circle cx="44" cy="44" r="4" fill="#fff" opacity="0.9" />
           </svg>
         </div>
-        <h1>{first ? `Welcome back, ${first}` : "Welcome back"}</h1>
+        <span className="lib-eyebrow">
+          <span className="dotpulse" />
+          {props.tier === "FREE" ? "Free trial" : props.tier === "PRO" ? `${props.planLabel ?? "Pro"} plan` : "Team plan"}
+        </span>
+        <h1 style={{ marginTop: 12 }}>
+          {first ? "Welcome back, " : "Welcome back"}
+          {first && <span className="grad">{first}</span>}
+        </h1>
         <p>Your charts, billing, and downloads, all in one place.</p>
       </div>
 
@@ -446,6 +513,7 @@ function ChartsTab(props: PortalProps) {
 
   const [q, setQ] = useState("");
   const [cat, setCat] = useState<string | null>(null);
+  const [view, setView] = useState<"grid" | "list">("grid");
   const [sel, setSel] = useState<PortalChart | null>(null);
 
   // Close modal on Escape
@@ -457,7 +525,16 @@ function ChartsTab(props: PortalProps) {
   }, [sel]);
 
   const all = (chartsQuery.data?.components ?? []) as unknown as PortalChart[];
-  const cats = Array.from(new Set(all.map((c) => c.category)));
+
+  // Category counts, ordered by the canonical category list (present only).
+  const counts = all.reduce<Record<string, number>>((acc, c) => {
+    acc[c.category] = (acc[c.category] ?? 0) + 1;
+    return acc;
+  }, {});
+  const cats = [
+    ...CAT_ORDER.filter((c) => counts[c]),
+    ...Object.keys(counts).filter((c) => !CAT_ORDER.includes(c)),
+  ];
 
   const needle = q.trim().toLowerCase();
   const filtered = all.filter(
@@ -466,8 +543,12 @@ function ChartsTab(props: PortalProps) {
       (!needle ||
         c.name.toLowerCase().includes(needle) ||
         c.shortDescription?.toLowerCase().includes(needle) ||
+        c.category.toLowerCase().includes(needle) ||
         c.id.includes(needle)),
   );
+
+  // A handful of charts with art for the floating hero collage.
+  const collage = all.slice(0, 9);
 
   function openChart(c: PortalChart) {
     setSel(c);
@@ -476,16 +557,43 @@ function ChartsTab(props: PortalProps) {
 
   return (
     <>
-      <div className="page-head">
-        <h1>Chart library</h1>
-        <p>
-          {props.chartCount} visualizations, ready for Data Studio. Click a chart for
-          details and your add-link.{" "}
-          <a href="/how-to-add-a-chart" target="_blank" rel="noreferrer" style={{ color: "var(--text)" }}>
-            Full how-to guide →
-          </a>
-        </p>
-      </div>
+      {/* hero */}
+      <header className="lib-hero">
+        <div className="lib-hero-inner">
+          <div>
+            <span className="lib-eyebrow">
+              <span className="dotpulse" />
+              Component library
+            </span>
+            <h1>
+              {props.chartCount} visualizations,
+              <br />
+              <span className="grad">ready to drop in.</span>
+            </h1>
+            <p>
+              Every chart is D3-powered, fully themeable, and pre-loaded with realistic sample
+              data. Click any tile for details and your Looker Studio add-link.{" "}
+              <a href="/how-to-add-a-chart" target="_blank" rel="noreferrer" style={{ color: "var(--text)" }}>
+                Full how-to guide →
+              </a>
+            </p>
+            <div className="lib-stats">
+              <div className="lib-stat"><CountUp value={props.chartCount} /><span>chart types</span></div>
+              <div className="lib-stat"><CountUp value={cats.length} /><span>categories</span></div>
+              <div className="lib-stat"><b>D3</b><span>powered</span></div>
+              <div className="lib-stat"><b>∞</b><span>themeable</span></div>
+            </div>
+          </div>
+          {collage.length > 0 && (
+            <div className="lib-collage" aria-hidden="true">
+              {collage.map((c) => (
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img key={c.id} src={c.screenshotUrl ?? `/icons/${c.id}.png`} alt="" loading="lazy" />
+              ))}
+            </div>
+          )}
+        </div>
+      </header>
 
       {/* all-charts banner */}
       <div className="lib-banner">
@@ -493,7 +601,7 @@ function ChartsTab(props: PortalProps) {
           <div className="t">Add the entire library</div>
           <div className="s">
             {props.bucketProvisioned
-              ? "Paste this manifest path once in Data Studio (Community visualizations → Build your own) and every chart shows up in your report."
+              ? "Paste this manifest path once in Looker Studio (Community visualizations -> Build your own) and every chart shows up in your report."
               : "Your private library path is being set up. Refresh in a minute and it will appear here."}
           </div>
         </div>
@@ -507,30 +615,55 @@ function ChartsTab(props: PortalProps) {
         )}
       </div>
 
-      {/* filters */}
-      <div className="filter-row">
-        <div className="copy-row" style={{ flex: 1, minWidth: 200, maxWidth: 320, padding: "5px 8px 5px 11px" }}>
-          <Icon id="i-search" />
-          <input
-            className="pinput"
-            style={{ border: 0, background: "transparent", padding: "3px 6px" }}
-            placeholder="Search charts…"
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-          />
+      {/* sticky controls */}
+      <div className="lib-controls">
+        <div className="lib-controls-top">
+          <div className="lib-search">
+            <Icon id="i-search" />
+            <input
+              placeholder="Search charts… (try 'time', 'map', 'flow')"
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+            />
+          </div>
+          <div className="lib-result-count"><b>{filtered.length}</b> charts</div>
+          <div className="view-toggle">
+            <button
+              className={cn(view === "grid" && "active")}
+              title="Grid view"
+              onClick={() => setView("grid")}
+            >
+              <Icon id="i-grid" />
+            </button>
+            <button
+              className={cn(view === "list" && "active")}
+              title="List view"
+              onClick={() => setView("list")}
+            >
+              <Icon id="i-list" />
+            </button>
+          </div>
         </div>
-        <button className={cn("cat-pill", !cat && "on")} onClick={() => setCat(null)}>
-          All
-        </button>
-        {cats.map((c) => (
+        <div className="lib-pills">
           <button
-            key={c}
-            className={cn("cat-pill", cat === c && "on")}
-            onClick={() => setCat(cat === c ? null : c)}
+            className={cn("lib-pill", !cat && "active")}
+            data-cat="all"
+            onClick={() => setCat(null)}
           >
-            {c}
+            All <span className="count">{all.length}</span>
           </button>
-        ))}
+          {cats.map((c) => (
+            <button
+              key={c}
+              className={cn("lib-pill", cat === c && "active")}
+              style={{ ["--pc" as string]: catColor(c) } as CSSProperties}
+              onClick={() => setCat(cat === c ? null : c)}
+            >
+              <span className="pdot" />
+              {c} <span className="count">{counts[c]}</span>
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* grid */}
@@ -539,28 +672,38 @@ function ChartsTab(props: PortalProps) {
           Loading the library…
         </div>
       ) : filtered.length === 0 ? (
-        <div className="pcard" style={{ color: "var(--muted)", fontSize: 12.5 }}>
-          No charts match &ldquo;{q}&rdquo;. Try a different search, or{" "}
-          <button
-            style={{ all: "unset", color: "var(--text)", cursor: "pointer", textDecoration: "underline" }}
-            onClick={() => { setQ(""); setCat(null); }}
-          >
-            clear filters
-          </button>.
+        <div className="lib-empty">
+          <div className="em-mark"><Icon id="i-search" /></div>
+          <p>
+            No charts match <span className="q">&ldquo;{q}&rdquo;</span>.{" "}
+            <button
+              style={{ all: "unset", color: "var(--text)", cursor: "pointer", textDecoration: "underline" }}
+              onClick={() => { setQ(""); setCat(null); }}
+            >
+              Clear filters
+            </button>
+          </p>
         </div>
       ) : (
-        <div className="chart-grid">
-          {filtered.map((c) => (
-            <button key={c.id} className="chart-card" onClick={() => openChart(c)}>
-              <div className="ic">
+        <div className={cn("cg-grid", view === "list" && "list")}>
+          {filtered.map((c, i) => (
+            <button
+              key={c.id}
+              className="cg-card"
+              style={{ ["--cat" as string]: catColor(c.category), ["--i" as string]: i } as CSSProperties}
+              onClick={() => openChart(c)}
+            >
+              <div className="cg-thumb">
+                <span className="cg-line" />
+                {isPro(c) && <span className="cg-tag pro">pro</span>}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`/icons/${c.id}.png`} alt="" loading="lazy" />
+                <img src={c.screenshotUrl ?? `/icons/${c.id}.png`} alt={c.name} loading="lazy" />
+                <span className="cg-open"><Icon id="i-arrow" />Preview</span>
               </div>
-              <div>
-                <div className="nm">{c.name}</div>
-                <div className="ds">{c.shortDescription || c.description}</div>
+              <div className="cg-meta">
+                <div className="cg-name">{c.name}</div>
+                <div className="cg-cat"><span className="cg-dot" />{c.category}</div>
               </div>
-              <div className="ct">{c.category}</div>
             </button>
           ))}
         </div>

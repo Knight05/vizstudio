@@ -389,6 +389,29 @@ html, body {
 }
 
 /* ── page head / welcome ── */
+.pshell .page-head {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 24px 26px;
+}
+.pshell .page-head::before {
+  content: ''; position: absolute; inset: 0; z-index: -2;
+  background:
+    radial-gradient(110% 150% at 4% -20%, color-mix(in oklch, var(--acc-violet) 22%, transparent), transparent 52%),
+    radial-gradient(80% 120% at 92% -10%, color-mix(in oklch, var(--acc-blue) 16%, transparent), transparent 55%);
+}
+.pshell .page-head::after {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background-image:
+    linear-gradient(color-mix(in oklch, var(--text) 4%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklch, var(--text) 4%, transparent) 1px, transparent 1px);
+  background-size: 30px 30px;
+  -webkit-mask-image: radial-gradient(110% 100% at 15% 0%, #000, transparent 72%);
+          mask-image: radial-gradient(110% 100% at 15% 0%, #000, transparent 72%);
+}
 .pshell .page-head h1 {
   font-size: 24px;
   font-weight: 700;
@@ -417,6 +440,14 @@ html, body {
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
   padding: 20px;
+  transition: border-color .18s, box-shadow .18s, transform .18s;
+}
+.pshell .qa-card, .pshell .stat {
+  transition: border-color .18s, background .18s, box-shadow .18s, transform .18s;
+}
+.pshell .qa-card:hover, .pshell .stat:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -22px rgba(0,0,0,0.65);
 }
 .pshell .pcard h3 { margin: 0 0 4px; font-size: 14px; font-weight: 600; }
 .pshell .pcard .lead { margin: 0 0 16px; font-size: 12px; color: var(--muted); }
@@ -686,85 +717,261 @@ html, body {
   .pshell .sb-link .kb { display: none; }
 }
 
-/* ── portal: charts library ── */
-.pshell .lib-banner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 16px;
-  padding: 18px 20px;
+/* ══════════════════════════════════════════════════════
+   Portal: Library (app-charts.html design)
+   ══════════════════════════════════════════════════════ */
+
+/* hero band (contained within workspace) */
+.pshell .lib-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid var(--border);
   border-radius: var(--r-lg);
+  padding: 40px 32px 34px;
+}
+.pshell .lib-hero::before {
+  content: ''; position: absolute; inset: 0; z-index: -2;
+  background:
+    radial-gradient(120% 140% at 8% -10%, color-mix(in oklch, var(--acc-violet) 30%, transparent), transparent 55%),
+    radial-gradient(90% 120% at 78% 0%, color-mix(in oklch, var(--acc-blue) 24%, transparent), transparent 55%),
+    radial-gradient(80% 130% at 95% 110%, color-mix(in oklch, var(--acc-rose) 20%, transparent), transparent 50%);
+}
+.pshell .lib-hero::after {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background-image:
+    linear-gradient(color-mix(in oklch, var(--text) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklch, var(--text) 5%, transparent) 1px, transparent 1px);
+  background-size: 32px 32px;
+  -webkit-mask-image: radial-gradient(110% 100% at 20% 0%, #000, transparent 75%);
+          mask-image: radial-gradient(110% 100% at 20% 0%, #000, transparent 75%);
+}
+.pshell .lib-hero-inner {
+  display: grid; grid-template-columns: 1fr auto; gap: 36px; align-items: center;
+}
+.pshell .lib-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 10.5px; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim);
+  padding: 5px 12px 5px 9px; border-radius: 999px;
+  border: 1px solid var(--border-2);
+  background: color-mix(in oklch, var(--panel) 60%, transparent);
+  backdrop-filter: blur(6px);
+}
+.pshell .lib-eyebrow .dotpulse {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--acc-blue);
+  box-shadow: 0 0 0 0 color-mix(in oklch, var(--acc-blue) 70%, transparent);
+  animation: dotpulse 2.4s ease-out infinite;
+}
+@keyframes dotpulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in oklch, var(--acc-blue) 60%, transparent); }
+  70%,100% { box-shadow: 0 0 0 7px transparent; }
+}
+.pshell .lib-hero h1 {
+  font-size: clamp(26px, 3.4vw, 38px); font-weight: 700; letter-spacing: -0.03em;
+  margin: 16px 0 0; line-height: 1.05; max-width: 16ch;
+}
+.pshell .lib-hero h1 .grad,
+.pshell .page-head h1 .grad {
+  background: linear-gradient(100deg, #a5b4fc, #c4b5fd 45%, #f9a8d4);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.pshell .lib-hero p {
+  margin: 14px 0 0; color: var(--text-dim); font-size: 13.5px;
+  max-width: 52ch; line-height: 1.55;
+}
+.pshell .lib-stats { display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap; }
+.pshell .lib-stat {
+  background: color-mix(in oklch, var(--panel) 70%, transparent);
+  border: 1px solid var(--border); border-radius: var(--r-md);
+  padding: 11px 16px 10px; min-width: 92px; backdrop-filter: blur(8px);
+}
+.pshell .lib-stat b {
+  display: block; font-size: 22px; font-weight: 700; letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums; line-height: 1;
+}
+.pshell .lib-stat span {
+  display: block; margin-top: 5px; font-family: var(--mono);
+  font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted);
+}
+
+/* hero collage */
+.pshell .lib-collage {
+  display: grid; grid-template-columns: repeat(3, 84px); grid-auto-rows: 84px; gap: 11px;
+  transform: rotate(-9deg) scale(1.05);
+  -webkit-mask-image: radial-gradient(120% 120% at 55% 45%, #000 45%, transparent 82%);
+          mask-image: radial-gradient(120% 120% at 55% 45%, #000 45%, transparent 82%);
+}
+.pshell .lib-collage img {
+  width: 100%; height: 100%; object-fit: cover; border-radius: var(--r-md);
+  border: 1px solid var(--border-2); box-shadow: 0 12px 30px -14px rgba(0,0,0,0.7);
+  animation: floaty 7s ease-in-out infinite;
+}
+.pshell .lib-collage img:nth-child(3n) { animation-delay: -2.3s; }
+.pshell .lib-collage img:nth-child(3n+1) { animation-delay: -4.6s; }
+@keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+
+/* sticky controls bar */
+.pshell .lib-controls {
+  position: sticky; top: 53px; z-index: 4;
+  margin: 0 -24px; padding: 14px 24px 12px;
+  background: color-mix(in oklch, var(--bg) 86%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.pshell .lib-controls-top { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.pshell .lib-search {
+  display: flex; align-items: center; gap: 8px;
+  flex: 1; max-width: 420px; min-width: 200px;
+  padding: 7px 12px; border-radius: var(--r-md);
+  border: 1px solid var(--border); background: var(--bg-1);
+}
+.pshell .lib-search svg { width: 14px; height: 14px; color: var(--muted); }
+.pshell .lib-search input {
+  border: 0; background: transparent; outline: none; flex: 1;
+  font-family: inherit; font-size: 13px; color: var(--text);
+}
+.pshell .lib-result-count { font-family: var(--mono); font-size: 12px; color: var(--muted); margin-left: auto; }
+.pshell .lib-result-count b { color: var(--text-dim); font-weight: 600; }
+.pshell .view-toggle {
+  display: inline-flex; padding: 2px; gap: 2px;
+  background: var(--panel); border: 1px solid var(--border); border-radius: var(--r-sm);
+}
+.pshell .view-toggle button {
+  width: 30px; height: 26px; border-radius: 5px; border: 0; background: transparent;
+  display: grid; place-items: center; color: var(--muted); cursor: pointer;
+}
+.pshell .view-toggle button svg { width: 14px; height: 14px; }
+.pshell .view-toggle button.active { background: var(--panel-2); color: var(--text); }
+
+/* colored category pills */
+.pshell .lib-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+.pshell .lib-pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--mono); font-size: 11px;
+  padding: 5px 11px; border-radius: 999px;
+  border: 1px solid var(--border); background: var(--panel); color: var(--text-dim);
+  cursor: pointer; transition: all .15s; white-space: nowrap;
+}
+.pshell .lib-pill .pdot { width: 7px; height: 7px; border-radius: 2px; background: var(--pc, var(--muted)); flex-shrink: 0; }
+.pshell .lib-pill .count { color: var(--muted-2); }
+.pshell .lib-pill:hover { border-color: var(--border-2); color: var(--text); }
+.pshell .lib-pill.active {
+  background: color-mix(in oklch, var(--pc, var(--acc-violet)) 16%, transparent);
+  border-color: color-mix(in oklch, var(--pc, var(--acc-violet)) 45%, transparent);
+  color: var(--text);
+}
+.pshell .lib-pill[data-cat="all"].active { background: var(--text); color: var(--bg); border-color: var(--text); }
+.pshell .lib-pill[data-cat="all"].active .count { color: color-mix(in oklch, var(--bg) 60%, var(--muted)); }
+
+/* card grid */
+.pshell .cg-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(212px, 1fr)); gap: 16px;
+}
+.pshell .cg-card {
+  background: var(--panel); border: 1px solid var(--border); border-radius: var(--r-lg);
+  overflow: hidden; position: relative; cursor: pointer;
+  display: flex; flex-direction: column; text-align: left;
+  font-family: inherit; color: inherit; padding: 0;
+  transition: transform .22s cubic-bezier(.2,.7,.3,1), border-color .22s, box-shadow .22s;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pshell .cg-card { opacity: 0; transform: translateY(14px); animation: cardIn .5s cubic-bezier(.2,.7,.3,1) forwards; animation-delay: calc(var(--i,0) * 20ms); }
+}
+@keyframes cardIn { to { opacity: 1; transform: none; } }
+.pshell .cg-card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in oklch, var(--cat) 55%, var(--border-2));
+  box-shadow: 0 18px 40px -18px rgba(0,0,0,0.7),
+              0 0 0 1px color-mix(in oklch, var(--cat) 28%, transparent),
+              0 12px 50px -22px color-mix(in oklch, var(--cat) 60%, transparent);
+}
+.pshell .cg-thumb {
+  aspect-ratio: 4 / 3; background: var(--bg); position: relative; overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+.pshell .cg-thumb::before {
+  content: ''; position: absolute; inset: 0; z-index: 1;
+  background: radial-gradient(120% 80% at 50% 120%, color-mix(in oklch, var(--cat) 22%, transparent), transparent 70%);
+  opacity: .5; transition: opacity .25s;
+}
+.pshell .cg-card:hover .cg-thumb::before { opacity: .9; }
+.pshell .cg-thumb img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .35s cubic-bezier(.2,.7,.3,1);
+}
+.pshell .cg-card:hover .cg-thumb img { transform: scale(1.05); }
+.pshell .cg-line {
+  position: absolute; top: 0; left: 0; right: 0; height: 2px; z-index: 3;
+  background: linear-gradient(90deg, transparent, var(--cat), transparent);
+  opacity: 0; transition: opacity .25s;
+}
+.pshell .cg-card:hover .cg-line { opacity: .9; }
+.pshell .cg-open {
+  position: absolute; left: 10px; bottom: 10px; z-index: 3;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--mono); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.04em; text-transform: uppercase; color: #fff;
+  padding: 6px 10px; border-radius: 999px;
+  background: color-mix(in oklch, #06070d 72%, transparent);
+  border: 1px solid var(--border-2); backdrop-filter: blur(6px);
+  opacity: 0; transform: translateY(6px); transition: opacity .2s, transform .2s;
+}
+.pshell .cg-open svg { width: 11px; height: 11px; }
+.pshell .cg-card:hover .cg-open { opacity: 1; transform: none; }
+.pshell .cg-tag {
+  position: absolute; top: 9px; left: 9px; z-index: 3;
+  font-family: var(--mono); font-size: 9px; font-weight: 700; color: #fff;
+  padding: 3px 7px; border-radius: 5px; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.pshell .cg-tag.pro { background: linear-gradient(135deg, var(--acc-violet), var(--acc-rose)); }
+.pshell .cg-tag.new { background: var(--acc-blue); color: #042c38; }
+.pshell .cg-meta { padding: 12px 13px 13px; display: flex; flex-direction: column; gap: 4px; }
+.pshell .cg-meta .cg-name {
+  font-size: 13.5px; font-weight: 600; letter-spacing: -0.01em; color: var(--text);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.pshell .cg-meta .cg-cat {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 10px; font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted);
+}
+.pshell .cg-meta .cg-cat .cg-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--cat); flex-shrink: 0; }
+
+/* list view */
+.pshell .cg-grid.list { grid-template-columns: 1fr; gap: 8px; }
+.pshell .cg-grid.list .cg-card { flex-direction: row; align-items: stretch; border-radius: var(--r-md); }
+.pshell .cg-grid.list .cg-card:hover { transform: translateX(3px); }
+.pshell .cg-grid.list .cg-thumb { width: 104px; aspect-ratio: auto; flex-shrink: 0; border-bottom: 0; border-right: 1px solid var(--border); }
+.pshell .cg-grid.list .cg-open { display: none; }
+.pshell .cg-grid.list .cg-meta { flex: 1; justify-content: center; padding: 12px 16px; }
+
+.pshell .lib-empty { grid-column: 1/-1; padding: 70px 0; text-align: center; }
+.pshell .lib-empty .em-mark {
+  width: 46px; height: 46px; margin: 0 auto 14px; border-radius: 14px;
+  display: grid; place-items: center; color: var(--muted);
+  background: var(--panel); border: 1px solid var(--border);
+}
+.pshell .lib-empty .em-mark svg { width: 20px; height: 20px; }
+.pshell .lib-empty p { color: var(--text-dim); font-size: 14px; margin: 0; }
+.pshell .lib-empty .q { color: var(--text); font-family: var(--mono); }
+
+/* all-charts manifest banner (kept, restyled) */
+.pshell .lib-banner {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 16px;
+  padding: 16px 18px; border-radius: var(--r-lg);
   border: 1px solid color-mix(in oklch, var(--acc-green) 35%, var(--border));
   background:
     radial-gradient(600px 120px at 0% 0%, color-mix(in oklch, var(--acc-green) 10%, transparent), transparent),
     var(--panel);
 }
-.pshell .lib-banner .t { font-size: 14.5px; font-weight: 700; }
+.pshell .lib-banner .t { font-size: 14px; font-weight: 700; }
 .pshell .lib-banner .s { font-size: 12px; color: var(--muted); margin-top: 2px; max-width: 52ch; }
-.pshell .filter-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-}
-.pshell .cat-pill {
-  font-family: var(--mono);
-  font-size: 11px;
-  padding: 4px 11px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--panel);
-  color: var(--text-dim);
-  cursor: pointer;
-}
-.pshell .cat-pill:hover { border-color: var(--border-2); color: var(--text); }
-.pshell .cat-pill.on { background: var(--panel-2); color: var(--text); border-color: var(--border-2); }
-.pshell .chart-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-  gap: 12px;
-}
-.pshell .chart-card {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: var(--r-lg);
-  padding: 14px;
-  cursor: pointer;
-  text-align: left;
-  font-family: inherit;
-  color: inherit;
-}
-.pshell .chart-card:hover { border-color: var(--border-2); background: var(--panel-2); }
-.pshell .chart-card .ic {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--r-md);
-  background: var(--bg-2);
-  border: 1px solid var(--border);
-  overflow: hidden;
-  flex: none;
-}
-.pshell .chart-card .ic img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.pshell .chart-card .nm { font-size: 13px; font-weight: 600; }
-.pshell .chart-card .ds {
-  font-size: 11.5px;
-  color: var(--muted);
-  line-height: 1.45;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.pshell .chart-card .ct {
-  margin-top: auto;
-  font-family: var(--mono);
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--muted-2);
+
+@media (max-width: 860px) {
+  .pshell .lib-collage { display: none; }
+  .pshell .lib-hero-inner { grid-template-columns: 1fr; }
+  .pshell .lib-controls { margin: 0; padding-left: 0; padding-right: 0; }
 }
 
 /* copy field */
