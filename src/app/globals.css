@@ -315,8 +315,8 @@ html, body {
   border-radius: var(--r-md);
   font-size: 12.5px;
   font-weight: 600;
-  color: var(--bg);
-  background: var(--acc-green);
+  color: #fff;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 60%, #ec4899 100%);
   text-decoration: none;
 }
 .pshell .sb-user-cta svg { width: 13px; height: 13px; }
@@ -367,8 +367,8 @@ html, body {
   padding: 7px 14px;
   border-radius: var(--r-md);
   border: 0;
-  background: var(--acc-green);
-  color: var(--bg);
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 60%, #ec4899 100%);
+  color: #fff;
   font-size: 12.5px;
   font-weight: 600;
   font-family: inherit;
@@ -556,7 +556,7 @@ html, body {
   gap: 8px;
   align-items: baseline;
 }
-.pshell .plan-feats li::before { content: "✓"; color: var(--acc-green); font-weight: 700; }
+.pshell .plan-feats li::before { content: "✓"; color: #8b5cf6; font-weight: 700; }
 .pshell .plan-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .pshell .plan-actions a, .pshell .plan-actions button {
   font-family: inherit;
@@ -570,7 +570,7 @@ html, body {
   cursor: pointer;
   text-decoration: none;
 }
-.pshell .plan-actions .primary { background: var(--acc-green); color: var(--bg); border-color: transparent; }
+.pshell .plan-actions .primary { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 60%, #ec4899 100%); color: #fff; border-color: transparent; }
 .pshell .plan-actions a:hover, .pshell .plan-actions button:hover { border-color: var(--border-2); }
 .pshell .plan-actions .primary:hover { filter: brightness(1.08); }
 
@@ -594,7 +594,7 @@ html, body {
 .pshell .usage-fill {
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--acc-green), oklch(0.72 0.17 240));
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
 }
 
 /* invoice table */
@@ -961,9 +961,9 @@ html, body {
 .pshell .lib-banner {
   display: flex; flex-wrap: wrap; align-items: center; gap: 16px;
   padding: 16px 18px; border-radius: var(--r-lg);
-  border: 1px solid color-mix(in oklch, var(--acc-green) 35%, var(--border));
+  border: 1px solid color-mix(in oklch, var(--acc-violet) 35%, var(--border));
   background:
-    radial-gradient(600px 120px at 0% 0%, color-mix(in oklch, var(--acc-green) 10%, transparent), transparent),
+    radial-gradient(600px 120px at 0% 0%, color-mix(in oklch, var(--acc-violet) 12%, transparent), transparent),
     var(--panel);
 }
 .pshell .lib-banner .t { font-size: 14px; font-weight: 700; }
