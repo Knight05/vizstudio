@@ -918,8 +918,8 @@ function BillingTab(props: PortalProps) {
               }}
             >
               {([
-                { plan: "PRO_MONTHLY", name: "Monthly", price: "$50/mo", note: "Cancel anytime" },
-                { plan: "PRO_YEARLY", name: "Annual", price: "$500/yr", note: "Save $100" },
+                { plan: "PRO_MONTHLY", name: "Monthly", price: "$50/mo", note: "Cancel anytime", primary: false },
+                { plan: "PRO_YEARLY", name: "Annual", price: "$500/yr", note: "Save $100", primary: true },
               ] as const).map((p) => (
                 <form
                   key={p.plan}
@@ -937,55 +937,48 @@ function BillingTab(props: PortalProps) {
                       gap: 2,
                       padding: "12px 14px",
                       borderRadius: 12,
-                      border: "1px solid var(--border)",
-                      background: "var(--panel)",
-                      color: "var(--text)",
+                      border: p.primary ? "1px solid transparent" : "1px solid var(--border)",
+                      background: p.primary
+                        ? "linear-gradient(135deg, #a78bfa, #ec4899)"
+                        : "var(--panel)",
+                      color: p.primary ? "#fff" : "var(--text)",
                       cursor: "pointer",
                       textAlign: "left",
                     }}
                   >
                     <span style={{ fontSize: 13, fontWeight: 600 }}>
-                      {p.name} · {p.price}
+                      {p.name} · {p.price} →
                     </span>
-                    <span style={{ fontSize: 11.5, color: "var(--muted)" }}>{p.note}</span>
+                    <span
+                      style={{
+                        fontSize: 11.5,
+                        color: p.primary ? "rgba(255,255,255,0.85)" : "var(--muted)",
+                      }}
+                    >
+                      {p.note}
+                    </span>
                   </button>
                 </form>
               ))}
             </div>
           )}
 
-          <div className="plan-actions">
-            {props.tier === "FREE" ? (
-              <form
-                action="/api/stripe/checkout?plan=PRO_YEARLY"
-                method="POST"
-                style={{ display: "contents" }}
-              >
-                <button
-                  type="submit"
-                  className="primary"
-                  onClick={() => track("billing_upgrade_click", { plan: "PRO_YEARLY", source: "plan_actions" })}
-                >
-                  Get Pro →
-                </button>
-              </form>
-            ) : (
-              <>
-                {props.hasStripeCustomer && (
-                  <form action="/api/stripe/portal" method="POST" style={{ display: "contents" }}>
-                    <button type="submit" className="primary" onClick={() => track("billing_portal_open")}>
-                      Manage billing →
-                    </button>
-                  </form>
-                )}
+          {props.tier !== "FREE" && (
+            <div className="plan-actions">
+              {props.hasStripeCustomer && (
                 <form action="/api/stripe/portal" method="POST" style={{ display: "contents" }}>
-                  <button type="submit" onClick={() => track("billing_change_plan")}>
-                    Change plan
+                  <button type="submit" className="primary" onClick={() => track("billing_portal_open")}>
+                    Manage billing →
                   </button>
                 </form>
-              </>
-            )}
-          </div>
+              )}
+              <form action="/api/stripe/portal" method="POST" style={{ display: "contents" }}>
+                <button type="submit" onClick={() => track("billing_change_plan")}>
+                  Change plan
+                </button>
+              </form>
+            </div>
+          )}
 
           {maxKeys > 0 && (
             <>

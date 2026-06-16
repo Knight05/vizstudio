@@ -4,9 +4,15 @@ import { stripe } from "@/lib/stripe";
 import { prisma } from "@/lib/prisma";
 import { auth } from "@/lib/auth";
 
+// Price IDs are NOT secrets, so we keep known defaults in code. This guarantees
+// the PRO plans resolve even if the env vars aren't set in the deploy
+// environment (the cause of the "/pricing?checkout=unavailable" fallback).
+// Setting the env vars still takes precedence — e.g. swap in live-mode price IDs
+// without a code change. (The STRIPE_SECRET_KEY must still be set in the env;
+// secrets are never committed.)
 const PRICE_MAP: Record<string, string | undefined> = {
-  PRO_MONTHLY:  process.env.STRIPE_PRICE_PRO_MONTHLY,
-  PRO_YEARLY:   process.env.STRIPE_PRICE_PRO_YEARLY,
+  PRO_MONTHLY:  process.env.STRIPE_PRICE_PRO_MONTHLY || "price_1TioMFB8yLmXHsnznRUeZY2Y",
+  PRO_YEARLY:   process.env.STRIPE_PRICE_PRO_YEARLY  || "price_1TioMFB8yLmXHsnz1t3ZNj3U",
   TEAM_MONTHLY: process.env.STRIPE_PRICE_TEAM_MONTHLY,
   TEAM_YEARLY:  process.env.STRIPE_PRICE_TEAM_YEARLY,
 };
