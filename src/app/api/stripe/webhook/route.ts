@@ -32,7 +32,10 @@ export async function POST(req: NextRequest) {
         const s = event.data.object as Stripe.Checkout.Session;
         if (s.mode === "subscription" && s.subscription) {
           const sub = await stripe.subscriptions.retrieve(s.subscription as string);
-          await syncSubscription(sub);
+          // Payment Links don't carry our userId in subscription metadata, but
+          // the upgrade route passes it as client_reference_id - use it as a
+          // fallback so the new subscription maps to the right account.
+          await syncSubscription(sub, { hintUserId: s.client_reference_id ?? undefined });
         }
         break;
       }
@@ -65,9 +68,13 @@ export async function POST(req: NextRequest) {
   return NextResponse.json({ received: true });
 }
 
-async function syncSubscription(sub: Stripe.Subscription) {
+async function syncSubscription(
+  sub: Stripe.Subscription,
+  opts?: { hintUserId?: string },
+) {
   const userId =
     (sub.metadata?.userId as string | undefined) ??
+    opts?.hintUserId ??
     (await resolveUserIdByCustomer(sub.customer as string));
 
   if (!userId) {

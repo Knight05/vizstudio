@@ -102,7 +102,7 @@ function PlanCta({
     );
   }
   return (
-    <form action={`/api/stripe/checkout?plan=${plan}`} method="POST" style={{ display: "contents" }}>
+    <form action={`/api/stripe/upgrade?plan=${plan}&from=pricing`} method="POST" style={{ display: "contents" }}>
       <button type="submit" className={primary ? "btn primary" : "btn"}>
         {label} →
       </button>

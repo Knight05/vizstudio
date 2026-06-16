@@ -1,43 +1,58 @@
 import { NextRequest, NextResponse } from "next/server";
 import { headers } from "next/headers";
-import { stripe } from "@/lib/stripe";
+import { stripe, PRICE_MAP, hasStripeSecret } from "@/lib/stripe";
 import { prisma } from "@/lib/prisma";
 import { auth } from "@/lib/auth";
 
-// Price IDs are NOT secrets, so we keep known defaults in code. This guarantees
-// the PRO plans resolve even if the env vars aren't set in the deploy
-// environment (the cause of the "/pricing?checkout=unavailable" fallback).
-// Setting the env vars still takes precedence — e.g. swap in live-mode price IDs
-// without a code change. (The STRIPE_SECRET_KEY must still be set in the env;
-// secrets are never committed.)
-const PRICE_MAP: Record<string, string | undefined> = {
-  PRO_MONTHLY:  process.env.STRIPE_PRICE_PRO_MONTHLY || "price_1TioMFB8yLmXHsnznRUeZY2Y",
-  PRO_YEARLY:   process.env.STRIPE_PRICE_PRO_YEARLY  || "price_1TioMFB8yLmXHsnz1t3ZNj3U",
-  TEAM_MONTHLY: process.env.STRIPE_PRICE_TEAM_MONTHLY,
-  TEAM_YEARLY:  process.env.STRIPE_PRICE_TEAM_YEARLY,
-};
+/**
+ * POST /api/stripe/checkout?plan=PRO_MONTHLY&from=dashboard
+ *
+ * API-based Stripe Checkout (creates a customer + session). This is the LEGACY
+ * fallback - the upgrade buttons now use /api/stripe/upgrade (Payment Links),
+ * which needs no secret key. Kept so a real STRIPE_SECRET_KEY can drive a fully
+ * integrated checkout if desired.
+ *
+ * On any failure we redirect back to where the user started (the dashboard
+ * Billing tab for signed-in users, otherwise /pricing) with a non-secret
+ * `reason` code in the URL so the cause is visible.
+ */
+export const dynamic = "force-dynamic";
+
+function failRedirect(req: NextRequest, from: string, reason: string) {
+  const base = from === "dashboard" ? "/dashboard?tab=billing" : "/pricing";
+  const sep = base.includes("?") ? "&" : "?";
+  const safe = encodeURIComponent(reason).slice(0, 60);
+  return NextResponse.redirect(
+    new URL(`${base}${sep}checkout=unavailable&reason=${safe}`, req.url),
+    303,
+  );
+}
 
 export async function POST(req: NextRequest) {
-  const plan = new URL(req.url).searchParams.get("plan") ?? "";
+  const url = new URL(req.url);
+  const plan = url.searchParams.get("plan") ?? "";
+  const from = url.searchParams.get("from") ?? "";
+
   if (!(plan in PRICE_MAP)) {
     return NextResponse.json({ error: "Unknown plan" }, { status: 400 });
   }
   const priceId = PRICE_MAP[plan];
-  if (!priceId) {
-    // Stripe price IDs not configured yet - degrade to a friendly notice.
-    return NextResponse.redirect(new URL("/pricing?checkout=unavailable", req.url), 303);
+  if (!priceId) return failRedirect(req, from, "no_price");
+
+  if (!hasStripeSecret()) {
+    console.error("[stripe.checkout] STRIPE_SECRET_KEY is not set in this environment");
+    return failRedirect(req, from, "no_key");
   }
 
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session?.user) {
-    return NextResponse.redirect(new URL(`/login?next=/pricing`, req.url), 303);
+    const next = from === "dashboard" ? "/dashboard?tab=billing" : "/pricing";
+    return NextResponse.redirect(new URL(`/login?next=${encodeURIComponent(next)}`, req.url), 303);
   }
   const user = session.user;
 
   try {
-    const sub = await prisma.subscription.findUnique({
-      where: { userId: user.id },
-    });
+    const sub = await prisma.subscription.findUnique({ where: { userId: user.id } });
     let customerId = sub?.stripeCustomerId ?? undefined;
     if (!customerId) {
       const customer = await stripe.customers.create({
@@ -52,33 +67,34 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // Always redirect back to the domain the request actually came in on
-    // (e.g. https://vizstudio.io) rather than trusting NEXT_PUBLIC_APP_URL,
-    // which has been mis-set to localhost and bounced paid users off the app.
     const h = await headers();
     const fwdHost = h.get("x-forwarded-host") ?? h.get("host");
     const fwdProto = h.get("x-forwarded-proto") ?? "https";
     const origin = fwdHost
       ? `${fwdProto}://${fwdHost}`
       : process.env.NEXT_PUBLIC_APP_URL ?? req.nextUrl.origin;
+
+    const cancelPath =
+      from === "dashboard"
+        ? "/dashboard?tab=billing&checkout=cancelled"
+        : "/pricing?checkout=cancelled";
+
     const checkout = await stripe.checkout.sessions.create({
       customer: customerId,
       mode: "subscription",
       line_items: [{ price: priceId, quantity: 1 }],
       allow_promotion_codes: true,
-      // A completed payment lands inside the app on the Billing tab — never the
-      // public marketing site.
       success_url: `${origin}/dashboard?tab=billing&checkout=success`,
-      cancel_url:  `${origin}/pricing?checkout=cancelled`,
+      cancel_url: `${origin}${cancelPath}`,
       subscription_data: { metadata: { userId: user.id } },
     });
 
-    if (!checkout.url) {
-      throw new Error("Stripe returned no checkout URL");
-    }
+    if (!checkout.url) throw new Error("Stripe returned no checkout URL");
     return NextResponse.redirect(checkout.url, 303);
   } catch (err) {
-    console.error("[stripe.checkout] failed:", err);
-    return NextResponse.redirect(new URL("/pricing?checkout=unavailable", req.url), 303);
+    const e = err as { code?: string; type?: string; message?: string };
+    const reason = e.code ?? e.type ?? "stripe_error";
+    console.error("[stripe.checkout] failed:", reason, e.message ?? err);
+    return failRedirect(req, from, reason);
   }
 }

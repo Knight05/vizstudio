@@ -77,6 +77,22 @@ export default async function DashboardPage({
     }
   }
 
+  // Plan label: prefer matching the configured PRO price IDs; otherwise infer
+  // the interval from the billing-period length (covers Payment Link prices
+  // that aren't mirrored into STRIPE_PRICE_PRO_* env vars).
+  const subRow = user.subscription;
+  const planLabel: "Monthly" | "Annual" | null = (() => {
+    if (!subRow) return null;
+    if (subRow.stripePriceId && subRow.stripePriceId === process.env.STRIPE_PRICE_PRO_YEARLY) return "Annual";
+    if (subRow.stripePriceId && subRow.stripePriceId === process.env.STRIPE_PRICE_PRO_MONTHLY) return "Monthly";
+    if (subRow.currentPeriodStart && subRow.currentPeriodEnd) {
+      const days = (subRow.currentPeriodEnd.getTime() - subRow.currentPeriodStart.getTime()) / 86_400_000;
+      if (days > 200) return "Annual";
+      if (days > 0) return "Monthly";
+    }
+    return null;
+  })();
+
   return (
     <PortalClient
       user={{
@@ -86,15 +102,7 @@ export default async function DashboardPage({
         createdAt: user.createdAt.toISOString(),
       }}
       tier={tier}
-      planLabel={
-        user.subscription?.stripePriceId &&
-        user.subscription.stripePriceId === process.env.STRIPE_PRICE_PRO_YEARLY
-          ? "Annual"
-          : user.subscription?.stripePriceId &&
-              user.subscription.stripePriceId === process.env.STRIPE_PRICE_PRO_MONTHLY
-            ? "Monthly"
-            : null
-      }
+      planLabel={planLabel}
       status={status}
       periodEnd={user.subscription?.currentPeriodEnd?.toISOString() ?? null}
       cancelAtPeriodEnd={user.subscription?.cancelAtPeriodEnd ?? false}

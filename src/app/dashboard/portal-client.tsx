@@ -216,7 +216,11 @@ function CopyField({ value, onCopy }: { value: string; onCopy?: () => void }) {
 export function PortalClient(props: PortalProps) {
   const [tab, setTab] = useState<Tab>(props.initialTab ?? "overview");
   const [checkoutNotice, setCheckoutNotice] = useState<string | null>(
-    props.checkoutStatus === "success" ? "success" : null,
+    props.checkoutStatus === "success" ||
+      props.checkoutStatus === "cancelled" ||
+      props.checkoutStatus === "unavailable"
+      ? props.checkoutStatus
+      : null,
   );
 
   function switchTab(t: Tab) {
@@ -225,12 +229,14 @@ export function PortalClient(props: PortalProps) {
   }
 
   useEffect(() => {
-    if (props.checkoutStatus !== "success") return;
-    track("checkout_success");
-    // Clean the ?checkout=success&tab=billing params from the URL so a refresh
-    // doesn't re-show the banner, while keeping the user on the billing tab.
+    const st = props.checkoutStatus;
+    if (st !== "success" && st !== "cancelled" && st !== "unavailable") return;
+    track(st === "success" ? "checkout_success" : `checkout_${st}`);
+    // Clean the ?checkout=... params from the URL so a refresh doesn't re-show
+    // the banner. Keep failed/cancelled upgrades on the Billing tab.
     if (typeof window !== "undefined") {
-      window.history.replaceState(null, "", "/dashboard");
+      const clean = st === "success" ? "/dashboard" : "/dashboard?tab=billing";
+      window.history.replaceState(null, "", clean);
     }
   }, [props.checkoutStatus]);
 
@@ -326,7 +332,7 @@ export function PortalClient(props: PortalProps) {
         </div>
 
         <div className="workspace">
-          {checkoutNotice === "success" && (
+          {checkoutNotice && (
             <div
               role="status"
               style={{
@@ -337,14 +343,45 @@ export function PortalClient(props: PortalProps) {
                 marginBottom: 16,
                 padding: "12px 16px",
                 borderRadius: 12,
-                border: "1px solid var(--acc-green, #2faa6a)",
-                background: "rgba(47,170,106,0.10)",
+                border:
+                  checkoutNotice === "success"
+                    ? "1px solid var(--acc-green, #2faa6a)"
+                    : checkoutNotice === "unavailable"
+                      ? "1px solid rgba(240,170,70,0.5)"
+                      : "1px solid var(--border)",
+                background:
+                  checkoutNotice === "success"
+                    ? "rgba(47,170,106,0.10)"
+                    : checkoutNotice === "unavailable"
+                      ? "rgba(240,170,70,0.08)"
+                      : "var(--panel)",
                 fontSize: 14,
               }}
             >
               <span>
-                <strong>Payment confirmed.</strong> Your subscription is active — thanks for
-                upgrading. Your plan and invoices are below.
+                {checkoutNotice === "success" ? (
+                  <>
+                    <strong>Payment confirmed.</strong> Your subscription is active — thanks for
+                    upgrading. Your plan and invoices are below.
+                  </>
+                ) : checkoutNotice === "cancelled" ? (
+                  <>
+                    <strong>Checkout cancelled.</strong> No charge was made — pick a plan below
+                    whenever you&apos;re ready.
+                  </>
+                ) : (
+                  <>
+                    <strong>We couldn&apos;t start checkout.</strong> Please try again in a moment.
+                    If it keeps happening, email{" "}
+                    <a
+                      href="mailto:hello@vizstudio.io"
+                      style={{ color: "inherit", textDecoration: "underline" }}
+                    >
+                      hello@vizstudio.io
+                    </a>
+                    .
+                  </>
+                )}
               </span>
               <button
                 className="pbtn"
@@ -909,21 +946,36 @@ function BillingTab(props: PortalProps) {
             {PLAN_FEATS[props.tier].map((f) => <li key={f}>{f}</li>)}
           </ul>
           {props.tier === "FREE" && (
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: 10,
-                margin: "14px 0 4px",
-              }}
-            >
+            <>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "baseline",
+                  justifyContent: "space-between",
+                  gap: 8,
+                  margin: "18px 0 8px",
+                }}
+              >
+                <div style={{ fontSize: 13.5, fontWeight: 600 }}>Upgrade to Pro</div>
+                <div style={{ fontSize: 11.5, color: "var(--muted)" }}>
+                  Full library · cancel anytime
+                </div>
+              </div>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: 10,
+                  margin: "0 0 4px",
+                }}
+              >
               {([
                 { plan: "PRO_MONTHLY", name: "Monthly", price: "$50/mo", note: "Cancel anytime", primary: false },
                 { plan: "PRO_YEARLY", name: "Annual", price: "$500/yr", note: "Save $100", primary: true },
               ] as const).map((p) => (
                 <form
                   key={p.plan}
-                  action={`/api/stripe/checkout?plan=${p.plan}`}
+                  action={`/api/stripe/upgrade?plan=${p.plan}&from=dashboard`}
                   method="POST"
                   style={{ display: "contents" }}
                 >
@@ -960,7 +1012,29 @@ function BillingTab(props: PortalProps) {
                   </button>
                 </form>
               ))}
-            </div>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 6,
+                  marginTop: 10,
+                  fontSize: 11,
+                  color: "var(--muted)",
+                }}
+              >
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M7 11V8a5 5 0 0 1 10 0v3"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                  <rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" strokeWidth="2" />
+                </svg>
+                Secure checkout via Stripe — you&apos;ll be redirected to finish.
+              </div>
+            </>
           )}
 
           {props.tier !== "FREE" && (
