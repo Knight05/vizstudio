@@ -27,6 +27,8 @@ const config: NextConfig = {
       // Chart pages are now dynamic Next routes at /charts/:slug (SSG from
       // src/data/charts.json). Permanently consolidate the old static .html
       // URLs onto the clean canonical slug to avoid duplicate content.
+      { source: "/charts/oppositediagram", destination: "/charts/2x2-matrix", permanent: true },
+      { source: "/charts/oppositediagram.html", destination: "/charts/2x2-matrix", permanent: true },
       { source: "/charts/:slug.html", destination: "/charts/:slug", permanent: true },
       { source: "/legal/terms", destination: "/terms", permanent: false },
       { source: "/legal/privacy", destination: "/privacy", permanent: false },

@@ -82,7 +82,7 @@ Key facts:
 - [Flow Map](https://vizstudio.io/charts/flowmap-viz): Geographic flow lines: origins, destinations, and volumes on a map.
 - [Force-Directed Network](https://vizstudio.io/charts/forcenet-viz): Force-directed network, the classic node graph, properly tuned.
 - [Adjacency Matrix](https://vizstudio.io/charts/matrixchart-viz): Adjacency matrix, the most scalable way to see a network.
-- [Opposite Diagram](https://vizstudio.io/charts/oppositediagram): Two-sided pros vs cons: opposing forces, one chart.
+- [2x2 Matrix](https://vizstudio.io/charts/2x2-matrix): Two-sided pros vs cons: opposing forces, one chart.
 - [Parallel Coordinates Plot](https://vizstudio.io/charts/parallelcoords-viz): Parallel axes: every record drawn across every dimension.
 - [Parallel Sets](https://vizstudio.io/charts/parallelsets-viz): Categorical flow: Sankey for nominal data, lane by lane.
 - [Portfolio Barcode](https://vizstudio.io/charts/portfoliobarcode-viz): Portfolio barcode: every holding as a vertical strip, weighted and colored.

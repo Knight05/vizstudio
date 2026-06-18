@@ -619,7 +619,7 @@ const LIBRARY = [
   { src: 'bipartite-viz', name: 'Bipartite', cat: 'flow' },
   { src: 'radialtree-viz', name: 'Radial tree', cat: 'flow' },
   { src: 'storyflow-viz', name: 'Storyflow', cat: 'flow' },
-  { src: 'oppositediagram', name: 'Opposite diagram', cat: 'flow' },
+  { src: '2x2-matrix', name: '2x2 Matrix', cat: 'flow' },
   // Finance / business
   { src: 'cashflow-viz', name: 'Cash flow', cat: 'finance' },
   { src: 'breakeven-viz', name: 'Break-even', cat: 'finance' },

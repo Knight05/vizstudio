@@ -1242,8 +1242,8 @@
   },
   {
    "id": "oppositediagram",
-   "name": "Opposite Diagram",
-   "description": "Opposite Diagram: community visualization.",
+   "name": "2x2 Matrix",
+   "description": "2x2 Matrix: community visualization.",
    "iconUrl": "gs://vizstudio-cid9483029/oppositediagram/icon-256.webp",
    "resource": {
     "js": "gs://vizstudio-cid9483029/oppositediagram/script.js",
@@ -1265,7 +1265,7 @@
    ],
    "tags": [
     "diverging",
-    "opposite",
+    "2x2",
     "balance",
     "comparison",
     "two-sided"

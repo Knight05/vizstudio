@@ -40,7 +40,7 @@
     pie:  ['dualdonut-viz','multiring-viz','semicirclepie-viz','varradiuspie-viz','vardonut-viz','analystratings-viz','progresscircles-viz','solidgauge-viz','semicirclegauge-viz'],
     scat: ['bubble-viz','bubblemap-viz','bubblegrid','quadrant-viz','scattertrend-viz','beeswarm-viz','hexbin-viz','hexbindensity-viz','qq-viz'],
     heat: ['convheatmap-viz','engageheatmap-viz','calendarHeatmap','bigcalendar-viz','choropleth-viz','smallmultiples-viz'],
-    flow: ['chord-viz','depwheel-viz','arcdiagram-viz','forcenet-viz','bipartite-viz','matrixchart-viz','parallelsets-viz','parallelcoords-viz','sankey-viz','trafficsrc-viz','storyflow-viz','connmap-viz','flowmap-viz','radialtree-viz','oppositediagram'],
+    flow: ['chord-viz','depwheel-viz','arcdiagram-viz','forcenet-viz','bipartite-viz','matrixchart-viz','parallelsets-viz','parallelcoords-viz','sankey-viz','trafficsrc-viz','storyflow-viz','connmap-viz','flowmap-viz','radialtree-viz','2x2-matrix'],
     map:  ['interactiveGlobe-viz'],
     tree: ['slicedice-viz','treemapzoom-viz','sunburstChart'],
     misc: ['waffle-viz','dumbbell-viz','lollipopchart','bulletchart-viz','radartable-viz','earningsdot-viz','kpisparkline-viz','wordcloud-viz','datatable-viz','resgant-viz','trafficlight-viz','portfoliobarcode-viz','portfoliopiebarcode-viz','verticalprogress-viz','audioverlap-viz'],

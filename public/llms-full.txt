@@ -334,12 +334,12 @@ What it is: Entity × entity grid with cell tint = edge weight, sortable axes, h
 Why it works: Networks past ~50 nodes are unreadable as graphs. Matrices keep scaling.
 Keywords: adjacency matrix chart Data Studio, network matrix visualization, edge matrix
 
-#### Opposite Diagram — https://vizstudio.io/charts/oppositediagram
+#### 2x2 Matrix — https://vizstudio.io/charts/2x2-matrix
 
 Two-sided pros vs cons: opposing forces, one chart.
 What it is: Two parallel columns of bars, weighted, with center labels and per-side coloring.
 Why it works: Decision frameworks live in tables; this chart turns them into a chart your audience can read.
-Keywords: opposite diagram chart, pros vs cons visualization, two-sided chart Data Studio
+Keywords: 2x2 matrix chart, pros vs cons visualization, two-sided chart Data Studio
 
 #### Parallel Coordinates Plot — https://vizstudio.io/charts/parallelcoords-viz
 
