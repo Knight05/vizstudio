@@ -1995,50 +1995,50 @@
     {
       "id": "2x2-matrix",
       "name": "2x2 Matrix",
-      "tagline": "Two-sided pros vs cons: opposing forces, one chart.",
-      "long": "2x2 Matrix visualizes two opposing forces (pros vs cons, supports vs blocks, drivers vs detractors) as parallel rows of weighted bars. The strategic two-sider, ready for a slide.",
-      "what": "Two parallel columns of bars, weighted, with center labels and per-side coloring.",
-      "why": "Decision frameworks live in tables; this chart turns them into a chart your audience can read.",
+      "tagline": "Two axes, four quadrants, one clear call.",
+      "long": "2x2 Matrix plots your data on two axes and splits the canvas into four labeled quadrants — the shape every strategy framework already takes, from the Eisenhower box to BCG growth-share to value-vs-effort. It turns the whiteboard grid your team argues over into a live chart in Data Studio (formerly Looker Studio) that re-sorts itself the moment the numbers move.",
+      "what": "Plots each record by two metrics on an x/y plane, then drops configurable threshold lines that carve the space into four named, color-tinted quadrants. Add a third metric as bubble size, hover for detail, and click any point to cross-filter the rest of the page — all theme-aware.",
+      "why": "Strategy is quadrant-shaped: double down, quick win, deprioritize, drop. A 2x2 lays that decision grid over real data, so the call comes from where each point actually lands instead of a slide nobody refreshes.",
       "uses": [
         {
+          "tag": "Product",
+          "body": "Value × effort: features sort themselves into quick wins, big bets, and time-sinks."
+        },
+        {
+          "tag": "Leadership",
+          "body": "Eisenhower matrix — urgent × important — so the team works the right box first."
+        },
+        {
           "tag": "Strategy",
-          "body": "Pros vs cons for a major decision."
-        },
-        {
-          "tag": "UX",
-          "body": "Usability strengths vs blockers."
-        },
-        {
-          "tag": "M&A",
-          "body": "Synergy vs risk for a target."
+          "body": "BCG growth-share: stars, cash cows, question marks, and dogs, straight from live numbers."
         }
       ],
-      "keywords": "2x2 matrix chart, pros vs cons visualization, two-sided chart Data Studio",
-      "category": "flow",
-      "catLabel": "Networks, Flows & Relationships",
+      "keywords": "2x2 matrix chart Data Studio, four-quadrant strategy matrix, Eisenhower matrix visualization, BCG growth-share chart, value vs effort quadrant",
+      "category": "scatter",
+      "catLabel": "Scatter, Correlation & Bubbles",
       "screenshot": "datastudio-2x2-matrix-vizstudio.png",
       "screenshotWebp": "datastudio-2x2-matrix-vizstudio.webp",
       "dsLink": "https://datastudio.google.com/u/0/reporting/82a21123-3f9f-4865-951d-b233a893cf86/page/p_po3l9aqt2d",
       "related": [
         {
-          "id": "arcdiagram-viz",
-          "name": "Arc Diagram",
-          "tagline": "Node-link arc diagram: relationships you can actually trace."
+          "id": "quadrant-viz",
+          "name": "Quadrant Scatter",
+          "tagline": "Four-quadrant scatter, the strategy chart you've drawn on whiteboards."
         },
         {
-          "id": "audioverlap-viz",
-          "name": "Audience Overlap",
-          "tagline": "Proportional circles for audience segments: overlaps you can see."
+          "id": "bubble-viz",
+          "name": "Bubble Chart",
+          "tagline": "X × Y × size: three metrics, one chart, zero squinting."
         },
         {
-          "id": "bipartite-viz",
-          "name": "Bipartite Graph",
-          "tagline": "Two columns, every link explicit: A-to-B relationships made obvious."
+          "id": "bubblegrid",
+          "name": "Bubble Grid",
+          "tagline": "A grid of bubbles: counts and magnitudes across two categorical axes."
         },
         {
-          "id": "chord-viz",
-          "name": "Chord Diagram",
-          "tagline": "Circular chord ribbons: every pairwise flow, perfectly weighted."
+          "id": "scattertrend-viz",
+          "name": "Scatter Plot with Trendline",
+          "tagline": "Scatter with a fitted trend line: correlation without the chart-junk."
         }
       ]
     },
