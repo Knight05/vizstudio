@@ -110,6 +110,8 @@ document.querySelectorAll('form[data-form]').forEach((form) => {
     btn.textContent = orig;
 
     if (ok) {
+      // GA4 conversion event (no-op when gtag is unavailable or blocked).
+      try { if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead', { form_id: data.form || form.id || 'form' }); } catch (e) {}
       const success = form.parentElement.querySelector('.form-success');
       if (success) {
         form.style.display = 'none';
@@ -142,6 +144,7 @@ document.querySelectorAll('.subscribe-form').forEach((form) => {
     const hp = form.querySelector('input[name="website"]');
     const ok = await submitForm(form, { form: 'subscribe', email: v, website: hp ? (hp.value || '').trim() : '' });
     if (ok) {
+      try { if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead', { form_id: 'subscribe' }); } catch (e) {}
       btn.textContent = '✓ Subscribed';
       btn.classList.add('done');
       if (msg) msg.textContent = "You're in. Look for our next update soon.";

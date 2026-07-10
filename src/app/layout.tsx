@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import { TRPCProvider } from "@/trpc/provider";
 import { CookieConsent } from "@/components/CookieConsent";
+import { GAPageView } from "@/components/GAPageView";
 
 const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? "";
 
@@ -27,7 +28,8 @@ export const metadata: Metadata = {
   keywords: [
     "Data Studio charts",
     "Data Studio community visualizations",
-    "Data Studio charts",
+    "Looker Studio charts",
+    "Looker Studio community visualizations",
     "custom charts for Data Studio",
     "D3.js visualizations",
     "Data Studio chart library",
@@ -98,12 +100,6 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark">
       <head>
-        {/* Preview password gate - remove before public launch */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){var PW='viz37',K='vz_gate_ok';try{if(localStorage.getItem(K)==='1')return;}catch(e){return;}var p=prompt('This site is private. Enter password to view:');while(p!==null&&p!==PW){p=prompt('Incorrect password. Try again:');}if(p===PW){try{localStorage.setItem(K,'1');}catch(e){}return;}document.write('<body style="margin:0;background:#0b0c14;color:#e7e7f0;font-family:Inter,system-ui,sans-serif;display:flex;align-items:center;justify-content:center;height:100vh"><div style="text-align:center"><h1 style="font-size:18px;margin:0 0 8px">Password required</h1><p style="opacity:.7;margin:0">Refresh the page to try again.</p></div></body>');if(window.stop)window.stop();})();`,
-          }}
-        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -184,6 +180,7 @@ export default function RootLayout({
         </Script>
         <TRPCProvider>{children}</TRPCProvider>
         <CookieConsent />
+        <GAPageView />
       </body>
     </html>
   );

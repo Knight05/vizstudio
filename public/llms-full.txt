@@ -1,11 +1,11 @@
 # Viz Studio
 
-> Viz Studio (vizstudio.io) is a subscription library of 75+ premium, hand-built D3.js community visualizations (custom charts) for Google Looker Studio — formerly Google Data Studio — plus a Google Calendar connector. One plan unlocks everything: $50/month or $500/year, with a 14-day free trial and no credit card required.
+> Viz Studio (vizstudio.io) is a subscription library of 75+ premium D3.js community visualizations (custom charts) for Google Data Studio — formerly known as Looker Studio — plus a Google Calendar connector. One plan unlocks everything: $50/month or $500/year, with a 14-day free trial and no credit card required.
 
 Key facts:
-- 78 charts across 11 categories; all theme-aware, cross-filtering, and responsive
+- 77 charts across 11 categories; all theme-aware, cross-filtering, and responsive
 - Charts render inside Google's community-visualization sandbox; report data is never sent to Viz Studio servers
-- No code required: paste a gs:// manifest path into Looker Studio once and every chart appears
+- No code required: paste a gs:// manifest path into Data Studio once and every chart appears
 - Operated by Viz Studio LLC; support: support@vizstudio.io
 
 ## Pages
@@ -13,7 +13,7 @@ Key facts:
 - [Home](https://vizstudio.io/): product overview, full chart library, FAQ
 - [Pricing](https://vizstudio.io/pricing): $50/month or $500/year, every plan unlocks all charts
 - [How to add a chart](https://vizstudio.io/how-to-add-a-chart): 10-step setup guide, under 4 minutes
-- [Google Calendar Connector](https://vizstudio.io/google-calendar-connector): bring calendar events into Looker Studio
+- [Google Calendar Connector](https://vizstudio.io/google-calendar-connector): bring calendar events into Data Studio
 - [Get started](https://vizstudio.io/get-started): create an account, 14-day free trial
 - [Suggest a chart](https://vizstudio.io/suggest): request new chart types
 

@@ -56,6 +56,8 @@
         btn.textContent = orig;
         return;
       }
+      // GA4 conversion event (no-op when gtag is unavailable or blocked).
+      try { if (typeof window.gtag === 'function') window.gtag('event', 'sign_up', { method: 'email' }); } catch (e) {}
       var success = card.querySelector('.form-success');
       if (success) { form.style.display = 'none'; success.classList.add('on'); }
       else { window.location.href = '/dashboard'; }

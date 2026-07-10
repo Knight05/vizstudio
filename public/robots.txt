@@ -5,13 +5,11 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /dashboard
-Disallow: /vz-ops-37
 Disallow: /login
 Disallow: /signup
 Disallow: /forgot-password
 Disallow: /reset-password
 Disallow: /reportissue
-Disallow: /charts/_drafts/
 
 # Explicit welcome for AI / LLM crawlers (same private-area rules as above)
 User-agent: GPTBot
@@ -32,12 +30,10 @@ User-agent: Bytespider
 Allow: /
 Disallow: /api/
 Disallow: /dashboard
-Disallow: /vz-ops-37
 Disallow: /login
 Disallow: /signup
 Disallow: /forgot-password
 Disallow: /reset-password
 Disallow: /reportissue
-Disallow: /charts/_drafts/
 
 Sitemap: https://vizstudio.io/sitemap.xml

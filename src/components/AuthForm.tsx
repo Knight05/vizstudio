@@ -99,6 +99,7 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
           fetchOptions,
         });
         if (error) throw new Error(error.message ?? "Sign-up failed");
+        try { (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.("event", "sign_up", { method: "email" }); } catch {}
         setCreated(true);
         return;
       } else {
@@ -109,6 +110,7 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
           fetchOptions,
         });
         if (error) throw new Error(error.message ?? "Login failed");
+        try { (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.("event", "login", { method: "email" }); } catch {}
       }
       router.replace(next);
       router.refresh();
