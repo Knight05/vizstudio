@@ -839,9 +839,9 @@ footer .newsletter button { background: var(--accent-grad); color: white; border
 /* ── Standalone /pricing page cards (matches landing .lp-price) ───────────── */
 .price-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 18px;
-  max-width: 1080px;
+  max-width: 760px;
   margin: 0 auto;
 }
 .price {

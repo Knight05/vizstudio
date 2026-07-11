@@ -33,6 +33,50 @@ function isEmail(s: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
 }
 
+/** Common free / personal inbox providers that are NOT work email addresses.
+ *  Sign-up requires a work (company) email, so these domains are rejected. */
+const FREE_EMAIL_DOMAINS = new Set([
+  "gmail.com",
+  "googlemail.com",
+  "yahoo.com",
+  "yahoo.co.uk",
+  "yahoo.co.in",
+  "ymail.com",
+  "rocketmail.com",
+  "hotmail.com",
+  "hotmail.co.uk",
+  "outlook.com",
+  "live.com",
+  "msn.com",
+  "icloud.com",
+  "me.com",
+  "mac.com",
+  "aol.com",
+  "protonmail.com",
+  "proton.me",
+  "pm.me",
+  "gmx.com",
+  "gmx.net",
+  "zoho.com",
+  "mail.com",
+  "yandex.com",
+  "yandex.ru",
+  "hey.com",
+  "fastmail.com",
+  "tutanota.com",
+  "tuta.io",
+  "hushmail.com",
+  "qq.com",
+  "163.com",
+  "126.com",
+]);
+
+/** True when the address is a valid email but on a free/personal provider. */
+function isFreeEmail(s: string): boolean {
+  const domain = s.trim().toLowerCase().split("@")[1];
+  return Boolean(domain) && FREE_EMAIL_DOMAINS.has(domain);
+}
+
 /** Throwaway placeholder - the user sets their real password via the emailed
  *  set-password link after verifying their address. */
 function randomPassword(): string {
@@ -62,6 +106,8 @@ export function GetStartedForm() {
     if (!name.trim()) next.name = "Required.";
     if (!email.trim()) next.email = "Required.";
     else if (!isEmail(email.trim())) next.email = "Enter a valid email.";
+    else if (isFreeEmail(email.trim()))
+      next.email = "Please use your work email — personal inboxes (Gmail, Outlook, etc.) aren't accepted.";
     if (!company.trim()) next.company = "Required.";
     setErrors(next);
     if (Object.keys(next).length) return;
@@ -167,7 +213,7 @@ export function GetStartedForm() {
                   </div>
 
                   <div className={"form-field" + (errors.email ? " err" : "")}>
-                    <label htmlFor="su-email">Email</label>
+                    <label htmlFor="su-email">Work email</label>
                     <input
                       id="su-email"
                       name="email"
@@ -177,7 +223,9 @@ export function GetStartedForm() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />
-                    <span className="hint">We&apos;ll send a link here to set your password.</span>
+                    <span className="hint">
+                      Please use your work email. We&apos;ll send a link here to set your password.
+                    </span>
                     <span className="err">{errors.email}</span>
                   </div>
 

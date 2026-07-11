@@ -218,29 +218,6 @@ export default async function PricingPage({
                   <PlanCta isAuthed={isAuthed} plan="PRO_YEARLY" label="Start Annual" primary />
                 </div>
               </div>
-
-              <div className="price">
-                <div className="tier">Custom</div>
-                <div className="amount">
-                  <span className="val" style={{ fontSize: 38 }}>
-                    Let&apos;s talk
-                  </span>
-                </div>
-                <div className="desc">
-                  Enterprise features, SSO, dedicated infra, custom chart builds.
-                </div>
-                <ul>
-                  <li>{CHECK}Everything in Annual</li>
-                  <li>{CHECK}SSO · SAML · SCIM</li>
-                  <li>{CHECK}Dedicated CSM</li>
-                  <li>{CHECK}Custom chart builds</li>
-                </ul>
-                <div className="cta">
-                  <a className="btn" href="mailto:hello@vizstudio.io?subject=Viz%20Studio%20custom%20plan">
-                    Contact sales →
-                  </a>
-                </div>
-              </div>
             </div>
 
             <p
