@@ -316,7 +316,7 @@ html, body {
   font-size: 12.5px;
   font-weight: 600;
   color: #fff;
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 60%, #ec4899 100%);
+  background: linear-gradient(135deg, #EDEBE4 0%, #c3c8ce 60%, #9aa0a8 100%);
   text-decoration: none;
 }
 .pshell .sb-user-cta svg { width: 13px; height: 13px; }
@@ -367,7 +367,7 @@ html, body {
   padding: 7px 14px;
   border-radius: var(--r-md);
   border: 0;
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 60%, #ec4899 100%);
+  background: linear-gradient(135deg, #EDEBE4 0%, #c3c8ce 60%, #9aa0a8 100%);
   color: #fff;
   font-size: 12.5px;
   font-weight: 600;
@@ -556,7 +556,7 @@ html, body {
   gap: 8px;
   align-items: baseline;
 }
-.pshell .plan-feats li::before { content: "✓"; color: #8b5cf6; font-weight: 700; }
+.pshell .plan-feats li::before { content: "✓"; color: #c3c8ce; font-weight: 700; }
 .pshell .plan-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .pshell .plan-actions a, .pshell .plan-actions button {
   font-family: inherit;
@@ -570,7 +570,7 @@ html, body {
   cursor: pointer;
   text-decoration: none;
 }
-.pshell .plan-actions .primary { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 60%, #ec4899 100%); color: #fff; border-color: transparent; }
+.pshell .plan-actions .primary { background: linear-gradient(135deg, #EDEBE4 0%, #c3c8ce 60%, #9aa0a8 100%); color: #fff; border-color: transparent; }
 .pshell .plan-actions a:hover, .pshell .plan-actions button:hover { border-color: var(--border-2); }
 .pshell .plan-actions .primary:hover { filter: brightness(1.08); }
 
@@ -594,7 +594,7 @@ html, body {
 .pshell .usage-fill {
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  background: linear-gradient(90deg, #EDEBE4, #c3c8ce);
 }
 
 /* invoice table */
@@ -773,7 +773,7 @@ html, body {
 }
 .pshell .lib-hero h1 .grad,
 .pshell .page-head h1 .grad {
-  background: linear-gradient(100deg, #a5b4fc, #c4b5fd 45%, #f9a8d4);
+  background: linear-gradient(100deg, #c9ccd0, #c4b5fd 45%, #f9a8d4);
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .pshell .lib-hero p {

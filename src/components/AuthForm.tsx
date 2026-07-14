@@ -10,7 +10,7 @@ import { getRecaptchaToken, preloadRecaptcha } from "@/lib/recaptcha-client";
 const C = {
   card: {
     background: "#11131f",
-    border: "1px solid rgba(148,163,255,0.14)",
+    border: "1px solid rgba(200,204,206,0.14)",
     borderRadius: 16,
     padding: "36px 32px",
     width: "100%",
@@ -24,8 +24,8 @@ const C = {
     color: "#9aa1c0",
   },
   input: {
-    background: "#0a0b14",
-    border: "1px solid rgba(148,163,255,0.18)",
+    background: "#101318",
+    border: "1px solid rgba(200,204,206,0.18)",
     borderRadius: 8,
     padding: "10px 12px",
     fontSize: 14,
@@ -34,13 +34,13 @@ const C = {
     width: "100%",
   } as React.CSSProperties,
   button: {
-    background: "linear-gradient(90deg,#6366f1,#8b5cf6,#d946ef)",
+    background: "#F4F2EC",
     border: "none",
-    borderRadius: 8,
+    borderRadius: 999,
     padding: "11px 12px",
     fontSize: 14,
     fontWeight: 600,
-    color: "#fff",
+    color: "#16181D",
     cursor: "pointer",
     width: "100%",
     marginTop: 8,

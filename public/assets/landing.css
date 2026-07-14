@@ -115,7 +115,7 @@ h1.lp-h1 {
   border-radius: var(--r-xl);
   background: var(--surface);
   overflow: hidden;
-  box-shadow: 0 30px 80px -30px rgba(0,0,0,0.6), 0 0 100px -40px rgba(139,92,246,0.45);
+  box-shadow: 0 30px 80px -30px rgba(0,0,0,0.6), 0 0 100px -40px rgba(196,200,206,0.45);
   position: relative;
 }
 .lp-dash::before {
@@ -170,7 +170,7 @@ h1.lp-h1 {
   font-size: 11px;
   color: var(--text-dim);
 }
-.lp-dash-filters .chip.on { background: rgba(99,102,241,0.15); color: var(--acc-4); border-color: rgba(99,102,241,0.4); }
+.lp-dash-filters .chip.on { background: rgba(237,235,228,0.15); color: var(--acc-4); border-color: rgba(237,235,228,0.4); }
 .lp-dash-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -238,8 +238,8 @@ h1.lp-h1 {
   margin-bottom: 16px;
   padding: 4px 12px;
   border-radius: 999px;
-  background: rgba(34,211,238,0.08);
-  border: 1px solid rgba(34,211,238,0.25);
+  background: rgba(244,242,236,0.08);
+  border: 1px solid rgba(244,242,236,0.25);
 }
 .lp-section-head h2 {
   font-family: var(--display);
@@ -274,15 +274,15 @@ h1.lp-h1 {
   position: relative;
   overflow: hidden;
 }
-.lp-feat:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.18); box-shadow: 0 14px 36px -16px rgba(99,102,241,0.35); }
+.lp-feat:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.18); box-shadow: 0 14px 36px -16px rgba(237,235,228,0.35); }
 .lp-feat .lp-icon {
   width: 44px; height: 44px;
   border-radius: 10px;
-  background: rgba(99,102,241,0.12);
+  background: rgba(237,235,228,0.12);
   color: var(--acc-4);
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 18px;
-  border: 1px solid rgba(99,102,241,0.25);
+  border: 1px solid rgba(237,235,228,0.25);
 }
 .lp-feat h3 {
   font-family: var(--display);
@@ -314,7 +314,7 @@ h1.lp-h1 {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at top, rgba(139,92,246,0.12), transparent 60%);
+  background: radial-gradient(ellipse at top, rgba(196,200,206,0.12), transparent 60%);
   pointer-events: none;
 }
 @media (max-width: 720px) { .lp-stats-bar { grid-template-columns: repeat(2, 1fr); padding: 24px; } }
@@ -366,8 +366,8 @@ h1.lp-h1 {
 }
 .lp-lib-tile:hover {
   transform: translateY(-2px);
-  border-color: rgba(139,92,246,0.4);
-  background: linear-gradient(180deg, var(--surface) 0%, rgba(99,102,241,0.06) 100%);
+  border-color: rgba(196,200,206,0.4);
+  background: linear-gradient(180deg, var(--surface) 0%, rgba(237,235,228,0.06) 100%);
 }
 .lp-lib-tile img { width: 50%; max-width: 60px; height: auto; aspect-ratio: 1/1; object-fit: contain; opacity: 0.95; }
 .lp-lib-tile .name { font-size: 11px; color: var(--text-dim); line-height: 1.25; font-weight: 500; }
@@ -396,10 +396,10 @@ h1.lp-h1 {
 }
 .lp-fc::before {
   content: ""; position: absolute; inset: 0;
-  background: radial-gradient(circle at 80% -10%, rgba(139,92,246,0.10), transparent 55%);
+  background: radial-gradient(circle at 80% -10%, rgba(196,200,206,0.10), transparent 55%);
   opacity: 0; transition: opacity .22s; pointer-events: none;
 }
-.lp-fc:hover { transform: translateY(-3px); border-color: var(--border-strong); box-shadow: 0 14px 36px -16px rgba(99,102,241,0.4); }
+.lp-fc:hover { transform: translateY(-3px); border-color: var(--border-strong); box-shadow: 0 14px 36px -16px rgba(237,235,228,0.4); }
 .lp-fc:hover::before { opacity: 1; }
 .lp-fc .fc-icon {
   width: 52px; height: 52px;
@@ -529,7 +529,7 @@ h1.lp-h1 {
     linear-gradient(var(--surface), var(--surface)) padding-box,
     var(--accent-grad) border-box;
   border: 1px solid transparent;
-  box-shadow: 0 20px 60px -20px rgba(139,92,246,0.4);
+  box-shadow: 0 20px 60px -20px rgba(196,200,206,0.4);
   transform: scale(1.02);
 }
 @media (max-width: 920px) { .lp-price.featured { transform: none; } }
@@ -664,7 +664,7 @@ h1.lp-h1 {
   padding: 80px 32px;
   border-radius: var(--r-xl);
   background:
-    linear-gradient(135deg, rgba(99,102,241,0.18) 0%, rgba(139,92,246,0.18) 50%, rgba(236,72,153,0.18) 100%),
+    linear-gradient(135deg, rgba(237,235,228,0.18) 0%, rgba(196,200,206,0.18) 50%, rgba(154,160,168,0.18) 100%),
     var(--surface);
   border: 1px solid var(--border-strong);
   position: relative;

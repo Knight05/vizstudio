@@ -109,7 +109,7 @@
     const svg = document.createElementNS(ns, 'svg');
     svg.setAttribute('viewBox', '0 0 320 160');
     svg.setAttribute('preserveAspectRatio', 'none');
-    svg.append(grad('hgmain', '#6366f1', '#0a0b14'));
+    svg.append(grad('hgmain', '#EDEBE4', '#101318'));
     const vals = [40, 65, 55, 80, 70, 90, 75, 95, 85, 100, 90, 110];
     const max = Math.max(...vals);
     vals.forEach((v, i) => {
@@ -131,7 +131,7 @@
       path += (i ? 'L' : 'M') + x + ',' + y + ' ';
     });
     const p = document.createElementNS(ns, 'path');
-    p.setAttribute('d', path); p.setAttribute('fill', 'none'); p.setAttribute('stroke', '#ec4899'); p.setAttribute('stroke-width', '2'); p.setAttribute('stroke-linecap', 'round'); p.setAttribute('stroke-linejoin', 'round');
+    p.setAttribute('d', path); p.setAttribute('fill', 'none'); p.setAttribute('stroke', '#9aa0a8'); p.setAttribute('stroke-width', '2'); p.setAttribute('stroke-linecap', 'round'); p.setAttribute('stroke-linejoin', 'round');
     svg.append(p);
     main.append(svg);
   }
@@ -141,7 +141,7 @@
   if (donut) {
     const svg = document.createElementNS(ns, 'svg');
     svg.setAttribute('viewBox', '0 0 60 60');
-    const segs = [{ v: 0.42, c: '#6366f1' }, { v: 0.28, c: '#8b5cf6' }, { v: 0.18, c: '#ec4899' }, { v: 0.12, c: '#22d3ee' }];
+    const segs = [{ v: 0.42, c: '#EDEBE4' }, { v: 0.28, c: '#c3c8ce' }, { v: 0.18, c: '#9aa0a8' }, { v: 0.12, c: '#F4F2EC' }];
     let a0 = -Math.PI / 2;
     const cx = 30, cy = 30, rOut = 26, rIn = 16;
     segs.forEach((s) => {
@@ -165,7 +165,7 @@
     const svg = document.createElementNS(ns, 'svg');
     svg.setAttribute('viewBox', '0 0 320 60');
     svg.setAttribute('preserveAspectRatio', 'none');
-    svg.append(grad('gspark', '#22d3ee', '#0a0b14'));
+    svg.append(grad('gspark', '#F4F2EC', '#101318'));
     const pts = [];
     let y = 30;
     for (let i = 0; i < 40; i++) {
@@ -177,7 +177,7 @@
     const a = document.createElementNS(ns, 'path');
     a.setAttribute('d', areaPath); a.setAttribute('fill', 'url(#gspark)');
     const l = document.createElementNS(ns, 'path');
-    l.setAttribute('d', linePath); l.setAttribute('fill', 'none'); l.setAttribute('stroke', '#22d3ee'); l.setAttribute('stroke-width', '1.6'); l.setAttribute('stroke-linecap', 'round'); l.setAttribute('stroke-linejoin', 'round');
+    l.setAttribute('d', linePath); l.setAttribute('fill', 'none'); l.setAttribute('stroke', '#F4F2EC'); l.setAttribute('stroke-width', '1.6'); l.setAttribute('stroke-linecap', 'round'); l.setAttribute('stroke-linejoin', 'round');
     svg.append(a); svg.append(l);
     spark.append(svg);
   }

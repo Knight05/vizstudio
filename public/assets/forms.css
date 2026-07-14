@@ -16,7 +16,7 @@
   border-radius: var(--r-xl);
   background: var(--surface);
   border: 1px solid var(--border-strong);
-  box-shadow: 0 30px 80px -30px rgba(0,0,0,0.6), 0 0 100px -40px rgba(139,92,246,0.35);
+  box-shadow: 0 30px 80px -30px rgba(0,0,0,0.6), 0 0 100px -40px rgba(196,200,206,0.35);
   position: relative;
 }
 .form-card::before {
@@ -92,7 +92,7 @@
 .form-field textarea:focus,
 .form-field select:focus {
   border-color: var(--acc);
-  box-shadow: 0 0 0 3px rgba(99,102,241,0.18);
+  box-shadow: 0 0 0 3px rgba(237,235,228,0.18);
 }
 .form-field .hint {
   font-family: var(--mono);
@@ -143,9 +143,9 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 18px;
-  box-shadow: 0 10px 30px -8px rgba(139,92,246,0.5);
+  box-shadow: 0 10px 30px -8px rgba(196,200,206,0.5);
 }
-.form-success .check svg { width: 28px; height: 28px; color: white; }
+.form-success .check svg { width: 28px; height: 28px; color: #16181D; }
 .form-success h2 {
   font-family: var(--display);
   font-size: 28px;
@@ -171,7 +171,7 @@
   padding: 60px 32px;
   border-radius: var(--r-xl);
   background:
-    linear-gradient(135deg, rgba(99,102,241,0.16) 0%, rgba(139,92,246,0.16) 50%, rgba(236,72,153,0.16) 100%),
+    linear-gradient(135deg, rgba(237,235,228,0.16) 0%, rgba(196,200,206,0.16) 50%, rgba(154,160,168,0.16) 100%),
     var(--surface);
   border: 1px solid var(--border-strong);
   text-align: center;
@@ -216,17 +216,17 @@
 .subscribe-form button {
   padding: 13px 22px;
   border: none;
-  border-radius: var(--r-md);
-  background: var(--accent-grad);
-  color: white;
+  border-radius: 999px;
+  background: var(--cta, #F4F2EC);
+  color: #16181D;
   font-weight: 600;
   font-size: 14px;
   cursor: pointer;
   white-space: nowrap;
-  box-shadow: 0 8px 24px -8px rgba(139,92,246,0.5);
+  box-shadow: 0 8px 24px -8px rgba(196,200,206,0.5);
   transition: transform .12s, box-shadow .15s;
 }
-.subscribe-form button:hover { transform: translateY(-1px); box-shadow: 0 12px 28px -8px rgba(139,92,246,0.7); }
+.subscribe-form button:hover { transform: translateY(-1px); box-shadow: 0 12px 28px -8px rgba(196,200,206,0.7); }
 .subscribe-form button.done { background: #22c55e; box-shadow: none; cursor: default; }
 .subscribe-msg {
   margin-top: 14px;

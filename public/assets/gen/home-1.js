@@ -118,7 +118,7 @@ const makeLogoItem = (name, i) => `<div class="logo-item">${shapes[i % shapes.le
 // ═══════════════════════════════════════════════════════════
 // CHARTS - vanilla SVG + small deterministic data
 // ═══════════════════════════════════════════════════════════
-const PAL = ['#6366f1', '#8b5cf6', '#ec4899', '#22d3ee', '#f59e0b', '#10b981'];
+const PAL = ['#EDEBE4', '#c3c8ce', '#9aa0a8', '#F4F2EC', '#b8bdc4', '#6b7178'];
 function svgNS(n, attrs = {}, children = []) {
   const el = document.createElementNS('http://www.w3.org/2000/svg', n);
   for (const k in attrs) el.setAttribute(k, attrs[k]);
@@ -217,8 +217,8 @@ function renderHeroSide() {
     ang = a2;
   });
   // center label
-  svg.appendChild(svgNS('text', { x: cx, y: cy - 4, 'text-anchor': 'middle', fill: '#eef0f7', 'font-size': 13, 'font-weight': 700, 'font-family': 'Inter' })).textContent = '68%';
-  svg.appendChild(svgNS('text', { x: cx, y: cy + 12, 'text-anchor': 'middle', fill: '#9aa0b4', 'font-size': 9, 'font-family': 'Inter' })).textContent = 'converted';
+  svg.appendChild(svgNS('text', { x: cx, y: cy - 4, 'text-anchor': 'middle', fill: '#eef0f7', 'font-size': 13, 'font-weight': 700, 'font-family': 'Hanken Grotesk' })).textContent = '68%';
+  svg.appendChild(svgNS('text', { x: cx, y: cy + 12, 'text-anchor': 'middle', fill: '#9aa0b4', 'font-size': 9, 'font-family': 'Hanken Grotesk' })).textContent = 'converted';
 }
 renderHeroSide();
 addEventListener('resize', renderHeroSide);
@@ -231,7 +231,7 @@ function renderHeroDash() {
     main.innerHTML = '';
     const W = 400, H = 240;
     const N = 30;
-    const colors = ['#6366f1', '#8b5cf6', '#ec4899'];
+    const colors = ['#EDEBE4', '#c3c8ce', '#9aa0a8'];
     const series = [0,1,2].map((s, si) =>
       Array.from({length: N}, (_, i) => 40 + Math.sin(i * 0.4 + si) * 12 + Math.cos(i * 0.2 + si * 2) * 8 + si * 8 + Math.random() * 4)
     );
@@ -269,7 +269,7 @@ function renderHeroDash() {
     donut.innerHTML = '';
     const ns = 'http://www.w3.org/2000/svg';
     const cx = 50, cy = 50, rOut = 34, rIn = 22;
-    const segs = [{v: 42, c: '#6366f1'}, {v: 28, c: '#8b5cf6'}, {v: 18, c: '#ec4899'}, {v: 12, c: '#22d3ee'}];
+    const segs = [{v: 42, c: '#EDEBE4'}, {v: 28, c: '#c3c8ce'}, {v: 18, c: '#9aa0a8'}, {v: 12, c: '#F4F2EC'}];
     const total = segs.reduce((a,b) => a + b.v, 0);
     let a0 = -Math.PI / 2;
     for (const s of segs) {
@@ -314,7 +314,7 @@ function renderHeroDash() {
     arc.setAttribute('stroke', 'url(#gg)'); arc.setAttribute('stroke-width', 8);
     arc.setAttribute('fill', 'none'); arc.setAttribute('stroke-linecap', 'round');
     arc.setAttribute('stroke-dasharray', `${len * pct} ${len}`);
-    gauge.innerHTML = `<defs><linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#6366f1"/><stop offset="1" stop-color="#ec4899"/></linearGradient></defs>` + gauge.innerHTML;
+    gauge.innerHTML = `<defs><linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#EDEBE4"/><stop offset="1" stop-color="#9aa0a8"/></linearGradient></defs>` + gauge.innerHTML;
     gauge.appendChild(arc);
     const t = document.createElementNS(ns, 'text');
     t.setAttribute('x', 50); t.setAttribute('y', 50); t.setAttribute('text-anchor', 'middle');
@@ -339,9 +339,9 @@ function renderHeroDash() {
     area.setAttribute('fill', 'url(#spk)'); area.setAttribute('opacity', 0.35);
     const line = document.createElementNS(ns, 'path');
     line.setAttribute('d', `M${pts}`);
-    line.setAttribute('stroke', '#8b5cf6'); line.setAttribute('stroke-width', 1.5);
+    line.setAttribute('stroke', '#c3c8ce'); line.setAttribute('stroke-width', 1.5);
     line.setAttribute('fill', 'none');
-    spark.innerHTML = `<defs><linearGradient id="spk" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></linearGradient></defs>`;
+    spark.innerHTML = `<defs><linearGradient id="spk" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#c3c8ce"/><stop offset="1" stop-color="#c3c8ce" stop-opacity="0"/></linearGradient></defs>`;
     spark.appendChild(area); spark.appendChild(line);
   }
 }
@@ -728,7 +728,7 @@ const FEATURED = [
 ];
 const FNS = ' xmlns="http://www.w3.org/2000/svg"';
 function FT(kind, w, h){
-  const C = ['#6366f1','#8b5cf6','#ec4899','#22d3ee','#10b981','#f59e0b'];
+  const C = ['#EDEBE4','#c3c8ce','#9aa0a8','#F4F2EC','#6b7178','#b8bdc4'];
   const rng = (s) => () => { s = (s * 9301 + 49297) % 233280; return s / 233280; };
   let svg = `<svg viewBox="0 0 ${w} ${h}"${FNS}>`;
   if (kind === 'bump') {
@@ -960,13 +960,13 @@ function step1() {
   // email form mock
   const g = svgNS('g', { transform: `translate(${W*0.1}, ${H*0.3})` });
   g.appendChild(svgNS('rect', { width: W*0.55, height: H*0.4, rx: 6, fill: 'rgba(255,255,255,0.06)', stroke: 'rgba(255,255,255,0.12)' }));
-  const text = svgNS('text', { x: 10, y: H*0.25, fill: '#9aa0b4', 'font-size': 11, 'font-family': 'Inter' });
+  const text = svgNS('text', { x: 10, y: H*0.25, fill: '#9aa0b4', 'font-size': 11, 'font-family': 'Hanken Grotesk' });
   text.textContent = '';
   g.appendChild(text);
   svg.appendChild(g);
-  const btn = svgNS('rect', { x: W*0.72, y: H*0.3, width: W*0.22, height: H*0.4, rx: 6, fill: '#6366f1' });
+  const btn = svgNS('rect', { x: W*0.72, y: H*0.3, width: W*0.22, height: H*0.4, rx: 6, fill: '#EDEBE4' });
   svg.appendChild(btn);
-  const btnT = svgNS('text', { x: W*0.83, y: H*0.58, fill: 'white', 'font-size': 11, 'font-weight': 600, 'text-anchor': 'middle', 'font-family': 'Inter' });
+  const btnT = svgNS('text', { x: W*0.83, y: H*0.58, fill: '#16181D', 'font-size': 11, 'font-weight': 600, 'text-anchor': 'middle', 'font-family': 'Hanken Grotesk' });
   btnT.textContent = 'Subscribe';
   svg.appendChild(btnT);
   // type animation
@@ -992,7 +992,7 @@ function step2() {
     svg.appendChild(mini);
     // a pulsing "add" check
     if (i === 1) {
-      const c = svgNS('circle', { cx: x + (W - 30)/6, cy: H - 20, r: 5, fill: '#22d3ee' });
+      const c = svgNS('circle', { cx: x + (W - 30)/6, cy: H - 20, r: 5, fill: '#F4F2EC' });
       const anim = svgNS('animate', { attributeName: 'r', values: '5;10;5', dur: '1.6s', repeatCount: 'indefinite' });
       c.appendChild(anim);
       svg.appendChild(c);
@@ -1114,23 +1114,6 @@ function paintLogos(variant) {
 // ═══════════════════════════════════════════════════════════
 // HERO TICKER - build items
 // ═══════════════════════════════════════════════════════════
-const TICKER = [
-  { k: 'MRR',          v: '$412K',    d: '+4.8%', dir: 'up' },
-  { k: 'Active seats', v: '10,284',   d: '+127',  dir: 'up' },
-  { k: 'P95 render',   v: '42ms',     d: '−3ms',  dir: 'up' },
-  { k: 'Charts/sec',   v: '1,842',    d: '+12%',  dir: 'up' },
-  { k: 'Trial→Paid',   v: '32.4%',    d: '+2.1pp',dir: 'up' },
-  { k: 'Queue',        v: '3 / 200',  d: 'ok',    dir: 'up' },
-  { k: 'Uptime 7d',    v: '100%',     d: 'ok',    dir: 'up' },
-  { k: 'Errors/1K',    v: '0.03',     d: '−0.01', dir: 'up' },
-  { k: 'Signups/hr',   v: '48',       d: '+6',    dir: 'up' },
-];
-const tickerTrack = document.getElementById('tickerTrack');
-const tickerHTML = [...TICKER, ...TICKER].map((t, i) => `
-  <span class="tk-item">
-    <span>${t.k}</span><span class="n">${t.v}</span><span class="${t.dir}">${t.d}</span>
-    ${i < TICKER.length * 2 - 1 ? '<span class="sep"></span>' : ''}
-  </span>`).join('');
-tickerTrack.innerHTML = tickerHTML;
+/* ticker removed (July 2026 redesign) */
 
 })();

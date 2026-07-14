@@ -9,7 +9,7 @@
   const id = document.body.dataset.chartId;
   const w = 720, h = 420;
   const pad = 28;
-  const palette = ['#6366f1', '#8b5cf6', '#ec4899', '#22d3ee', '#a3e635', '#f59e0b', '#10b981', '#f97316'];
+  const palette = ['#EDEBE4', '#c3c8ce', '#9aa0a8', '#F4F2EC', '#a3e635', '#f59e0b', '#10b981', '#f97316'];
 
   const ns = 'http://www.w3.org/2000/svg';
   const svg = document.createElementNS(ns, 'svg');
@@ -105,8 +105,8 @@
       el('path', { d, fill: palette[i % palette.length], opacity: 0.92 - i * 0.06 });
       a0 = a1;
     });
-    el('text', { x: cx, y: cy + 4, 'text-anchor': 'middle', fill: '#eef0f7', 'font-family': "'Bricolage Grotesque', sans-serif", 'font-weight': '700', 'font-size': '32' }).textContent = '74';
-    el('text', { x: cx, y: cy + 26, 'text-anchor': 'middle', fill: '#9aa0b4', 'font-family': "'JetBrains Mono', monospace", 'font-size': '11' }).textContent = 'CHARTS';
+    el('text', { x: cx, y: cy + 4, 'text-anchor': 'middle', fill: '#EDEBE4', 'font-family': "'Bricolage Grotesque', sans-serif", 'font-weight': '700', 'font-size': '32' }).textContent = '74';
+    el('text', { x: cx, y: cy + 26, 'text-anchor': 'middle', fill: '#9ba0a9', 'font-family': "'JetBrains Mono', monospace", 'font-size': '11' }).textContent = 'CHARTS';
   } else if (kind === 'scat') {
     drawGrid();
     for (let i = 0; i < 80; i++) {
@@ -139,7 +139,7 @@
       if (a === b) continue;
       el('path', { d: `M${a.x},${a.y} Q${cx},${cy} ${b.x},${b.y}`, fill: 'none', stroke: a.c, 'stroke-width': 1 + r() * 3, opacity: 0.5 });
     }
-    nodes.forEach(p => el('circle', { cx: p.x, cy: p.y, r: 9, fill: p.c, stroke: '#0a0b14', 'stroke-width': 2 }));
+    nodes.forEach(p => el('circle', { cx: p.x, cy: p.y, r: 9, fill: p.c, stroke: '#101318', 'stroke-width': 2 }));
   } else if (kind === 'tree') {
     // treemap
     const rects = [
@@ -160,8 +160,8 @@
       const cw = (w - pad * 2) / 4 - 12;
       const x = pad + i * (cw + 12);
       el('rect', { x, y: pad + 40, width: cw, height: h - pad * 2 - 80, rx: 8, fill: palette[i % palette.length], opacity: 0.18 });
-      el('text', { x: x + 16, y: pad + 80, fill: '#9aa0b4', 'font-family': "'JetBrains Mono', monospace", 'font-size': '10' }).textContent = 'METRIC ' + (i + 1);
-      el('text', { x: x + 16, y: pad + 130, fill: '#eef0f7', 'font-family': "'Bricolage Grotesque', sans-serif", 'font-weight': '700', 'font-size': '36' }).textContent = Math.floor(40 + r() * 600).toLocaleString();
+      el('text', { x: x + 16, y: pad + 80, fill: '#9ba0a9', 'font-family': "'JetBrains Mono', monospace", 'font-size': '10' }).textContent = 'METRIC ' + (i + 1);
+      el('text', { x: x + 16, y: pad + 130, fill: '#EDEBE4', 'font-family': "'Bricolage Grotesque', sans-serif", 'font-weight': '700', 'font-size': '36' }).textContent = Math.floor(40 + r() * 600).toLocaleString();
     }
   }
 })();
