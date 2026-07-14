@@ -1085,3 +1085,83 @@ footer .newsletter button { border-radius: 999px; background: var(--cream); colo
   color: var(--text);
 }
 .section-head p { color: var(--muted); font-size: 17px; line-height: 1.55; margin: 0 auto; max-width: 60ch; }
+
+/* ════════════════════════════════════════════════════════════
+   PAPER PAGES (July 2026): non-home pages read as the paper
+   sections below the homepage hero — cream bg, ink type, white
+   cards. Nav + footer keep their ink chrome.
+   ════════════════════════════════════════════════════════════ */
+:root {
+  --bg: #F3F0E8;
+  --bg-1: #EDE9DD;
+  --surface: #ffffff;
+  --surface-2: #F3F0E8;
+  --surface-3: #E9E5D9;
+  --border: rgba(12,14,13,0.12);
+  --border-strong: rgba(12,14,13,0.26);
+  --text: #16181D;
+  --text-dim: #3c4038;
+  --muted: #5c625a;
+  --acc: #16181D;
+  --acc-2: #20242A;
+  --acc-3: #5c625a;
+  --acc-4: #16181D;
+  --accent-grad: linear-gradient(135deg, #16181D 0%, #20242A 100%);
+  color-scheme: light;
+}
+body { background: var(--bg); color: var(--text); }
+.blobs { display: none; }
+::selection { background: #16181D; color: #F4F2EC; }
+
+/* buttons on paper */
+.btn { border-color: rgba(12,14,13,0.28); color: #16181D; }
+.btn:hover { background: rgba(12,14,13,0.04); border-color: #16181D; }
+.btn-primary, .btn.primary { background: #16181D; border-color: #16181D; color: #F4F2EC; }
+.btn-primary:hover, .btn.primary:hover { background: #000000; border-color: #000000; box-shadow: 0 14px 30px -18px rgba(24,26,29,0.5); }
+.chart-cta-row .btn-primary, .chart-cta-row .btn-primary:hover { box-shadow: 0 14px 30px -18px rgba(24,26,29,0.4); }
+
+/* nav + mobile menu keep ink chrome (dark bar over paper) */
+.nav .btn { border-color: rgba(255,255,255,0.24); color: var(--cream); }
+.nav .btn:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.5); }
+.nav .btn.primary { background: var(--cream); border-color: var(--cream); color: #16181D; }
+.nav nav a { color: #c8ccc4; }
+.nav nav a:hover { color: #ffffff; }
+.nav .logo, .nav .brand { color: #EDEBE4; }
+.nav .nav-links a { color: #c8ccc4; }
+.nav .nav-links a:hover { color: #ffffff; }
+.mobile-menu a { color: #d9dbd4; }
+.mobile-menu a:hover { background: rgba(255,255,255,0.06); color: #ffffff; }
+.mobile-menu a.btn.primary { background: var(--cream); border-color: var(--cream); color: #16181D; }
+
+/* eyebrows, pulses, small chrome → ink */
+.eyebrow .dot, .chart-hero-eyebrow .pulse { background: #16181D; box-shadow: 0 0 8px rgba(24,26,29,0.3); }
+.chart-eyebrow { background: #ffffff; border-color: rgba(12,14,13,0.16); }
+.chart-eyebrow::before { background: #16181D; box-shadow: none; }
+.chart-tagline { color: #3c4038; }
+.section-eyebrow, .use-case .tag, .aside-card h3, .chart-trust span::before, .card-arrow { color: #16181D; }
+.section-head .section-tag { color: #16181D; }
+
+/* cards & tiles: white cards, dark icon wells (matches homepage library) */
+.card:hover { border-color: #16181D; box-shadow: 0 14px 30px -20px rgba(24,26,29,0.35); }
+.card-icon { background: #1a1d22; border-color: rgba(12,14,13,0.10); }
+.chip { background: #ffffff; border-color: rgba(12,14,13,0.20); color: #5c625a; }
+.chip:hover { color: #16181D; border-color: #16181D; }
+.chip.active { background: #16181D; border-color: #16181D; color: #F4F2EC; }
+.search-bar { background: #ffffff; border-color: rgba(12,14,13,0.20); }
+
+/* chart detail chrome on paper */
+.chart-hero-icon { background: #1a1d22; border-color: rgba(12,14,13,0.20); box-shadow: 0 12px 30px -14px rgba(24,26,29,0.35); }
+.chart-hero-icon::after { background: rgba(12,14,13,0.15); }
+.chart-preview { background: #ffffff; border-color: rgba(12,14,13,0.14); box-shadow: 0 24px 60px -30px rgba(24,26,29,0.35); }
+.chart-preview::before { background: rgba(12,14,13,0.10); }
+.preview-bar { border-color: rgba(12,14,13,0.10); }
+.preview-bar .dot { background: #E9E5D9; }
+.pager-link:hover { border-color: #16181D; }
+
+/* forms on paper: white card, light inputs, subtle ring */
+.form-card::before { opacity: 0.12; }
+.footer-fallback { color: #5c625a; }
+.footer-fallback a { color: #3c4038; }
+/* over paper, the translucent nav reads muddy — go near-solid ink */
+.nav { background: rgba(16,18,22,0.94); }
+.nav.scrolled { background: rgba(16,18,22,0.98); }
