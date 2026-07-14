@@ -1165,3 +1165,5 @@ body { background: var(--bg); color: var(--text); }
 /* over paper, the translucent nav reads muddy — go near-solid ink */
 .nav { background: rgba(16,18,22,0.94); }
 .nav.scrolled { background: rgba(16,18,22,0.98); }
+/* globals.css (app bundle) sets a dark .card:hover background — keep cards white on paper */
+.card:hover { background: var(--surface); }
