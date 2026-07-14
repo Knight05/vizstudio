@@ -19,7 +19,6 @@ export default function SiteNav() {
           vizstudio
         </a>
         <nav>
-          <a href="/#features">Features</a>
           <a href="/#library">Charts</a>
           <a href="/google-calendar-connector">Google Calendar</a>
           <a href="/#pricing">Pricing</a>
@@ -50,7 +49,6 @@ export default function SiteNav() {
         id="mobileMenu"
         style={open ? { display: "flex" } : undefined}
       >
-        <a href="/#features">Features</a>
         <a href="/#library">Charts</a>
         <a href="/google-calendar-connector">Google Calendar</a>
         <a href="/#pricing">Pricing</a>

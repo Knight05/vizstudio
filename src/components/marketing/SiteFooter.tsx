@@ -22,7 +22,6 @@ export default function SiteFooter() {
           <div>
             <h4>Product</h4>
             <ul>
-              <li><a href="/#features">Features</a></li>
               <li><a href="/#library">Charts</a></li>
               <li><a href="/#pricing">Pricing</a></li>
               <li><a href="/#faq">FAQ</a></li>

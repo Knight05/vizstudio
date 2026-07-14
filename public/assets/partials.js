@@ -25,7 +25,6 @@
           ' vizstudio' +
         '</a>' +
         '<nav>' +
-          '<a href="/#features">Features</a>' +
           '<a href="/#library">Charts</a>' +
           '<a href="/google-calendar-connector">Google Calendar</a>' +
           '<a href="/#pricing">Pricing</a>' +
@@ -39,7 +38,6 @@
         '</div>' +
       '</div>' +
       '<div class="mobile-menu" id="mobileMenu">' +
-        '<a href="/#features">Features</a>' +
         '<a href="/#library">Charts</a>' +
         '<a href="/google-calendar-connector">Google Calendar</a>' +
         '<a href="/#pricing">Pricing</a>' +
@@ -66,7 +64,6 @@
           '<div>' +
             '<h4>Product</h4>' +
             '<ul>' +
-              '<li><a href="/#features">Features</a></li>' +
               '<li><a href="/#library">Charts</a></li>' +
               '<li><a href="/#pricing">Pricing</a></li>' +
               '<li><a href="/#faq">FAQ</a></li>' +
