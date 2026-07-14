@@ -1167,3 +1167,18 @@ body { background: var(--bg); color: var(--text); }
 .nav.scrolled { background: rgba(16,18,22,0.98); }
 /* globals.css (app bundle) sets a dark .card:hover background — keep cards white on paper */
 .card:hover { background: var(--surface); }
+/* footer keeps its ink chrome on paper pages: re-declare the tokens in
+   footer scope so every var()-driven rule (and inline var() styles on the
+   legal pages) resolves back to the dark palette */
+footer {
+  background: #16181D;
+  border-top: 1px solid rgba(255,255,255,0.10);
+  --bg: #16181D; --bg-1: #181B20;
+  --surface: #20242A; --surface-2: #23262C; --surface-3: #2A2E35;
+  --border: rgba(255,255,255,0.10); --border-strong: rgba(255,255,255,0.22);
+  --text: #EDEBE4; --text-dim: #b0b4bd; --muted: #9ba0a9;
+  --acc: #EDEBE4; --acc-2: #c3c8ce; --acc-4: #EDEBE4;
+}
+footer .logo, .foot-grid .logo { color: #EDEBE4; }
+.footer-fallback { color: #9ba0a9; }
+.footer-fallback a { color: #c8ccc4; }
