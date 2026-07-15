@@ -120,6 +120,9 @@ function CountUp({ value }: { value: number }) {
 }
 
 const CAL_CONNECTOR_URL = "/google-calendar-connector";
+const CAL_DEPLOYMENT_ID =
+  "AKfycbwsSUdWJ7wjmmqzKgRidAeCI6NCVzOaPGa_JYKFktqrXKzXFhDwrBNsAhcZ9ixMINkn0w";
+const DATA_STUDIO_CREATE_URL = "https://lookerstudio.google.com/datasources/create";
 
 const TABS = ["overview", "charts", "billing", "downloads", "support", "settings"] as const;
 type Tab = (typeof TABS)[number];
@@ -128,7 +131,7 @@ const TAB_LABELS: Record<Tab, string> = {
   overview: "Home",
   charts: "Charts",
   billing: "Billing",
-  downloads: "Downloads & keys",
+  downloads: "Google Calendar connector",
   support: "Support",
   settings: "Settings",
 };
@@ -244,7 +247,7 @@ export function PortalClient(props: PortalProps) {
     { tab: "overview", icon: "i-home" },
     { tab: "charts", icon: "i-charts", kb: String(props.chartCount) },
     { tab: "billing", icon: "i-reports" },
-    { tab: "downloads", icon: "i-download", kb: String(props.initialKeys.length) },
+    { tab: "downloads", icon: "i-cal", kb: String(props.initialKeys.length) },
     { tab: "support", icon: "i-help" },
     { tab: "settings", icon: "i-settings" },
   ];
@@ -1128,7 +1131,7 @@ function BillingTab(props: PortalProps) {
 }
 
 /* ════════════════════════════════════════════════════════
-   Downloads & license keys
+   Google Calendar connector (setup, license keys, downloads)
    ════════════════════════════════════════════════════════ */
 function DownloadsTab(props: PortalProps) {
   const utils = trpc.useUtils();
@@ -1175,8 +1178,49 @@ function DownloadsTab(props: PortalProps) {
   return (
     <>
       <div className="page-head">
-        <h1>Downloads & keys</h1>
-        <p>Your license keys and chart download history.</p>
+        <h1>Google Calendar connector</h1>
+        <p>Add the connector to Data Studio, plus your license keys and download history.</p>
+      </div>
+
+      <div className="pcard">
+        <h3>Add it to Data Studio</h3>
+        <p className="lead">Five steps, about a minute, and your calendar events become rows in your reports.</p>
+
+        <ol style={{ margin: 0, paddingLeft: 20, display: "grid", gap: 10, fontSize: 13, lineHeight: 1.55, color: "var(--muted)" }}>
+          <li>
+            In{" "}
+            <a
+              href={DATA_STUDIO_CREATE_URL}
+              target="_blank"
+              rel="noreferrer"
+              style={{ color: "var(--text)" }}
+              onClick={() => track("calendar_setup_datasource_open")}
+            >
+              Data Studio
+            </a>
+            , add a data source: <b style={{ color: "var(--text)" }}>Create → Data source</b>.
+          </li>
+          <li>
+            In the connector gallery, click <b style={{ color: "var(--text)" }}>Build your own</b>.
+          </li>
+          <li>
+            Enter this deployment ID:
+            <div style={{ marginTop: 8, maxWidth: 560 }}>
+              <CopyField
+                value={CAL_DEPLOYMENT_ID}
+                onCopy={() => track("calendar_deployment_id_copied")}
+              />
+            </div>
+          </li>
+          <li>
+            Click <b style={{ color: "var(--text)" }}>Validate</b>, then open the Google Calendar connector that
+            appears and authorize it with your Google account.
+          </li>
+          <li>
+            Enter your license key from below and your calendar IDs, then click{" "}
+            <b style={{ color: "var(--text)" }}>Connect</b>.
+          </li>
+        </ol>
       </div>
 
       <div className="pcard">
