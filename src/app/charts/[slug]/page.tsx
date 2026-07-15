@@ -150,6 +150,9 @@ export default async function ChartPage({
               <div>
                 <div className="cp-eyebrow">{chart.catLabel}</div>
                 <h1 className="cp-title">{chart.name}</h1>
+                <div className="cp-seoline">
+                  {chart.name} for Data Studio, formerly known as Looker Studio.
+                </div>
                 <p className="cp-tagline">{chart.tagline}</p>
                 <div className="cp-ctas">
                   <a className="cp-btn-primary" href="/get-started">
@@ -170,9 +173,6 @@ export default async function ChartPage({
                   <span>Cross-filter ready</span>
                   <span>Theme-aware</span>
                   <span>Setup in 30s</span>
-                </div>
-                <div className="cp-seoline">
-                  {chart.name} for Data Studio, formerly known as Looker Studio.
                 </div>
               </div>
 
