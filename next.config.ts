@@ -30,6 +30,8 @@ const config: NextConfig = {
       { source: "/charts/oppositediagram", destination: "/charts/2x2-matrix", permanent: true },
       { source: "/charts/oppositediagram.html", destination: "/charts/2x2-matrix", permanent: true },
       { source: "/charts/:slug.html", destination: "/charts/:slug", permanent: true },
+      // Legacy static .html URL for the connector page -> clean Next route.
+      { source: "/google-calendar-connector.html", destination: "/google-calendar-connector", permanent: true },
       { source: "/legal/terms", destination: "/terms", permanent: false },
       { source: "/legal/privacy", destination: "/privacy", permanent: false },
       { source: "/about", destination: "/", permanent: false },
