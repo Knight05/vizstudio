@@ -128,95 +128,36 @@ export default async function ChartPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="blobs">
-        <span className="blob blob-1"></span>
-        <span className="blob blob-2"></span>
-        <span className="blob blob-3"></span>
-      </div>
-
       <SiteNav />
 
       <main>
-        <div className="wrap">
-          <div className="crumbs">
-            <a href="/">vizstudio</a>
-            <span>/</span>
-            <a href="/#library">Charts</a>
-            <span>/</span>
-            <a href="/#library" data-cat={chart.category}>
-              {chart.catLabel}
-            </a>
-            <span>/</span>
-            <span>{chart.name}</span>
-          </div>
-        </div>
+        {/* ── HERO (ink) ── */}
+        <section className="cp-hero">
+          <div className="cp-wrap">
+            <div className="cp-crumbs">
+              <a href="/">vizstudio</a>
+              <span className="cp-sep">/</span>
+              <a href="/#library">Charts</a>
+              <span className="cp-sep">/</span>
+              <a href="/#library" data-cat={chart.category}>
+                {chart.catLabel}
+              </a>
+              <span className="cp-sep">/</span>
+              <span className="cp-cur">{chart.name}</span>
+            </div>
 
-        <section className="chart-hero">
-          <div className="wrap">
-            <div className="chart-hero-grid">
-              <div className="chart-hero-copy">
-                <div className="chart-title-row">
-                  <div className="chart-hero-icon">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={`/icons/${chart.id}.png`}
-                      alt=""
-                      style={{ opacity: 1 }}
-                    />
-                  </div>
-                  <h1 className="chart-title">{chart.name}</h1>
-                </div>
-                <div className="chart-eyebrow">
-                  {chart.name} for Data Studio (formerly Looker Studio).
-                </div>
-                <p className="chart-tagline">{chart.tagline}</p>
-              </div>
-              <div className="chart-hero-media">
-                <div className="chart-preview">
-                  <div className="preview-bar">
-                    <span className="dot"></span>
-                    <span className="dot"></span>
-                    <span className="dot"></span>
-                  </div>
-                  {previewSrc ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      className="preview-img"
-                      src={`/screenshots/${previewSrc}`}
-                      alt={`${chart.name} (Data Studio screenshot)`}
-                      loading="lazy"
-                    />
-                  ) : (
-                    // No screenshot yet - fall back to the chart icon, centered.
-                    <div
-                      className="preview-svg-wrap"
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        minHeight: 220,
-                      }}
-                    >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={`/icons/${chart.id}.png`}
-                        alt={`${chart.name} icon`}
-                        width={96}
-                        height={96}
-                        style={{ opacity: 0.85 }}
-                      />
-                    </div>
-                  )}
-                </div>
-              </div>
-              <div className="chart-hero-actions">
-                <div className="chart-cta-row">
-                  <a className="btn btn-primary" href="/get-started">
-                    Add to Data Studio →
+            <div className="cp-hero-grid">
+              <div>
+                <div className="cp-eyebrow">{chart.catLabel}</div>
+                <h1 className="cp-title">{chart.name}</h1>
+                <p className="cp-tagline">{chart.tagline}</p>
+                <div className="cp-ctas">
+                  <a className="cp-btn-primary" href="/get-started">
+                    Add to Data Studio <span>→</span>
                   </a>
                   {chart.dsLink && (
                     <a
-                      className="btn"
+                      className="cp-btn-ghost"
                       href={chart.dsLink}
                       target="_blank"
                       rel="noopener"
@@ -225,129 +166,187 @@ export default async function ChartPage({
                     </a>
                   )}
                 </div>
-                <div className="chart-trust">
+                <div className="cp-trust">
                   <span>Cross-filter ready</span>
                   <span>Theme-aware</span>
-                  <span className="trust-extra">Setup in 30s</span>
+                  <span>Setup in 30s</span>
+                </div>
+                <div className="cp-seoline">
+                  {chart.name} for Data Studio, formerly known as Looker Studio.
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
 
-        <section className="content">
-          <div className="wrap">
-            <div className="content-grid">
-              <div className="prose">
-                <h2>What it is</h2>
-                <p>{chart.long}</p>
-
-                <h2>What it does</h2>
-                <p>{chart.what}</p>
-
-                <h2>Why use it</h2>
-                <p>{chart.why}</p>
-
-                {chart.id === "timeseries-viz" && <TimeseriesExtras />}
-
-                <h2>Three ways teams use it</h2>
-                <div className="use-cases">
-                  {uses.map((u, i) => (
-                    <div className="use-case" key={i}>
-                      <div className="tag">{u.tag}</div>
-                      <div className="body">{u.body}</div>
-                    </div>
-                  ))}
-                </div>
-
-                <h2>Add it in 30 seconds</h2>
-                <ol
-                  style={{
-                    color: "var(--text-dim)",
-                    paddingLeft: 18,
-                    // App's Tailwind preflight resets list-style; restore markers.
-                    listStyleType: "decimal",
-                  }}
-                >
-                  <li>
-                    Open your Data Studio report and click{" "}
-                    <strong>
-                      Add a chart → Community visualizations → Explore more
-                    </strong>
-                    .
-                  </li>
-                  <li>
-                    Paste the Viz Studio manifest URL or pick this chart from the
-                    Viz Studio gallery card.
-                  </li>
-                  <li>
-                    Bind the dimensions and metrics in the data panel. Done.
-                  </li>
-                </ol>
-              </div>
-            </div>
-
-            {chart.related.length > 0 && (
-              <div className="related">
-                <div className="section-eyebrow" style={{ marginBottom: 16 }}>
-                  More from {chart.catLabel}
-                </div>
-                <div className="grid">
-                  {chart.related.map((r) => (
-                    <a className="card" href={`/charts/${r.id}`} key={r.id}>
-                      <div className="card-icon">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={`/icons/${r.id}.png`} alt="" />
-                      </div>
-                      <div className="card-name">{r.name}</div>
-                      <div className="card-desc">{r.tagline}</div>
-                      <div className="card-foot">
-                        <span>{chart.catLabel.toUpperCase()}</span>
-                        <span className="card-arrow">→</span>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {pager && (
-              <nav className="chart-pager" aria-label="Browse more charts">
-                <a className="pager-link prev" href={`/charts/${pager.prev.id}`}>
-                  <span className="pager-dir">&larr; Previous chart</span>
-                  <span className="pager-name">{pager.prev.name}</span>
-                </a>
-                <a className="pager-link next" href={`/charts/${pager.next.id}`}>
-                  <span className="pager-dir">Next chart &rarr;</span>
-                  <span className="pager-name">{pager.next.name}</span>
-                </a>
-              </nav>
-            )}
-          </div>
-        </section>
-
-        <section className="pricing-strip">
-          <div className="wrap">
-            <div className="section-eyebrow">Pricing</div>
-            <h2 className="pricing-strip-title">Included in your vizstudio plan.</h2>
-            <div className="price-band">
               <div>
-                <div className="amounts">
-                  <div className="amt"><span className="val">$50</span><span className="per">/ month</span></div>
-                  <div className="amt"><span className="or">or</span></div>
-                  <div className="amt"><span className="val">$500</span><span className="per">/ year</span></div>
+                <div className="cp-frame">
+                  <div className="cp-frame-bar">
+                    <span className="cp-light cp-light-r"></span>
+                    <span className="cp-light cp-light-y"></span>
+                    <span className="cp-light cp-light-g"></span>
+                    <span className="cp-url">datastudio.google.com / report</span>
+                  </div>
+                  {previewSrc ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      className="cp-shot"
+                      src={`/screenshots/${previewSrc}`}
+                      alt={`${chart.name} in a Data Studio report`}
+                    />
+                  ) : (
+                    <div className="cp-shot-fallback">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`/icons/${chart.id}.png`}
+                        alt={`${chart.name} icon`}
+                        width={96}
+                        height={96}
+                      />
+                    </div>
+                  )}
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── WHAT / WHY (paper) ── */}
+        <section className="cp-paper">
+          <div className="cp-wrap">
+            <div className="cp-cols3">
+              <div className="cp-col">
+                <div className="cp-kicker">What it is</div>
+                <p>{chart.long}</p>
+              </div>
+              <div className="cp-col">
+                <div className="cp-kicker">What it does</div>
+                <p>{chart.what}</p>
+              </div>
+              <div className="cp-col">
+                <div className="cp-kicker">Why use it</div>
+                <p>{chart.why}</p>
+              </div>
+            </div>
+
+            {chart.id === "timeseries-viz" && (
+              <div className="prose cp-extras">
+                <TimeseriesExtras />
+              </div>
+            )}
+
+            <div className="cp-uses">
+              <h2 className="cp-h2">
+                Three ways teams <em>use it.</em>
+              </h2>
+              <div className="cp-uses-grid">
+                {uses.map((u, i) => (
+                  <div className="cp-use" key={i}>
+                    <div className="cp-kicker">{u.tag}</div>
+                    <p>{u.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── SETUP (ink) ── */}
+        <section className="cp-ink">
+          <div className="cp-wrap">
+            <div className="cp-eyebrow">Setup</div>
+            <h2 className="cp-h2 cp-h2-ink">
+              Add it in <em>30 seconds.</em>
+            </h2>
+            <div className="cp-steps">
+              <div className="cp-step">
+                <div className="cp-step-num">01</div>
                 <p>
-                  One plan, everything in it: the Google Calendar Connector plus
-                  the full library of 75+ charts. No per-seat upcharges, no
-                  metering. Build a real dashboard before you pay a cent.
+                  Open your Data Studio report and click{" "}
+                  <strong>Add a chart → Community visualizations → Explore more</strong>.
                 </p>
               </div>
-              <div className="cta-side">
-                <a className="btn btn-primary" href="/get-started">Start free →</a>
-                <div className="micro">No credit card required.</div>
+              <div className="cp-step">
+                <div className="cp-step-num">02</div>
+                <p>
+                  Paste the Viz Studio manifest URL or pick this chart from the Viz
+                  Studio gallery card.
+                </p>
+              </div>
+              <div className="cp-step">
+                <div className="cp-step-num">03</div>
+                <p>Bind the dimensions and metrics in the data panel. Done.</p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* ── RELATED + PAGER (paper) ── */}
+        {(chart.related.length > 0 || pager) && (
+          <section className="cp-paper">
+            <div className="cp-wrap">
+              {chart.related.length > 0 && (
+                <>
+                  <div className="cp-rel-head">
+                    <h2 className="cp-h2">More from {chart.catLabel}</h2>
+                    <a className="cp-alllink" href="/#library">
+                      All 75+ charts →
+                    </a>
+                  </div>
+                  <div className="cp-rel-grid">
+                    {chart.related.map((r) => (
+                      <a className="cp-tile" href={`/charts/${r.id}`} key={r.id}>
+                        <div className="cp-tile-icon">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={`/icons/${r.id}.png`} alt="" loading="lazy" />
+                        </div>
+                        <div>
+                          <div className="cp-tile-name">{r.name}</div>
+                          <p>{r.tagline}</p>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {pager && (
+                <nav className="cp-pager" aria-label="Browse more charts">
+                  <a href={`/charts/${pager.prev.id}`}>
+                    <span className="cp-pager-dir">← Previous chart</span>
+                    <span className="cp-pager-name">{pager.prev.name}</span>
+                  </a>
+                  <a className="cp-next" href={`/charts/${pager.next.id}`}>
+                    <span className="cp-pager-dir">Next chart →</span>
+                    <span className="cp-pager-name">{pager.next.name}</span>
+                  </a>
+                </nav>
+              )}
+            </div>
+          </section>
+        )}
+
+        {/* ── PRICING STRIP (ink) ── */}
+        <section className="cp-price">
+          <div className="cp-price-wrap">
+            <div className="cp-eyebrow">Pricing</div>
+            <h2 className="cp-price-h2">
+              Included in your vizstudio <em>plan.</em>
+            </h2>
+            <div className="cp-amounts">
+              <span className="cp-amt">
+                $50<span> / month</span>
+              </span>
+              <span className="cp-or">or</span>
+              <span className="cp-amt">
+                $500<span> / year</span>
+              </span>
+            </div>
+            <p>
+              One plan, everything in it: the full library of 75+ charts. No
+              per-seat upcharges, no metering. Build a real dashboard before you
+              pay a cent.
+            </p>
+            <a className="cp-btn-primary" href="/get-started">
+              Start free <span>→</span>
+            </a>
           </div>
         </section>
       </main>
