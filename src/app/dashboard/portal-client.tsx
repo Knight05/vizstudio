@@ -1186,7 +1186,7 @@ function DownloadsTab(props: PortalProps) {
         <h3>Add it to Data Studio</h3>
         <p className="lead">Five steps, about a minute, and your calendar events become rows in your reports.</p>
 
-        <ol style={{ margin: 0, paddingLeft: 20, display: "grid", gap: 10, fontSize: 13, lineHeight: 1.55, color: "var(--muted)" }}>
+        <ol style={{ margin: 0, paddingLeft: 22, listStyle: "decimal", display: "grid", gap: 10, fontSize: 13, lineHeight: 1.55, color: "var(--muted)" }}>
           <li>
             In{" "}
             <a
