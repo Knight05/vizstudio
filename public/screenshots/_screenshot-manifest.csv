@@ -32,7 +32,7 @@ page,page_name,chart_folder,seo_filename,target_path,status
 31,Engagement Heatmap,engageheatmap-viz,data-studio-engagement-heatmap-vizstudio.png,viz/screenshots/data-studio-engagement-heatmap.png,captured
 32,Mirror Bar Chart,mirrorbar-viz,data-studio-mirror-bar-chart-tornado-vizstudio.png,viz/screenshots/data-studio-mirror-bar-chart-tornado.png,captured
 33,Multi-ring Donut,multiring-viz,data-studio-multi-ring-donut-chart-vizstudio.png,viz/screenshots/data-studio-multi-ring-donut-chart.png,captured
-34,2x2 Matrix,2x2-matrix,datastudio-2x2-matrix-vizstudio.png,viz/screenshots/datastudio-2x2-matrix-vizstudio.png,captured
+34,2x2 Matrix,2x2matrix,datastudio-2x2-matrix-vizstudio.png,viz/screenshots/datastudio-2x2-matrix-vizstudio.png,captured
 35,Parallel Coordinates Plot,parallelcoords-viz,data-studio-parallel-coordinates-plot-vizstudio.png,viz/screenshots/data-studio-parallel-coordinates-plot.png,captured
 36,Portfolio Barcode,portfoliobarcode-viz,data-studio-portfolio-barcode-chart-vizstudio.png,viz/screenshots/data-studio-portfolio-barcode-chart.png,captured
 37,Portfolio Pie Barcode,portfoliopiebarcode-viz,data-studio-portfolio-pie-barcode-vizstudio.png,viz/screenshots/data-studio-portfolio-pie-barcode.png,captured
@@ -47,18 +47,18 @@ page,page_name,chart_folder,seo_filename,target_path,status
 46,Bubble Chart,bubble-viz,data-studio-bubble-chart-vizstudio.png,viz/screenshots/data-studio-bubble-chart.png,captured
 47,Bubble Grid,bubblegrid,data-studio-bubble-grid-chart-vizstudio.png,viz/screenshots/data-studio-bubble-grid-chart.png,captured
 48,Bullet Chart,bulletchart-viz,data-studio-bullet-chart-kpi-vizstudio.png,viz/screenshots/data-studio-bullet-chart-kpi.png,captured
-49,Bump Chart,bump-viz,data-studio-bump-chart-rank-tracking-alt.png,viz/screenshots/data-studio-bump-chart-rank-tracking-alt.png,pending-dup
+49,Bump Chart,bump-viz,data-studio-bump-chart-rank-tracking-vizstudio.png,viz/screenshots/data-studio-bump-chart-rank-tracking-vizstudio.png,captured
 50,Connection Map,connmap-viz,data-studio-connection-map-geo-vizstudio.png,viz/screenshots/data-studio-connection-map-geo.png,captured
-51,Conversion Heatmap,convheatmap-viz,data-studio-conversion-heatmap-alt.png,viz/screenshots/data-studio-conversion-heatmap-alt.png,pending-dup
+51,Conversion Heatmap,convheatmap-viz,data-studio-conversion-heatmap-vizstudio.png,viz/screenshots/data-studio-conversion-heatmap-vizstudio.png,captured
 52,Curved Columns (Animated + Zoom),curvedcol-animated-viz,data-studio-curved-columns-animated-vizstudio.png,viz/screenshots/data-studio-curved-columns-animated.png,captured
 53,Curved Columns (Static),curvedcol-static-viz,data-studio-curved-columns-static-vizstudio.png,viz/screenshots/data-studio-curved-columns-static.png,captured
 54,Dependency Wheel,depwheel-viz,data-studio-dependency-wheel-chord-vizstudio.png,viz/screenshots/data-studio-dependency-wheel-chord.png,captured
 55,Breakdown Chart,analystratings-viz,data-studio-analyst-ratings-breakdown-vizstudio.png,viz/screenshots/data-studio-analyst-ratings-breakdown.png,captured
 56,Dumbbell Chart,dumbbell-viz,data-studio-dumbbell-chart-comparison-vizstudio.png,viz/screenshots/data-studio-dumbbell-chart-comparison.png,captured
-57,Force-Directed Network,forcenet-viz,data-studio-force-directed-network-graph-alt.png,viz/screenshots/data-studio-force-directed-network-graph-alt.png,pending-dup
+57,Force-Directed Network,forcenet-viz,data-studio-force-directed-network-graph-vizstudio.png,viz/screenshots/data-studio-force-directed-network-graph-vizstudio.png,captured
 58,Adjacency Matrix,matrixchart-viz,data-studio-adjacency-matrix-chart-vizstudio.png,viz/screenshots/data-studio-adjacency-matrix-chart.png,captured
-59,Multi-ring Donut,multiring-viz,data-studio-multi-ring-donut-chart-alt.png,viz/screenshots/data-studio-multi-ring-donut-chart-alt.png,pending-dup
-60,Parallel Coordinates Plot,parallelcoords-viz,data-studio-parallel-coordinates-plot-alt.png,viz/screenshots/data-studio-parallel-coordinates-plot-alt.png,pending-dup
+59,Multi-ring Donut,multiring-viz,data-studio-multi-ring-donut-chart-vizstudio.png,viz/screenshots/data-studio-multi-ring-donut-chart-vizstudio.png,captured
+60,Parallel Coordinates Plot,parallelcoords-viz,data-studio-parallel-coordinates-plot-vizstudio.png,viz/screenshots/data-studio-parallel-coordinates-plot-vizstudio.png,captured
 61,Parallel Sets,parallelsets-viz,data-studio-parallel-sets-chart-vizstudio.png,viz/screenshots/data-studio-parallel-sets-chart.png,captured
 62,Radar Chart with Data Table,radartable-viz,data-studio-radar-chart-data-table-vizstudio.png,viz/screenshots/data-studio-radar-chart-data-table.png,captured
 63,Semi-Circle Pie Chart,semicirclepie-viz,data-studio-semi-circle-pie-chart-vizstudio.png,viz/screenshots/data-studio-semi-circle-pie-chart.png,captured
@@ -67,12 +67,12 @@ page,page_name,chart_folder,seo_filename,target_path,status
 66,Choropleth Map,choropleth-viz,data-studio-choropleth-map-vizstudio.png,viz/screenshots/data-studio-choropleth-map.png,captured
 67,Chord Diagram,chord-viz,data-studio-chord-diagram-vizstudio.png,viz/screenshots/data-studio-chord-diagram.png,captured
 68,Row Over Row Comparison Table,datatable-viz,data-studio-row-over-row-data-table-vizstudio.png,viz/screenshots/data-studio-row-over-row-data-table.png,captured
-69,Dependency Wheel,depwheel-viz,data-studio-dependency-wheel-chord-alt.png,viz/screenshots/data-studio-dependency-wheel-chord-alt.png,pending-dup
+69,Dependency Wheel,depwheel-viz,data-studio-dependency-wheel-chord-vizstudio.png,viz/screenshots/data-studio-dependency-wheel-chord-vizstudio.png,captured
 70,Quadrant Scatter,quadrant-viz,data-studio-quadrant-scatter-chart-vizstudio.png,viz/screenshots/data-studio-quadrant-scatter-chart.png,captured
 71,Revenue Breakdown (Bar + Line Combo),revenuebreakdown-viz,data-studio-revenue-breakdown-bar-line-combo-vizstudio.png,viz/screenshots/data-studio-revenue-breakdown-bar-line-combo.png,captured
 72,Variable Radius Pie Chart,varradiuspie-viz,data-studio-variable-radius-pie-chart-vizstudio.png,viz/screenshots/data-studio-variable-radius-pie-chart.png,captured
 73,Semicircle Gauge,semicirclegauge-viz,data-studio-semicircle-gauge-vizstudio.png,viz/screenshots/data-studio-semicircle-gauge.png,captured
-74,Small Multiples / Trellis Grid,smallmultiples-viz,data-studio-small-multiples-trellis-alt.png,viz/screenshots/data-studio-small-multiples-trellis-alt.png,pending-dup
+74,Small Multiples / Trellis Grid,smallmultiples-viz,data-studio-small-multiples-trellis-vizstudio.png,viz/screenshots/data-studio-small-multiples-trellis-vizstudio.png,captured
 75,Stacked Bar Chart with Negative Values (Static),stackedneg-viz,data-studio-stacked-bar-negative-static-vizstudio.png,viz/screenshots/data-studio-stacked-bar-negative-static.png,captured
 76,Story Flow / Narrative,storyflow-viz,data-studio-story-flow-narrative-chart-vizstudio.png,viz/screenshots/data-studio-story-flow-narrative-chart.png,captured
 77,Streamgraph,streamgraph-viz,data-studio-streamgraph-chart-vizstudio.png,viz/screenshots/data-studio-streamgraph-chart.png,captured

@@ -1241,34 +1241,36 @@
    ]
   },
   {
-   "id": "oppositediagram",
+   "id": "2x2matrix",
    "name": "2x2 Matrix",
    "description": "2x2 Matrix: community visualization.",
-   "iconUrl": "gs://vizstudio-cid9483029/oppositediagram/icon-256.webp",
+   "iconUrl": "gs://vizstudio-prod9021/2x2matrix/icon-256.webp",
    "resource": {
-    "js": "gs://vizstudio-cid9483029/oppositediagram/script.js",
-    "config": "gs://vizstudio-cid9483029/oppositediagram/config.json",
-    "css": "gs://vizstudio-cid9483029/oppositediagram/style.css"
+    "js": "gs://vizstudio-prod9021/2x2matrix/script.js",
+    "config": "gs://vizstudio-prod9021/2x2matrix/config.json",
+    "css": "gs://vizstudio-prod9021/2x2matrix/style.css"
    },
-   "shortDescription": "Two-sided diverging diagram: pros vs cons, gains vs losses.",
-   "longDescription": "A two-direction diagram with categories radiating left vs right from a central axis. Built for value-versus-cost narratives, opposing forces, balance sheets, and trade-off visualizations where one chart needs to argue both sides simultaneously. Pairs naturally with decision documents and strategy reviews.",
+   "shortDescription": "Two axes, four quadrants, one clear call.",
+   "longDescription": "2x2 Matrix plots your data on two axes and splits the canvas into four labeled, color-tinted quadrants — the shape every strategy framework already takes, from the Eisenhower box to BCG growth-share to value-vs-effort. Configurable threshold lines carve the space, a third metric can size each bubble, and clicking any point cross-filters the rest of the page.",
    "category": "Comparison",
    "useCases": [
-    "Pros vs cons of strategic options",
-    "Gains vs losses per business segment",
-    "Strengths vs weaknesses across competitors",
-    "Survey: agree vs disagree with neutral spine"
+    "Value vs effort: quick wins, big bets, time-sinks",
+    "Eisenhower matrix: urgent vs important",
+    "BCG growth-share: stars, cash cows, question marks, dogs"
    ],
    "examples": [
-    "Strategic option A: gains and risks side by side",
-    "Survey: 8 statements rated agree/disagree"
+    "Feature backlog: value vs effort",
+    "Risk register: likelihood vs impact"
    ],
    "tags": [
-    "diverging",
+    "matrix",
     "2x2",
-    "balance",
-    "comparison",
-    "two-sided"
+    "quadrant",
+    "strategy",
+    "eisenhower",
+    "bcg",
+    "scatter",
+    "prioritization"
    ]
   },
   {
