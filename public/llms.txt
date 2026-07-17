@@ -11,7 +11,7 @@ Key facts:
 ## Pages
 
 - [Home](https://vizstudio.io/): product overview, full chart library, FAQ
-- [Pricing](https://vizstudio.io/pricing): $50/month or $500/year, every plan unlocks all charts
+- [Pricing](https://vizstudio.io/pricing): $20/month, $200/year, or $500 lifetime; every plan unlocks all charts plus the Google Calendar Connector
 - [How to add a chart](https://vizstudio.io/how-to-add-a-chart): 10-step setup guide, under 4 minutes
 - [Google Calendar Connector](https://vizstudio.io/google-calendar-connector): bring calendar events into Data Studio
 - [Get started](https://vizstudio.io/get-started): create an account, 14-day free trial

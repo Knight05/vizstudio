@@ -42,7 +42,7 @@ const CONNECTOR_JSONLD = [
     "offers": {
       "@type": "AggregateOffer",
       "priceCurrency": "USD",
-      "lowPrice": "50",
+      "lowPrice": "20",
       "highPrice": "500",
       "url": "https://vizstudio.io/pricing"
     }

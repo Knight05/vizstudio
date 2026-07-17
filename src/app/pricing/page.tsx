@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
-import { auth } from "@/lib/auth";
 import SiteNav from "@/components/marketing/SiteNav";
 import SiteFooter from "@/components/marketing/SiteFooter";
 
@@ -9,12 +7,12 @@ const SITE = "https://vizstudio.io";
 export const metadata: Metadata = {
   title: "Pricing | vizstudio",
   description:
-    "Simple pricing for the full Viz Studio chart library. $50/month or $500/year. Every plan unlocks all 75+ premium Data Studio charts. 14-day free trial, no credit card required.",
+    "Simple pricing for the full Viz Studio chart library. $20/month, $200/year, or $500 lifetime. Every plan unlocks all 75+ premium Data Studio charts plus the Google Calendar Connector. 14-day free trial, no credit card required.",
   alternates: { canonical: `${SITE}/pricing` },
   openGraph: {
     title: "Pricing | vizstudio",
     description:
-      "Every plan unlocks the entire chart library. $50/month or $500/year. 14-day free trial.",
+      "Every plan unlocks the entire chart library plus the Google Calendar Connector. $20/month, $200/year, or $500 lifetime. 14-day free trial.",
     url: `${SITE}/pricing`,
     type: "website",
     images: [`${SITE}/images/hero-dashboard-dark.png`],
@@ -23,19 +21,19 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pricing | vizstudio",
     description:
-      "Every plan unlocks the entire chart library. $50/month or $500/year. 14-day free trial.",
+      "Every plan unlocks the entire chart library plus the Google Calendar Connector. $20/month, $200/year, or $500 lifetime. 14-day free trial.",
     images: [`${SITE}/images/hero-dashboard-dark.png`],
   },
 };
 
-// Pricing structured data: the PRO product with both offers + breadcrumbs.
+// Pricing structured data: the PRO product with all three offers + breadcrumbs.
 const PRICING_JSONLD = [
   {
     "@context": "https://schema.org",
     "@type": "Product",
     name: "Viz Studio PRO",
     description:
-      "One subscription, every chart: all 75+ premium Data Studio community visualizations plus the Google Calendar Connector. 14-day free trial, no credit card required.",
+      "One subscription, every chart: all 75+ premium Data Studio community visualizations plus the Google Calendar Connector. Pay monthly, yearly, or once for lifetime access. 14-day free trial, no credit card required.",
     url: `${SITE}/pricing`,
     image: `${SITE}/images/hero-dashboard-dark.png`,
     brand: { "@type": "Brand", name: "Viz Studio" },
@@ -43,7 +41,7 @@ const PRICING_JSONLD = [
       {
         "@type": "Offer",
         name: "PRO Monthly",
-        price: "50",
+        price: "20",
         priceCurrency: "USD",
         url: `${SITE}/pricing`,
         availability: "https://schema.org/InStock",
@@ -51,6 +49,14 @@ const PRICING_JSONLD = [
       {
         "@type": "Offer",
         name: "PRO Yearly",
+        price: "200",
+        priceCurrency: "USD",
+        url: `${SITE}/pricing`,
+        availability: "https://schema.org/InStock",
+      },
+      {
+        "@type": "Offer",
+        name: "PRO Lifetime",
         price: "500",
         priceCurrency: "USD",
         url: `${SITE}/pricing`,
@@ -83,30 +89,11 @@ const CHECK = (
   </svg>
 );
 
-function PlanCta({
-  isAuthed,
-  plan,
-  label,
-  primary,
-}: {
-  isAuthed: boolean;
-  plan: "PRO_MONTHLY" | "PRO_YEARLY";
-  label: string;
-  primary?: boolean;
-}) {
-  if (!isAuthed) {
-    return (
-      <a className={primary ? "btn primary" : "btn"} href="/get-started">
-        {label} →
-      </a>
-    );
-  }
+function PlanCta({ label, primary }: { label: string; primary?: boolean }) {
   return (
-    <form action={`/api/stripe/upgrade?plan=${plan}&from=pricing`} method="POST" style={{ display: "contents" }}>
-      <button type="submit" className={primary ? "btn primary" : "btn"}>
-        {label} →
-      </button>
-    </form>
+    <a className={primary ? "btn primary" : "btn"} href="/get-started">
+      {label} →
+    </a>
   );
 }
 
@@ -115,11 +102,7 @@ export default async function PricingPage({
 }: {
   searchParams: Promise<{ checkout?: string }>;
 }) {
-  const [session, params] = await Promise.all([
-    auth.api.getSession({ headers: await headers() }),
-    searchParams,
-  ]);
-  const isAuthed = Boolean(session?.user);
+  const params = await searchParams;
   const notice =
     params.checkout === "cancelled"
       ? "Checkout cancelled — no charge was made. Pick a plan whenever you're ready."
@@ -157,8 +140,9 @@ export default async function PricingPage({
               <span className="section-tag">Pricing</span>
               <h2>Simple pricing. Full library.</h2>
               <p>
-                Every tier unlocks the entire chart library, no feature gating, no
-                per-seat upcharges, no surprise metering.
+                Every tier unlocks the entire chart library and the Google Calendar
+                Connector — no feature gating, no per-seat upcharges, no surprise
+                metering.
               </p>
             </div>
 
@@ -185,19 +169,20 @@ export default async function PricingPage({
                 <div className="tier">Monthly</div>
                 <div className="amount">
                   <span className="val">
-                    <s className="was-price">$75</s> $50
+                    <s className="was-price">$50</s> $20
                   </span>
                   <span className="period">/ month</span>
                 </div>
                 <div className="desc">Pay as you go. Full library access. Cancel anytime.</div>
                 <ul>
                   <li>{CHECK}Full chart library · 75+ types</li>
+                  <li>{CHECK}Google Calendar Connector included</li>
                   <li>{CHECK}Unlimited reports &amp; viewers</li>
                   <li>{CHECK}Custom branding</li>
                   <li>{CHECK}Email support</li>
                 </ul>
                 <div className="cta">
-                  <PlanCta isAuthed={isAuthed} plan="PRO_MONTHLY" label="Start Monthly" />
+                  <PlanCta label="Start Monthly" />
                 </div>
               </div>
 
@@ -205,17 +190,37 @@ export default async function PricingPage({
                 <span className="badge">MOST POPULAR</span>
                 <div className="tier">Annual</div>
                 <div className="amount">
-                  <span className="val">$500</span>
+                  <span className="val">$200</span>
                   <span className="period">/ year</span>
                 </div>
-                <div className="desc">Save $100 vs. monthly. Billed once, renewed yearly.</div>
+                <div className="desc">Save $40 vs. monthly. Billed once, renewed yearly.</div>
                 <ul>
                   <li>{CHECK}Everything in Monthly</li>
+                  <li>{CHECK}Google Calendar Connector included</li>
                   <li>{CHECK}Priority support · Slack DM</li>
                   <li>{CHECK}Early access to new charts</li>
                 </ul>
                 <div className="cta">
-                  <PlanCta isAuthed={isAuthed} plan="PRO_YEARLY" label="Start Annual" primary />
+                  <PlanCta label="Start Annual" primary />
+                </div>
+              </div>
+
+              <div className="price">
+                <span className="badge">BEST VALUE</span>
+                <div className="tier">Lifetime</div>
+                <div className="amount">
+                  <span className="val">$500</span>
+                  <span className="period">one-time</span>
+                </div>
+                <div className="desc">Pay once, use forever. No renewals, no subscription.</div>
+                <ul>
+                  <li>{CHECK}Everything in Annual</li>
+                  <li>{CHECK}Google Calendar Connector included</li>
+                  <li>{CHECK}All future charts &amp; updates</li>
+                  <li>{CHECK}One payment — no renewals, ever</li>
+                </ul>
+                <div className="cta">
+                  <PlanCta label="Get Lifetime" />
                 </div>
               </div>
             </div>

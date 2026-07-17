@@ -845,9 +845,9 @@ footer .newsletter button { background: var(--accent-grad); color: white; border
 /* ── Standalone /pricing page cards (matches landing .lp-price) ───────────── */
 .price-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
-  max-width: 760px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 .price {
@@ -1303,7 +1303,7 @@ footer .logo, .foot-grid .logo { color: #EDEBE4; }
 .cp-price-wrap { max-width: calc(680px + 2 * clamp(20px, 5vw, 64px)); margin: 0 auto; padding: 0 clamp(20px, 5vw, 64px); }
 .cp-price .cp-eyebrow { color: #8f948d; }
 .cp-price-h2 { font-family: var(--display); font-weight: 700; font-size: clamp(28px, 4.4vw, 52px); line-height: 1.05; letter-spacing: -.03em; margin: 16px 0 0; color: #EDEBE4; }
-.cp-amounts { display: flex; align-items: baseline; justify-content: center; gap: 14px; margin-top: 24px; }
+.cp-amounts { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 14px; margin-top: 24px; }
 .cp-amt { font-family: var(--display); font-weight: 700; font-size: clamp(30px, 3.4vw, 42px); letter-spacing: -.03em; color: #EDEBE4; }
 .cp-amt span { font-size: 16px; color: #8f948d; font-weight: 500; }
 .cp-or { font-family: var(--serif, 'Instrument Serif', serif); font-style: italic; color: #8f948d; font-size: 18px; }

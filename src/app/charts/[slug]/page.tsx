@@ -95,7 +95,7 @@ export default async function ChartPage({
       offers: {
         "@type": "AggregateOffer",
         priceCurrency: "USD",
-        lowPrice: "50",
+        lowPrice: "20",
         highPrice: "500",
         url: `${SITE}/pricing`,
         description: "One subscription unlocks the full Viz Studio library of 75+ charts.",
@@ -332,11 +332,15 @@ export default async function ChartPage({
             </h2>
             <div className="cp-amounts">
               <span className="cp-amt">
-                $50<span> / month</span>
+                $20<span> / month</span>
               </span>
               <span className="cp-or">or</span>
               <span className="cp-amt">
-                $500<span> / year</span>
+                $200<span> / year</span>
+              </span>
+              <span className="cp-or">or</span>
+              <span className="cp-amt">
+                $500<span> lifetime</span>
               </span>
             </div>
             <p>
