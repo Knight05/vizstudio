@@ -880,9 +880,9 @@ function BillingTab(props: PortalProps) {
             ) : (
               <>
                 {props.planLabel === "Annual" ? (
-                  <><b>$500</b> / year</>
+                  <><b>$200</b> / year</>
                 ) : props.planLabel === "Monthly" ? (
-                  <><b>$50</b> / month</>
+                  <><b>$20</b> / month</>
                 ) : (
                   <>Active subscription</>
                 )}
@@ -973,8 +973,8 @@ function BillingTab(props: PortalProps) {
                 }}
               >
               {([
-                { plan: "PRO_MONTHLY", name: "Monthly", price: "$50/mo", note: "Cancel anytime", primary: false },
-                { plan: "PRO_YEARLY", name: "Annual", price: "$500/yr", note: "Save $100", primary: true },
+                { plan: "PRO_MONTHLY", name: "Monthly", price: "$20/mo", note: "Cancel anytime", primary: false },
+                { plan: "PRO_YEARLY", name: "Annual", price: "$200/yr", note: "Save $40", primary: true },
               ] as const).map((p) => (
                 <form
                   key={p.plan}

@@ -338,10 +338,6 @@ export default async function ChartPage({
               <span className="cp-amt">
                 $200<span> / year</span>
               </span>
-              <span className="cp-or">or</span>
-              <span className="cp-amt">
-                $500<span> lifetime</span>
-              </span>
             </div>
             <p>
               One plan, everything in it: the full library of 75+ charts. No
