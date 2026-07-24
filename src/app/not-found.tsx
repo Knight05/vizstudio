@@ -11,12 +11,12 @@ const STYLES = `
 }
 .nf-title { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; margin: 18px 0 10px; color: var(--text); }
 .nf-sub { color: var(--text-dim); font-size: 15px; line-height: 1.6; margin: 0 auto 26px; max-width: 46ch; }
-.nf-bars { display: flex; gap: 6px; justify-content: center; align-items: flex-end; height: 46px; margin-bottom: 28px; }
-.nf-bars span { width: 10px; border-radius: 3px; background: var(--accent-grad); opacity: .85; animation: nfb 1.4s ease-in-out infinite alternate; }
-.nf-bars span:nth-child(1){height:40%} .nf-bars span:nth-child(2){height:75%;animation-delay:.15s}
-.nf-bars span:nth-child(3){height:55%;animation-delay:.3s} .nf-bars span:nth-child(4){height:90%;animation-delay:.45s}
-.nf-bars span:nth-child(5){height:30%;animation-delay:.6s}
-@keyframes nfb { to { transform: scaleY(0.55); } }
+.nf-mark { display: block; width: 58px; height: 58px; margin: 0 auto 28px; }
+.nf-mark circle { transform-box: view-box; transform-origin: 13px 13px; }
+.nf-mark .nf-arc-outer { animation: nf-spin 16s linear infinite; }
+.nf-mark .nf-arc-inner { animation: nf-spin 10s linear infinite reverse; }
+@keyframes nf-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .nf-mark .nf-arc-outer, .nf-mark .nf-arc-inner { animation: none; } }
 .nf-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 `;
 
@@ -40,7 +40,11 @@ export default function NotFound() {
             The page you&rsquo;re looking for moved, was renamed, or never shipped. The 75+ charts
             that did ship are one click away.
           </p>
-          <div className="nf-bars"><span></span><span></span><span></span><span></span><span></span></div>
+          <svg className="nf-mark" viewBox="0 0 26 26" fill="none" aria-hidden="true" focusable="false">
+            <circle className="nf-arc-outer" cx="13" cy="13" r="11.5" stroke="#3A3F4A" strokeWidth="2.2" strokeDasharray="26 46" strokeDashoffset="-14" />
+            <circle className="nf-arc-inner" cx="13" cy="13" r="7.5" stroke="#16181D" strokeWidth="2.2" strokeDasharray="10 37" />
+            <circle cx="13" cy="13" r="3.4" fill="#16181D" />
+          </svg>
           <div className="nf-row">
             <a className="btn btn-primary" href="/#library">Browse all charts</a>
             <a className="btn" href="/">Back to home</a>
