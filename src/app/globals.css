@@ -4,28 +4,28 @@
 
 /* ══════════════════════════════════════════════════════
    Design Tokens - vizstudio.io
-   Dark-first, OKLCH colors, JetBrains-mono spine
+   Ink & paper (Brand Book v2.0) - dark-first app surfaces
    ══════════════════════════════════════════════════════ */
 :root, [data-theme="dark"] {
-  --bg:        oklch(0.17 0.012 260);
-  --bg-1:      oklch(0.20 0.014 260);
-  --bg-2:      oklch(0.23 0.016 260);
-  --panel:     oklch(0.22 0.015 260);
-  --panel-2:   oklch(0.26 0.017 260);
-  --border:    oklch(0.30 0.018 260);
-  --border-2:  oklch(0.38 0.02 260);
-  --text:      oklch(0.95 0.005 260);
-  --text-dim:  oklch(0.75 0.01 260);
-  --muted:     oklch(0.60 0.015 260);
-  --muted-2:   oklch(0.45 0.015 260);
+  --bg:        #16181D; /* Ink */
+  --bg-1:      #1A1D22; /* Well */
+  --bg-2:      #20242B;
+  --panel:     #1A1D22; /* Well */
+  --panel-2:   #20242B;
+  --border:    #2A2E36;
+  --border-2:  #3A3F4A; /* Graphite */
+  --text:      #F3F0E8; /* Paper */
+  --text-dim:  #E5E2D9; /* Parchment */
+  --muted:     #7D8593; /* Slate */
+  --muted-2:   #656D7A;
 
-  --acc-green:  oklch(0.78 0.18 145);
-  --acc-blue:   oklch(0.72 0.17 240);
-  --acc-amber:  oklch(0.80 0.16 75);
-  --acc-rose:   oklch(0.72 0.17 15);
-  --acc-violet: oklch(0.70 0.17 295);
+  --acc-green:  #518A5C; /* Moss, lifted for ink legibility */
+  --acc-blue:   #4A90FF; /* Signal */
+  --acc-amber:  #D39C3F; /* Ochre */
+  --acc-rose:   #C95A62; /* Madder, lifted for ink legibility */
+  --acc-violet: #6B8ACB; /* Fjord */
 
-  --mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --mono: "IBM Plex Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   --sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
 
   --r-sm: 4px;
@@ -34,17 +34,17 @@
 }
 
 [data-theme="light"] {
-  --bg:       oklch(0.99 0.003 260);
-  --bg-1:     oklch(0.97 0.005 260);
-  --bg-2:     oklch(0.95 0.007 260);
-  --panel:    oklch(1 0 0);
-  --panel-2:  oklch(0.97 0.005 260);
-  --border:   oklch(0.90 0.007 260);
-  --border-2: oklch(0.80 0.01 260);
-  --text:     oklch(0.20 0.015 260);
-  --text-dim: oklch(0.40 0.015 260);
-  --muted:    oklch(0.55 0.015 260);
-  --muted-2:  oklch(0.70 0.01 260);
+  --bg:       #F3F0E8; /* Paper */
+  --bg-1:     #F4F2EC; /* Cream */
+  --bg-2:     #EDEBE4; /* Bone */
+  --panel:    #FFFFFF;
+  --panel-2:  #F4F2EC;
+  --border:   #DDD7C9; /* Linen */
+  --border-2: #CBC5B6;
+  --text:     #16181D; /* Ink */
+  --text-dim: #3A3F4A; /* Graphite */
+  --muted:    #6E695C; /* Stone */
+  --muted-2:  #8D8778;
 }
 
 html, body {
@@ -58,7 +58,7 @@ html, body {
 
 * { box-sizing: border-box; }
 
-::selection { background: var(--acc-green); color: var(--bg); }
+::selection { background: #F1DFA6; color: #16181D; } /* Sun highlight wash */
 
 /* Utility: guide grid background (for hero, canvas surfaces) */
 .guides {
@@ -91,12 +91,12 @@ html, body {
 .btn:hover { background: var(--panel-2); border-color: var(--border-2); }
 .btn:active { transform: translateY(1px); }
 .btn-primary {
-  background: var(--acc-green);
-  color: oklch(0.18 0.01 260);
+  background: #F4F2EC; /* Cream primary on ink */
+  color: #16181D;
   border-color: transparent;
 }
 .btn-primary:hover {
-  background: color-mix(in oklch, var(--acc-green) 88%, white 12%);
+  background: #FFFFFF;
   border-color: transparent;
 }
 
@@ -286,7 +286,7 @@ html, body {
   font-size: 11.5px;
   font-weight: 700;
   color: #fff;
-  background: linear-gradient(135deg, oklch(0.70 0.17 295), oklch(0.72 0.17 15));
+  background: #3B62B5; /* Cobalt */
 }
 .pshell .sb-user-name {
   font-size: 12.5px;
@@ -315,8 +315,8 @@ html, body {
   border-radius: var(--r-md);
   font-size: 12.5px;
   font-weight: 600;
-  color: #fff;
-  background: linear-gradient(135deg, #EDEBE4 0%, #c3c8ce 60%, #9aa0a8 100%);
+  color: #16181D;
+  background: #F4F2EC; /* Cream primary on ink */
   text-decoration: none;
 }
 .pshell .sb-user-cta svg { width: 13px; height: 13px; }
@@ -367,8 +367,8 @@ html, body {
   padding: 7px 14px;
   border-radius: var(--r-md);
   border: 0;
-  background: linear-gradient(135deg, #EDEBE4 0%, #c3c8ce 60%, #9aa0a8 100%);
-  color: #fff;
+  background: #F4F2EC; /* Cream primary on ink */
+  color: #16181D;
   font-size: 12.5px;
   font-weight: 600;
   font-family: inherit;
@@ -401,7 +401,7 @@ html, body {
   content: ''; position: absolute; inset: 0; z-index: -2;
   background:
     radial-gradient(110% 150% at 4% -20%, color-mix(in oklch, var(--acc-violet) 22%, transparent), transparent 52%),
-    radial-gradient(80% 120% at 92% -10%, color-mix(in oklch, var(--acc-blue) 16%, transparent), transparent 55%);
+    radial-gradient(80% 120% at 92% -10%, color-mix(in oklch, #3B62B5 20%, transparent), transparent 55%);
 }
 .pshell .page-head::after {
   content: ''; position: absolute; inset: 0; z-index: -1;
@@ -556,7 +556,7 @@ html, body {
   gap: 8px;
   align-items: baseline;
 }
-.pshell .plan-feats li::before { content: "✓"; color: #c3c8ce; font-weight: 700; }
+.pshell .plan-feats li::before { content: "✓"; color: #518A5C; font-weight: 700; }
 .pshell .plan-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .pshell .plan-actions a, .pshell .plan-actions button {
   font-family: inherit;
@@ -570,7 +570,7 @@ html, body {
   cursor: pointer;
   text-decoration: none;
 }
-.pshell .plan-actions .primary { background: linear-gradient(135deg, #EDEBE4 0%, #c3c8ce 60%, #9aa0a8 100%); color: #fff; border-color: transparent; }
+.pshell .plan-actions .primary { background: #F4F2EC; color: #16181D; border-color: transparent; }
 .pshell .plan-actions a:hover, .pshell .plan-actions button:hover { border-color: var(--border-2); }
 .pshell .plan-actions .primary:hover { filter: brightness(1.08); }
 
@@ -594,7 +594,7 @@ html, body {
 .pshell .usage-fill {
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, #EDEBE4, #c3c8ce);
+  background: #6B8ACB; /* Fjord */
 }
 
 /* invoice table */
@@ -734,8 +734,8 @@ html, body {
   content: ''; position: absolute; inset: 0; z-index: -2;
   background:
     radial-gradient(120% 140% at 8% -10%, color-mix(in oklch, var(--acc-violet) 30%, transparent), transparent 55%),
-    radial-gradient(90% 120% at 78% 0%, color-mix(in oklch, var(--acc-blue) 24%, transparent), transparent 55%),
-    radial-gradient(80% 130% at 95% 110%, color-mix(in oklch, var(--acc-rose) 20%, transparent), transparent 50%);
+    radial-gradient(90% 120% at 78% 0%, color-mix(in oklch, #3B62B5 24%, transparent), transparent 55%),
+    radial-gradient(80% 130% at 95% 110%, color-mix(in oklch, #C05B3B 18%, transparent), transparent 50%);
 }
 .pshell .lib-hero::after {
   content: ''; position: absolute; inset: 0; z-index: -1;
@@ -773,8 +773,7 @@ html, body {
 }
 .pshell .lib-hero h1 .grad,
 .pshell .page-head h1 .grad {
-  background: linear-gradient(100deg, #c9ccd0, #c4b5fd 45%, #f9a8d4);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
+  color: #6B8ACB; /* Fjord accent word */
 }
 .pshell .lib-hero p {
   margin: 14px 0 0; color: var(--text-dim); font-size: 13.5px;
@@ -914,7 +913,7 @@ html, body {
   font-family: var(--mono); font-size: 10px; font-weight: 600;
   letter-spacing: 0.04em; text-transform: uppercase; color: #fff;
   padding: 6px 10px; border-radius: 999px;
-  background: color-mix(in oklch, #06070d 72%, transparent);
+  background: color-mix(in oklch, #0F1114 72%, transparent);
   border: 1px solid var(--border-2); backdrop-filter: blur(6px);
   opacity: 0; transform: translateY(6px); transition: opacity .2s, transform .2s;
 }
@@ -925,8 +924,8 @@ html, body {
   font-family: var(--mono); font-size: 9px; font-weight: 700; color: #fff;
   padding: 3px 7px; border-radius: 5px; letter-spacing: 0.06em; text-transform: uppercase;
 }
-.pshell .cg-tag.pro { background: linear-gradient(135deg, var(--acc-violet), var(--acc-rose)); }
-.pshell .cg-tag.new { background: var(--acc-blue); color: #042c38; }
+.pshell .cg-tag.pro { background: #B1313A; } /* Madder = top tier */
+.pshell .cg-tag.new { background: var(--acc-blue); color: #0F1114; }
 .pshell .cg-meta { padding: 12px 13px 13px; display: flex; flex-direction: column; gap: 4px; }
 .pshell .cg-meta .cg-name {
   font-size: 13.5px; font-weight: 600; letter-spacing: -0.01em; color: var(--text);

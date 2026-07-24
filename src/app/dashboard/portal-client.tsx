@@ -65,20 +65,20 @@ type PortalChart = {
 
 /* Category -> accent color (mirrors the marketing library palette). */
 const CAT_COLOR: Record<string, string> = {
-  KPI: "oklch(0.72 0.16 25)",
-  "Time Series": "oklch(0.74 0.14 200)",
-  Comparison: "oklch(0.70 0.15 268)",
-  Distribution: "oklch(0.72 0.16 300)",
-  "Part-to-Whole": "oklch(0.72 0.17 350)",
-  "Network & Flow": "oklch(0.72 0.14 235)",
-  "Marketing & Funnels": "oklch(0.75 0.14 165)",
-  Finance: "oklch(0.80 0.13 95)",
-  "Project & Ops": "oklch(0.80 0.14 75)",
-  Geo: "oklch(0.74 0.14 145)",
-  Specialty: "oklch(0.66 0.16 330)",
+  KPI: "#3B62B5",
+  "Time Series": "#C05B3B",
+  Comparison: "#35726B",
+  Distribution: "#D39C3F",
+  "Part-to-Whole": "#6D4B68",
+  "Network & Flow": "#6B8ACB",
+  "Marketing & Funnels": "#82855C",
+  Finance: "#B1313A",
+  "Project & Ops": "#4A90FF",
+  Geo: "#45774E",
+  Specialty: "#A9BEE3",
 };
 function catColor(cat: string) {
-  return CAT_COLOR[cat] ?? "oklch(0.70 0.02 260)";
+  return CAT_COLOR[cat] ?? "#7D8593";
 }
 /** Display order for category pills (present categories only). */
 const CAT_ORDER = [
@@ -348,7 +348,7 @@ export function PortalClient(props: PortalProps) {
                 borderRadius: 12,
                 border:
                   checkoutNotice === "success"
-                    ? "1px solid var(--acc-green, #2faa6a)"
+                    ? "1px solid var(--acc-green, #518A5C)"
                     : checkoutNotice === "unavailable"
                       ? "1px solid rgba(240,170,70,0.5)"
                       : "1px solid var(--border)",
@@ -428,9 +428,9 @@ function OverviewTab(props: PortalProps & { goTo: (t: Tab) => void }) {
           <svg viewBox="0 0 88 88" fill="none">
             <defs>
               <linearGradient id="pg1" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stopColor="var(--acc-violet)" />
-                <stop offset="0.5" stopColor="var(--acc-rose)" />
-                <stop offset="1" stopColor="var(--acc-amber)" />
+                <stop offset="0" stopColor="#A9BEE3" />
+                <stop offset="0.5" stopColor="#6B8ACB" />
+                <stop offset="1" stopColor="#3B62B5" />
               </linearGradient>
             </defs>
             <path d="M44 4 L48 40 L84 44 L48 48 L44 84 L40 48 L4 44 L40 40 Z" fill="url(#pg1)" opacity="0.85" />
@@ -461,8 +461,8 @@ function OverviewTab(props: PortalProps & { goTo: (t: Tab) => void }) {
           <div className="qa-foot"><span>Open library</span><span>→</span></div>
         </button>
         <button className="qa-card" onClick={() => props.goTo("billing")}>
-          <div className="qa-icon" style={{ background: "color-mix(in oklch, var(--acc-rose) 22%, transparent)" }}>
-            <svg style={{ color: "var(--acc-rose)" }}><use href="#i-reports" /></svg>
+          <div className="qa-icon" style={{ background: "color-mix(in oklch, #C05B3B 22%, transparent)" }}>
+            <svg style={{ color: "#C05B3B" }}><use href="#i-reports" /></svg>
           </div>
           <div>
             <div className="qa-title">Billing & invoices</div>
@@ -994,9 +994,9 @@ function BillingTab(props: PortalProps) {
                       borderRadius: 12,
                       border: p.primary ? "1px solid transparent" : "1px solid var(--border)",
                       background: p.primary
-                        ? "linear-gradient(135deg, #a78bfa, #ec4899)"
+                        ? "#F4F2EC"
                         : "var(--panel)",
-                      color: p.primary ? "#fff" : "var(--text)",
+                      color: p.primary ? "#16181D" : "var(--text)",
                       cursor: "pointer",
                       textAlign: "left",
                     }}
