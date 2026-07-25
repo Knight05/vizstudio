@@ -14,6 +14,50 @@ const config: NextConfig = {
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
         ],
       },
+      // Everything under public/ is served by Vercel with
+      // `max-age=0, must-revalidate` by default, so a repeat visitor
+      // re-validates 80+ requests (77 chart icons alone) on every page view.
+      // Give the static assets real cache lifetimes.
+      {
+        // Chart icons are content-stable: when one changes it gets a new
+        // filename (see the 2x2matrix rename), so it is safe to freeze these.
+        source: "/icons/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+      {
+        // Screenshots and marketing images DO get replaced in place
+        // (guide refreshes, hero re-shoots), so keep a short fresh window and
+        // let stale-while-revalidate serve instantly while it updates.
+        source: "/:dir(screenshots|images|banners)/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, stale-while-revalidate=2592000",
+          },
+        ],
+      },
+      {
+        // Unversioned filenames that ship with a deploy — short TTL so a
+        // release still reaches people quickly.
+        source: "/assets/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=3600, stale-while-revalidate=86400",
+          },
+        ],
+      },
+      {
+        source: "/:file(logo.webp|logo-256.png|favicon.svg|apple-touch-icon.png)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=604800, stale-while-revalidate=2592000",
+          },
+        ],
+      },
     ];
   },
   async redirects() {

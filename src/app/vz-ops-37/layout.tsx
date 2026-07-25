@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { requireAdmin } from "@/lib/admin";
+import { AppFonts } from "@/components/AppFonts";
 
 export const metadata = {
   title: "Admin",
@@ -18,6 +19,7 @@ export default async function AdminLayout({
 
   return (
     <>
+      <AppFonts />
       <Navbar />
       <main className="mx-auto max-w-page px-6 py-10">
         <div className="mb-8">

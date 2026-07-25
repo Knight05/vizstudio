@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import { AuthForm } from "@/components/AuthForm";
+import { AppFonts } from "@/components/AppFonts";
 
 export const metadata = {
   title: "Log in",
@@ -11,6 +12,8 @@ export const dynamic = "force-dynamic";
 
 export default function LoginPage() {
   return (
+    <>
+    <AppFonts />
     <main
       style={{
         minHeight: "100vh",
@@ -42,5 +45,6 @@ export default function LoginPage() {
         ← Back to vizstudio.io
       </Link>
     </main>
+    </>
   );
 }

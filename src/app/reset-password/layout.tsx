@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AppFonts } from "@/components/AppFonts";
 
 // This page is a client component, so robots metadata lives in this layout.
 export const metadata: Metadata = {
@@ -6,5 +7,10 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return children;
+  return (
+    <>
+      <AppFonts />
+      {children}
+    </>
+  );
 }

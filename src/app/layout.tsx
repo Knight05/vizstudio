@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import "./globals.css";
-import { TRPCProvider } from "@/trpc/provider";
 import { CookieConsent } from "@/components/CookieConsent";
 import { GAPageView } from "@/components/GAPageView";
 
@@ -100,16 +99,11 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
+        {/* App-shell typography (globals.css --mono / --sans) is loaded
+            per-route by <AppFonts />, NOT here. The marketing pages ship their
+            own Google Fonts set, so keeping this link in the root layout made
+            every marketing view pay for a second render-blocking third-party
+            stylesheet plus a duplicate set of woff2 files it never rendered. */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(SITE_JSONLD) }}
@@ -178,7 +172,7 @@ export default function RootLayout({
             })();
           `}
         </Script>
-        <TRPCProvider>{children}</TRPCProvider>
+        {children}
         <CookieConsent />
         <GAPageView />
       </body>
