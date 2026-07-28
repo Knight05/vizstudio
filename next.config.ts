@@ -27,6 +27,15 @@ const config: NextConfig = {
         ],
       },
       {
+        // Self-hosted woff2 files carry a content hash in their filename
+        // (public/assets/fonts/*.css is regenerated with new names whenever a
+        // face changes), so they can be frozen for a year.
+        source: "/fonts/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+      {
         // Screenshots and marketing images DO get replaced in place
         // (guide refreshes, hero re-shoots), so keep a short fresh window and
         // let stale-while-revalidate serve instantly while it updates.

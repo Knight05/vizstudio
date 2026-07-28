@@ -19,9 +19,7 @@ export default function Page() {
   return (
     <>
       <link rel="icon" href="/favicon.svg" type="image/svg+xml" key="l0" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" key="l1" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" key="l2" />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" key="l3" />
+      <link rel="stylesheet" href="/assets/fonts/marketing.css" key="l3" />
       <link rel="stylesheet" href="/assets/style.css" key="l4" />
       <link rel="stylesheet" href="/assets/forms.css" key="l5" />
       <style dangerouslySetInnerHTML={{ __html: STYLES }} />

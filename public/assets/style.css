@@ -1324,3 +1324,11 @@ footer .logo, .foot-grid .logo { color: #EDEBE4; }
 
 /* no cream gap between an ink closing section and the ink footer */
 footer { margin-top: 0; }
+
+
+/* Reserve the sticky header's height until partials.js mounts it.
+   #site-nav starts empty in the SSR HTML and is replaced client-side, so
+   without this the whole page shifts down ~74px on hydration (CLS). The
+   :empty selector stops matching the instant the nav markup lands. */
+#site-nav:empty { display: block; height: 74px; }
+@media (max-width: 960px) { #site-nav:empty { height: 71px; } }
