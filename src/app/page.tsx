@@ -187,15 +187,23 @@ export default function Page() {
       <div dangerouslySetInnerHTML={{ __html: applySiteCopy(BODY) }} />
       <ClientScripts
         srcs={[
+          // Nav/footer first: partials.js used to sit behind ~380 KB of d3 in
+          // the ordered chain, so the header mounted late and shoved the whole
+          // page down. Nothing above the fold depends on the rest.
+          "/assets/partials.js",
           "/assets/gen/home-1.js",
           "/assets/gen/home-2.js",
-          "https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js",
-          "https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js",
+          "/assets/forms.js",
+        ]}
+        deferredSrcs={[
+          // Below-the-fold visualisations only, and self-hosted: the jsdelivr
+          // copies cost an extra DNS + TLS handshake on the critical path.
+          "/vendor/d3-7.min.js",
+          "/vendor/topojson-client-3.min.js",
           "/assets/gen/home-5.js",
           "/assets/gen/home-6.js",
-          "/assets/forms.js",
-          "/assets/partials.js",
         ]}
+        deferUntil="#library, #spotlight"
       />
     </>
   );

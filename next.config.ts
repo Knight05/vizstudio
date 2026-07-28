@@ -29,8 +29,9 @@ const config: NextConfig = {
       {
         // Self-hosted woff2 files carry a content hash in their filename
         // (public/assets/fonts/*.css is regenerated with new names whenever a
-        // face changes), so they can be frozen for a year.
-        source: "/fonts/:path*",
+        // face changes) and /vendor/* is version-pinned (d3-7.min.js), so both
+        // can be frozen for a year.
+        source: "/:dir(fonts|vendor)/:path*",
         headers: [
           { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
         ],

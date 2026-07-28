@@ -135,15 +135,37 @@
 
   let autopilot = false;
 
+  // Auto-rotation re-projects ~170 country polygons per frame, so it only runs
+  // while the globe is on screen, and never for reduced-motion visitors.
+  let onScreen = false;
+  let ticking = false;
+  let acc = 0;
+  const reduceMotion = window.matchMedia
+    && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // ~30fps is indistinguishable at this rotation speed and halves the cost.
+  const FRAME_MS = 33;
+
   // tick - auto-rotate (slow) when not dragging or auto-piloting
   function tick(ts) {
+    if (!onScreen || reduceMotion) { ticking = false; prevTs = null; return; }
     if (prevTs == null) prevTs = ts;
     const dt = ts - prevTs;
     prevTs = ts;
     if (!dragging && !autopilot && !document.hidden) {
-      rotationLambda = (rotationLambda + dt * 0.018) % 360;
-      redraw();
+      acc += dt;
+      if (acc >= FRAME_MS) {
+        rotationLambda = (rotationLambda + acc * 0.018) % 360;
+        acc = 0;
+        redraw();
+      }
     }
+    requestAnimationFrame(tick);
+  }
+
+  function startTicking() {
+    if (ticking || reduceMotion) return;
+    ticking = true;
+    prevTs = null;
     requestAnimationFrame(tick);
   }
 
@@ -184,7 +206,7 @@
   }
 
   // load world topo
-  fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
+  fetch('/vendor/world-atlas-countries-110m.json')
     .then(r => r.json())
     .then(world => {
       const countries = topojson.feature(world, world.objects.countries).features;
@@ -228,8 +250,31 @@
 
       setTop(topId, false);
       redraw();
-      requestAnimationFrame(tick);
-      setInterval(() => { if (!dragging) cycleStory(); }, 4800);
+
+      let storyTimer = null;
+      const startStory = () => {
+        if (storyTimer == null) {
+          storyTimer = setInterval(() => { if (!dragging) cycleStory(); }, 4800);
+        }
+      };
+      const stopStory = () => {
+        if (storyTimer != null) { clearInterval(storyTimer); storyTimer = null; }
+      };
+
+      if (typeof IntersectionObserver !== 'undefined') {
+        new IntersectionObserver((entries) => {
+          onScreen = entries.some(e => e.isIntersecting);
+          if (onScreen) { startTicking(); startStory(); } else { stopStory(); }
+        }, { threshold: 0.01 }).observe(svg);
+      } else {
+        onScreen = true;
+        startTicking();
+        startStory();
+      }
+
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden && onScreen) startTicking();
+      });
     })
     .catch(err => {
       console.warn('Globe data failed to load', err);
